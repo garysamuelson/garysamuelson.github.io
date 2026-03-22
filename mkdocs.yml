@@ -1,0 +1,86 @@
+site_name: Gary Samuelson — AI & Architecture Research
+site_url: https://garyrsamuelson.github.io
+site_description: >-
+  Research and insights on Semantic AI, Knowledge Graphs, Agentic Systems,
+  and Enterprise Architecture by Gary Samuelson.
+site_author: Gary Samuelson
+
+repo_name: garyrsamuelson/garyrsamuelson.github.io
+repo_url: https://github.com/garyrsamuelson/garyrsamuelson.github.io
+
+theme:
+  name: material
+  features:
+    - navigation.tabs
+    - navigation.tabs.sticky
+    - navigation.sections
+    - navigation.expand
+    - navigation.top
+    - search.highlight
+    - search.suggest
+    - content.code.copy
+    - content.code.annotate
+  palette:
+    - scheme: default
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+    - scheme: slate
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+  font:
+    text: Roboto
+    code: Roboto Mono
+
+plugins:
+  - search
+  - blog:
+      blog_dir: blog
+      post_date_format: long
+      post_url_format: "{date}/{slug}"
+      archive: true
+      archive_name: Archive
+      archive_date_format: yyyy
+      categories: true
+      categories_name: Categories
+      authors: true
+      authors_file: "{blog}/.authors.yml"
+  - tags
+
+markdown_extensions:
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - attr_list
+  - md_in_html
+  - tables
+  - footnotes
+  - toc:
+      permalink: true
+
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/garyrsamuelson
+    - icon: fontawesome/brands/linkedin
+      link: https://linkedin.com/in/garyrsamuelson
+
+nav:
+  - Home: index.md
+  - Blog:
+    - blog/index.md
