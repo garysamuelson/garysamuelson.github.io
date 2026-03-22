@@ -1,12 +1,12 @@
 site_name: Gary Samuelson — AI & Architecture Research
-site_url: https://garyrsamuelson.github.io
+site_url: https://garysamuelson.github.io
 site_description: >-
   Research and insights on Semantic AI, Knowledge Graphs, Agentic Systems,
   and Enterprise Architecture by Gary Samuelson.
 site_author: Gary Samuelson
 
-repo_name: garyrsamuelson/garyrsamuelson.github.io
-repo_url: https://github.com/garyrsamuelson/garyrsamuelson.github.io
+repo_name: garysamuelson/garysamuelson.github.io
+repo_url: https://github.com/garysamuelson/garysamuelson.github.io
 
 theme:
   name: material
