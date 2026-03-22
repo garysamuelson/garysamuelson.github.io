@@ -1,5 +1,6 @@
-gary:
-  name: Gary Samuelson
-  description: Senior Enterprise Architect & AI Researcher
-  avatar: https://github.com/garysamuelson.png
-  url: https://garysamuelson.github.io
+authors:
+  gary:
+    name: Gary Samuelson
+    description: Senior Enterprise Architect & AI Researcher
+    avatar: https://github.com/garysamuelson.png
+    url: https://garysamuelson.github.io
