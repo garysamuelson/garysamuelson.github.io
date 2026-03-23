@@ -50,7 +50,8 @@ plugins:
       categories_name: Categories
       authors: true
       authors_file: "{blog}/.authors.yml"
-  - tags
+  - tags:
+      tags_file: tags.md
 
 markdown_extensions:
   - admonition
