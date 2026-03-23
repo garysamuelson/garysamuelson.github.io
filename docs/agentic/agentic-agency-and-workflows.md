@@ -1,6 +1,13 @@
 ---
 title: "Agentic AI in Emergency Medicine: Orchestrating STEMI Detection with Deterministic Guardrails"
 image: assets/images/STEMI_detection_linkedin.png
+tags:
+  - Agentic AI
+  - BPMN
+  - Emergency Medicine
+  - Deterministic Guardrails
+  - LLM
+  - Enterprise Architecture
 ---
 
 # Agentic AI in Emergency Medicine: Orchestrating STEMI Detection with Deterministic Guardrails
