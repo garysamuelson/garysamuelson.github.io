@@ -7,17 +7,17 @@ the intersection of **Semantic AI**, **Knowledge Graphs**, and **Agentic Systems
 
 ## Featured
 
-<a href="agentic/agentic-agency-and-workflows/">
+<a href="agentic/agentic-agency-and-workflows.md">
   <img src="assets/images/STEMI_detection_linkedin.png" alt="STEMI Detection — Agentic Architecture" style="width:100%; border-radius:8px; margin-bottom:1rem;" />
 </a>
 
-### [Agentic AI in Emergency Medicine: Orchestrating STEMI Detection with Deterministic Guardrails](agentic/agentic-agency-and-workflows/)
+### [Agentic AI in Emergency Medicine: Orchestrating STEMI Detection with Deterministic Guardrails](agentic/agentic-agency-and-workflows.md)
 
 What does "agentic" actually mean when lives are on the line? This paper breaks the term into two complementary forms — **Agency** (AI that can decide to act) and the **Agentic Pattern** (a deterministic process that governs where AI acts) — and maps both onto a real EMS STEMI detection workflow modeled in BPMN.
 
 Inside, you'll find a three-layer architecture that separates business rules from AI intelligence, a detailed walkthrough of how an AI triage agent sequences clinical tasks inside a constrained "agentic zone," and the guardrails that keep a human physician in the loop when confidence drops below threshold.
 
-**March 22, 2026** · [Read the full article →](agentic/agentic-agency-and-workflows/)
+**March 22, 2026** · [Read the full article →](agentic/agentic-agency-and-workflows.md)
 
 ---
 
