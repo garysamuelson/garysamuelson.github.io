@@ -1,0 +1,1576 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Research and insights on Semantic AI, Knowledge Graphs, Agentic Systems, and Enterprise Architecture by Gary Samuelson.">
+      
+      
+        <meta name="author" content="Gary Samuelson">
+      
+      
+        <link rel="canonical" href="https://garysamuelson.github.io/agentic/agentic-agency-and-workflows/">
+      
+      
+        <link rel="prev" href="../../blog/">
+      
+      
+        <link rel="next" href="../../tags/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>Agentic AI in Emergency Medicine: Orchestrating STEMI Detection with Deterministic Guardrails - Gary Samuelson — AI & Architecture Research</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#agentic-ai-in-emergency-medicine-orchestrating-stemi-detection-with-deterministic-guardrails" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Gary Samuelson — AI &amp; Architecture Research" class="md-header__button md-logo" aria-label="Gary Samuelson — AI & Architecture Research" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Gary Samuelson — AI & Architecture Research
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Agentic AI in Emergency Medicine: Orchestrating STEMI Detection with Deterministic Guardrails
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/garysamuelson/garysamuelson.github.io" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    garysamuelson/garysamuelson.github.io
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../blog/" class="md-tabs__link">
+          
+  
+  
+  Blog
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="./" class="md-tabs__link">
+          
+  
+  
+  Agentic Systems
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../tags/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Tags
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Gary Samuelson — AI &amp; Architecture Research" class="md-nav__button md-logo" aria-label="Gary Samuelson — AI & Architecture Research" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Gary Samuelson — AI & Architecture Research
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/garysamuelson/garysamuelson.github.io" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    garysamuelson/garysamuelson.github.io
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Blog
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Blog
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../blog/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Blog
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Archive
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Agentic Systems
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Agentic Systems
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Agentic Agency & Workflows
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Agentic Agency & Workflows
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#the-process-model" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Process Model
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#defining-agentic-two-complementary-forms" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Defining "Agentic" — Two Complementary Forms
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Defining &#34;Agentic&#34; — Two Complementary Forms">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#form-1-agency-ai-with-autonomous-action-capability" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Form 1 — Agency: AI with Autonomous Action Capability
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#form-2-agentic-pattern-orchestrated-collaborative-workflow" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Form 2 — Agentic Pattern: Orchestrated Collaborative Workflow
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#how-they-relate" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How They Relate
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-agentic-workflow-architecture" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Agentic Workflow Architecture
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="The Agentic Workflow Architecture">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#three-layers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Three Layers
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-full-architecture" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Full Architecture
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-job-worker-pattern" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Job Worker Pattern
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#illustrative-example-ems-patient-encounter-chest-pain-suspected-stemi" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Illustrative Example: EMS Patient Encounter — Chest Pain / Suspected STEMI
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Illustrative Example: EMS Patient Encounter — Chest Pain / Suspected STEMI">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-scenario" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Scenario
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#why-this-domain" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Why This Domain?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-makes-this-agentic" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What Makes This "Agentic"
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-tasks-within-the-agentic-zone" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Tasks Within the Agentic Zone
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#agent-decision-flow-example" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Agent Decision Flow Example
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#when-the-agent-escalates" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        When the Agent Escalates
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#production-foundations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Production Foundations
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#oreilly-references" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        O'Reilly References
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tags/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tags
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#the-process-model" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Process Model
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#defining-agentic-two-complementary-forms" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Defining "Agentic" — Two Complementary Forms
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Defining &#34;Agentic&#34; — Two Complementary Forms">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#form-1-agency-ai-with-autonomous-action-capability" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Form 1 — Agency: AI with Autonomous Action Capability
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#form-2-agentic-pattern-orchestrated-collaborative-workflow" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Form 2 — Agentic Pattern: Orchestrated Collaborative Workflow
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#how-they-relate" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How They Relate
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-agentic-workflow-architecture" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Agentic Workflow Architecture
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="The Agentic Workflow Architecture">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#three-layers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Three Layers
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-full-architecture" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Full Architecture
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-job-worker-pattern" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Job Worker Pattern
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#illustrative-example-ems-patient-encounter-chest-pain-suspected-stemi" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Illustrative Example: EMS Patient Encounter — Chest Pain / Suspected STEMI
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Illustrative Example: EMS Patient Encounter — Chest Pain / Suspected STEMI">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-scenario" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Scenario
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#why-this-domain" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Why This Domain?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-makes-this-agentic" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What Makes This "Agentic"
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-tasks-within-the-agentic-zone" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Tasks Within the Agentic Zone
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#agent-decision-flow-example" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Agent Decision Flow Example
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#when-the-agent-escalates" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        When the Agent Escalates
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#production-foundations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Production Foundations
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#oreilly-references" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        O'Reilly References
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="agentic-ai-in-emergency-medicine-orchestrating-stemi-detection-with-deterministic-guardrails">Agentic AI in Emergency Medicine: Orchestrating STEMI Detection with Deterministic Guardrails<a class="headerlink" href="#agentic-ai-in-emergency-medicine-orchestrating-stemi-detection-with-deterministic-guardrails" title="Permanent link">&para;</a></h1>
+<p><img alt="STEMI Detection — Agentic Architecture" src="../../assets/images/STEMI_detection_linkedin.png" /></p>
+<p><strong>Author:</strong> Gary Samuelson
+<strong>Date:</strong> March 22, 2026
+<strong>Status:</strong> Living Document — EMS Domain Adaptation
+<strong>Blog:</strong> <a href="https://garysamuelson.github.io">garysamuelson.github.io</a></p>
+<hr />
+<h2 id="the-process-model">The Process Model<a class="headerlink" href="#the-process-model" title="Permanent link">&para;</a></h2>
+<p>Before defining terms, look at the process. The BPMN diagram below models a complete EMS patient encounter — from initial contact through clinical triage to a transport decision. Everything discussed in this document maps back to what you see here.</p>
+<p><img alt="EMS Triage — Clinical Agentic Zone BPMN" src="../../assets/images/STEMI_detection_assessment_subprocess.png" /></p>
+<p>Reading left to right: the process starts at <strong>Patient Contact — On Scene</strong>, passes through a deterministic <strong>Protocol Floor Check</strong> and a gateway that enforces scene safety and patient consent. If those hard gates pass, the flow enters the large dashed-border box in the center — <strong>Clinical Triage — Agentic Zone</strong> — a BPMN ad-hoc subprocess. Inside that zone, six tasks are visible but <em>not connected by sequence flows</em>: five AI service tasks (<strong>Assess Vital Signs</strong>, <strong>Analyze 12-Lead ECG</strong>, <strong>Check Medications &amp; Interactions</strong>, <strong>Match Treatment Protocol</strong>, <strong>Hospital Pre-Notification</strong>) and one human escalation task (<strong>Escalate to Medical Director</strong>). After the agentic zone completes, a routing gateway evaluates the clinical assessment result and directs to one of three outcomes: <strong>Stable — Routine Transport</strong>, <strong>STEMI — Cath Lab Activation</strong>, or <strong>Critical — ALS Intercept</strong>.</p>
+<p>The two definitions that follow — <em>Agency</em> and <em>Agentic Pattern</em> — map directly onto this diagram.</p>
+<hr />
+<h2 id="defining-agentic-two-complementary-forms">Defining "Agentic" — Two Complementary Forms<a class="headerlink" href="#defining-agentic-two-complementary-forms" title="Permanent link">&para;</a></h2>
+<p>The term <em>agentic</em> carries two distinct-but-complementary meanings in enterprise AI. Both are valid; neither is complete without the other.</p>
+<hr />
+<h3 id="form-1-agency-ai-with-autonomous-action-capability">Form 1 — Agency: AI with Autonomous Action Capability<a class="headerlink" href="#form-1-agency-ai-with-autonomous-action-capability" title="Permanent link">&para;</a></h3>
+<p>An AI component is given <strong>agency</strong> — the ability to take actions independently, without being explicitly directed step-by-step by a human or hardcoded script.</p>
+<blockquote>
+<p><strong>The agent can <em>decide to do something<em>, not just </em>respond when asked.</em></strong></p>
+</blockquote>
+<p><strong>Properties of Agency</strong>:</p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Definition</th>
+<th>Process Implication</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Autonomy</strong></td>
+<td>Operates without constant human control</td>
+<td>Executes tasks without per-decision approval</td>
+</tr>
+<tr>
+<td><strong>Perception</strong></td>
+<td>Perceives environment through sensors/APIs</td>
+<td>Monitors patient state, vitals, clinical context</td>
+</tr>
+<tr>
+<td><strong>Persistence</strong></td>
+<td>Continues operating over time</td>
+<td>Maintains state across the patient encounter</td>
+</tr>
+<tr>
+<td><strong>Adaptation</strong></td>
+<td>Adjusts behavior in response to change</td>
+<td>Updates assessment as new clinical data arrives</td>
+</tr>
+<tr>
+<td><strong>Goal-Seeking</strong></td>
+<td>Creates and pursues goals proactively</td>
+<td>Optimizes for patient outcomes, not just task completion</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Examples:</strong>
+- A triage agent that autonomously monitors vital signs, detects STEMI patterns on a 12-lead ECG, and activates a cath lab notification — triggered by data, no human in the loop
+- A coding agent that detects a failing test, reads the error, edits the file, re-runs the test, and commits on its own
+- A medication safety agent that cross-references a patient's current medications against proposed field interventions and flags contraindications before the paramedic acts</p>
+<p>This is the <strong>capability layer</strong> — it defines what an individual agent <em>can do.</em></p>
+<p><strong>In the diagram:</strong> Each AI service task inside the agentic zone is a Form 1 agent. The <strong>Analyze 12-Lead ECG (AI/ML)</strong> task, for example, has autonomy (it runs a CNN + LLM pipeline without human approval), perception (it reads the ECG tracing data), persistence (it retains context across the encounter), adaptation (it adjusts its interpretation based on clinical context from other tasks), and goal-seeking (it actively pursues a STEMI determination, not just a generic response). The same properties apply to <strong>Assess Vital Signs</strong>, <strong>Check Medications &amp; Interactions</strong>, and the other AI tasks. Each operates as an autonomous agent within its clinical scope.</p>
+<hr />
+<h3 id="form-2-agentic-pattern-orchestrated-collaborative-workflow">Form 2 — Agentic Pattern: Orchestrated Collaborative Workflow<a class="headerlink" href="#form-2-agentic-pattern-orchestrated-collaborative-workflow" title="Permanent link">&para;</a></h3>
+<p>This is the <strong>architectural pattern</strong> — how multiple AI-enabled tasks are coordinated into a structured workflow where each sub-agent returns structured output that feeds an orchestrator.</p>
+<p>Each sub-agent returns three components:</p>
+<table>
+<thead>
+<tr>
+<th>Return Component</th>
+<th>Purpose</th>
+<th>Consumer</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Results</strong></td>
+<td>Machine-ingestible data for the orchestrator</td>
+<td>Orchestration engine (e.g., Camunda Zeebe)</td>
+</tr>
+<tr>
+<td><strong>Next Task Recommendation</strong></td>
+<td>What should happen next in the sub-process</td>
+<td>Orchestrator or agentic reasoning layer</td>
+</tr>
+<tr>
+<td><strong>Reasoning</strong></td>
+<td>Human-readable explanation of <em>why</em> — traceable, auditable</td>
+<td>Clinical audit trail, physician reviewers, QA/QI</td>
+</tr>
+</tbody>
+</table>
+<p>This is the <strong>coordination layer</strong> — it defines how agents <em>work together.</em></p>
+<p><strong>In the diagram:</strong> The entire <strong>Clinical Triage — Agentic Zone</strong> box is a Form 2 pattern in action. It is a BPMN ad-hoc subprocess — the tasks inside have no sequence-flow arrows connecting them. An orchestrating triage agent decides which tasks to activate, in what order, based on evolving clinical findings. When <strong>Assess Vital Signs</strong> returns results showing hemodynamic instability, the orchestrator activates <strong>Analyze 12-Lead ECG</strong> next. When the ECG confirms STEMI, the orchestrator activates <strong>Check Medications &amp; Interactions</strong> before committing to a treatment protocol. Each task feeds its structured three-part return back to the orchestrator, which uses the accumulated picture to decide the next move — or to escalate to the <strong>Escalate to Medical Director</strong> user task when confidence stays below 0.8. The ad-hoc subprocess completes when the orchestrator has assigned an acuity level with sufficient confidence, and the process flows to the routing gateway on the right.</p>
+<hr />
+<h3 id="how-they-relate">How They Relate<a class="headerlink" href="#how-they-relate" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Agency (Form 1)</th>
+<th>Agentic Pattern (Form 2)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Focus</strong></td>
+<td>What the agent can do autonomously</td>
+<td>How agents are orchestrated together</td>
+</tr>
+<tr>
+<td><strong>Scope</strong></td>
+<td>Single agent with broad capability</td>
+<td>Multi-agent workflow</td>
+</tr>
+<tr>
+<td><strong>Output</strong></td>
+<td>Action taken</td>
+<td>Structured result + recommendation + reasoning</td>
+</tr>
+<tr>
+<td><strong>Control</strong></td>
+<td>Agent decides within guardrails</td>
+<td>Orchestrator directs, agents recommend</td>
+</tr>
+<tr>
+<td><strong>Governance</strong></td>
+<td>Embedded in agent prompts/constraints</td>
+<td>Enforced by BPMN process model and orchestration engine</td>
+</tr>
+</tbody>
+</table>
+<p><strong>In practice, Form 2 pipelines are built from Form 1 agents.</strong> You need agents with agency to compose an agentic workflow. The orchestration layer (BPMN/Camunda) governs <em>when</em> and <em>how</em> those agents are invoked, while the agents themselves bring autonomous reasoning <em>within</em> their scope of action.</p>
+<hr />
+<h2 id="the-agentic-workflow-architecture">The Agentic Workflow Architecture<a class="headerlink" href="#the-agentic-workflow-architecture" title="Permanent link">&para;</a></h2>
+<h3 id="three-layers">Three Layers<a class="headerlink" href="#three-layers" title="Permanent link">&para;</a></h3>
+<p><img alt="Three-Layer Agentic Architecture" src="../../assets/images/three_layer_architecture.drawio.svg" /></p>
+<p>The architecture rests on a clean separation of concerns across three layers, connected by a single integration pattern: <strong>jobs flow down, results flow up.</strong></p>
+<p>The <strong>Business Layer</strong> owns the <em>what</em> and the <em>when</em> — BPMN process models define which clinical tasks exist, what governance gates protect them, and under what conditions the process escalates or completes. This layer is entirely declarative: a process analyst can read and modify it without touching code.</p>
+<p>The <strong>Orchestration Layer</strong> owns the <em>how</em> — Camunda 8 Zeebe acts as the deterministic spine of the system. It manages patient encounter state, distributes job assignments to workers, correlates messages between process instances, and writes the clinical audit trail. Critically, Zeebe has no opinion about <em>what decision an agent should make</em>. It tracks which jobs have been created, which have been completed, and what variables were returned — nothing more.</p>
+<p>The <strong>Intelligence Layer</strong> owns the <em>why</em> — Python AI agents subscribe to Zeebe job types, receive context variables (patient vitals, ECG data, medication history), reason autonomously within their clinical scope, and return structured results plus an explanation of their reasoning. This is where LLMs, CNNs, RAG retrieval, and LangGraph orchestration live.</p>
+<p><strong>Key insight:</strong> Camunda doesn't "run" AI code. Python agents <strong>subscribe to jobs</strong> from Camunda, make intelligent decisions, and <strong>signal back</strong> what to do next. This preserves the deterministic clinical audit trail while enabling autonomous reasoning.</p>
+<h3 id="the-full-architecture">The Full Architecture<a class="headerlink" href="#the-full-architecture" title="Permanent link">&para;</a></h3>
+<p><img alt="EMS STEMI Detection Agentic Architecture" src="../../assets/images/STEMI_detection_agentic_architecture_lrgfnt.drawio.svg" /></p>
+<p>The detailed diagram above expands those three layers into four — adding a Knowledge Layer at the bottom — and shows every component in the running system, read top to bottom.</p>
+<p>The <strong>Business Layer</strong> (blue) — the <em>what</em> and the <em>when</em> from the simplified view — now shows its concrete workflow. The <strong>Protocol Floor Check</strong> from the BPMN process model is the first service task: hard-coded safety rules (scene safety, patient consent, MCI override, DNR/POLST verification) that no AI agent can override. An exclusive gateway evaluates the results — if the scene is unsafe or the patient refuses, the process terminates immediately. Only when the floor clears does the flow enter the dashed-border <strong>Agentic Triage Zone</strong>, the BPMN ad-hoc subprocess whose five AI service tasks and one human escalation task appear in the process model above. After the zone completes, a routing gateway directs to one of three clinical outcomes: Routine Transport, Cath Lab Activation, or ALS Intercept.</p>
+<p>Zooming into the Orchestration Layer's <em>how</em>, we can now see the machinery behind that deterministic spine. The Zeebe Engine manages patient state and distributes jobs. The five job types — <code>assess-vitals</code>, <code>analyze-12lead-ecg</code>, <code>check-medications</code>, <code>match-protocol</code>, <code>hospital-prenotify</code> — map one-to-one to the service tasks declared inside the BPMN ad-hoc subprocess; each task's <code>zeebe:taskDefinition</code> names its job type, making the process model the single source of truth for what jobs exist and which workers subscribe to them. A <strong>Completion Condition</strong> governs when the ad-hoc subprocess resolves: the orchestrator requires both an assigned acuity level <em>and</em> a confidence score at or above 0.8 before the process can exit. The Operate UI provides the clinical audit trail.</p>
+<p>The <strong>Intelligence Layer</strong> (green) answers the <em>why</em> with specific agents. The <strong>Triage Assessment Agent</strong> on the left is the orchestrating agent — it receives jobs from Zeebe via gRPC, decides which task agents to activate, reviews their results, and returns its final assessment back up to Zeebe. The four task agents (Vitals Analyzer, 12-Lead ECG Analyzer, Medication Checker, Protocol Matcher) each handle a specific clinical domain. The dashed arrows from the orchestrating agent indicate that task activation is <em>dynamic</em> — not every agent runs for every patient — and this is precisely what the BPMN ad-hoc subprocess enables: because the tasks inside have no sequence-flow connections, the orchestrating agent is free to activate them in whatever order the clinical picture demands. When confidence stays below 0.8 after all assessments, the dashed orange escalation path routes to the <strong>Medical Director</strong> for human-in-the-loop review. Every agent returns via the <strong>Three-Return Contract</strong>: structured results, human-readable reasoning, and a next-task recommendation.</p>
+<p>The <strong>Knowledge Layer</strong> (yellow) is the fourth concern that grounds the <em>why</em> in evidence. The RAG vector stores — EMS Protocols, Cardiology Guidelines, Drug Interactions, and Treatment Protocols — are backed by ChromaDB or Pinecone. Each task agent queries its own collection at inference time — a binding declared in the BPMN itself via <code>zeebe:taskHeaders</code> on each service task (e.g., the ECG Analyzer's header points to <code>cardiology_guidelines</code>, the Medication Checker's to <code>drug_interactions</code>). The process model wires agent to knowledge store, so the Intelligence Layer's reasoning draws on domain-specific clinical knowledge rather than relying solely on the LLM's training data.</p>
+<h3 id="the-job-worker-pattern">The Job Worker Pattern<a class="headerlink" href="#the-job-worker-pattern" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>Orchestrator (Camunda Zeebe) creates job: &quot;triage-assessment-agent&quot;
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>    │
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>    ├─► Python Job Worker receives job + context variables
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>    │     { chiefComplaint: &quot;chest_pain&quot;, age: 62, hr: 110,
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>    │       bp: &quot;88/54&quot;, spo2: 94, onset: &quot;45min_ago&quot; }
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>    │
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>    ├─► AI Agent reasons autonomously within its scope
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>    │     - Analyzes clinical indicators
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>    │     - Decides which assessment tasks to activate
+<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>    │     - Produces confidence-scored triage assessment
+<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>    │
+<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a>    └─► Returns structured response to Camunda:
+<a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a>          {
+<a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a>            results: { acuity_level: &quot;RED&quot;, confidence: 0.91 },
+<a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a>            next_task: &quot;analyze_12lead_ecg&quot;,
+<a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a>            reasoning: &quot;62yo male, crushing chest pain 45min onset,
+<a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a>                        tachycardic at 110, hypotensive 88/54, SpO2 94%.
+<a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a>                        Presentation highly suspicious for acute MI.
+<a id="__codelineno-0-19" name="__codelineno-0-19" href="#__codelineno-0-19"></a>                        Immediate 12-lead ECG required for STEMI
+<a id="__codelineno-0-20" name="__codelineno-0-20" href="#__codelineno-0-20"></a>                        rule-in/rule-out.&quot;
+<a id="__codelineno-0-21" name="__codelineno-0-21" href="#__codelineno-0-21"></a>          }
+</code></pre></div>
+<hr />
+<h2 id="illustrative-example-ems-patient-encounter-chest-pain-suspected-stemi">Illustrative Example: EMS Patient Encounter — Chest Pain / Suspected STEMI<a class="headerlink" href="#illustrative-example-ems-patient-encounter-chest-pain-suspected-stemi" title="Permanent link">&para;</a></h2>
+<h3 id="the-scenario">The Scenario<a class="headerlink" href="#the-scenario" title="Permanent link">&para;</a></h3>
+<p>A 911 call comes in: <em>62-year-old male, crushing chest pain, diaphoretic.</em> The ambulance arrives on scene. After initial scene safety confirmation and patient contact (deterministic protocol floor), the encounter enters the <strong>Clinical Triage Agentic Zone</strong> — an ad-hoc subprocess where an AI triage agent orchestrates multiple clinical assessment tasks collaboratively.</p>
+<h3 id="why-this-domain">Why This Domain?<a class="headerlink" href="#why-this-domain" title="Permanent link">&para;</a></h3>
+<p>Emergency medicine is a compelling domain for illustrating agentic patterns because:</p>
+<ul>
+<li><strong>Time-critical autonomy matters</strong> — "Time is myocardium." Every minute of delay in STEMI identification increases mortality. The agent must reason fast, within protocols, without waiting for human approval on every step. Huyen emphasizes that real-time ML inference demands end-to-end latency budgets where every millisecond counts — exactly the constraint governing prehospital STEMI detection (Huyen, <em>Designing Machine Learning Systems</em>, 2022).</li>
+<li><strong>Protocols are governance</strong> — EMS operates under standing orders from medical directors, directly analogous to BPMN governance gates. The agent works <em>within</em> protocol boundaries, just as a banking agent works within regulatory constraints.</li>
+<li><strong>Escalation is intuitive</strong> — Paramedic → Medical Director maps naturally to the human-in-the-loop escalation pattern. Everyone understands why an edge case should go to a physician.</li>
+<li><strong>Audit trails are mandatory</strong> — Every clinical decision must be documented for quality improvement, legal, and regulatory review — the same observability requirement as financial services. The Google SRE framework provides the canonical treatment of service-level objectives (SLOs) and latency budgets that underpin this kind of clinical system accountability (Beyer et al., <em>Site Reliability Engineering</em>, 2016).</li>
+</ul>
+<h3 id="what-makes-this-agentic">What Makes This "Agentic"<a class="headerlink" href="#what-makes-this-agentic" title="Permanent link">&para;</a></h3>
+<p>The Clinical Triage subprocess uses a BPMN <strong>ad-hoc subprocess</strong> — the tasks inside are <em>not</em> connected by predefined sequence flows. Instead, an AI triage agent:</p>
+<ol>
+<li>Evaluates the patient presentation</li>
+<li><strong>Decides which clinical tasks to activate</strong> (not all tasks run for every patient)</li>
+<li>Reviews intermediate clinical results</li>
+<li><strong>Recommends what to do next</strong> based on accumulated findings</li>
+<li>Determines when the goal is met (acuity_level assigned with confidence &gt;= 0.8)</li>
+</ol>
+<p>Note the <strong>higher confidence threshold (0.8 vs. 0.7)</strong> compared to a financial services example. In a life-safety domain, we demand stronger confidence before autonomous action. When in doubt, escalate to a physician.</p>
+<p>This is the agentic pattern in action: the orchestrator (Camunda) provides governance and process state, while the agent provides intelligent task selection and clinical reasoning.</p>
+<h3 id="the-tasks-within-the-agentic-zone">The Tasks Within the Agentic Zone<a class="headerlink" href="#the-tasks-within-the-agentic-zone" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Task</th>
+<th>Job Type</th>
+<th>AI Capability</th>
+<th>What It Returns</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Assess Vital Signs</strong></td>
+<td><code>assess-vitals</code></td>
+<td>Analyzes HR, BP, SpO2, RR, GCS, EtCO2; calculates shock index; trends over encounter</td>
+<td><code>{ vital_summary: "hemodynamically unstable", shock_index: 1.25, critical_flags: ["hypotension", "tachycardia"] }</code></td>
+</tr>
+<tr>
+<td><strong>Analyze 12-Lead ECG</strong></td>
+<td><code>analyze-12lead-ecg</code></td>
+<td>CNN-based STEMI detection + LLM clinical reasoning across all 12 leads — the inference pipeline design follows production ML serving principles (Huyen, 2022; Panesar, <em>ML and AI for Healthcare</em>, 2020)</td>
+<td><code>{ stemi_detected: true, st_elevation_leads: ["II", "III", "aVF"], interpretation: "inferior_STEMI" }</code></td>
+</tr>
+<tr>
+<td><strong>Check Medications</strong></td>
+<td><code>check-medications</code></td>
+<td>Reviews patient meds against proposed interventions; flags contraindications</td>
+<td><code>{ contraindications: ["nitro_contraindicated_sildenafil"], safe_interventions: ["aspirin", "heparin"], anticoag_status: "none" }</code></td>
+</tr>
+<tr>
+<td><strong>Match Treatment Protocol</strong></td>
+<td><code>match-protocol</code></td>
+<td>Matches clinical picture to local EMS treatment protocol; determines transport priority</td>
+<td><code>{ matched_protocol: "CARDIAC-STEMI-01", interventions: ["aspirin_324mg", "heparin_bolus", "12lead_transmit"], transport_priority: "EMERGENT" }</code></td>
+</tr>
+<tr>
+<td><strong>Hospital Pre-Notification</strong></td>
+<td><code>hospital-prenotify</code></td>
+<td>Generates MIST/SBAR report; activates cath lab if STEMI confirmed</td>
+<td><code>{ destination: "St. David's — South", cath_lab_activated: true, eta_minutes: 12, notification_format: "MIST" }</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="agent-decision-flow-example">Agent Decision Flow Example<a class="headerlink" href="#agent-decision-flow-example" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>Patient: { age: 62, chiefComplaint: &quot;chest_pain&quot;, onset: &quot;45min&quot;,
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>           hr: 110, bp: &quot;88/54&quot;, spo2: 94, diaphoretic: true }
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>Agent Iteration 1:
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>  ► Activates: Assess Vital Signs, Analyze 12-Lead ECG
+<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>  ► Reasoning: &quot;62yo male with chest pain, diaphoretic, hemodynamically
+<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>                concerning. Vital sign formal assessment and immediate
+<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>                12-lead ECG are co-priority — time is myocardium.&quot;
+<a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a>
+<a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a>Agent Iteration 2 (after vitals + ECG results return):
+<a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a>  ► Activates: Check Medications
+<a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a>  ► Reasoning: &quot;Vitals confirm hemodynamic instability: shock index 1.25,
+<a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a>                hypotensive at 88/54. ECG shows ST-elevation in II, III,
+<a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a>                aVF — inferior STEMI pattern. Before initiating STEMI
+<a id="__codelineno-1-15" name="__codelineno-1-15" href="#__codelineno-1-15"></a>                protocol interventions, must check medication history
+<a id="__codelineno-1-16" name="__codelineno-1-16" href="#__codelineno-1-16"></a>                for contraindications (especially PDE5 inhibitors
+<a id="__codelineno-1-17" name="__codelineno-1-17" href="#__codelineno-1-17"></a>                before nitroglycerin, and anticoagulant status).&quot;
+<a id="__codelineno-1-18" name="__codelineno-1-18" href="#__codelineno-1-18"></a>
+<a id="__codelineno-1-19" name="__codelineno-1-19" href="#__codelineno-1-19"></a>Agent Iteration 3 (after medication check returns):
+<a id="__codelineno-1-20" name="__codelineno-1-20" href="#__codelineno-1-20"></a>  ► Activates: Match Treatment Protocol, Hospital Pre-Notification
+<a id="__codelineno-1-21" name="__codelineno-1-21" href="#__codelineno-1-21"></a>  ► Reasoning: &quot;Nitro contraindicated — patient took sildenafil 18hrs ago.
+<a id="__codelineno-1-22" name="__codelineno-1-22" href="#__codelineno-1-22"></a>                No other contraindications. Proceeding with modified STEMI
+<a id="__codelineno-1-23" name="__codelineno-1-23" href="#__codelineno-1-23"></a>                protocol (aspirin + heparin, hold nitro). Activating cath
+<a id="__codelineno-1-24" name="__codelineno-1-24" href="#__codelineno-1-24"></a>                lab pre-notification in parallel — door-to-balloon clock
+<a id="__codelineno-1-25" name="__codelineno-1-25" href="#__codelineno-1-25"></a>                starts when we notify.&quot;
+<a id="__codelineno-1-26" name="__codelineno-1-26" href="#__codelineno-1-26"></a>
+<a id="__codelineno-1-27" name="__codelineno-1-27" href="#__codelineno-1-27"></a>Agent Final Assessment:
+<a id="__codelineno-1-28" name="__codelineno-1-28" href="#__codelineno-1-28"></a>  ► Returns to orchestrator:
+<a id="__codelineno-1-29" name="__codelineno-1-29" href="#__codelineno-1-29"></a>    {
+<a id="__codelineno-1-30" name="__codelineno-1-30" href="#__codelineno-1-30"></a>      acuity_level: &quot;RED&quot;,
+<a id="__codelineno-1-31" name="__codelineno-1-31" href="#__codelineno-1-31"></a>      stemi_detected: true,
+<a id="__codelineno-1-32" name="__codelineno-1-32" href="#__codelineno-1-32"></a>      confidence_score: 0.93,
+<a id="__codelineno-1-33" name="__codelineno-1-33" href="#__codelineno-1-33"></a>      reasoning: &quot;Inferior STEMI confirmed (ST-elevation II, III, aVF).
+<a id="__codelineno-1-34" name="__codelineno-1-34" href="#__codelineno-1-34"></a>                  Hemodynamically unstable (SI 1.25, BP 88/54). Modified
+<a id="__codelineno-1-35" name="__codelineno-1-35" href="#__codelineno-1-35"></a>                  STEMI protocol — nitro held due to sildenafil. Aspirin
+<a id="__codelineno-1-36" name="__codelineno-1-36" href="#__codelineno-1-36"></a>                  324mg + heparin bolus administered. Cath lab activated
+<a id="__codelineno-1-37" name="__codelineno-1-37" href="#__codelineno-1-37"></a>                  at St. David&#39;s South, ETA 12 minutes. All clinical
+<a id="__codelineno-1-38" name="__codelineno-1-38" href="#__codelineno-1-38"></a>                  findings documented for receiving team.&quot;,
+<a id="__codelineno-1-39" name="__codelineno-1-39" href="#__codelineno-1-39"></a>      next_task: &quot;emergent_transport_with_continuous_monitoring&quot;,
+<a id="__codelineno-1-40" name="__codelineno-1-40" href="#__codelineno-1-40"></a>      tasks_executed: [&quot;assess-vitals&quot;, &quot;analyze-12lead-ecg&quot;,
+<a id="__codelineno-1-41" name="__codelineno-1-41" href="#__codelineno-1-41"></a>                       &quot;check-medications&quot;, &quot;match-protocol&quot;,
+<a id="__codelineno-1-42" name="__codelineno-1-42" href="#__codelineno-1-42"></a>                       &quot;hospital-prenotify&quot;]
+<a id="__codelineno-1-43" name="__codelineno-1-43" href="#__codelineno-1-43"></a>    }
+</code></pre></div>
+<h3 id="when-the-agent-escalates">When the Agent Escalates<a class="headerlink" href="#when-the-agent-escalates" title="Permanent link">&para;</a></h3>
+<p>Not all paths lead to autonomous completion. The BPMN model includes an <strong>Escalate to Medical Director</strong> user task that the agent can activate when:</p>
+<ul>
+<li>Confidence score remains below 0.8 after all clinical assessments</li>
+<li>Conflicting clinical signals (e.g., STEMI criteria met but atypical presentation suggesting STEMI mimic)</li>
+<li>Edge case exceeds standing order authority (pediatric cardiac emergency, requested intervention outside protocol)</li>
+<li>Patient condition changes rapidly and requires real-time physician guidance</li>
+</ul>
+<p>This is <strong>governance by design</strong> — the escalation path is modeled in the process, not buried in agent prompt engineering. In EMS, this maps directly to "online medical control" — the paramedic contacts the medical director for orders that exceed standing protocol authority. The agentic architecture makes this pattern explicit and auditable.</p>
+<hr />
+<h2 id="production-foundations">Production Foundations<a class="headerlink" href="#production-foundations" title="Permanent link">&para;</a></h2>
+<p>The agentic patterns described in this document are grounded in production experience building the systems they model.</p>
+<p>The <code>analyze-12lead-ecg</code> agent task models a real production pattern: a CNN-based model analyzing prehospital 12-lead ECG tracings to identify ST-elevation patterns before hospital arrival. This is what Huyen calls "online prediction" — inference that must happen in real-time, with latency budgets measured in seconds (<em>Designing Machine Learning Systems</em>, O'Reilly, 2022, Ch. 7). Panesar validates the clinical architecture: models that augment judgment rather than replace it, with human-in-the-loop escalation as a safety requirement (<em>Machine Learning and AI for Healthcare</em>, Apress, 2020, Ch. 8–10). Bohr &amp; Memarzadeh contextualize the regulatory framework — HIPAA/HITRUST compliance — that governs any clinical AI deployment (<em>Artificial Intelligence in Healthcare</em>, Academic Press, 2020).</p>
+<p>The triage assessment agent models the same class of system at the workflow level: ML-powered acuity classification routing patients to the appropriate level of care. Hopp &amp; Lovejoy provide the operations research foundation — queuing theory, triage categorization, and resource allocation under uncertainty — that underpins the probabilistic triage assessment (<em>Hospital Operations</em>, Pearson, 2012, Part III).</p>
+<p>Both patterns share an infrastructure requirement: the agentic workflow needs a <strong>sub-second data platform</strong> underneath it. An agent that takes 25 minutes to receive vital signs data cannot make time-critical triage decisions. Real-time streaming architectures — Kafka event streams feeding ML inference pipelines feeding agent decision loops — <em>create the infrastructure precondition</em> for these agentic patterns, all within clinically meaningful time windows.</p>
+<hr />
+<h2 id="oreilly-references">O'Reilly References<a class="headerlink" href="#oreilly-references" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Title</th>
+<th>Authors</th>
+<th>Year</th>
+<th>Link</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><em>Enterprise Process Orchestration</em></td>
+<td>Bernd Ruecker, Leon Strauch</td>
+<td>2025</td>
+<td><a href="https://learning.oreilly.com/library/view/-/9781394309672/">View</a></td>
+</tr>
+<tr>
+<td><em>Practical Process Automation</em></td>
+<td>Bernd Ruecker</td>
+<td>2021</td>
+<td><a href="https://learning.oreilly.com/library/view/-/9781492061441/">View</a></td>
+</tr>
+<tr>
+<td><em>Machine Learning and AI for Healthcare</em></td>
+<td>Arjun Panesar</td>
+<td>2020</td>
+<td><a href="https://learning.oreilly.com/library/view/-/9781484265376/">View</a></td>
+</tr>
+<tr>
+<td><em>Artificial Intelligence in Healthcare</em></td>
+<td>Adam Bohr, Kaveh Memarzadeh</td>
+<td>2020</td>
+<td><a href="https://learning.oreilly.com/library/view/-/9780128184394/">View</a></td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>Ruecker's two books are foundational for the Camunda-based orchestration layer. The healthcare titles ground the clinical AI patterns in a body of practice specific to the EMS and acute-care domain.</p>
+</blockquote>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://github.com/garysamuelson" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    </a>
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://linkedin.com/in/garysamuelson" target="_blank" rel="noopener" title="linkedin.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3M135.4 416H69V202.2h66.5V416zM102.2 96a38.5 38.5 0 1 1 0 77 38.5 38.5 0 1 1 0-77m282.1 320h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9z"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.expand", "navigation.top", "search.highlight", "search.suggest", "content.code.copy", "content.code.annotate"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+        <script src="https://unpkg.com/mermaid@11/dist/mermaid.min.js"></script>
+      
+    
+  </body>
+</html>
