@@ -73,15 +73,20 @@ markdown_extensions:
   - toc:
       permalink: true
 
+extra_javascript:
+  - https://unpkg.com/mermaid@11/dist/mermaid.min.js
+
 extra:
   social:
     - icon: fontawesome/brands/github
-      link: https://github.com/garyrsamuelson
+      link: https://github.com/garysamuelson
     - icon: fontawesome/brands/linkedin
-      link: https://linkedin.com/in/garyrsamuelson
+      link: https://linkedin.com/in/garysamuelson
 
 nav:
   - Home: index.md
   - Blog:
     - blog/index.md
+  - Agentic Systems:
+    - Agentic Agency & Workflows: agentic/agentic-agency-and-workflows.md
   - Tags: tags.md

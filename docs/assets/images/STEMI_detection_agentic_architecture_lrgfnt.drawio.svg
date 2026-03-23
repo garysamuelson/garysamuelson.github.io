@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 760" width="100%" font-family="Arial,Helvetica,sans-serif">
+  <defs>
+    <marker id="m-bl" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0,0 L10,5 L0,10 Z" fill="#1565C0"/></marker>
+    <marker id="m-gr" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0,0 L10,5 L0,10 Z" fill="#2E7D32"/></marker>
+    <marker id="m-pu" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0,0 L10,5 L0,10 Z" fill="#7B1FA2"/></marker>
+    <marker id="m-re" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0,0 L10,5 L0,10 Z" fill="#C62828"/></marker>
+    <marker id="m-or" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0,0 L10,5 L0,10 Z" fill="#F57F17"/></marker>
+    <marker id="m-eo" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0,0 L10,5 L0,10 Z" fill="#E64A19"/></marker>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1400" height="760" fill="#FAFAFA"/>
+
+  <!-- TITLE -->
+  <text x="700" y="35" text-anchor="middle" font-size="22" font-weight="bold" fill="#333333">EMS Agentic Triage &amp; Care Coordination Architecture</text>
+
+  <!-- ================================================================= -->
+  <!-- LAYER 1: BUSINESS LAYER                                            -->
+  <!-- ================================================================= -->
+  <rect x="40" y="55" width="1320" height="130" rx="8" fill="#E3F2FD" stroke="#1565C0" stroke-width="2"/>
+  <text x="700" y="80" text-anchor="middle" font-size="18" font-weight="bold" fill="#0D47A1">Business Layer &#8212; BPMN Process Model</text>
+
+  <!-- 911 Dispatch -->
+  <ellipse cx="110" cy="132" rx="50" ry="32" fill="#1565C0" stroke="#0D47A1" stroke-width="2"/>
+  <text x="110" y="128" text-anchor="middle" font-size="13" font-weight="bold" fill="#FFFFFF">911</text>
+  <text x="110" y="144" text-anchor="middle" font-size="13" font-weight="bold" fill="#FFFFFF">Dispatch</text>
+
+  <!-- Protocol Floor -->
+  <rect x="200" y="97" width="170" height="70" rx="6" fill="#E8EAF6" stroke="#283593" stroke-width="2"/>
+  <text x="285" y="125" text-anchor="middle" font-size="14" font-weight="bold" fill="#1A237E">Protocol Floor</text>
+  <text x="285" y="145" text-anchor="middle" font-size="12" font-style="italic" fill="#1A237E">Deterministic Gate</text>
+
+  <!-- Gateway 1 -->
+  <polygon points="432,100 460,128 432,155 405,128" fill="#C5CAE9" stroke="#283593" stroke-width="2"/>
+  <text x="432" y="133" text-anchor="middle" font-size="16" font-weight="bold" fill="#1A237E">?</text>
+
+  <!-- Agentic Triage Zone -->
+  <rect x="500" y="90" width="340" height="75" rx="8" fill="#FFF3E0" stroke="#E65100" stroke-width="3" stroke-dasharray="8 4"/>
+  <text x="670" y="134" text-anchor="middle" font-size="16" font-weight="bold" fill="#E65100">AGENTIC TRIAGE ZONE</text>
+
+  <!-- Gateway 2 -->
+  <polygon points="912,100 940,128 912,155 885,128" fill="#C5CAE9" stroke="#283593" stroke-width="2"/>
+  <text x="912" y="133" text-anchor="middle" font-size="16" font-weight="bold" fill="#1A237E">?</text>
+
+  <!-- Routine Transport -->
+  <ellipse cx="1045" cy="102" rx="55" ry="27" fill="#2E7D32" stroke="#1B5E20" stroke-width="2"/>
+  <text x="1045" y="97" text-anchor="middle" font-size="13" font-weight="bold" fill="#FFFFFF">Routine</text>
+  <text x="1045" y="113" text-anchor="middle" font-size="13" font-weight="bold" fill="#FFFFFF">Transport</text>
+
+  <!-- Cath Lab Activation -->
+  <ellipse cx="1045" cy="162" rx="55" ry="27" fill="#C62828" stroke="#B71C1C" stroke-width="2"/>
+  <text x="1045" y="157" text-anchor="middle" font-size="13" font-weight="bold" fill="#FFFFFF">Cath Lab</text>
+  <text x="1045" y="173" text-anchor="middle" font-size="13" font-weight="bold" fill="#FFFFFF">Activation</text>
+
+  <!-- ALS Intercept -->
+  <ellipse cx="1190" cy="122" rx="50" ry="27" fill="#FF8F00" stroke="#E65100" stroke-width="2"/>
+  <text x="1190" y="118" text-anchor="middle" font-size="13" font-weight="bold" fill="#FFFFFF">ALS</text>
+  <text x="1190" y="133" text-anchor="middle" font-size="13" font-weight="bold" fill="#FFFFFF">Intercept</text>
+
+  <!-- Business flow arrows -->
+  <line x1="160" y1="132" x2="200" y2="132" stroke="#1565C0" stroke-width="2" marker-end="url(#m-bl)"/>
+  <line x1="370" y1="132" x2="405" y2="128" stroke="#1565C0" stroke-width="2" marker-end="url(#m-bl)"/>
+  <line x1="460" y1="128" x2="500" y2="128" stroke="#2E7D32" stroke-width="2" marker-end="url(#m-gr)"/>
+  <line x1="840" y1="128" x2="885" y2="128" stroke="#E64A19" stroke-width="2" marker-end="url(#m-eo)"/>
+  <line x1="940" y1="115" x2="990" y2="102" stroke="#2E7D32" stroke-width="2" marker-end="url(#m-gr)"/>
+  <line x1="940" y1="141" x2="990" y2="155" stroke="#C62828" stroke-width="2" marker-end="url(#m-re)"/>
+  <path d="M912,155 Q912,175 1000,175 Q1100,175 1140,135" fill="none" stroke="#FF8F00" stroke-width="2" marker-end="url(#m-or)"/>
+
+  <!-- ================================================================= -->
+  <!-- LAYER 2: ORCHESTRATION LAYER                                       -->
+  <!-- ================================================================= -->
+  <rect x="40" y="200" width="1320" height="130" rx="8" fill="#F3E5F5" stroke="#7B1FA2" stroke-width="2"/>
+  <text x="700" y="225" text-anchor="middle" font-size="18" font-weight="bold" fill="#4A148C">Orchestration Layer &#8212; Camunda 8 Zeebe</text>
+
+  <!-- Zeebe Engine -->
+  <rect x="60" y="240" width="300" height="75" rx="6" fill="#AB47BC" stroke="#7B1FA2" stroke-width="2"/>
+  <text x="210" y="265" text-anchor="middle" font-size="16" font-weight="bold" fill="#FFFFFF">Zeebe Engine</text>
+  <text x="210" y="285" text-anchor="middle" font-size="13" fill="#FFFFFF">Patient State | Job Distribution</text>
+  <text x="210" y="303" text-anchor="middle" font-size="13" fill="#FFFFFF">Clinical Audit Trail</text>
+
+  <!-- Completion Condition -->
+  <rect x="420" y="240" width="250" height="70" rx="6" fill="#F3E5F5" stroke="#7B1FA2" stroke-width="2" stroke-dasharray="6 3"/>
+  <text x="545" y="264" text-anchor="middle" font-size="14" font-weight="bold" fill="#4A148C">Completion Condition</text>
+  <text x="545" y="283" text-anchor="middle" font-size="12" fill="#4A148C">acuity_level != null</text>
+  <text x="545" y="300" text-anchor="middle" font-size="12" fill="#4A148C">AND confidence &#8805; 0.8</text>
+
+  <!-- Job Types -->
+  <rect x="730" y="235" width="290" height="80" rx="6" fill="#CE93D8" stroke="#7B1FA2" stroke-width="1"/>
+  <text x="875" y="258" text-anchor="middle" font-size="14" font-weight="bold" fill="#4A148C">Job Types</text>
+  <text x="875" y="278" text-anchor="middle" font-size="12" fill="#4A148C">assess-vitals | analyze-12lead-ecg</text>
+  <text x="875" y="296" text-anchor="middle" font-size="12" fill="#4A148C">check-medications | match-protocol</text>
+  <text x="875" y="310" text-anchor="middle" font-size="12" fill="#4A148C">hospital-prenotify</text>
+
+  <!-- Operate UI -->
+  <rect x="1080" y="248" width="150" height="50" rx="6" fill="#E1BEE7" stroke="#7B1FA2" stroke-width="1"/>
+  <text x="1155" y="270" text-anchor="middle" font-size="13" font-weight="bold" fill="#4A148C">Operate UI</text>
+  <text x="1155" y="288" text-anchor="middle" font-size="11" fill="#4A148C">Audit Trail</text>
+
+  <!-- ================================================================= -->
+  <!-- LAYER 3: INTELLIGENCE LAYER                                        -->
+  <!-- ================================================================= -->
+  <rect x="40" y="350" width="1320" height="200" rx="8" fill="#E8F5E9" stroke="#2E7D32" stroke-width="2"/>
+  <text x="700" y="375" text-anchor="middle" font-size="18" font-weight="bold" fill="#1B5E20">Intelligence Layer &#8212; Python AI Agents</text>
+
+  <!-- Triage Assessment Agent (orchestrator) -->
+  <rect x="60" y="395" width="220" height="125" rx="6" fill="#2E7D32" stroke="#1B5E20" stroke-width="2"/>
+  <text x="170" y="422" text-anchor="middle" font-size="16" font-weight="bold" fill="#FFFFFF">Triage Assessment</text>
+  <text x="170" y="442" text-anchor="middle" font-size="16" font-weight="bold" fill="#FFFFFF">Agent</text>
+  <text x="170" y="470" text-anchor="middle" font-size="12" fill="#FFFFFF">Decides task order</text>
+  <text x="170" y="487" text-anchor="middle" font-size="12" fill="#FFFFFF">Reviews results</text>
+  <text x="170" y="504" text-anchor="middle" font-size="12" fill="#FFFFFF">Returns acuity + reasoning</text>
+
+  <!-- Vitals Analyzer -->
+  <rect x="330" y="395" width="140" height="65" rx="6" fill="#66BB6A" stroke="#2E7D32" stroke-width="2"/>
+  <text x="400" y="423" text-anchor="middle" font-size="14" font-weight="bold" fill="#FFFFFF">Vitals</text>
+  <text x="400" y="443" text-anchor="middle" font-size="14" font-weight="bold" fill="#FFFFFF">Analyzer</text>
+
+  <!-- 12-Lead ECG Analyzer -->
+  <rect x="510" y="395" width="150" height="65" rx="6" fill="#66BB6A" stroke="#2E7D32" stroke-width="2"/>
+  <text x="585" y="418" text-anchor="middle" font-size="14" font-weight="bold" fill="#FFFFFF">12-Lead ECG</text>
+  <text x="585" y="438" text-anchor="middle" font-size="14" font-weight="bold" fill="#FFFFFF">Analyzer</text>
+  <text x="585" y="454" text-anchor="middle" font-size="11" fill="#FFFFFF">CNN + LLM</text>
+
+  <!-- Medication Checker -->
+  <rect x="700" y="395" width="140" height="65" rx="6" fill="#66BB6A" stroke="#2E7D32" stroke-width="2"/>
+  <text x="770" y="423" text-anchor="middle" font-size="14" font-weight="bold" fill="#FFFFFF">Medication</text>
+  <text x="770" y="443" text-anchor="middle" font-size="14" font-weight="bold" fill="#FFFFFF">Checker</text>
+
+  <!-- Protocol Matcher -->
+  <rect x="880" y="395" width="140" height="65" rx="6" fill="#66BB6A" stroke="#2E7D32" stroke-width="2"/>
+  <text x="950" y="423" text-anchor="middle" font-size="14" font-weight="bold" fill="#FFFFFF">Protocol</text>
+  <text x="950" y="443" text-anchor="middle" font-size="14" font-weight="bold" fill="#FFFFFF">Matcher</text>
+
+  <!-- Medical Director Escalation -->
+  <rect x="1070" y="400" width="170" height="55" rx="6" fill="#FFAB91" stroke="#E64A19" stroke-width="2"/>
+  <text x="1155" y="424" text-anchor="middle" font-size="14" font-weight="bold" fill="#BF360C">Medical Director</text>
+  <text x="1155" y="444" text-anchor="middle" font-size="11" fill="#BF360C">Escalation Path</text>
+
+  <!-- Three-Return Contract -->
+  <rect x="330" y="490" width="340" height="40" rx="6" fill="#C8E6C9" stroke="#2E7D32" stroke-width="2" stroke-dasharray="6 3"/>
+  <text x="500" y="507" text-anchor="middle" font-size="13" font-weight="bold" fill="#1B5E20">Three-Return Contract</text>
+  <text x="500" y="523" text-anchor="middle" font-size="12" fill="#1B5E20">results + reasoning + next_task_rec</text>
+
+  <!-- Agent orchestrator to task agents arrows -->
+  <line x1="280" y1="422" x2="330" y2="427" stroke="#2E7D32" stroke-width="2" marker-end="url(#m-gr)"/>
+  <line x1="280" y1="440" x2="510" y2="427" stroke="#2E7D32" stroke-width="2" stroke-dasharray="6 3" marker-end="url(#m-gr)"/>
+  <line x1="280" y1="457" x2="700" y2="427" stroke="#2E7D32" stroke-width="2" stroke-dasharray="6 3" marker-end="url(#m-gr)"/>
+  <line x1="280" y1="474" x2="880" y2="427" stroke="#2E7D32" stroke-width="2" stroke-dasharray="6 3" marker-end="url(#m-gr)"/>
+  <!-- Escalation arrow -->
+  <path d="M280,490 L310,490 Q320,490 320,480 L320,460 Q320,428 1050,428 L1070,428" fill="none" stroke="#E64A19" stroke-width="2" stroke-dasharray="4 4" marker-end="url(#m-eo)"/>
+
+  <!-- gRPC connection: Orchestration to Intelligence -->
+  <line x1="210" y1="315" x2="170" y2="395" stroke="#7B1FA2" stroke-width="3" marker-end="url(#m-pu)"/>
+  <text x="165" y="358" font-size="11" font-weight="bold" fill="#7B1FA2">gRPC</text>
+
+  <!-- Return connection: Intelligence to Orchestration -->
+  <line x1="120" y1="395" x2="150" y2="315" stroke="#C62828" stroke-width="3" marker-end="url(#m-re)"/>
+  <text x="100" y="358" font-size="11" font-weight="bold" fill="#C62828">returns</text>
+
+  <!-- ================================================================= -->
+  <!-- LAYER 4: KNOWLEDGE LAYER                                           -->
+  <!-- ================================================================= -->
+  <rect x="40" y="570" width="1320" height="110" rx="8" fill="#FFF8E1" stroke="#F57F17" stroke-width="2"/>
+  <text x="700" y="595" text-anchor="middle" font-size="18" font-weight="bold" fill="#E65100">Knowledge Layer &#8212; RAG Vector Stores</text>
+
+  <!-- Vector store boxes -->
+  <rect x="80" y="610" width="170" height="50" rx="6" fill="#FFE082" stroke="#F57F17" stroke-width="1"/>
+  <text x="165" y="640" text-anchor="middle" font-size="13" font-weight="bold" fill="#E65100">EMS Protocols</text>
+
+  <rect x="310" y="610" width="170" height="50" rx="6" fill="#FFE082" stroke="#F57F17" stroke-width="1"/>
+  <text x="395" y="631" text-anchor="middle" font-size="13" font-weight="bold" fill="#E65100">Cardiology</text>
+  <text x="395" y="649" text-anchor="middle" font-size="13" font-weight="bold" fill="#E65100">Guidelines</text>
+
+  <rect x="540" y="610" width="170" height="50" rx="6" fill="#FFE082" stroke="#F57F17" stroke-width="1"/>
+  <text x="625" y="631" text-anchor="middle" font-size="13" font-weight="bold" fill="#E65100">Drug</text>
+  <text x="625" y="649" text-anchor="middle" font-size="13" font-weight="bold" fill="#E65100">Interactions</text>
+
+  <rect x="770" y="610" width="170" height="50" rx="6" fill="#FFE082" stroke="#F57F17" stroke-width="1"/>
+  <text x="855" y="631" text-anchor="middle" font-size="13" font-weight="bold" fill="#E65100">Treatment</text>
+  <text x="855" y="649" text-anchor="middle" font-size="13" font-weight="bold" fill="#E65100">Protocols</text>
+
+  <!-- ChromaDB label -->
+  <rect x="1000" y="608" width="310" height="55" rx="6" fill="#FFF8E1" stroke="none"/>
+  <text x="1155" y="630" text-anchor="middle" font-size="13" font-weight="bold" fill="#BF360C">ChromaDB / Pinecone</text>
+  <text x="1155" y="650" text-anchor="middle" font-size="11" fill="#BF360C">Each agent queries its collection at task time</text>
+
+  <!-- RAG dotted connections -->
+  <line x1="400" y1="460" x2="165" y2="610" stroke="#F57F17" stroke-width="1" stroke-dasharray="4 4" marker-end="url(#m-or)"/>
+  <line x1="585" y1="460" x2="395" y2="610" stroke="#F57F17" stroke-width="1" stroke-dasharray="4 4" marker-end="url(#m-or)"/>
+  <line x1="770" y1="460" x2="625" y2="610" stroke="#F57F17" stroke-width="1" stroke-dasharray="4 4" marker-end="url(#m-or)"/>
+  <line x1="950" y1="460" x2="855" y2="610" stroke="#F57F17" stroke-width="1" stroke-dasharray="4 4" marker-end="url(#m-or)"/>
+
+  <!-- ================================================================= -->
+  <!-- LEGEND                                                              -->
+  <!-- ================================================================= -->
+  <rect x="40" y="700" width="1320" height="45" rx="6" fill="#FAFAFA" stroke="#9E9E9E" stroke-width="1"/>
+  <text x="700" y="727" text-anchor="middle" font-size="12" fill="#616161">
+    <tspan fill="#7B1FA2" font-weight="bold">&#9473;&#9473;</tspan> gRPC
+    <tspan dx="20" fill="#2E7D32" font-weight="bold">&#9472; &#9472;</tspan> Agent activates task
+    <tspan dx="20" fill="#C62828" font-weight="bold">&#9473;&#9473;</tspan> Returns results
+    <tspan dx="20" fill="#F57F17" font-weight="bold">&#183;&#183; &#183;&#183;</tspan> RAG retrieval
+    <tspan dx="20" fill="#E64A19" font-weight="bold">&#9472; &#9472;</tspan> Escalation
+  </text>
+
+</svg>
