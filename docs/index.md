@@ -7,7 +7,7 @@ the intersection of **Semantic AI**, **Knowledge Graphs**, and **Agentic Systems
 
 ## Featured
 
-<a href="agentic/agentic-agency-and-workflows.md">
+<a href="agentic/agentic-agency-and-workflows/">
   <img src="assets/images/STEMI_detection_linkedin.png" alt="STEMI Detection — Agentic Architecture" style="width:100%; border-radius:8px; margin-bottom:1rem;" />
 </a>
 
