@@ -90,4 +90,5 @@ nav:
     - blog/index.md
   - Agentic Systems:
     - Agentic Agency & Workflows: agentic/agentic-agency-and-workflows.md
+    - Architecture Patterns: agentic/architecture-patterns.md
   - Tags: tags.md
