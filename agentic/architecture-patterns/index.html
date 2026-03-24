@@ -1,0 +1,1805 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Research and insights on Semantic AI, Knowledge Graphs, Agentic Systems, and Enterprise Architecture by Gary Samuelson.">
+      
+      
+        <meta name="author" content="Gary Samuelson">
+      
+      
+        <link rel="canonical" href="https://garysamuelson.github.io/agentic/architecture-patterns/">
+      
+      
+        <link rel="prev" href="../agentic-agency-and-workflows/">
+      
+      
+        <link rel="next" href="../../tags/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>AI Agent Architecture Patterns: Scaling from Single Agent to Multi-Agent Orchestration - Gary Samuelson — AI & Architecture Research</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#ai-agent-architecture-patterns-scaling-from-single-agent-to-multi-agent-orchestration" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Gary Samuelson — AI &amp; Architecture Research" class="md-header__button md-logo" aria-label="Gary Samuelson — AI & Architecture Research" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Gary Samuelson — AI & Architecture Research
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              AI Agent Architecture Patterns: Scaling from Single Agent to Multi-Agent Orchestration
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/garysamuelson/garysamuelson.github.io" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    garysamuelson/garysamuelson.github.io
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../blog/" class="md-tabs__link">
+          
+  
+  
+  Blog
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../agentic-agency-and-workflows/" class="md-tabs__link">
+          
+  
+  
+  Agentic Systems
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../tags/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Tags
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Gary Samuelson — AI &amp; Architecture Research" class="md-nav__button md-logo" aria-label="Gary Samuelson — AI & Architecture Research" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Gary Samuelson — AI & Architecture Research
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/garysamuelson/garysamuelson.github.io" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    garysamuelson/garysamuelson.github.io
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Blog
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Blog
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../blog/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Blog
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Archive
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Agentic Systems
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Agentic Systems
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../agentic-agency-and-workflows/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Agentic Agency & Workflows
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Architecture Patterns
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Architecture Patterns
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#the-architecture-landscape" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Architecture Landscape
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-five-architecture-patterns" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Five Architecture Patterns
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="The Five Architecture Patterns">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#pattern-1-single-agent" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Pattern 1 — Single Agent
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pattern-2-sequential-workflow" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Pattern 2 — Sequential Workflow
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pattern-3-parallel-workflow" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Pattern 3 — Parallel Workflow
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pattern-4-hierarchical-supervisory-multi-agent" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Pattern 4 — Hierarchical / Supervisory Multi-Agent
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pattern-5-evaluator-optimizer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Pattern 5 — Evaluator-Optimizer
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-three-return-contract-across-patterns" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Three-Return Contract Across Patterns
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pattern-selection-framework" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Pattern Selection Framework
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Pattern Selection Framework">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#question-1-what-level-of-control-do-you-need" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Question 1: What level of control do you need?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#question-2-how-complex-is-your-problem-domain" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Question 2: How complex is your problem domain?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#question-3-what-are-your-resource-constraints" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Question 3: What are your resource constraints?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#question-4-do-you-need-deep-domain-expertise" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Question 4: Do you need deep domain expertise?
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#illustrative-example-customer-support-ticket-resolution-architecture-evolution" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Illustrative Example: Customer Support Ticket Resolution — Architecture Evolution
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Illustrative Example: Customer Support Ticket Resolution — Architecture Evolution">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-scenario" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Scenario
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#why-this-domain" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Why This Domain?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#phase-1-single-agent-first-90-days" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase 1: Single Agent (First 90 Days)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#phase-2-sequential-workflow-months-46" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase 2: Sequential Workflow (Months 4–6)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#phase-3-parallel-workflow-months-79" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase 3: Parallel Workflow (Months 7–9)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#phase-4-hierarchical-multi-agent-months-1012" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase 4: Hierarchical Multi-Agent (Months 10–12)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#phase-5-production-maturity" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase 5: Production Maturity
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#production-foundations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Production Foundations
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#references" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        References
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tags/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tags
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#the-architecture-landscape" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Architecture Landscape
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-five-architecture-patterns" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Five Architecture Patterns
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="The Five Architecture Patterns">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#pattern-1-single-agent" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Pattern 1 — Single Agent
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pattern-2-sequential-workflow" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Pattern 2 — Sequential Workflow
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pattern-3-parallel-workflow" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Pattern 3 — Parallel Workflow
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pattern-4-hierarchical-supervisory-multi-agent" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Pattern 4 — Hierarchical / Supervisory Multi-Agent
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pattern-5-evaluator-optimizer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Pattern 5 — Evaluator-Optimizer
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-three-return-contract-across-patterns" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Three-Return Contract Across Patterns
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pattern-selection-framework" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Pattern Selection Framework
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Pattern Selection Framework">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#question-1-what-level-of-control-do-you-need" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Question 1: What level of control do you need?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#question-2-how-complex-is-your-problem-domain" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Question 2: How complex is your problem domain?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#question-3-what-are-your-resource-constraints" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Question 3: What are your resource constraints?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#question-4-do-you-need-deep-domain-expertise" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Question 4: Do you need deep domain expertise?
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#illustrative-example-customer-support-ticket-resolution-architecture-evolution" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Illustrative Example: Customer Support Ticket Resolution — Architecture Evolution
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Illustrative Example: Customer Support Ticket Resolution — Architecture Evolution">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-scenario" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Scenario
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#why-this-domain" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Why This Domain?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#phase-1-single-agent-first-90-days" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase 1: Single Agent (First 90 Days)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#phase-2-sequential-workflow-months-46" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase 2: Sequential Workflow (Months 4–6)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#phase-3-parallel-workflow-months-79" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase 3: Parallel Workflow (Months 7–9)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#phase-4-hierarchical-multi-agent-months-1012" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase 4: Hierarchical Multi-Agent (Months 10–12)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#phase-5-production-maturity" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase 5: Production Maturity
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#production-foundations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Production Foundations
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#references" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        References
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  <nav class="md-tags" >
+    
+      
+      
+      
+      
+        <a href="../../tags/#tag:agentic-ai" class="md-tag">Agentic AI</a>
+      
+    
+      
+      
+      
+      
+        <a href="../../tags/#tag:architecture-patterns" class="md-tag">Architecture Patterns</a>
+      
+    
+      
+      
+      
+      
+        <a href="../../tags/#tag:deterministic-guardrails" class="md-tag">Deterministic Guardrails</a>
+      
+    
+      
+      
+      
+      
+        <a href="../../tags/#tag:enterprise-architecture" class="md-tag">Enterprise Architecture</a>
+      
+    
+      
+      
+      
+      
+        <a href="../../tags/#tag:llm" class="md-tag">LLM</a>
+      
+    
+      
+      
+      
+      
+        <a href="../../tags/#tag:multi-agent-systems" class="md-tag">Multi-Agent Systems</a>
+      
+    
+  </nav>
+
+
+  
+  
+
+
+<h1 id="ai-agent-architecture-patterns-scaling-from-single-agent-to-multi-agent-orchestration">AI Agent Architecture Patterns: Scaling from Single Agent to Multi-Agent Orchestration<a class="headerlink" href="#ai-agent-architecture-patterns-scaling-from-single-agent-to-multi-agent-orchestration" title="Permanent link">&para;</a></h1>
+<p><img alt="Architecture Evolution — Single Agent to Production Hybrid" src="../../assets/images/architecture_evolution.drawio.svg" /></p>
+<p><strong>Author:</strong> Gary Samuelson
+<strong>Date:</strong> July 2025
+<strong>Status:</strong> Living Document — Architecture Pattern Synthesis
+<strong>Blog:</strong> <a href="https://garysamuelson.github.io">garysamuelson.github.io</a>
+<strong>Source Material:</strong> Anthropic, <em>Building Effective AI Agents: Architecture Patterns and Implementation Frameworks</em> (2025)</p>
+<hr />
+<h2 id="the-architecture-landscape">The Architecture Landscape<a class="headerlink" href="#the-architecture-landscape" title="Permanent link">&para;</a></h2>
+<p>Before diving into individual patterns, look at the decision flow. The diagram below models the architecture selection process — from an initial business requirement through a structured evaluation to a recommended pattern. Everything discussed in this document maps back to what you see here.</p>
+<p><img alt="Architecture Pattern Selection — Decision Flow" src="../../assets/images/architecture_pattern_selection.drawio.svg" /></p>
+<p>Reading left to right: the process starts at <strong>New Agent Initiative</strong>, passes through three evaluation gates — <strong>Control Requirements</strong>, <strong>Domain Complexity</strong>, and <strong>Resource Constraints</strong> — each producing a structured assessment. These evaluations feed a <strong>Pattern Selection Gateway</strong> that routes to one of five architecture patterns: <strong>Single Agent</strong>, <strong>Sequential Workflow</strong>, <strong>Parallel Workflow</strong>, <strong>Hierarchical Multi-Agent</strong>, or <strong>Evaluator-Optimizer</strong>. A final <strong>Hybrid Assessment</strong> determines whether the selected pattern should combine with others for production deployment.</p>
+<p>The patterns that follow — five distinct architectures, plus a decision framework for choosing among them — are drawn from Anthropic's whitepaper and placed into a deterministic orchestration context that connects them to the BPMN governance and three-return contract patterns introduced in the <a href="../agentic-agency-and-workflows/">companion EMS document</a>.</p>
+<hr />
+<h2 id="the-five-architecture-patterns">The Five Architecture Patterns<a class="headerlink" href="#the-five-architecture-patterns" title="Permanent link">&para;</a></h2>
+<p>Anthropic's whitepaper identifies a progression of architecture patterns, from the simplest single-agent system to sophisticated multi-agent orchestration. The critical insight is not which pattern is "best" — it is that <strong>the right pattern matches technical complexity to business value</strong>. Over-engineering increases cost without proportional return; under-engineering fails under real-world load.</p>
+<h3 id="pattern-1-single-agent">Pattern 1 — Single Agent<a class="headerlink" href="#pattern-1-single-agent" title="Permanent link">&para;</a></h3>
+<p>A single AI model with access to tools, skills, and a defined prompt scope. The agent reasons autonomously, selects tools, and iterates until the task is complete.</p>
+<p><strong>Architecture components:</strong></p>
+<ul>
+<li>One AI model as the reasoning engine</li>
+<li>A prompt defining the agent's role and capabilities</li>
+<li>A toolkit of integrations (APIs, databases, search)</li>
+<li>Optional Agent Skills for domain-specific expertise</li>
+</ul>
+<p><strong>When to use:</strong> Open-ended problems where the solution path is not predetermined. Customer service for well-defined product categories. Document processing with clear business rules. Code review and routine analysis.</p>
+<p><strong>When to avoid:</strong> When you need perfect accuracy on every request, or when complexity spans multiple domains that would overwhelm a single agent's context.</p>
+<p><strong>Production example:</strong> Augment Code deploys a single-agent system on Google Cloud's Vertex AI that helps developers navigate complex codebases with millions of interdependent lines. One enterprise customer completed a project in two weeks that their CTO estimated would take four to eight months (Anthropic, 2025, p. 7).</p>
+<hr />
+<h3 id="pattern-2-sequential-workflow">Pattern 2 — Sequential Workflow<a class="headerlink" href="#pattern-2-sequential-workflow" title="Permanent link">&para;</a></h3>
+<p>Multiple agents arranged in a predetermined control flow with defined execution paths. Each agent completes its task and hands off to the next. This is the closest pattern to a traditional BPMN sequence flow — and the most natural fit for deterministic orchestration.</p>
+<p><strong>Architecture components:</strong></p>
+<ul>
+<li>Ordered chain of specialized agents</li>
+<li>Software-defined or AI-driven decision points between stages</li>
+<li>Clear audit trail through each stage transition</li>
+</ul>
+<p><strong>When to use:</strong> Multi-step approval processes. Content creation pipelines (draft → review → publish). Data transformation and validation. Compliance checking with multiple criteria. Any process where tasks have clear linear dependencies.</p>
+<p><strong>When to avoid:</strong> When agents need to collaborate rather than hand off, when the workflow requires backtracking or iteration, or when a single agent can handle all stages effectively.</p>
+<p><strong>BPMN connection:</strong> Sequential workflows map directly onto BPMN sequence flows with exclusive gateways at decision points. Each agent becomes a service task; each handoff becomes a sequence flow. The orchestration engine (Camunda Zeebe) manages state transitions and provides the audit trail. This is <strong>the same deterministic spine</strong> described in the EMS architecture — the business layer owns the <em>what</em> and <em>when</em>, individual agents own the <em>why</em>.</p>
+<hr />
+<h3 id="pattern-3-parallel-workflow">Pattern 3 — Parallel Workflow<a class="headerlink" href="#pattern-3-parallel-workflow" title="Permanent link">&para;</a></h3>
+<p>Independent tasks distributed across multiple agents simultaneously, with results merged or processed concurrently. This resembles the fan-out/fan-in cloud design pattern.</p>
+<p><strong>Architecture components:</strong></p>
+<ul>
+<li>Multiple agents operating simultaneously on the same input or independent subtasks</li>
+<li>An aggregation layer that collects, weights, and synthesizes results</li>
+<li>Optional voting or consensus mechanisms</li>
+</ul>
+<p><strong>When to use:</strong> When multiple perspectives improve quality. When independent analyses can run simultaneously. When speed matters more than coordination overhead. Risk assessment requiring diverse viewpoints. Guardrail architectures where one model processes queries while another screens for inappropriate content.</p>
+<p><strong>When to avoid:</strong> When agents need to build on each other's work or require cumulative context. When shared-state coordination is unreliable. When result aggregation logic is too complex.</p>
+<p><strong>BPMN connection:</strong> Parallel workflows map onto BPMN parallel gateways — fork to multiple service tasks, join when all complete. The aggregation layer is a service task after the joining gateway. This is also the pattern inside a BPMN <strong>ad-hoc subprocess</strong>: the tasks within the EMS Clinical Triage Zone run in parallel because they have no sequence-flow connections — the orchestrating agent activates them based on clinical need, and results converge through the three-return contract.</p>
+<hr />
+<h3 id="pattern-4-hierarchical-supervisory-multi-agent">Pattern 4 — Hierarchical / Supervisory Multi-Agent<a class="headerlink" href="#pattern-4-hierarchical-supervisory-multi-agent" title="Permanent link">&para;</a></h3>
+<p>A central controller coordinates multiple role-specific agents through intelligent task delegation. A supervisor agent analyzes incoming requests, routes them to appropriate specialists, and synthesizes responses.</p>
+<p><strong>Architecture components:</strong></p>
+<ul>
+<li>Supervisor agent with oversight and delegation authority</li>
+<li>Specialist agents treated as tools invokable by the supervisor</li>
+<li>Communication via direct invocation or shared memory / message queues</li>
+<li>Agent Skills distributed to create deep specialization</li>
+</ul>
+<p><strong>When to use:</strong> Complex problem-solving requiring diverse expertise. Dynamic customer interactions spanning multiple systems. Research and analysis projects across multiple domains. Strategic planning and decision support. Anthropic's internal research shows multi-agent systems outperform single-agent systems by <strong>90.2%</strong> on complex tasks requiring pursuit of multiple independent directions simultaneously (Anthropic, 2025, p. 14).</p>
+<p><strong>When to avoid:</strong> When token costs are a binding constraint (multi-agent systems consume roughly 10–15× more tokens than single agents). When a single agent with specialized skills can achieve the required accuracy.</p>
+<p><strong>Key challenge — Context management:</strong> The supervisor must maintain coherent understanding across all specialist outputs without exceeding context limits. Subagents can have their own subagents, with groups abstracted from the supervisor — it only interacts with team leaders and remains unaware of further delegation.</p>
+<p><strong>BPMN connection:</strong> This maps onto BPMN call activities and sub-processes. The supervisor is the parent process; each specialist is a called sub-process with its own internal logic. The parent manages correlation and state, specialists return structured results. In the three-layer architecture, the Business Layer declares which specialists exist and under what conditions the supervisor engages them — the Intelligence Layer provides the reasoning.</p>
+<hr />
+<h3 id="pattern-5-evaluator-optimizer">Pattern 5 — Evaluator-Optimizer<a class="headerlink" href="#pattern-5-evaluator-optimizer" title="Permanent link">&para;</a></h3>
+<p>Two AI systems in iterative cycles: one generates content, another evaluates and provides feedback, repeating until quality standards are met. This resembles a writer-editor collaboration.</p>
+<p><strong>Architecture components:</strong></p>
+<ul>
+<li>Generator agent that creates initial responses and incorporates feedback</li>
+<li>Evaluator agent that assesses against predefined criteria and provides actionable guidance</li>
+<li>Iteration control with defined quality thresholds and maximum cycle counts</li>
+</ul>
+<p><strong>When to use:</strong> When clear evaluation criteria exist and iterative refinement provides demonstrable value. Content creation requiring nuance (literary translation, professional communications). Code generation with security requirements. Research tasks needing multi-step reasoning with validation. Typically runs two to four cycles.</p>
+<p><strong>When to avoid:</strong> When first-attempt quality already meets requirements. When evaluation criteria are subjective or unclear. When time and cost constraints outweigh quality improvements. Real-time applications requiring immediate responses.</p>
+<p><strong>BPMN connection:</strong> This maps onto a BPMN loop activity or an event-based subprocess with a conditional boundary event. The loop repeats until the evaluator's quality score meets the threshold — the same completion condition pattern as the EMS ad-hoc subprocess, where the process cannot exit until confidence ≥ 0.8.</p>
+<hr />
+<h2 id="the-three-return-contract-across-patterns">The Three-Return Contract Across Patterns<a class="headerlink" href="#the-three-return-contract-across-patterns" title="Permanent link">&para;</a></h2>
+<p>Regardless of which architecture pattern is selected, every agent in a production system should return the same structured output. This is the <strong>three-return contract</strong> introduced in the <a href="../agentic-agency-and-workflows/">EMS document</a>:</p>
+<table>
+<thead>
+<tr>
+<th>Return Component</th>
+<th>Purpose</th>
+<th>Consumer</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Results</strong></td>
+<td>Machine-ingestible data for the orchestrator</td>
+<td>Orchestration engine</td>
+</tr>
+<tr>
+<td><strong>Next Task Recommendation</strong></td>
+<td>What should happen next in the workflow</td>
+<td>Orchestrator or routing logic</td>
+</tr>
+<tr>
+<td><strong>Reasoning</strong></td>
+<td>Human-readable explanation of <em>why</em> — traceable, auditable</td>
+<td>Audit trail, reviewers, compliance</td>
+</tr>
+</tbody>
+</table>
+<p>This contract is what makes patterns <strong>composable</strong>. A single agent returning these three components can be embedded inside a sequential workflow, parallelized alongside other agents, or supervised by a hierarchical controller — without changing its interface. The orchestration layer consumes the same structure regardless of the architecture around it.</p>
+<hr />
+<h2 id="pattern-selection-framework">Pattern Selection Framework<a class="headerlink" href="#pattern-selection-framework" title="Permanent link">&para;</a></h2>
+<p>Anthropic's whitepaper proposes three critical questions that every engineering team must answer before selecting an architecture. A fourth question — domain expertise — determines whether to use Agent Skills or multi-agent specialization.</p>
+<h3 id="question-1-what-level-of-control-do-you-need">Question 1: What level of control do you need?<a class="headerlink" href="#question-1-what-level-of-control-do-you-need" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Control Level</th>
+<th>Characteristics</th>
+<th>Recommended Pattern</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>High</strong></td>
+<td>Regulatory compliance, financial transactions, safety-critical</td>
+<td>Single agent or sequential workflow</td>
+</tr>
+<tr>
+<td><strong>Moderate</strong></td>
+<td>Customer support, content creation, data analysis</td>
+<td>Hierarchical multi-agent</td>
+</tr>
+<tr>
+<td><strong>Low</strong></td>
+<td>Research, brainstorming, complex analysis</td>
+<td>Collaborative multi-agent</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>If you need to explain exactly why the system made a specific decision to auditors, regulators, or executives, you want predictable, traceable behavior. (Anthropic, 2025, p. 23)</p>
+</blockquote>
+<p>This is precisely where <strong>BPMN governance</strong> adds value. A BPMN process model makes control requirements <em>visible and modifiable</em> by business analysts — not buried in agent code or prompt engineering. The deterministic spine enforces control; agents reason freely within the scope the model grants them.</p>
+<h3 id="question-2-how-complex-is-your-problem-domain">Question 2: How complex is your problem domain?<a class="headerlink" href="#question-2-how-complex-is-your-problem-domain" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Domain Complexity</th>
+<th>Characteristics</th>
+<th>Recommended Pattern</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Single domain, predictable</strong></td>
+<td>Product questions, returns processing, reports</td>
+<td>Single agent</td>
+</tr>
+<tr>
+<td><strong>Multi-domain, predictable</strong></td>
+<td>Employee onboarding, compliance workflows</td>
+<td>Sequential or parallel workflows</td>
+</tr>
+<tr>
+<td><strong>Complex, open-ended</strong></td>
+<td>Strategic analysis, research, system troubleshooting</td>
+<td>Multi-agent architectures</td>
+</tr>
+</tbody>
+</table>
+<h3 id="question-3-what-are-your-resource-constraints">Question 3: What are your resource constraints?<a class="headerlink" href="#question-3-what-are-your-resource-constraints" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Constraint</th>
+<th>Guidance</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Limited budget / tokens</strong></td>
+<td>Single agents or carefully designed parallel workflows. Do the math on expected volume before committing to complex architectures.</td>
+</tr>
+<tr>
+<td><strong>Time-to-market pressure</strong></td>
+<td>Start with single agents. You can deploy a single agent in weeks; multi-agent systems take months to get right.</td>
+</tr>
+<tr>
+<td><strong>Long-term strategic initiative</strong></td>
+<td>Design for modular evolution. Build the first single agent with interfaces that support adding more agents later.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="question-4-do-you-need-deep-domain-expertise">Question 4: Do you need deep domain expertise?<a class="headerlink" href="#question-4-do-you-need-deep-domain-expertise" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Expertise Need</th>
+<th>Recommendation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Single domain, established workflows</strong></td>
+<td>Single agent with specialized Agent Skills</td>
+</tr>
+<tr>
+<td><strong>Multiple domains requiring coordination</strong></td>
+<td>Multi-agent with distributed Skills</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>Before jumping to multi-agent architectures, consider whether a single agent equipped with domain-specific skills can solve your problem. Skills provide deep expertise without the complexity of multi-agent coordination. (Anthropic, 2025, p. 24)</p>
+</blockquote>
+<hr />
+<h2 id="illustrative-example-customer-support-ticket-resolution-architecture-evolution">Illustrative Example: Customer Support Ticket Resolution — Architecture Evolution<a class="headerlink" href="#illustrative-example-customer-support-ticket-resolution-architecture-evolution" title="Permanent link">&para;</a></h2>
+<h3 id="the-scenario">The Scenario<a class="headerlink" href="#the-scenario" title="Permanent link">&para;</a></h3>
+<p>A financial services firm handles 50,000 customer support tickets per month across four categories: account inquiries, transaction disputes, product questions, and compliance-related requests. They want to implement AI agents to reduce resolution time while maintaining regulatory audit trails.</p>
+<h3 id="why-this-domain">Why This Domain?<a class="headerlink" href="#why-this-domain" title="Permanent link">&para;</a></h3>
+<p>Customer support is a compelling domain for illustrating architecture evolution because:</p>
+<ul>
+<li><strong>Resolution rates are measurable</strong> — Intercom's Fin AI agent achieves up to 86% resolution rates with human-quality responses across 25,000+ customers. Assembled's Assist platform achieved a 20% increase in CSAT while reducing escalations by 50% (Anthropic, 2025, pp. 7–8).</li>
+<li><strong>Complexity varies naturally</strong> — Simple account inquiries need a single agent; multi-system transaction disputes need orchestration; compliance requests need specialized knowledge. The same ticket queue surfaces all five architecture patterns.</li>
+<li><strong>Audit trails are mandatory</strong> — Financial customer interactions require documentation for regulatory review — the same observability requirement as clinical systems.</li>
+<li><strong>Evolution is intuitive</strong> — The path from a single FAQ bot to a multi-agent orchestration system mirrors how real organizations scale.</li>
+</ul>
+<h3 id="phase-1-single-agent-first-90-days">Phase 1: Single Agent (First 90 Days)<a class="headerlink" href="#phase-1-single-agent-first-90-days" title="Permanent link">&para;</a></h3>
+<p>Deploy one agent with access to the knowledge base, CRM, and ticketing system. It handles all four categories.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>Ticket: { category: &quot;account_inquiry&quot;, customer: &quot;C-4892&quot;,
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>          question: &quot;What is my current credit card balance?&quot; }
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>Agent Response:
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>  {
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>    results: { balance: &quot;$3,247.18&quot;, statement_date: &quot;2025-06-15&quot;,
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>               minimum_due: &quot;$64.94&quot;, due_date: &quot;2025-07-10&quot; },
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>    next_task: &quot;close_ticket&quot;,
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>    reasoning: &quot;Routine balance inquiry. Retrieved from CRM API.
+<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>                No authentication issues. No follow-up required.&quot;
+<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>  }
+</code></pre></div>
+<p><strong>Metrics:</strong> 51% resolution rate out of the box (Anthropic baseline). Average response time drops from 30 minutes to seconds. Proves ROI before investing in complexity.</p>
+<h3 id="phase-2-sequential-workflow-months-46">Phase 2: Sequential Workflow (Months 4–6)<a class="headerlink" href="#phase-2-sequential-workflow-months-46" title="Permanent link">&para;</a></h3>
+<p>Simple routing separates ticket categories. A classification agent routes to specialized agents in sequence.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>Ticket: { category: &quot;transaction_dispute&quot;, customer: &quot;C-7213&quot;,
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>          amount: &quot;$847.00&quot;, merchant: &quot;TechStore Online&quot;,
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>          claim: &quot;I did not authorize this transaction&quot; }
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>Classification Agent → Fraud Check Agent → Resolution Agent
+<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>
+<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>Fraud Check Agent:
+<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>  {
+<a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a>    results: { fraud_score: 0.23, device_match: true,
+<a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a>               geo_match: false, velocity_check: &quot;normal&quot; },
+<a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a>    next_task: &quot;dispute_resolution&quot;,
+<a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a>    reasoning: &quot;Low fraud probability. Device fingerprint matches
+<a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a>                customer history. Geographic anomaly — transaction
+<a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a>                from Portland, customer based in Austin. Not
+<a id="__codelineno-1-15" name="__codelineno-1-15" href="#__codelineno-1-15"></a>                sufficient alone for fraud flag. Routing to
+<a id="__codelineno-1-16" name="__codelineno-1-16" href="#__codelineno-1-16"></a>                dispute resolution for standard process.&quot;
+<a id="__codelineno-1-17" name="__codelineno-1-17" href="#__codelineno-1-17"></a>  }
+<a id="__codelineno-1-18" name="__codelineno-1-18" href="#__codelineno-1-18"></a>
+<a id="__codelineno-1-19" name="__codelineno-1-19" href="#__codelineno-1-19"></a>Resolution Agent:
+<a id="__codelineno-1-20" name="__codelineno-1-20" href="#__codelineno-1-20"></a>  {
+<a id="__codelineno-1-21" name="__codelineno-1-21" href="#__codelineno-1-21"></a>    results: { provisional_credit: true, investigation_id: &quot;INV-20250701-7213&quot;,
+<a id="__codelineno-1-22" name="__codelineno-1-22" href="#__codelineno-1-22"></a>               estimated_resolution: &quot;10 business days&quot; },
+<a id="__codelineno-1-23" name="__codelineno-1-23" href="#__codelineno-1-23"></a>    next_task: &quot;notify_customer&quot;,
+<a id="__codelineno-1-24" name="__codelineno-1-24" href="#__codelineno-1-24"></a>    reasoning: &quot;Provisional credit issued per Reg E (10-day
+<a id="__codelineno-1-25" name="__codelineno-1-25" href="#__codelineno-1-25"></a>                investigation window). Customer notified.
+<a id="__codelineno-1-26" name="__codelineno-1-26" href="#__codelineno-1-26"></a>                Investigation ticket created for back-office
+<a id="__codelineno-1-27" name="__codelineno-1-27" href="#__codelineno-1-27"></a>                review team.&quot;
+<a id="__codelineno-1-28" name="__codelineno-1-28" href="#__codelineno-1-28"></a>  }
+</code></pre></div>
+<p><strong>Metrics:</strong> Resolution rate climbs to 68%. Each agent is simpler and more accurate because it handles a narrower scope.</p>
+<h3 id="phase-3-parallel-workflow-months-79">Phase 3: Parallel Workflow (Months 7–9)<a class="headerlink" href="#phase-3-parallel-workflow-months-79" title="Permanent link">&para;</a></h3>
+<p>Compliance-related tickets trigger parallel assessments — regulatory check, risk assessment, and customer history analysis run simultaneously.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>Ticket: { category: &quot;compliance&quot;, customer: &quot;C-1156&quot;,
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>          request: &quot;Why was my wire transfer to Dubai flagged?&quot; }
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>Parallel Agents (simultaneous):
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>  ├─► Regulatory Compliance Agent
+<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>  ├─► Transaction Risk Agent
+<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a>  └─► Customer History Agent
+<a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a>
+<a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a>Aggregated Result:
+<a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a>  {
+<a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a>    results: { flag_reason: &quot;OFAC screening match — partial name overlap&quot;,
+<a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a>               risk_level: &quot;medium&quot;, customer_risk_profile: &quot;low&quot;,
+<a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a>               false_positive_probability: 0.82 },
+<a id="__codelineno-2-14" name="__codelineno-2-14" href="#__codelineno-2-14"></a>    next_task: &quot;escalate_to_compliance_officer&quot;,
+<a id="__codelineno-2-15" name="__codelineno-2-15" href="#__codelineno-2-15"></a>    reasoning: &quot;Wire flagged due to partial OFAC name match (0.73
+<a id="__codelineno-2-16" name="__codelineno-2-16" href="#__codelineno-2-16"></a>                similarity score). Customer has 8-year relationship,
+<a id="__codelineno-2-17" name="__codelineno-2-17" href="#__codelineno-2-17"></a>                consistent transaction patterns, and prior cleared
+<a id="__codelineno-2-18" name="__codelineno-2-18" href="#__codelineno-2-18"></a>                wire transfers to UAE. High probability of false
+<a id="__codelineno-2-19" name="__codelineno-2-19" href="#__codelineno-2-19"></a>                positive, but OFAC match requires human compliance
+<a id="__codelineno-2-20" name="__codelineno-2-20" href="#__codelineno-2-20"></a>                officer review per bank policy — cannot be
+<a id="__codelineno-2-21" name="__codelineno-2-21" href="#__codelineno-2-21"></a>                auto-resolved regardless of confidence.&quot;
+<a id="__codelineno-2-22" name="__codelineno-2-22" href="#__codelineno-2-22"></a>  }
+</code></pre></div>
+<p><strong>Metrics:</strong> Compliance response time drops by 60%. Parallel execution completes in 4 seconds versus 12 seconds sequential. Note the deterministic guardrail: OFAC matches <strong>always</strong> escalate to a human compliance officer, regardless of the AI's confidence level. This is governance by process model, not agent discretion.</p>
+<h3 id="phase-4-hierarchical-multi-agent-months-1012">Phase 4: Hierarchical Multi-Agent (Months 10–12)<a class="headerlink" href="#phase-4-hierarchical-multi-agent-months-1012" title="Permanent link">&para;</a></h3>
+<p>A supervisor agent manages the full ticket lifecycle. Specialist agents handle their domains; the supervisor synthesizes, escalates, and ensures cross-category coherence.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>Ticket: { category: &quot;complex&quot;, customer: &quot;C-3301&quot;,
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>          issue: &quot;My mortgage payment was applied to the wrong
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>                  account and now I&#39;m showing as delinquent&quot; }
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>
+<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>Supervisor Agent:
+<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>  ► Delegates to: Account Research Agent, Payment Tracing Agent,
+<a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a>                   Credit Reporting Agent (parallel)
+<a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a>  ► Reviews results, identifies: payment misrouted to closed account
+<a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a>  ► Delegates to: Correction Agent (applies payment to correct account)
+<a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a>  ► Delegates to: Credit Bureau Agent (initiates dispute with bureaus)
+<a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a>
+<a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a>Final Response:
+<a id="__codelineno-3-13" name="__codelineno-3-13" href="#__codelineno-3-13"></a>  {
+<a id="__codelineno-3-14" name="__codelineno-3-14" href="#__codelineno-3-14"></a>    results: { payment_corrected: true, delinquency_removed: true,
+<a id="__codelineno-3-15" name="__codelineno-3-15" href="#__codelineno-3-15"></a>               credit_dispute_filed: true, bureau_case_ids:
+<a id="__codelineno-3-16" name="__codelineno-3-16" href="#__codelineno-3-16"></a>               [&quot;EQ-294817&quot;, &quot;TU-182934&quot;, &quot;EX-039182&quot;] },
+<a id="__codelineno-3-17" name="__codelineno-3-17" href="#__codelineno-3-17"></a>    next_task: &quot;close_ticket_with_followup&quot;,
+<a id="__codelineno-3-18" name="__codelineno-3-18" href="#__codelineno-3-18"></a>    reasoning: &quot;Payment of $2,847.00 was misrouted to closed account
+<a id="__codelineno-3-19" name="__codelineno-3-19" href="#__codelineno-3-19"></a>                ending 4471. Corrected to active mortgage account
+<a id="__codelineno-3-20" name="__codelineno-3-20" href="#__codelineno-3-20"></a>                ending 8823. Delinquency flag removed from internal
+<a id="__codelineno-3-21" name="__codelineno-3-21" href="#__codelineno-3-21"></a>                systems. Credit bureau disputes filed with all three
+<a id="__codelineno-3-22" name="__codelineno-3-22" href="#__codelineno-3-22"></a>                bureaus — estimated 30-day resolution. Follow-up
+<a id="__codelineno-3-23" name="__codelineno-3-23" href="#__codelineno-3-23"></a>                scheduled at 15 and 30 days to confirm bureau
+<a id="__codelineno-3-24" name="__codelineno-3-24" href="#__codelineno-3-24"></a>                corrections.&quot;
+<a id="__codelineno-3-25" name="__codelineno-3-25" href="#__codelineno-3-25"></a>  }
+</code></pre></div>
+<p><strong>Metrics:</strong> Complex ticket resolution rate reaches 80–90% (matching Gradient Labs benchmarks, Anthropic 2025, p. 4). The supervisor ensures no step falls through the cracks — each specialist returns via the three-return contract, the supervisor aggregates and orchestrates.</p>
+<h3 id="phase-5-production-maturity">Phase 5: Production Maturity<a class="headerlink" href="#phase-5-production-maturity" title="Permanent link">&para;</a></h3>
+<p>Evaluator agents audit a random sample of resolved tickets for quality assurance. The architecture becomes a hybrid: sequential routing at the front, parallel assessment for compliance, hierarchical orchestration for complex cases, and evaluator-optimizer loops for continuous improvement.</p>
+<blockquote>
+<p>"Start simple, measure everything, add complexity only when it delivers measurable value. The best architecture is the simplest one meeting today's requirements while providing a path to tomorrow's capabilities." — Anthropic, 2025, p. 25</p>
+</blockquote>
+<hr />
+<h2 id="production-foundations">Production Foundations<a class="headerlink" href="#production-foundations" title="Permanent link">&para;</a></h2>
+<p>The architecture patterns described in this document are grounded in production data from organizations deploying AI agents at scale.</p>
+<p>Anthropic's whitepaper documents measurable outcomes across industries: Coinbase's agentic customer support handles millions of interactions with 99.99% availability. Intercom's Fin AI agent resolves up to 86% of tickets with human-quality responses. Inscribe's AI Risk Agents reduce fraud review time by 20× — from 30 minutes to 90 seconds — while increasing output by 70× (Anthropic, 2025, pp. 4–8). A retail bank deploying AI agents for credit risk memos reports 20–60% productivity gains (p. 5). These are not pilot metrics; they represent production systems handling real transaction volume.</p>
+<p>The pattern selection framework reflects an operations research insight: the right level of architectural complexity is the minimum that satisfies both the accuracy requirement and the control requirement. Hopp &amp; Lovejoy formalize this as the capacity-flexibility tradeoff — systems should not carry more structural complexity than the variability in demand warrants (<em>Hospital Operations</em>, Pearson, 2012). The same principle applies to agent architecture: a single agent handling 10,000 predictable tickets per day outperforms a multi-agent system burning 15× the tokens for marginal accuracy gains.</p>
+<p>Both the EMS triage system and this customer operations system share an infrastructure requirement: <strong>sub-second data access</strong>. An agent that takes 25 seconds to query a CRM cannot resolve tickets in real time. Real-time architectures — event-driven APIs, cached knowledge stores, streaming data pipelines — create the infrastructure precondition for agentic patterns at scale. The Anthropic paper's design principle — "start simple, scale intelligently" — applies to infrastructure as much as to architecture.</p>
+<hr />
+<h2 id="references">References<a class="headerlink" href="#references" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Title</th>
+<th>Authors / Source</th>
+<th>Year</th>
+<th>Link</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><em>Building Effective AI Agents: Architecture Patterns and Implementation Frameworks</em></td>
+<td>Anthropic</td>
+<td>2025</td>
+<td><a href="https://www.anthropic.com/research/building-effective-agents">View</a></td>
+</tr>
+<tr>
+<td><em>Enterprise Process Orchestration</em></td>
+<td>Bernd Ruecker, Leon Strauch</td>
+<td>2025</td>
+<td><a href="https://learning.oreilly.com/library/view/-/9781394309672/">View</a></td>
+</tr>
+<tr>
+<td><em>Practical Process Automation</em></td>
+<td>Bernd Ruecker</td>
+<td>2021</td>
+<td><a href="https://learning.oreilly.com/library/view/-/9781492061441/">View</a></td>
+</tr>
+<tr>
+<td><em>Designing Machine Learning Systems</em></td>
+<td>Chip Huyen</td>
+<td>2022</td>
+<td><a href="https://learning.oreilly.com/library/view/-/9781098107956/">View</a></td>
+</tr>
+<tr>
+<td><em>Hospital Operations</em></td>
+<td>Wallace Hopp, William Lovejoy</td>
+<td>2012</td>
+<td><a href="https://learning.oreilly.com/library/view/-/9780132908665/">View</a></td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>Anthropic's whitepaper provides the architecture pattern taxonomy and production data. Ruecker's books ground the deterministic orchestration layer. Huyen covers ML system design principles that apply to agent infrastructure. Hopp &amp; Lovejoy provide the operations research foundation for the capacity-complexity tradeoff.</p>
+</blockquote>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://github.com/garysamuelson" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    </a>
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://linkedin.com/in/garysamuelson" target="_blank" rel="noopener" title="linkedin.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3M135.4 416H69V202.2h66.5V416zM102.2 96a38.5 38.5 0 1 1 0 77 38.5 38.5 0 1 1 0-77m282.1 320h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9z"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.expand", "navigation.top", "search.highlight", "search.suggest", "content.code.copy", "content.code.annotate"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+        <script src="https://unpkg.com/mermaid@11/dist/mermaid.min.js"></script>
+      
+    
+  </body>
+</html>
