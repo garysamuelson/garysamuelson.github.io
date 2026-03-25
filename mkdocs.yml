@@ -11,10 +11,7 @@ repo_url: https://github.com/garysamuelson/garysamuelson.github.io
 theme:
   name: material
   features:
-    - navigation.sections
-    - navigation.expand
     - navigation.top
-    - navigation.indexes
     - search.highlight
     - search.suggest
     - content.code.copy
@@ -85,11 +82,7 @@ extra:
 
 nav:
   - Home: index.md
-  - Blog:
-    - blog/index.md
-  - Agentic Systems:
-    - Agentic Agency & Workflows: agentic/agentic-agency-and-workflows.md
-    - Architecture Patterns: agentic/architecture-patterns.md
-  - Healthcare AI:
-    - Who Is Accountable?: healthcare/healthcare-accountability.md
+  - Agentic Agency & Workflows: agentic/agentic-agency-and-workflows.md
+  - Architecture Patterns: agentic/architecture-patterns.md
+  - Who Is Accountable?: healthcare/healthcare-accountability.md
   - Tags: tags.md
