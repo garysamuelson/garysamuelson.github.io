@@ -5,27 +5,37 @@ the intersection of **Semantic AI**, **Knowledge Graphs**, and **Agentic Systems
 
 ---
 
-## Featured
+## Recent Publications
 
-<a href="agentic/agentic-agency-and-workflows/">
-  <img src="assets/images/STEMI_detection_linkedin.png" alt="STEMI Detection — Agentic Architecture" style="width:100%; border-radius:8px; margin-bottom:1rem;" />
+<div style="display:grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap:1.5rem; margin-bottom:2rem;">
+
+<div markdown style="border:1px solid var(--md-default-fg-color--lightest); border-radius:8px; overflow:hidden;">
+<a href="healthcare/healthcare-accountability/">
+  <img src="assets/images/accountability_gap.png" alt="AI Accountability in Healthcare" style="width:100%; display:block;" />
 </a>
+<div style="padding:1rem;">
+<strong><a href="healthcare/healthcare-accountability/">Who Is Accountable When AI Gets Healthcare Wrong?</a></strong><br/>
+<small>March 25, 2026 · Healthcare AI · Governance</small>
+<p>When an AI-assisted clinical decision contributes to a bad patient outcome, the question of who is accountable does not have a clear answer. A patient-side view of the governance gap — and what the technology needs to fix it.</p>
+<a href="healthcare/healthcare-accountability/">Read →</a>
+</div>
+</div>
 
-### [Agentic AI in Emergency Medicine: Orchestrating STEMI Detection with Deterministic Guardrails](agentic/agentic-agency-and-workflows.md)
+<div markdown style="border:1px solid var(--md-default-fg-color--lightest); border-radius:8px; overflow:hidden;">
+<a href="agentic/agentic-agency-and-workflows/">
+  <img src="assets/images/STEMI_detection_linkedin.png" alt="STEMI Detection — Agentic Architecture" style="width:100%; display:block;" />
+</a>
+<div style="padding:1rem;">
+<strong><a href="agentic/agentic-agency-and-workflows/">Agentic AI in Emergency Medicine: STEMI Detection with Deterministic Guardrails</a></strong><br/>
+<small>March 22, 2026 · Agentic AI · BPMN</small>
+<p>Two forms of "agentic" mapped onto a real EMS STEMI detection workflow — a three-layer architecture, an AI triage agent inside a constrained agentic zone, and a physician-in-the-loop when confidence drops below threshold.</p>
+<a href="agentic/agentic-agency-and-workflows/">Read →</a>
+</div>
+</div>
 
-What does "agentic" actually mean when lives are on the line? This paper breaks the term into two complementary forms — **Agency** (AI that can decide to act) and the **Agentic Pattern** (a deterministic process that governs where AI acts) — and maps both onto a real EMS STEMI detection workflow modeled in BPMN.
-
-Inside, you'll find a three-layer architecture that separates business rules from AI intelligence, a detailed walkthrough of how an AI triage agent sequences clinical tasks inside a constrained "agentic zone," and the guardrails that keep a human physician in the loop when confidence drops below threshold.
-
-**March 22, 2026** · [Read the full article →](agentic/agentic-agency-and-workflows.md)
+</div>
 
 ---
-
-## What You'll Find Here
-
-- **Research papers** on LLM/KG integration, BPMN orchestration, and domain-driven AI
-- **Architecture insights** from enterprise banking and financial services
-- **Practical guides** on building intelligent, agentic Python systems
 
 ## Topics
 
@@ -34,7 +44,7 @@ Inside, you'll find a three-layer architecture that separates business rules fro
 | Semantic AI | LLMs + Knowledge Graphs + ontologies |
 | Agentic Systems | Multi-agent orchestration, autonomous workflows |
 | BPMN + AI | Intelligent process automation with Zeebe and Camunda |
-| Banking Domain | Financial services architecture and domain primitives |
+| Healthcare AI | Governance, accountability, patient safety |
 | Enterprise Architecture | Modernization, cloud-native patterns |
 
 ---
