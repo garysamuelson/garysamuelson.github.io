@@ -120,9 +120,9 @@ Behind these responses is an objective function: cost containment. That's not in
 
 ![The Accountability Gap — Who Decides vs. Who Bears the Consequence](../assets/images/accountability_gap.png)
 
-Sarah Matt put it directly: *"When an AI-assisted clinical decision contributes to a bad patient outcome, the question of who is accountable does not have a clear answer in most health systems right now."*<sup>†</sup> She identified four actors across whom accountability is currently distributed — and none of them hold it cleanly:
+As Matt identified, the accountability gap isn't just conceptual — it's structural.<sup>†</sup> She named four actors across whom accountability is currently distributed, and none of them hold it cleanly:
 
-<small><sup>†</sup> Dr. Sarah Matt, LinkedIn, 2025. Podcast: drsarahmatt.com/podcast</small>
+<small><sup>†</sup> Dr. Sarah Matt, LinkedIn, 2026. Podcast: drsarahmatt.com/podcast</small>
 
 These are exactly the right operational questions. But notice who is absent from all four:
 
@@ -191,7 +191,7 @@ What I want to explore in subsequent sections:
 
 The conversation health system boards need to have before the next contract is signed is necessary. But it's not sufficient. The conversation needs to include the person on the other end of the decision.
 
-Underneath both of these questions — accountability and governance — is a harder one: **whose interests is the AI actually serving?** That question is the subject of **For Whom Does the AI Work?**, which examines how AI systems in healthcare, adtech, and financial services are each optimizing for institutional objectives while presenting themselves as serving the user.
+Underneath both of these questions — accountability and governance — is a harder one: **whose interests is the AI actually serving?** That question is the subject of **For Whom Does the AI Work?** *(coming soon)*, which examines how AI systems in healthcare, adtech, and financial services are each optimizing for institutional objectives while presenting themselves as serving the user.
 
 ### Part 2: How the Technology Actually Plays Out
 
