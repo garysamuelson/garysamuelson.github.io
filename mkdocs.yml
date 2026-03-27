@@ -83,6 +83,7 @@ extra:
 nav:
   - Home: index.md
   - Agentic Agency & Workflows: agentic/agentic-agency-and-workflows.md
-  - Architecture Patterns: agentic/architecture-patterns.md
-  - Who Is Accountable?: healthcare/healthcare-accountability.md
+  - AI Governance in Healthcare:
+    - Who Is Accountable?: healthcare/healthcare-accountability.md
+    - The Governance Gap: agentic/governance-gap.md
   - Tags: tags.md
