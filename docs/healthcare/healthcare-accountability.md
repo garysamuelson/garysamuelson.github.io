@@ -10,7 +10,7 @@ tags:
 
 # When AI Gets Healthcare Wrong
 
-![Who Decides / Accountability Gap / Who Bears the Consequence](../assets/images/healthcare_accountability_header.png)
+![Who Decides / Accountability Gap / Who Bears the Consequence](../assets/images/healthcare_accountability_header.png){ width=75% }
 
 **Author:** Gary Samuelson  
 **Date:** March 24, 2026  
