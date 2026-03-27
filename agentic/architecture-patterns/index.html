@@ -15,10 +15,6 @@
         <link rel="canonical" href="https://garysamuelson.github.io/agentic/architecture-patterns/">
       
       
-        <link rel="prev" href="../agentic-agency-and-workflows/">
-      
-      
-        <link rel="next" href="../../healthcare/healthcare-accountability/">
       
       
         
@@ -315,26 +311,28 @@
       
   
   
+  
+  
     
-  
-  
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
       
         
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
           
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
   
   
   <span class="md-ellipsis">
     
   
-    Architecture Patterns
+    AI Governance in Healthcare
   
 
     
@@ -342,322 +340,22 @@
   
   
 
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+            <span class="md-nav__icon md-icon"></span>
+          </label>
         
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
   
-  
-  <span class="md-ellipsis">
-    
-  
-    Architecture Patterns
+    AI Governance in Healthcare
   
 
-    
-  </span>
-  
-  
-
-      </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#the-architecture-landscape" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        The Architecture Landscape
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#the-five-architecture-patterns" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        The Five Architecture Patterns
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="The Five Architecture Patterns">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#pattern-1-single-agent" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Pattern 1 — Single Agent
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#pattern-2-sequential-workflow" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Pattern 2 — Sequential Workflow
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#pattern-3-parallel-workflow" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Pattern 3 — Parallel Workflow
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#pattern-4-hierarchical-supervisory-multi-agent" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Pattern 4 — Hierarchical / Supervisory Multi-Agent
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#pattern-5-evaluator-optimizer" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Pattern 5 — Evaluator-Optimizer
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#the-three-return-contract-across-patterns" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        The Three-Return Contract Across Patterns
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#pattern-selection-framework" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Pattern Selection Framework
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Pattern Selection Framework">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#question-1-what-level-of-control-do-you-need" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Question 1: What level of control do you need?
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#question-2-how-complex-is-your-problem-domain" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Question 2: How complex is your problem domain?
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#question-3-what-are-your-resource-constraints" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Question 3: What are your resource constraints?
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#question-4-do-you-need-deep-domain-expertise" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Question 4: Do you need deep domain expertise?
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#illustrative-example-customer-support-ticket-resolution-architecture-evolution" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Illustrative Example: Customer Support Ticket Resolution — Architecture Evolution
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Illustrative Example: Customer Support Ticket Resolution — Architecture Evolution">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#the-scenario" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        The Scenario
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#why-this-domain" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Why This Domain?
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#phase-1-single-agent-first-90-days" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Phase 1: Single Agent (First 90 Days)
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#phase-2-sequential-workflow-months-46" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Phase 2: Sequential Workflow (Months 4–6)
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#phase-3-parallel-workflow-months-79" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Phase 3: Parallel Workflow (Months 7–9)
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#phase-4-hierarchical-multi-agent-months-1012" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Phase 4: Hierarchical Multi-Agent (Months 10–12)
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#phase-5-production-maturity" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Phase 5: Production Maturity
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#production-foundations" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Production Foundations
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#references" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        References
-      
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
-    </li>
-  
-
-    
-      
-      
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
   
   
   
@@ -679,6 +377,42 @@
   
 
       </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../governance-gap/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    The Governance Gap
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
     </li>
   
 

@@ -1,0 +1,1701 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Research and insights on Semantic AI, Knowledge Graphs, Agentic Systems, and Enterprise Architecture by Gary Samuelson.">
+      
+      
+        <meta name="author" content="Gary Samuelson">
+      
+      
+        <link rel="canonical" href="https://garysamuelson.github.io/agentic/governance-gap/">
+      
+      
+        <link rel="prev" href="../../healthcare/healthcare-accountability/">
+      
+      
+        <link rel="next" href="../../tags/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>The Governance Gap: What Enterprises Need Above the Agent Runtime - Gary Samuelson — AI & Architecture Research</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#the-governance-gap-what-enterprises-need-above-the-agent-runtime" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Gary Samuelson — AI &amp; Architecture Research" class="md-header__button md-logo" aria-label="Gary Samuelson — AI & Architecture Research" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Gary Samuelson — AI & Architecture Research
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              The Governance Gap: What Enterprises Need Above the Agent Runtime
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/garysamuelson/garysamuelson.github.io" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    garysamuelson/garysamuelson.github.io
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Gary Samuelson — AI &amp; Architecture Research" class="md-nav__button md-logo" aria-label="Gary Samuelson — AI & Architecture Research" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Gary Samuelson — AI & Architecture Research
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/garysamuelson/garysamuelson.github.io" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    garysamuelson/garysamuelson.github.io
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../agentic-agency-and-workflows/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Agentic Agency & Workflows
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AI Governance in Healthcare
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    AI Governance in Healthcare
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../healthcare/healthcare-accountability/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Who Is Accountable?
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    The Governance Gap
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    The Governance Gap
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#when-the-agent-gets-it-wrong-the-patient-gets-the-bill" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        When the Agent Gets It Wrong, the Patient Gets the Bill
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-patients-journey" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Patient's Journey
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="The Patient&#39;s Journey">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-process-what-youre-looking-at" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Process: What You're Looking At
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-makes-this-domain-unforgiving" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What Makes This Domain Unforgiving
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-tasks-inside-the-agentic-zone" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Tasks Inside the Agentic Zone
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-job-worker-pattern" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Job Worker Pattern
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#where-the-governance-gap-hits" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Where the Governance Gap Hits
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-patients-perspective" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Patient's Perspective
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#whats-missing-from-the-patients-journey" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What's Missing From the Patient's Journey
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="What&#39;s Missing From the Patient&#39;s Journey">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#missing-decision-lineage" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Missing: Decision Lineage
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#missing-class-level-learning" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Missing: Class-Level Learning
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#missing-governed-autonomy-boundaries" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Missing: Governed Autonomy Boundaries
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#missing-cross-cutting-coordination" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Missing: Cross-Cutting Coordination
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-three-values-worth-preserving-and-how-to-encode-them" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Three Values Worth Preserving — and How to Encode Them
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="The Three Values Worth Preserving — and How to Encode Them">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-domain-pattern-libraries-learned-process-intelligence" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Domain Pattern Libraries → Learned Process Intelligence
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-security-and-compliance-framing-semantic-lineage-and-auditability" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Security and Compliance Framing → Semantic Lineage and Auditability
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-integration-architecture-governed-agentic-mesh" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Integration Architecture → Governed Agentic Mesh
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-cant-be-automated" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What Can't Be Automated
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#appendix-evidentiary-basis-when-the-agent-gets-it-wrong" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Appendix: Evidentiary Basis — "When the Agent Gets It Wrong"
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Appendix: Evidentiary Basis — &#34;When the Agent Gets It Wrong&#34;">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#a1-aiautomated-systems-navigating-prior-authorization-without-human-review" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        A1. AI/Automated Systems Navigating Prior Authorization Without Human Review
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#a2-the-patient-receives-a-large-bill-because-network-status-was-not-checked" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        A2. The Patient Receives a Large Bill Because Network Status Was Not Checked
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#a3-no-evidence-the-patient-was-informed-before-the-appointment" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        A3. No Evidence the Patient Was Informed Before the Appointment
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#a4-no-audit-trail-multi-week-forensic-investigation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        A4. No Audit Trail → Multi-Week Forensic Investigation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#a5-on-the-45-4700-amounts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        A5. On the \$45 / \$4,700 Amounts
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#appendix-b-the-agentic-sandwich-anatomy-of-a-governance-patternv" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Appendix B: The Agentic Sandwich — Anatomy of a Governance Patternv
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Appendix B: The Agentic Sandwich — Anatomy of a Governance Patternv">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#what-it-is" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What It Is
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#how-it-came-to-be" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How It Came to Be
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#how-it-behaves-in-practice" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How It Behaves in Practice
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-fixes-look-like" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What Fixes Look Like
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#references-further-reading" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        References &amp; Further Reading
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tags/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tags
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#when-the-agent-gets-it-wrong-the-patient-gets-the-bill" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        When the Agent Gets It Wrong, the Patient Gets the Bill
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-patients-journey" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Patient's Journey
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="The Patient&#39;s Journey">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-process-what-youre-looking-at" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Process: What You're Looking At
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-makes-this-domain-unforgiving" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What Makes This Domain Unforgiving
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-tasks-inside-the-agentic-zone" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Tasks Inside the Agentic Zone
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-job-worker-pattern" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Job Worker Pattern
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#where-the-governance-gap-hits" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Where the Governance Gap Hits
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-patients-perspective" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Patient's Perspective
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#whats-missing-from-the-patients-journey" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What's Missing From the Patient's Journey
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="What&#39;s Missing From the Patient&#39;s Journey">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#missing-decision-lineage" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Missing: Decision Lineage
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#missing-class-level-learning" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Missing: Class-Level Learning
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#missing-governed-autonomy-boundaries" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Missing: Governed Autonomy Boundaries
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#missing-cross-cutting-coordination" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Missing: Cross-Cutting Coordination
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-three-values-worth-preserving-and-how-to-encode-them" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Three Values Worth Preserving — and How to Encode Them
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="The Three Values Worth Preserving — and How to Encode Them">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-domain-pattern-libraries-learned-process-intelligence" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Domain Pattern Libraries → Learned Process Intelligence
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-security-and-compliance-framing-semantic-lineage-and-auditability" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Security and Compliance Framing → Semantic Lineage and Auditability
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-integration-architecture-governed-agentic-mesh" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Integration Architecture → Governed Agentic Mesh
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-cant-be-automated" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What Can't Be Automated
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#appendix-evidentiary-basis-when-the-agent-gets-it-wrong" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Appendix: Evidentiary Basis — "When the Agent Gets It Wrong"
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Appendix: Evidentiary Basis — &#34;When the Agent Gets It Wrong&#34;">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#a1-aiautomated-systems-navigating-prior-authorization-without-human-review" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        A1. AI/Automated Systems Navigating Prior Authorization Without Human Review
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#a2-the-patient-receives-a-large-bill-because-network-status-was-not-checked" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        A2. The Patient Receives a Large Bill Because Network Status Was Not Checked
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#a3-no-evidence-the-patient-was-informed-before-the-appointment" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        A3. No Evidence the Patient Was Informed Before the Appointment
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#a4-no-audit-trail-multi-week-forensic-investigation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        A4. No Audit Trail → Multi-Week Forensic Investigation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#a5-on-the-45-4700-amounts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        A5. On the \$45 / \$4,700 Amounts
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#appendix-b-the-agentic-sandwich-anatomy-of-a-governance-patternv" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Appendix B: The Agentic Sandwich — Anatomy of a Governance Patternv
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Appendix B: The Agentic Sandwich — Anatomy of a Governance Patternv">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#what-it-is" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What It Is
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#how-it-came-to-be" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How It Came to Be
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#how-it-behaves-in-practice" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How It Behaves in Practice
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-fixes-look-like" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What Fixes Look Like
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#references-further-reading" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        References &amp; Further Reading
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  <nav class="md-tags" >
+    
+      
+      
+      
+      
+        <a href="../../tags/#tag:agentic-ai" class="md-tag">Agentic AI</a>
+      
+    
+      
+      
+      
+      
+        <a href="../../tags/#tag:bpmn" class="md-tag">BPMN</a>
+      
+    
+      
+      
+      
+      
+        <a href="../../tags/#tag:enterprise-architecture" class="md-tag">Enterprise Architecture</a>
+      
+    
+      
+      
+      
+      
+        <a href="../../tags/#tag:governance-gap" class="md-tag">Governance Gap</a>
+      
+    
+      
+      
+      
+      
+        <a href="../../tags/#tag:healthcare-ai" class="md-tag">Healthcare AI</a>
+      
+    
+  </nav>
+
+
+  
+  
+
+
+<h1 id="the-governance-gap-what-enterprises-need-above-the-agent-runtime">The Governance Gap: What Enterprises Need Above the Agent Runtime<a class="headerlink" href="#the-governance-gap-what-enterprises-need-above-the-agent-runtime" title="Permanent link">&para;</a></h1>
+<p><strong>Author:</strong> Gary Samuelson<br />
+<strong>Date:</strong> March 27, 2026<br />
+<strong>Part 2 of 2</strong> — This piece follows <a href="../../healthcare/healthcare-accountability/">Who Is Accountable When AI Gets Healthcare Wrong?</a>, which examines the accountability gap from the patient's perspective. That paper asks the questions. This one opens the hood and shows how the technology actually plays out — where today's agent runtimes fit, and where they fall short.</p>
+<hr />
+<p><img alt="Specialist Referral — Network Navigation BPMN Model" src="../../assets/images/network_navigation_agentic_sandwich.png" /></p>
+<p><em>Figure: The full BPMN 2.0 executable model for specialist referral network navigation — the "agentic sandwich" pattern. Left: a deterministic coverage gate the agent cannot override. Center: an ad-hoc subprocess where five AI agents and one human escalation path navigate the network autonomously. Right: a deterministic routing gate that settles the referral into one of three outcomes. This is what the process looks like when it's engineered for governance. Most deployed systems skip the model entirely.</em></p>
+<hr />
+<h2 id="when-the-agent-gets-it-wrong-the-patient-gets-the-bill">When the Agent Gets It Wrong, the Patient Gets the Bill<a class="headerlink" href="#when-the-agent-gets-it-wrong-the-patient-gets-the-bill" title="Permanent link">&para;</a></h2>
+<p>A patient's primary care physician orders a referral to a cardiologist. Between that order and the patient sitting in the specialist's office, six parties, three regulatory layers, and a maze of negotiated rates, benefit designs, and prior authorization requirements determine where that patient goes — and what they'll pay.</p>
+<p>An autonomous AI agent navigates this process. It picks a specialist with a shorter wait time and a higher quality score. Sound reasoning. The patient shows up. The bill arrives: <strong>\$4,700 instead of \$45.</strong><sup>ii</sup> The agent didn't trace the cost transparency decision through the patient's specific benefit design. No lineage. No audit trail. No evidence the patient was informed of the cost differential before the appointment was booked.<sup>iii</sup></p>
+<p>A state insurance commissioner asks: <em>"Was the patient informed of the out-of-network cost before the appointment?"</em></p>
+<p>Without a governance substrate, the answer is a three-week forensic investigation through log files.<sup>iv</sup> With one, the answer is a three-second query.</p>
+<p>That's the governance gap. And every enterprise deploying autonomous agents today is operating inside it.<sup>i</sup></p>
+<p><small><sup>i</sup> Appendix A1 — AI in prior authorization (ProPublica, 2023; Reuters, 2023; Senate Finance Committee, 2023–2024) · <sup>ii</sup> Appendix A2 — Surprise billing (KFF, 2021; No Surprises Act) · <sup>iii</sup> Appendix A3 — Missing patient notification (HHS OIG, 2022; CMS-0057-F, 2024) · <sup>iv</sup> Appendix A4 — Absent audit trails (NAIC, 2023; ONC HTI-1, 2024)</small></p>
+<hr />
+<h2 id="the-patients-journey">The Patient's Journey<a class="headerlink" href="#the-patients-journey" title="Permanent link">&para;</a></h2>
+<p>The governance gap isn't abstract. It plays out in the process below — a specialist referral network navigation that touches every insured American and that almost nobody understands. The domain and its failure modes are real (see Appendix); the governed architecture is illustrative — designed to show what should exist, not what does.</p>
+<p><img alt="Network Navigation — The Agentic Sandwich" src="../../assets/images/network_navigation_agentic_sandwich_linkedin.png" /></p>
+<p><em>Figure: A patient referral navigated through the "agentic sandwich" — deterministic gates (blue) bracket an autonomous reasoning zone (amber) where five AI agents and one human escalation path coordinate the navigation. Three outcomes emerge on the right: approved in-network (\$45 copay), out-of-network exception with mandatory cost disclosure, or denied with appeal rights. The governance gap lives inside the agentic zone — where AI agents make decisions that determine the patient's financial outcome, and no current architecture makes those decisions auditable.</em></p>
+<h3 id="the-process-what-youre-looking-at">The Process: What You're Looking At<a class="headerlink" href="#the-process-what-youre-looking-at" title="Permanent link">&para;</a></h3>
+<p>Reading left to right: the process starts at <strong>Referral Order Received</strong> from the PCP. It passes through a <strong>Coverage &amp; Eligibility Verification</strong> gateway — a deterministic gate that checks whether the patient has active coverage, whether the referral type requires authorization, and whether the benefit design (HMO, PPO, EPO, tiered network) permits self-referral or mandates PCP gatekeeping. This is a hard constraint. No agent overrides it.</p>
+<p>If the eligibility gate passes, the flow enters the large dashed-border box in the center — <strong>Network Navigation — Agentic Zone</strong> — a BPMN ad-hoc subprocess. Inside that zone, five tasks are visible but <em>not connected by sequence flows</em>:</p>
+<ul>
+<li><strong>Network Optimization Agent</strong> (AI service task)</li>
+<li><strong>Cost Transparency Agent</strong> (AI service task)</li>
+<li><strong>Prior Authorization Preparation Agent</strong> (AI service task)</li>
+<li><strong>Facility &amp; Availability Agent</strong> (AI service task)</li>
+<li><strong>Clinical Pathway Matching Agent</strong> (AI service task)</li>
+<li><strong>Benefits Counselor Review</strong> (human escalation task)</li>
+</ul>
+<p>After the agentic zone completes, a <strong>Settlement Authority Gateway</strong> evaluates the navigation result and routes to one of three outcomes: <strong>Approved In-Network Referral</strong>, <strong>Out-of-Network Exception with Patient Cost Disclosure</strong>, or <strong>Referral Denied — Appeal Initiated</strong>.</p>
+<h3 id="what-makes-this-domain-unforgiving">What Makes This Domain Unforgiving<a class="headerlink" href="#what-makes-this-domain-unforgiving" title="Permanent link">&para;</a></h3>
+<p>Healthcare insurance network navigation exposes the governance gap because:</p>
+<ul>
+<li>
+<p><strong>The patient bears the cost of errors.</strong> When an agent routes a patient to an out-of-network facility because it didn't trace the negotiated rate through the correct benefit tier, the patient gets a $47,000 surprise bill. This isn't a compliance inconvenience — it's financial devastation.</p>
+</li>
+<li>
+<p><strong>The regulatory surface is enormous.</strong> State insurance commissioners, CMS, the No Surprises Act, ERISA for employer plans, state network adequacy requirements — each jurisdiction imposes different rules on the same navigation decision. An agent that applies Texas network adequacy rules to a Florida patient has violated state insurance law.</p>
+</li>
+<li>
+<p><strong>The multi-party coordination is real.</strong> Patient, PCP, specialist, insurance company UM department, facility, pharmacy benefit manager, and state regulator all touch the same referral. This is the cross-cutting ecosystem orchestration problem — not a theoretical one — that no current agent runtime addresses.</p>
+</li>
+<li>
+<p><strong>Everyone has lived this process.</strong> Every reader has navigated insurance networks, fought a denied referral, or been surprised by an out-of-network bill. The governance gap is immediately recognizable.</p>
+</li>
+</ul>
+<h3 id="the-tasks-inside-the-agentic-zone">The Tasks Inside the Agentic Zone<a class="headerlink" href="#the-tasks-inside-the-agentic-zone" title="Permanent link">&para;</a></h3>
+<p>An orchestrating Navigation Agent receives the referral context from the process engine and decides which tasks to activate, in what order, based on the specific clinical referral and the patient's benefit design.</p>
+<table>
+<thead>
+<tr>
+<th>Task</th>
+<th>Job Type</th>
+<th>What the Agent Does</th>
+<th>What It Returns</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Network Optimization</strong></td>
+<td><code>optimize-network</code></td>
+<td>Searches contracted provider directory for the requested specialty within the patient's specific network tier; ranks by distance, quality scores, wait time, and negotiated rate; checks network adequacy against state minimums</td>
+<td><code>{ recommended_providers: [...], network_tier: "preferred", negotiated_rate_schedule: "2026-Q1-v3", state_adequacy_met: true }</code></td>
+</tr>
+<tr>
+<td><strong>Cost Transparency</strong></td>
+<td><code>calculate-cost-share</code></td>
+<td>Applies the patient's specific benefit design (deductible status, copay vs coinsurance, out-of-pocket max progress, accumulator status) to calculate the patient's actual cost for each recommended provider</td>
+<td><code>{ patient_cost_estimate: "$45_copay", deductible_remaining: "$1,200", oop_max_progress: "62%", cost_basis: "PPO_tier1_negotiated" }</code></td>
+</tr>
+<tr>
+<td><strong>Prior Auth Preparation</strong></td>
+<td><code>prepare-prior-auth</code></td>
+<td>Determines if the referral type + payer + diagnosis combination requires prior authorization; if yes, assembles the clinical documentation package against the payer's specific criteria</td>
+<td><code>{ auth_required: true, payer_criteria_version: "UHC-2026-cardiology-v2", documentation_complete: true, submission_ready: true }</code></td>
+</tr>
+<tr>
+<td><strong>Facility &amp; Availability</strong></td>
+<td><code>check-availability</code></td>
+<td>Queries facility scheduling systems for appointment availability; cross-references with the patient's urgency level and the clinical pathway's recommended timeframe</td>
+<td><code>{ earliest_available: "2026-04-02", facility: "Austin Heart — South", urgency_match: true, scheduling_hold_id: "AH-2026-04-8841" }</code></td>
+</tr>
+<tr>
+<td><strong>Clinical Pathway Matching</strong></td>
+<td><code>match-pathway</code></td>
+<td>Matches the referral diagnosis against evidence-based clinical pathways; determines if the referral destination, sequencing (e.g., imaging before specialist visit), and timing align with clinical best practice</td>
+<td><code>{ pathway_match: "ACC_chest_pain_eval_v4", recommended_sequence: ["stress_echo", "cardiology_consult"], alignment_score: 0.94 }</code></td>
+</tr>
+</tbody>
+</table>
+<p>When the orchestrating agent's confidence drops below 0.85 — because the benefit design is ambiguous, the network has adequacy gaps, or the clinical pathway suggests a different routing — the process escalates to the <strong>Benefits Counselor Review</strong> human task. A human reviews the agent's reasoning, makes the call, and the process continues. The agent doesn't guess when the stakes are the patient's wallet.</p>
+<h3 id="the-job-worker-pattern">The Job Worker Pattern<a class="headerlink" href="#the-job-worker-pattern" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>Orchestrator (Camunda Zeebe) creates job: &quot;network-navigation-agent&quot;
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>    │
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>    ├─► Python Job Worker receives job + context variables
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>    │     { referral_type: &quot;cardiology_consult&quot;, diagnosis: &quot;R07.9&quot;,
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>    │       payer: &quot;UHC_Choice_Plus_PPO&quot;, network_tier: &quot;tier_1&quot;,
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>    │       patient_zip: &quot;78745&quot;, urgency: &quot;routine&quot;,
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>    │       deductible_met: false, deductible_remaining: 1200,
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>    │       oop_ytd: 3100, oop_max: 5000 }
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>    │
+<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>    ├─► Navigation Agent reasons autonomously within its scope:
+<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>    │     - Activates Network Optimization (must run first — provider options
+<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a>    │       constrain everything downstream)
+<a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a>    │     - Activates Cost Transparency + Prior Auth Prep in parallel
+<a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a>    │       (independent once providers are known)
+<a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a>    │     - Activates Facility Availability + Clinical Pathway in parallel
+<a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a>    │     - Reviews accumulated results, calculates confidence
+<a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a>    │
+<a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a>    └─► Returns structured three-part response to Camunda:
+<a id="__codelineno-0-19" name="__codelineno-0-19" href="#__codelineno-0-19"></a>          {
+<a id="__codelineno-0-20" name="__codelineno-0-20" href="#__codelineno-0-20"></a>            results: {
+<a id="__codelineno-0-21" name="__codelineno-0-21" href="#__codelineno-0-21"></a>              recommended_provider: &quot;Dr. Mehta — Austin Heart South&quot;,
+<a id="__codelineno-0-22" name="__codelineno-0-22" href="#__codelineno-0-22"></a>              network_status: &quot;tier_1_in_network&quot;,
+<a id="__codelineno-0-23" name="__codelineno-0-23" href="#__codelineno-0-23"></a>              patient_cost: &quot;$45_copay&quot;,
+<a id="__codelineno-0-24" name="__codelineno-0-24" href="#__codelineno-0-24"></a>              auth_status: &quot;approved_auto&quot;,
+<a id="__codelineno-0-25" name="__codelineno-0-25" href="#__codelineno-0-25"></a>              appointment: &quot;2026-04-02T09:30&quot;
+<a id="__codelineno-0-26" name="__codelineno-0-26" href="#__codelineno-0-26"></a>            },
+<a id="__codelineno-0-27" name="__codelineno-0-27" href="#__codelineno-0-27"></a>            next_task: &quot;confirm_with_patient&quot;,
+<a id="__codelineno-0-28" name="__codelineno-0-28" href="#__codelineno-0-28"></a>            reasoning: &quot;Patient&#39;s UHC Choice Plus PPO plan covers
+<a id="__codelineno-0-29" name="__codelineno-0-29" href="#__codelineno-0-29"></a>                        cardiology consult at Tier 1 in-network rate.
+<a id="__codelineno-0-30" name="__codelineno-0-30" href="#__codelineno-0-30"></a>                        Dr. Mehta is 4.2 miles from patient, quality
+<a id="__codelineno-0-31" name="__codelineno-0-31" href="#__codelineno-0-31"></a>                        score 94th percentile, 8-day wait vs 22-day
+<a id="__codelineno-0-32" name="__codelineno-0-32" href="#__codelineno-0-32"></a>                        average. Prior auth auto-approved per UHC
+<a id="__codelineno-0-33" name="__codelineno-0-33" href="#__codelineno-0-33"></a>                        criteria v2 — diagnosis R07.9 with PCP referral
+<a id="__codelineno-0-34" name="__codelineno-0-34" href="#__codelineno-0-34"></a>                        meets all documentation requirements. Patient
+<a id="__codelineno-0-35" name="__codelineno-0-35" href="#__codelineno-0-35"></a>                        cost: $45 specialist copay (deductible waived
+<a id="__codelineno-0-36" name="__codelineno-0-36" href="#__codelineno-0-36"></a>                        for in-network specialist visits per plan design).
+<a id="__codelineno-0-37" name="__codelineno-0-37" href="#__codelineno-0-37"></a>                        No out-of-pocket surprise risk.&quot;
+<a id="__codelineno-0-38" name="__codelineno-0-38" href="#__codelineno-0-38"></a>          }
+</code></pre></div>
+<h3 id="where-the-governance-gap-hits">Where the Governance Gap Hits<a class="headerlink" href="#where-the-governance-gap-hits" title="Permanent link">&para;</a></h3>
+<p>The architecture above shows the governed version — what <em>should</em> happen. Here's what happens today, when the same referral runs on an agent runtime <em>without</em> that governance substrate:</p>
+<p><strong>The agent recommends an out-of-network specialist because of shorter wait times.</strong> The patient sees the specialist, gets a bill for \$4,700 instead of \$45. The agent had good reasoning — shorter wait, higher quality score — but it didn't trace the cost transparency decision through the patient's specific benefit design. No lineage. No audit trail. No evidence that the patient was informed of the cost differential before the appointment was booked.</p>
+<p>A state insurance commissioner asks: <em>"Was the patient informed of the out-of-network cost before the appointment?"</em></p>
+<p>Without a governance substrate, the answer is a three-week forensic investigation through log files. With seven-layer semantic lineage, the answer is a three-second query:</p>
+<ul>
+<li><strong>Layer 1 (Instance):</strong> Navigation completed 2026-03-28T14:22, recommended Dr. Chen (out-of-network)</li>
+<li><strong>Layer 2 (Class):</strong> Network Optimization activity class shows OON recommendations have 34% patient complaint rate vs 2% for in-network — pattern should have triggered escalation</li>
+<li><strong>Layer 3 (Policy):</strong> Patient cost disclosure policy v3.1 requires explicit patient acknowledgment before OON routing</li>
+<li><strong>Layer 4 (Regulatory):</strong> Texas Insurance Code §1467 and No Surprises Act §2799A-1 impose specific disclosure requirements for OON referrals</li>
+<li><strong>Layer 5 (Historical):</strong> 847 prior navigations for this payer/plan combination — 96.2% routed in-network successfully</li>
+<li><strong>Layer 6 (ML):</strong> Model confidence 0.71 on OON recommendation (below 0.85 threshold) — should have escalated to Benefits Counselor</li>
+<li><strong>Layer 7 (Agent Reasoning):</strong> "Selected Dr. Chen due to 3-day wait vs 8-day for in-network options. Did not weight cost transparency results sufficiently."</li>
+</ul>
+<p>Every layer present. Every question answered. The system <em>knows</em> it made a mistake — and more importantly, it knows <em>why</em>, which means the activity class gets updated and the next navigation won't repeat it.</p>
+<p>That's the difference between an agent runtime and a governed architecture. The runtime executed perfectly. The governance substrate would have caught the error before the patient ever walked into the wrong office.</p>
+<hr />
+<h2 id="the-patients-perspective">The Patient's Perspective<a class="headerlink" href="#the-patients-perspective" title="Permanent link">&para;</a></h2>
+<p>The process above describes the technical architecture. But the governance gap doesn't live in architecture diagrams — it lives in the experience of the person caught inside the process.</p>
+<p><img alt="Specialist Referral — The Patient's Perspective" src="../../assets/images/patient_referral_journey.png" /></p>
+<p><em>Figure: What the patient sees, does, and doesn't know is happening. The top layer (blue) is the patient's visible journey — symptom through black-box waiting to outcome. The middle layer (orange) shows the seven AI agents operating invisibly on the patient's referral. The bottom layer (red) names the governance gaps that leave the patient without recourse. Note the three possible outcomes: a \$45 copay, a \$4,700 surprise bill, or outright denial — and the patient has no visibility into which AI decisions determined their path.</em></p>
+<p>The patient's experience is defined by what they <em>can't</em> see. They Google symptoms (an AI frames their understanding before they ever call the doctor). They get a referral ("you need a cardiologist"). Then they enter the <strong>black box</strong> — calling scheduling lines, checking portals, waiting for callbacks, with no idea whether prior authorization has been requested, approved, or denied. Behind that black box, seven AI agents are making decisions about their care, their cost, and their access. Two of those agents — Cost Optimization and Claim Adjudication — are explicitly optimizing <em>against</em> the patient's financial interest. The patient has no seat at the table, no escalation rights, and no AI disclosure.</p>
+<p>The patient bears 100% of the financial consequence and has 0% visibility into the AI decisions shaping their outcome. The party with the most at stake has the least information. Companion papers examine this same referral from the provider's perspective and the insurance company's perspective — each reveals a different set of AI touchpoints and a different set of governance questions that no current agent runtime answers.</p>
+<hr />
+<h2 id="whats-missing-from-the-patients-journey">What's Missing From the Patient's Journey<a class="headerlink" href="#whats-missing-from-the-patients-journey" title="Permanent link">&para;</a></h2>
+<p>What you just saw — the agent that routed a patient to the wrong specialist because it optimized for one variable without tracing the cost through the patient's benefit design — is a symptom. Here's the architectural diagnosis.</p>
+<p>No agent runtime ships with the governance substrate that would have caught this. The runtime executes decisions. It doesn't trace them, learn from them, or enforce boundaries around them. From the patient's perspective, four things are missing — and each one maps directly to a moment in their journey where the system failed them.</p>
+<h3 id="missing-decision-lineage">Missing: Decision Lineage<a class="headerlink" href="#missing-decision-lineage" title="Permanent link">&para;</a></h3>
+<p>The patient got a $4,700 bill. When they call to dispute it, nobody can explain <em>why</em> the agent chose Dr. Chen over Dr. Mehta. What policy was in effect? What version of that policy? What data informed the selection? What was the agent's confidence score? Was a human ever in the loop?</p>
+<p>The agent executed the decision. Nothing traced its lineage. The patient's appeal becomes a three-week forensic investigation — if anyone agrees to investigate at all.</p>
+<h3 id="missing-class-level-learning">Missing: Class-Level Learning<a class="headerlink" href="#missing-class-level-learning" title="Permanent link">&para;</a></h3>
+<p>This patient isn't the first to be routed out-of-network for this payer and plan combination. 847 prior navigations exist. 96.2% routed in-network successfully. But the system doesn't <em>know</em> that — because no agent runtime maintains an activity class library that learns from activity instances. Every navigation starts from zero. The patient's bad outcome doesn't teach the system anything.</p>
+<h3 id="missing-governed-autonomy-boundaries">Missing: Governed Autonomy Boundaries<a class="headerlink" href="#missing-governed-autonomy-boundaries" title="Permanent link">&para;</a></h3>
+<p>The Cost Transparency Agent returned data showing the out-of-network cost differential. The orchestrating agent weighted wait time over cost. In a governed architecture, the process engine would enforce a hard constraint: <em>no OON routing without explicit patient acknowledgment of the cost differential.</em> That's not a guideline in a system prompt — it's a deterministic gate that no amount of LLM reasoning can override.</p>
+<p>Agent runtimes give agents freedom to act. They don't give patients the architecture that defines <em>where</em> that freedom must stop.</p>
+<h3 id="missing-cross-cutting-coordination">Missing: Cross-Cutting Coordination<a class="headerlink" href="#missing-cross-cutting-coordination" title="Permanent link">&para;</a></h3>
+<p>Five agents worked this referral — Network Optimization, Cost Transparency, Prior Authorization, Facility &amp; Availability, and Clinical Pathway. Each returned structured results. But no architecture ensured that Cost Transparency's out-of-network finding <em>actually influenced</em> Network Optimization's final recommendation. The agents operated in parallel. They didn't coordinate. The patient paid for the gap.</p>
+<hr />
+<h2 id="the-three-values-worth-preserving-and-how-to-encode-them">The Three Values Worth Preserving — and How to Encode Them<a class="headerlink" href="#the-three-values-worth-preserving-and-how-to-encode-them" title="Permanent link">&para;</a></h2>
+<p>The patient's journey reveals a governance gap — but it also reveals capabilities worth keeping. Three things matter regardless of which runtime or vendor owns the agent layer. The question is whether they require human consultants at partner rates, or whether they can be encoded architecturally.</p>
+<h3 id="1-domain-pattern-libraries-learned-process-intelligence">1. Domain Pattern Libraries → Learned Process Intelligence<a class="headerlink" href="#1-domain-pattern-libraries-learned-process-intelligence" title="Permanent link">&para;</a></h3>
+<p>Consulting firms accumulate patterns from dozens of engagements: "In banking, this integration approach works; in healthcare, that compliance path succeeds." This knowledge is real and valuable.</p>
+<p><strong>Architectural replacement:</strong> The autonomous orchestration generation framework I've developed replaces static pattern libraries with <em>learned</em> process intelligence. The system doesn't need a consultant to say "this sequence works" — it discovers effective patterns through process mining, scores them through ML, and composes new orchestrations from the learned library. Every execution makes the library better.</p>
+<h3 id="2-security-and-compliance-framing-semantic-lineage-and-auditability">2. Security and Compliance Framing → Semantic Lineage and Auditability<a class="headerlink" href="#2-security-and-compliance-framing-semantic-lineage-and-auditability" title="Permanent link">&para;</a></h3>
+<p>The consulting firm's compliance value is translating platform capability into regulatory permission. They tell the CISO what's safe. They tell legal what's auditable.</p>
+<p><strong>Architectural replacement:</strong> Seven-layer semantic lineage makes every agent decision self-auditing. When the compliance question changes from "is this platform safe?" to "can I trace every decision this platform makes through seven layers of context?" — the consulting firm's gatekeeping role dissolves. Visibility destroys dependency on external interpreters.</p>
+<h3 id="3-integration-architecture-governed-agentic-mesh">3. Integration Architecture → Governed Agentic Mesh<a class="headerlink" href="#3-integration-architecture-governed-agentic-mesh" title="Permanent link">&para;</a></h3>
+<p>Consultants design how AI connects to enterprise systems. This is real engineering work — but it's also where consultants build their stickiest IP.</p>
+<p><strong>Architectural replacement:</strong> The <a href="../agentic-agency-and-workflows/">Agentic Mesh</a> architecture uses BPMN as the deterministic spine, standard protocols (MCP) as the operational interface layer, and semantic carriers to preserve business meaning across process boundaries. The integration architecture isn't proprietary IP locked in a consultant's accelerator — it's an open, governed fabric the enterprise owns.</p>
+<h3 id="what-cant-be-automated">What Can't Be Automated<a class="headerlink" href="#what-cant-be-automated" title="Permanent link">&para;</a></h3>
+<p>One consulting capability genuinely can't be encoded: <strong>organizational change sponsorship</strong>. The executive coalition-building, political navigation, and institutional resistance management that determines whether any architecture actually gets deployed. That's a human and political problem, not an architectural one. It's worth naming explicitly: the governance gap is an <em>architecture</em> gap, not a change management gap. Both matter. They're different disciplines.</p>
+<hr />
+<h2 id="appendix-evidentiary-basis-when-the-agent-gets-it-wrong">Appendix: Evidentiary Basis — "When the Agent Gets It Wrong"<a class="headerlink" href="#appendix-evidentiary-basis-when-the-agent-gets-it-wrong" title="Permanent link">&para;</a></h2>
+<p>The opening scenario in this paper — an AI agent navigating a referral, selecting a specialist, booking an appointment, and generating a surprise out-of-network bill with no cost transparency lineage — is not hypothetical. It is a composite of four independently documented patterns, each with named AI systems, federal legislation, or congressional investigation attached.</p>
+<hr />
+<h3 id="a1-aiautomated-systems-navigating-prior-authorization-without-human-review">A1. AI/Automated Systems Navigating Prior Authorization Without Human Review<a class="headerlink" href="#a1-aiautomated-systems-navigating-prior-authorization-without-human-review" title="Permanent link">&para;</a></h3>
+<p><strong>Cigna — PXDX Algorithm</strong>
+McLaughlin, B., Rucker, P., and Miller, M. "How Cigna Saves Millions by Having Its Doctors Reject Claims Without Reading Them." <em>ProPublica</em>, March 25, 2023.
+Cigna's PXDX system auto-matched diagnosis codes to coverage policies and surfaced pre-scored denial decisions. Physicians approved at an average of <strong>1.2 seconds per claim</strong> — no chart review, no patient contact. Over 300,000 claims rejected in two months. The AI system is named explicitly; physicians described their role as confirmatory, not evaluative.</p>
+<p><strong>UnitedHealth Group — nH Predict</strong>
+"UnitedHealth's AI Model Denies Elderly Patients Needed Care, Lawsuit Says." <em>Reuters</em>, November 14, 2023.
+Class action: <em>Estate of Gene Lokken et al. v. UnitedHealth Group, Inc.</em> (D. Minn. 2023).
+UnitedHealth's <strong>nH Predict ML model</strong> — trained on the company's own claims data — predicted when post-acute care patients were ready for discharge, overriding treating physicians at a documented &gt;90% rate. The model is named in the complaint; this is a machine learning system, not a rules engine.</p>
+<p><strong>U.S. Senate Finance Committee — Algorithmic Prior Authorization Investigation (2023–2024)</strong>
+Sen. Ron Wyden, Chairman, Senate Finance Committee. Letters to Humana, UnitedHealth Group, and Cigna requesting documentation of AI/algorithm use in prior authorization decisions and denial rate data. Humana's response confirmed use of AI-assisted coverage determination. Public record at <em>finance.senate.gov</em>.</p>
+<hr />
+<h3 id="a2-the-patient-receives-a-large-bill-because-network-status-was-not-checked">A2. The Patient Receives a Large Bill Because Network Status Was Not Checked<a class="headerlink" href="#a2-the-patient-receives-a-large-bill-because-network-status-was-not-checked" title="Permanent link">&para;</a></h3>
+<p><strong>No Surprises Act</strong>
+Consolidated Appropriations Act, 2021, Division BB (Public Law 116-260). Effective January 1, 2022.
+Congress passed federal legislation specifically because referral and booking processes — automated and manual — routinely failed to verify network status before scheduling. The legislative record explicitly identifies the patient harm pattern: a referred appointment booked without confirming in-network status, resulting in bills the patient could not have anticipated. The law's <em>existence</em> is the citation; the problem was widespread enough to require a federal fix.</p>
+<p><strong>KFF (Kaiser Family Foundation) Health System Tracker, 2021</strong>
+"Surprise Medical Bills: New Protections for Consumers Take Effect in 2022."
+Survey finding: <strong>1 in 5 insured adults</strong> had received a surprise out-of-network bill. In specialist and hospital facility contexts, amounts regularly exceeded \$1,000; documented cases ranged into the \$3,000–\$10,000+ range. The \$45/\$4,700 ratio used in this paper is conservative — some documented cases were 500–1,000× the expected in-network cost.</p>
+<hr />
+<h3 id="a3-no-evidence-the-patient-was-informed-before-the-appointment">A3. No Evidence the Patient Was Informed Before the Appointment<a class="headerlink" href="#a3-no-evidence-the-patient-was-informed-before-the-appointment" title="Permanent link">&para;</a></h3>
+<p><strong>HHS Office of Inspector General</strong>
+OIG Report OEI-09-18-00260. "Medicare Advantage Organizations Inappropriately Denied Beneficiaries Access to Services." April 2022.
+13% of denied prior authorization requests met Medicare coverage rules and should have been approved. OIG found documentation gaps: plans could not demonstrate that members received adequate notice of cost or coverage consequences before services were rendered.</p>
+<p><strong>CMS Final Rule — Electronic Prior Authorization</strong>
+"Improving Access to Prior Authorization Processes in Medicare Advantage, Medicaid, CHIP, and FFE QHP Issuers." CMS-0057-F, February 2024.
+Requires electronic prior authorization with <strong>reasoning attached to decisions</strong>. The regulatory requirement for queryable reasoning and audit trails was created explicitly because it did not previously exist. The rule names "automated decision-making" as the triggering problem class.</p>
+<hr />
+<h3 id="a4-no-audit-trail-multi-week-forensic-investigation">A4. No Audit Trail → Multi-Week Forensic Investigation<a class="headerlink" href="#a4-no-audit-trail-multi-week-forensic-investigation" title="Permanent link">&para;</a></h3>
+<p><strong>ONC Health Data, Technology, and Interoperability (HTI-1) Final Rule</strong>
+"Health Data, Technology, and Interoperability: Certification Program Updates, Algorithm Transparency, and Information Sharing." ONC, January 2024.
+Requires decision support interventions in certified EHR systems to surface algorithm logic and evidence basis at point of care. Motivated in part by the documented inability of providers, patients, and regulators to reconstruct <em>why</em> an automated system made a routing or authorization recommendation after the fact.</p>
+<p><strong>NAIC Artificial Intelligence in Insurance — Model Bulletin</strong>
+National Association of Insurance Commissioners. December 2023.
+State insurance commissioners adopted a model bulletin requiring insurers to document AI decision logic and maintain audit trails for AI-assisted claims and authorization decisions. The bulletin explicitly acknowledges that as of 2023, most AI-assisted systems <strong>lacked queryable governance records</strong> — validating the "three-week forensic investigation" scenario described in this paper.</p>
+<hr />
+<h3 id="a5-on-the-45-4700-amounts">A5. On the \$45 / \$4,700 Amounts<a class="headerlink" href="#a5-on-the-45-4700-amounts" title="Permanent link">&para;</a></h3>
+<p>These figures are illustrative but within documented norms:
+- Typical in-network specialist copay: <strong>\$30–\$75</strong> (KFF Employer Health Benefits Survey, annual)
+- Out-of-network specialist charges prior to No Surprises Act protections: routinely <strong>\$2,000–\$12,000+</strong> depending on specialty and geography
+- The ~100× ratio is conservative; documented surprise bills before the NSA ranged 500–1,000× expected in-network cost</p>
+<p>Note: The No Surprises Act caps some of this exposure but contains significant carve-outs: self-funded employer plans retain opt-out pathways, ground ambulance is excluded, and cost-sharing still applies across all plan types.</p>
+<hr />
+<h2 id="appendix-b-the-agentic-sandwich-anatomy-of-a-governance-patternv">Appendix B: The Agentic Sandwich — Anatomy of a Governance Pattern<sup>v</sup><a class="headerlink" href="#appendix-b-the-agentic-sandwich-anatomy-of-a-governance-patternv" title="Permanent link">&para;</a></h2>
+<p>The body of this paper introduces the agentic sandwich as a one-paragraph pattern. It deserves a fuller treatment — because the pattern explains both why most deployed agentic systems lack governance <em>and</em> what a governed alternative looks like.</p>
+<hr />
+<h3 id="what-it-is">What It Is<a class="headerlink" href="#what-it-is" title="Permanent link">&para;</a></h3>
+<p>The agentic sandwich is an architectural pattern that brackets an autonomous AI reasoning zone between two deterministic constraint layers:</p>
+<p><img src="../assets/images/agentic_sandwich_pattern.png" alt="The Agentic Sandwich Pattern" width="420"/></p>
+<p>The formal container is a <strong>BPMN 2.0 ad-hoc subprocess</strong> (ISO 19510). The tasks inside have no sequence-flow arrows connecting them. An orchestrating agent decides which to activate and in what order — but the <em>boundary</em> of the subprocess, its entry conditions, its exit conditions, and its completion criteria are all deterministic and engine-enforced. The agents own the reasoning. The process engine owns the state.</p>
+<p>This is what Bernd Ruecker calls the "deterministic spine" in <em>Practical Process Automation</em> and <em>Enterprise Process Orchestration</em> (O'Reilly) — the process engine as the source of truth for what has happened, what is happening, and what is allowed to happen next. The agentic sandwich extends that spine to encompass autonomous AI reasoning without surrendering governance.</p>
+<hr />
+<h3 id="how-it-came-to-be">How It Came to Be<a class="headerlink" href="#how-it-came-to-be" title="Permanent link">&para;</a></h3>
+<p>The pattern emerged from a collision between two trajectories:</p>
+<p><strong>Trajectory 1: Agentic AI frameworks assume unbounded autonomy.</strong> LangChain, CrewAI, AutoGen, and NVIDIA's own NemoClaw/OpenClaw give agents broad freedom to reason, plan, select tools, and act. The agent loop — observe, think, act, repeat — is designed for open-ended problem-solving. This is powerful. It is also ungovernable in any domain where decisions have regulated consequences.</p>
+<p>As Chip Huyen documents in <em>AI Engineering</em> (O'Reilly, 2024), production AI systems fail not because the models are wrong but because the <em>systems around the models</em> lack the engineering discipline to constrain, monitor, and audit model behavior at scale. The agent runtime is necessary. It is not sufficient.</p>
+<p>Lakshmanan and Hapke's <em>Generative AI Design Patterns</em> (O'Reilly, 2025) catalogs the architectural patterns emerging across production deployments — including guardrails, routing, and constraint patterns that map directly to the sandwich's deterministic layers. The pattern is converging across independent practitioners.</p>
+<p><strong>Trajectory 2: Regulated industries require deterministic auditability.</strong> Healthcare, financial services, and insurance operate under regimes (HIPAA, OCC, NAIC, CMS) that require every consequential decision to be reconstructable after the fact. "The AI decided" is not a compliant answer. The regulator needs to know <em>which</em> constraints were checked, <em>which</em> data informed the decision, <em>what</em> alternatives were considered, and <em>why</em> this outcome was selected.</p>
+<p>BPMN's ad-hoc subprocess — standardized in 2011, largely ignored by the AI community — was designed for exactly this problem: coordinated activities that cannot be pre-sequenced but must still execute within governed boundaries. The agentic sandwich didn't invent a new container. It recognized that the container already existed.</p>
+<p>Arsanjani and Bustos's <em>Agentic Architectural Patterns for Building Multi-Agent Systems</em> (Packt, 2026) identifies this same convergence — multi-agent coordination patterns that require both autonomy within the agent mesh and deterministic governance at the boundaries. The sandwich is one instantiation of that broader architectural requirement.</p>
+<hr />
+<h3 id="how-it-behaves-in-practice">How It Behaves in Practice<a class="headerlink" href="#how-it-behaves-in-practice" title="Permanent link">&para;</a></h3>
+<p>Walk through the referral navigation process in this paper:</p>
+<ol>
+<li>
+<p><strong>Entry gate fires.</strong> The process engine (Camunda/Zeebe) receives a referral order. The coverage eligibility service task executes — pure deterministic logic. Is the patient's coverage active? Does the benefit design permit self-referral or require PCP authorization? Is the referral type subject to prior authorization? These are boolean checks against structured data. No LLM. No reasoning. No override. If the gate fails, the process exits to a deterministic denial or hold path. The agent never activates.</p>
+</li>
+<li>
+<p><strong>Agentic zone opens.</strong> The gate passes. The process engine instantiates the ad-hoc subprocess. Five AI agents become available — Network Optimization, Cost Transparency, Prior Authorization Preparation, Facility &amp; Availability, and a human escalation path (Clinical Review Escalation). None of them are pre-sequenced. The orchestrating agent evaluates the referral context and decides: <em>which agents to activate, in what order, based on what the previous agents found.</em></p>
+</li>
+</ol>
+<p>Maybe Network Optimization runs first and identifies three candidate specialists. Cost Transparency runs next and discovers one is out-of-network — triggering mandatory cost disclosure logic. Prior Authorization runs in parallel because the referral type requires it. The orchestrating agent adapts. If Cost Transparency returns a gap — no in-network specialist within 30 days — the orchestrator activates a different sequence. If confidence on the best match stays below threshold, the escalation path fires and a human reviewer enters.</p>
+<ol>
+<li>
+<p><strong>Completion condition enforces.</strong> The ad-hoc subprocess cannot exit until the process engine confirms that mandatory checks have completed: cost transparency verified, network status confirmed, prior authorization status resolved (approved, pending, or not required), and the orchestrating agent's confidence score meets the minimum threshold. This is not a suggestion. It is an engine-enforced gate. An agent that tries to exit early gets blocked.</p>
+</li>
+<li>
+<p><strong>Exit gate routes.</strong> The structured output from the agentic zone feeds a deterministic exclusive gateway. Three paths: approved in-network (\$45 copay), out-of-network exception with mandatory cost disclosure, or denied with appeal rights. Every path is named. Every path has defined downstream behavior. No ambiguous exits.</p>
+</li>
+</ol>
+<p>Albada's <em>Building Applications with AI Agents</em> (O'Reilly, 2025) describes the agent boundary problem this solves: agents that can reason freely but produce structured, predictable outputs at their boundaries — what he frames as the interface contract between autonomous reasoning and system-level governance.</p>
+<hr />
+<h3 id="what-fixes-look-like">What Fixes Look Like<a class="headerlink" href="#what-fixes-look-like" title="Permanent link">&para;</a></h3>
+<p>Most deployed agentic systems today skip the sandwich entirely. The agent receives a request, reasons over it, and returns an answer. No entry gate. No exit gate. No completion condition. No audit trail linking the answer to the constraints that should have bounded it. The fixes are architectural, not algorithmic:</p>
+<p><strong>1. Use BPMN ad-hoc subprocesses as the formal container.</strong> The process engine — not the agent framework — owns the lifecycle. The engine knows when the zone opened, which tasks activated, what each returned, when the zone closed, and which exit path was taken. This is the audit trail that regulators require and that pure agent frameworks cannot produce.</p>
+<p><strong>2. Define deterministic gates as hard constraints.</strong> Entry and exit gates execute deterministic logic — rules engines, policy checks, eligibility verification — that no agent can override, no matter how persuasive the LLM's reasoning. Ruecker's "deterministic spine" principle: the orchestration engine enforces what must be true, and agents operate within what's left.</p>
+<p><strong>3. Implement three-return contracts for every agent.</strong> Every agent inside the zone returns three things: (a) structured data (the machine-readable result), (b) human-readable reasoning (the explanation a regulator or patient can understand), and (c) a next-task recommendation (what the orchestrator should consider activating next). This contract, proven in the <a href="../agentic-agency-and-workflows/">STEMI detection implementation</a>, makes every agent decision self-documenting.</p>
+<p><strong>4. Enforce confidence-gated escalation.</strong> When the orchestrating agent's confidence stays below a defined threshold after all available assessments, the architecture — not the agent — forces human-in-the-loop review. The agent doesn't decide whether it's confident enough. The process engine evaluates the confidence score against a deterministic threshold and routes accordingly.</p>
+<p><strong>5. Layer semantic lineage through the zone.</strong> Every decision inside the agentic zone gets tagged with its seven-layer semantic context: business process, domain ontology, regulatory rule, data source, transformation, ML model, and agent reasoning. The seven-layer lineage architecture makes the entire zone queryable after the fact — not through log-file forensics, but through structured semantic queries.</p>
+<p><strong>6. Separate the governance substrate from the agent framework.</strong> The process engine (Camunda/Zeebe) provides the governance spine. The agent framework (NemoClaw, LangChain, CrewAI) provides the reasoning capability. These are complementary, not competitive. The sandwich is the architectural seam where they meet — and where most current deployments have a gap.</p>
+<p>The pattern is not theoretical. It runs in production in <a href="../agentic-agency-and-workflows/">emergency medicine</a>, where the stakes — STEMI detection, cath lab activation, ALS intercept — are higher than insurance navigation. If the sandwich works for life-safety, it works for referral routing. The question is not whether the pattern scales. The question is why most enterprises skip it.</p>
+<hr />
+<h2 id="references-further-reading">References &amp; Further Reading<a class="headerlink" href="#references-further-reading" title="Permanent link">&para;</a></h2>
+<p><strong>Practitioner &amp; Architecture References</strong></p>
+<ul>
+<li>Bernd Ruecker, <em>Practical Process Automation</em> and <em>Enterprise Process Orchestration</em> (O'Reilly) — The definitive treatment of process orchestration engines in enterprise architecture</li>
+<li>Michael Albada, <em>Building Applications with AI Agents</em> (O'Reilly, 2025) — Practical patterns for agent-based application development</li>
+<li>Chip Huyen, <em>AI Engineering</em> (O'Reilly, 2024) — Engineering discipline for production AI systems</li>
+<li>Valliappa Lakshmanan and Hannes Hapke, <em>Generative AI Design Patterns</em> (O'Reilly, 2025) — Guardrails, routing, and constraint patterns for production generative AI</li>
+<li>Ali Arsanjani and Juan Pablo Bustos, <em>Agentic Architectural Patterns for Building Multi-Agent Systems</em> (Packt, 2026) — Multi-agent coordination patterns including bounded autonomy</li>
+</ul>
+<p><strong>Governance &amp; Trust</strong></p>
+<ul>
+<li>James Sayles, <em>Principles of Artificial Intelligence Governance</em> (O'Reilly, 2025) — Governance frameworks for enterprise AI</li>
+<li>Beena Ammanath, <em>Trustworthy AI</em> (Wiley, 2022) — Enterprise framework for AI trust and accountability</li>
+</ul>
+<p><strong>Healthcare Domain</strong></p>
+<ul>
+<li>Andrew Nguyen, <em>Hands-On Healthcare Data</em> (O'Reilly, 2022) — Healthcare data architectures and interoperability patterns</li>
+<li>Bohr &amp; Memarzadeh (eds.), <em>Artificial Intelligence in Healthcare</em> (Academic Press, 2020) — Clinical AI governance and patient safety considerations</li>
+</ul>
+<hr />
+<p><em>Gary Samuelson is a VP — Senior Manager, Software Engineering with 20+ years in AI architecture, process orchestration, and enterprise data platforms. He writes about semantic process intelligence, governed agentic orchestration, and the architectural foundations for enterprise AI at <a href="https://garysamuelson.github.io">garysamuelson.github.io</a>.</em></p>
+<hr />
+<p><em>© 2026 Gary Samuelson | CC BY-NC-ND 4.0 — Share freely with attribution. No commercial use. No derivatives without permission.</em></p>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://github.com/garysamuelson" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    </a>
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://linkedin.com/in/garysamuelson" target="_blank" rel="noopener" title="linkedin.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3M135.4 416H69V202.2h66.5V416zM102.2 96a38.5 38.5 0 1 1 0 77 38.5 38.5 0 1 1 0-77m282.1 320h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9z"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.top", "search.highlight", "search.suggest", "content.code.copy", "content.code.annotate"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+        <script src="https://unpkg.com/mermaid@11/dist/mermaid.min.js"></script>
+      
+    
+  </body>
+</html>
