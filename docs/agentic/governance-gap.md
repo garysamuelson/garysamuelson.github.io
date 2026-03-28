@@ -17,12 +17,6 @@ tags:
 
 ---
 
-![Specialist Referral — Network Navigation BPMN Model](../assets/images/network_navigation_agentic_sandwich.png)
-
-*Figure: The full BPMN 2.0 executable model for specialist referral network navigation — the "agentic sandwich" pattern. Left: a deterministic coverage gate the agent cannot override. Center: an ad-hoc subprocess where five AI agents and one human escalation path navigate the network autonomously. Right: a deterministic routing gate that settles the referral into one of three outcomes. This is what the process looks like when it's engineered for governance. Most deployed systems skip the model entirely.*
-
----
-
 ## When the Agent Gets It Wrong, the Patient Gets the Bill
 
 A patient's primary care physician orders a referral to a cardiologist. Between that order and the patient sitting in the specialist's office, six parties, three regulatory layers, and a maze of negotiated rates, benefit designs, and prior authorization requirements determine where that patient goes — and what they'll pay.
@@ -39,6 +33,20 @@ That's the governance gap. And every enterprise deploying autonomous agents toda
 
 ---
 
+## The Patient's Perspective
+
+Before the architecture, the experience. The governance gap doesn't live in diagrams — it lives in what happens to the person caught inside the process.
+
+![Specialist Referral — The Patient's Perspective](../assets/images/patient_referral_journey.png)
+
+*Figure: What the patient sees, does, and doesn't know is happening. The top layer (blue) is the patient's visible journey — symptom through black-box waiting to outcome. The middle layer (orange) shows the seven AI agents operating invisibly on the patient's referral. The bottom layer (red) names the governance gaps that leave the patient without recourse. Note the three possible outcomes: a \$45 copay, a \$4,700 surprise bill, or outright denial — and the patient has no visibility into which AI decisions determined their path.*
+
+The patient's experience is defined by what they *can't* see. They Google symptoms (an AI frames their understanding before they ever call the doctor). They get a referral ("you need a cardiologist"). Then they enter the **black box** — calling scheduling lines, checking portals, waiting for callbacks, with no idea whether prior authorization has been requested, approved, or denied. Behind that black box, seven AI agents are making decisions about their care, their cost, and their access. Two of those agents — Cost Optimization and Claim Adjudication — are explicitly optimizing *against* the patient's financial interest. The patient has no seat at the table, no escalation rights, and no AI disclosure.
+
+The patient bears 100% of the financial consequence and has 0% visibility into the AI decisions shaping their outcome. The party with the most at stake has the least information. Companion papers examine this same referral from the provider's perspective and the insurance company's perspective — each reveals a different set of AI touchpoints and a different set of governance questions that no current agent runtime answers.
+
+---
+
 ## The Patient's Journey
 
 The governance gap isn't abstract. It plays out in the process below — a specialist referral network navigation that touches every insured American and that almost nobody understands. The domain and its failure modes are real (see Appendix); the governed architecture is illustrative — designed to show what should exist, not what does.
@@ -48,6 +56,10 @@ The governance gap isn't abstract. It plays out in the process below — a speci
 *Figure: A patient referral navigated through the "agentic sandwich" — deterministic gates (blue) bracket an autonomous reasoning zone (amber) where five AI agents and one human escalation path coordinate the navigation. Three outcomes emerge on the right: approved in-network (\$45 copay), out-of-network exception with mandatory cost disclosure, or denied with appeal rights. The governance gap lives inside the agentic zone — where AI agents make decisions that determine the patient's financial outcome, and no current architecture makes those decisions auditable.*
 
 ### The Process: What You're Looking At
+
+![Specialist Referral — Network Navigation BPMN Model](../assets/images/network_navigation_agentic_sandwich.png)
+
+*Figure: The full BPMN 2.0 executable model for specialist referral network navigation — the "agentic sandwich" pattern. Left: a deterministic coverage gate the agent cannot override. Center: an ad-hoc subprocess where five AI agents and one human escalation path navigate the network autonomously. Right: a deterministic routing gate that settles the referral into one of three outcomes. This is what the process looks like when it's engineered for governance. Most deployed systems skip the model entirely.*
 
 Reading left to right: the process starts at **Referral Order Received** from the PCP. It passes through a **Coverage & Eligibility Verification** gateway — a deterministic gate that checks whether the patient has active coverage, whether the referral type requires authorization, and whether the benefit design (HMO, PPO, EPO, tiered network) permits self-referral or mandates PCP gatekeeping. This is a hard constraint. No agent overrides it.
 
@@ -133,13 +145,9 @@ Orchestrator (Camunda Zeebe) creates job: "network-navigation-agent"
 
 ### Where the Governance Gap Hits
 
-The architecture above shows the governed version — what *should* happen. Here's what happens today, when the same referral runs on an agent runtime *without* that governance substrate:
+The architecture above shows the governed version — what *should* happen. Here's what happens today, when the same referral runs on an agent runtime *without* that governance substrate.
 
-**The agent recommends an out-of-network specialist because of shorter wait times.** The patient sees the specialist, gets a bill for \$4,700 instead of \$45. The agent had good reasoning — shorter wait, higher quality score — but it didn't trace the cost transparency decision through the patient's specific benefit design. No lineage. No audit trail. No evidence that the patient was informed of the cost differential before the appointment was booked.
-
-A state insurance commissioner asks: *"Was the patient informed of the out-of-network cost before the appointment?"*
-
-Without a governance substrate, the answer is a three-week forensic investigation through log files. With seven-layer semantic lineage, the answer is a three-second query:
+Return to the referral that opened this paper — the agent that recommended Dr. Chen because of shorter wait times and a higher quality score. The patient got a \$4,700 bill. No lineage. No audit trail. The commissioner asks: *"Was the patient informed?"* With seven-layer semantic lineage, the answer is a three-second query:
 
 - **Layer 1 (Instance):** Navigation completed 2026-03-28T14:22, recommended Dr. Chen (out-of-network)
 - **Layer 2 (Class):** Network Optimization activity class shows OON recommendations have 34% patient complaint rate vs 2% for in-network — pattern should have triggered escalation
@@ -152,20 +160,6 @@ Without a governance substrate, the answer is a three-week forensic investigatio
 Every layer present. Every question answered. The system *knows* it made a mistake — and more importantly, it knows *why*, which means the activity class gets updated and the next navigation won't repeat it.
 
 That's the difference between an agent runtime and a governed architecture. The runtime executed perfectly. The governance substrate would have caught the error before the patient ever walked into the wrong office.
-
----
-
-## The Patient's Perspective
-
-The process above describes the technical architecture. But the governance gap doesn't live in architecture diagrams — it lives in the experience of the person caught inside the process.
-
-![Specialist Referral — The Patient's Perspective](../assets/images/patient_referral_journey.png)
-
-*Figure: What the patient sees, does, and doesn't know is happening. The top layer (blue) is the patient's visible journey — symptom through black-box waiting to outcome. The middle layer (orange) shows the seven AI agents operating invisibly on the patient's referral. The bottom layer (red) names the governance gaps that leave the patient without recourse. Note the three possible outcomes: a \$45 copay, a \$4,700 surprise bill, or outright denial — and the patient has no visibility into which AI decisions determined their path.*
-
-The patient's experience is defined by what they *can't* see. They Google symptoms (an AI frames their understanding before they ever call the doctor). They get a referral ("you need a cardiologist"). Then they enter the **black box** — calling scheduling lines, checking portals, waiting for callbacks, with no idea whether prior authorization has been requested, approved, or denied. Behind that black box, seven AI agents are making decisions about their care, their cost, and their access. Two of those agents — Cost Optimization and Claim Adjudication — are explicitly optimizing *against* the patient's financial interest. The patient has no seat at the table, no escalation rights, and no AI disclosure.
-
-The patient bears 100% of the financial consequence and has 0% visibility into the AI decisions shaping their outcome. The party with the most at stake has the least information. Companion papers examine this same referral from the provider's perspective and the insurance company's perspective — each reveals a different set of AI touchpoints and a different set of governance questions that no current agent runtime answers.
 
 ---
 
@@ -199,29 +193,9 @@ Five agents worked this referral — Network Optimization, Cost Transparency, Pr
 
 ## The Three Values Worth Preserving — and How to Encode Them
 
-The patient's journey reveals a governance gap — but it also reveals capabilities worth keeping. Three things matter regardless of which runtime or vendor owns the agent layer. The question is whether they require human consultants at partner rates, or whether they can be encoded architecturally.
+The governance gap creates dependency on external consultants — pattern libraries, compliance framing, integration architecture — but that dependency is architectural, not inherent. Three capabilities currently delivered at partner rates can be encoded: domain pattern libraries become learned process intelligence, compliance gatekeeping dissolves under seven-layer semantic lineage, and proprietary integration accelerators yield to a [governed agentic mesh](../agentic/agentic-agency-and-workflows.md) built on standard protocols. One capability genuinely can't be automated: **organizational change sponsorship** — the executive coalition-building and political navigation that determines whether any architecture gets deployed. The governance gap is an *architecture* gap, not a change management gap. Both matter. They're different disciplines.
 
-### 1. Domain Pattern Libraries → Learned Process Intelligence
-
-Consulting firms accumulate patterns from dozens of engagements: "In banking, this integration approach works; in healthcare, that compliance path succeeds." This knowledge is real and valuable.
-
-**Architectural replacement:** The autonomous orchestration generation framework I've developed replaces static pattern libraries with *learned* process intelligence. The system doesn't need a consultant to say "this sequence works" — it discovers effective patterns through process mining, scores them through ML, and composes new orchestrations from the learned library. Every execution makes the library better.
-
-### 2. Security and Compliance Framing → Semantic Lineage and Auditability
-
-The consulting firm's compliance value is translating platform capability into regulatory permission. They tell the CISO what's safe. They tell legal what's auditable.
-
-**Architectural replacement:** Seven-layer semantic lineage makes every agent decision self-auditing. When the compliance question changes from "is this platform safe?" to "can I trace every decision this platform makes through seven layers of context?" — the consulting firm's gatekeeping role dissolves. Visibility destroys dependency on external interpreters.
-
-### 3. Integration Architecture → Governed Agentic Mesh
-
-Consultants design how AI connects to enterprise systems. This is real engineering work — but it's also where consultants build their stickiest IP.
-
-**Architectural replacement:** The [Agentic Mesh](../agentic/agentic-agency-and-workflows.md) architecture uses BPMN as the deterministic spine, standard protocols (MCP) as the operational interface layer, and semantic carriers to preserve business meaning across process boundaries. The integration architecture isn't proprietary IP locked in a consultant's accelerator — it's an open, governed fabric the enterprise owns.
-
-### What Can't Be Automated
-
-One consulting capability genuinely can't be encoded: **organizational change sponsorship**. The executive coalition-building, political navigation, and institutional resistance management that determines whether any architecture actually gets deployed. That's a human and political problem, not an architectural one. It's worth naming explicitly: the governance gap is an *architecture* gap, not a change management gap. Both matter. They're different disciplines.
+*For the full treatment — including why this dependency is structural and how each architectural replacement works — see "Consulting Dependency as Architecture" (forthcoming).*
 
 ---
 
@@ -296,75 +270,13 @@ Note: The No Surprises Act caps some of this exposure but contains significant c
 
 ## Appendix B: The Agentic Sandwich — Anatomy of a Governance Pattern<sup>v</sup>
 
-The body of this paper introduces the agentic sandwich as a one-paragraph pattern. It deserves a fuller treatment — because the pattern explains both why most deployed agentic systems lack governance *and* what a governed alternative looks like.
-
----
-
-### What It Is
-
-The agentic sandwich is an architectural pattern that brackets an autonomous AI reasoning zone between two deterministic constraint layers:
+The agentic sandwich brackets an autonomous AI reasoning zone between two deterministic constraint layers — entry gates the agent cannot override, exit gates that enforce completion conditions, and a BPMN 2.0 ad-hoc subprocess that gives agents freedom to reason while the process engine owns the state.
 
 <img src="../assets/images/agentic_sandwich_pattern.png" alt="The Agentic Sandwich Pattern" width="420"/>
 
-The formal container is a **BPMN 2.0 ad-hoc subprocess** (ISO 19510). The tasks inside have no sequence-flow arrows connecting them. An orchestrating agent decides which to activate and in what order — but the *boundary* of the subprocess, its entry conditions, its exit conditions, and its completion criteria are all deterministic and engine-enforced. The agents own the reasoning. The process engine owns the state.
+The pattern emerged from a collision between two trajectories: agentic AI frameworks that assume unbounded autonomy, and regulated industries that require every consequential decision to be reconstructable after the fact. BPMN's ad-hoc subprocess — standardized in 2011, largely ignored by the AI community — was designed for exactly this problem. The sandwich didn't invent a new container. It recognized that the container already existed.
 
-This is what Bernd Ruecker calls the "deterministic spine" in *Practical Process Automation* and *Enterprise Process Orchestration* (O'Reilly) — the process engine as the source of truth for what has happened, what is happening, and what is allowed to happen next. The agentic sandwich extends that spine to encompass autonomous AI reasoning without surrendering governance.
-
----
-
-### How It Came to Be
-
-The pattern emerged from a collision between two trajectories:
-
-**Trajectory 1: Agentic AI frameworks assume unbounded autonomy.** LangChain, CrewAI, AutoGen, and NVIDIA's own NemoClaw/OpenClaw give agents broad freedom to reason, plan, select tools, and act. The agent loop — observe, think, act, repeat — is designed for open-ended problem-solving. This is powerful. It is also ungovernable in any domain where decisions have regulated consequences.
-
-As Chip Huyen documents in *AI Engineering* (O'Reilly, 2024), production AI systems fail not because the models are wrong but because the *systems around the models* lack the engineering discipline to constrain, monitor, and audit model behavior at scale. The agent runtime is necessary. It is not sufficient.
-
-Lakshmanan and Hapke's *Generative AI Design Patterns* (O'Reilly, 2025) catalogs the architectural patterns emerging across production deployments — including guardrails, routing, and constraint patterns that map directly to the sandwich's deterministic layers. The pattern is converging across independent practitioners.
-
-**Trajectory 2: Regulated industries require deterministic auditability.** Healthcare, financial services, and insurance operate under regimes (HIPAA, OCC, NAIC, CMS) that require every consequential decision to be reconstructable after the fact. "The AI decided" is not a compliant answer. The regulator needs to know *which* constraints were checked, *which* data informed the decision, *what* alternatives were considered, and *why* this outcome was selected.
-
-BPMN's ad-hoc subprocess — standardized in 2011, largely ignored by the AI community — was designed for exactly this problem: coordinated activities that cannot be pre-sequenced but must still execute within governed boundaries. The agentic sandwich didn't invent a new container. It recognized that the container already existed.
-
-Arsanjani and Bustos's *Agentic Architectural Patterns for Building Multi-Agent Systems* (Packt, 2026) identifies this same convergence — multi-agent coordination patterns that require both autonomy within the agent mesh and deterministic governance at the boundaries. The sandwich is one instantiation of that broader architectural requirement.
-
----
-
-### How It Behaves in Practice
-
-Walk through the referral navigation process in this paper:
-
-1. **Entry gate fires.** The process engine (Camunda/Zeebe) receives a referral order. The coverage eligibility service task executes — pure deterministic logic. Is the patient's coverage active? Does the benefit design permit self-referral or require PCP authorization? Is the referral type subject to prior authorization? These are boolean checks against structured data. No LLM. No reasoning. No override. If the gate fails, the process exits to a deterministic denial or hold path. The agent never activates.
-
-2. **Agentic zone opens.** The gate passes. The process engine instantiates the ad-hoc subprocess. Five AI agents become available — Network Optimization, Cost Transparency, Prior Authorization Preparation, Facility & Availability, and a human escalation path (Clinical Review Escalation). None of them are pre-sequenced. The orchestrating agent evaluates the referral context and decides: *which agents to activate, in what order, based on what the previous agents found.*
-
-   Maybe Network Optimization runs first and identifies three candidate specialists. Cost Transparency runs next and discovers one is out-of-network — triggering mandatory cost disclosure logic. Prior Authorization runs in parallel because the referral type requires it. The orchestrating agent adapts. If Cost Transparency returns a gap — no in-network specialist within 30 days — the orchestrator activates a different sequence. If confidence on the best match stays below threshold, the escalation path fires and a human reviewer enters.
-
-3. **Completion condition enforces.** The ad-hoc subprocess cannot exit until the process engine confirms that mandatory checks have completed: cost transparency verified, network status confirmed, prior authorization status resolved (approved, pending, or not required), and the orchestrating agent's confidence score meets the minimum threshold. This is not a suggestion. It is an engine-enforced gate. An agent that tries to exit early gets blocked.
-
-4. **Exit gate routes.** The structured output from the agentic zone feeds a deterministic exclusive gateway. Three paths: approved in-network (\$45 copay), out-of-network exception with mandatory cost disclosure, or denied with appeal rights. Every path is named. Every path has defined downstream behavior. No ambiguous exits.
-
-Albada's *Building Applications with AI Agents* (O'Reilly, 2025) describes the agent boundary problem this solves: agents that can reason freely but produce structured, predictable outputs at their boundaries — what he frames as the interface contract between autonomous reasoning and system-level governance.
-
----
-
-### What Fixes Look Like
-
-Most deployed agentic systems today skip the sandwich entirely. The agent receives a request, reasons over it, and returns an answer. No entry gate. No exit gate. No completion condition. No audit trail linking the answer to the constraints that should have bounded it. The fixes are architectural, not algorithmic:
-
-**1. Use BPMN ad-hoc subprocesses as the formal container.** The process engine — not the agent framework — owns the lifecycle. The engine knows when the zone opened, which tasks activated, what each returned, when the zone closed, and which exit path was taken. This is the audit trail that regulators require and that pure agent frameworks cannot produce.
-
-**2. Define deterministic gates as hard constraints.** Entry and exit gates execute deterministic logic — rules engines, policy checks, eligibility verification — that no agent can override, no matter how persuasive the LLM's reasoning. Ruecker's "deterministic spine" principle: the orchestration engine enforces what must be true, and agents operate within what's left.
-
-**3. Implement three-return contracts for every agent.** Every agent inside the zone returns three things: (a) structured data (the machine-readable result), (b) human-readable reasoning (the explanation a regulator or patient can understand), and (c) a next-task recommendation (what the orchestrator should consider activating next). This contract, proven in the [STEMI detection implementation](../agentic/agentic-agency-and-workflows.md), makes every agent decision self-documenting.
-
-**4. Enforce confidence-gated escalation.** When the orchestrating agent's confidence stays below a defined threshold after all available assessments, the architecture — not the agent — forces human-in-the-loop review. The agent doesn't decide whether it's confident enough. The process engine evaluates the confidence score against a deterministic threshold and routes accordingly.
-
-**5. Layer semantic lineage through the zone.** Every decision inside the agentic zone gets tagged with its seven-layer semantic context: business process, domain ontology, regulatory rule, data source, transformation, ML model, and agent reasoning. The seven-layer lineage architecture makes the entire zone queryable after the fact — not through log-file forensics, but through structured semantic queries.
-
-**6. Separate the governance substrate from the agent framework.** The process engine (Camunda/Zeebe) provides the governance spine. The agent framework (NemoClaw, LangChain, CrewAI) provides the reasoning capability. These are complementary, not competitive. The sandwich is the architectural seam where they meet — and where most current deployments have a gap.
-
-The pattern is not theoretical. It runs in production in [emergency medicine](../agentic/agentic-agency-and-workflows.md), where the stakes — STEMI detection, cath lab activation, ALS intercept — are higher than insurance navigation. If the sandwich works for life-safety, it works for referral routing. The question is not whether the pattern scales. The question is why most enterprises skip it.
+*For the full treatment — what the pattern is, how it emerged, how it behaves in practice, and what architectural fixes look like — see "The Agentic Sandwich — Anatomy of a Governance Pattern" (forthcoming).*
 
 ---
 
