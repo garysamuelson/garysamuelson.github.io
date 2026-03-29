@@ -102,45 +102,48 @@ When the orchestrating agent's confidence drops below 0.85 — because the benef
 
 ### The Job Worker Pattern
 
+**Step 1 — Orchestrator posts the job**
+
+Camunda Zeebe creates a job `"network-navigation-agent"` and attaches the referral context:
+
+```json
+{
+  "referral_type": "cardiology_consult",
+  "diagnosis": "R07.9",
+  "payer": "UHC_Choice_Plus_PPO",
+  "network_tier": "tier_1",
+  "patient_zip": "78745",
+  "urgency": "routine",
+  "deductible_met": false,
+  "deductible_remaining": 1200,
+  "oop_ytd": 3100,
+  "oop_max": 5000
+}
 ```
-Orchestrator (Camunda Zeebe) creates job: "network-navigation-agent"
-    │
-    ├─► Python Job Worker receives job + context variables
-    │     { referral_type: "cardiology_consult", diagnosis: "R07.9",
-    │       payer: "UHC_Choice_Plus_PPO", network_tier: "tier_1",
-    │       patient_zip: "78745", urgency: "routine",
-    │       deductible_met: false, deductible_remaining: 1200,
-    │       oop_ytd: 3100, oop_max: 5000 }
-    │
-    ├─► Navigation Agent reasons autonomously within its scope:
-    │     - Activates Network Optimization (must run first — provider options
-    │       constrain everything downstream)
-    │     - Activates Cost Transparency + Prior Auth Prep in parallel
-    │       (independent once providers are known)
-    │     - Activates Facility Availability + Clinical Pathway in parallel
-    │     - Reviews accumulated results, calculates confidence
-    │
-    └─► Returns structured three-part response to Camunda:
-          {
-            results: {
-              recommended_provider: "Dr. Mehta — Austin Heart South",
-              network_status: "tier_1_in_network",
-              patient_cost: "$45_copay",
-              auth_status: "approved_auto",
-              appointment: "2026-04-02T09:30"
-            },
-            next_task: "confirm_with_patient",
-            reasoning: "Patient's UHC Choice Plus PPO plan covers
-                        cardiology consult at Tier 1 in-network rate.
-                        Dr. Mehta is 4.2 miles from patient, quality
-                        score 94th percentile, 8-day wait vs 22-day
-                        average. Prior auth auto-approved per UHC
-                        criteria v2 — diagnosis R07.9 with PCP referral
-                        meets all documentation requirements. Patient
-                        cost: $45 specialist copay (deductible waived
-                        for in-network specialist visits per plan design).
-                        No out-of-pocket surprise risk."
-          }
+
+**Step 2 — Navigation Agent reasons autonomously**
+
+The Python job worker receives the job. The Navigation Agent activates its sub-agents in dependency order:
+
+- Network Optimization runs first — provider options constrain everything downstream
+- Cost Transparency + Prior Auth Prep run in parallel once providers are known
+- Facility Availability + Clinical Pathway run in parallel
+- Agent reviews accumulated results and calculates confidence
+
+**Step 3 — Three-part response returned to Camunda**
+
+```json
+{
+  "results": {
+    "recommended_provider": "Dr. Mehta — Austin Heart South",
+    "network_status": "tier_1_in_network",
+    "patient_cost": "$45_copay",
+    "auth_status": "approved_auto",
+    "appointment": "2026-04-02T09:30"
+  },
+  "next_task": "confirm_with_patient",
+  "reasoning": "Patient's UHC Choice Plus PPO plan covers cardiology consult at Tier 1 in-network rate. Dr. Mehta is 4.2 miles from patient, quality score 94th percentile, 8-day wait vs 22-day average. Prior auth auto-approved per UHC criteria v2 — diagnosis R07.9 with PCP referral meets all documentation requirements. Patient cost: $45 specialist copay (deductible waived for in-network specialist visits per plan design). No out-of-pocket surprise risk."
+}
 ```
 
 ### Where the Governance Gap Hits
