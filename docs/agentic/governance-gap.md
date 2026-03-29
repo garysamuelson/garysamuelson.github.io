@@ -272,7 +272,7 @@ Note: The No Surprises Act caps some of this exposure but contains significant c
 
 The agentic sandwich brackets an autonomous AI reasoning zone between two deterministic constraint layers — entry gates the agent cannot override, exit gates that enforce completion conditions, and a BPMN 2.0 ad-hoc subprocess that gives agents freedom to reason while the process engine owns the state.
 
-![The Agentic Sandwich Pattern](../assets/images/agentic_sandwich_pattern.png)
+![The Agentic Sandwich Pattern](../assets/images/agentic_sandwich_pattern.png){ width=315 }
 
 The pattern emerged from a collision between two trajectories: agentic AI frameworks that assume unbounded autonomy, and regulated industries that require every consequential decision to be reconstructable after the fact. BPMN's ad-hoc subprocess — standardized in 2011, largely ignored by the AI community — was designed for exactly this problem. The sandwich didn't invent a new container. It recognized that the container already existed.
 
