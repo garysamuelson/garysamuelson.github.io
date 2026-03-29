@@ -1202,44 +1202,42 @@
 </table>
 <p>When the orchestrating agent's confidence drops below 0.85 — because the benefit design is ambiguous, the network has adequacy gaps, or the clinical pathway suggests a different routing — the process escalates to the <strong>Benefits Counselor Review</strong> human task. A human reviews the agent's reasoning, makes the call, and the process continues. The agent doesn't guess when the stakes are the patient's wallet.</p>
 <h3 id="the-job-worker-pattern">The Job Worker Pattern<a class="headerlink" href="#the-job-worker-pattern" title="Permanent link">&para;</a></h3>
-<p><code>Orchestrator (Camunda Zeebe) creates job: "network-navigation-agent"
-    │
-    ├─► Python Job Worker receives job + context variables
-    │     { referral_type: "cardiology_consult", diagnosis: "R07.9",
-    │       payer: "UHC_Choice_Plus_PPO", network_tier: "tier_1",
-    │       patient_zip: "78745", urgency: "routine",
-    │       deductible_met: false, deductible_remaining: 1200,
-    │       oop_ytd: 3100, oop_max: 5000 }
-    │
-    ├─► Navigation Agent reasons autonomously within its scope:
-    │     - Activates Network Optimization (must run first — provider options
-    │       constrain everything downstream)
-    │     - Activates Cost Transparency + Prior Auth Prep in parallel
-    │       (independent once providers are known)
-    │     - Activates Facility Availability + Clinical Pathway in parallel
-    │     - Reviews accumulated results, calculates confidence
-    │
-    └─► Returns structured three-part response to Camunda:
-          {
-            results: {
-              recommended_provider: "Dr. Mehta — Austin Heart South",
-              network_status: "tier_1_in_network",
-              patient_cost: "$45_copay",
-              auth_status: "approved_auto",
-              appointment: "2026-04-02T09:30"
-            },
-            next_task: "confirm_with_patient",
-            reasoning: "Patient's UHC Choice Plus PPO plan covers
-                        cardiology consult at Tier 1 in-network rate.
-                        Dr. Mehta is 4.2 miles from patient, quality
-                        score 94th percentile, 8-day wait vs 22-day
-                        average. Prior auth auto-approved per UHC
-                        criteria v2 — diagnosis R07.9 with PCP referral
-                        meets all documentation requirements. Patient
-                        cost: $45 specialist copay (deductible waived
-                        for in-network specialist visits per plan design).
-                        No out-of-pocket surprise risk."
-          }</code></p>
+<p><strong>Step 1 — Orchestrator posts the job</strong></p>
+<p>Camunda Zeebe creates a job <code>"network-navigation-agent"</code> and attaches the referral context:</p>
+<p><code>json
+{
+  "referral_type": "cardiology_consult",
+  "diagnosis": "R07.9",
+  "payer": "UHC_Choice_Plus_PPO",
+  "network_tier": "tier_1",
+  "patient_zip": "78745",
+  "urgency": "routine",
+  "deductible_met": false,
+  "deductible_remaining": 1200,
+  "oop_ytd": 3100,
+  "oop_max": 5000
+}</code></p>
+<p><strong>Step 2 — Navigation Agent reasons autonomously</strong></p>
+<p>The Python job worker receives the job. The Navigation Agent activates its sub-agents in dependency order:</p>
+<ul>
+<li>Network Optimization runs first — provider options constrain everything downstream</li>
+<li>Cost Transparency + Prior Auth Prep run in parallel once providers are known</li>
+<li>Facility Availability + Clinical Pathway run in parallel</li>
+<li>Agent reviews accumulated results and calculates confidence</li>
+</ul>
+<p><strong>Step 3 — Three-part response returned to Camunda</strong></p>
+<p><code>json
+{
+  "results": {
+    "recommended_provider": "Dr. Mehta — Austin Heart South",
+    "network_status": "tier_1_in_network",
+    "patient_cost": "$45_copay",
+    "auth_status": "approved_auto",
+    "appointment": "2026-04-02T09:30"
+  },
+  "next_task": "confirm_with_patient",
+  "reasoning": "Patient's UHC Choice Plus PPO plan covers cardiology consult at Tier 1 in-network rate. Dr. Mehta is 4.2 miles from patient, quality score 94th percentile, 8-day wait vs 22-day average. Prior auth auto-approved per UHC criteria v2 — diagnosis R07.9 with PCP referral meets all documentation requirements. Patient cost: $45 specialist copay (deductible waived for in-network specialist visits per plan design). No out-of-pocket surprise risk."
+}</code></p>
 <h3 id="where-the-governance-gap-hits">Where the Governance Gap Hits<a class="headerlink" href="#where-the-governance-gap-hits" title="Permanent link">&para;</a></h3>
 <p>The architecture above shows the governed version — what <em>should</em> happen. Here's what happens today, when the same referral runs on an agent runtime <em>without</em> that governance substrate.</p>
 <p>Return to the referral that opened this paper — the agent that recommended Dr. Chen because of shorter wait times and a higher quality score. The patient got a \$4,700 bill. No lineage. No audit trail. The commissioner asks: <em>"Was the patient informed?"</em> With seven-layer semantic lineage, the answer is a three-second query:</p>
