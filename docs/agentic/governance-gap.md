@@ -1,6 +1,6 @@
 ---
 title: "The Governance Gap: What Enterprises Need Above the Agent Runtime"
-image: assets/images/network_navigation_agentic_sandwich_linkedin.png
+image: assets/images/flux-pro-2.0_A_single_patient_an_everyday_person_in_casual_clothes_sitting_alone_on_a_hard_pl-0.jpg
 tags:
   - Governance Gap
   - Agentic AI
@@ -10,6 +10,8 @@ tags:
 ---
 
 # The Governance Gap: What Enterprises Need Above the Agent Runtime
+
+![A lone patient — an everyday person sitting alone on a hard bench in an institutional corridor — embodies the human cost of the governance gap: waiting, uncertain, caught between automated systems with no visible path forward and no one accountable](../assets/images/flux-pro-2.0_A_single_patient_an_everyday_person_in_casual_clothes_sitting_alone_on_a_hard_pl-0.jpg)
 
 **Author:** Gary Samuelson  
 **Date:** March 27, 2026  
@@ -271,11 +273,68 @@ Note: The No Surprises Act caps some of this exposure but contains significant c
 
 ---
 
+### A6. Who Is Responsible for Understanding the Policy? The Insured's Duty — and Its Limits
+
+A natural question arises from the scenario in this paper: isn't the patient ultimately responsible for understanding their own insurance policy? They purchased it (often with employer assistance). It's their contract. Shouldn't they know what it covers?
+
+The short answer is yes — in theory. The longer answer, established through decades of court rulings, federal legislation, and regulatory action, is that the law has systematically concluded the insured *cannot* be held to that standard, because the contracts are designed in ways that make competent navigation effectively impossible without expert assistance.
+
+**The Duty to Read — and Its Erosion**
+
+Traditional contract law imposes a "duty to read" — a party who signs a contract is presumed to have read and understood its terms. Insurance contracts were historically held to this standard. But courts began carving exceptions almost immediately, because insurance policies are not negotiated agreements between equals. They are *contracts of adhesion* — standardized, take-it-or-leave-it instruments drafted entirely by the insurer, where the policyholder's only choice is to accept or walk away.
+
+**Contra Proferentem — Ambiguity Resolved Against the Drafter**
+
+The doctrine of *contra proferentem* ("against the offeror") is one of the oldest and most widely applied rules in insurance law. Where a policy term is ambiguous, courts interpret it in favor of the policyholder and against the insurer who drafted the language. The reasoning is explicit: the insurer controlled the drafting, the insurer had legal expertise, and the insurer could have been clearer. The policyholder shouldn't bear the cost of the insurer's opacity.
+
+- *Restatement (Second) of Contracts* § 206 (American Law Institute, 1981) — codifies the rule and notes its particular applicability to standardized contracts and unequal bargaining power
+- California Civil Code § 1654 (enacted 1872) — "In cases of uncertainty ... the language of a contract should be interpreted most strongly against the party who caused the uncertainty to exist"
+
+This doctrine has been applied in insurance disputes across all 50 states for over a century. Its persistence is itself evidence: if policyholders could reasonably be expected to understand their policies, the doctrine would be unnecessary.
+
+**The Reasonable Expectations Doctrine — What the Policyholder Thought They Bought**
+
+Professor Robert Keeton articulated the "reasonable expectations doctrine" in 1970: courts should honor the reasonable expectations of the policyholder even if a careful reading of the policy language would have produced a different result. The doctrine acknowledges a structural reality — that no reasonable consumer reads or understands the full terms of a modern insurance policy, and that the insurer knows this.
+
+- Keeton, Robert E. "Insurance Law Rights at Variance with Policy Provisions." *Harvard Law Review* 83, no. 5 (1970): 961–985.
+- *C & J Fertilizer, Inc. v. Allied Mutual Insurance Co.*, 227 N.W.2d 169 (Iowa 1975) — landmark adoption of the reasonable expectations doctrine; the court held that a policy exclusion was unenforceable because the policyholder could not reasonably have understood it
+
+At least 30 states have adopted some form of the reasonable expectations doctrine. The doctrinal consensus: the insured's "duty to read" is a legal fiction in the context of modern insurance contracts.
+
+**Insurance Bad Faith — The Insurer's Affirmative Duty**
+
+U.S. law goes further. An implied covenant of good faith and fair dealing exists by operation of law in every insurance contract. When an insurer violates this covenant — through inadequate investigation, unreasonable denial, or failure to inform the insured of material facts — the insurer is liable in tort, not merely for breach of contract. This means punitive damages are available.
+
+- *Comunale v. Traders & General Ins. Co.*, 50 Cal. 2d 654 (1958) — landmark decision establishing the tort of insurance bad faith
+- *Egan v. Mutual of Omaha Ins. Co.*, 598 P.2d 452, 24 Cal. 3d 809 (1979) — inadequate claims investigation is actionable in tort as a breach of the implied covenant
+- By 2012, at least 46 states recognized third-party bad faith and at least 31 states recognized first-party bad faith as independent torts
+
+The existence of an entire body of tort law dedicated to punishing insurers for bad-faith conduct toward their own policyholders is, itself, the answer to the question. If the insured were truly "on the hook" for understanding their policy, bad faith doctrine would be unnecessary.
+
+**Federal Legislation — Congress's Answer**
+
+Congress has repeatedly legislated protections that presume the insured *cannot* navigate the system unaided:
+
+- **No Surprises Act** (Consolidated Appropriations Act, 2021, Division BB; effective January 1, 2022) — Prohibits balance billing for emergency services and certain non-emergency services at in-network facilities. The Act's existence is Congress's explicit finding that patients cannot reasonably be expected to verify network status for every provider who touches their care.
+- **ACA § 2799A-1** — Requires insurers to provide cost-sharing estimates and coverage information in advance of scheduled care
+- **CMS-0057-F** (February 2024) — Electronic prior authorization rule requiring *reasoning attached to decisions*, created because automated decision-making processes were denying care without traceable justification
+- **ERISA § 503** and DOL regulations at 29 CFR § 2560.503-1 — Require full and fair review of denied claims, including disclosure of the specific reasons for denial and the specific plan provisions on which the denial was based
+
+Each of these represents a legislative or regulatory finding that the insured cannot be expected to independently navigate coverage determinations — and that the system has an affirmative obligation to make the information accessible.
+
+**The Governance Gap Implication**
+
+This asymmetry is precisely why the governance gap matters. The traditional answer to "who bears responsibility?" assumed a world where the insured could, in principle, read their policy and make informed decisions. The introduction of AI agents into the navigation process removes even that theoretical possibility. When seven AI agents make routing, authorization, cost, and clinical pathway decisions *invisibly* — between the moment the patient receives a referral and the moment they sit in a specialist's chair — the patient's contractual duty to understand their policy becomes architecturally irrelevant. The patient cannot exercise responsibility over decisions they cannot see, at decision points they are never offered, in a process that completes before they are consulted.
+
+The law has spent 150 years moving in one direction on this question: *away* from holding the insured solely responsible, and *toward* requiring the parties who designed the system to make it navigable. Governed agentic architecture is the technological expression of that same trajectory — giving the patient's reasonable expectations architectural enforcement, not just legal recourse after the harm.
+
+---
+
 ## Appendix B: The Agentic Sandwich — Anatomy of a Governance Pattern<sup>v</sup>
 
 The agentic sandwich brackets an autonomous AI reasoning zone between two deterministic constraint layers — entry gates the agent cannot override, exit gates that enforce completion conditions, and a BPMN 2.0 ad-hoc subprocess that gives agents freedom to reason while the process engine owns the state.
 
-![The Agentic Sandwich Pattern](../assets/images/agentic_sandwich_pattern.png){ width=315 }
+![The Agentic Sandwich Pattern](../assets/images/agentic_sandwich_pattern.png)
 
 The pattern emerged from a collision between two trajectories: agentic AI frameworks that assume unbounded autonomy, and regulated industries that require every consequential decision to be reconstructable after the fact. BPMN's ad-hoc subprocess — standardized in 2011, largely ignored by the AI community — was designed for exactly this problem. The sandwich didn't invent a new container. It recognized that the container already existed.
 
