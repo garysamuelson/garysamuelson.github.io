@@ -1171,27 +1171,28 @@
 <p>The <strong>Intelligence Layer</strong> (green) answers the <em>why</em> with specific agents. The <strong>Triage Assessment Agent</strong> on the left is the orchestrating agent — it receives jobs from Zeebe via gRPC, decides which task agents to activate, reviews their results, and returns its final assessment back up to Zeebe. The four task agents (Vitals Analyzer, 12-Lead ECG Analyzer, Medication Checker, Protocol Matcher) each handle a specific clinical domain. The dashed arrows from the orchestrating agent indicate that task activation is <em>dynamic</em> — not every agent runs for every patient — and this is precisely what the BPMN ad-hoc subprocess enables: because the tasks inside have no sequence-flow connections, the orchestrating agent is free to activate them in whatever order the clinical picture demands. When confidence stays below 0.8 after all assessments, the dashed orange escalation path routes to the <strong>Medical Director</strong> for human-in-the-loop review. Every agent returns via the <strong>Three-Return Contract</strong>: structured results, human-readable reasoning, and a next-task recommendation.</p>
 <p>The <strong>Knowledge Layer</strong> (yellow) is the fourth concern that grounds the <em>why</em> in evidence. The RAG vector stores — EMS Protocols, Cardiology Guidelines, Drug Interactions, and Treatment Protocols — are backed by ChromaDB or Pinecone. Each task agent queries its own collection at inference time — a binding declared in the BPMN itself via <code>zeebe:taskHeaders</code> on each service task (e.g., the ECG Analyzer's header points to <code>cardiology_guidelines</code>, the Medication Checker's to <code>drug_interactions</code>). The process model wires agent to knowledge store, so the Intelligence Layer's reasoning draws on domain-specific clinical knowledge rather than relying solely on the LLM's training data.</p>
 <h3 id="the-job-worker-pattern">The Job Worker Pattern<a class="headerlink" href="#the-job-worker-pattern" title="Permanent link">&para;</a></h3>
-<p><code>Orchestrator (Camunda Zeebe) creates job: "triage-assessment-agent"
-    │
-    ├─► Python Job Worker receives job + context variables
-    │     { chiefComplaint: "chest_pain", age: 62, hr: 110,
-    │       bp: "88/54", spo2: 94, onset: "45min_ago" }
-    │
-    ├─► AI Agent reasons autonomously within its scope
-    │     - Analyzes clinical indicators
-    │     - Decides which assessment tasks to activate
-    │     - Produces confidence-scored triage assessment
-    │
-    └─► Returns structured response to Camunda:
-          {
-            results: { acuity_level: "RED", confidence: 0.91 },
-            next_task: "analyze_12lead_ecg",
-            reasoning: "62yo male, crushing chest pain 45min onset,
-                        tachycardic at 110, hypotensive 88/54, SpO2 94%.
-                        Presentation highly suspicious for acute MI.
-                        Immediate 12-lead ECG required for STEMI
-                        rule-in/rule-out."
-          }</code></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>Orchestrator (Camunda Zeebe) creates job: &quot;triage-assessment-agent&quot;
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>    │
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>    ├─► Python Job Worker receives job + context variables
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>    │     { chiefComplaint: &quot;chest_pain&quot;, age: 62, hr: 110,
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>    │       bp: &quot;88/54&quot;, spo2: 94, onset: &quot;45min_ago&quot; }
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>    │
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>    ├─► AI Agent reasons autonomously within its scope
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>    │     - Analyzes clinical indicators
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>    │     - Decides which assessment tasks to activate
+<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>    │     - Produces confidence-scored triage assessment
+<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>    │
+<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a>    └─► Returns structured response to Camunda:
+<a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a>          {
+<a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a>            results: { acuity_level: &quot;RED&quot;, confidence: 0.91 },
+<a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a>            next_task: &quot;analyze_12lead_ecg&quot;,
+<a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a>            reasoning: &quot;62yo male, crushing chest pain 45min onset,
+<a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a>                        tachycardic at 110, hypotensive 88/54, SpO2 94%.
+<a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a>                        Presentation highly suspicious for acute MI.
+<a id="__codelineno-0-19" name="__codelineno-0-19" href="#__codelineno-0-19"></a>                        Immediate 12-lead ECG required for STEMI
+<a id="__codelineno-0-20" name="__codelineno-0-20" href="#__codelineno-0-20"></a>                        rule-in/rule-out.&quot;
+<a id="__codelineno-0-21" name="__codelineno-0-21" href="#__codelineno-0-21"></a>          }
+</code></pre></div>
 <hr />
 <h2 id="illustrative-example-ems-patient-encounter-chest-pain-suspected-stemi">Illustrative Example: EMS Patient Encounter — Chest Pain / Suspected STEMI<a class="headerlink" href="#illustrative-example-ems-patient-encounter-chest-pain-suspected-stemi" title="Permanent link">&para;</a></h2>
 <h3 id="the-scenario">The Scenario<a class="headerlink" href="#the-scenario" title="Permanent link">&para;</a></h3>
@@ -1259,47 +1260,50 @@
 </tbody>
 </table>
 <h3 id="agent-decision-flow-example">Agent Decision Flow Example<a class="headerlink" href="#agent-decision-flow-example" title="Permanent link">&para;</a></h3>
-<p>```
-Patient: { age: 62, chiefComplaint: "chest_pain", onset: "45min",
-           hr: 110, bp: "88/54", spo2: 94, diaphoretic: true }</p>
-<p>Agent Iteration 1:
-  ► Activates: Assess Vital Signs, Analyze 12-Lead ECG
-  ► Reasoning: "62yo male with chest pain, diaphoretic, hemodynamically
-                concerning. Vital sign formal assessment and immediate
-                12-lead ECG are co-priority — time is myocardium."</p>
-<p>Agent Iteration 2 (after vitals + ECG results return):
-  ► Activates: Check Medications
-  ► Reasoning: "Vitals confirm hemodynamic instability: shock index 1.25,
-                hypotensive at 88/54. ECG shows ST-elevation in II, III,
-                aVF — inferior STEMI pattern. Before initiating STEMI
-                protocol interventions, must check medication history
-                for contraindications (especially PDE5 inhibitors
-                before nitroglycerin, and anticoagulant status)."</p>
-<p>Agent Iteration 3 (after medication check returns):
-  ► Activates: Match Treatment Protocol, Hospital Pre-Notification
-  ► Reasoning: "Nitro contraindicated — patient took sildenafil 18hrs ago.
-                No other contraindications. Proceeding with modified STEMI
-                protocol (aspirin + heparin, hold nitro). Activating cath
-                lab pre-notification in parallel — door-to-balloon clock
-                starts when we notify."</p>
-<p>Agent Final Assessment:
-  ► Returns to orchestrator:
-    {
-      acuity_level: "RED",
-      stemi_detected: true,
-      confidence_score: 0.93,
-      reasoning: "Inferior STEMI confirmed (ST-elevation II, III, aVF).
-                  Hemodynamically unstable (SI 1.25, BP 88/54). Modified
-                  STEMI protocol — nitro held due to sildenafil. Aspirin
-                  324mg + heparin bolus administered. Cath lab activated
-                  at St. David's South, ETA 12 minutes. All clinical
-                  findings documented for receiving team.",
-      next_task: "emergent_transport_with_continuous_monitoring",
-      tasks_executed: ["assess-vitals", "analyze-12lead-ecg",
-                       "check-medications", "match-protocol",
-                       "hospital-prenotify"]
-    }
-```</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>Patient: { age: 62, chiefComplaint: &quot;chest_pain&quot;, onset: &quot;45min&quot;,
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>           hr: 110, bp: &quot;88/54&quot;, spo2: 94, diaphoretic: true }
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>Agent Iteration 1:
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>  ► Activates: Assess Vital Signs, Analyze 12-Lead ECG
+<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>  ► Reasoning: &quot;62yo male with chest pain, diaphoretic, hemodynamically
+<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>                concerning. Vital sign formal assessment and immediate
+<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>                12-lead ECG are co-priority — time is myocardium.&quot;
+<a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a>
+<a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a>Agent Iteration 2 (after vitals + ECG results return):
+<a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a>  ► Activates: Check Medications
+<a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a>  ► Reasoning: &quot;Vitals confirm hemodynamic instability: shock index 1.25,
+<a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a>                hypotensive at 88/54. ECG shows ST-elevation in II, III,
+<a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a>                aVF — inferior STEMI pattern. Before initiating STEMI
+<a id="__codelineno-1-15" name="__codelineno-1-15" href="#__codelineno-1-15"></a>                protocol interventions, must check medication history
+<a id="__codelineno-1-16" name="__codelineno-1-16" href="#__codelineno-1-16"></a>                for contraindications (especially PDE5 inhibitors
+<a id="__codelineno-1-17" name="__codelineno-1-17" href="#__codelineno-1-17"></a>                before nitroglycerin, and anticoagulant status).&quot;
+<a id="__codelineno-1-18" name="__codelineno-1-18" href="#__codelineno-1-18"></a>
+<a id="__codelineno-1-19" name="__codelineno-1-19" href="#__codelineno-1-19"></a>Agent Iteration 3 (after medication check returns):
+<a id="__codelineno-1-20" name="__codelineno-1-20" href="#__codelineno-1-20"></a>  ► Activates: Match Treatment Protocol, Hospital Pre-Notification
+<a id="__codelineno-1-21" name="__codelineno-1-21" href="#__codelineno-1-21"></a>  ► Reasoning: &quot;Nitro contraindicated — patient took sildenafil 18hrs ago.
+<a id="__codelineno-1-22" name="__codelineno-1-22" href="#__codelineno-1-22"></a>                No other contraindications. Proceeding with modified STEMI
+<a id="__codelineno-1-23" name="__codelineno-1-23" href="#__codelineno-1-23"></a>                protocol (aspirin + heparin, hold nitro). Activating cath
+<a id="__codelineno-1-24" name="__codelineno-1-24" href="#__codelineno-1-24"></a>                lab pre-notification in parallel — door-to-balloon clock
+<a id="__codelineno-1-25" name="__codelineno-1-25" href="#__codelineno-1-25"></a>                starts when we notify.&quot;
+<a id="__codelineno-1-26" name="__codelineno-1-26" href="#__codelineno-1-26"></a>
+<a id="__codelineno-1-27" name="__codelineno-1-27" href="#__codelineno-1-27"></a>Agent Final Assessment:
+<a id="__codelineno-1-28" name="__codelineno-1-28" href="#__codelineno-1-28"></a>  ► Returns to orchestrator:
+<a id="__codelineno-1-29" name="__codelineno-1-29" href="#__codelineno-1-29"></a>    {
+<a id="__codelineno-1-30" name="__codelineno-1-30" href="#__codelineno-1-30"></a>      acuity_level: &quot;RED&quot;,
+<a id="__codelineno-1-31" name="__codelineno-1-31" href="#__codelineno-1-31"></a>      stemi_detected: true,
+<a id="__codelineno-1-32" name="__codelineno-1-32" href="#__codelineno-1-32"></a>      confidence_score: 0.93,
+<a id="__codelineno-1-33" name="__codelineno-1-33" href="#__codelineno-1-33"></a>      reasoning: &quot;Inferior STEMI confirmed (ST-elevation II, III, aVF).
+<a id="__codelineno-1-34" name="__codelineno-1-34" href="#__codelineno-1-34"></a>                  Hemodynamically unstable (SI 1.25, BP 88/54). Modified
+<a id="__codelineno-1-35" name="__codelineno-1-35" href="#__codelineno-1-35"></a>                  STEMI protocol — nitro held due to sildenafil. Aspirin
+<a id="__codelineno-1-36" name="__codelineno-1-36" href="#__codelineno-1-36"></a>                  324mg + heparin bolus administered. Cath lab activated
+<a id="__codelineno-1-37" name="__codelineno-1-37" href="#__codelineno-1-37"></a>                  at St. David&#39;s South, ETA 12 minutes. All clinical
+<a id="__codelineno-1-38" name="__codelineno-1-38" href="#__codelineno-1-38"></a>                  findings documented for receiving team.&quot;,
+<a id="__codelineno-1-39" name="__codelineno-1-39" href="#__codelineno-1-39"></a>      next_task: &quot;emergent_transport_with_continuous_monitoring&quot;,
+<a id="__codelineno-1-40" name="__codelineno-1-40" href="#__codelineno-1-40"></a>      tasks_executed: [&quot;assess-vitals&quot;, &quot;analyze-12lead-ecg&quot;,
+<a id="__codelineno-1-41" name="__codelineno-1-41" href="#__codelineno-1-41"></a>                       &quot;check-medications&quot;, &quot;match-protocol&quot;,
+<a id="__codelineno-1-42" name="__codelineno-1-42" href="#__codelineno-1-42"></a>                       &quot;hospital-prenotify&quot;]
+<a id="__codelineno-1-43" name="__codelineno-1-43" href="#__codelineno-1-43"></a>    }
+</code></pre></div>
 <h3 id="when-the-agent-escalates">When the Agent Escalates<a class="headerlink" href="#when-the-agent-escalates" title="Permanent link">&para;</a></h3>
 <p>Not all paths lead to autonomous completion. The BPMN model includes an <strong>Escalate to Medical Director</strong> user task that the agent can activate when:</p>
 <ul>

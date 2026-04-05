@@ -687,6 +687,17 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#a6-who-is-responsible-for-understanding-the-policy-the-insureds-duty-and-its-limits" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        A6. Who Is Responsible for Understanding the Policy? The Insured's Duty — and Its Limits
+      
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1016,6 +1027,17 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#a6-who-is-responsible-for-understanding-the-policy-the-insureds-duty-and-its-limits" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        A6. Who Is Responsible for Understanding the Policy? The Insured's Duty — and Its Limits
+      
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1103,6 +1125,7 @@
 
 
 <h1 id="the-governance-gap-what-enterprises-need-above-the-agent-runtime">The Governance Gap: What Enterprises Need Above the Agent Runtime<a class="headerlink" href="#the-governance-gap-what-enterprises-need-above-the-agent-runtime" title="Permanent link">&para;</a></h1>
+<p><img alt="A lone patient — an everyday person sitting alone on a hard bench in an institutional corridor — embodies the human cost of the governance gap: waiting, uncertain, caught between automated systems with no visible path forward and no one accountable" src="../../assets/images/flux-pro-2.0_A_single_patient_an_everyday_person_in_casual_clothes_sitting_alone_on_a_hard_pl-0.jpg" /></p>
 <p><strong>Author:</strong> Gary Samuelson<br />
 <strong>Date:</strong> March 27, 2026<br />
 <strong>Part 2 of 2</strong> — This piece follows <a href="../../healthcare/healthcare-accountability/">Who Is Accountable When AI Gets Healthcare Wrong?</a>, which examines the accountability gap from the patient's perspective. That paper asks the questions. This one opens the hood and shows how the technology actually plays out — where today's agent runtimes fit, and where they fall short.</p>
@@ -1204,19 +1227,19 @@
 <h3 id="the-job-worker-pattern">The Job Worker Pattern<a class="headerlink" href="#the-job-worker-pattern" title="Permanent link">&para;</a></h3>
 <p><strong>Step 1 — Orchestrator posts the job</strong></p>
 <p>Camunda Zeebe creates a job <code>"network-navigation-agent"</code> and attaches the referral context:</p>
-<p><code>json
-{
-  "referral_type": "cardiology_consult",
-  "diagnosis": "R07.9",
-  "payer": "UHC_Choice_Plus_PPO",
-  "network_tier": "tier_1",
-  "patient_zip": "78745",
-  "urgency": "routine",
-  "deductible_met": false,
-  "deductible_remaining": 1200,
-  "oop_ytd": 3100,
-  "oop_max": 5000
-}</code></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="p">{</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="w">  </span><span class="nt">&quot;referral_type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;cardiology_consult&quot;</span><span class="p">,</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="w">  </span><span class="nt">&quot;diagnosis&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;R07.9&quot;</span><span class="p">,</span>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="w">  </span><span class="nt">&quot;payer&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;UHC_Choice_Plus_PPO&quot;</span><span class="p">,</span>
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="w">  </span><span class="nt">&quot;network_tier&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;tier_1&quot;</span><span class="p">,</span>
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="w">  </span><span class="nt">&quot;patient_zip&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;78745&quot;</span><span class="p">,</span>
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="w">  </span><span class="nt">&quot;urgency&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;routine&quot;</span><span class="p">,</span>
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="w">  </span><span class="nt">&quot;deductible_met&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="w">  </span><span class="nt">&quot;deductible_remaining&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1200</span><span class="p">,</span>
+<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="w">  </span><span class="nt">&quot;oop_ytd&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">3100</span><span class="p">,</span>
+<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="w">  </span><span class="nt">&quot;oop_max&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">5000</span>
+<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a><span class="p">}</span>
+</code></pre></div>
 <p><strong>Step 2 — Navigation Agent reasons autonomously</strong></p>
 <p>The Python job worker receives the job. The Navigation Agent activates its sub-agents in dependency order:</p>
 <ul>
@@ -1226,18 +1249,18 @@
 <li>Agent reviews accumulated results and calculates confidence</li>
 </ul>
 <p><strong>Step 3 — Three-part response returned to Camunda</strong></p>
-<p><code>json
-{
-  "results": {
-    "recommended_provider": "Dr. Mehta — Austin Heart South",
-    "network_status": "tier_1_in_network",
-    "patient_cost": "$45_copay",
-    "auth_status": "approved_auto",
-    "appointment": "2026-04-02T09:30"
-  },
-  "next_task": "confirm_with_patient",
-  "reasoning": "Patient's UHC Choice Plus PPO plan covers cardiology consult at Tier 1 in-network rate. Dr. Mehta is 4.2 miles from patient, quality score 94th percentile, 8-day wait vs 22-day average. Prior auth auto-approved per UHC criteria v2 — diagnosis R07.9 with PCP referral meets all documentation requirements. Patient cost: $45 specialist copay (deductible waived for in-network specialist visits per plan design). No out-of-pocket surprise risk."
-}</code></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="p">{</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="w">  </span><span class="nt">&quot;results&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="w">    </span><span class="nt">&quot;recommended_provider&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Dr. Mehta — Austin Heart South&quot;</span><span class="p">,</span>
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="w">    </span><span class="nt">&quot;network_status&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;tier_1_in_network&quot;</span><span class="p">,</span>
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="w">    </span><span class="nt">&quot;patient_cost&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;$45_copay&quot;</span><span class="p">,</span>
+<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="w">    </span><span class="nt">&quot;auth_status&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;approved_auto&quot;</span><span class="p">,</span>
+<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="w">    </span><span class="nt">&quot;appointment&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2026-04-02T09:30&quot;</span>
+<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="w">  </span><span class="p">},</span>
+<a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a><span class="w">  </span><span class="nt">&quot;next_task&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;confirm_with_patient&quot;</span><span class="p">,</span>
+<a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a><span class="w">  </span><span class="nt">&quot;reasoning&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Patient&#39;s UHC Choice Plus PPO plan covers cardiology consult at Tier 1 in-network rate. Dr. Mehta is 4.2 miles from patient, quality score 94th percentile, 8-day wait vs 22-day average. Prior auth auto-approved per UHC criteria v2 — diagnosis R07.9 with PCP referral meets all documentation requirements. Patient cost: $45 specialist copay (deductible waived for in-network specialist visits per plan design). No out-of-pocket surprise risk.&quot;</span>
+<a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a><span class="p">}</span>
+</code></pre></div>
 <h3 id="where-the-governance-gap-hits">Where the Governance Gap Hits<a class="headerlink" href="#where-the-governance-gap-hits" title="Permanent link">&para;</a></h3>
 <p>The architecture above shows the governed version — what <em>should</em> happen. Here's what happens today, when the same referral runs on an agent runtime <em>without</em> that governance substrate.</p>
 <p>Return to the referral that opened this paper — the agent that recommended Dr. Chen because of shorter wait times and a higher quality score. The patient got a \$4,700 bill. No lineage. No audit trail. The commissioner asks: <em>"Was the patient informed?"</em> With seven-layer semantic lineage, the answer is a three-second query:</p>
@@ -1316,9 +1339,49 @@ State insurance commissioners adopted a model bulletin requiring insurers to doc
 - The ~100× ratio is conservative; documented surprise bills before the NSA ranged 500–1,000× expected in-network cost</p>
 <p>Note: The No Surprises Act caps some of this exposure but contains significant carve-outs: self-funded employer plans retain opt-out pathways, ground ambulance is excluded, and cost-sharing still applies across all plan types.</p>
 <hr />
+<h3 id="a6-who-is-responsible-for-understanding-the-policy-the-insureds-duty-and-its-limits">A6. Who Is Responsible for Understanding the Policy? The Insured's Duty — and Its Limits<a class="headerlink" href="#a6-who-is-responsible-for-understanding-the-policy-the-insureds-duty-and-its-limits" title="Permanent link">&para;</a></h3>
+<p>A natural question arises from the scenario in this paper: isn't the patient ultimately responsible for understanding their own insurance policy? They purchased it (often with employer assistance). It's their contract. Shouldn't they know what it covers?</p>
+<p>The short answer is yes — in theory. The longer answer, established through decades of court rulings, federal legislation, and regulatory action, is that the law has systematically concluded the insured <em>cannot</em> be held to that standard, because the contracts are designed in ways that make competent navigation effectively impossible without expert assistance.</p>
+<p><strong>The Duty to Read — and Its Erosion</strong></p>
+<p>Traditional contract law imposes a "duty to read" — a party who signs a contract is presumed to have read and understood its terms. Insurance contracts were historically held to this standard. But courts began carving exceptions almost immediately, because insurance policies are not negotiated agreements between equals. They are <em>contracts of adhesion</em> — standardized, take-it-or-leave-it instruments drafted entirely by the insurer, where the policyholder's only choice is to accept or walk away.</p>
+<p><strong>Contra Proferentem — Ambiguity Resolved Against the Drafter</strong></p>
+<p>The doctrine of <em>contra proferentem</em> ("against the offeror") is one of the oldest and most widely applied rules in insurance law. Where a policy term is ambiguous, courts interpret it in favor of the policyholder and against the insurer who drafted the language. The reasoning is explicit: the insurer controlled the drafting, the insurer had legal expertise, and the insurer could have been clearer. The policyholder shouldn't bear the cost of the insurer's opacity.</p>
+<ul>
+<li><em>Restatement (Second) of Contracts</em> § 206 (American Law Institute, 1981) — codifies the rule and notes its particular applicability to standardized contracts and unequal bargaining power</li>
+<li>California Civil Code § 1654 (enacted 1872) — "In cases of uncertainty ... the language of a contract should be interpreted most strongly against the party who caused the uncertainty to exist"</li>
+</ul>
+<p>This doctrine has been applied in insurance disputes across all 50 states for over a century. Its persistence is itself evidence: if policyholders could reasonably be expected to understand their policies, the doctrine would be unnecessary.</p>
+<p><strong>The Reasonable Expectations Doctrine — What the Policyholder Thought They Bought</strong></p>
+<p>Professor Robert Keeton articulated the "reasonable expectations doctrine" in 1970: courts should honor the reasonable expectations of the policyholder even if a careful reading of the policy language would have produced a different result. The doctrine acknowledges a structural reality — that no reasonable consumer reads or understands the full terms of a modern insurance policy, and that the insurer knows this.</p>
+<ul>
+<li>Keeton, Robert E. "Insurance Law Rights at Variance with Policy Provisions." <em>Harvard Law Review</em> 83, no. 5 (1970): 961–985.</li>
+<li><em>C &amp; J Fertilizer, Inc. v. Allied Mutual Insurance Co.</em>, 227 N.W.2d 169 (Iowa 1975) — landmark adoption of the reasonable expectations doctrine; the court held that a policy exclusion was unenforceable because the policyholder could not reasonably have understood it</li>
+</ul>
+<p>At least 30 states have adopted some form of the reasonable expectations doctrine. The doctrinal consensus: the insured's "duty to read" is a legal fiction in the context of modern insurance contracts.</p>
+<p><strong>Insurance Bad Faith — The Insurer's Affirmative Duty</strong></p>
+<p>U.S. law goes further. An implied covenant of good faith and fair dealing exists by operation of law in every insurance contract. When an insurer violates this covenant — through inadequate investigation, unreasonable denial, or failure to inform the insured of material facts — the insurer is liable in tort, not merely for breach of contract. This means punitive damages are available.</p>
+<ul>
+<li><em>Comunale v. Traders &amp; General Ins. Co.</em>, 50 Cal. 2d 654 (1958) — landmark decision establishing the tort of insurance bad faith</li>
+<li><em>Egan v. Mutual of Omaha Ins. Co.</em>, 598 P.2d 452, 24 Cal. 3d 809 (1979) — inadequate claims investigation is actionable in tort as a breach of the implied covenant</li>
+<li>By 2012, at least 46 states recognized third-party bad faith and at least 31 states recognized first-party bad faith as independent torts</li>
+</ul>
+<p>The existence of an entire body of tort law dedicated to punishing insurers for bad-faith conduct toward their own policyholders is, itself, the answer to the question. If the insured were truly "on the hook" for understanding their policy, bad faith doctrine would be unnecessary.</p>
+<p><strong>Federal Legislation — Congress's Answer</strong></p>
+<p>Congress has repeatedly legislated protections that presume the insured <em>cannot</em> navigate the system unaided:</p>
+<ul>
+<li><strong>No Surprises Act</strong> (Consolidated Appropriations Act, 2021, Division BB; effective January 1, 2022) — Prohibits balance billing for emergency services and certain non-emergency services at in-network facilities. The Act's existence is Congress's explicit finding that patients cannot reasonably be expected to verify network status for every provider who touches their care.</li>
+<li><strong>ACA § 2799A-1</strong> — Requires insurers to provide cost-sharing estimates and coverage information in advance of scheduled care</li>
+<li><strong>CMS-0057-F</strong> (February 2024) — Electronic prior authorization rule requiring <em>reasoning attached to decisions</em>, created because automated decision-making processes were denying care without traceable justification</li>
+<li><strong>ERISA § 503</strong> and DOL regulations at 29 CFR § 2560.503-1 — Require full and fair review of denied claims, including disclosure of the specific reasons for denial and the specific plan provisions on which the denial was based</li>
+</ul>
+<p>Each of these represents a legislative or regulatory finding that the insured cannot be expected to independently navigate coverage determinations — and that the system has an affirmative obligation to make the information accessible.</p>
+<p><strong>The Governance Gap Implication</strong></p>
+<p>This asymmetry is precisely why the governance gap matters. The traditional answer to "who bears responsibility?" assumed a world where the insured could, in principle, read their policy and make informed decisions. The introduction of AI agents into the navigation process removes even that theoretical possibility. When seven AI agents make routing, authorization, cost, and clinical pathway decisions <em>invisibly</em> — between the moment the patient receives a referral and the moment they sit in a specialist's chair — the patient's contractual duty to understand their policy becomes architecturally irrelevant. The patient cannot exercise responsibility over decisions they cannot see, at decision points they are never offered, in a process that completes before they are consulted.</p>
+<p>The law has spent 150 years moving in one direction on this question: <em>away</em> from holding the insured solely responsible, and <em>toward</em> requiring the parties who designed the system to make it navigable. Governed agentic architecture is the technological expression of that same trajectory — giving the patient's reasonable expectations architectural enforcement, not just legal recourse after the harm.</p>
+<hr />
 <h2 id="appendix-b-the-agentic-sandwich-anatomy-of-a-governance-patternv">Appendix B: The Agentic Sandwich — Anatomy of a Governance Pattern<sup>v</sup><a class="headerlink" href="#appendix-b-the-agentic-sandwich-anatomy-of-a-governance-patternv" title="Permanent link">&para;</a></h2>
 <p>The agentic sandwich brackets an autonomous AI reasoning zone between two deterministic constraint layers — entry gates the agent cannot override, exit gates that enforce completion conditions, and a BPMN 2.0 ad-hoc subprocess that gives agents freedom to reason while the process engine owns the state.</p>
-<p><img alt="The Agentic Sandwich Pattern" src="../../assets/images/agentic_sandwich_pattern.png" width="315" /></p>
+<p><img alt="The Agentic Sandwich Pattern" src="../../assets/images/agentic_sandwich_pattern.png" /></p>
 <p>The pattern emerged from a collision between two trajectories: agentic AI frameworks that assume unbounded autonomy, and regulated industries that require every consequential decision to be reconstructable after the fact. BPMN's ad-hoc subprocess — standardized in 2011, largely ignored by the AI community — was designed for exactly this problem. The sandwich didn't invent a new container. It recognized that the container already existed.</p>
 <p><em>For the full treatment — what the pattern is, how it emerged, how it behaves in practice, and what architectural fixes look like — see "The Agentic Sandwich — Anatomy of a Governance Pattern" (forthcoming).</em></p>
 <hr />

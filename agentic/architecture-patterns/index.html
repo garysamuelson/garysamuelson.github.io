@@ -1035,101 +1035,105 @@
 </ul>
 <h3 id="phase-1-single-agent-first-90-days">Phase 1: Single Agent (First 90 Days)<a class="headerlink" href="#phase-1-single-agent-first-90-days" title="Permanent link">&para;</a></h3>
 <p>Deploy one agent with access to the knowledge base, CRM, and ticketing system. It handles all four categories.</p>
-<p>```
-Ticket: { category: "account_inquiry", customer: "C-4892",
-          question: "What is my current credit card balance?" }</p>
-<p>Agent Response:
-  {
-    results: { balance: "$3,247.18", statement_date: "2025-06-15",
-               minimum_due: "$64.94", due_date: "2025-07-10" },
-    next_task: "close_ticket",
-    reasoning: "Routine balance inquiry. Retrieved from CRM API.
-                No authentication issues. No follow-up required."
-  }
-```</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>Ticket: { category: &quot;account_inquiry&quot;, customer: &quot;C-4892&quot;,
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>          question: &quot;What is my current credit card balance?&quot; }
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>Agent Response:
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>  {
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>    results: { balance: &quot;$3,247.18&quot;, statement_date: &quot;2025-06-15&quot;,
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>               minimum_due: &quot;$64.94&quot;, due_date: &quot;2025-07-10&quot; },
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>    next_task: &quot;close_ticket&quot;,
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>    reasoning: &quot;Routine balance inquiry. Retrieved from CRM API.
+<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>                No authentication issues. No follow-up required.&quot;
+<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>  }
+</code></pre></div>
 <p><strong>Metrics:</strong> 51% resolution rate out of the box (Anthropic baseline). Average response time drops from 30 minutes to seconds. Proves ROI before investing in complexity.</p>
 <h3 id="phase-2-sequential-workflow-months-46">Phase 2: Sequential Workflow (Months 4–6)<a class="headerlink" href="#phase-2-sequential-workflow-months-46" title="Permanent link">&para;</a></h3>
 <p>Simple routing separates ticket categories. A classification agent routes to specialized agents in sequence.</p>
-<p>```
-Ticket: { category: "transaction_dispute", customer: "C-7213",
-          amount: "$847.00", merchant: "TechStore Online",
-          claim: "I did not authorize this transaction" }</p>
-<p>Classification Agent → Fraud Check Agent → Resolution Agent</p>
-<p>Fraud Check Agent:
-  {
-    results: { fraud_score: 0.23, device_match: true,
-               geo_match: false, velocity_check: "normal" },
-    next_task: "dispute_resolution",
-    reasoning: "Low fraud probability. Device fingerprint matches
-                customer history. Geographic anomaly — transaction
-                from Portland, customer based in Austin. Not
-                sufficient alone for fraud flag. Routing to
-                dispute resolution for standard process."
-  }</p>
-<p>Resolution Agent:
-  {
-    results: { provisional_credit: true, investigation_id: "INV-20250701-7213",
-               estimated_resolution: "10 business days" },
-    next_task: "notify_customer",
-    reasoning: "Provisional credit issued per Reg E (10-day
-                investigation window). Customer notified.
-                Investigation ticket created for back-office
-                review team."
-  }
-```</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>Ticket: { category: &quot;transaction_dispute&quot;, customer: &quot;C-7213&quot;,
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>          amount: &quot;$847.00&quot;, merchant: &quot;TechStore Online&quot;,
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>          claim: &quot;I did not authorize this transaction&quot; }
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>Classification Agent → Fraud Check Agent → Resolution Agent
+<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>
+<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>Fraud Check Agent:
+<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>  {
+<a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a>    results: { fraud_score: 0.23, device_match: true,
+<a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a>               geo_match: false, velocity_check: &quot;normal&quot; },
+<a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a>    next_task: &quot;dispute_resolution&quot;,
+<a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a>    reasoning: &quot;Low fraud probability. Device fingerprint matches
+<a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a>                customer history. Geographic anomaly — transaction
+<a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a>                from Portland, customer based in Austin. Not
+<a id="__codelineno-1-15" name="__codelineno-1-15" href="#__codelineno-1-15"></a>                sufficient alone for fraud flag. Routing to
+<a id="__codelineno-1-16" name="__codelineno-1-16" href="#__codelineno-1-16"></a>                dispute resolution for standard process.&quot;
+<a id="__codelineno-1-17" name="__codelineno-1-17" href="#__codelineno-1-17"></a>  }
+<a id="__codelineno-1-18" name="__codelineno-1-18" href="#__codelineno-1-18"></a>
+<a id="__codelineno-1-19" name="__codelineno-1-19" href="#__codelineno-1-19"></a>Resolution Agent:
+<a id="__codelineno-1-20" name="__codelineno-1-20" href="#__codelineno-1-20"></a>  {
+<a id="__codelineno-1-21" name="__codelineno-1-21" href="#__codelineno-1-21"></a>    results: { provisional_credit: true, investigation_id: &quot;INV-20250701-7213&quot;,
+<a id="__codelineno-1-22" name="__codelineno-1-22" href="#__codelineno-1-22"></a>               estimated_resolution: &quot;10 business days&quot; },
+<a id="__codelineno-1-23" name="__codelineno-1-23" href="#__codelineno-1-23"></a>    next_task: &quot;notify_customer&quot;,
+<a id="__codelineno-1-24" name="__codelineno-1-24" href="#__codelineno-1-24"></a>    reasoning: &quot;Provisional credit issued per Reg E (10-day
+<a id="__codelineno-1-25" name="__codelineno-1-25" href="#__codelineno-1-25"></a>                investigation window). Customer notified.
+<a id="__codelineno-1-26" name="__codelineno-1-26" href="#__codelineno-1-26"></a>                Investigation ticket created for back-office
+<a id="__codelineno-1-27" name="__codelineno-1-27" href="#__codelineno-1-27"></a>                review team.&quot;
+<a id="__codelineno-1-28" name="__codelineno-1-28" href="#__codelineno-1-28"></a>  }
+</code></pre></div>
 <p><strong>Metrics:</strong> Resolution rate climbs to 68%. Each agent is simpler and more accurate because it handles a narrower scope.</p>
 <h3 id="phase-3-parallel-workflow-months-79">Phase 3: Parallel Workflow (Months 7–9)<a class="headerlink" href="#phase-3-parallel-workflow-months-79" title="Permanent link">&para;</a></h3>
 <p>Compliance-related tickets trigger parallel assessments — regulatory check, risk assessment, and customer history analysis run simultaneously.</p>
-<p>```
-Ticket: { category: "compliance", customer: "C-1156",
-          request: "Why was my wire transfer to Dubai flagged?" }</p>
-<p>Parallel Agents (simultaneous):
-  ├─► Regulatory Compliance Agent
-  ├─► Transaction Risk Agent
-  └─► Customer History Agent</p>
-<p>Aggregated Result:
-  {
-    results: { flag_reason: "OFAC screening match — partial name overlap",
-               risk_level: "medium", customer_risk_profile: "low",
-               false_positive_probability: 0.82 },
-    next_task: "escalate_to_compliance_officer",
-    reasoning: "Wire flagged due to partial OFAC name match (0.73
-                similarity score). Customer has 8-year relationship,
-                consistent transaction patterns, and prior cleared
-                wire transfers to UAE. High probability of false
-                positive, but OFAC match requires human compliance
-                officer review per bank policy — cannot be
-                auto-resolved regardless of confidence."
-  }
-```</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>Ticket: { category: &quot;compliance&quot;, customer: &quot;C-1156&quot;,
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>          request: &quot;Why was my wire transfer to Dubai flagged?&quot; }
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>Parallel Agents (simultaneous):
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>  ├─► Regulatory Compliance Agent
+<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>  ├─► Transaction Risk Agent
+<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a>  └─► Customer History Agent
+<a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a>
+<a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a>Aggregated Result:
+<a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a>  {
+<a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a>    results: { flag_reason: &quot;OFAC screening match — partial name overlap&quot;,
+<a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a>               risk_level: &quot;medium&quot;, customer_risk_profile: &quot;low&quot;,
+<a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a>               false_positive_probability: 0.82 },
+<a id="__codelineno-2-14" name="__codelineno-2-14" href="#__codelineno-2-14"></a>    next_task: &quot;escalate_to_compliance_officer&quot;,
+<a id="__codelineno-2-15" name="__codelineno-2-15" href="#__codelineno-2-15"></a>    reasoning: &quot;Wire flagged due to partial OFAC name match (0.73
+<a id="__codelineno-2-16" name="__codelineno-2-16" href="#__codelineno-2-16"></a>                similarity score). Customer has 8-year relationship,
+<a id="__codelineno-2-17" name="__codelineno-2-17" href="#__codelineno-2-17"></a>                consistent transaction patterns, and prior cleared
+<a id="__codelineno-2-18" name="__codelineno-2-18" href="#__codelineno-2-18"></a>                wire transfers to UAE. High probability of false
+<a id="__codelineno-2-19" name="__codelineno-2-19" href="#__codelineno-2-19"></a>                positive, but OFAC match requires human compliance
+<a id="__codelineno-2-20" name="__codelineno-2-20" href="#__codelineno-2-20"></a>                officer review per bank policy — cannot be
+<a id="__codelineno-2-21" name="__codelineno-2-21" href="#__codelineno-2-21"></a>                auto-resolved regardless of confidence.&quot;
+<a id="__codelineno-2-22" name="__codelineno-2-22" href="#__codelineno-2-22"></a>  }
+</code></pre></div>
 <p><strong>Metrics:</strong> Compliance response time drops by 60%. Parallel execution completes in 4 seconds versus 12 seconds sequential. Note the deterministic guardrail: OFAC matches <strong>always</strong> escalate to a human compliance officer, regardless of the AI's confidence level. This is governance by process model, not agent discretion.</p>
 <h3 id="phase-4-hierarchical-multi-agent-months-1012">Phase 4: Hierarchical Multi-Agent (Months 10–12)<a class="headerlink" href="#phase-4-hierarchical-multi-agent-months-1012" title="Permanent link">&para;</a></h3>
 <p>A supervisor agent manages the full ticket lifecycle. Specialist agents handle their domains; the supervisor synthesizes, escalates, and ensures cross-category coherence.</p>
-<p>```
-Ticket: { category: "complex", customer: "C-3301",
-          issue: "My mortgage payment was applied to the wrong
-                  account and now I'm showing as delinquent" }</p>
-<p>Supervisor Agent:
-  ► Delegates to: Account Research Agent, Payment Tracing Agent,
-                   Credit Reporting Agent (parallel)
-  ► Reviews results, identifies: payment misrouted to closed account
-  ► Delegates to: Correction Agent (applies payment to correct account)
-  ► Delegates to: Credit Bureau Agent (initiates dispute with bureaus)</p>
-<p>Final Response:
-  {
-    results: { payment_corrected: true, delinquency_removed: true,
-               credit_dispute_filed: true, bureau_case_ids:
-               ["EQ-294817", "TU-182934", "EX-039182"] },
-    next_task: "close_ticket_with_followup",
-    reasoning: "Payment of $2,847.00 was misrouted to closed account
-                ending 4471. Corrected to active mortgage account
-                ending 8823. Delinquency flag removed from internal
-                systems. Credit bureau disputes filed with all three
-                bureaus — estimated 30-day resolution. Follow-up
-                scheduled at 15 and 30 days to confirm bureau
-                corrections."
-  }
-```</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>Ticket: { category: &quot;complex&quot;, customer: &quot;C-3301&quot;,
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>          issue: &quot;My mortgage payment was applied to the wrong
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>                  account and now I&#39;m showing as delinquent&quot; }
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>
+<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>Supervisor Agent:
+<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>  ► Delegates to: Account Research Agent, Payment Tracing Agent,
+<a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a>                   Credit Reporting Agent (parallel)
+<a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a>  ► Reviews results, identifies: payment misrouted to closed account
+<a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a>  ► Delegates to: Correction Agent (applies payment to correct account)
+<a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a>  ► Delegates to: Credit Bureau Agent (initiates dispute with bureaus)
+<a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a>
+<a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a>Final Response:
+<a id="__codelineno-3-13" name="__codelineno-3-13" href="#__codelineno-3-13"></a>  {
+<a id="__codelineno-3-14" name="__codelineno-3-14" href="#__codelineno-3-14"></a>    results: { payment_corrected: true, delinquency_removed: true,
+<a id="__codelineno-3-15" name="__codelineno-3-15" href="#__codelineno-3-15"></a>               credit_dispute_filed: true, bureau_case_ids:
+<a id="__codelineno-3-16" name="__codelineno-3-16" href="#__codelineno-3-16"></a>               [&quot;EQ-294817&quot;, &quot;TU-182934&quot;, &quot;EX-039182&quot;] },
+<a id="__codelineno-3-17" name="__codelineno-3-17" href="#__codelineno-3-17"></a>    next_task: &quot;close_ticket_with_followup&quot;,
+<a id="__codelineno-3-18" name="__codelineno-3-18" href="#__codelineno-3-18"></a>    reasoning: &quot;Payment of $2,847.00 was misrouted to closed account
+<a id="__codelineno-3-19" name="__codelineno-3-19" href="#__codelineno-3-19"></a>                ending 4471. Corrected to active mortgage account
+<a id="__codelineno-3-20" name="__codelineno-3-20" href="#__codelineno-3-20"></a>                ending 8823. Delinquency flag removed from internal
+<a id="__codelineno-3-21" name="__codelineno-3-21" href="#__codelineno-3-21"></a>                systems. Credit bureau disputes filed with all three
+<a id="__codelineno-3-22" name="__codelineno-3-22" href="#__codelineno-3-22"></a>                bureaus — estimated 30-day resolution. Follow-up
+<a id="__codelineno-3-23" name="__codelineno-3-23" href="#__codelineno-3-23"></a>                scheduled at 15 and 30 days to confirm bureau
+<a id="__codelineno-3-24" name="__codelineno-3-24" href="#__codelineno-3-24"></a>                corrections.&quot;
+<a id="__codelineno-3-25" name="__codelineno-3-25" href="#__codelineno-3-25"></a>  }
+</code></pre></div>
 <p><strong>Metrics:</strong> Complex ticket resolution rate reaches 80–90% (matching Gradient Labs benchmarks, Anthropic 2025, p. 4). The supervisor ensures no step falls through the cracks — each specialist returns via the three-return contract, the supervisor aggregates and orchestrates.</p>
 <h3 id="phase-5-production-maturity">Phase 5: Production Maturity<a class="headerlink" href="#phase-5-production-maturity" title="Permanent link">&para;</a></h3>
 <p>Evaluator agents audit a random sample of resolved tickets for quality assurance. The architecture becomes a hybrid: sequential routing at the front, parallel assessment for compliance, hierarchical orchestration for complex cases, and evaluator-optimizer loops for continuous improvement.</p>
