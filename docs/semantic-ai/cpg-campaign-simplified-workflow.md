@@ -260,6 +260,11 @@ An **ontology-driven dashboard** interprets the same data through the domain mod
 
 ![Ontology-Driven Dashboard](../assets/images/bounty_ontology_dashboard.svg)
 
+!!! example "Live Interactive Dashboard — Generated from the Ontology"
+    The diagrams above are static snapshots. The link below opens a **working HTML mockup** built directly from the campaign ontology in this walkthrough. Every KPI panel, recommendation card, and action button maps to a real ontology concept — Ad Group, Channel, Profile, ROAS, Attribution — not a generic UI template.
+
+    [Open the Interactive Dashboard &rarr;](cpg-campaign-dashboard.html){ .md-button .md-button--primary }
+
 Every recommendation on this dashboard comes from the ontology. The system knows that "Bulk Buyers on Retail" is an ad group targeting a specific customer profile through a specific channel. It knows that Amazon CPC rising while click-through falls is a pattern consistent with competitor promotion activity. It knows that Walmart Connect is an alternative retail media channel that reaches the same profile. The actions aren't generic buttons — they're **domain-aware actions** that exist because the ontology connects Profile → Channel → Budget → Performance.
 
 ---
