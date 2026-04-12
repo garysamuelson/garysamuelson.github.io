@@ -1,0 +1,131 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1100 550" width="100%" height="550">
+  <defs>
+    <style>
+      text { font-family: -apple-system, 'Segoe UI', system-ui, sans-serif; }
+      .pool        { stroke-width: 2; }
+      .pool-brand  { fill: #e0f2fe; stroke: #0284c7; }
+      .pool-agency { fill: #dcfce7; stroke: #16a34a; }
+      .pool-plat   { fill: #ede9fe; stroke: #7c3aed; }
+      .pool-adv    { fill: #fce7f3; stroke: #db2777; }
+      .tab-brand   { fill: #0284c7; }
+      .tab-agency  { fill: #16a34a; }
+      .tab-plat    { fill: #7c3aed; }
+      .tab-adv     { fill: #db2777; }
+      .tab-text    { font-size: 12px; font-weight: 700; fill: #fff; text-anchor: middle; }
+      .task        { fill: #fff; stroke-width: 1.8; }
+      .t-brand     { stroke: #0284c7; }
+      .t-agency    { stroke: #16a34a; }
+      .t-plat      { stroke: #7c3aed; }
+      .t-adv       { stroke: #db2777; }
+      .snum        { font-size: 9px; font-weight: 700; fill: #94a3b8; text-anchor: middle; letter-spacing: 0.5px; }
+      .sname       { font-size: 12px; font-weight: 700; fill: #1e293b; text-anchor: middle; }
+      .ssub        { font-size: 10px; fill: #64748b; text-anchor: middle; }
+    </style>
+  </defs>
+
+  <!-- ═══════════════════════════════════════════════════════
+       POOL 1 — BRAND TEAM   (y=20, h=125)
+       Steps: 1 · 6 · 9
+       ═══════════════════════════════════════════════════════ -->
+  <rect x="10"  y="20"  width="1080" height="125" class="pool pool-brand" rx="6"/>
+  <rect x="10"  y="20"  width="32"   height="125" class="tab-brand" rx="6"/>
+  <rect x="26"  y="20"  width="16"   height="125" class="tab-brand"/>
+  <text x="26"  y="83"  class="tab-text"  transform="rotate(-90,26,83)">BRAND TEAM</text>
+
+  <!-- Step 1 -->
+  <rect x="201" y="47"  width="145"  height="72"  class="task t-brand" rx="5"/>
+  <text x="273" y="66"  class="snum">STEP 1</text>
+  <text x="273" y="85"  class="sname">Campaign Kickoff</text>
+  <text x="273" y="103" class="ssub">Objective · Budget · ROAS</text>
+
+  <!-- Step 6 -->
+  <rect x="477" y="47"  width="145"  height="72"  class="task t-brand" rx="5"/>
+  <text x="549" y="66"  class="snum">STEP 6</text>
+  <text x="549" y="85"  class="sname">Dashboard Review</text>
+  <text x="549" y="103" class="ssub">Spend · ROAS · Affordances</text>
+
+  <!-- Step 9 -->
+  <rect x="753" y="47"  width="145"  height="72"  class="task t-brand" rx="5"/>
+  <text x="825" y="66"  class="snum">STEP 9</text>
+  <text x="825" y="85"  class="sname">Execute Optimizations</text>
+  <text x="825" y="103" class="ssub">Budget · Creative · Bids</text>
+
+
+  <!-- ═══════════════════════════════════════════════════════
+       POOL 2 — AGENCY   (y=158, h=125)
+       Steps: 2 · 3 · 4
+       ═══════════════════════════════════════════════════════ -->
+  <rect x="10"  y="158" width="1080" height="125" class="pool pool-agency" rx="6"/>
+  <rect x="10"  y="158" width="32"   height="125" class="tab-agency" rx="6"/>
+  <rect x="26"  y="158" width="16"   height="125" class="tab-agency"/>
+  <text x="26"  y="221" class="tab-text"  transform="rotate(-90,26,221)">AGENCY</text>
+
+  <!-- Step 2 -->
+  <rect x="201" y="185" width="145"  height="72"  class="task t-agency" rx="5"/>
+  <text x="273" y="204" class="snum">STEP 2</text>
+  <text x="273" y="223" class="sname">Customer Profiles</text>
+  <text x="273" y="241" class="ssub">Demographics · Behaviors</text>
+
+  <!-- Step 3 -->
+  <rect x="477" y="185" width="145"  height="72"  class="task t-agency" rx="5"/>
+  <text x="549" y="204" class="snum">STEP 3</text>
+  <text x="549" y="223" class="sname">Channel Mapping</text>
+  <text x="549" y="241" class="ssub">Profile → Channel → Platform</text>
+
+  <!-- Step 4 -->
+  <rect x="753" y="185" width="145"  height="72"  class="task t-agency" rx="5"/>
+  <text x="825" y="204" class="snum">STEP 4</text>
+  <text x="825" y="223" class="sname">Agency Plan</text>
+  <text x="825" y="241" class="ssub">Creatives · $18M Budget</text>
+
+
+  <!-- ═══════════════════════════════════════════════════════
+       POOL 3 — EXECUTION PLATFORM   (y=296, h=125)
+       Steps: 5 · 7 · 8 · Apply Optimizations
+       ═══════════════════════════════════════════════════════ -->
+  <rect x="10"  y="296" width="1080" height="125" class="pool pool-plat" rx="6"/>
+  <rect x="10"  y="296" width="32"   height="125" class="tab-plat" rx="6"/>
+  <rect x="26"  y="296" width="16"   height="125" class="tab-plat"/>
+  <text x="26"  y="358" class="tab-text"  transform="rotate(-90,26,358)">PLATFORM</text>
+
+  <!-- Step 5 -->
+  <rect x="143" y="323" width="145"  height="72"  class="task t-plat" rx="5"/>
+  <text x="215" y="342" class="snum">STEP 5</text>
+  <text x="215" y="361" class="sname">Campaign Launch</text>
+  <text x="215" y="379" class="ssub">DSP · Real-Time Bidding</text>
+
+  <!-- Step 7 -->
+  <rect x="378" y="323" width="145"  height="72"  class="task t-plat" rx="5"/>
+  <text x="450" y="342" class="snum">STEP 7</text>
+  <text x="450" y="361" class="sname">Ingest Telemetry</text>
+  <text x="450" y="379" class="ssub">CTV · Social · Search · Retail</text>
+
+  <!-- Step 8 -->
+  <rect x="613" y="323" width="145"  height="72"  class="task t-plat" rx="5"/>
+  <text x="685" y="342" class="snum">STEP 8</text>
+  <text x="685" y="361" class="sname">Compute Attribution</text>
+  <text x="685" y="379" class="ssub">Multi-Touch Credit</text>
+
+  <!-- Apply Optimizations (platform-side governed execution) -->
+  <rect x="848" y="323" width="145"  height="72"  class="task t-plat" rx="5"/>
+  <text x="920" y="342" class="snum">PLATFORM</text>
+  <text x="920" y="361" class="sname">Apply Optimizations</text>
+  <text x="920" y="379" class="ssub">Bids · Budgets · Creatives</text>
+
+
+  <!-- ═══════════════════════════════════════════════════════
+       POOL 4 — AI ADVISOR   (y=434, h=100)
+       Step: 10
+       ═══════════════════════════════════════════════════════ -->
+  <rect x="10"  y="434" width="1080" height="100" class="pool pool-adv" rx="6"/>
+  <rect x="10"  y="434" width="32"   height="100" class="tab-adv" rx="6"/>
+  <rect x="26"  y="434" width="16"   height="100" class="tab-adv"/>
+  <text x="26"  y="489" class="tab-text"  transform="rotate(-90,26,489)">AI ADVISOR</text>
+
+  <!-- Step 10 -->
+  <rect x="477" y="457" width="145"  height="65"  class="task t-adv" rx="5"/>
+  <text x="549" y="475" class="snum">STEP 10</text>
+  <text x="549" y="494" class="sname">Advisor Playbook</text>
+  <text x="549" y="511" class="ssub">Course Corrections · Narratives</text>
+
+</svg>
