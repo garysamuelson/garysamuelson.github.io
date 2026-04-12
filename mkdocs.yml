@@ -56,7 +56,7 @@ markdown_extensions:
       custom_fences:
         - name: mermaid
           class: mermaid
-          format: !!python/name:pymdownx.superfences.fence_code_format
+          format: !!python/name:pymdownx.superfences.fence_div_format
   - pymdownx.highlight:
       anchor_linenums: true
   - pymdownx.tabbed:
@@ -72,6 +72,7 @@ markdown_extensions:
 
 extra_javascript:
   - https://unpkg.com/mermaid@11/dist/mermaid.min.js
+  - assets/javascripts/mermaid-init.js
 
 extra:
   social:
@@ -86,4 +87,6 @@ nav:
   - AI Governance in Healthcare:
     - Who Is Accountable?: healthcare/healthcare-accountability.md
     - The Governance Gap: agentic/governance-gap.md
+  - Semantic AI:
+    - The Ontology Process: semantic-ai/cpg-campaign-simplified-workflow.md
   - Tags: tags.md

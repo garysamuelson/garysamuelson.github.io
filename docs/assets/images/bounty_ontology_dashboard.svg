@@ -1,0 +1,90 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500">
+  <!-- Background -->
+  <rect width="800" height="500" fill="#f4f4f5" rx="8"/>
+  
+  <!-- Header -->
+  <rect width="800" height="76" fill="#18181b" rx="8" />
+  <path d="M 0 68 h 800 v 8 h -800 Z" fill="#18181b" />
+  <text x="24" y="36" font-family="Arial, sans-serif" font-size="20" font-weight="bold" fill="#ffffff">
+    BOUNTY Q3 CAMPAIGN — Ontology-Driven Dashboard
+  </text>
+  <text x="565" y="20" font-family="Arial, sans-serif" font-size="12" fill="#a1a1aa">
+    Campaign ROAS: <tspan font-weight="bold" fill="#4ade80">2.9x</tspan> (Target 3.5x)
+  </text>
+  <text x="565" y="35" font-family="Arial, sans-serif" font-size="12" fill="#a1a1aa">
+    Budget Pacing: <tspan font-weight="bold" fill="#60a5fa">97%</tspan> | Proj. Spend: <tspan font-weight="bold" fill="#f87171">$17.8M</tspan>
+  </text>
+  <text x="672" y="65" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#ffffff">
+    85 Days Left
+  </text>
+
+  <!-- Health Title -->
+  <text x="24" y="100" font-family="Arial, sans-serif" font-size="16" fill="#3f3f46" font-weight="bold">
+    CAMPAIGN HEALTH — by Ad Group
+  </text>
+
+  <!-- Card 1: Families on CTV -->
+  <g transform="translate(24, 120)">
+    <rect width="752" height="70" fill="#ffffff" stroke="#e4e4e7" stroke-width="1" rx="6"/>
+    <rect width="6" height="70" fill="#22c55e" rx="3"/>
+    <text x="24" y="30" font-family="Arial, sans-serif" font-size="16" fill="#27272a" font-weight="bold">✓ Families on CTV</text>
+    <text x="240" y="28" font-family="Arial, sans-serif" font-size="14" fill="#10b981" font-weight="bold">— On track</text>
+    <text x="24" y="50" font-family="Arial, sans-serif" font-size="13" fill="#52525b">Completion rate: 74% | Est. reach: 12.3M households</text>
+    <text x="400" y="40" font-family="Arial, sans-serif" font-size="13" fill="#71717a">CTV is building awareness effectively for primary profile.</text>
+  </g>
+
+  <!-- Card 2: Families on Social -->
+  <g transform="translate(24, 200)">
+    <rect width="752" height="70" fill="#ffffff" stroke="#e4e4e7" stroke-width="1" rx="6"/>
+    <rect width="6" height="70" fill="#22c55e" rx="3"/>
+    <text x="24" y="30" font-family="Arial, sans-serif" font-size="16" fill="#27272a" font-weight="bold">✓ Families on Social</text>
+    <text x="240" y="28" font-family="Arial, sans-serif" font-size="14" fill="#10b981" font-weight="bold">— On track</text>
+    <text x="24" y="50" font-family="Arial, sans-serif" font-size="13" fill="#52525b">Engagement rate: 2.1% | Cost per engagement: $1.82</text>
+    <text x="400" y="32" font-family="Arial, sans-serif" font-size="13" fill="#71717a">Performing above plan. Creative "Kitchen Mess 15s"</text>
+    <text x="400" y="50" font-family="Arial, sans-serif" font-size="13" fill="#71717a">outperforming "Absorbency Demo" by 1.8x on Instagram.</text>
+  </g>
+
+  <!-- Card 3: New Homeowners on Social (Opportunity) -->
+  <g transform="translate(24, 280)">
+    <rect width="752" height="100" fill="#f0fdf4" stroke="#86efac" stroke-width="1" rx="6"/>
+    <rect width="6" height="100" fill="#3b82f6" rx="3"/>
+    <text x="24" y="30" font-family="Arial, sans-serif" font-size="16" fill="#1e3a8a" font-weight="bold">▲ New Homeowners on Social</text>
+    <text x="280" y="28" font-family="Arial, sans-serif" font-size="14" fill="#2563eb" font-weight="bold">— Outperforming</text>
+    <text x="24" y="50" font-family="Arial, sans-serif" font-size="13" fill="#3b82f6">Cost per click is 35% lower than plan.</text>
+    <text x="24" y="68" font-family="Arial, sans-serif" font-size="13" fill="#3b82f6">Pinterest home-organization content driving high engagement.</text>
+    
+    <!-- Action Buttons -->
+    <g transform="translate(420, 20)">
+      <rect width="200" height="30" fill="#2563eb" rx="4" />
+      <text x="14" y="20" font-family="Arial, sans-serif" font-size="12" fill="#ffffff" font-weight="bold">Increase budget 20%</text>
+      <text x="210" y="20" font-family="Arial, sans-serif" font-size="12" fill="#10b981" font-weight="bold">Est: +$42K rev</text>
+    </g>
+    <g transform="translate(420, 56)">
+      <rect width="200" height="30" fill="#2563eb" rx="4" />
+      <text x="14" y="20" font-family="Arial, sans-serif" font-size="12" fill="#ffffff" font-weight="bold">Expand to YouTube home</text>
+      <text x="210" y="20" font-family="Arial, sans-serif" font-size="12" fill="#10b981" font-weight="bold">Est: +$28K rev</text>
+    </g>
+  </g>
+
+  <!-- Card 4: Bulk Buyers on Retail (Underperforming) -->
+  <g transform="translate(24, 390)">
+    <rect width="752" height="100" fill="#fff1f2" stroke="#fca5a5" stroke-width="1" rx="6"/>
+    <rect width="6" height="100" fill="#ef4444" rx="3"/>
+    <text x="24" y="30" font-family="Arial, sans-serif" font-size="16" fill="#991b1b" font-weight="bold">▼ Bulk Buyers on Retail</text>
+    <text x="240" y="28" font-family="Arial, sans-serif" font-size="14" fill="#dc2626" font-weight="bold">— Underperforming</text>
+    <text x="24" y="50" font-family="Arial, sans-serif" font-size="13" fill="#ef4444">CPC on Amazon is 40% above target ($0.84 vs $0.60).</text>
+    <text x="24" y="68" font-family="Arial, sans-serif" font-size="13" fill="#ef4444">Likely cause: competitor store-brand promo active.</text>
+    
+    <!-- Action Buttons -->
+    <g transform="translate(420, 20)">
+      <rect width="200" height="30" fill="#ef4444" rx="4" />
+      <text x="14" y="20" font-family="Arial, sans-serif" font-size="12" fill="#ffffff" font-weight="bold">Reduce Amazon bid cap 15%</text>
+      <text x="210" y="20" font-family="Arial, sans-serif" font-size="12" fill="#059669" font-weight="bold">Est: save $31K</text>
+    </g>
+    <g transform="translate(420, 56)">
+      <rect width="200" height="30" fill="#ffffff" stroke="#ef4444" stroke-width="1" rx="4" />
+      <text x="14" y="20" font-family="Arial, sans-serif" font-size="12" fill="#ef4444" font-weight="bold">Shift budget → Walmart Connect</text>
+      <text x="210" y="20" font-family="Arial, sans-serif" font-size="12" fill="#059669" font-weight="bold">Est: save $18K</text>
+    </g>
+  </g>
+</svg>
