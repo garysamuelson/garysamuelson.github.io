@@ -149,6 +149,8 @@ graph TD
 
   Profile_Bulk[Bulk Buyer] -->|Targets| B
   Profile_Bulk -->|Targets| F
+
+  linkStyle default stroke:#6366f1,stroke-width:2.5px
 ```
 
 Something important happened here: **the ontology now has a graph structure.** Profiles connect to channels. Channels have specific platforms. Platforms have different ad formats and pricing models. Nobody sat in a workshop and designed this graph. It emerged from the process team answering a workflow question: "where do we find these people?" That's the pattern — the process forces the semantics out.
