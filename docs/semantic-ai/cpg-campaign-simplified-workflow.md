@@ -242,7 +242,7 @@ Ad Group Performance (aggregated)
 
 The ontology now has its first **instance data** — not just the structure of the campaign, but actual events flowing through it. Every impression is a fact in the graph. Every click creates a relationship between a consumer profile and an ad creative.
 
-These milliseconds-fast events are actively caught by high-speed telemetry pipelines (like Kafka and Databricks) so that operational dashboards can render them in near real-time.
+These milliseconds-fast events are actively caught by high-speed telemetry pipelines so that operational dashboards can render them in near real-time. The telemetry worker (Step 7) queries these systems for impression events.
 
 ---
 
@@ -768,7 +768,7 @@ The critical insight: **the orchestration doesn't replace the services — it co
 
 Once the four processes are running in Camunda, the campaign is no longer a project plan tracked in spreadsheets. It is a **live ecosystem** where five categories of participants collaborate through the process engine:
 
-**1. Services** — External job workers that execute the computational steps. The DSP adapter (Step 5) calls The Trade Desk API to activate bidding. The telemetry worker (Step 7) queries Kafka/Databricks for impression events. The attribution worker (Step 8) runs the multi-touch model. Each is a stateless microservice that claims jobs from Zeebe, does its work, and returns results. Chris Richardson's foundational saga pattern applies here: the process engine coordinates the distributed transaction across these services, with each step either completing or compensating (*Microservices Patterns*, Manning, 2018). But unlike a choreography-based saga where services publish events and hope the right consumer picks them up, the Camunda orchestration explicitly sequences and monitors every handoff.
+**1. Services** — External job workers that execute the computational steps. The DSP adapter (Step 5) calls The Trade Desk API to activate bidding. The telemetry worker (Step 7) queries the impression event store for real-time telemetry. The attribution worker (Step 8) runs the multi-touch model. Each is a stateless microservice that claims jobs from Zeebe, does its work, and returns results. Chris Richardson's foundational saga pattern applies here: the process engine coordinates the distributed transaction across these services, with each step either completing or compensating (*Microservices Patterns*, Manning, 2018). But unlike a choreography-based saga where services publish events and hope the right consumer picks them up, the Camunda orchestration explicitly sequences and monitors every handoff.
 
 **2. People** — Human task participants who bring judgment where automation cannot. The campaign manager reviews the dashboard (Step 6) and approves optimizations (Step 9) through Camunda Tasklist. These aren't rubber-stamp approvals — they are the moments where domain expertise meets process data. The Brand Team's exclusive gateway (loop or exit?) may be evaluated by the engine, but the *inputs* to that evaluation — "is the campaign still worth running?" — come from a human reading an ontology-driven dashboard. Jim Sinur, Zbigniew Misiak, and BJ Biernatowski frame this as the distinction between "fully automated" and "augmented" process steps — the process model makes the human intervention *explicit and governed* rather than ad hoc (*Practical Business Process Modeling and Analysis*, Packt, 2025).
 
