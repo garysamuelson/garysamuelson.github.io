@@ -10,6 +10,28 @@ When I'm not drawing BPMN diagrams or arguing about ontologies, I'm probably rea
 
 ---
 
+## Latest: The Ontology Process
+
+Ten steps. Four teams. No design workshop. A P&G Bounty ad campaign traces how an executable BPMN workflow writes the domain ontology — and how that ontology powers orchestration, an intelligent dashboard, and the agentic tasks that produce the Advisor Playbook.
+
+<div style="display:grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap:1.5rem; margin-bottom:2rem;">
+
+<div markdown style="border:1px solid var(--md-default-fg-color--lightest); border-radius:8px; overflow:hidden;">
+<a href="semantic-ai/cpg-campaign-simplified-workflow/">
+  <img src="assets/images/banner_2_2026-04-11_13h51_14.png" alt="The Ontology Process — Orchestration, Dashboards, and Agentic Tasks" style="width:100%; display:block;" />
+</a>
+<div style="padding:1rem;">
+<small><strong>New · April 12, 2026</strong> · Semantic AI · BPMN · Agentic Systems</small><br/>
+<strong><a href="semantic-ai/cpg-campaign-simplified-workflow/">The Ontology Process: Orchestration, Dashboards, and Agentic Tasks</a></strong>
+<p>A simplified single-process walkthrough using P&G Bounty Paper Towels. Watch the domain ontology write itself across ten workflow steps — then power the orchestration, dashboard, and advisor playbook that follow.</p>
+<a href="semantic-ai/cpg-campaign-simplified-workflow/">Read →</a>
+</div>
+</div>
+
+</div>
+
+---
+
 ## Series: AI Governance in Healthcare
 
 A two-part examination of autonomous AI in healthcare — from the patient experience to the architectural gap beneath it.
