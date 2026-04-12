@@ -1831,7 +1831,9 @@
   Profile_NewHome --&gt;|Targets| F
 
   Profile_Bulk[Bulk Buyer] --&gt;|Targets| B
-  Profile_Bulk --&gt;|Targets| F</div>
+  Profile_Bulk --&gt;|Targets| F
+
+  linkStyle default stroke:#6366f1,stroke-width:2.5px</div>
 <p>Something important happened here: <strong>the ontology now has a graph structure.</strong> Profiles connect to channels. Channels have specific platforms. Platforms have different ad formats and pricing models. Nobody sat in a workshop and designed this graph. It emerged from the process team answering a workflow question: "where do we find these people?" That's the pattern — the process forces the semantics out.</p>
 <p>This is direction one of the bidirectional loop — the process writing the ontology. Three steps into a ten-step workflow, and the domain model already has concepts (Campaign, Profile, Channel), relationships (Profile targets Channel via Platform), and the beginnings of constraints (which profiles are reachable through which channels). By the time the monitoring loop starts cycling in the BPMN collaboration, this same graph will govern direction two: the ontology writing the process back — surfacing the dashboard panels, the available actions, and the optimization decisions that the Campaign Management pool can execute. The structure that emerged without deliberate design in Step 3 becomes the coordination mechanism for four independent organizational actors.</p>
 <hr />
