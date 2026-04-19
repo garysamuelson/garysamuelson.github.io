@@ -8,7 +8,7 @@
 
 ---
 
-### Forward
+### Foreword
 
 Every BPM maturity model I've seen puts the same aspiration at the top: processes that are aware of each other. Not faster individual workflows. Not better automation of a single process. The real summit is **inter-process collaboration** — independent process instances discovering each other, sharing meaning, and adapting based on what's happening across the enterprise.
 
