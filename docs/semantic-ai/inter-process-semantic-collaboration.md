@@ -1,7 +1,7 @@
 ---
 title: When Processes Finally Talk to Each Other
 description: What mass casualty response doctrine teaches us about inter-process collaboration with Camunda 8.9 MCP Gateway, Conditional Events, Cluster Variables, and A2A.
-social_image: https://garysamuelson.github.io/assets/images/inter_process_semantic_collaboration_MCI_audience_header.png
+social_image: https://garysamuelson.github.io/assets/images/inter_process_semantic_collaboration_MCI_audience_header.png?v=2
 ---
 
 ![When Processes Finally Talk to Each Other](../assets/images/inter_process_semantic_collaboration_MCI_audience_header.svg)
