@@ -185,16 +185,6 @@
     <tspan x="480" dy="15">Stratis &#x2014; <tspan font-style="italic">AI Agents with MCP</tspan> (O&#x2019;Reilly, Aug 2026)</tspan>
   </text>
 
-  <!-- ====== STATS BAR ====== -->
-  <rect x="20" y="696" width="270" height="44" rx="22" fill="#1A237E" filter="url(#shadow)"/>
-  <text x="155" y="723" text-anchor="middle" font-size="14" font-weight="bold" fill="#fff">97M MCP SDK Downloads/mo</text>
-
-  <rect x="310" y="696" width="270" height="44" rx="22" fill="#6A1B9A" filter="url(#shadow)"/>
-  <text x="445" y="723" text-anchor="middle" font-size="14" font-weight="bold" fill="#fff">177,000 MCP Tools Tracked</text>
-
-  <rect x="600" y="696" width="280" height="44" rx="22" fill="#00695C" filter="url(#shadow)"/>
-  <text x="740" y="723" text-anchor="middle" font-size="14" font-weight="bold" fill="#fff">Action Tools: 27% &#x2192; 65%</text>
-
   <!-- ====== VERTICAL FLOW ANNOTATION (left side) ====== -->
   <text transform="translate(12,420) rotate(-90)" text-anchor="middle" font-size="11" fill="#999" font-style="italic">Agent &#x2192; Protocol &#x2192; Engine</text>
 
