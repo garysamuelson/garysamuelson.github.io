@@ -370,3 +370,7 @@ For the bidirectional thesis — domain semantics drives orchestration, and orch
 *Part of the Semantic Process Intelligence series. For the complete research with full BPMN models, ontology mappings, and doctrine citations, see S7-MCI.*
 
 *The author's previous work on BPM architecture, including straight-through processing with Camunda and Apache Camel, is available at [garysamuelson.com/blog](https://garysamuelson.com/blog).*
+
+---
+
+*© 2026 Gary Samuelson | [CC BY-NC-ND 4.0](https://creativecommons.org/licenses/by-nc-nd/4.0/)*
