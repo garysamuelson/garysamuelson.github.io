@@ -373,4 +373,4 @@ For the bidirectional thesis — domain semantics drives orchestration, and orch
 
 ---
 
-*© 2026 Gary Samuelson | [CC BY-NC-ND 4.0](https://creativecommons.org/licenses/by-nc-nd/4.0/)*
+*© 2026 Gary Samuelson | CC BY-NC-ND 4.0 — Share freely with attribution. No commercial use. No derivatives without permission.*
