@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 820" width="900" height="820" font-family="Helvetica, Arial, sans-serif">
+  <defs>
+    <linearGradient id="mcpGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#E8EAF6"/>
+      <stop offset="100%" style="stop-color:#C5CAE9"/>
+    </linearGradient>
+    <filter id="shadow" x="-4%" y="-4%" width="110%" height="115%">
+      <feDropShadow dx="2" dy="2" stdDeviation="2.5" flood-color="#000" flood-opacity="0.15"/>
+    </filter>
+    <marker id="arr-r"  markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto" markerUnits="strokeWidth"><polygon points="0 0,8 3,0 6" fill="#831311"/></marker>
+    <marker id="arr-rr" markerWidth="8" markerHeight="6" refX="1" refY="3" orient="auto" markerUnits="strokeWidth"><polygon points="8 0,0 3,8 6" fill="#831311"/></marker>
+    <marker id="arr-a"  markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto" markerUnits="strokeWidth"><polygon points="0 0,8 3,0 6" fill="#6B3C00"/></marker>
+    <marker id="arr-ar" markerWidth="8" markerHeight="6" refX="1" refY="3" orient="auto" markerUnits="strokeWidth"><polygon points="8 0,0 3,8 6" fill="#6B3C00"/></marker>
+    <marker id="arr-b"  markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto" markerUnits="strokeWidth"><polygon points="0 0,8 3,0 6" fill="#0D4372"/></marker>
+    <marker id="arr-br" markerWidth="8" markerHeight="6" refX="1" refY="3" orient="auto" markerUnits="strokeWidth"><polygon points="8 0,0 3,8 6" fill="#0D4372"/></marker>
+    <marker id="arr-g"  markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto" markerUnits="strokeWidth"><polygon points="0 0,8 3,0 6" fill="#205022"/></marker>
+    <marker id="arr-gr" markerWidth="8" markerHeight="6" refX="1" refY="3" orient="auto" markerUnits="strokeWidth"><polygon points="8 0,0 3,8 6" fill="#205022"/></marker>
+  </defs>
+
+  <!-- Background -->
+  <rect width="900" height="820" fill="#FAFAFA" rx="6"/>
+
+  <!-- TITLE -->
+  <text x="450" y="28" text-anchor="middle" font-size="18" font-weight="bold" fill="#1A237E">Camunda 8.9 MCP Gateway — Inter-Process MCI Collaboration</text>
+  <text x="450" y="48" text-anchor="middle" font-size="12" fill="#666" font-style="italic">Model Context Protocol enabling ambient coordination between independent process instances</text>
+
+  <!-- TOP-LEFT: FIELD TRIAGE AGENT (RED) -->
+  <rect x="20" y="62" width="255" height="178" rx="7" fill="#FFCDD2" stroke="#831311" stroke-width="2" filter="url(#shadow)"/>
+  <text x="147" y="88" text-anchor="middle" font-size="15" font-weight="bold" fill="#831311">Field Triage Agent</text>
+  <line x1="36" y1="98" x2="259" y2="98" stroke="#831311" stroke-width="0.6" opacity="0.5"/>
+  <text font-size="13" fill="#222">
+    <tspan x="36" y="116" font-weight="bold">Publishes via MCP:</tspan>
+    <tspan x="36" dy="18">• writeVariable: METHANE report</tspan>
+    <tspan x="36" dy="17">• writeVariable: SALT distribution</tspan>
+    <tspan x="36" dy="20" font-weight="bold">Ambient Reaction:</tspan>
+    <tspan x="36" dy="18">• Conditional: ambulances ≥ 8</tspan>
+    <tspan x="36" dy="17">  → Re-triage Expectant patients</tspan>
+  </text>
+
+  <!-- TOP-RIGHT: TRANSPORT AGENT (AMBER) -->
+  <rect x="625" y="62" width="255" height="178" rx="7" fill="#FFE0B2" stroke="#6B3C00" stroke-width="2" filter="url(#shadow)"/>
+  <text x="752" y="88" text-anchor="middle" font-size="15" font-weight="bold" fill="#6B3C00">Transport Agent</text>
+  <line x1="641" y1="98" x2="864" y2="98" stroke="#6B3C00" stroke-width="0.6" opacity="0.5"/>
+  <text font-size="13" fill="#222">
+    <tspan x="641" y="116" font-weight="bold">Queries via MCP:</tspan>
+    <tspan x="641" dy="18">• searchInstances: hospital</tspan>
+    <tspan x="641" dy="17">  capacity + diversion status</tspan>
+    <tspan x="641" dy="20" font-weight="bold">Ambient Reaction:</tspan>
+    <tspan x="641" dy="18">• Conditional: diversion = true</tspan>
+    <tspan x="641" dy="17">  → Reroute to capable facility</tspan>
+  </text>
+
+  <!-- CENTER: VALUE PROPOSITION (YELLOW, DASHED) -->
+  <rect x="292" y="76" width="316" height="118" rx="9" fill="#FFFDE7" stroke="#F9A825" stroke-width="2" stroke-dasharray="5 4"/>
+  <text x="450" y="100" text-anchor="middle" font-size="14" font-weight="bold" fill="#E65100">The MCP Value Proposition</text>
+  <line x1="308" y1="109" x2="592" y2="109" stroke="#F9A825" stroke-width="0.6" opacity="0.5"/>
+  <text font-size="13" fill="#333">
+    <tspan x="306" y="127"><tspan font-weight="bold">Before:</tspan> 11 point-to-point flows, 4 pools</tspan>
+    <tspan x="306" dy="19"><tspan font-weight="bold">After: </tspan> 4 agents × 1 gateway, 0 wiring</tspan>
+    <tspan x="306" dy="19"><tspan font-weight="bold">Result:</tspan> New agents discover instantly</tspan>
+  </text>
+
+  <!-- ARROWS: TOP BOXES → MCP BAND -->
+  <line x1="147" y1="240" x2="147" y2="300" stroke="#831311" stroke-width="3" marker-end="url(#arr-r)" marker-start="url(#arr-rr)"/>
+  <rect x="80" y="258" width="100" height="20" rx="3" fill="#fff" opacity="0.88"/>
+  <text x="130" y="273" text-anchor="middle" font-size="12" font-weight="bold" fill="#831311">writeVariable</text>
+
+  <line x1="752" y1="240" x2="752" y2="300" stroke="#6B3C00" stroke-width="3" marker-end="url(#arr-a)" marker-start="url(#arr-ar)"/>
+  <rect x="645" y="258" width="160" height="20" rx="3" fill="#fff" opacity="0.88"/>
+  <text x="725" y="273" text-anchor="middle" font-size="12" font-weight="bold" fill="#6B3C00">searchProcessInstances</text>
+
+  <!-- MCP GATEWAY BAND (INDIGO) -->
+  <rect x="20" y="300" width="860" height="86" rx="6" fill="url(#mcpGrad)" stroke="#1A237E" stroke-width="3" filter="url(#shadow)"/>
+  <text x="450" y="328" text-anchor="middle" font-size="16" font-weight="bold" fill="#1A237E">CAMUNDA 8.9  MCP GATEWAY + CLUSTER VARIABLES</text>
+  <text x="450" y="350" text-anchor="middle" font-size="13" fill="#333">searchProcessInstances  ·  writeVariable  ·  createProcessInstance  ·  Incident Tools  ·  Authorization</text>
+  <text x="450" y="372" text-anchor="middle" font-size="12" fill="#444" font-style="italic">Single governed interface — every agent reads from and writes to the same cluster state</text>
+
+  <!-- ARROWS: BOTTOM BOXES → MCP BAND -->
+  <line x1="147" y1="450" x2="147" y2="386" stroke="#0D4372" stroke-width="3" marker-end="url(#arr-b)" marker-start="url(#arr-br)"/>
+  <rect x="80" y="408" width="104" height="20" rx="3" fill="#fff" opacity="0.88"/>
+  <text x="132" y="423" text-anchor="middle" font-size="12" font-weight="bold" fill="#0D4372">search | write</text>
+
+  <line x1="752" y1="450" x2="752" y2="386" stroke="#205022" stroke-width="3" marker-end="url(#arr-g)" marker-start="url(#arr-gr)"/>
+  <rect x="636" y="408" width="164" height="20" rx="3" fill="#fff" opacity="0.88"/>
+  <text x="718" y="423" text-anchor="middle" font-size="12" font-weight="bold" fill="#205022">search | create | write</text>
+
+  <!-- BOTTOM-LEFT: HOSPITAL SURGE AGENT (BLUE) -->
+  <rect x="20" y="450" width="255" height="200" rx="7" fill="#BBDEFB" stroke="#0D4372" stroke-width="2" filter="url(#shadow)"/>
+  <text x="147" y="477" text-anchor="middle" font-size="15" font-weight="bold" fill="#0D4372">Hospital Surge Agent</text>
+  <line x1="36" y1="487" x2="259" y2="487" stroke="#0D4372" stroke-width="0.6" opacity="0.5"/>
+  <text font-size="13" fill="#222">
+    <tspan x="36" y="506" font-weight="bold">Queries via MCP:</tspan>
+    <tspan x="36" dy="18">• searchInstances: IMMEDIATE</tspan>
+    <tspan x="36" dy="17">  patients, this incident</tspan>
+    <tspan x="36" dy="19" font-weight="bold">Publishes via MCP:</tspan>
+    <tspan x="36" dy="18">• writeVariable: OR capacity</tspan>
+    <tspan x="36" dy="17">• writeVariable: diversion flag</tspan>
+    <tspan x="36" dy="19" font-weight="bold">Ambient Reaction:</tspan>
+    <tspan x="36" dy="18">• methane ≠ null → activate surge</tspan>
+  </text>
+
+  <!-- BOTTOM-RIGHT: EOC COORDINATION AGENT (GREEN) -->
+  <rect x="625" y="450" width="255" height="200" rx="7" fill="#C8E6C9" stroke="#205022" stroke-width="2" filter="url(#shadow)"/>
+  <text x="752" y="477" text-anchor="middle" font-size="15" font-weight="bold" fill="#205022">EOC Coordination Agent</text>
+  <line x1="641" y1="487" x2="864" y2="487" stroke="#205022" stroke-width="0.6" opacity="0.5"/>
+  <text font-size="13" fill="#222">
+    <tspan x="641" y="506" font-weight="bold">Queries via MCP:</tspan>
+    <tspan x="641" dy="18">• searchInstances: all transport</tspan>
+    <tspan x="641" dy="17">  + hospital instances</tspan>
+    <tspan x="641" dy="19" font-weight="bold">Invokes via MCP:</tspan>
+    <tspan x="641" dy="18">• createProcessInstance:</tspan>
+    <tspan x="641" dy="17">  mutual-aid-request</tspan>
+    <tspan x="641" dy="19" font-weight="bold">Publishes via MCP:</tspan>
+    <tspan x="641" dy="18">• writeVariable: ambulances = 10</tspan>
+  </text>
+
+  <!-- CALLOUT 1: AMBIENT COORDINATION CYCLE (AMBER) -->
+  <rect x="20" y="672" width="415" height="118" rx="7" fill="#FFF8E1" stroke="#F57F17" stroke-width="2" stroke-dasharray="5 4"/>
+  <text x="38" y="694" font-size="13" font-weight="bold" fill="#E65100">Ambient Coordination Cycle</text>
+  <text font-size="12" fill="#333">
+    <tspan x="38" y="712">1. EOC writeVariable: ambulances_available = 10</tspan>
+    <tspan x="38" dy="15">2. Conditional Event fires in Field Triage</tspan>
+    <tspan x="38" dy="15">3. SALT re-triage: Expectant → Immediate</tspan>
+    <tspan x="38" dy="15">4. Triage writeVariable: updated SALT results</tspan>
+    <tspan x="38" dy="15">5. Hospital queries MCP → sees new Immediate count</tspan>
+    <tspan x="38" dy="18" font-weight="bold">No messages sent. Shared state coordinates.</tspan>
+  </text>
+
+  <!-- CALLOUT 2: ACCESS vs UNDERSTANDING (PURPLE) -->
+  <rect x="462" y="672" width="418" height="118" rx="7" fill="#F3E5F5" stroke="#6A1B9A" stroke-width="2" stroke-dasharray="5 4"/>
+  <text x="480" y="694" font-size="13" font-weight="bold" fill="#6A1B9A">MCP = Access  |  Ontology = Understanding</text>
+  <text font-size="12" fill="#333">
+    <tspan x="480" y="712">searchProcessInstances returns structured data</tspan>
+    <tspan x="480" dy="15">SALT / MUCC / ICS semantics tell the agent what it <tspan font-weight="bold">means</tspan></tspan>
+    <tspan x="480" dy="15">MCP = data pipeline; ontology = decision logic</tspan>
+    <tspan x="480" dy="18" font-weight="bold">Camunda 8.9: first platform where both</tspan>
+    <tspan x="480" dy="15" font-weight="bold">share one governed interface</tspan>
+  </text>
+
+  <!-- FOOTER -->
+  <text x="450" y="812" text-anchor="middle" font-size="10" fill="#999">Figure 4.4 — Camunda 8.9 MCP Gateway: Hub-and-Spoke MCI Collaboration  |  S7-MCI  |  April 2026</text>
+</svg>
