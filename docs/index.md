@@ -10,7 +10,29 @@ When I'm not drawing BPMN diagrams or arguing about ontologies, I'm probably rea
 
 ---
 
-## Latest: The Ontology Process
+## Latest: When Processes Finally Talk to Each Other
+
+For twenty years, BPM maturity models have put inter-process collaboration at the top. Nobody shipped it. Camunda 8.9's MCP Gateway changes that. Using mass casualty incident response as the reference domain — a field that solved process coordination under life-or-death pressure — this article maps NIMS/ICS doctrine onto the three mechanisms that finally make digital inter-process collaboration buildable.
+
+<div style="display:grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap:1.5rem; margin-bottom:2rem;">
+
+<div markdown style="border:1px solid var(--md-default-fg-color--lightest); border-radius:8px; overflow:hidden;">
+<a href="semantic-ai/inter-process-semantic-collaboration/">
+  <img src="assets/images/inter_process_semantic_collaboration_MCI_audience_header.svg" alt="When Processes Finally Talk to Each Other" style="width:100%; display:block;" />
+</a>
+<div style="padding:1rem;">
+<small><strong>New · April 19, 2026</strong> · Semantic AI · Camunda 8.9 · MCP · Agentic Systems</small><br/>
+<strong><a href="semantic-ai/inter-process-semantic-collaboration/">When Processes Finally Talk to Each Other: What Mass Casualty Response Teaches Us About Camunda 8.9's MCP Gateway</a></strong>
+<p>MCP Gateway. Conditional Events. Cluster Variables. A2A Protocol. Four independent process instances — Field Triage, Hospital Surge, Transport, EOC — collaborating without a single point-to-point message flow. The pattern works. It's already been proven. In emergency medicine.</p>
+<a href="semantic-ai/inter-process-semantic-collaboration/">Read →</a>
+</div>
+</div>
+
+</div>
+
+---
+
+## Previously: The Ontology Process
 
 Ten steps. Four teams. No design workshop. A P&G Bounty ad campaign traces how an executable BPMN workflow writes the domain ontology — and how that ontology powers orchestration, an intelligent dashboard, and the agentic tasks that produce the Advisor Playbook.
 
@@ -21,7 +43,7 @@ Ten steps. Four teams. No design workshop. A P&G Bounty ad campaign traces how a
   <img src="assets/images/banner_2_2026-04-11_13h51_14.png" alt="The Ontology Process — Orchestration, Dashboards, and Agentic Tasks" style="width:100%; display:block;" />
 </a>
 <div style="padding:1rem;">
-<small><strong>New · April 12, 2026</strong> · Semantic AI · BPMN · Agentic Systems</small><br/>
+<small><strong>April 12, 2026</strong> · Semantic AI · BPMN · Agentic Systems</small><br/>
 <strong><a href="semantic-ai/cpg-campaign-simplified-workflow/">The Ontology Process: Orchestration, Dashboards, and Agentic Tasks</a></strong>
 <p>A simplified single-process walkthrough using P&G Bounty Paper Towels. Watch the domain ontology write itself across ten workflow steps — then power the orchestration, dashboard, and advisor playbook that follow.</p>
 <a href="semantic-ai/cpg-campaign-simplified-workflow/">Read →</a>
