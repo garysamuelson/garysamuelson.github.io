@@ -10,6 +10,7 @@ repo_url: https://github.com/garysamuelson/garysamuelson.github.io
 
 theme:
   name: material
+  custom_dir: overrides
   features:
     - navigation.top
     - search.highlight
