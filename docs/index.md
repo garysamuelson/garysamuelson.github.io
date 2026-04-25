@@ -1,16 +1,12 @@
 # Gary Samuelson — AI & Architecture Research
 
-I'm an enterprise architect and AI researcher. My work covers the **full lifecycle** of intelligent systems — not just how they're designed, but how they're built, deployed, operated, and eventually replaced. Architecture and operations are two views of the same system.
+I'm an enterprise architect and AI researcher focused on the **full lifecycle** of intelligent systems — how they're designed, built, operated, and eventually replaced. Architecture and operations are two views of the same system.
 
-My core conviction: **agent architecture IS process architecture.** The same disciplines that make business processes reliable — value-stream thinking, conformance, progressive trust, auditable lineage — apply directly to agentic AI. Most of what I write here develops one thesis underneath that idea: **domain semantics should drive orchestration, and orchestration, run well, refines domain semantics.** The runtime is not where you put your intelligence; it's the deterministic spine that makes intelligence safe to deploy.
+My core conviction: **agent architecture IS process architecture.** The disciplines that make business processes reliable — value-stream thinking, conformance, auditable lineage — apply directly to agentic AI. The thesis I keep developing: **domain semantics should drive orchestration**, and orchestration, run well, refines those semantics in return. The runtime isn't where you put your intelligence; it's the deterministic spine that makes intelligence safe to deploy.
 
-The *Semantic Process Intelligence* series traces what becomes possible once that spine carries an MCP-style aspect layer: tasks that consult their own history, peer state, goal context, and policy instead of being told everything in advance; controllers that dissolve into swarms; policy treated as commander's intent rather than as code scattered across every regulated task. The test I keep applying: does it shrink the diagram, modularize the cross-cutting concerns, and produce decisions you can still defend when the regulation changes two years from now?
+The test I keep applying to any design: does it produce decisions you can still defend when the regulation changes two years from now? That question is what separates ecosystem thinking from architecture thinking. The organizations that handle it well aren't the ones with the best initial designs — they're the ones that encoded domain knowledge in a form the next team can read, reason over, and hand off.
 
-That last question — the two-year question — is what separates ecosystem thinking from architecture thinking. Systems get built and then they get maintained, extended, regulated, audited, and eventually replaced. The organizations that do that well aren't the ones with the best initial designs. They're the ones that encoded their domain knowledge in a form the next team can read, reason over, and hand off.
-
-I've built production AI systems in emergency medicine, real-time ML platforms at ad-tech scale, and enterprise modernization programs in global banking. The through-line: start with what the business actually does, encode it in the ontology before you encode it in code, and design the handoff before you design the feature.
-
-When I'm not drawing BPMN diagrams or arguing about ontologies, I'm reading philosophy — the systems-thinking kind, where the questions about structure, intent, and accountability trace back further than anyone in tech wants to admit.
+I've built production AI systems in emergency medicine, real-time ML platforms at ad-tech scale, and enterprise modernization programs in global banking. When I'm not drawing BPMN diagrams or arguing about ontologies, I'm reading philosophy — the systems-thinking kind, where questions about structure and accountability trace back further than anyone in tech wants to admit.
 
 ---
 
@@ -18,7 +14,7 @@ When I'm not drawing BPMN diagrams or arguing about ontologies, I'm reading phil
 
 For twenty years, BPMN service tasks have been black boxes — they know only what they're given. The engine sits on top of a rich runtime and has no way to deliver any of it to the task without explicit, brittle, modeler-authored wiring. Camunda 8.9's MCP Gateway is the process weaver that finally changes that.
 
-<div style="display:grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap:1.5rem; margin-bottom:2rem;">
+<div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap:1.5rem; margin-bottom:2rem;">
 
 <div markdown style="border:1px solid var(--md-default-fg-color--lightest); border-radius:8px; overflow:hidden;">
 <a href="semantic-ai/aspect-oriented-process-management/">
@@ -40,7 +36,7 @@ For twenty years, BPMN service tasks have been black boxes — they know only wh
 
 For twenty years, BPM maturity models have put inter-process collaboration at the top. Nobody shipped it. Camunda 8.9's MCP Gateway changes that. Using mass casualty incident response as the reference domain, this article maps NIMS/ICS doctrine onto the three mechanisms that finally make digital inter-process collaboration buildable.
 
-<div style="display:grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap:1.5rem; margin-bottom:2rem;">
+<div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap:1.5rem; margin-bottom:2rem;">
 
 <div markdown style="border:1px solid var(--md-default-fg-color--lightest); border-radius:8px; overflow:hidden;">
 <a href="semantic-ai/inter-process-semantic-collaboration/">
