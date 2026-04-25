@@ -10,9 +10,31 @@ When I'm not drawing BPMN diagrams or arguing about ontologies, I'm probably rea
 
 ---
 
-## Latest: When Processes Finally Talk to Each Other
+## Latest: Aspect-Oriented Process Management
 
-For twenty years, BPM maturity models have put inter-process collaboration at the top. Nobody shipped it. Camunda 8.9's MCP Gateway changes that. Using mass casualty incident response as the reference domain — a field that solved process coordination under life-or-death pressure — this article maps NIMS/ICS doctrine onto the three mechanisms that finally make digital inter-process collaboration buildable.
+For twenty years, BPMN service tasks have been black boxes — they know only what they're given. The engine sits on top of a rich runtime and has no way to deliver any of it to the task without explicit, brittle, modeler-authored wiring. Camunda 8.9's MCP Gateway is the process weaver that finally changes that.
+
+<div style="display:grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap:1.5rem; margin-bottom:2rem;">
+
+<div markdown style="border:1px solid var(--md-default-fg-color--lightest); border-radius:8px; overflow:hidden;">
+<a href="semantic-ai/aspect-oriented-process-management/">
+  <img src="assets/aopm_social_s8_v1.png" alt="Aspect-Oriented Process Management" style="width:100%; display:block;" />
+</a>
+<div style="padding:1rem;">
+<small><strong>New · April 25, 2026</strong> · Semantic AI · Camunda 8.9 · MCP · Agentic Systems</small><br/>
+<strong><a href="semantic-ai/aspect-oriented-process-management/">Aspect-Oriented Process Management: Beyond the Serial Controller to MCP-Enabled Swarms</a></strong>
+<p>Treat instance history, audit lineage, goal context, peer-task state, preference weights, and policy versions as runtime aspects advised into tasks through the MCP Gateway — without wiring them through the diagram. The same move AOP made for object-oriented code, applied at the process layer.</p>
+<a href="semantic-ai/aspect-oriented-process-management/">Read →</a>
+</div>
+</div>
+
+</div>
+
+---
+
+## Previously: When Processes Finally Talk to Each Other
+
+For twenty years, BPM maturity models have put inter-process collaboration at the top. Nobody shipped it. Camunda 8.9's MCP Gateway changes that. Using mass casualty incident response as the reference domain, this article maps NIMS/ICS doctrine onto the three mechanisms that finally make digital inter-process collaboration buildable.
 
 <div style="display:grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap:1.5rem; margin-bottom:2rem;">
 
@@ -21,32 +43,10 @@ For twenty years, BPM maturity models have put inter-process collaboration at th
   <img src="assets/images/inter_process_semantic_collaboration_MCI_audience_header.svg" alt="When Processes Finally Talk to Each Other" style="width:100%; display:block;" />
 </a>
 <div style="padding:1rem;">
-<small><strong>New · April 19, 2026</strong> · Semantic AI · Camunda 8.9 · MCP · Agentic Systems</small><br/>
+<small><strong>April 19, 2026</strong> · Semantic AI · Camunda 8.9 · MCP · Agentic Systems</small><br/>
 <strong><a href="semantic-ai/inter-process-semantic-collaboration/">When Processes Finally Talk to Each Other: What Mass Casualty Response Teaches Us About Camunda 8.9's MCP Gateway</a></strong>
 <p>MCP Gateway. Conditional Events. Cluster Variables. A2A Protocol. Four independent process instances — Field Triage, Hospital Surge, Transport, EOC — collaborating without a single point-to-point message flow. The pattern works. It's already been proven. In emergency medicine.</p>
 <a href="semantic-ai/inter-process-semantic-collaboration/">Read →</a>
-</div>
-</div>
-
-</div>
-
----
-
-## Previously: The Ontology Process
-
-Ten steps. Four teams. No design workshop. A P&G Bounty ad campaign traces how an executable BPMN workflow writes the domain ontology — and how that ontology powers orchestration, an intelligent dashboard, and the agentic tasks that produce the Advisor Playbook.
-
-<div style="display:grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap:1.5rem; margin-bottom:2rem;">
-
-<div markdown style="border:1px solid var(--md-default-fg-color--lightest); border-radius:8px; overflow:hidden;">
-<a href="semantic-ai/cpg-campaign-simplified-workflow/">
-  <img src="assets/images/banner_2_2026-04-11_13h51_14.png" alt="The Ontology Process — Orchestration, Dashboards, and Agentic Tasks" style="width:100%; display:block;" />
-</a>
-<div style="padding:1rem;">
-<small><strong>April 12, 2026</strong> · Semantic AI · BPMN · Agentic Systems</small><br/>
-<strong><a href="semantic-ai/cpg-campaign-simplified-workflow/">The Ontology Process: Orchestration, Dashboards, and Agentic Tasks</a></strong>
-<p>A simplified single-process walkthrough using P&G Bounty Paper Towels. Watch the domain ontology write itself across ten workflow steps — then power the orchestration, dashboard, and advisor playbook that follow.</p>
-<a href="semantic-ai/cpg-campaign-simplified-workflow/">Read →</a>
 </div>
 </div>
 
@@ -91,6 +91,18 @@ A two-part examination of autonomous AI in healthcare — from the patient exper
 ## Also on This Site
 
 <div style="display:grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap:1.5rem; margin-bottom:2rem;">
+
+<div markdown style="border:1px solid var(--md-default-fg-color--lightest); border-radius:8px; overflow:hidden;">
+<a href="semantic-ai/cpg-campaign-simplified-workflow/">
+  <img src="assets/images/banner_2_2026-04-11_13h51_14.png" alt="The Ontology Process — Orchestration, Dashboards, and Agentic Tasks" style="width:100%; display:block;" />
+</a>
+<div style="padding:1rem;">
+<strong><a href="semantic-ai/cpg-campaign-simplified-workflow/">The Ontology Process: Orchestration, Dashboards, and Agentic Tasks</a></strong><br/>
+<small>April 12, 2026 · Semantic AI · BPMN · Agentic Systems</small>
+<p>Ten steps. Four teams. No design workshop. A P&G Bounty ad campaign traces how an executable BPMN workflow writes the domain ontology — then powers orchestration, an intelligent dashboard, and the agentic tasks that produce the Advisor Playbook.</p>
+<a href="semantic-ai/cpg-campaign-simplified-workflow/">Read →</a>
+</div>
+</div>
 
 <div markdown style="border:1px solid var(--md-default-fg-color--lightest); border-radius:8px; overflow:hidden;">
 <a href="agentic/agentic-agency-and-workflows/">
