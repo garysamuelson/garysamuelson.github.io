@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="80 60 1040 546" width="1200" height="630" font-family="Helvetica, Arial, sans-serif">
+  <defs>
+    <!-- Background Gradient -->
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0F172A"/>
+      <stop offset="50%" style="stop-color:#1E293B"/>
+      <stop offset="100%" style="stop-color:#0B1120"/>
+    </linearGradient>
+    
+    <!-- Accent Gradient -->
+    <linearGradient id="accentGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#38BDF8"/>
+      <stop offset="100%" style="stop-color:#818CF8"/>
+    </linearGradient>
+
+    <!-- MCP Gateway Gradient -->
+    <linearGradient id="mcpGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#3B82F6"/>
+      <stop offset="100%" style="stop-color:#1D4ED8"/>
+    </linearGradient>
+
+    <!-- Task Gradient -->
+    <linearGradient id="taskGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#F59E0B"/>
+      <stop offset="100%" style="stop-color:#B45309"/>
+    </linearGradient>
+
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="15" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="3" dy="5" stdDeviation="4" flood-color="#000" flood-opacity="0.5"/>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="630" fill="url(#bgGrad)"/>
+  
+  <!-- Subtle background mesh/grid for technical feel -->
+  <g stroke="#334155" stroke-width="1" opacity="0.3">
+    <!-- Horizontal lines -->
+    <line x1="0" y1="105" x2="1200" y2="105"/>
+    <line x1="0" y1="210" x2="1200" y2="210"/>
+    <line x1="0" y1="315" x2="1200" y2="315"/>
+    <line x1="0" y1="420" x2="1200" y2="420"/>
+    <line x1="0" y1="525" x2="1200" y2="525"/>
+    <!-- Vertical lines -->
+    <line x1="200" y1="0" x2="200" y2="630"/>
+    <line x1="400" y1="0" x2="400" y2="630"/>
+    <line x1="600" y1="0" x2="600" y2="630"/>
+    <line x1="800" y1="0" x2="800" y2="630"/>
+    <line x1="1000" y1="0" x2="1000" y2="630"/>
+  </g>
+
+  <!-- ================= SAFE AREA (120px L/R, 70px T/B) ================= -->
+  <!-- Everything critical stays inside x:120-1080 and y:70-560 -->
+  <g transform="translate(120, 95)">
+    
+    <!-- Title Area -->
+    <text x="480" y="58" text-anchor="middle" font-size="52" font-weight="900" fill="#F8FAFC" letter-spacing="-1">Aspect-Oriented</text>
+    <text x="480" y="115" text-anchor="middle" font-size="52" font-weight="900" fill="#F8FAFC" letter-spacing="-1">Process Management</text>
+    <rect x="0" y="128" width="960" height="4" fill="url(#accentGrad)" rx="2"/>
+
+    <text x="480" y="162" text-anchor="middle" font-size="24" font-weight="500" fill="#94A3B8" letter-spacing="1">BEYOND THE SERIAL CONTROLLER TO MCP-ENABLED SWARMS</text>
+
+    <!-- Abstract Graphic Representation of AOPM -->
+    <!-- Central MCP Gateway -->
+    <g transform="translate(480, 320)" filter="url(#glow)">
+      <!-- Pulsing rings -->
+      <circle cx="0" cy="0" r="100" fill="none" stroke="#38BDF8" stroke-width="2" stroke-dasharray="10 10" opacity="0.3"/>
+      <circle cx="0" cy="0" r="140" fill="none" stroke="#818CF8" stroke-width="1" stroke-dasharray="5 15" opacity="0.2"/>
+      
+      <circle cx="0" cy="0" r="60" fill="url(#mcpGrad)" filter="url(#shadow)"/>
+      <text x="0" y="-8" text-anchor="middle" font-size="18" font-weight="bold" fill="#FFFFFF">MCP</text>
+      <text x="0" y="12" text-anchor="middle" font-size="14" font-weight="bold" fill="#DBEAFE">Gateway</text>
+      <text x="0" y="30" text-anchor="middle" font-size="10" font-weight="normal" fill="#93C5FD">Weaver</text>
+    </g>
+
+    <!-- Aspects Flowing In (Left side) -->
+    <g transform="translate(150, 320)">
+      <path d="M 0 -100 Q 150 -100 270 -30" fill="none" stroke="#38BDF8" stroke-width="3" stroke-dasharray="6 4" opacity="0.7"/>
+      <path d="M 0 0 Q 150 0 270 0" fill="none" stroke="#38BDF8" stroke-width="3" stroke-dasharray="6 4" opacity="0.7"/>
+      <path d="M 0 100 Q 150 100 270 30" fill="none" stroke="#38BDF8" stroke-width="3" stroke-dasharray="6 4" opacity="0.7"/>
+      
+      <!-- Aspect Pills -->
+      <rect x="-80" y="-115" width="160" height="30" rx="15" fill="#1E293B" stroke="#38BDF8" stroke-width="2"/>
+      <text x="0" y="-95" text-anchor="middle" font-size="14" font-weight="bold" fill="#E2E8F0">Semantic Lineage</text>
+
+      <rect x="-80" y="-15" width="160" height="30" rx="15" fill="#1E293B" stroke="#38BDF8" stroke-width="2"/>
+      <text x="0" y="5" text-anchor="middle" font-size="14" font-weight="bold" fill="#E2E8F0">Strategic Policy</text>
+
+      <rect x="-80" y="85" width="160" height="30" rx="15" fill="#1E293B" stroke="#38BDF8" stroke-width="2"/>
+      <text x="0" y="105" text-anchor="middle" font-size="14" font-weight="bold" fill="#E2E8F0">Goal Taxonomy</text>
+    </g>
+
+    <!-- Swarming Tasks (Right side) -->
+    <!-- 5 tasks, each 40px tall, with 15px even gaps: positions -120, -65, -10, 45, 100 -->
+    <!-- Centers at: -100, -45, 10, 65, 120 -->
+    <g transform="translate(810, 320)">
+      <!-- Broadcast lines: solid to tasks 1, 3, 5 (outer + middle) -->
+      <path d="M -270 -30 Q -150 -100 0 -100" fill="none" stroke="#F59E0B" stroke-width="3" opacity="0.8"/>
+      <path d="M -270 0 Q -150 10 0 10" fill="none" stroke="#F59E0B" stroke-width="3" opacity="0.8"/>
+      <path d="M -270 30 Q -150 120 0 120" fill="none" stroke="#F59E0B" stroke-width="3" opacity="0.8"/>
+      <!-- Dashed lines to tasks 2 and 4 -->
+      <path d="M -270 -15 Q -150 -45 -30 -45" fill="none" stroke="#F59E0B" stroke-width="2" opacity="0.5" stroke-dasharray="4 4"/>
+      <path d="M -270 15 Q -150 65 -30 65" fill="none" stroke="#F59E0B" stroke-width="2" opacity="0.5" stroke-dasharray="4 4"/>
+
+      <!-- Task 1: y=-120, center=-100 -->
+      <rect x="-60" y="-120" width="120" height="40" rx="8" fill="url(#taskGrad)" filter="url(#shadow)"/>
+      <text x="0" y="-95" text-anchor="middle" font-size="14" font-weight="bold" fill="#FFFFFF">Agent Task</text>
+
+      <!-- Task 2: y=-65, center=-45 (gap=15px) -->
+      <rect x="-60" y="-65" width="120" height="40" rx="8" fill="url(#taskGrad)" filter="url(#shadow)"/>
+      <text x="0" y="-40" text-anchor="middle" font-size="14" font-weight="bold" fill="#FFFFFF">Agent Task</text>
+
+      <!-- Task 3: y=-10, center=10 (gap=15px) -->
+      <rect x="-60" y="-10" width="120" height="40" rx="8" fill="url(#taskGrad)" filter="url(#shadow)"/>
+      <text x="0" y="15" text-anchor="middle" font-size="14" font-weight="bold" fill="#FFFFFF">Agent Task</text>
+
+      <!-- Task 4: y=45, center=65 (gap=15px) -->
+      <rect x="-60" y="45" width="120" height="40" rx="8" fill="url(#taskGrad)" filter="url(#shadow)"/>
+      <text x="0" y="70" text-anchor="middle" font-size="14" font-weight="bold" fill="#FFFFFF">Agent Task</text>
+
+      <!-- Task 5: y=100, center=120 (gap=15px) -->
+      <rect x="-60" y="100" width="120" height="40" rx="8" fill="url(#taskGrad)" filter="url(#shadow)"/>
+      <text x="0" y="125" text-anchor="middle" font-size="14" font-weight="bold" fill="#FFFFFF">Agent Task</text>
+
+      <!-- Label -->
+      <text x="0" y="165" text-anchor="middle" font-size="14" font-style="italic" font-weight="bold" fill="#FCD34D">Concurrent Swarm</text>
+    </g>
+
+    <!-- Bottom summary line -->
+    <text x="480" y="470" text-anchor="middle" font-size="20" font-weight="bold" fill="#CBD5E1">
+      "Policy travels with the aspect, not with the diagram."
+    </text>
+
+  </g>
+  <!-- ================= END SAFE AREA ================= -->
+
+</svg>

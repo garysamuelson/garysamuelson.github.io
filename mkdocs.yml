@@ -91,4 +91,5 @@ nav:
   - Semantic AI:
     - The Ontology Process: semantic-ai/cpg-campaign-simplified-workflow.md
     - When Processes Finally Talk to Each Other: semantic-ai/inter-process-semantic-collaboration.md
+    - Aspect-Oriented Process Management: semantic-ai/aspect-oriented-process-management.md
   - Tags: tags.md

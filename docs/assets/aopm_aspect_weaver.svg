@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1100 820" width="1100" height="820" font-family="Helvetica, Arial, sans-serif">
+  <defs>
+    <linearGradient id="aspectSrc" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#FFF8E1"/>
+      <stop offset="100%" style="stop-color:#FFECB3"/>
+    </linearGradient>
+    <linearGradient id="taskTgt" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#FFF3E0"/>
+      <stop offset="100%" style="stop-color:#FFE0B2"/>
+    </linearGradient>
+    <linearGradient id="weaverGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#E8EAF6"/>
+      <stop offset="100%" style="stop-color:#9FA8DA"/>
+    </linearGradient>
+    <filter id="shadow" x="-4%" y="-4%" width="110%" height="115%">
+      <feDropShadow dx="2" dy="2" stdDeviation="2.5" flood-color="#000" flood-opacity="0.18"/>
+    </filter>
+    <marker id="arr-l" markerWidth="9" markerHeight="7" refX="8" refY="3.5" orient="auto" markerUnits="strokeWidth">
+      <polygon points="0 0,9 3.5,0 7" fill="#F57F17"/>
+    </marker>
+    <marker id="arr-r" markerWidth="9" markerHeight="7" refX="8" refY="3.5" orient="auto" markerUnits="strokeWidth">
+      <polygon points="0 0,9 3.5,0 7" fill="#283593"/>
+    </marker>
+  </defs>
+
+  <rect width="1100" height="820" fill="#FAFAFA" rx="6"/>
+
+  <text x="550" y="32" text-anchor="middle" font-size="20" font-weight="bold" fill="#1A237E">MCP as the Aspect Weaver</text>
+  <text x="550" y="54" text-anchor="middle" font-size="13" fill="#666" font-style="italic">Cross-cutting concerns advised into tasks at execution time, governed by Camunda authorization</text>
+
+  <!-- LEFT: aspect sources -->
+  <text x="180" y="90" text-anchor="middle" font-size="14" font-weight="bold" fill="#E65100">Cross-Cutting Process Concerns</text>
+  <text x="180" y="108" text-anchor="middle" font-size="11" fill="#BF360C" font-style="italic">(the &#x201C;aspects&#x201D; — provided by the engine, not by the diagram)</text>
+
+  <g font-size="12" fill="#5D4037">
+    <!-- 7 aspect cards -->
+    <rect x="40" y="125" width="280" height="58" rx="8" fill="url(#aspectSrc)" stroke="#F57F17" stroke-width="1.5" filter="url(#shadow)"/>
+    <text x="58" y="148" font-weight="bold" fill="#E65100">1. Process Variables</text>
+    <text x="58" y="170">Live state of the running instance</text>
+
+    <rect x="40" y="200" width="280" height="58" rx="8" fill="url(#aspectSrc)" stroke="#F57F17" stroke-width="1.5" filter="url(#shadow)"/>
+    <text x="58" y="223" font-weight="bold" fill="#E65100">2. Instance History</text>
+    <text x="58" y="245">What has already happened in this instance</text>
+
+    <rect x="40" y="275" width="280" height="58" rx="8" fill="url(#aspectSrc)" stroke="#F57F17" stroke-width="1.5" filter="url(#shadow)"/>
+    <text x="58" y="298" font-weight="bold" fill="#E65100">3. Audit Log API</text>
+    <text x="58" y="320">Who-did-what across instances of this process</text>
+
+    <rect x="40" y="350" width="280" height="58" rx="8" fill="url(#aspectSrc)" stroke="#F57F17" stroke-width="1.5" filter="url(#shadow)"/>
+    <text x="58" y="373" font-weight="bold" fill="#E65100">4. Semantic Lineage</text>
+    <text x="58" y="395">How each variable came to its current value</text>
+
+    <rect x="40" y="425" width="280" height="58" rx="8" fill="url(#aspectSrc)" stroke="#F57F17" stroke-width="1.5" filter="url(#shadow)"/>
+    <text x="58" y="448" font-weight="bold" fill="#E65100">5. Peer-Task / Peer-Instance State</text>
+    <text x="58" y="470">What sibling tasks and processes are doing</text>
+
+    <rect x="40" y="500" width="280" height="58" rx="8" fill="url(#aspectSrc)" stroke="#F57F17" stroke-width="1.5" filter="url(#shadow)"/>
+    <text x="58" y="523" font-weight="bold" fill="#E65100">6. Goal Registry</text>
+    <text x="58" y="545">The outcome this task is ultimately serving</text>
+
+    <rect x="40" y="575" width="280" height="58" rx="8" fill="url(#aspectSrc)" stroke="#F57F17" stroke-width="1.5" filter="url(#shadow)"/>
+    <text x="58" y="598" font-weight="bold" fill="#E65100">7. Preference Weights</text>
+    <text x="58" y="620">Organizational guidance learned over time</text>
+
+    <rect x="40" y="650" width="280" height="58" rx="8" fill="url(#aspectSrc)" stroke="#F57F17" stroke-width="1.5" filter="url(#shadow)"/>
+    <text x="58" y="673" font-weight="bold" fill="#E65100">8. Policy / Ontology Version</text>
+    <text x="58" y="695">The rules and meanings in effect right now</text>
+  </g>
+
+  <!-- CENTER: MCP weaver -->
+  <rect x="395" y="200" width="310" height="450" rx="14" fill="url(#weaverGrad)" stroke="#283593" stroke-width="2.5" filter="url(#shadow)"/>
+  <text x="550" y="232" text-anchor="middle" font-size="17" font-weight="bold" fill="#1A237E">Camunda 8.9 MCP Gateway</text>
+  <text x="550" y="252" text-anchor="middle" font-size="12" fill="#1A237E" font-style="italic">The Aspect Weaver</text>
+
+  <line x1="415" y1="270" x2="685" y2="270" stroke="#1A237E" stroke-width="0.8" opacity="0.4"/>
+
+  <text font-size="12" fill="#1A237E">
+    <tspan x="415" y="295" font-weight="bold">Mechanism</tspan>
+    <tspan x="415" dy="18">&#x2022; JSON-RPC 2.0 tool surface</tspan>
+    <tspan x="415" dy="18">&#x2022; Schema-guided invocation</tspan>
+    <tspan x="415" dy="18">&#x2022; Discoverable at runtime</tspan>
+    <tspan x="415" dy="18">&#x2022; Authorization per role / task</tspan>
+    <tspan x="415" dy="18">&#x2022; Every call is logged</tspan>
+  </text>
+
+  <line x1="415" y1="420" x2="685" y2="420" stroke="#1A237E" stroke-width="0.8" opacity="0.4"/>
+
+  <text font-size="12" fill="#1A237E">
+    <tspan x="415" y="445" font-weight="bold">Tools exposed (selected)</tspan>
+    <tspan x="415" dy="17">&#x2022; getProcessInstance(id)</tspan>
+    <tspan x="415" dy="17">&#x2022; searchProcessInstances(query)</tspan>
+    <tspan x="415" dy="17">&#x2022; readVariable(scope, name)</tspan>
+    <tspan x="415" dy="17">&#x2022; writeVariable(scope, name, value)</tspan>
+    <tspan x="415" dy="17">&#x2022; getInstanceHistory(id, since)</tspan>
+    <tspan x="415" dy="17">&#x2022; queryAuditLog(filter)</tspan>
+    <tspan x="415" dy="17">&#x2022; getLineage(variable)</tspan>
+    <tspan x="415" dy="17">&#x2022; getGoalContext(taskId)</tspan>
+    <tspan x="415" dy="17">&#x2022; getPreferenceWeights(decision)</tspan>
+  </text>
+
+  <!-- RIGHT: Tasks -->
+  <text x="920" y="90" text-anchor="middle" font-size="14" font-weight="bold" fill="#BF360C">Tasks Across the Cluster</text>
+  <text x="920" y="108" text-anchor="middle" font-size="11" fill="#BF360C" font-style="italic">(any AI-enabled task in any process can be advised)</text>
+
+  <g>
+    <rect x="780" y="160" width="280" height="80" rx="14" fill="url(#taskTgt)" stroke="#E65100" stroke-width="2"/>
+    <text x="920" y="188" text-anchor="middle" font-size="13" font-weight="bold" fill="#BF360C">Replenishment Task</text>
+    <text x="920" y="210" text-anchor="middle" font-size="11" fill="#5D4037">Perishable Replenishment process</text>
+    <text x="920" y="226" text-anchor="middle" font-size="11" fill="#5D4037" font-style="italic">consults: history, lineage, preferences</text>
+
+    <rect x="780" y="260" width="280" height="80" rx="14" fill="url(#taskTgt)" stroke="#E65100" stroke-width="2"/>
+    <text x="920" y="288" text-anchor="middle" font-size="13" font-weight="bold" fill="#BF360C">Budget Reallocation Task</text>
+    <text x="920" y="310" text-anchor="middle" font-size="11" fill="#5D4037">Campaign Orchestration process</text>
+    <text x="920" y="326" text-anchor="middle" font-size="11" fill="#5D4037" font-style="italic">consults: peer state, goal, history</text>
+
+    <rect x="780" y="360" width="280" height="80" rx="14" fill="url(#taskTgt)" stroke="#E65100" stroke-width="2"/>
+    <text x="920" y="388" text-anchor="middle" font-size="13" font-weight="bold" fill="#BF360C">Claims Triage Task</text>
+    <text x="920" y="410" text-anchor="middle" font-size="11" fill="#5D4037">Insurance Adjudication process</text>
+    <text x="920" y="426" text-anchor="middle" font-size="11" fill="#5D4037" font-style="italic">consults: peer instances, lineage</text>
+
+    <rect x="780" y="460" width="280" height="80" rx="14" fill="url(#taskTgt)" stroke="#E65100" stroke-width="2"/>
+    <text x="920" y="488" text-anchor="middle" font-size="13" font-weight="bold" fill="#BF360C">Triage Re-Evaluation Task</text>
+    <text x="920" y="510" text-anchor="middle" font-size="11" fill="#5D4037">MCI Field Triage process</text>
+    <text x="920" y="526" text-anchor="middle" font-size="11" fill="#5D4037" font-style="italic">consults: cluster vars, peer goals</text>
+
+    <rect x="780" y="560" width="280" height="80" rx="14" fill="url(#taskTgt)" stroke="#E65100" stroke-width="2"/>
+    <text x="920" y="588" text-anchor="middle" font-size="13" font-weight="bold" fill="#BF360C">Course-Correction Task</text>
+    <text x="920" y="610" text-anchor="middle" font-size="11" fill="#5D4037">Bounty Campaign process</text>
+    <text x="920" y="626" text-anchor="middle" font-size="11" fill="#5D4037" font-style="italic">consults: history, preferences, goal</text>
+  </g>
+
+  <!-- ARROWS aspects -> weaver -->
+  <line x1="320" y1="154" x2="393" y2="380" stroke="#F57F17" stroke-width="1.5" marker-end="url(#arr-l)" opacity="0.7"/>
+  <line x1="320" y1="229" x2="393" y2="395" stroke="#F57F17" stroke-width="1.5" marker-end="url(#arr-l)" opacity="0.7"/>
+  <line x1="320" y1="304" x2="393" y2="410" stroke="#F57F17" stroke-width="1.5" marker-end="url(#arr-l)" opacity="0.7"/>
+  <line x1="320" y1="379" x2="393" y2="425" stroke="#F57F17" stroke-width="1.5" marker-end="url(#arr-l)" opacity="0.7"/>
+  <line x1="320" y1="454" x2="393" y2="440" stroke="#F57F17" stroke-width="1.5" marker-end="url(#arr-l)" opacity="0.7"/>
+  <line x1="320" y1="529" x2="393" y2="455" stroke="#F57F17" stroke-width="1.5" marker-end="url(#arr-l)" opacity="0.7"/>
+  <line x1="320" y1="604" x2="393" y2="470" stroke="#F57F17" stroke-width="1.5" marker-end="url(#arr-l)" opacity="0.7"/>
+  <line x1="320" y1="679" x2="393" y2="485" stroke="#F57F17" stroke-width="1.5" marker-end="url(#arr-l)" opacity="0.7"/>
+
+  <!-- ARROWS weaver -> tasks (bidirectional via two arrows) -->
+  <line x1="707" y1="380" x2="778" y2="200" stroke="#283593" stroke-width="1.5" marker-end="url(#arr-r)" opacity="0.7"/>
+  <line x1="707" y1="395" x2="778" y2="300" stroke="#283593" stroke-width="1.5" marker-end="url(#arr-r)" opacity="0.7"/>
+  <line x1="707" y1="425" x2="778" y2="400" stroke="#283593" stroke-width="1.5" marker-end="url(#arr-r)" opacity="0.7"/>
+  <line x1="707" y1="455" x2="778" y2="500" stroke="#283593" stroke-width="1.5" marker-end="url(#arr-r)" opacity="0.7"/>
+  <line x1="707" y1="485" x2="778" y2="600" stroke="#283593" stroke-width="1.5" marker-end="url(#arr-r)" opacity="0.7"/>
+
+  <!-- footer -->
+  <text x="550" y="745" text-anchor="middle" font-size="13" fill="#37474F">
+    <tspan font-weight="bold" fill="#1A237E">Aspect Oriented Process Management:</tspan>
+    <tspan> the weaver mediates &#x2014; the diagram doesn&#x2019;t have to.</tspan>
+  </text>
+  <text x="550" y="770" text-anchor="middle" font-size="12" fill="#666" font-style="italic">Adding an aspect = registering a new MCP tool.  Removing one = revoking authorization.  No BPMN re-deployment.</text>
+  <text x="550" y="795" text-anchor="middle" font-size="11" fill="#999">Camunda 8.9 MCP Gateway &#x2022; Audit Log API &#x2022; Conditional Events &#x2022; Cluster Variables</text>
+</svg>

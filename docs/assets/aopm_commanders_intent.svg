@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" width="1200" height="800" font-family="Helvetica, Arial, sans-serif">
+  <defs>
+    <linearGradient id="strategicGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#FFEBEE"/>
+      <stop offset="100%" style="stop-color:#EF9A9A"/>
+    </linearGradient>
+    <linearGradient id="doctrinalGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#FFF3E0"/>
+      <stop offset="100%" style="stop-color:#FFCC80"/>
+    </linearGradient>
+    <linearGradient id="situationalGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#E8F5E9"/>
+      <stop offset="100%" style="stop-color:#A5D6A7"/>
+    </linearGradient>
+    <linearGradient id="taskGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#FFF3E0"/>
+      <stop offset="100%" style="stop-color:#FFB74D"/>
+    </linearGradient>
+    <linearGradient id="auditGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#E1F5FE"/>
+      <stop offset="100%" style="stop-color:#81D4FA"/>
+    </linearGradient>
+    <filter id="shadow" x="-4%" y="-4%" width="110%" height="115%">
+      <feDropShadow dx="2" dy="2" stdDeviation="2.5" flood-color="#000" flood-opacity="0.18"/>
+    </filter>
+    <marker id="arr-down" markerWidth="9" markerHeight="7" refX="8" refY="3.5" orient="auto" markerUnits="strokeWidth">
+      <polygon points="0 0,9 3.5,0 7" fill="#37474F"/>
+    </marker>
+    <marker id="arr-up" markerWidth="9" markerHeight="7" refX="8" refY="3.5" orient="auto" markerUnits="strokeWidth">
+      <polygon points="0 0,9 3.5,0 7" fill="#0277BD"/>
+    </marker>
+  </defs>
+
+  <rect width="1200" height="800" fill="#FAFAFA" rx="6"/>
+
+  <!-- TITLE -->
+  <text x="600" y="32" text-anchor="middle" font-size="20" font-weight="bold" fill="#1A237E">Policy as Commander&#x2019;s Intent</text>
+  <text x="600" y="54" text-anchor="middle" font-size="13" fill="#666" font-style="italic">Three policy layers published as MCP aspects &#x2014; each task pulls in what the moment requires</text>
+
+  <!-- LEFT: Three policy layers -->
+  <text x="270" y="92" text-anchor="middle" font-size="14" font-weight="bold" fill="#37474F">Policy Layers (published through MCP)</text>
+
+  <!-- Strategic -->
+  <rect x="70" y="115" width="400" height="115" rx="10" fill="url(#strategicGrad)" stroke="#C62828" stroke-width="2" filter="url(#shadow)"/>
+  <text x="270" y="142" text-anchor="middle" font-size="14" font-weight="bold" fill="#B71C1C">1. Strategic Policy</text>
+  <text x="270" y="160" text-anchor="middle" font-size="11" fill="#B71C1C" font-style="italic">What is forbidden &#x2022; what success looks like</text>
+  <text font-size="11" fill="#5D4037">
+    <tspan x="92" y="184">&#x2022; Regulatory boundaries (GDPR, HIPAA, FSMA)</tspan>
+    <tspan x="92" dy="15">&#x2022; Ethical floors (no discrimination, no dark patterns)</tspan>
+    <tspan x="92" dy="15">&#x2022; Mission outcome (e.g. &#x201C;livability before repair sequence&#x201D;)</tspan>
+  </text>
+
+  <!-- Doctrinal -->
+  <rect x="70" y="250" width="400" height="115" rx="10" fill="url(#doctrinalGrad)" stroke="#E65100" stroke-width="2" filter="url(#shadow)"/>
+  <text x="270" y="277" text-anchor="middle" font-size="14" font-weight="bold" fill="#BF360C">2. Doctrinal Preferences</text>
+  <text x="270" y="295" text-anchor="middle" font-size="11" fill="#BF360C" font-style="italic">How this organization handles trade-offs</text>
+  <text font-size="11" fill="#5D4037">
+    <tspan x="92" y="319">&#x2022; Speed vs. accuracy weights</tspan>
+    <tspan x="92" dy="15">&#x2022; Cost vs. customer-experience priorities</tspan>
+    <tspan x="92" dy="15">&#x2022; Risk appetite by segment / quarter</tspan>
+  </text>
+
+  <!-- Situational -->
+  <rect x="70" y="385" width="400" height="115" rx="10" fill="url(#situationalGrad)" stroke="#2E7D32" stroke-width="2" filter="url(#shadow)"/>
+  <text x="270" y="412" text-anchor="middle" font-size="14" font-weight="bold" fill="#1B5E20">3. Situational Context</text>
+  <text x="270" y="430" text-anchor="middle" font-size="11" fill="#1B5E20" font-style="italic">What is true right now in this instance</text>
+  <text font-size="11" fill="#37474F">
+    <tspan x="92" y="454">&#x2022; Goal of THIS instance (commander&#x2019;s intent for this case)</tspan>
+    <tspan x="92" dy="15">&#x2022; Peer-task / peer-instance state</tspan>
+    <tspan x="92" dy="15">&#x2022; Live cluster variables, sensor signals, market conditions</tspan>
+  </text>
+
+  <!-- CENTER: agents pulling policy via MCP -->
+  <ellipse cx="700" cy="305" rx="100" ry="50" fill="#E8EAF6" stroke="#283593" stroke-width="2.5" filter="url(#shadow)"/>
+  <text x="700" y="300" text-anchor="middle" font-size="14" font-weight="bold" fill="#1A237E">MCP Gateway</text>
+  <text x="700" y="318" text-anchor="middle" font-size="10" fill="#1A237E" font-style="italic">policy is just another aspect</text>
+
+  <!-- Arrows policy -> MCP -->
+  <line x1="470" y1="172" x2="606" y2="280" stroke="#37474F" stroke-width="2" marker-end="url(#arr-down)"/>
+  <line x1="470" y1="307" x2="600" y2="305" stroke="#37474F" stroke-width="2" marker-end="url(#arr-down)"/>
+  <line x1="470" y1="442" x2="606" y2="335" stroke="#37474F" stroke-width="2" marker-end="url(#arr-down)"/>
+
+  <!-- RIGHT: agentic tasks pulling policy at execution -->
+  <text x="1010" y="92" text-anchor="middle" font-size="14" font-weight="bold" fill="#BF360C">Agentic Tasks (swarming)</text>
+
+  <g>
+    <rect x="850" y="120" width="320" height="60" rx="14" fill="url(#taskGrad)" stroke="#E65100" stroke-width="1.8"/>
+    <text x="1010" y="145" text-anchor="middle" font-size="13" font-weight="bold" fill="#BF360C">Claims Triage Task</text>
+    <text x="1010" y="163" text-anchor="middle" font-size="10" fill="#5D4037" font-style="italic">consults: unfair-claims floor, speed weight, peer claims</text>
+
+    <rect x="850" y="200" width="320" height="60" rx="14" fill="url(#taskGrad)" stroke="#E65100" stroke-width="1.8"/>
+    <text x="1010" y="225" text-anchor="middle" font-size="13" font-weight="bold" fill="#BF360C">Replenishment Task</text>
+    <text x="1010" y="243" text-anchor="middle" font-size="10" fill="#5D4037" font-style="italic">consults: FSMA shelf-life floor, shrink weight, instance goal</text>
+
+    <rect x="850" y="280" width="320" height="60" rx="14" fill="url(#taskGrad)" stroke="#E65100" stroke-width="1.8"/>
+    <text x="1010" y="305" text-anchor="middle" font-size="13" font-weight="bold" fill="#BF360C">Disclosure Task</text>
+    <text x="1010" y="323" text-anchor="middle" font-size="10" fill="#5D4037" font-style="italic">consults: required disclosure list, customer language</text>
+
+    <rect x="850" y="360" width="320" height="60" rx="14" fill="url(#taskGrad)" stroke="#E65100" stroke-width="1.8"/>
+    <text x="1010" y="385" text-anchor="middle" font-size="13" font-weight="bold" fill="#BF360C">Triage Re-Evaluation</text>
+    <text x="1010" y="403" text-anchor="middle" font-size="10" fill="#5D4037" font-style="italic">consults: SALT doctrine, livability priority, peer state</text>
+
+    <rect x="850" y="440" width="320" height="60" rx="14" fill="url(#taskGrad)" stroke="#E65100" stroke-width="1.8"/>
+    <text x="1010" y="465" text-anchor="middle" font-size="13" font-weight="bold" fill="#BF360C">Reallocation Task</text>
+    <text x="1010" y="483" text-anchor="middle" font-size="10" fill="#5D4037" font-style="italic">consults: budget guard-rails, attribution lineage</text>
+  </g>
+
+  <line x1="800" y1="280" x2="848" y2="150" stroke="#37474F" stroke-width="1.6" marker-end="url(#arr-down)" opacity="0.7"/>
+  <line x1="800" y1="295" x2="848" y2="230" stroke="#37474F" stroke-width="1.6" marker-end="url(#arr-down)" opacity="0.7"/>
+  <line x1="800" y1="305" x2="848" y2="310" stroke="#37474F" stroke-width="1.6" marker-end="url(#arr-down)" opacity="0.7"/>
+  <line x1="800" y1="320" x2="848" y2="390" stroke="#37474F" stroke-width="1.6" marker-end="url(#arr-down)" opacity="0.7"/>
+  <line x1="800" y1="335" x2="848" y2="470" stroke="#37474F" stroke-width="1.6" marker-end="url(#arr-down)" opacity="0.7"/>
+
+  <!-- BOTTOM: AUDIT TRAIL flowing back up -->
+  <rect x="70" y="560" width="1100" height="100" rx="10" fill="url(#auditGrad)" stroke="#0277BD" stroke-width="2" filter="url(#shadow)"/>
+  <text x="620" y="588" text-anchor="middle" font-size="15" font-weight="bold" fill="#01579B">Audit &amp; Lineage Substrate &#x2014; the return path</text>
+  <text font-size="12" fill="#01579B">
+    <tspan x="100" y="612">Every MCP call is logged.  Every task records: which policy aspect was in effect, which doctrine weighted the decision, and what situational context was true.</tspan>
+    <tspan x="100" dy="18">Compliance verifier scans the trail.  Drift detector compares behavior to intent.  Operators trace any decision back to the policy that produced it.</tspan>
+  </text>
+
+  <!-- audit arrows from tasks back to substrate -->
+  <line x1="1010" y1="500" x2="1010" y2="558" stroke="#0277BD" stroke-width="2" marker-end="url(#arr-up)" stroke-dasharray="4 3"/>
+  <line x1="700" y1="358" x2="700" y2="558" stroke="#0277BD" stroke-width="2" marker-end="url(#arr-up)" stroke-dasharray="4 3"/>
+
+  <!-- Footer -->
+  <text x="600" y="700" text-anchor="middle" font-size="14" font-weight="bold" fill="#1A237E">Commander&#x2019;s Intent &gt; Step-by-Step Doctrine</text>
+  <text x="600" y="724" text-anchor="middle" font-size="12" fill="#37474F">Train the agents to know the rules.  Publish the intent.  Trust the swarm to act &#x2014; and let the audit trail prove it.</text>
+  <text x="600" y="746" text-anchor="middle" font-size="11" fill="#666" font-style="italic">No point-to-point wiring of regulation into the BPMN.  No master controller carrying every domain rule.  Policy travels with the aspect, not with the diagram.</text>
+  <text x="600" y="770" text-anchor="middle" font-size="10" fill="#999">References: arXiv:2603.27299 (Declarative Policy Compilation), arXiv:2603.18096 (Trace-Based Assurance), Arsanjani &amp; Bustos (Packt 2026)</text>
+</svg>

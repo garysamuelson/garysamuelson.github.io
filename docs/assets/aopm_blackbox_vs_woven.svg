@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1100 720" width="1100" height="720" font-family="Helvetica, Arial, sans-serif">
+  <defs>
+    <linearGradient id="boxGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#ECEFF1"/>
+      <stop offset="100%" style="stop-color:#CFD8DC"/>
+    </linearGradient>
+    <linearGradient id="taskGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#FFF3E0"/>
+      <stop offset="100%" style="stop-color:#FFE0B2"/>
+    </linearGradient>
+    <linearGradient id="aspectGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#E8F5E9"/>
+      <stop offset="100%" style="stop-color:#C8E6C9"/>
+    </linearGradient>
+    <linearGradient id="mcpGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#E8EAF6"/>
+      <stop offset="100%" style="stop-color:#C5CAE9"/>
+    </linearGradient>
+    <filter id="shadow" x="-4%" y="-4%" width="110%" height="115%">
+      <feDropShadow dx="2" dy="2" stdDeviation="2.5" flood-color="#000" flood-opacity="0.18"/>
+    </filter>
+    <marker id="arr-d" markerWidth="9" markerHeight="7" refX="8" refY="3.5" orient="auto" markerUnits="strokeWidth">
+      <polygon points="0 0,9 3.5,0 7" fill="#37474F"/>
+    </marker>
+    <marker id="arr-w" markerWidth="9" markerHeight="7" refX="8" refY="3.5" orient="auto" markerUnits="strokeWidth">
+      <polygon points="0 0,9 3.5,0 7" fill="#2E7D32"/>
+    </marker>
+    <marker id="arr-m" markerWidth="9" markerHeight="7" refX="8" refY="3.5" orient="auto" markerUnits="strokeWidth">
+      <polygon points="0 0,9 3.5,0 7" fill="#283593"/>
+    </marker>
+  </defs>
+
+  <rect width="1100" height="720" fill="#FAFAFA" rx="6"/>
+
+  <!-- TITLE -->
+  <text x="550" y="32" text-anchor="middle" font-size="20" font-weight="bold" fill="#1A237E">From Black-Box Task to Aspect-Woven Task</text>
+  <text x="550" y="54" text-anchor="middle" font-size="13" fill="#666" font-style="italic">What MCP changes about how a BPMN task makes its decision</text>
+
+  <!-- ====== LEFT: BLACK-BOX TASK ====== -->
+  <g>
+    <rect x="30" y="80" width="500" height="600" rx="10" fill="url(#boxGrad)" stroke="#546E7A" stroke-width="2" filter="url(#shadow)"/>
+    <text x="280" y="108" text-anchor="middle" font-size="16" font-weight="bold" fill="#37474F">Classical BPMN Task</text>
+    <text x="280" y="128" text-anchor="middle" font-size="12" fill="#546E7A" font-style="italic">All context must arrive in the input map</text>
+
+    <!-- Input variables -->
+    <rect x="60" y="160" width="180" height="120" rx="6" fill="#fff" stroke="#78909C" stroke-width="1.4"/>
+    <text x="150" y="180" text-anchor="middle" font-size="13" font-weight="bold" fill="#37474F">Input Variables</text>
+    <line x1="72" y1="187" x2="228" y2="187" stroke="#B0BEC5" stroke-width="0.6"/>
+    <text font-size="11" fill="#37474F">
+      <tspan x="72" y="204">sku</tspan>
+      <tspan x="72" dy="15">storeId</tspan>
+      <tspan x="72" dy="15">onHandUnits</tspan>
+      <tspan x="72" dy="15">forecastDailyDemand</tspan>
+      <tspan x="72" dy="15" font-style="italic" fill="#B71C1C">(everything else: invisible)</tspan>
+    </text>
+
+    <!-- The task -->
+    <rect x="320" y="170" width="180" height="100" rx="14" fill="url(#taskGrad)" stroke="#E65100" stroke-width="2"/>
+    <text x="410" y="200" text-anchor="middle" font-size="14" font-weight="bold" fill="#BF360C">Service Task</text>
+    <text x="410" y="220" text-anchor="middle" font-size="12" fill="#BF360C">Replenishment Decision</text>
+    <text x="410" y="245" text-anchor="middle" font-size="11" fill="#5D4037" font-style="italic">f(input) → output</text>
+
+    <!-- Arrow input -> task -->
+    <line x1="240" y1="220" x2="318" y2="220" stroke="#37474F" stroke-width="2" marker-end="url(#arr-d)"/>
+
+    <!-- Output -->
+    <rect x="320" y="300" width="180" height="60" rx="6" fill="#fff" stroke="#78909C" stroke-width="1.4"/>
+    <text x="410" y="322" text-anchor="middle" font-size="13" font-weight="bold" fill="#37474F">Output Variables</text>
+    <text x="410" y="342" text-anchor="middle" font-size="11" fill="#37474F">decision, rationale</text>
+
+    <!-- Arrow task -> output -->
+    <line x1="410" y1="270" x2="410" y2="298" stroke="#37474F" stroke-width="2" marker-end="url(#arr-d)"/>
+
+    <!-- Hidden / unreachable concerns -->
+    <rect x="60" y="400" width="440" height="250" rx="6" fill="#fff" stroke="#B71C1C" stroke-width="1.4" stroke-dasharray="6 4"/>
+    <text x="280" y="425" text-anchor="middle" font-size="13" font-weight="bold" fill="#B71C1C">Available in the engine — invisible to this task</text>
+    <text font-size="12" fill="#37474F">
+      <tspan x="78" y="450">&#x2715; What previous decisions did this instance make?</tspan>
+      <tspan x="78" dy="20">&#x2715; What goal is this task ultimately serving?</tspan>
+      <tspan x="78" dy="20">&#x2715; What did the prior reviewer flag in their notes?</tspan>
+      <tspan x="78" dy="20">&#x2715; Are peer tasks already escalating this case?</tspan>
+      <tspan x="78" dy="20">&#x2715; What does the audit log say about similar cases?</tspan>
+      <tspan x="78" dy="20">&#x2715; What semantic lineage produced this demand forecast?</tspan>
+      <tspan x="78" dy="20">&#x2715; What organizational preferences should weight this call?</tspan>
+      <tspan x="78" dy="20">&#x2715; Has the policy that informed this process changed?</tspan>
+      <tspan x="78" dy="20" font-style="italic" fill="#B71C1C">All hand-wired into the BPMN diagram, or not seen at all.</tspan>
+    </text>
+  </g>
+
+  <!-- ====== RIGHT: ASPECT-WOVEN TASK ====== -->
+  <g>
+    <rect x="570" y="80" width="500" height="600" rx="10" fill="url(#aspectGrad)" stroke="#2E7D32" stroke-width="2" filter="url(#shadow)"/>
+    <text x="820" y="108" text-anchor="middle" font-size="16" font-weight="bold" fill="#1B5E20">Aspect-Woven Task (Camunda 8.9 + MCP)</text>
+    <text x="820" y="128" text-anchor="middle" font-size="12" fill="#2E7D32" font-style="italic">Cross-cutting concerns are consulted at execution time</text>
+
+    <!-- Input variables (same as before, narrower) -->
+    <rect x="600" y="160" width="140" height="80" rx="6" fill="#fff" stroke="#66BB6A" stroke-width="1.4"/>
+    <text x="670" y="180" text-anchor="middle" font-size="12" font-weight="bold" fill="#1B5E20">Input Variables</text>
+    <line x1="612" y1="187" x2="728" y2="187" stroke="#A5D6A7" stroke-width="0.6"/>
+    <text font-size="11" fill="#37474F">
+      <tspan x="612" y="204">sku</tspan>
+      <tspan x="612" dy="14">storeId</tspan>
+    </text>
+
+    <!-- The task -->
+    <rect x="800" y="160" width="240" height="80" rx="14" fill="url(#taskGrad)" stroke="#E65100" stroke-width="2"/>
+    <text x="920" y="188" text-anchor="middle" font-size="14" font-weight="bold" fill="#BF360C">AI Service Task</text>
+    <text x="920" y="208" text-anchor="middle" font-size="12" fill="#BF360C">Replenishment Decision</text>
+    <text x="920" y="226" text-anchor="middle" font-size="11" fill="#5D4037" font-style="italic">reasons over input + aspects</text>
+
+    <line x1="740" y1="200" x2="798" y2="200" stroke="#2E7D32" stroke-width="2" marker-end="url(#arr-w)"/>
+
+    <!-- MCP weaver -->
+    <rect x="700" y="300" width="240" height="56" rx="8" fill="url(#mcpGrad)" stroke="#283593" stroke-width="2"/>
+    <text x="820" y="322" text-anchor="middle" font-size="13" font-weight="bold" fill="#1A237E">MCP Gateway</text>
+    <text x="820" y="342" text-anchor="middle" font-size="11" fill="#1A237E" font-style="italic">the aspect weaver</text>
+
+    <!-- Bidirectional arrow task <-> MCP -->
+    <line x1="920" y1="240" x2="920" y2="298" stroke="#283593" stroke-width="2" marker-end="url(#arr-m)"/>
+    <line x1="900" y1="298" x2="900" y2="240" stroke="#283593" stroke-width="2" marker-end="url(#arr-m)"/>
+
+    <!-- Aspects panel -->
+    <rect x="600" y="380" width="440" height="270" rx="6" fill="#fff" stroke="#2E7D32" stroke-width="1.4"/>
+    <text x="820" y="404" text-anchor="middle" font-size="13" font-weight="bold" fill="#1B5E20">Aspects discovered through MCP at execution time</text>
+
+    <!-- Aspect chips -->
+    <g font-size="11" fill="#1B5E20">
+      <rect x="618" y="420" width="195" height="28" rx="14" fill="#E8F5E9" stroke="#66BB6A"/>
+      <text x="715" y="438" text-anchor="middle">&#x2713; Process Variables (live)</text>
+
+      <rect x="828" y="420" width="195" height="28" rx="14" fill="#E8F5E9" stroke="#66BB6A"/>
+      <text x="925" y="438" text-anchor="middle">&#x2713; Instance History</text>
+
+      <rect x="618" y="455" width="195" height="28" rx="14" fill="#E8F5E9" stroke="#66BB6A"/>
+      <text x="715" y="473" text-anchor="middle">&#x2713; Audit Log API</text>
+
+      <rect x="828" y="455" width="195" height="28" rx="14" fill="#E8F5E9" stroke="#66BB6A"/>
+      <text x="925" y="473" text-anchor="middle">&#x2713; Semantic Lineage</text>
+
+      <rect x="618" y="490" width="195" height="28" rx="14" fill="#E8F5E9" stroke="#66BB6A"/>
+      <text x="715" y="508" text-anchor="middle">&#x2713; Peer-Task / Peer-Instance State</text>
+
+      <rect x="828" y="490" width="195" height="28" rx="14" fill="#E8F5E9" stroke="#66BB6A"/>
+      <text x="925" y="508" text-anchor="middle">&#x2713; Goal Registry</text>
+
+      <rect x="618" y="525" width="195" height="28" rx="14" fill="#E8F5E9" stroke="#66BB6A"/>
+      <text x="715" y="543" text-anchor="middle">&#x2713; Preference Weights</text>
+
+      <rect x="828" y="525" width="195" height="28" rx="14" fill="#E8F5E9" stroke="#66BB6A"/>
+      <text x="925" y="543" text-anchor="middle">&#x2713; Policy / Ontology Version</text>
+    </g>
+
+    <text x="820" y="585" text-anchor="middle" font-size="12" fill="#1B5E20" font-style="italic">Concerns are not wired into the BPMN diagram.</text>
+    <text x="820" y="603" text-anchor="middle" font-size="12" fill="#1B5E20" font-style="italic">They are advised in at execution time, governed by MCP authorization.</text>
+    <text x="820" y="635" text-anchor="middle" font-size="12" font-weight="bold" fill="#1B5E20">Output: decision + rationale + lineage of which aspects influenced it</text>
+  </g>
+</svg>

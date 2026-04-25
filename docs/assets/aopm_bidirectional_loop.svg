@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1100 620" width="1100" height="620" font-family="Helvetica, Arial, sans-serif">
+  <defs>
+    <linearGradient id="taskA" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#FFF3E0"/>
+      <stop offset="100%" style="stop-color:#FFCC80"/>
+    </linearGradient>
+    <linearGradient id="taskB" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#FFF3E0"/>
+      <stop offset="100%" style="stop-color:#FFB74D"/>
+    </linearGradient>
+    <linearGradient id="ctxGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#E8F5E9"/>
+      <stop offset="100%" style="stop-color:#A5D6A7"/>
+    </linearGradient>
+    <linearGradient id="histGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#E1F5FE"/>
+      <stop offset="100%" style="stop-color:#81D4FA"/>
+    </linearGradient>
+    <linearGradient id="mcpGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#E8EAF6"/>
+      <stop offset="100%" style="stop-color:#9FA8DA"/>
+    </linearGradient>
+    <filter id="shadow" x="-4%" y="-4%" width="110%" height="115%">
+      <feDropShadow dx="2" dy="2" stdDeviation="2.5" flood-color="#000" flood-opacity="0.18"/>
+    </filter>
+    <marker id="arr-loop" markerWidth="11" markerHeight="9" refX="10" refY="4.5" orient="auto" markerUnits="strokeWidth">
+      <polygon points="0 0,11 4.5,0 9" fill="#1A237E"/>
+    </marker>
+  </defs>
+
+  <rect width="1100" height="620" fill="#FAFAFA" rx="6"/>
+
+  <text x="550" y="32" text-anchor="middle" font-size="20" font-weight="bold" fill="#1A237E">The Bidirectional Loop: Runtime Informs Tasks &#x2014; Tasks Inform Runtime</text>
+  <text x="550" y="54" text-anchor="middle" font-size="13" fill="#666" font-style="italic">Each task&#x2019;s decision becomes part of the next task&#x2019;s context.  No flow arrow required.</text>
+
+  <!-- Center MCP Gateway -->
+  <ellipse cx="550" cy="320" rx="160" ry="72" fill="url(#mcpGrad)" stroke="#283593" stroke-width="2.5" filter="url(#shadow)"/>
+  <text x="550" y="312" text-anchor="middle" font-size="15" font-weight="bold" fill="#1A237E">Camunda 8.9 MCP Gateway</text>
+  <text x="550" y="334" text-anchor="middle" font-size="12" fill="#1A237E" font-style="italic">runtime introspection &#x2022; cluster variables &#x2022; audit log</text>
+
+  <!-- Task A (left) -->
+  <rect x="80" y="240" width="220" height="160" rx="12" fill="url(#taskA)" stroke="#E65100" stroke-width="2" filter="url(#shadow)"/>
+  <text x="190" y="270" text-anchor="middle" font-size="14" font-weight="bold" fill="#BF360C">Task N (now)</text>
+  <text x="190" y="290" text-anchor="middle" font-size="11" fill="#5D4037" font-style="italic">e.g. Replenishment Decision</text>
+  <line x1="100" y1="298" x2="280" y2="298" stroke="#FFB74D" stroke-width="0.8"/>
+  <text font-size="11" fill="#5D4037">
+    <tspan x="100" y="318">1. Reads instance history</tspan>
+    <tspan x="100" dy="15">2. Reads peer-task state</tspan>
+    <tspan x="100" dy="15">3. Reads goal context</tspan>
+    <tspan x="100" dy="15">4. Reasons over input + aspects</tspan>
+    <tspan x="100" dy="15">5. Decides + writes rationale</tspan>
+  </text>
+
+  <!-- Task B (right) -->
+  <rect x="800" y="240" width="220" height="160" rx="12" fill="url(#taskB)" stroke="#E65100" stroke-width="2" filter="url(#shadow)"/>
+  <text x="910" y="270" text-anchor="middle" font-size="14" font-weight="bold" fill="#BF360C">Task N+1 (next)</text>
+  <text x="910" y="290" text-anchor="middle" font-size="11" fill="#5D4037" font-style="italic">e.g. Funding Disbursement</text>
+  <line x1="820" y1="298" x2="1000" y2="298" stroke="#FFB74D" stroke-width="0.8"/>
+  <text font-size="11" fill="#5D4037">
+    <tspan x="820" y="318">1. Reads instance history</tspan>
+    <tspan x="820" dy="15" font-weight="bold" fill="#BF360C">    &#x2192; sees Task N&#x2019;s rationale</tspan>
+    <tspan x="820" dy="15">2. Reads lineage of decision</tspan>
+    <tspan x="820" dy="15">3. Reasons with richer context</tspan>
+    <tspan x="820" dy="15">4. Acts &#x2014; and is itself recorded</tspan>
+  </text>
+
+  <!-- Context (top) -->
+  <rect x="395" y="120" width="310" height="80" rx="10" fill="url(#ctxGrad)" stroke="#2E7D32" stroke-width="1.8" filter="url(#shadow)"/>
+  <text x="550" y="146" text-anchor="middle" font-size="14" font-weight="bold" fill="#1B5E20">Live Cross-Cutting Context</text>
+  <text x="550" y="168" text-anchor="middle" font-size="11" fill="#1B5E20">Process variables &#x2022; Goal Registry &#x2022; Preference Weights</text>
+  <text x="550" y="186" text-anchor="middle" font-size="11" fill="#1B5E20">Peer-instance state &#x2022; Policy / Ontology version</text>
+
+  <!-- History (bottom) -->
+  <rect x="395" y="450" width="310" height="80" rx="10" fill="url(#histGrad)" stroke="#0277BD" stroke-width="1.8" filter="url(#shadow)"/>
+  <text x="550" y="476" text-anchor="middle" font-size="14" font-weight="bold" fill="#01579B">Persistent Decision Lineage</text>
+  <text x="550" y="498" text-anchor="middle" font-size="11" fill="#01579B">Instance history &#x2022; Audit log &#x2022; Semantic lineage records</text>
+  <text x="550" y="516" text-anchor="middle" font-size="11" fill="#01579B" font-style="italic">written by every task that completes</text>
+
+  <!-- Loop arrows -->
+  <!-- Task N pulls context from MCP -->
+  <path d="M 300 340 Q 360 360 395 350" fill="none" stroke="#1A237E" stroke-width="2" marker-end="url(#arr-loop)"/>
+  <text x="335" y="376" text-anchor="middle" font-size="10" fill="#1A237E" font-style="italic">read aspects</text>
+
+  <!-- Task N writes back via MCP -->
+  <path d="M 300 280 Q 360 250 395 280" fill="none" stroke="#1A237E" stroke-width="2" marker-end="url(#arr-loop)"/>
+  <text x="335" y="244" text-anchor="middle" font-size="10" fill="#1A237E" font-style="italic">write decision + rationale</text>
+
+  <!-- MCP -> History -->
+  <path d="M 550 392 L 550 448" fill="none" stroke="#0277BD" stroke-width="2" marker-end="url(#arr-loop)"/>
+  <text x="568" y="425" font-size="10" fill="#0277BD" font-style="italic">audit + lineage</text>
+
+  <!-- History -> MCP (read) -->
+  <path d="M 510 450 Q 480 410 510 392" fill="none" stroke="#0277BD" stroke-width="2" marker-end="url(#arr-loop)"/>
+
+  <!-- Context -> MCP -->
+  <path d="M 550 200 L 550 248" fill="none" stroke="#2E7D32" stroke-width="2" marker-end="url(#arr-loop)"/>
+  <text x="568" y="230" font-size="10" fill="#2E7D32" font-style="italic">live state</text>
+
+  <!-- MCP -> Task N+1 (read context now richer) -->
+  <path d="M 705 340 Q 760 360 800 350" fill="none" stroke="#1A237E" stroke-width="2" marker-end="url(#arr-loop)"/>
+  <text x="755" y="376" text-anchor="middle" font-size="10" fill="#1A237E" font-style="italic">read aspects (now richer)</text>
+
+  <!-- Task N+1 writes back -->
+  <path d="M 800 280 Q 760 250 705 280" fill="none" stroke="#1A237E" stroke-width="2" marker-end="url(#arr-loop)"/>
+  <text x="755" y="244" text-anchor="middle" font-size="10" fill="#1A237E" font-style="italic">write decision + rationale</text>
+
+  <!-- Sequence label across the top -->
+  <text x="550" y="92" text-anchor="middle" font-size="12" fill="#37474F">
+    <tspan font-weight="bold">Time &#x2192;</tspan>
+    <tspan>  Task N completes, lineage is recorded, Task N+1 sees it.  No message flow modeled in BPMN.</tspan>
+  </text>
+
+  <!-- footer -->
+  <text x="550" y="575" text-anchor="middle" font-size="12" fill="#37474F">
+    <tspan font-weight="bold" fill="#1A237E">Collaboration falls out of the architecture.</tspan>
+    <tspan>  Tasks coordinate by reading and writing through the weaver &#x2014; not by point-to-point wiring.</tspan>
+  </text>
+  <text x="550" y="600" text-anchor="middle" font-size="11" fill="#666" font-style="italic">The audit trail is not an afterthought.  It is the substrate the next decision is built on.</text>
+</svg>
