@@ -105,8 +105,8 @@
 
   <g>
     <rect x="780" y="160" width="280" height="80" rx="14" fill="url(#taskTgt)" stroke="#E65100" stroke-width="2"/>
-    <text x="920" y="188" text-anchor="middle" font-size="13" font-weight="bold" fill="#BF360C">Underwriting Task</text>
-    <text x="920" y="210" text-anchor="middle" font-size="11" fill="#5D4037">Loan Origination process</text>
+    <text x="920" y="188" text-anchor="middle" font-size="13" font-weight="bold" fill="#BF360C">Replenishment Task</text>
+    <text x="920" y="210" text-anchor="middle" font-size="11" fill="#5D4037">Perishable Replenishment process</text>
     <text x="920" y="226" text-anchor="middle" font-size="11" fill="#5D4037" font-style="italic">consults: history, lineage, preferences</text>
 
     <rect x="780" y="260" width="280" height="80" rx="14" fill="url(#taskTgt)" stroke="#E65100" stroke-width="2"/>

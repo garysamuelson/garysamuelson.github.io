@@ -73,8 +73,8 @@
   <meta property="og:title" content="Aspect-Oriented Process Management" />
   <meta property="og:description" content="Beyond the Serial Controller to MCP-Enabled Swarms" />
   <meta property="og:url" content="https://garysamuelson.github.io/semantic-ai/aspect-oriented-process-management/" />
-  <meta property="og:image" content="https://garysamuelson.github.io/assets/aopm_social_header_v2.png" />
-  <meta property="og:image:secure_url" content="https://garysamuelson.github.io/assets/aopm_social_header_v2.png" />
+  <meta property="og:image" content="https://garysamuelson.github.io/assets/aopm_social_s8_v1.png" />
+  <meta property="og:image:secure_url" content="https://garysamuelson.github.io/assets/aopm_social_s8_v1.png" />
   <meta property="og:image:type" content="image/png" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
@@ -83,7 +83,7 @@
   <meta name="twitter:title" content="Aspect-Oriented Process Management" />
   <meta name="twitter:description" content="Beyond the Serial Controller to MCP-Enabled Swarms" />
   <meta name="twitter:url" content="https://garysamuelson.github.io/semantic-ai/aspect-oriented-process-management/" />
-  <meta name="twitter:image" content="https://garysamuelson.github.io/assets/aopm_social_header_v2.png" />
+  <meta name="twitter:image" content="https://garysamuelson.github.io/assets/aopm_social_s8_v1.png" />
 
   </head>
   
@@ -695,10 +695,10 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#vignette-1-goal-aware-next-task-selection-loan-origination" class="md-nav__link">
+  <a href="#vignette-1-goal-aware-next-task-selection-perishable-replenishment-cross-store-rebalancing" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Vignette 1 — Goal-Aware Next-Task Selection (Loan Origination)
+        Vignette 1 — Goal-Aware Next-Task Selection (Perishable Replenishment &amp; Cross-Store Rebalancing)
       
     </span>
   </a>
@@ -1234,10 +1234,10 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#vignette-1-goal-aware-next-task-selection-loan-origination" class="md-nav__link">
+  <a href="#vignette-1-goal-aware-next-task-selection-perishable-replenishment-cross-store-rebalancing" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Vignette 1 — Goal-Aware Next-Task Selection (Loan Origination)
+        Vignette 1 — Goal-Aware Next-Task Selection (Perishable Replenishment &amp; Cross-Store Rebalancing)
       
     </span>
   </a>
@@ -1662,6 +1662,7 @@
 <h2 id="1-the-black-box-problem-in-bpmn">1. The Black-Box Problem in BPMN<a class="headerlink" href="#1-the-black-box-problem-in-bpmn" title="Permanent link">&para;</a></h2>
 <p>Open any BPMN diagram and look at a service task. What does that task know?</p>
 <p>It knows what is in its input map. It might know the static configuration the implementer wired in — a service URL, a retry count, a timeout. It does not know what previous tasks decided. It does not know what the process instance is ultimately trying to achieve. It does not know whether sibling tasks in parallel branches are escalating. It does not know what the audit log says about ten thousand similar cases. It does not know the lineage of any value it received.</p>
+<p><img alt="The Black-Box Problem in BPMN" src="../../assets/aopm_blackbox_problem.svg" /></p>
 <p>Think of it as a respawn: the task wakes into the middle of an ongoing game with no memory of what led here, no awareness of what teammates are doing in parallel branches, and only the barest instructions about its objective. <em>Why am I here? Where am I? What do I do next?</em> That is the runtime experience of a classical BPMN service task — and it is the problem the rest of this paper exists to solve.</p>
 <p>If you want a task to know any of those things, you have one option: <strong>wire it into the diagram.</strong> Add data inputs. Carry variables forward through every preceding gateway. Use a service task to fetch history before the task that needs it. Use a script task to compute a goal vector and pass it as a variable. By the time you've done this for the eight or ten concerns a real decision needs, the BPMN diagram has become a circuit board — most of the lines are not control flow at all, they're data plumbing for cross-cutting concerns that the engine already has on hand.</p>
 <p>This is the black-box problem. The engine is sitting on top of a rich runtime — instance history, audit log, lineage, peer state, policy version — and it has no way to deliver any of it to the task that needs it without explicit, brittle, modeler-authored wiring.</p>
@@ -1716,7 +1717,7 @@
 <td>4</td>
 <td><strong>Semantic Lineage</strong></td>
 <td>How each variable came to its current value — derived from which input, by which transformation, under which policy</td>
-<td>Knowing whether a credit score is fresh, whether a triage category was set by SALT or by a fallback rule, whether an address was confirmed or inferred</td>
+<td>Knowing whether a demand forecast is fresh, whether a triage category was set by SALT or by a fallback rule, whether an address was confirmed or inferred</td>
 </tr>
 <tr>
 <td>5</td>
@@ -1763,19 +1764,19 @@
 <p><img alt="MCP as the Aspect Weaver" src="../../assets/aopm_aspect_weaver.svg" /></p>
 <p>Concretely, here is what changes when an AI-enabled task is implemented as an MCP client. The task no longer needs to receive in its input map every piece of context it might need to reason. Instead, when the task activates, it discovers the available MCP tools, decides which aspects of the runtime are relevant to its decision, and pulls them in.</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a># Before — black-box task
-<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>def underwriting_task(input_map):
-<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>    score = input_map[&quot;creditScore&quot;]
-<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>    amount = input_map[&quot;requestedAmount&quot;]
-<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>    return decide(score, amount)   # everything else: invisible
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>def replenishment_task(input_map):
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>    on_hand = input_map[&quot;onHandUnits&quot;]
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>    forecast = input_map[&quot;forecastDailyDemand&quot;]
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>    return decide(on_hand, forecast)   # everything else: invisible
 <a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>
 <a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a># After — aspect-woven task
-<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>def underwriting_task(job, mcp):
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>def replenishment_task(job, mcp):
 <a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>    history = mcp.call(&quot;getInstanceHistory&quot;, id=job.process_instance_key)
-<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>    lineage = mcp.call(&quot;getLineage&quot;, variable=&quot;creditScore&quot;)
+<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>    lineage = mcp.call(&quot;getLineage&quot;, variable=&quot;forecastDailyDemand&quot;)
 <a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>    goal    = mcp.call(&quot;getGoalContext&quot;, taskId=job.element_id)
-<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a>    prefs   = mcp.call(&quot;getPreferenceWeights&quot;, decision=&quot;underwriting&quot;)
+<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a>    prefs   = mcp.call(&quot;getPreferenceWeights&quot;, decision=&quot;perishable_replenishment&quot;)
 <a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a>    peers   = mcp.call(&quot;searchProcessInstances&quot;,
-<a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a>                       query={&quot;applicantId&quot;: job.variables[&quot;applicantId&quot;]})
+<a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a>                       query={&quot;sku&quot;: job.variables[&quot;sku&quot;]})
 <a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a>
 <a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a>    return decide(job.variables, history, lineage, goal, prefs, peers)
 </code></pre></div>
@@ -1791,7 +1792,7 @@
 <p>A few properties of this design worth naming explicitly:</p>
 <ul>
 <li><strong>Discoverable.</strong> The task does not have to be told in advance which aspects exist. It discovers them through MCP at execution time. Adding a new aspect — say, a fraud-signal feed — is registering a new MCP tool, not re-deploying the BPMN.</li>
-<li><strong>Governed.</strong> Camunda's authorization model decides which tasks may invoke which tools. An underwriting task can read instance history but not modify cluster variables for an unrelated process. An MCI triage agent can read peer-instance state in the Hospital Surge process but cannot start a new mutual-aid request — that authority belongs to the EOC agent.</li>
+<li><strong>Governed.</strong> Camunda's authorization model decides which tasks may invoke which tools. A perishable-replenishment task can read instance history and peer-store state but not modify cluster variables for an unrelated process. An MCI triage agent can read peer-instance state in the Hospital Surge process but cannot start a new mutual-aid request — that authority belongs to the EOC agent.</li>
 <li><strong>Observable.</strong> Every MCP call goes through the gateway. Every call is logged. The lineage of a decision — which aspects the task consulted, in what order, with what return values — becomes part of the audit trail.</li>
 <li><strong>Modular.</strong> Aspects can be added, replaced, or removed without changing any task that uses them. Switch from a static preference table to a learned preference model? Replace one MCP tool implementation. Tasks keep working.</li>
 </ul>
@@ -1799,18 +1800,18 @@
 <hr />
 <h2 id="6-three-vignettes">6. Three Vignettes<a class="headerlink" href="#6-three-vignettes" title="Permanent link">&para;</a></h2>
 <p>Pattern arguments are not convincing on their own. Here are three concrete cases. In each one, the same task is described twice — first as it would be implemented under classical BPMN, then as it would be implemented as an aspect-woven task with MCP.</p>
-<h3 id="vignette-1-goal-aware-next-task-selection-loan-origination">Vignette 1 — Goal-Aware Next-Task Selection (Loan Origination)<a class="headerlink" href="#vignette-1-goal-aware-next-task-selection-loan-origination" title="Permanent link">&para;</a></h3>
-<p>A commercial loan origination process has reached a decision point: the application has been pre-qualified, and the next action could be (a) order a manual collateral appraisal, (b) request additional financial documentation, (c) fast-track to senior underwriter review, or (d) decline. Four legitimate next actions, each appropriate under different circumstances.</p>
-<p><strong>Classical BPMN.</strong> The diagram either uses a complex gateway with twenty conditions wired against process variables, or it sends every case to a uniform "next-step decision" service that has to be told everything in its input map. To make the decision well, the modeler has to ensure that every variable the decision logic needs — applicant risk segment, current portfolio mix, regional credit policy version, last quarter's loss experience for this segment, the LOB's preference for speed vs. caution, the goal of <em>this particular application</em> (e.g. expedited because it's a relationship-driven request) — is carried forward through every preceding gateway. In practice, three or four of those variables are missing, the decision degenerates to credit score, and the four-way branch becomes a binary one.</p>
+<h3 id="vignette-1-goal-aware-next-task-selection-perishable-replenishment-cross-store-rebalancing">Vignette 1 — Goal-Aware Next-Task Selection (Perishable Replenishment &amp; Cross-Store Rebalancing)<a class="headerlink" href="#vignette-1-goal-aware-next-task-selection-perishable-replenishment-cross-store-rebalancing" title="Permanent link">&para;</a></h3>
+<p>A regional grocery chain's perishable-replenishment process has reached a decision point. A refrigerated organic dairy SKU at Store 412 — seven-day shelf life, currently four days remaining on the on-shelf stock — is forecast to stock out by tomorrow afternoon. Four legitimate next actions: (a) dispatch an emergency truck from the regional DC, (b) initiate a stock-rebalance pull from a nearby store with surplus that has only three days of shelf life remaining, (c) accelerate the next scheduled DC route by twelve hours, or (d) authorize a near-equivalent SKU substitution and accept a partial stockout. Each is appropriate under different circumstances.</p>
+<p><strong>Classical BPMN.</strong> The diagram either uses a complex gateway with twenty conditions wired against process variables, or it sends every case to a uniform "next-step decision" service that has to be told everything in its input map. To make the decision well, the modeler has to ensure that every variable the decision logic needs — current on-hand units, forecast daily demand, the chain's current shrink-vs.-service-level weighting, the freshness of the in-route shipment already on the truck, the remaining shelf life at the candidate donor store, the goal of <em>this particular store</em> (e.g. premium-tier service guarantee for that catchment), and which neighboring stores are themselves running short — is carried forward through every preceding gateway. In practice, three or four of those variables are missing, the decision degenerates to a simple reorder-point check, and the four-way branch becomes a binary one.</p>
 <p><strong>Aspect-woven.</strong> The decision task pulls in:</p>
 <ul>
-<li><strong>Goal context</strong> via <code>getGoalContext(taskId)</code> — discovers that this application carries a <code>relationship_priority = high</code> goal, set by the relationship manager when the deal was originated.</li>
-<li><strong>Preference weights</strong> via <code>getPreferenceWeights("commercial_underwriting")</code> — discovers the LOB currently weights <em>speed</em> at 0.45 and <em>risk-adjusted return</em> at 0.40 (because it's Q2 and the portfolio is under-allocated to commercial real estate).</li>
-<li><strong>Instance history</strong> via <code>getInstanceHistory()</code> — sees that pre-qualification flagged a missing rent roll but not anything credit-impairing.</li>
-<li><strong>Audit log</strong> via <code>queryAuditLog(filter="similar_segment")</code> — sees that for the last 200 applications in this segment, fast-track to senior review had a 78% approval rate and a median 9-day cycle, while collateral appraisal took 21 days median.</li>
+<li><strong>Goal context</strong> via <code>getGoalContext(taskId)</code> — discovers that Store 412 carries a <code>service_tier = premium</code> goal for this category, set by the regional merchandising plan in effect this quarter.</li>
+<li><strong>Preference weights</strong> via <code>getPreferenceWeights("perishable_replenishment")</code> — discovers the chain currently weights <em>shrink reduction</em> at 0.55 and <em>service level</em> at 0.35 (because perishable waste is up year-over-year and the CFO has asked operations to lean on shrink this quarter).</li>
+<li><strong>Instance history</strong> via <code>getInstanceHistory()</code> — sees that two days ago this same instance ordered a partial pallet that is already in route on tomorrow morning's truck, and the upstream task flagged a refrigeration-uptime alert at the donor store now under consideration.</li>
+<li><strong>Audit log</strong> via <code>queryAuditLog(filter="similar_sku_store")</code> — sees that for the last 200 stockout-risk events in this SKU/store-tier segment, cross-store rebalance pulls had a 12% downstream waste rate at the donor store while accelerated DC routes ran 6% waste — but accelerated routes carry a $1,400 logistics premium per dispatch.</li>
 </ul>
-<p>The decision: fast-track. The rationale, written back to the instance, names every aspect consulted. The next task — the senior underwriter task — reads the rationale via MCP and arrives at its own decision already knowing what the upstream task saw.</p>
-<p>The BPMN diagram for this is unchanged from the simplest possible version: pre-qualify → decide-next → branch. The intelligence is in the aspects.</p>
+<p>The decision: cross-store rebalance from the surplus peer, <em>and</em> a small SKU substitution at 412 to bridge the gap until the in-route truck arrives — accepting the donor store's higher waste exposure because the chain is favoring shrink only at the network level, not at any single store. The rationale, written back to the instance, names every aspect consulted. The next task — the dispatch-coordination task at the donor store — reads the rationale via MCP and arrives at its own decision already knowing what the upstream task saw.</p>
+<p>The BPMN diagram for this is unchanged from the simplest possible version: detect-shortage → decide-next → branch. The intelligence is in the aspects.</p>
 <h3 id="vignette-2-history-aware-retry-campaign-budget-reallocation">Vignette 2 — History-Aware Retry (Campaign Budget Reallocation)<a class="headerlink" href="#vignette-2-history-aware-retry-campaign-budget-reallocation" title="Permanent link">&para;</a></h3>
 <p>This is from the Bounty campaign work in <a href="https://garysamuelson.github.io/semantic-ai/cpg-campaign-simplified-workflow/">The Ontology Process</a>. A budget reallocation task has fired in response to a Course Correction signal — Amazon Bulk Buyer attribution is running 23% above forecast, and the question is whether to reallocate $1.2M from CTV to Amazon DSP.</p>
 <p><strong>Classical BPMN.</strong> The reallocation task receives the signal data in its input map, applies a rule, and either reallocates or escalates. If the same signal fires again two days later, the task has no memory of having reallocated already. It will reallocate again — possibly over-correcting. To avoid this, the modeler wires a "have we already reallocated this campaign in the last N days?" check, which itself requires a side query to a tracking table the modeler now has to maintain.</p>
@@ -1867,7 +1868,7 @@
 <p>This is, at the diagram level, exactly the <em>proto-goal-oriented</em> pattern the <em>Agentic BPM: Goal-Oriented Process Modeling</em> note flagged: the wires between tasks have been removed, but a <strong>logical</strong> serial path remains. Something has to play the role of "the controller" — the entity that, after each task, looks at the world and picks the next task to run.</p>
 <p>There is a price for that pattern. We can name it directly:</p>
 <ul>
-<li><strong>Capabilities bleed up into the controller.</strong> To choose well, the controller has to understand every domain it orchestrates — credit, fraud, KYC, disclosure, claims triage, market segmentation. The controller becomes a polymath. That is the opposite of encapsulation.</li>
+<li><strong>Capabilities bleed up into the controller.</strong> To choose well, the controller has to understand every domain it orchestrates — replenishment, fraud detection, claims triage, clinical routing, market segmentation, fulfillment scheduling. The controller becomes a polymath. That is the opposite of encapsulation.</li>
 <li><strong>Parallelism is faked or absent.</strong> The pool may be ad-hoc, but only one task runs per cycle. Concurrency requires modeling parallel branches up front, which defeats the purpose of "ad-hoc."</li>
 <li><strong>Coordination is centralized in a bottleneck.</strong> Every decision about <em>what is happening next in the process</em> funnels through one re-evaluation, by one entity, against one read of the runtime. The controller is the choke point.</li>
 <li><strong>Cross-instance awareness is structurally hard.</strong> A controller, by construction, owns one instance. To make decisions in one claim instance based on what is happening in a peer claim instance, you have to wire side channels — exactly the kind of wiring AOP-at-the-code-layer was invented to abolish.</li>
@@ -1913,7 +1914,7 @@
 <p>There is one cross-cutting concern that deserves a section of its own, because mishandling it is the single most expensive mistake a team can make as it moves from controller-driven processes to swarming ones. That concern is <strong>policy</strong> — regulatory, ethical, doctrinal, situational. It is Aspect 8 in the inventory in §3, but its consequences run through every other aspect.</p>
 <p><img alt="Policy as Commander's Intent" src="../../assets/aopm_commanders_intent.svg" /></p>
 <h3 id="111-the-policy-tax">11.1 The policy tax<a class="headerlink" href="#111-the-policy-tax" title="Permanent link">&para;</a></h3>
-<p>Consider how policy is encoded in a typical pre-AOPM enterprise process. Every task that touches a regulated decision has hand-coded checks: an underwriting task has Reg B logic, a disclosure task has TILA logic, a claims task has SALT-doctrine logic, an outreach task has GDPR-consent logic. Each rule is duplicated across tasks. Each is maintained in code. Each must be re-tested when the rule changes. Each must be re-deployed.</p>
+<p>Consider how policy is encoded in a typical pre-AOPM enterprise process. Every task that touches a regulated decision has hand-coded checks: a perishable-handling task has FSMA logic, a marketing-outreach task has CAN-SPAM and GDPR logic, a claims task has SALT-doctrine logic, a clinical-routing task has HIPAA logic. Each rule is duplicated across tasks. Each is maintained in code. Each must be re-tested when the rule changes. Each must be re-deployed.</p>
 <p>The cost of this pattern is what we want to call, plainly, <strong>the policy tax</strong> — a tax on the organization's ability to work most efficiently. The tax is paid in three currencies:</p>
 <ul>
 <li><strong>Velocity.</strong> Every change to a regulation requires a wave of code changes, tests, and deployments across many tasks. The organization moves slower than the regulator demands.</li>
@@ -1925,12 +1926,12 @@
 <p>There is a precedent that fits this situation almost perfectly: the way well-functioning militaries handle the gap between what doctrine can specify and what soldiers actually have to do under fire. You cannot pre-specify every behavior. The terrain shifts, the enemy adapts, and information arrives late. So you do two things: you <strong>train your troops to think and act independently — per what the situation demands, because we cannot plan for every last thing</strong> — and you <strong>publish commander's intent</strong>: a clear statement of the goal, the constraints, and the conditions of success. The doctrine then becomes a small set of well-understood principles, not a thick book of step-by-step procedures. [16, 17, 18]</p>
 <p>AOPM lets us do the same thing for processes. Instead of compiling regulation into every task, you do two things:</p>
 <ol>
-<li><strong>Push the knowledge down to the agent.</strong> The agents that run inside AI-enabled tasks are taught what the regulations <em>mean</em>. Not in the form of hand-coded rule checks, but in the form of training data, evaluation suites, retrieval grounding, and policy-specific reasoning patterns. This is the work the <em>Knowledge Bootstrapping from Policies and Regulations</em> note describes — turning policy documents into agent-readable knowledge so that the agent itself understands GDPR, Reg B, TILA, SALT doctrine, case-law conformance.</li>
+<li><strong>Push the knowledge down to the agent.</strong> The agents that run inside AI-enabled tasks are taught what the regulations <em>mean</em>. Not in the form of hand-coded rule checks, but in the form of training data, evaluation suites, retrieval grounding, and policy-specific reasoning patterns. This is the work the <em>Knowledge Bootstrapping from Policies and Regulations</em> note describes — turning policy documents into agent-readable knowledge so that the agent itself understands GDPR, FSMA, HIPAA, SALT doctrine, case-law conformance.</li>
 <li><strong>Publish the intent through MCP.</strong> What the organization wants right now — the goal, the constraints, the trade-off weights, the situational conditions — is published as policy aspects. Strategic policy (what is forbidden, what success looks like). Doctrinal preferences (how this organization handles trade-offs). Situational context (what is true in this instance right now). Each of these is an MCP tool. Every task pulls what it needs at execution time.</li>
 </ol>
 <p>The figure above shows the three policy layers and how they reach the swarming tasks through the gateway. The audit substrate is the return path — every decision the swarm makes is traceable to which policy was in effect at the moment of the decision.</p>
 <h3 id="113-what-this-looks-like-in-practice">11.3 What this looks like in practice<a class="headerlink" href="#113-what-this-looks-like-in-practice" title="Permanent link">&para;</a></h3>
-<p>A claims-triage task in a multi-incident response no longer has Reg B logic, SALT-doctrine logic, livability-priority logic, and case-law-conformance logic in its code. It has a small core: read the case, choose a triage category, justify the choice. It pulls in:</p>
+<p>A claims-triage task in a multi-incident response no longer has unfair-claims-practices logic, SALT-doctrine logic, livability-priority logic, and case-law-conformance logic in its code. It has a small core: read the case, choose a triage category, justify the choice. It pulls in:</p>
 <ul>
 <li><strong>Strategic policy aspect</strong> — "this organization will not deny benefits on the basis of a protected class; livability before repair sequence; no PII to non-authorized parties."</li>
 <li><strong>Doctrinal preference aspect</strong> — "in MCI conditions favor speed of triage by 0.7 over precision by 0.3 (mass-casualty doctrine); revert to 0.4/0.6 once incident-level subsides."</li>
@@ -1945,10 +1946,10 @@
 <hr />
 <h2 id="12-governance-aspects-are-auditable-by-construction">12. Governance: Aspects Are Auditable by Construction<a class="headerlink" href="#12-governance-aspects-are-auditable-by-construction" title="Permanent link">&para;</a></h2>
 <p>A pattern that gives every task access to the runtime had better have an answer for governance, or it is just a faster way to lose track of what your system is doing. Three properties make MCP-as-weaver governable:</p>
-<p><strong>Authorization.</strong> Camunda's existing role-based access control extends naturally over MCP tools. A tool is exposed only to the principals authorized to invoke it. An underwriting task running under one role cannot invoke <code>writeVariable</code> on a process instance it does not own. An MCI triage agent can invoke <code>searchProcessInstances</code> for hospital surge instances but cannot create new mutual-aid processes — only the EOC role has that authority. The same authorization model the platform already uses for human operators governs AI-enabled tasks. Adding aspects does not require building a parallel governance plane.</p>
+<p><strong>Authorization.</strong> Camunda's existing role-based access control extends naturally over MCP tools. A tool is exposed only to the principals authorized to invoke it. A replenishment task running under one role cannot invoke <code>writeVariable</code> on a process instance it does not own. An MCI triage agent can invoke <code>searchProcessInstances</code> for hospital surge instances but cannot create new mutual-aid processes — only the EOC role has that authority. The same authorization model the platform already uses for human operators governs AI-enabled tasks. Adding aspects does not require building a parallel governance plane.</p>
 <p><strong>Discoverability.</strong> Every MCP tool published through the gateway is discoverable. The set of aspects available to a task is therefore knowable, by inspection, at any time. A new aspect is not a hidden side channel; it is a registered tool with a schema, a description, and an authorization scope. This is in sharp contrast to ad-hoc data plumbing, where the modeler-wired side queries that connect a task to a tracking table or an analytics service are usually invisible to anyone reviewing the diagram.</p>
 <p><strong>Auditability.</strong> Every MCP call passes through the gateway, and every call is logged. The gateway's call log, combined with Camunda's Audit Log API, produces a complete record of which aspects each task consulted, in what order, with what return values, and what decision the task made afterward. This is the substrate for <em>semantic decision lineage</em> — not just the execution lineage of which BPMN element ran, but the reasoning lineage of which information shaped the decision. <em>Domain Semantics as the Driver of Agent Orchestration</em> introduced this distinction; aspect-oriented process management is the operational pattern that produces it.</p>
-<p>There is a further governance benefit that becomes clear only at scale. Because aspects are advised in at runtime rather than wired into the diagram, <strong>policy changes can take effect without re-deploying any process.</strong> Update the preference weight for "speed vs. accuracy" in the underwriting decision? Update the MCP tool's response. Every running instance that consults preferences gets the new weighting on the next call. Tighten the regulation on collateral lookback? Replace the MCP tool that returns the policy. No process re-deployment, no in-flight migration, no training of a new model. The aspect changes; the tasks consulting it adapt on the next call.</p>
+<p>There is a further governance benefit that becomes clear only at scale. Because aspects are advised in at runtime rather than wired into the diagram, <strong>policy changes can take effect without re-deploying any process.</strong> Update the preference weight for "speed vs. accuracy" in the replenishment decision? Update the MCP tool's response. Every running instance that consults preferences gets the new weighting on the next call. Tighten the regulation on cold-chain temperature lookback? Replace the MCP tool that returns the policy. No process re-deployment, no in-flight migration, no training of a new model. The aspect changes; the tasks consulting it adapt on the next call.</p>
 <p>This is the same change-management property that AOP gave object-oriented programs: cross-cutting concerns can be modified without touching the primary code.</p>
 <hr />
 <h2 id="13-what-this-means-for-the-practitioner">13. What This Means for the Practitioner<a class="headerlink" href="#13-what-this-means-for-the-practitioner" title="Permanent link">&para;</a></h2>
@@ -1959,7 +1960,7 @@
 <hr />
 <h2 id="14-what-still-has-to-be-built">14. What Still Has to Be Built<a class="headerlink" href="#14-what-still-has-to-be-built" title="Permanent link">&para;</a></h2>
 <p>The MCP Gateway is the weaver, but the weaver does not yet expose every aspect a real deployment needs. Three gaps are worth naming.</p>
-<p><strong>1. Semantic-lineage MCP tools.</strong> Camunda 8.9 ships the Audit Log API and lineage for process variables. It does not yet ship lineage for <em>derived</em> values — the credit score that came out of a third-party model, the triage category that came out of a SALT classifier. To expose <code>getLineage(variable)</code> as a first-class MCP tool that can resolve back through external derivations, you need to build (or adopt) a lineage store and register it as an MCP server alongside the gateway. This is the layer the <em>Seven-Layer Semantic Lineage</em> paper describes; it is not yet packaged as MCP.</p>
+<p><strong>1. Semantic-lineage MCP tools.</strong> Camunda 8.9 ships the Audit Log API and lineage for process variables. It does not yet ship lineage for <em>derived</em> values — the demand forecast that came out of a third-party model, the triage category that came out of a SALT classifier. To expose <code>getLineage(variable)</code> as a first-class MCP tool that can resolve back through external derivations, you need to build (or adopt) a lineage store and register it as an MCP server alongside the gateway. This is the layer the <em>Seven-Layer Semantic Lineage</em> paper describes; it is not yet packaged as MCP.</p>
 <p><strong>2. Goal-Registry and Preference-Weight MCP servers.</strong> Aspects 6 and 7 in the inventory above are the most architecturally interesting and the least standardized. Goal context for a task — what outcome this task is ultimately serving — is exactly what the <em>Agentic BPM: Goal-Oriented Process Modeling</em> work in this corpus has been building. Preference weights for organizational decisions are exactly what the <em>Preference Weight Layer (Paper 4)</em> defines. Both need to be exposed as MCP servers so that any AI-enabled task in any process can consult them. Today you would build these as bespoke services and integrate them into each task's prompt construction; tomorrow they should be MCP tools that any task can discover.</p>
 <p><strong>3. Aspect-aware BPMN modeling tooling.</strong> The current Camunda Modeler does not visualize which MCP aspects a task is authorized to consult or actually consults at runtime. This is the analog of the IDE plugins that emerged for AspectJ — tools that let you see, at design time, which aspects will apply to which methods. The same idea is needed at the process layer: a modeler that shows, alongside each AI-enabled task, the aspects that task is allowed to weave in.</p>
 <p>These gaps are not blockers. The pattern is implementable on Camunda 8.9 today — see <a href="#appendix-a-implementation-roadmap-extending-camundas-mcp-for-aopm">Appendix A</a> for the extension pattern and reference scaffolding. They are the next several quarters of work for the community building on top of the gateway.</p>
@@ -2101,8 +2102,8 @@
 <a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="nt">authentication</span><span class="p">:</span>
 <a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="w">  </span><span class="nt">apiKey</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;{{secrets.ANTHROPIC_API_KEY}}&quot;</span>
 <a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="nt">systemPrompt</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">|</span>
-<a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a><span class="w">  </span><span class="no">You are an underwriting agent. Before deciding, consult relevant aspects:</span>
-<a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a><span class="w">  </span><span class="no">instance history, peer instances, goal context, preference weights, and lineage.</span>
+<a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a><span class="w">  </span><span class="no">You are a perishable-replenishment agent. Before deciding, consult relevant aspects:</span>
+<a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a><span class="w">  </span><span class="no">instance history, peer-store instances, goal context, preference weights, and lineage.</span>
 <a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a><span class="w">  </span><span class="no">Cite which aspects shaped your decision. If no tool fits, return your reasoning.</span>
 <a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a><span class="nt">tools</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">${agentTools}</span><span class="w">      </span><span class="c1"># ad-hoc sub-process containing MCP Remote Client tasks</span>
 <a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a><span class="nt">toolCallResults</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">toolCallResults</span>

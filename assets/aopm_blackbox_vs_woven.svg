@@ -48,17 +48,17 @@
     <text x="150" y="180" text-anchor="middle" font-size="13" font-weight="bold" fill="#37474F">Input Variables</text>
     <line x1="72" y1="187" x2="228" y2="187" stroke="#B0BEC5" stroke-width="0.6"/>
     <text font-size="11" fill="#37474F">
-      <tspan x="72" y="204">applicantId</tspan>
-      <tspan x="72" dy="15">requestedAmount</tspan>
-      <tspan x="72" dy="15">creditScore</tspan>
-      <tspan x="72" dy="15">termMonths</tspan>
+      <tspan x="72" y="204">sku</tspan>
+      <tspan x="72" dy="15">storeId</tspan>
+      <tspan x="72" dy="15">onHandUnits</tspan>
+      <tspan x="72" dy="15">forecastDailyDemand</tspan>
       <tspan x="72" dy="15" font-style="italic" fill="#B71C1C">(everything else: invisible)</tspan>
     </text>
 
     <!-- The task -->
     <rect x="320" y="170" width="180" height="100" rx="14" fill="url(#taskGrad)" stroke="#E65100" stroke-width="2"/>
     <text x="410" y="200" text-anchor="middle" font-size="14" font-weight="bold" fill="#BF360C">Service Task</text>
-    <text x="410" y="220" text-anchor="middle" font-size="12" fill="#BF360C">Underwriting Decision</text>
+    <text x="410" y="220" text-anchor="middle" font-size="12" fill="#BF360C">Replenishment Decision</text>
     <text x="410" y="245" text-anchor="middle" font-size="11" fill="#5D4037" font-style="italic">f(input) → output</text>
 
     <!-- Arrow input -> task -->
@@ -81,7 +81,7 @@
       <tspan x="78" dy="20">&#x2715; What did the prior reviewer flag in their notes?</tspan>
       <tspan x="78" dy="20">&#x2715; Are peer tasks already escalating this case?</tspan>
       <tspan x="78" dy="20">&#x2715; What does the audit log say about similar cases?</tspan>
-      <tspan x="78" dy="20">&#x2715; What semantic lineage produced this credit score?</tspan>
+      <tspan x="78" dy="20">&#x2715; What semantic lineage produced this demand forecast?</tspan>
       <tspan x="78" dy="20">&#x2715; What organizational preferences should weight this call?</tspan>
       <tspan x="78" dy="20">&#x2715; Has the policy that informed this process changed?</tspan>
       <tspan x="78" dy="20" font-style="italic" fill="#B71C1C">All hand-wired into the BPMN diagram, or not seen at all.</tspan>
@@ -99,14 +99,14 @@
     <text x="670" y="180" text-anchor="middle" font-size="12" font-weight="bold" fill="#1B5E20">Input Variables</text>
     <line x1="612" y1="187" x2="728" y2="187" stroke="#A5D6A7" stroke-width="0.6"/>
     <text font-size="11" fill="#37474F">
-      <tspan x="612" y="204">applicantId</tspan>
-      <tspan x="612" dy="14">requestedAmount</tspan>
+      <tspan x="612" y="204">sku</tspan>
+      <tspan x="612" dy="14">storeId</tspan>
     </text>
 
     <!-- The task -->
     <rect x="800" y="160" width="240" height="80" rx="14" fill="url(#taskGrad)" stroke="#E65100" stroke-width="2"/>
     <text x="920" y="188" text-anchor="middle" font-size="14" font-weight="bold" fill="#BF360C">AI Service Task</text>
-    <text x="920" y="208" text-anchor="middle" font-size="12" fill="#BF360C">Underwriting Decision</text>
+    <text x="920" y="208" text-anchor="middle" font-size="12" fill="#BF360C">Replenishment Decision</text>
     <text x="920" y="226" text-anchor="middle" font-size="11" fill="#5D4037" font-style="italic">reasons over input + aspects</text>
 
     <line x1="740" y1="200" x2="798" y2="200" stroke="#2E7D32" stroke-width="2" marker-end="url(#arr-w)"/>

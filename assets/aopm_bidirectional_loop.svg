@@ -42,7 +42,7 @@
   <!-- Task A (left) -->
   <rect x="80" y="240" width="220" height="160" rx="12" fill="url(#taskA)" stroke="#E65100" stroke-width="2" filter="url(#shadow)"/>
   <text x="190" y="270" text-anchor="middle" font-size="14" font-weight="bold" fill="#BF360C">Task N (now)</text>
-  <text x="190" y="290" text-anchor="middle" font-size="11" fill="#5D4037" font-style="italic">e.g. Underwriting Decision</text>
+  <text x="190" y="290" text-anchor="middle" font-size="11" fill="#5D4037" font-style="italic">e.g. Replenishment Decision</text>
   <line x1="100" y1="298" x2="280" y2="298" stroke="#FFB74D" stroke-width="0.8"/>
   <text font-size="11" fill="#5D4037">
     <tspan x="100" y="318">1. Reads instance history</tspan>

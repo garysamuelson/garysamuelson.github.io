@@ -46,7 +46,7 @@
   <text x="270" y="142" text-anchor="middle" font-size="14" font-weight="bold" fill="#B71C1C">1. Strategic Policy</text>
   <text x="270" y="160" text-anchor="middle" font-size="11" fill="#B71C1C" font-style="italic">What is forbidden &#x2022; what success looks like</text>
   <text font-size="11" fill="#5D4037">
-    <tspan x="92" y="184">&#x2022; Regulatory boundaries (GDPR, HIPAA, Reg B)</tspan>
+    <tspan x="92" y="184">&#x2022; Regulatory boundaries (GDPR, HIPAA, FSMA)</tspan>
     <tspan x="92" dy="15">&#x2022; Ethical floors (no discrimination, no dark patterns)</tspan>
     <tspan x="92" dy="15">&#x2022; Mission outcome (e.g. &#x201C;livability before repair sequence&#x201D;)</tspan>
   </text>
@@ -87,15 +87,15 @@
   <g>
     <rect x="850" y="120" width="320" height="60" rx="14" fill="url(#taskGrad)" stroke="#E65100" stroke-width="1.8"/>
     <text x="1010" y="145" text-anchor="middle" font-size="13" font-weight="bold" fill="#BF360C">Claims Triage Task</text>
-    <text x="1010" y="163" text-anchor="middle" font-size="10" fill="#5D4037" font-style="italic">consults: Reg B floor, speed weight, peer claims</text>
+    <text x="1010" y="163" text-anchor="middle" font-size="10" fill="#5D4037" font-style="italic">consults: unfair-claims floor, speed weight, peer claims</text>
 
     <rect x="850" y="200" width="320" height="60" rx="14" fill="url(#taskGrad)" stroke="#E65100" stroke-width="1.8"/>
-    <text x="1010" y="225" text-anchor="middle" font-size="13" font-weight="bold" fill="#BF360C">Underwriting Task</text>
-    <text x="1010" y="243" text-anchor="middle" font-size="10" fill="#5D4037" font-style="italic">consults: ATR rule, risk appetite, instance goal</text>
+    <text x="1010" y="225" text-anchor="middle" font-size="13" font-weight="bold" fill="#BF360C">Replenishment Task</text>
+    <text x="1010" y="243" text-anchor="middle" font-size="10" fill="#5D4037" font-style="italic">consults: FSMA shelf-life floor, shrink weight, instance goal</text>
 
     <rect x="850" y="280" width="320" height="60" rx="14" fill="url(#taskGrad)" stroke="#E65100" stroke-width="1.8"/>
     <text x="1010" y="305" text-anchor="middle" font-size="13" font-weight="bold" fill="#BF360C">Disclosure Task</text>
-    <text x="1010" y="323" text-anchor="middle" font-size="10" fill="#5D4037" font-style="italic">consults: TILA disclosure list, customer language</text>
+    <text x="1010" y="323" text-anchor="middle" font-size="10" fill="#5D4037" font-style="italic">consults: required disclosure list, customer language</text>
 
     <rect x="850" y="360" width="320" height="60" rx="14" fill="url(#taskGrad)" stroke="#E65100" stroke-width="1.8"/>
     <text x="1010" y="385" text-anchor="middle" font-size="13" font-weight="bold" fill="#BF360C">Triage Re-Evaluation</text>
