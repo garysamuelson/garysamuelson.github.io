@@ -1,7 +1,7 @@
 ---
 title: Aspect-Oriented Process Management
 description: Beyond the Serial Controller to MCP-Enabled Swarms
-social_image: https://garysamuelson.github.io/assets/aopm_social_s8_v1.png
+social_image: https://garysamuelson.github.io/assets/aopm_social_s8_v2.png
 ---
 
 # Aspect-Oriented Process Management
