@@ -10,9 +10,31 @@ I've built production AI systems in emergency medicine, real-time ML platforms a
 
 ---
 
-## Latest: Aspect-Oriented Process Management
+## Latest: The Working AI — Put to Task with Measured Output
 
-For twenty years, BPMN service tasks have been black boxes — they know only what they're given. The engine sits on top of a rich runtime and has no way to deliver any of it to the task without explicit, brittle, modeler-authored wiring. Camunda 8.9's MCP Gateway is the process weaver that finally changes that.
+Most enterprises talk about AI as if it were a strategy. It is not. AI is a class of worker — and like any worker, it needs a job description, a place in the workflow, and a clear measure of what good output looks like. BPM already wrote that job description. This paper maps exactly where AI plugs in.
+
+<div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap:1.5rem; margin-bottom:2rem;">
+
+<div markdown style="border:1px solid var(--md-default-fg-color--lightest); border-radius:8px; overflow:hidden;">
+<a href="agentic/working-ai-put-to-task/">
+  <img src="assets/header_working_ai_li.png" alt="The Working AI: Put to Task with Measured Output" style="width:100%; display:block;" />
+</a>
+<div style="padding:1rem;">
+<small><strong>New · May 9, 2026</strong> · BPM · AI Architecture · Agentic Systems · Practitioner Guide</small><br/>
+<strong><a href="agentic/working-ai-put-to-task/">The Working AI: Put to Task with Measured Output — A Practitioner's Guide to Placing AI in Business Process</a></strong>
+<p>AI without BPM is a worker without a job description; BPM without AI is a job description with the wrong workforce. Six recommendations, five anti-patterns, eight figures, and a complete architectural placement — from business model down to the worker slot where AI actually lives.</p>
+<a href="agentic/working-ai-put-to-task/">Read →</a>
+</div>
+</div>
+
+</div>
+
+---
+
+## Previously: Aspect-Oriented Process Management
+
+For twenty years, BPMN service tasks have been black boxes — they know only what they're given. Camunda 8.9's MCP Gateway is the process weaver that finally changes that. Treat instance history, audit lineage, goal context, and peer-task state as runtime aspects advised into tasks — without wiring them through the diagram.
 
 <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap:1.5rem; margin-bottom:2rem;">
 
@@ -21,32 +43,10 @@ For twenty years, BPMN service tasks have been black boxes — they know only wh
   <img src="assets/aopm_social_s8_v2.png" alt="Aspect-Oriented Process Management" style="width:100%; display:block;" />
 </a>
 <div style="padding:1rem;">
-<small><strong>New · April 25, 2026</strong> · Semantic AI · Camunda 8.9 · MCP · Agentic Systems</small><br/>
+<small><strong>April 25, 2026</strong> · Semantic AI · Camunda 8.9 · MCP · Agentic Systems</small><br/>
 <strong><a href="semantic-ai/aspect-oriented-process-management/">Aspect-Oriented Process Management: Beyond the Serial Controller to MCP-Enabled Swarms</a></strong>
-<p>Treat instance history, audit lineage, goal context, peer-task state, preference weights, and policy versions as runtime aspects advised into tasks through the MCP Gateway — without wiring them through the diagram. The same move AOP made for object-oriented code, applied at the process layer.</p>
+<p>The same move AOP made for object-oriented code, applied at the process layer. Instance history, goal context, peer-task state, preference weights, and policy versions as aspects — advised into running tasks through the MCP Gateway, without modeler-authored wiring.</p>
 <a href="semantic-ai/aspect-oriented-process-management/">Read →</a>
-</div>
-</div>
-
-</div>
-
----
-
-## Previously: When Processes Finally Talk to Each Other
-
-For twenty years, BPM maturity models have put inter-process collaboration at the top. Nobody shipped it. Camunda 8.9's MCP Gateway changes that. Using mass casualty incident response as the reference domain, this article maps NIMS/ICS doctrine onto the three mechanisms that finally make digital inter-process collaboration buildable.
-
-<div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap:1.5rem; margin-bottom:2rem;">
-
-<div markdown style="border:1px solid var(--md-default-fg-color--lightest); border-radius:8px; overflow:hidden;">
-<a href="semantic-ai/inter-process-semantic-collaboration/">
-  <img src="assets/images/inter_process_semantic_collaboration_MCI_audience_header.svg" alt="When Processes Finally Talk to Each Other" style="width:100%; display:block;" />
-</a>
-<div style="padding:1rem;">
-<small><strong>April 19, 2026</strong> · Semantic AI · Camunda 8.9 · MCP · Agentic Systems</small><br/>
-<strong><a href="semantic-ai/inter-process-semantic-collaboration/">When Processes Finally Talk to Each Other: What Mass Casualty Response Teaches Us About Camunda 8.9's MCP Gateway</a></strong>
-<p>MCP Gateway. Conditional Events. Cluster Variables. A2A Protocol. Four independent process instances — Field Triage, Hospital Surge, Transport, EOC — collaborating without a single point-to-point message flow. The pattern works. It's already been proven. In emergency medicine.</p>
-<a href="semantic-ai/inter-process-semantic-collaboration/">Read →</a>
 </div>
 </div>
 
@@ -91,6 +91,18 @@ A two-part examination of autonomous AI in healthcare — from the patient exper
 ## Also on This Site
 
 <div style="display:grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap:1.5rem; margin-bottom:2rem;">
+
+<div markdown style="border:1px solid var(--md-default-fg-color--lightest); border-radius:8px; overflow:hidden;">
+<a href="semantic-ai/inter-process-semantic-collaboration/">
+  <img src="assets/images/inter_process_semantic_collaboration_MCI_audience_header.svg" alt="When Processes Finally Talk to Each Other" style="width:100%; display:block;" />
+</a>
+<div style="padding:1rem;">
+<strong><a href="semantic-ai/inter-process-semantic-collaboration/">When Processes Finally Talk to Each Other: What Mass Casualty Response Teaches Us About Camunda 8.9's MCP Gateway</a></strong><br/>
+<small>April 19, 2026 · Semantic AI · Camunda 8.9 · MCP · Agentic Systems</small>
+<p>MCP Gateway. Conditional Events. Cluster Variables. A2A Protocol. Four independent process instances — Field Triage, Hospital Surge, Transport, EOC — collaborating without a single point-to-point message flow.</p>
+<a href="semantic-ai/inter-process-semantic-collaboration/">Read →</a>
+</div>
+</div>
 
 <div markdown style="border:1px solid var(--md-default-fg-color--lightest); border-radius:8px; overflow:hidden;">
 <a href="semantic-ai/cpg-campaign-simplified-workflow/">
