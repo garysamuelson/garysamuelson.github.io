@@ -84,6 +84,7 @@ extra:
 
 nav:
   - Home: index.md
+  - "The Working AI: Put to Task with Measured Output": agentic/working-ai-put-to-task.md
   - Agentic Agency & Workflows: agentic/agentic-agency-and-workflows.md
   - AI Governance in Healthcare:
     - Who Is Accountable?: healthcare/healthcare-accountability.md

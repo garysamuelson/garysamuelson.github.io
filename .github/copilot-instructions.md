@@ -1,5 +1,13 @@
 # Copilot Instructions — garyrsamuelson_blog
 
+## Content Intake Rule — PUBLICATION ONLY, NO NEW DRAFTS HERE
+
+**This workspace is for publishing only. No new research, writing, or drafts are created here.**
+- All content originates in `c:\gary\bitbucket_projects\pythonwebdomain_01` (Research & Skills Hub).
+- Content is copied here ONLY when Gary explicitly signals readiness to publish.
+- If asked to write new research, notes, or resume content, redirect to `pythonwebdomain_01` instead.
+- Trigger phrases like "ready to publish" or "post this to my blog" are the gate that allows content to move here.
+
 ## Project Purpose
 
 This is Gary Samuelson's public GitHub Pages blog, live at:

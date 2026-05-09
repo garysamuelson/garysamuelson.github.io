@@ -1,0 +1,205 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="780" height="530" viewBox="0 0 780 530">
+  <defs>
+    <filter id="sh" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="2" stdDeviation="2.5" flood-color="#000000" flood-opacity="0.28"/>
+    </filter>
+    <!-- slate arrow -->
+    <marker id="mS" viewBox="0 0 10 10" refX="10" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M 0 0 L 10 5 L 0 10 Z" fill="#475569"/>
+    </marker>
+    <!-- blue arrow -->
+    <marker id="mB" viewBox="0 0 10 10" refX="10" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M 0 0 L 10 5 L 0 10 Z" fill="#3b82f6"/>
+    </marker>
+    <!-- green arrow -->
+    <marker id="mG" viewBox="0 0 10 10" refX="10" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M 0 0 L 10 5 L 0 10 Z" fill="#10b981"/>
+    </marker>
+    <!-- amber arrow -->
+    <marker id="mA" viewBox="0 0 10 10" refX="10" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M 0 0 L 10 5 L 0 10 Z" fill="#f59e0b"/>
+    </marker>
+    <!-- violet arrow -->
+    <marker id="mV" viewBox="0 0 10 10" refX="10" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M 0 0 L 10 5 L 0 10 Z" fill="#a78bfa"/>
+    </marker>
+  </defs>
+
+  <!-- ── Background ── -->
+  <rect width="780" height="530" fill="#0f172a" rx="12"/>
+
+  <!-- ═══════════════════════════════════════════════════
+       SHARED BPM PROCESS FRAME (top)
+  ═══════════════════════════════════════════════════ -->
+  <rect x="16" y="12" width="748" height="54" rx="7"
+        fill="#1e293b" stroke="#334155" stroke-width="1.2" filter="url(#sh)"/>
+  <text x="390" y="35" font-family="system-ui,sans-serif" font-size="11"
+        fill="#94a3b8" font-weight="700" text-anchor="middle" letter-spacing="1">BPM PROCESS MODEL</text>
+  <text x="390" y="54" font-family="system-ui,sans-serif" font-size="9"
+        fill="#475569" text-anchor="middle">governance · audit · exception routing · KPIs · task assignment</text>
+
+  <!-- Divider between left and right panels -->
+  <line x1="390" y1="80" x2="390" y2="520" stroke="#1e293b" stroke-width="1.5"/>
+
+  <!-- ═══════════════════════════════════════════════════
+       LEFT — PATTERN 1: AGENT-AS-WORKER
+  ═══════════════════════════════════════════════════ -->
+  <text x="195" y="92" font-family="system-ui,sans-serif" font-size="10"
+        fill="#3b82f6" font-weight="700" text-anchor="middle" letter-spacing="1.5">PATTERN 1 — AGENT AS WORKER</text>
+
+  <!-- Arrow: process model → agent -->
+  <line x1="195" y1="66" x2="195" y2="104" stroke="#334155" stroke-width="1.5" marker-end="url(#mS)"/>
+
+  <!-- AGENT box -->
+  <rect x="100" y="106" width="190" height="52" rx="6" fill="#1d4ed8" filter="url(#sh)"/>
+  <text x="195" y="129" font-family="system-ui,sans-serif" font-size="12"
+        fill="#bfdbfe" font-weight="700" text-anchor="middle">AGENT</text>
+  <text x="195" y="148" font-family="system-ui,sans-serif" font-size="9"
+        fill="#93c5fd" text-anchor="middle">takes the task entirely</text>
+
+  <!-- Crossed-out form (to left of agent box) -->
+  <rect x="16" y="106" width="72" height="52" rx="5" fill="#1e293b"/>
+  <rect x="22" y="115" width="56" height="4" rx="1" fill="#293548"/>
+  <rect x="22" y="124" width="40" height="4" rx="1" fill="#293548"/>
+  <rect x="22" y="133" width="56" height="4" rx="1" fill="#293548"/>
+  <rect x="22" y="142" width="32" height="4" rx="1" fill="#293548"/>
+  <line x1="16" y1="106" x2="88" y2="158" stroke="#dc2626" stroke-width="2.2" stroke-linecap="round"/>
+  <line x1="88" y1="106" x2="16" y2="158" stroke="#dc2626" stroke-width="2.2" stroke-linecap="round"/>
+  <text x="52" y="172" font-family="system-ui,sans-serif" font-size="8"
+        fill="#dc2626" font-weight="700" text-anchor="middle">NO FORM</text>
+
+  <!-- Arrow: agent → output -->
+  <line x1="195" y1="158" x2="195" y2="178" stroke="#3b82f6" stroke-width="1.5" marker-end="url(#mB)"/>
+
+  <!-- OUTPUT -->
+  <rect x="130" y="180" width="130" height="30" rx="5" fill="#0d1f47"/>
+  <text x="195" y="200" font-family="system-ui,sans-serif" font-size="9.5"
+        fill="#60a5fa" font-weight="600" text-anchor="middle">OUTPUT + AUDIT LOG</text>
+
+  <!-- Arrow: output → back to process -->
+  <line x1="195" y1="210" x2="195" y2="230" stroke="#334155" stroke-width="1.2" marker-end="url(#mS)"/>
+
+  <!-- Loop note -->
+  <rect x="100" y="232" width="190" height="24" rx="4" fill="#131f35"/>
+  <text x="195" y="248" font-family="system-ui,sans-serif" font-size="8.5"
+        fill="#475569" text-anchor="middle">exception routing returns to model</text>
+
+  <!-- Human supervision panel -->
+  <rect x="16" y="274" width="358" height="98" rx="7"
+        fill="#0d1929" stroke="#1e3a5f" stroke-width="1"/>
+  <text x="195" y="295" font-family="system-ui,sans-serif" font-size="9.5"
+        fill="#64748b" font-weight="700" text-anchor="middle" letter-spacing="1">HUMAN ROLE</text>
+
+  <!-- Dashboard icon: simplified bar chart -->
+  <rect x="30" y="304" width="8" height="30" rx="1" fill="#1d4ed8"/>
+  <rect x="42" y="314" width="8" height="20" rx="1" fill="#1d4ed8" opacity="0.7"/>
+  <rect x="54" y="309" width="8" height="25" rx="1" fill="#1d4ed8" opacity="0.5"/>
+  <rect x="66" y="318" width="8" height="16" rx="1" fill="#1d4ed8" opacity="0.4"/>
+  <text x="100" y="318" font-family="system-ui,sans-serif" font-size="10"
+        fill="#94a3b8" font-weight="700">Supervises throughput</text>
+  <text x="100" y="333" font-family="system-ui,sans-serif" font-size="9"
+        fill="#64748b">via control tower / dashboard</text>
+  <text x="100" y="348" font-family="system-ui,sans-serif" font-size="9"
+        fill="#64748b">intervenes on exceptions only</text>
+
+  <!-- Dashed oversight arc from human panel up to AGENT -->
+  <path d="M 52 274 C 52 232 100 195 100 132"
+        fill="none" stroke="#3b82f6" stroke-width="1.2"
+        stroke-dasharray="5 3" marker-end="url(#mB)"/>
+  <text x="28" y="235" font-family="system-ui,sans-serif" font-size="8"
+        fill="#3b82f6" font-weight="600">oversight</text>
+
+  <!-- Design shift note -->
+  <rect x="16" y="388" width="358" height="38" rx="6" fill="#1e293b"/>
+  <text x="195" y="405" font-family="system-ui,sans-serif" font-size="9"
+        fill="#64748b" text-anchor="middle">Design effort shifts from task form</text>
+  <text x="195" y="420" font-family="system-ui,sans-serif" font-size="9"
+        fill="#64748b" text-anchor="middle">to dashboards, control towers, handoff surfaces</text>
+
+  <!-- ═══════════════════════════════════════════════════
+       RIGHT — PATTERN 2: AI-INSIDE
+  ═══════════════════════════════════════════════════ -->
+  <text x="585" y="92" font-family="system-ui,sans-serif" font-size="10"
+        fill="#10b981" font-weight="700" text-anchor="middle" letter-spacing="1.5">PATTERN 2 — AI-INSIDE</text>
+
+  <!-- Arrow: process model → task form -->
+  <line x1="585" y1="66" x2="585" y2="104" stroke="#334155" stroke-width="1.5" marker-end="url(#mS)"/>
+
+  <!-- Task form — persists -->
+  <rect x="406" y="106" width="358" height="130" rx="6"
+        fill="#1e293b" stroke="#10b981" stroke-width="1.2" filter="url(#sh)"/>
+  <text x="585" y="124" font-family="system-ui,sans-serif" font-size="9.5"
+        fill="#10b981" font-weight="700" text-anchor="middle">TASK FORM  ✓  PERSISTS</text>
+
+  <!-- HUMAN zone (left 55% of form) -->
+  <rect x="414" y="130" width="186" height="98" rx="5" fill="#263244"/>
+  <text x="507" y="148" font-family="system-ui,sans-serif" font-size="9.5"
+        fill="#94a3b8" font-weight="700" text-anchor="middle">HUMAN</text>
+
+  <!-- Form field lines -->
+  <rect x="422" y="154" width="110" height="4" rx="1" fill="#334155"/>
+  <rect x="422" y="163" width="80" height="4" rx="1" fill="#334155"/>
+  <rect x="422" y="172" width="110" height="4" rx="1" fill="#334155"/>
+  <rect x="422" y="181" width="60" height="4" rx="1" fill="#334155"/>
+
+  <!-- Judgment badge -->
+  <rect x="422" y="193" width="110" height="28" rx="4" fill="#16a34a"/>
+  <text x="477" y="208" font-family="system-ui,sans-serif" font-size="8.5"
+        fill="#bbf7d0" font-weight="700" text-anchor="middle">AUTHORS JUDGMENT</text>
+  <text x="477" y="218" font-family="system-ui,sans-serif" font-size="7.5"
+        fill="#86efac" text-anchor="middle">irreplaceable</text>
+
+  <!-- AI zone (right 45% of form) -->
+  <rect x="604" y="130" width="152" height="98" rx="5" fill="#1a2d50"/>
+  <text x="680" y="148" font-family="system-ui,sans-serif" font-size="9.5"
+        fill="#60a5fa" font-weight="700" text-anchor="middle">AI CO-WORKER</text>
+
+  <!-- Correlation work list -->
+  <text x="612" y="163" font-family="system-ui,sans-serif" font-size="7.5" fill="#475569">· instance history</text>
+  <text x="612" y="175" font-family="system-ui,sans-serif" font-size="7.5" fill="#475569">· policy version</text>
+  <text x="612" y="187" font-family="system-ui,sans-serif" font-size="7.5" fill="#475569">· peer-task state</text>
+  <text x="612" y="199" font-family="system-ui,sans-serif" font-size="7.5" fill="#475569">· semantic lineage</text>
+  <text x="612" y="211" font-family="system-ui,sans-serif" font-size="7.5" fill="#475569">· external context</text>
+
+  <!-- Correlation badge -->
+  <rect x="604" y="218" width="152" height="12" rx="3" fill="#1e3a8a"/>
+  <text x="680" y="228" font-family="system-ui,sans-serif" font-size="7.5"
+        fill="#93c5fd" font-weight="700" text-anchor="middle">ABSORBS CORRELATION</text>
+
+  <!-- Arrow: task form → output -->
+  <line x1="585" y1="236" x2="585" y2="256" stroke="#10b981" stroke-width="1.5" marker-end="url(#mG)"/>
+
+  <!-- OUTPUT -->
+  <rect x="510" y="258" width="150" height="30" rx="5" fill="#052e16"/>
+  <text x="585" y="278" font-family="system-ui,sans-serif" font-size="9.5"
+        fill="#34d399" font-weight="600" text-anchor="middle">OUTPUT + AUDIT LOG</text>
+
+  <!-- AOP aspects panel -->
+  <rect x="406" y="302" width="358" height="64" rx="7"
+        fill="#1a0e2e" stroke="#a78bfa" stroke-width="1" stroke-opacity="0.5"/>
+  <text x="585" y="320" font-family="system-ui,sans-serif" font-size="9"
+        fill="#a78bfa" font-weight="700" text-anchor="middle" letter-spacing="0.5">AOP ASPECT SUBSTRATE</text>
+  <text x="585" y="337" font-family="system-ui,sans-serif" font-size="8.5"
+        fill="#6d28d9" text-anchor="middle">goal context · preference weights · policy version · prior-case outcomes</text>
+  <text x="585" y="352" font-family="system-ui,sans-serif" font-size="8.5"
+        fill="#6d28d9" text-anchor="middle">injected as aspects — AI brings the world to the form</text>
+
+  <!-- Arrow: AOP → AI zone -->
+  <line x1="680" y1="302" x2="680" y2="240" stroke="#a78bfa" stroke-width="1"
+        stroke-dasharray="4 3" marker-end="url(#mV)" opacity="0.7"/>
+
+  <!-- Human role note -->
+  <rect x="406" y="382" width="358" height="44" rx="6" fill="#1e293b"/>
+  <text x="585" y="400" font-family="system-ui,sans-serif" font-size="9.5"
+        fill="#94a3b8" font-weight="700" text-anchor="middle">HUMAN STAYS IN THE SEAT</text>
+  <text x="585" y="416" font-family="system-ui,sans-serif" font-size="9"
+        fill="#64748b" text-anchor="middle">human's intellect = binding constraint, not bottleneck</text>
+
+  <!-- ── Bottom shared note ── -->
+  <rect x="16" y="440" width="748" height="34" rx="6" fill="#1e293b"/>
+  <text x="390" y="454" font-family="system-ui,sans-serif" font-size="9"
+        fill="#64748b" text-anchor="middle">Both patterns sit inside the same BPM process frame.</text>
+  <text x="390" y="468" font-family="system-ui,sans-serif" font-size="9"
+        fill="#64748b" text-anchor="middle">The process model assigns, governs, and routes exceptions. Neither pattern changes any layer above the worker.</text>
+
+</svg>

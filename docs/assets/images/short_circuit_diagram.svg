@@ -1,0 +1,124 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="545" viewBox="0 0 800 545">
+  <defs>
+    <filter id="sh" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="2" stdDeviation="3" flood-color="#000000" flood-opacity="0.27"/>
+    </filter>
+    <!-- green solid arrow -->
+    <marker id="mG" viewBox="0 0 10 10" refX="10" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M 0 0 L 10 5 L 0 10 Z" fill="#16a34a"/>
+    </marker>
+    <!-- red solid arrow (arc end) -->
+    <marker id="mR" viewBox="0 0 10 10" refX="10" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M 0 0 L 10 5 L 0 10 Z" fill="#dc2626"/>
+    </marker>
+    <!-- faint green (outcome connector) -->
+    <marker id="mGf" viewBox="0 0 10 10" refX="10" refY="5" markerWidth="5" markerHeight="5" orient="auto">
+      <path d="M 0 0 L 10 5 L 0 10 Z" fill="#16a34a"/>
+    </marker>
+    <!-- faint red (outcome connector) -->
+    <marker id="mRf" viewBox="0 0 10 10" refX="10" refY="5" markerWidth="5" markerHeight="5" orient="auto">
+      <path d="M 0 0 L 10 5 L 0 10 Z" fill="#dc2626"/>
+    </marker>
+  </defs>
+
+  <!-- ── Background ── -->
+  <rect width="800" height="545" fill="#0f172a" rx="12"/>
+
+  <!-- ── BYPASSED zone (covers layers 2 and 3 + inter-gap) ── -->
+  <rect x="145" y="142" width="415" height="200" rx="8"
+        fill="#dc2626" fill-opacity="0.03" stroke="#dc2626" stroke-opacity="0.31" stroke-width="1.5" stroke-dasharray="6 4"/>
+  <text x="552" y="160" font-family="system-ui,sans-serif" font-size="10"
+        fill="#dc2626" font-weight="700" text-anchor="end" letter-spacing="1.5">BYPASSED</text>
+
+  <!-- ════════════════════════════════════
+       Layer 1 — Executive Direction
+  ════════════════════════════════════ -->
+  <rect x="145" y="50" width="415" height="72" rx="8" fill="#1e293b" filter="url(#sh)"/>
+  <text x="352" y="79" font-family="system-ui,sans-serif" font-size="12"
+        fill="#94a3b8" font-weight="700" text-anchor="middle" letter-spacing="0.5">EXECUTIVE DIRECTION</text>
+  <text x="352" y="101" font-family="system-ui,sans-serif" font-size="10.5"
+        fill="#64748b" text-anchor="middle">Business roadmap — direction and rationale</text>
+
+  <!-- Arrow 1 → 2 -->
+  <line x1="352" y1="122" x2="352" y2="150" stroke="#16a34a" stroke-width="2" marker-end="url(#mG)"/>
+
+  <!-- ════════════════════════════════════
+       Layer 2 — Domain Owner  (BYPASSED)
+  ════════════════════════════════════ -->
+  <rect x="145" y="152" width="415" height="72" rx="8" fill="#1e293b"/>
+  <rect x="145" y="152" width="415" height="72" rx="8" fill="#dc2626" fill-opacity="0.06"/>
+  <text x="352" y="181" font-family="system-ui,sans-serif" font-size="12"
+        fill="#94a3b8" font-weight="700" text-anchor="middle" letter-spacing="0.5">DOMAIN OWNER INTERPRETATION</text>
+  <text x="352" y="203" font-family="system-ui,sans-serif" font-size="10.5"
+        fill="#64748b" text-anchor="middle">Unwritten knowledge — edges, failure modes, customer commitments</text>
+
+  <!-- Arrow 2 → 3 -->
+  <line x1="352" y1="224" x2="352" y2="252" stroke="#16a34a" stroke-width="2" marker-end="url(#mG)"/>
+
+  <!-- ════════════════════════════════════
+       Layer 3 — Business Analyst  (BYPASSED)
+  ════════════════════════════════════ -->
+  <rect x="145" y="254" width="415" height="72" rx="8" fill="#1e293b"/>
+  <rect x="145" y="254" width="415" height="72" rx="8" fill="#dc2626" fill-opacity="0.06"/>
+  <text x="352" y="283" font-family="system-ui,sans-serif" font-size="12"
+        fill="#94a3b8" font-weight="700" text-anchor="middle" letter-spacing="0.5">BUSINESS ANALYST TRANSLATION</text>
+  <text x="352" y="305" font-family="system-ui,sans-serif" font-size="10.5"
+        fill="#64748b" text-anchor="middle">Value chains, BPMN models, KPIs — intent made specifiable</text>
+
+  <!-- Arrow 3 → 4 -->
+  <line x1="352" y1="326" x2="352" y2="354" stroke="#16a34a" stroke-width="2" marker-end="url(#mG)"/>
+
+  <!-- ════════════════════════════════════
+       Layer 4 — Implementation
+  ════════════════════════════════════ -->
+  <rect x="145" y="356" width="415" height="72" rx="8" fill="#052e16" filter="url(#sh)"/>
+  <text x="352" y="385" font-family="system-ui,sans-serif" font-size="12"
+        fill="#4ade80" font-weight="700" text-anchor="middle" letter-spacing="0.5">SOFTWARE / AI IMPLEMENTATION</text>
+  <text x="352" y="407" font-family="system-ui,sans-serif" font-size="10.5"
+        fill="#86efac" text-anchor="middle">Code or AI worker — accountable to the model above it</text>
+
+  <!-- ════════════════════════════════════
+       Short-circuit arc (right side)
+       From mid-right of L1 (560, 86) to mid-right of L4 (560, 392)
+       Bezier bulges to x=710
+  ════════════════════════════════════ -->
+  <path d="M 560 86 C 712 86 712 392 560 392"
+        fill="none" stroke="#dc2626" stroke-width="2"
+        stroke-dasharray="7 4" marker-end="url(#mR)"/>
+
+  <!-- "Prompt → Code" label beside arc midpoint -->
+  <text x="720" y="228" font-family="system-ui,sans-serif" font-size="10.5"
+        fill="#dc2626" font-weight="600" text-anchor="start">Prompt →</text>
+  <text x="720" y="244" font-family="system-ui,sans-serif" font-size="10.5"
+        fill="#dc2626" font-weight="600" text-anchor="start">Code</text>
+  <text x="720" y="261" font-family="system-ui,sans-serif" font-size="9.5"
+        fill="#dc2626" opacity="0.5" text-anchor="start">skips layers 2–3</text>
+
+  <!-- ════════════════════════════════════
+       Outcome branches from L4 bottom
+  ════════════════════════════════════ -->
+  <!-- L4 bottom center = (352, 428). Diverge to two boxes at y=462 -->
+  <line x1="352" y1="428" x2="196" y2="460"
+        stroke="#16a34a" stroke-width="1.5" stroke-dasharray="4 3"
+        marker-end="url(#mGf)" opacity="0.75"/>
+  <line x1="352" y1="428" x2="592" y2="460"
+        stroke="#dc2626" stroke-width="1.5" stroke-dasharray="4 3"
+        marker-end="url(#mRf)" opacity="0.75"/>
+
+  <!-- Full path outcome -->
+  <rect x="56" y="463" width="285" height="52" rx="7"
+        fill="#052e16" stroke="#16a34a" stroke-width="1.2"/>
+  <text x="198" y="484" font-family="system-ui,sans-serif" font-size="11"
+        fill="#86efac" font-weight="700" text-anchor="middle">Full path</text>
+  <text x="198" y="503" font-family="system-ui,sans-serif" font-size="10"
+        fill="#64748b" text-anchor="middle">Intent is in the model — persistent, measurable</text>
+
+  <!-- Short-circuit outcome -->
+  <rect x="450" y="463" width="285" height="52" rx="7"
+        fill="#2d0000" stroke="#dc2626" stroke-width="1.2"/>
+  <text x="592" y="484" font-family="system-ui,sans-serif" font-size="11"
+        fill="#fca5a5" font-weight="700" text-anchor="middle">Short-circuit</text>
+  <text x="592" y="503" font-family="system-ui,sans-serif" font-size="10"
+        fill="#64748b" text-anchor="middle">Intent is in the prompt — partial, momentary</text>
+
+</svg>
