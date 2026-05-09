@@ -11,7 +11,7 @@ social_image: https://garysamuelson.github.io/assets/header_working_ai_li.png
 
 **Author:** Gary Samuelson
 **Date:** May 9, 2026
-**Status:** Working paper draft — v2 (practitioner restructure)
+**Status:** Published — May 9, 2026
 
 ---
 
