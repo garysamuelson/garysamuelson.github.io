@@ -1,7 +1,7 @@
 ---
 title: "The Working AI: Put to Task with Measured Output"
 description: "A practitioner's guide to placing AI in business process — AI is a class of worker, not a strategy. BPM is the discipline that decides what work needs doing, who is fit to do it, and how its contribution to value is measured."
-social_image: https://garysamuelson.github.io/assets/header_working_ai_li.png
+social_image: https://garysamuelson.github.io/assets/header_working_ai_li_v2.png
 ---
 
 ![The Working AI: Put to Task with Measured Output — A Practitioner's Guide to Placing AI in Business Process](../assets/header_working_ai_li.svg)
