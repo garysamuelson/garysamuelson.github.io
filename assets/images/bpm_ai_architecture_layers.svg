@@ -1,0 +1,91 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 620" width="800" height="620" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif">
+
+  <defs>
+    <marker id="arrow-dark" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#6b7280"/>
+    </marker>
+    <marker id="arrow-blue" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#2563eb"/>
+    </marker>
+    <filter id="shadow" x="-8%" y="-8%" width="116%" height="116%">
+      <feDropShadow dx="0" dy="3" stdDeviation="4" flood-color="#00000018"/>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect x="0" y="0" width="800" height="620" rx="12" ry="12" fill="#f8fafc"/>
+
+  <!-- Title -->
+  <text x="420" y="36" text-anchor="middle" font-size="15" font-weight="700" fill="#111827" letter-spacing="0.3">BPM and AI Architectural Layers</text>
+  <text x="420" y="55" text-anchor="middle" font-size="12" fill="#6b7280">Where AI enters the enterprise architecture hierarchy</text>
+
+  <!-- Layer 1: Business Model -->
+  <rect x="140" y="78" width="560" height="70" rx="8" ry="8" fill="#ffffff" stroke="#d1fae5" stroke-width="2" filter="url(#shadow)"/>
+  <rect x="140" y="78" width="6" height="70" rx="3" ry="3" fill="#10b981"/>
+  <circle cx="173" cy="113" r="14" fill="#d1fae5"/>
+  <text x="173" y="118" text-anchor="middle" font-size="13" font-weight="700" fill="#065f46">1</text>
+  <text x="200" y="105" font-size="14" font-weight="600" fill="#111827">Business Model</text>
+  <text x="200" y="124" font-size="12" fill="#6b7280">What value is exchanged, with whom, and for what consideration</text>
+
+  <!-- Arrow 1 to 2 -->
+  <line x1="420" y1="148" x2="420" y2="176" stroke="#6b7280" stroke-width="1.5" stroke-dasharray="4 3" marker-end="url(#arrow-dark)"/>
+  <rect x="375" y="153" width="90" height="18" rx="4" ry="4" fill="#f1f5f9"/>
+  <text x="420" y="166" text-anchor="middle" font-size="10.5" fill="#6b7280" font-style="italic">implemented by</text>
+
+  <!-- Layer 2: Value Chain -->
+  <rect x="140" y="178" width="560" height="70" rx="8" ry="8" fill="#ffffff" stroke="#bfdbfe" stroke-width="2" filter="url(#shadow)"/>
+  <rect x="140" y="178" width="6" height="70" rx="3" ry="3" fill="#3b82f6"/>
+  <circle cx="173" cy="213" r="14" fill="#dbeafe"/>
+  <text x="173" y="218" text-anchor="middle" font-size="13" font-weight="700" fill="#1d4ed8">2</text>
+  <text x="200" y="205" font-size="14" font-weight="600" fill="#111827">Value Chain</text>
+  <text x="200" y="224" font-size="12" fill="#6b7280">How value is produced, transformed, and delivered to the customer</text>
+
+  <!-- Arrow 2 to 3 -->
+  <line x1="420" y1="248" x2="420" y2="276" stroke="#6b7280" stroke-width="1.5" stroke-dasharray="4 3" marker-end="url(#arrow-dark)"/>
+  <rect x="379" y="253" width="82" height="18" rx="4" ry="4" fill="#f1f5f9"/>
+  <text x="420" y="266" text-anchor="middle" font-size="10.5" fill="#6b7280" font-style="italic">executed via</text>
+
+  <!-- Layer 3: Process Model -->
+  <rect x="140" y="278" width="560" height="70" rx="8" ry="8" fill="#ffffff" stroke="#e9d5ff" stroke-width="2" filter="url(#shadow)"/>
+  <rect x="140" y="278" width="6" height="70" rx="3" ry="3" fill="#8b5cf6"/>
+  <circle cx="173" cy="313" r="14" fill="#ede9fe"/>
+  <text x="173" y="318" text-anchor="middle" font-size="13" font-weight="700" fill="#5b21b6">3</text>
+  <text x="200" y="305" font-size="14" font-weight="600" fill="#111827">Process Model <tspan font-weight="400" fill="#6b7280">(BPM)</tspan></text>
+  <text x="200" y="324" font-size="12" fill="#6b7280">How work is structured, who performs it, and how outcomes are measured</text>
+
+  <!-- Arrow 3 to Task -->
+  <line x1="420" y1="348" x2="420" y2="376" stroke="#6b7280" stroke-width="1.5" stroke-dasharray="4 3" marker-end="url(#arrow-dark)"/>
+  <rect x="371" y="353" width="98" height="18" rx="4" ry="4" fill="#f1f5f9"/>
+  <text x="420" y="366" text-anchor="middle" font-size="10.5" fill="#6b7280" font-style="italic">decomposed into</text>
+
+  <!-- Task / Activity -->
+  <rect x="140" y="378" width="560" height="70" rx="8" ry="8" fill="#ffffff" stroke="#fed7aa" stroke-width="2" filter="url(#shadow)"/>
+  <rect x="140" y="378" width="6" height="70" rx="3" ry="3" fill="#f97316"/>
+  <circle cx="173" cy="413" r="14" fill="#ffedd5"/>
+  <text x="173" y="418" text-anchor="middle" font-size="13" font-weight="700" fill="#9a3412">4</text>
+  <text x="200" y="405" font-size="14" font-weight="600" fill="#111827">Task / Activity</text>
+  <text x="200" y="424" font-size="12" fill="#6b7280">The atomic unit of work — carries a worker assignment and consumes capabilities</text>
+
+  <!-- Left curved arrow: Capability -->
+  <path d="M 255 448 C 255 470 220 478 220 500" stroke="#2563eb" stroke-width="1.8" fill="none" stroke-dasharray="5 3" marker-end="url(#arrow-blue)"/>
+  <rect x="118" y="461" width="112" height="18" rx="4" ry="4" fill="#eff6ff"/>
+  <text x="174" y="474" text-anchor="middle" font-size="10.5" fill="#1d4ed8" font-style="italic">consumes as capability</text>
+
+  <!-- Right curved arrow: Worker -->
+  <path d="M 425 448 C 425 470 460 478 460 500" stroke="#2563eb" stroke-width="1.8" fill="none" stroke-dasharray="5 3" marker-end="url(#arrow-blue)"/>
+  <rect x="450" y="461" width="100" height="18" rx="4" ry="4" fill="#eff6ff"/>
+  <text x="500" y="474" text-anchor="middle" font-size="10.5" fill="#1d4ed8" font-style="italic">assigns as a worker</text>
+
+  <!-- AI Layer -->
+  <rect x="140" y="500" width="560" height="75" rx="8" ry="8" fill="#eff6ff" stroke="#2563eb" stroke-width="2" filter="url(#shadow)"/>
+  <rect x="140" y="500" width="6" height="75" rx="3" ry="3" fill="#2563eb"/>
+  <circle cx="173" cy="537" r="14" fill="#2563eb"/>
+  <text x="173" y="542" text-anchor="middle" font-size="11" font-weight="700" fill="#ffffff">AI</text>
+  <text x="200" y="525" font-size="14" font-weight="700" fill="#1d4ed8">Artificial Intelligence</text>
+  <text x="200" y="545" font-size="12" fill="#2563eb">A capability consumed by tasks — not a strategy, value chain, or process</text>
+  <text x="200" y="563" font-size="11" fill="#6b7280" font-style="italic">Enters the architecture at the task layer — no higher</text>
+
+  <!-- Footnote -->
+  <text x="420" y="606" text-anchor="middle" font-size="10" fill="#9ca3af">Porter 1985 · Magretta 2013 · BPM Council 2019</text>
+
+</svg>

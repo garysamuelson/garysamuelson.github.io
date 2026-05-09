@@ -1,0 +1,2219 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="A practitioner's guide to placing AI in business process — AI is a class of worker, not a strategy. BPM is the discipline that decides what work needs doing, who is fit to do it, and how its contribution to value is measured.">
+      
+      
+        <meta name="author" content="Gary Samuelson">
+      
+      
+        <link rel="canonical" href="https://garysamuelson.github.io/agentic/working-ai-put-to-task/">
+      
+      
+        <link rel="prev" href="../..">
+      
+      
+        <link rel="next" href="../agentic-agency-and-workflows/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>The Working AI: Put to Task with Measured Output - Gary Samuelson — AI & Architecture Research</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  
+
+  
+  
+  
+  
+
+  <meta property="og:type" content="article" />
+  <meta property="og:site_name" content="Gary Samuelson — AI & Architecture Research" />
+  <meta property="og:title" content="The Working AI: Put to Task with Measured Output" />
+  <meta property="og:description" content="A practitioner's guide to placing AI in business process — AI is a class of worker, not a strategy. BPM is the discipline that decides what work needs doing, who is fit to do it, and how its contribution to value is measured." />
+  <meta property="og:url" content="https://garysamuelson.github.io/agentic/working-ai-put-to-task/" />
+  <meta property="og:image" content="https://garysamuelson.github.io/assets/header_working_ai_li.png" />
+  <meta property="og:image:secure_url" content="https://garysamuelson.github.io/assets/header_working_ai_li.png" />
+  <meta property="og:image:type" content="image/png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="The Working AI: Put to Task with Measured Output" />
+  <meta name="twitter:description" content="A practitioner's guide to placing AI in business process — AI is a class of worker, not a strategy. BPM is the discipline that decides what work needs doing, who is fit to do it, and how its contribution to value is measured." />
+  <meta name="twitter:url" content="https://garysamuelson.github.io/agentic/working-ai-put-to-task/" />
+  <meta name="twitter:image" content="https://garysamuelson.github.io/assets/header_working_ai_li.png" />
+
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#the-working-ai-put-to-task-with-measured-output" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Gary Samuelson — AI &amp; Architecture Research" class="md-header__button md-logo" aria-label="Gary Samuelson — AI & Architecture Research" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Gary Samuelson — AI & Architecture Research
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              The Working AI: Put to Task with Measured Output
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/garysamuelson/garysamuelson.github.io" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    garysamuelson/garysamuelson.github.io
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Gary Samuelson — AI &amp; Architecture Research" class="md-nav__button md-logo" aria-label="Gary Samuelson — AI & Architecture Research" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Gary Samuelson — AI & Architecture Research
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/garysamuelson/garysamuelson.github.io" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    garysamuelson/garysamuelson.github.io
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    The Working AI: Put to Task with Measured Output
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    The Working AI: Put to Task with Measured Output
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#a-practitioners-guide-to-placing-ai-in-business-process" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        A Practitioner's Guide to Placing AI in Business Process
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#executive-brief" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Executive Brief
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1-six-recommendations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Six Recommendations
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. Six Recommendations">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#11-treat-ai-as-a-worker-not-a-strategy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.1 Treat AI as a worker, not a strategy
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#12-four-step-inquiry" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.2 Four-step Inquiry
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#13-decide-which-of-two-ai-patterns-each-task-needs-and-design-accordingly" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.3 Decide which of two AI patterns each task needs — and design accordingly
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#14-treat-hybrid-as-the-default-not-a-transitional-state" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.4 Treat hybrid as the default — not a transitional state
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#15-add-three-governance-extensions-to-your-existing-bpm-stack" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.5 Add three governance extensions to your existing BPM stack
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#16-make-goal-clarity-the-gating-condition-for-every-ai-deployment" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.6 Make goal clarity the gating condition for every AI deployment
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-five-anti-patterns-to-avoid" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Five Anti-Patterns to Avoid
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-the-decision-workflow-at-a-glance" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. The Decision Workflow at a Glance
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-the-architectural-placement" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. The Architectural Placement
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. The Architectural Placement">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#41-the-hierarchy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.1 The Hierarchy
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#42-three-foundational-ideas-that-make-the-placement-work" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.2 Three Foundational Ideas That Make the Placement Work
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#43-two-ways-ai-enters-the-worker-layer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.3 Two Ways AI Enters the Worker Layer
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-agentic-frameworks-are-rediscovering-bpm" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Agentic Frameworks Are Rediscovering BPM
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-why-ai-projects-miss-the-short-circuit" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. Why AI Projects Miss — The Short-Circuit
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6. Why AI Projects Miss — The Short-Circuit">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#61-the-path-ai-bypasses" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.1 The Path AI Bypasses
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#62-what-prompt-code-skips" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.2 What "Prompt → Code" Skips
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#63-both-patterns-inherit-the-risk" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.3 Both Patterns Inherit the Risk
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#64-what-bpm-reinstates" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.4 What BPM Reinstates
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-ai-practice-and-bpm-a-symmetric-inventory" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. AI Practice and BPM — A Symmetric Inventory
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="7. AI Practice and BPM — A Symmetric Inventory">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#71-ai-engineering-methods-mapped-to-bpm-concerns" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.1 AI Engineering Methods Mapped to BPM Concerns
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#72-what-ai-engineering-lacks-that-bpm-already-provides" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.2 What AI Engineering Lacks That BPM Already Provides
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#73-the-symmetric-contribution" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.3 The Symmetric Contribution
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-pattern-continuity-the-2015-architecture-already-had-the-slot" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8. Pattern Continuity — The 2015 Architecture Already Had the Slot
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="8. Pattern Continuity — The 2015 Architecture Already Had the Slot">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#81-the-2015-pattern" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8.1 The 2015 Pattern
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#82-the-mapping-element-by-element" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8.2 The Mapping, Element by Element
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#83-why-the-pattern-holds" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8.3 Why the Pattern Holds
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#84-three-governance-extensions-required-by-2026" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8.4 Three Governance Extensions Required by 2026
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#85-the-pattern-restated" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8.5 The Pattern Restated
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9-thesis-and-implications" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9. Thesis and Implications
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="9. Thesis and Implications">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#91-thesis" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9.1 Thesis
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#92-follow-on-work" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9.2 Follow-On Work
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#10-references" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10. References
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="10. References">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#bpm-foundations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        BPM Foundations
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#software-engineering-and-domain-modeling-foundations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Software Engineering and Domain Modeling Foundations
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#value-chain-and-business-model-theory" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Value Chain and Business Model Theory
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#agentic-bpm-arxiv-research-20252026" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Agentic BPM — arXiv Research (2025–2026)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cross-references-authors-prior-work" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cross-References (Author's Prior Work)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../agentic-agency-and-workflows/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Agentic Agency & Workflows
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AI Governance in Healthcare
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    AI Governance in Healthcare
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../healthcare/healthcare-accountability/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Who Is Accountable?
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../governance-gap/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    The Governance Gap
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Semantic AI
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Semantic AI
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../semantic-ai/cpg-campaign-simplified-workflow/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    The Ontology Process
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../semantic-ai/inter-process-semantic-collaboration/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    When Processes Finally Talk to Each Other
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../semantic-ai/aspect-oriented-process-management/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Aspect-Oriented Process Management
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tags/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tags
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#a-practitioners-guide-to-placing-ai-in-business-process" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        A Practitioner's Guide to Placing AI in Business Process
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#executive-brief" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Executive Brief
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1-six-recommendations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Six Recommendations
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. Six Recommendations">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#11-treat-ai-as-a-worker-not-a-strategy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.1 Treat AI as a worker, not a strategy
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#12-four-step-inquiry" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.2 Four-step Inquiry
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#13-decide-which-of-two-ai-patterns-each-task-needs-and-design-accordingly" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.3 Decide which of two AI patterns each task needs — and design accordingly
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#14-treat-hybrid-as-the-default-not-a-transitional-state" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.4 Treat hybrid as the default — not a transitional state
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#15-add-three-governance-extensions-to-your-existing-bpm-stack" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.5 Add three governance extensions to your existing BPM stack
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#16-make-goal-clarity-the-gating-condition-for-every-ai-deployment" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.6 Make goal clarity the gating condition for every AI deployment
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-five-anti-patterns-to-avoid" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Five Anti-Patterns to Avoid
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-the-decision-workflow-at-a-glance" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. The Decision Workflow at a Glance
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-the-architectural-placement" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. The Architectural Placement
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. The Architectural Placement">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#41-the-hierarchy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.1 The Hierarchy
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#42-three-foundational-ideas-that-make-the-placement-work" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.2 Three Foundational Ideas That Make the Placement Work
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#43-two-ways-ai-enters-the-worker-layer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.3 Two Ways AI Enters the Worker Layer
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-agentic-frameworks-are-rediscovering-bpm" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Agentic Frameworks Are Rediscovering BPM
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-why-ai-projects-miss-the-short-circuit" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. Why AI Projects Miss — The Short-Circuit
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6. Why AI Projects Miss — The Short-Circuit">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#61-the-path-ai-bypasses" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.1 The Path AI Bypasses
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#62-what-prompt-code-skips" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.2 What "Prompt → Code" Skips
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#63-both-patterns-inherit-the-risk" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.3 Both Patterns Inherit the Risk
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#64-what-bpm-reinstates" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.4 What BPM Reinstates
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-ai-practice-and-bpm-a-symmetric-inventory" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. AI Practice and BPM — A Symmetric Inventory
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="7. AI Practice and BPM — A Symmetric Inventory">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#71-ai-engineering-methods-mapped-to-bpm-concerns" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.1 AI Engineering Methods Mapped to BPM Concerns
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#72-what-ai-engineering-lacks-that-bpm-already-provides" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.2 What AI Engineering Lacks That BPM Already Provides
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#73-the-symmetric-contribution" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.3 The Symmetric Contribution
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-pattern-continuity-the-2015-architecture-already-had-the-slot" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8. Pattern Continuity — The 2015 Architecture Already Had the Slot
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="8. Pattern Continuity — The 2015 Architecture Already Had the Slot">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#81-the-2015-pattern" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8.1 The 2015 Pattern
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#82-the-mapping-element-by-element" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8.2 The Mapping, Element by Element
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#83-why-the-pattern-holds" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8.3 Why the Pattern Holds
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#84-three-governance-extensions-required-by-2026" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8.4 Three Governance Extensions Required by 2026
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#85-the-pattern-restated" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8.5 The Pattern Restated
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9-thesis-and-implications" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9. Thesis and Implications
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="9. Thesis and Implications">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#91-thesis" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9.1 Thesis
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#92-follow-on-work" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9.2 Follow-On Work
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#10-references" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10. References
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="10. References">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#bpm-foundations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        BPM Foundations
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#software-engineering-and-domain-modeling-foundations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Software Engineering and Domain Modeling Foundations
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#value-chain-and-business-model-theory" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Value Chain and Business Model Theory
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#agentic-bpm-arxiv-research-20252026" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Agentic BPM — arXiv Research (2025–2026)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cross-references-authors-prior-work" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cross-References (Author's Prior Work)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<p><img alt="The Working AI: Put to Task with Measured Output — A Practitioner's Guide to Placing AI in Business Process" src="../../assets/header_working_ai_li.svg" /></p>
+<h1 id="the-working-ai-put-to-task-with-measured-output">The Working AI: Put to Task with Measured Output<a class="headerlink" href="#the-working-ai-put-to-task-with-measured-output" title="Permanent link">&para;</a></h1>
+<h3 id="a-practitioners-guide-to-placing-ai-in-business-process">A Practitioner's Guide to Placing AI in Business Process<a class="headerlink" href="#a-practitioners-guide-to-placing-ai-in-business-process" title="Permanent link">&para;</a></h3>
+<p><strong>Author:</strong> Gary Samuelson
+<strong>Date:</strong> May 9, 2026
+<strong>Status:</strong> Working paper draft — v2 (practitioner restructure)</p>
+<hr />
+<h2 id="executive-brief">Executive Brief<a class="headerlink" href="#executive-brief" title="Permanent link">&para;</a></h2>
+<p>Most enterprises talk about AI as if it were a strategy, a transformation, or a feature to bolt onto existing systems. It is none of those things. <strong>AI is a class of worker</strong> — and like any worker, it needs a job description, a place in the workflow, and a clear measure of what good output looks like.</p>
+<p>That job description already exists. Business Process Management (BPM) has spent twenty-five years answering exactly the questions AI deployments now stumble over: <em>What work needs doing? Who (or what) is fit to do it? How do we know it added value?</em> The architecture BPM gave us in 2015 — process model orchestrating services that perform tasks — already had the slot AI plugs into. Adding "autonomous agent" as a worker type alongside human and system service does not break that architecture. It validates it.</p>
+<p>The thesis, in one sentence:</p>
+<blockquote>
+<p><strong>AI without BPM is a worker without a job description; BPM without AI is a job description with the wrong workforce.</strong></p>
+</blockquote>
+<hr />
+<h2 id="1-six-recommendations">1. Six Recommendations<a class="headerlink" href="#1-six-recommendations" title="Permanent link">&para;</a></h2>
+<h3 id="11-treat-ai-as-a-worker-not-a-strategy">1.1 Treat AI as a worker, not a strategy<a class="headerlink" href="#11-treat-ai-as-a-worker-not-a-strategy" title="Permanent link">&para;</a></h3>
+<p>AI is a capability consumed by tasks. It is not the business model, not the value chain, and not the process model. Place AI at the bottom of the architecture — in the worker slot of a task — and the rest of the design falls into place. Place AI anywhere else and the design collapses into vendor demos and proofs-of-concept that never reach production.</p>
+<h3 id="12-four-step-inquiry">1.2 Four-step Inquiry<a class="headerlink" href="#12-four-step-inquiry" title="Permanent link">&para;</a></h3>
+<ol>
+<li><strong>What part of the business model is under stress?</strong> (Cost too high, value too low, cycle time too long, quality too variable, customer experience eroding.) If you cannot answer this, AI is not the next step.</li>
+<li><strong>Which value chain activity is responsible?</strong> Map the stress to a primary or support activity. AI applied to the wrong activity solves a problem nobody is measuring.</li>
+<li><strong>Which process — and which task within that process — embodies that activity?</strong> Decompose using BPM methods. Identify the task's inputs, outputs, completion criteria, exception paths, and current worker assignment.</li>
+<li><strong>At the task level, what does an AI worker offer that the current worker does not?</strong> This is the only legitimate place to introduce AI. The candidate categories are perception, reasoning, generation, coordination, and anomaly detection.</li>
+</ol>
+<p>If any link in the chain is missing, the deployment is unmotivated and will fail to demonstrate value.</p>
+<h3 id="13-decide-which-of-two-ai-patterns-each-task-needs-and-design-accordingly">1.3 Decide which of two AI patterns each task needs — and design accordingly<a class="headerlink" href="#13-decide-which-of-two-ai-patterns-each-task-needs-and-design-accordingly" title="Permanent link">&para;</a></h3>
+<p>AI enters the worker layer in two distinct patterns. The choice between them is not a maturity question. It is a value-chain placement question: <em>what is the human's actual unique contribution in this task?</em></p>
+<table>
+<thead>
+<tr>
+<th>Pattern</th>
+<th>Worker</th>
+<th>UI status</th>
+<th>Human role</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Agent-as-worker</strong></td>
+<td>Agent</td>
+<td>Form disappears</td>
+<td>Supervises volume via dashboard</td>
+</tr>
+<tr>
+<td><strong>AI-Inside</strong></td>
+<td>Human + embedded AI</td>
+<td>Form persists</td>
+<td>Authors judgment; AI absorbs correlation</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><strong>Agent-as-worker</strong> when the task is well-bounded, high-volume, and the human's value is supervising throughput. The form disappears; design effort moves to dashboards, control towers, and handoff surfaces.</li>
+<li><strong>AI-Inside</strong> when judgment is the actual product — when the human is irreplaceable as the author of the decision. The form persists; an AI co-worker reads the same fields the human is reading and absorbs the correlation work that surrounds the judgment. The parallel is GitHub Copilot: not a replacement for the engineer, but an inline collaborator. The business-AI version carries something Copilot does not — knowledge of the task's place in the process model, the value chain, and the business model.</li>
+</ul>
+<p><img alt="Figure 1. The two AI worker patterns. Left: Agent-as-worker — the agent executes the task autonomously, the form disappears, the human supervises throughput from a dashboard. Right: AI-Inside — the human stays in the seat with AI embedded alongside, the form persists, the human authors the judgment while AI absorbs the surrounding correlation work." src="../../assets/images/ai_worker_patterns_comparison.svg" /></p>
+<p><em>Figure 1. The two patterns differ in who performs the task and what the human's role becomes. Agent-as-worker removes the human from the execution path. AI-Inside keeps the human in it.</em></p>
+<h3 id="14-treat-hybrid-as-the-default-not-a-transitional-state">1.4 Treat hybrid as the default — not a transitional state<a class="headerlink" href="#14-treat-hybrid-as-the-default-not-a-transitional-state" title="Permanent link">&para;</a></h3>
+<p>Most strategic roles need both patterns simultaneously, on the same role, over the same governance substrate. Agent-as-worker handles the high-volume well-bounded slice; AI-Inside handles the judgment-bound slice; the BPM process model routes the right cases to the right pattern. <strong>The hybrid posture is the mature posture.</strong> Building for one pattern only is leaving capability — and most of the long-run competitive value — on the table.</p>
+<h3 id="15-add-three-governance-extensions-to-your-existing-bpm-stack">1.5 Add three governance extensions to your existing BPM stack<a class="headerlink" href="#15-add-three-governance-extensions-to-your-existing-bpm-stack" title="Permanent link">&para;</a></h3>
+<p>For deterministic workers — humans and system services — the 2015 BPM architecture is sufficient. For non-deterministic workers — agents — three extensions are required:</p>
+<ol>
+<li><strong>Engine-enforced confidence gating.</strong> The process engine must evaluate agent-output confidence and route accordingly. BPMN Conditional Events shipping in Camunda 8.9 fill this gap [Samuelson 2026a].</li>
+<li><strong>Semantic decision lineage.</strong> The audit trail must record not just <em>what ran</em> but <em>what domain concepts the agent reasoned over.</em> Execution audit log + ontology lineage = the complete trail [Samuelson 2026a].</li>
+<li><strong>Engine-aware tool protocol.</strong> Agents need a standard way to call into the process engine. MCP (Model Context Protocol) is the answer; Camunda 8.9's MCP Gateway is the first production implementation [Samuelson 2026a].</li>
+</ol>
+<p>These are <em>extensions</em> of the 2015 architecture, not replacements for it.</p>
+<h3 id="16-make-goal-clarity-the-gating-condition-for-every-ai-deployment">1.6 Make goal clarity the gating condition for every AI deployment<a class="headerlink" href="#16-make-goal-clarity-the-gating-condition-for-every-ai-deployment" title="Permanent link">&para;</a></h3>
+<p>Twenty-two BPM practitioners surveyed in 2025 named <em>"define clear business goals"</em> the #1 prerequisite for responsible AI agent adoption [Vu et al. 2025]. AI does not relax this requirement — it amplifies it. An autonomous agent will optimize for whatever goal you actually specified, which may not be the goal you intended. Goal clarity is not an artifact of the project initiation phase; it is the gating condition for every subsequent design decision.</p>
+<hr />
+<h2 id="2-five-anti-patterns-to-avoid">2. Five Anti-Patterns to Avoid<a class="headerlink" href="#2-five-anti-patterns-to-avoid" title="Permanent link">&para;</a></h2>
+<p>These are the framings the architecture rules out. They look reasonable in isolation; each one quietly disconnects AI from the business intent that gives it value.</p>
+<table>
+<thead>
+<tr>
+<th>Anti-pattern</th>
+<th>Why it fails</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>AI as strategy</strong></td>
+<td>A capability is not a strategy. Strategy decides whether to use a capability and for what.</td>
+</tr>
+<tr>
+<td><strong>AI as a value chain activity</strong></td>
+<td>A means within an activity is not the activity itself.</td>
+</tr>
+<tr>
+<td><strong>AI as a task</strong></td>
+<td>A worker that performs tasks is not a task.</td>
+</tr>
+<tr>
+<td><strong>AI as a replacement for the process model</strong></td>
+<td>Agents without process frames produce uncontrolled autonomy — which is not architecture, it is hope [Calvanese et al. 2026].</td>
+</tr>
+<tr>
+<td><strong>AI as a governance solution</strong></td>
+<td>AI is a governance <em>problem</em> that BPM solves. Treating it as a solution inverts the dependency.</td>
+</tr>
+</tbody>
+</table>
+<p>The compound anti-pattern is what 2025 practitioner discourse called <em>vibe coding</em>: prompt → code, skipping the domain owner, the analyst, and the process model. The technical output passes tests; the business outcome misses [Brooks 1987].</p>
+<hr />
+<h2 id="3-the-decision-workflow-at-a-glance">3. The Decision Workflow at a Glance<a class="headerlink" href="#3-the-decision-workflow-at-a-glance" title="Permanent link">&para;</a></h2>
+<p>The six recommendations and the anti-pattern list above sit on a single underlying workflow. Every AI deployment that produces measurable business value passes through the same eight checkpoints — in order — and every deployment that fails to produce value can be traced back to a checkpoint that was skipped.</p>
+<p>The first three checkpoints are BPM work: locate the stress, map it to a value-chain activity, decompose to the task. They produce no AI; they produce the <em>grounding</em> without which AI cannot demonstrate value. The next two checkpoints are the AI-specific decisions: which task-level capability is in play, and which of the two worker patterns (or the hybrid of both) fits the task. The final three checkpoints are the closing discipline: governance extensions, goal clarity at the contract, and the deploy/measure/refine loop.</p>
+<p>No step is optional. Skipping a step does not accelerate the deployment — it defers the cost of skipping it to a later, more expensive moment.</p>
+<p><img alt="Figure 2. The eight-step AI deployment workflow. Steps 1–3 are BPM grounding; step 4 isolates the AI-eligible capability; step 5 chooses the worker pattern; steps 6–7 are the governance and goal-clarity gates; step 8 closes the loop." src="../../assets/images/ai_deployment_workflow.svg" /></p>
+<p><em>Figure 2. The eight-step AI deployment workflow. The first four steps are BPM grounding. Step 5 is the worker-pattern decision. Steps 6–7 are the governance and goal-clarity gates. Step 8 closes the loop on production outcome.</em></p>
+<hr />
+<h2 id="4-the-architectural-placement">4. The Architectural Placement<a class="headerlink" href="#4-the-architectural-placement" title="Permanent link">&para;</a></h2>
+<p>The workflow of §3 only works if AI has a defined place in the architecture. The recurring confusion in enterprise AI conversations — <em>is AI a strategy, a platform, a capability, a worker?</em> — is what makes most AI investment decisions inconsistent across the same organization. One team treats AI as a transformation initiative; another treats it as a feature; a third treats it as an infrastructure layer. None of those framings produces a stable basis for prioritizing investment, designing systems, or measuring outcome.</p>
+<p>The BPM literature already settled the question. AI is a <em>worker type</em> — one of several — that a process model binds to a task. That single placement choice is what makes the rest of the design tractable: it tells the architect what changes (the worker pool gains a new participant class, with new governance requirements) and what does not change (the layers above the task continue to govern <em>what</em> the work is and <em>why</em> it is being done).</p>
+<h3 id="41-the-hierarchy">4.1 The Hierarchy<a class="headerlink" href="#41-the-hierarchy" title="Permanent link">&para;</a></h3>
+<p>Five layers, top to bottom — each one consumed by the layer above and consuming the layer below. AI enters at the bottom.</p>
+<p><img alt="Figure 3. The four-layer architectural hierarchy — business model → value chain → process model → task → worker. AI enters at the worker slot, not at any layer above it." src="../../assets/images/bpm_ai_architecture_layers.svg" /></p>
+<p><em>Figure 3. The architectural hierarchy. Each layer consumes the layer below as services and is itself consumed as a service by the layer above. AI enters at the worker slot of a task.</em></p>
+<p><strong>AI lives in the bottom layer.</strong> It does not replace any layer above it. It is one of several worker types that a process model can bind to a task.</p>
+<p>This placement is what every other claim in the paper rests on. <em>The business model</em> is unaffected by the introduction of AI — the customer-value contract is the same whether work is done by a human, a system service, or an agent. <em>The value chain</em> is unaffected — Porter's primary and support activities still describe how value is produced. <em>The process model</em> is unaffected as a structural artifact — BPMN tasks, sequence flows, gateways, roles, and KPIs continue to define how work happens, by whom, and how it is measured. <em>The task</em> is unaffected as an abstract container — inputs, outputs, decision criteria, and completion semantics are the same whether the worker is human or autonomous. Only the <em>worker layer</em> gains a new participant class, and only the <em>governance surface around that worker</em> needs to extend.</p>
+<p>That invariance is the architectural payoff. The four upper layers — the four layers carrying business intent — do not need to be redesigned to accommodate AI. They need to be <em>consulted</em>. AI deployments fail when those layers are skipped, not when they are followed.</p>
+<h3 id="42-three-foundational-ideas-that-make-the-placement-work">4.2 Three Foundational Ideas That Make the Placement Work<a class="headerlink" href="#42-three-foundational-ideas-that-make-the-placement-work" title="Permanent link">&para;</a></h3>
+<p>The placement claim rests on three foundational ideas about BPM that pre-date the agentic-AI era. Each is established literature; each is exactly the right scaffolding for placing AI in 2026.</p>
+<p><strong>Value chain and BPM are complementary, not competitive.</strong> Porter's value chain answers <em>what value-add activities exist in this business</em> [Porter 1985]. BPM answers <em>how those activities are actually performed by people and systems collaborating</em> [Dumas et al. 2013]. The value chain is the macro view of value creation; BPM is the micro view of how work happens. They do not compete; they decompose [Samuelson 2016].</p>
+<p><strong>The BPM task is abstract; the worker is bound by the process model.</strong> A BPMN task is a container whose definition is abstract — it specifies <em>what</em> gets done, not <em>who</em> does it. The worker (human, system service, or agent) is bound to the task by the process model and role assignment [OMG 2011; Samuelson 2016]. This is the architectural insight that makes AI placement tractable. AI does not replace BPM tasks. AI becomes a kind of worker that the process model can assign to a task. The discipline of task definition stays exactly the same.</p>
+<p><strong>The service consumption principle.</strong> [Cummins 2010] supplies the missing link between architecture and AI: <em>"Each value chain is a use case of the services it uses."</em> If a value chain is a use case of services, then AI capabilities are services consumed by tasks; tasks are choreographed in processes; processes implement value chain activities; value chain activities deliver the business model. AI does not enter at the strategy layer. It enters at the service layer — the same layer that has always held data services, business rules, integration adapters, and human-task UIs. What changes in 2026 is that the service layer can now contain <em>autonomous services</em> — agents that perceive, reason, and act. That changes the governance requirements, but not the architectural placement.</p>
+<p><img alt="Figure 4. Two structural principles — task abstraction with worker binding, and the service consumption chain that places AI in the service layer." src="../../assets/images/bpm_section2_architectural_principles.svg" /></p>
+<h3 id="43-two-ways-ai-enters-the-worker-layer">4.3 Two Ways AI Enters the Worker Layer<a class="headerlink" href="#43-two-ways-ai-enters-the-worker-layer" title="Permanent link">&para;</a></h3>
+<p>The worker layer is not a single entry point. AI enters it in two distinct patterns, recapped here for the foundational record (Recommendation 1.3 above is the operational form):</p>
+<p><strong>Pattern 1: Agent as worker.</strong> The agent takes the task entirely. No human performs the task step; the human supervises the volume through a dashboard. The task UI disappears — agents do not need forms. Governance, audit, and exception routing remain in the process model above. This is the pattern the Agentic BPM Manifesto [Calvanese et al. 2026] describes.</p>
+<p><strong>Pattern 2: AI-Inside.</strong> The human stays in the seat. The task UI stays. An AI co-worker is embedded <em>inside</em> the form alongside the human worker — not in a separate chat window, but reading the same fields the human is reading, in real time. The human authors every decision; AI absorbs the correlation work that currently surrounds and dilutes that authorship.</p>
+<p><img alt="Figure 5. Two entry points into the worker layer. Left: Pattern 1 — the agent takes the task entirely; the form disappears; the human supervises throughput from a dashboard. Right: Pattern 2 — the human stays in the seat with AI embedded inside the form; judgment stays with the human; AI absorbs correlation, with aspects injected via the AOP substrate. Both patterns sit inside the same BPM process frame." src="../../assets/images/ai_inside_vs_agent_worker.svg" /></p>
+<p><em>Figure 5. The worker layer is not a single entry point. The BPM process model governs both patterns identically above the worker slot.</em></p>
+<p>A human completing a task form does two kinds of work simultaneously: <strong>correlation</strong> (retrieving values from other systems, cross-checking policy, verifying prior case history) and <strong>judgment</strong> (deciding what those values mean for this case, weighing soft factors, recognizing edge cases, knowing when to escalate). These are entangled in practice — the human spends most of their time on correlation because the judgment cannot proceed without it. AI-Inside unbundles them. An LLM-class agent is the only artifact in the system that can hold a runtime-wide context window open — instance history, peer-task state, semantic lineage, policy version, situational context from external systems — while the human types into a single field. The agent absorbs the correlation; the human's time collapses to the judgment work that is genuinely theirs.</p>
+<p>The asymmetry is not that AI is smarter. The human is still the author of the decision; the design assumes and requires it. The asymmetry is purely in context-holding capacity: AI can maintain eight cross-system concerns between keystrokes; a human cannot. When the correlation is handled, the human's intellect — the part that is irreplaceable — becomes the binding constraint of the system rather than its bottleneck.</p>
+<p>Through the AOP-mediated aspect substrate described in [Samuelson 2026b], each of those cross-system concerns arrives as an injected aspect — goal context, preference weights, business-policy version, prior-case outcomes — without coupling the task implementation to the systems that hold them. The human worker never leaves the form; the AI brings the world to the form.</p>
+<p>Both patterns sit inside the same BPM process frame. The process model determines which tasks go to which pattern, enforces governance in both, and routes exceptions from both. Neither pattern requires changing the layer above the worker.</p>
+<hr />
+<h2 id="5-agentic-frameworks-are-rediscovering-bpm">5. Agentic Frameworks Are Rediscovering BPM<a class="headerlink" href="#5-agentic-frameworks-are-rediscovering-bpm" title="Permanent link">&para;</a></h2>
+<p>A pattern is visible across the agentic-AI literature of the last eighteen months: the problems agent frameworks now describe as novel are problems BPM, workflow engines, and saga-based orchestration solved years ago. The framing is new; the underlying engineering is not. Each capability long-running agentic systems are reaching for maps directly onto a capability BPM has shipped for two decades:</p>
+<table>
+<thead>
+<tr>
+<th>What agentic frameworks are reaching for</th>
+<th>What BPM already provides</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Agent state persistence and checkpointing</td>
+<td>Process instance state, persistent across crashes [Weske 2012]</td>
+</tr>
+<tr>
+<td>Durable execution, replay from history</td>
+<td>Audit log + event sourcing in BPMN engines [Ruecker &amp; Strauch 2025]</td>
+</tr>
+<tr>
+<td>Saga / compensating actions across services</td>
+<td>BPMN compensation events, transactional sub-processes [OMG 2011; Bernstein 2009]</td>
+</tr>
+<tr>
+<td>Long-running orchestration with retries, timeouts, escalations</td>
+<td>BPMN timer events, escalation events, boundary events [OMG 2011]</td>
+</tr>
+<tr>
+<td>Audit trails and approval gates for governance</td>
+<td>Process performance management; user-task lifecycle [van der Aalst 2016; Sinur, Misiak &amp; Biernatowski 2025]</td>
+</tr>
+</tbody>
+</table>
+<p>What agentic frameworks legitimately add is not new orchestration plumbing. It is a new <em>style of decision-making inside a step</em>: an LLM-based worker that selects sub-steps and tools at runtime rather than following a fixed BPMN path. That is genuinely new at the worker layer. It is not new at the process layer.</p>
+<p>The mature posture is hybrid: BPMN defines the overall process and provides the governance frame; inside designated ad-hoc sub-processes, an agent is permitted to choose actions, tools, and order dynamically [Calvanese et al. 2026]. <strong>Agentic AI does not abolish BPM; it makes BPM indispensable.</strong> Once agents touch real processes with real money and real risk, the disciplines of process modeling, orchestration, durable state, and measurement are non-negotiable — and they already exist.</p>
+<p><img alt="Figure 6. The capabilities agentic frameworks are now reaching for map directly onto BPM capabilities that have shipped for years. The mature posture is hybrid: BPM as governance frame, agents as workers inside it." src="../../assets/images/agentic_rediscovers_bpm.svg" /></p>
+<p>The 2026 research literature names this convergence directly. Agentic Business Process Management (APM) governs autonomous agents executing processes within explicit frames — <em>"a paradigm shift… where software and human agents act as primary functional entities that perceive, reason, and act within explicit process frames"</em> [Calvanese et al. 2026]. Four agent capabilities are required: <strong>framed autonomy</strong> (BPMN process is the frame), <strong>explainability</strong> (audit log + decision lineage), <strong>conversational actionability</strong> (process-aware UX), and <strong>self-modification</strong> (feedback into process improvement). Agentic BPMS shifts focus from automation to autonomy and from design-driven to data-driven management of processes — <em>"leveraging process mining techniques"</em> [Dumas, Milani &amp; Chapela-Campa 2026].</p>
+<p>The key word everywhere is <em>framed</em>. Autonomy is constrained, aligned, and made operational <em>through process awareness</em>. That is the BPM contribution to the agentic stack.</p>
+<hr />
+<h2 id="6-why-ai-projects-miss-the-short-circuit">6. Why AI Projects Miss — The Short-Circuit<a class="headerlink" href="#6-why-ai-projects-miss-the-short-circuit" title="Permanent link">&para;</a></h2>
+<p>Most AI projects that fail to demonstrate value fail for the same reason: they short-circuit the layers that carry business intent.</p>
+<h3 id="61-the-path-ai-bypasses">6.1 The Path AI Bypasses<a class="headerlink" href="#61-the-path-ai-bypasses" title="Permanent link">&para;</a></h3>
+<p>Software was never supposed to be written from a prompt. The path from business need to working system has historically passed through layers, each of which adds context the next layer depends on:</p>
+<ol>
+<li><strong>Executive direction</strong> — the business roadmap; where the enterprise is going and why.</li>
+<li><strong>Domain owner interpretation</strong> — the people who understand the actual function of the business interpret executive direction in terms of what their domain does and how it produces value. The domain owner is the carrier of unwritten knowledge: regulatory edges, failure modes that matter, customer commitments that cannot be missed.</li>
+<li><strong>Business analyst translation</strong> — value chains, process models (BPMN), and enterprise-architecture artifacts that turn domain understanding into specifiable structure with measured outcomes.</li>
+<li><strong>Software engineer implementation</strong> — code that realizes the structure, conformant to the domain model and accountable to the KPIs the process declares.</li>
+</ol>
+<p>This is the path Domain-Driven Design [Evans 2003; Vernon 2013] formalized. It is also the path that twenty-five years of BPM literature [Dumas et al. 2013; Weske 2012] presupposes. The path's job is to carry <em>business intent</em> down through the layers without losing it.</p>
+<p><img alt="Figure 7. The full path (green) passes intent through all four layers. The short-circuit (red, dashed) jumps from executive direction to implementation, bypassing the two layers that carry unwritten domain knowledge and specifiable structure." src="../../assets/images/short_circuit_diagram.svg" /></p>
+<p><em>Figure 7. Two paths to the same implementation. The full path preserves business intent at every layer. The short-circuit produces fast code against a partial prompt.</em></p>
+<h3 id="62-what-prompt-code-skips">6.2 What "Prompt → Code" Skips<a class="headerlink" href="#62-what-prompt-code-skips" title="Permanent link">&para;</a></h3>
+<p>When an AI tool is invoked at the bottom of the stack with a natural-language prompt, layers 2 and 3 are skipped. The prompt captures whatever fragment of intent the prompter happens to articulate at the moment they articulate it. Everything the domain owner would have known — the unstated rules, the regulatory edges, the failure modes that matter, the value-chain context that defines what success looks like — is absent unless the prompter happens to be the domain owner <em>and</em> happens to remember it.</p>
+<p>[Brooks 1987] anticipated this forty years ago when he distinguished the <em>essential</em> difficulty of software (understanding what to build) from the <em>accidental</em> difficulty (how to build it). AI compresses the accidental difficulty toward zero. <strong>It does nothing for the essential difficulty.</strong> Code shipped without the layers above it is, at best, a fast implementation of a misunderstood requirement.</p>
+<h3 id="63-both-patterns-inherit-the-risk">6.3 Both Patterns Inherit the Risk<a class="headerlink" href="#63-both-patterns-inherit-the-risk" title="Permanent link">&para;</a></h3>
+<p>Both AI patterns from Recommendation 1.3 inherit the short-circuit risk:</p>
+<ul>
+<li><strong>Agent-as-worker.</strong> Without a process frame, the agent optimizes for whatever the prompt encoded — not for the domain owner's understanding of what the task is supposed to accomplish. The Manifesto's framed-autonomy requirement [Calvanese et al. 2026] is precisely the corrective.</li>
+<li><strong>AI-Inside.</strong> The human stays in the seat, but AI produces fast, plausible-looking implementations of whatever the human asks for. The human's job becomes ensuring that what they ask for corresponds to actual business intent. Without the discipline of the value chain → process → task chain, even AI-Inside drifts toward hollow, technology-centric implementation.</li>
+</ul>
+<p>Both patterns require the same corrective. The corrective is not better prompts. <strong>It is the reinstatement of the layers AI bypassed.</strong></p>
+<h3 id="64-what-bpm-reinstates">6.4 What BPM Reinstates<a class="headerlink" href="#64-what-bpm-reinstates" title="Permanent link">&para;</a></h3>
+<p>BPM does not slow AI down. It supplies what the prompt cannot: an explicit, modeled record of business intent at every layer above the implementation. The <strong>value chain</strong> records why a function exists in the business and how it contributes to revenue. The <strong>process model</strong> records how that function is performed, by whom, and with what measured output. The <strong>task</strong> records the unit of work, its inputs, its outputs, its completion semantics, and its acceptance criteria.</p>
+<p>When an AI worker is bound to a task in a process in a value chain, the AI no longer has to infer business intent from a prompt. The intent is in the model. The AI's job collapses to what AI is good at: executing within a frame, producing a measured output, and emitting lineage that confirms it operated against the right specification.</p>
+<p>This is what it means to refocus on business intent. <em>Not less AI.</em> AI placed where intent is already written down — exactly the placement Part II specifies.</p>
+<hr />
+<h2 id="7-ai-practice-and-bpm-a-symmetric-inventory">7. AI Practice and BPM — A Symmetric Inventory<a class="headerlink" href="#7-ai-practice-and-bpm-a-symmetric-inventory" title="Permanent link">&para;</a></h2>
+<h3 id="71-ai-engineering-methods-mapped-to-bpm-concerns">7.1 AI Engineering Methods Mapped to BPM Concerns<a class="headerlink" href="#71-ai-engineering-methods-mapped-to-bpm-concerns" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>AI Method / Practice</th>
+<th>What it does</th>
+<th>Where it belongs in BPM</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Prompt engineering</td>
+<td>Crafts inputs to LLMs for desired outputs</td>
+<td>Task input specification</td>
+</tr>
+<tr>
+<td>Retrieval-Augmented Generation (RAG)</td>
+<td>Retrieves relevant context, then generates</td>
+<td>Task data context preparation</td>
+</tr>
+<tr>
+<td>Knowledge graph integration</td>
+<td>Grounds reasoning in structured domain semantics</td>
+<td>Domain ontology / shared task context</td>
+</tr>
+<tr>
+<td>Agent framework assembly</td>
+<td>Wires LLMs to tools and memory</td>
+<td>Worker implementation for autonomous tasks</td>
+</tr>
+<tr>
+<td>Tool calling / MCP</td>
+<td>Lets agents invoke external services</td>
+<td>Service interface for agent workers</td>
+</tr>
+<tr>
+<td>Evaluation and benchmarking</td>
+<td>Measures agent quality on test sets</td>
+<td>Pre-deployment validation, conformance testing</td>
+</tr>
+<tr>
+<td>Fine-tuning / RLHF</td>
+<td>Adapts a model to domain-specific behavior</td>
+<td>Worker specialization for task families</td>
+</tr>
+<tr>
+<td>Guardrails / output filtering</td>
+<td>Constrains agent outputs to policy</td>
+<td>Task contract enforcement</td>
+</tr>
+<tr>
+<td>Observability / tracing</td>
+<td>Records agent decisions and intermediate steps</td>
+<td>Audit log integration</td>
+</tr>
+<tr>
+<td>Process mining</td>
+<td>Discovers actual processes from event logs</td>
+<td>Discovery method for BPM and Agentic BPM</td>
+</tr>
+</tbody>
+</table>
+<p>Every method on the left has a natural home in a BPM concern on the right. None of them is a new architectural layer.</p>
+<h3 id="72-what-ai-engineering-lacks-that-bpm-already-provides">7.2 What AI Engineering Lacks That BPM Already Provides<a class="headerlink" href="#72-what-ai-engineering-lacks-that-bpm-already-provides" title="Permanent link">&para;</a></h3>
+<p>AI engineering has no mature equivalent of:</p>
+<ul>
+<li><strong>Process versioning and migration</strong> — BPM has had this for 25 years [Ruecker &amp; Strauch 2025].</li>
+<li><strong>Exception modeling</strong> — BPM has compensation, escalation, and boundary events [OMG 2011].</li>
+<li><strong>Role-based human task assignment</strong> — BPM has user task lifecycle [Sinur, Misiak &amp; Biernatowski 2025].</li>
+<li><strong>Conformance checking</strong> — BPM has process mining alignment [van der Aalst 2016; Dumas, Milani &amp; Chapela-Campa 2026].</li>
+<li><strong>End-to-end KPI connection</strong> — BPM has process performance management [van der Aalst 2016].</li>
+</ul>
+<p>These are precisely the capabilities the Agentic BPM Manifesto calls out as required [Calvanese et al. 2026]. The gaps in AI engineering are exactly what BPM brings to the table.</p>
+<h3 id="73-the-symmetric-contribution">7.3 The Symmetric Contribution<a class="headerlink" href="#73-the-symmetric-contribution" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>AI brings to BPM</th>
+<th>BPM brings to AI</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Cognitive task workers — unstructured inputs, graded judgments, NL interaction</td>
+<td>Goal clarity — knowing what work is for before specifying how</td>
+</tr>
+<tr>
+<td>Adaptive behavior — workers that improve from feedback</td>
+<td>Frames — boundaries that constrain autonomy without forbidding it</td>
+</tr>
+<tr>
+<td>Conversational interfaces — process invocation without custom UIs</td>
+<td>Decomposition — turning vague goals into specifiable tasks</td>
+</tr>
+<tr>
+<td>Pattern detection at scale — anomalies, drift, improvement opportunities</td>
+<td>Governance — versioning, exceptions, audit, role binding</td>
+</tr>
+<tr>
+<td></td>
+<td>Measurement — KPIs that connect task output to business outcomes</td>
+</tr>
+</tbody>
+</table>
+<p>Neither discipline is sufficient alone. Together they form what the Manifesto calls Agentic BPM [Calvanese et al. 2026] and what Dumas et al. call A-BPMS [Dumas, Milani &amp; Chapela-Campa 2026].</p>
+<hr />
+<h2 id="8-pattern-continuity-the-2015-architecture-already-had-the-slot">8. Pattern Continuity — The 2015 Architecture Already Had the Slot<a class="headerlink" href="#8-pattern-continuity-the-2015-architecture-already-had-the-slot" title="Permanent link">&para;</a></h2>
+<p>A common objection: the agentic era requires a new architecture. The historical record disagrees.</p>
+<h3 id="81-the-2015-pattern">8.1 The 2015 Pattern<a class="headerlink" href="#81-the-2015-pattern" title="Permanent link">&para;</a></h3>
+<p>The February 2015 post <em>Process Management Architecture: Overview of Methods, Features, and Capabilities</em> [Samuelson 2015] traced the architectural inversion that BPM made possible: the <em>process model becomes the orchestrator; everything below it is a service consumed by tasks.</em> The same business services — information services, business-transaction services, rules engines, security/RBAC, compliance — that previously sat behind a static application facade now sit behind a process model that orchestrates them. Application code no longer carries the workflow; the BPMN does. That pattern, published eleven years before the manifesto, is the same pattern the manifesto demands. The slots were already there.</p>
+<h3 id="82-the-mapping-element-by-element">8.2 The Mapping, Element by Element<a class="headerlink" href="#82-the-mapping-element-by-element" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>2015 BPM architecture element [Samuelson 2015]</th>
+<th>What agentic AI adds in 2026</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Task</strong> as a container for one or more services dedicated to value-add output [OMG 2011]</td>
+<td>Container now admits a third worker class: autonomous agents [Calvanese et al. 2026]</td>
+</tr>
+<tr>
+<td><strong>Task as AOP "concern"</strong> — crosscutting business domains</td>
+<td>Agents become crosscutting reasoning concerns injected into tasks via the process model</td>
+</tr>
+<tr>
+<td><strong>Business Context</strong> — exactly when, why, and how resources are consumed</td>
+<td>The "framed autonomy" the Manifesto demands [Calvanese et al. 2026]</td>
+</tr>
+<tr>
+<td><strong>Security / RBAC</strong> — who needs to do what with information</td>
+<td>Agents require explicit authorization scope; in 2026, MCP authorization claims captured in audit records [Samuelson 2026a]</td>
+</tr>
+<tr>
+<td><strong>Business Event</strong> — message container; "glue between situations in the real world and processes that react" [Weske 2012]</td>
+<td>Events trigger agents and agents emit events — same channeling mechanism, no new construct</td>
+</tr>
+<tr>
+<td><strong>Complex Event Processing</strong> — pattern, causality, correlation</td>
+<td>The AI/ML/process mining layer of agentic BPMS [Dumas, Milani &amp; Chapela-Campa 2026]</td>
+</tr>
+<tr>
+<td><strong>Business Transactions</strong> — long-running, atomic boundaries [Bernstein 2009]</td>
+<td>The agentic zone (BPMN ad-hoc sub-process) is the modern realization [Samuelson 2026a]</td>
+</tr>
+<tr>
+<td><strong>Business Domain Model</strong> = "enterprise ontology"</td>
+<td>The ontology layer driving agent decisions in the bidirectional thesis [Samuelson 2026a]</td>
+</tr>
+<tr>
+<td><strong>Actionable Knowledge</strong> — process data mining, dashboards, immediate pathways to action</td>
+<td>The agentic dashboard / advisor playbook pattern; aligns with the data-driven A-BPMS vision [Dumas, Milani &amp; Chapela-Campa 2026]</td>
+</tr>
+</tbody>
+</table>
+<p>The right-hand column reads like the 2026 Agentic BPM research agenda. The left-hand column was published in 2015. The architecture had the slots; the new participant class plugs into them.</p>
+<h3 id="83-why-the-pattern-holds">8.3 Why the Pattern Holds<a class="headerlink" href="#83-why-the-pattern-holds" title="Permanent link">&para;</a></h3>
+<p>The principle from §4.2 — <em>the BPM task is abstract; the worker is bound by the process model</em> — is the reason the 2015 architecture survives the agentic shift. When the only worker types were humans and system services, the architecture was already worker-agnostic. Adding "autonomous agent" as a third worker type does not break the architecture. It validates it.</p>
+<h3 id="84-three-governance-extensions-required-by-2026">8.4 Three Governance Extensions Required by 2026<a class="headerlink" href="#84-three-governance-extensions-required-by-2026" title="Permanent link">&para;</a></h3>
+<p>Three extensions are demanded by 2026 conditions but were not architecturally required when workers were deterministic. These are the substance behind Recommendation 1.5:</p>
+<ol>
+<li><strong>Engine-enforced confidence gating.</strong> Because agent outputs are non-deterministic, the process engine must evaluate confidence and route accordingly. BPMN Conditional Events shipping in Camunda 8.9 fill this gap [Samuelson 2026a].</li>
+<li><strong>Semantic decision lineage.</strong> The audit trail must record not just <em>what ran</em> but <em>what domain concepts the agent reasoned over.</em> The execution audit log plus the ontology lineage together form the complete trail [Samuelson 2026a].</li>
+<li><strong>Engine-aware tool protocol.</strong> Agents need a standard way to call into the process engine. MCP (Model Context Protocol) fills this; Camunda 8.9's MCP Gateway is the first production implementation [Samuelson 2026a].</li>
+</ol>
+<p>These are <em>extensions</em> of the 2015 architecture, not replacements for it. The architecture was right then. The implementation surface has grown to handle non-determinism.</p>
+<h3 id="85-the-pattern-restated">8.5 The Pattern Restated<a class="headerlink" href="#85-the-pattern-restated" title="Permanent link">&para;</a></h3>
+<p><img alt="Figure 8. 2015 vs 2026 BPM worker pattern. The chain — Process Model → Workers → Tasks → Activities → Business Model — is identical. The worker slot in 2026 expands from a single class (Services) to three (Human Workers, System Services, Autonomous Agents), with governance extensions required for the new autonomous class." src="../../assets/images/bpm_pattern_2015_vs_2026.svg" /></p>
+<p><em>Figure 8. The architecture is the same. The worker-class list grows. The governance burden grows with it.</em></p>
+<p>The architecture is the same. The worker-class list grows. The governance burden grows with it — which is precisely what BPM has always been disciplined to handle.</p>
+<hr />
+<h2 id="9-thesis-and-implications">9. Thesis and Implications<a class="headerlink" href="#9-thesis-and-implications" title="Permanent link">&para;</a></h2>
+<h3 id="91-thesis">9.1 Thesis<a class="headerlink" href="#91-thesis" title="Permanent link">&para;</a></h3>
+<blockquote>
+<p><strong>AI is a class of worker; BPM is the discipline that decides what work needs doing, who is fit to do it, and how its contribution to value is measured.</strong></p>
+<p><strong>AI without BPM is a worker without a job description; BPM without AI is a job description with the wrong workforce.</strong></p>
+</blockquote>
+<p>The architectural placement is the bottom layer of a four-layer hierarchy: business model → value chain → process model → task → worker. AI plugs into the worker slot. Above that slot, nothing changes. Below that slot — the supporting infrastructure of events, ontology, audit, security, transactions — gains three governance extensions to accommodate non-deterministic workers.</p>
+<p>The fit is not new. It is the slot the 2015 BPM architecture already specified, occupied in 2026 by a participant class that did not exist when the slot was drawn.</p>
+<h3 id="92-follow-on-work">9.2 Follow-On Work<a class="headerlink" href="#92-follow-on-work" title="Permanent link">&para;</a></h3>
+<p>The next entries on the research agenda:</p>
+<ol>
+<li><strong>The UI/UX consequences of changing the worker</strong> — when the worker shifts from human to agent, most task-level UIs disappear and design effort migrates to dashboards, handoff surfaces, and embedded co-worker assistance.</li>
+<li><strong>The value chain → process → task → worker chain as a deployment methodology</strong> — turning the four-step inquiry of Recommendation 1.2 into a working enterprise method.</li>
+<li><strong>Why agentic AI fails in production: a BPM diagnosis</strong> — applying BPM exception modeling, versioning, and conformance checking to documented LLM-agent failure modes.</li>
+<li><strong>Process mining as the foundation of agentic enterprise AI</strong> — extending [Dumas, Milani &amp; Chapela-Campa 2026] with a concrete process-mining-to-agent-deployment workflow.</li>
+<li><strong>The four agent capabilities operationalized</strong> — turning framed autonomy / explainability / conversational actionability / self-modification into concrete architectural patterns mappable to a production engine [Samuelson 2026a].</li>
+<li><strong>Goal clarity as the precondition for AI investment</strong> — practitioner-facing piece on why the #1 recommendation from twenty-two BPM practitioners is <em>"define clear business goals."</em></li>
+</ol>
+<hr />
+<h2 id="10-references">10. References<a class="headerlink" href="#10-references" title="Permanent link">&para;</a></h2>
+<p><em>Citation style: author–year in-text markers; full entries below, grouped by category.</em></p>
+<h3 id="bpm-foundations">BPM Foundations<a class="headerlink" href="#bpm-foundations" title="Permanent link">&para;</a></h3>
+<p><strong>[Bernstein 2009]</strong> Philip A. Bernstein &amp; Eric Newcomer, <em>Principles of Transaction Processing</em>, 2nd ed. (Morgan Kaufmann, 2009). ISBN 978-1-55860-623-4.</p>
+<p><strong>[Cummins 2010]</strong> Fred A. Cummins, <em>Building the Agile Enterprise: With SOA, BPM and MBM</em> (Morgan Kaufmann, 2010). ISBN 978-0-12-374469-3.</p>
+<p><strong>[Dumas et al. 2013]</strong> Marlon Dumas, Marcello La Rosa, Jan Mendling, Hajo A. Reijers, <em>Fundamentals of Business Process Management</em> (Springer, 2013). ISBN 978-3-642-33142-8.</p>
+<p><strong>[OMG 2011]</strong> Object Management Group, <em>Business Process Model and Notation (BPMN) Version 2.0</em>, ISO/IEC 19510:2013 (OMG, January 2011). https://www.omg.org/spec/BPMN/2.0</p>
+<p><strong>[Ruecker &amp; Strauch 2025]</strong> Bernd Ruecker &amp; Leon Strauch, <em>Enterprise Process Orchestration</em> (Wiley, April 2025). ISBN 978-1-394-30967-2.</p>
+<p><strong>[Samuelson 2015]</strong> Gary Samuelson, "Process Management Architecture: Overview of Methods, Features, and Capabilities," garysamuelson.com (February 11, 2015). https://garysamuelson.com/blog/?p=1353</p>
+<p><strong>[Samuelson 2016]</strong> Gary Samuelson, "The BPM Task: Definition &amp; Analysis," garysamuelson.com (January 30, 2016). https://garysamuelson.com/blog/?p=1413</p>
+<p><strong>[Sinur, Misiak &amp; Biernatowski 2025]</strong> Jim Sinur, Zbigniew Misiak, BJ Biernatowski, <em>Practical Business Process Modeling and Analysis</em> (Packt, August 2025). ISBN 978-1-80510-674-4.</p>
+<p><strong>[van der Aalst 2016]</strong> Wil M. P. van der Aalst, <em>Process Mining: Data Science in Action</em>, 2nd ed. (Springer, 2016). ISBN 978-3-662-49850-7.</p>
+<p><strong>[Weske 2012]</strong> Mathias Weske, <em>Business Process Management: Concepts, Languages, Architectures</em>, 2nd ed. (Springer, 2012). ISBN 978-3-642-28615-5.</p>
+<h3 id="software-engineering-and-domain-modeling-foundations">Software Engineering and Domain Modeling Foundations<a class="headerlink" href="#software-engineering-and-domain-modeling-foundations" title="Permanent link">&para;</a></h3>
+<p><strong>[Brooks 1987]</strong> Frederick P. Brooks Jr., "No Silver Bullet — Essence and Accidents of Software Engineering," <em>IEEE Computer</em> 20, no. 4 (April 1987): 10–19.</p>
+<p><strong>[Evans 2003]</strong> Eric Evans, <em>Domain-Driven Design: Tackling Complexity in the Heart of Software</em> (Addison-Wesley, 2003). ISBN 978-0-321-12521-7.</p>
+<p><strong>[Vernon 2013]</strong> Vaughn Vernon, <em>Implementing Domain-Driven Design</em> (Addison-Wesley, 2013). ISBN 978-0-321-83457-7.</p>
+<h3 id="value-chain-and-business-model-theory">Value Chain and Business Model Theory<a class="headerlink" href="#value-chain-and-business-model-theory" title="Permanent link">&para;</a></h3>
+<p><strong>[Porter 1985]</strong> Michael E. Porter, <em>Competitive Advantage: Creating and Sustaining Superior Performance</em> (Free Press, 1985). ISBN 978-0-684-84146-5.</p>
+<h3 id="agentic-bpm-arxiv-research-20252026">Agentic BPM — arXiv Research (2025–2026)<a class="headerlink" href="#agentic-bpm-arxiv-research-20252026" title="Permanent link">&para;</a></h3>
+<p><strong>[Calvanese et al. 2026]</strong> Diego Calvanese, Angelo Casciani, Giuseppe De Giacomo, Marlon Dumas, Fabiana Fournier, Timotheus Kampik, Emanuele La Malfa, Lior Limonad, Andrea Marrella, Andreas Metzger, Marco Montali, Daniel Amyot, Peter Fettke, Artem Polyvyanyy, Stefanie Rinderle-Ma, Sebastian Sardiña, Niek Tax, Barbara Weber, "Agentic Business Process Management: A Research Manifesto," arXiv:2603.18916 [cs.AI] (March 19, 2026; v3 April 12, 2026). https://arxiv.org/abs/2603.18916</p>
+<p><strong>[Dumas, Milani &amp; Chapela-Campa 2026]</strong> Marlon Dumas, Fredrik Milani, David Chapela-Campa, "Agentic Business Process Management Systems," arXiv:2601.18833 [cs.AI] (January 25, 2026). Presented at BPM 2025 Workshop on Artificial Intelligence for Business Process Management (AI4BPM). https://arxiv.org/abs/2601.18833</p>
+<p><strong>[Vu et al. 2025]</strong> Hoang Vu, Nataliia Klievtsova, Henrik Leopold, Stefanie Rinderle-Ma, Timotheus Kampik, "Agentic Business Process Management: Practitioner Perspectives on Agent Governance in Business Processes," arXiv:2504.03693 [cs.SE] (March 2025; v2 July 2025). https://arxiv.org/abs/2504.03693</p>
+<h3 id="cross-references-authors-prior-work">Cross-References (Author's Prior Work)<a class="headerlink" href="#cross-references-authors-prior-work" title="Permanent link">&para;</a></h3>
+<p><strong>[Samuelson 2026a]</strong> Gary Samuelson, "Domain Semantics as the Driver of Agent Orchestration: An Architectural Proof with Camunda 8.9," (April 11, 2026).</p>
+<p><strong>[Samuelson 2026b]</strong> Gary Samuelson, "Aspect-Oriented Process Management: An AOP-Mediated Substrate for Agent and Human Workers," prior paper in the series (referenced for the runtime aspect substrate that AI-Inside depends on).</p>
+<hr />
+<p><em>© 2026 Gary Samuelson | CC BY-NC-ND 4.0 — Share freely with attribution. No commercial use. No derivatives without permission.</em></p>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://github.com/garysamuelson" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    </a>
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://linkedin.com/in/garysamuelson" target="_blank" rel="noopener" title="linkedin.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3M135.4 416H69V202.2h66.5V416zM102.2 96a38.5 38.5 0 1 1 0 77 38.5 38.5 0 1 1 0-77m282.1 320h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9z"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.top", "search.highlight", "search.suggest", "content.code.copy", "content.code.annotate"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+        <script src="https://unpkg.com/mermaid@11/dist/mermaid.min.js"></script>
+      
+        <script src="../../assets/javascripts/mermaid-init.js"></script>
+      
+    
+  </body>
+</html>

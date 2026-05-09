@@ -1,0 +1,118 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 740 760" width="740" height="760"
+     font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif">
+
+  <defs>
+    <marker id="aDn"  viewBox="0 0 10 10" refX="10" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M 0 0 L 10 5 L 0 10 Z" fill="#94a3b8"/>
+    </marker>
+    <marker id="aDnB" viewBox="0 0 10 10" refX="10" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M 0 0 L 10 5 L 0 10 Z" fill="#2563eb"/>
+    </marker>
+    <marker id="aDnA" viewBox="0 0 10 10" refX="10" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M 0 0 L 10 5 L 0 10 Z" fill="#f59e0b"/>
+    </marker>
+    <marker id="aDnG" viewBox="0 0 10 10" refX="10" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M 0 0 L 10 5 L 0 10 Z" fill="#16a34a"/>
+    </marker>
+    <filter id="sh" x="-8%" y="-8%" width="116%" height="116%">
+      <feDropShadow dx="0" dy="1" stdDeviation="2" flood-color="#00000012"/>
+    </filter>
+  </defs>
+
+  <rect x="0" y="0" width="740" height="760" rx="12" fill="#f8fafc"/>
+
+  <!-- Title -->
+  <text x="370" y="30" text-anchor="middle" font-size="15" font-weight="700" fill="#111827">AI Deployment Workflow</text>
+  <text x="370" y="48" text-anchor="middle" font-size="11" fill="#6b7280">From business-model stress to production deployment</text>
+
+  <!-- ─── Step 1 ─── -->
+  <rect x="40" y="60" width="660" height="60" rx="6" fill="#f1f5f9" stroke="#e2e8f0" stroke-width="1.2" filter="url(#sh)"/>
+  <rect x="40" y="60" width="5"   height="60" rx="2" fill="#94a3b8"/>
+  <circle cx="72" cy="90" r="15" fill="#94a3b8"/>
+  <text x="72" y="95" text-anchor="middle" font-size="13" font-weight="700" fill="#ffffff">1</text>
+  <text x="100" y="80" font-size="11.5" font-weight="700" fill="#374151">Identify the business-model stress</text>
+  <text x="100" y="98" font-size="10" fill="#94a3b8">Cost · cycle time · quality · value shortfall · customer experience — map the symptom to the business model</text>
+
+  <line x1="370" y1="120" x2="370" y2="138" stroke="#94a3b8" stroke-width="2" marker-end="url(#aDn)"/>
+
+  <!-- ─── Step 2 ─── -->
+  <rect x="40" y="140" width="660" height="60" rx="6" fill="#f1f5f9" stroke="#e2e8f0" stroke-width="1.2" filter="url(#sh)"/>
+  <rect x="40" y="140" width="5"   height="60" rx="2" fill="#94a3b8"/>
+  <circle cx="72" cy="170" r="15" fill="#94a3b8"/>
+  <text x="72" y="175" text-anchor="middle" font-size="13" font-weight="700" fill="#ffffff">2</text>
+  <text x="100" y="160" font-size="11.5" font-weight="700" fill="#374151">Map to the value-chain activity responsible</text>
+  <text x="100" y="178" font-size="10" fill="#94a3b8">AI applied to the wrong activity solves a problem nobody is measuring</text>
+
+  <line x1="370" y1="200" x2="370" y2="218" stroke="#94a3b8" stroke-width="2" marker-end="url(#aDn)"/>
+
+  <!-- ─── Step 3 ─── -->
+  <rect x="40" y="220" width="660" height="60" rx="6" fill="#f1f5f9" stroke="#e2e8f0" stroke-width="1.2" filter="url(#sh)"/>
+  <rect x="40" y="220" width="5"   height="60" rx="2" fill="#94a3b8"/>
+  <circle cx="72" cy="250" r="15" fill="#94a3b8"/>
+  <text x="72" y="255" text-anchor="middle" font-size="13" font-weight="700" fill="#ffffff">3</text>
+  <text x="100" y="240" font-size="11.5" font-weight="700" fill="#374151">Decompose to process and task</text>
+  <text x="100" y="258" font-size="10" fill="#94a3b8">Inputs · outputs · completion criteria · exception paths · current worker assignment</text>
+
+  <line x1="370" y1="280" x2="370" y2="298" stroke="#94a3b8" stroke-width="2" marker-end="url(#aDn)"/>
+
+  <!-- ─── Step 4 ─── -->
+  <rect x="40" y="300" width="660" height="60" rx="6" fill="#f1f5f9" stroke="#e2e8f0" stroke-width="1.2" filter="url(#sh)"/>
+  <rect x="40" y="300" width="5"   height="60" rx="2" fill="#475569"/>
+  <circle cx="72" cy="330" r="15" fill="#475569"/>
+  <text x="72" y="335" text-anchor="middle" font-size="13" font-weight="700" fill="#ffffff">4</text>
+  <text x="100" y="320" font-size="11.5" font-weight="700" fill="#374151">Identify the AI-eligible capability at the task</text>
+  <text x="100" y="338" font-size="10" fill="#94a3b8">Perception · Reasoning · Generation · Coordination · Anomaly detection</text>
+
+  <line x1="370" y1="360" x2="370" y2="378" stroke="#2563eb" stroke-width="2" marker-end="url(#aDnB)"/>
+
+  <!-- ─── Step 5: Pattern choice (blue) ─── -->
+  <rect x="40" y="380" width="660" height="90" rx="6" fill="#eff6ff" stroke="#bfdbfe" stroke-width="1.5" filter="url(#sh)"/>
+  <rect x="40" y="380" width="5"   height="90" rx="2" fill="#2563eb"/>
+  <circle cx="72" cy="404" r="15" fill="#2563eb"/>
+  <text x="72" y="409" text-anchor="middle" font-size="13" font-weight="700" fill="#ffffff">5</text>
+  <text x="100" y="398" font-size="11.5" font-weight="700" fill="#1d4ed8">Choose the worker pattern for each task</text>
+  <!-- Pills -->
+  <rect x="100" y="412" width="140" height="28" rx="14" fill="#1e40af"/>
+  <text x="170" y="430" text-anchor="middle" font-size="10.5" font-weight="600" fill="#ffffff">Agent-as-worker</text>
+  <rect x="250" y="412" width="90"  height="28" rx="14" fill="#2563eb"/>
+  <text x="295" y="430" text-anchor="middle" font-size="10.5" font-weight="600" fill="#ffffff">AI-Inside</text>
+  <rect x="350" y="412" width="74"  height="28" rx="14" fill="#dbeafe" stroke="#3b82f6" stroke-width="1.2"/>
+  <text x="387" y="430" text-anchor="middle" font-size="10.5" font-weight="600" fill="#1d4ed8">Hybrid</text>
+  <text x="436" y="430" font-size="9.5" fill="#60a5fa" font-style="italic">← most strategic roles need all three</text>
+
+  <line x1="370" y1="470" x2="370" y2="488" stroke="#f59e0b" stroke-width="2" marker-end="url(#aDnA)"/>
+
+  <!-- ─── Step 6: Governance (amber) ─── -->
+  <rect x="40" y="490" width="660" height="90" rx="6" fill="#fffbeb" stroke="#fde68a" stroke-width="1.5" filter="url(#sh)"/>
+  <rect x="40" y="490" width="5"   height="90" rx="2" fill="#f59e0b"/>
+  <circle cx="72" cy="514" r="15" fill="#f59e0b"/>
+  <text x="72" y="519" text-anchor="middle" font-size="13" font-weight="700" fill="#ffffff">6</text>
+  <text x="100" y="508" font-size="11.5" font-weight="700" fill="#92400e">Verify the three governance extensions are in place</text>
+  <circle cx="108" cy="528" r="3" fill="#d97706"/>
+  <text x="118" y="532" font-size="10" fill="#78350f">Engine-enforced confidence gating</text>
+  <circle cx="108" cy="548" r="3" fill="#d97706"/>
+  <text x="118" y="552" font-size="10" fill="#78350f">Semantic decision lineage</text>
+  <circle cx="108" cy="568" r="3" fill="#d97706"/>
+  <text x="118" y="572" font-size="10" fill="#78350f">Engine-aware tool protocol (MCP)</text>
+
+  <line x1="370" y1="580" x2="370" y2="598" stroke="#16a34a" stroke-width="2" marker-end="url(#aDnG)"/>
+
+  <!-- ─── Step 7: Goal clarity (green) ─── -->
+  <rect x="40" y="600" width="660" height="60" rx="6" fill="#f0fdf4" stroke="#bbf7d0" stroke-width="1.5" filter="url(#sh)"/>
+  <rect x="40" y="600" width="5"   height="60" rx="2" fill="#16a34a"/>
+  <circle cx="72" cy="630" r="15" fill="#16a34a"/>
+  <text x="72" y="635" text-anchor="middle" font-size="13" font-weight="700" fill="#ffffff">7</text>
+  <text x="100" y="620" font-size="11.5" font-weight="700" fill="#166534">Confirm goal clarity at the task contract</text>
+  <text x="100" y="638" font-size="10" fill="#166534">An agent optimizes for the goal you specified — which may not be the goal you intended</text>
+
+  <line x1="370" y1="660" x2="370" y2="678" stroke="#64748b" stroke-width="2" marker-end="url(#aDn)"/>
+
+  <!-- ─── Step 8: Deploy (dark) ─── -->
+  <rect x="40" y="680" width="660" height="60" rx="6" fill="#1e293b" filter="url(#sh)"/>
+  <rect x="40" y="680" width="5"   height="60" rx="2" fill="#475569"/>
+  <circle cx="72" cy="710" r="15" fill="#475569"/>
+  <text x="72" y="715" text-anchor="middle" font-size="13" font-weight="700" fill="#ffffff">8</text>
+  <text x="100" y="700" font-size="11.5" font-weight="700" fill="#f8fafc">Deploy, instrument, measure, refine</text>
+  <text x="100" y="718" font-size="10" fill="#64748b">KPIs connect task output to business-model outcomes — close the loop</text>
+
+</svg>

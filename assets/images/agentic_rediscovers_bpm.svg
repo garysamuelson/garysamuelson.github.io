@@ -1,0 +1,96 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 820 580" width="820" height="580" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif">
+
+  <defs>
+    <marker id="arrEq" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#9ca3af"/>
+    </marker>
+    <filter id="shadow" x="-8%" y="-8%" width="116%" height="116%">
+      <feDropShadow dx="0" dy="2" stdDeviation="3" flood-color="#00000012"/>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect x="0" y="0" width="820" height="580" rx="12" ry="12" fill="#f8fafc"/>
+
+  <!-- Title -->
+  <text x="410" y="34" text-anchor="middle" font-size="15" font-weight="700" fill="#111827">Agentic Frameworks Are Rediscovering BPM</text>
+  <text x="410" y="52" text-anchor="middle" font-size="11.5" fill="#6b7280">The orchestration problems "agentic" frameworks describe as novel were solved by BPM years ago</text>
+
+  <!-- ─── Column headers ─── -->
+  <rect x="20" y="74" width="370" height="34" rx="6" ry="6" fill="#fef2f2" stroke="#fecaca" stroke-width="1.5"/>
+  <text x="205" y="96" text-anchor="middle" font-size="12" font-weight="700" fill="#991b1b">What agentic frameworks are reaching for</text>
+
+  <rect x="430" y="74" width="370" height="34" rx="6" ry="6" fill="#f0fdf4" stroke="#bbf7d0" stroke-width="1.5"/>
+  <text x="615" y="96" text-anchor="middle" font-size="12" font-weight="700" fill="#166534">What BPM already provides</text>
+
+  <!-- ─── Row 1: state persistence ─── -->
+  <rect x="20" y="118" width="370" height="48" rx="5" ry="5" fill="#ffffff" stroke="#e5e7eb" stroke-width="1.2" filter="url(#shadow)"/>
+  <text x="34" y="140" font-size="11.5" font-weight="600" fill="#374151">State persistence / checkpointing</text>
+  <text x="34" y="156" font-size="10" fill="#6b7280">Pause, resume, survive infrastructure failures</text>
+
+  <line x1="392" y1="142" x2="426" y2="142" stroke="#9ca3af" stroke-width="1.4" stroke-dasharray="3 3" marker-end="url(#arrEq)"/>
+
+  <rect x="430" y="118" width="370" height="48" rx="5" ry="5" fill="#ffffff" stroke="#e5e7eb" stroke-width="1.2" filter="url(#shadow)"/>
+  <text x="444" y="140" font-size="11.5" font-weight="600" fill="#374151">Process instance state, persistent across crashes</text>
+  <text x="444" y="156" font-size="10" fill="#6b7280">[Weske 2012]</text>
+
+  <!-- ─── Row 2: durable execution ─── -->
+  <rect x="20" y="174" width="370" height="48" rx="5" ry="5" fill="#ffffff" stroke="#e5e7eb" stroke-width="1.2" filter="url(#shadow)"/>
+  <text x="34" y="196" font-size="11.5" font-weight="600" fill="#374151">Durable execution, replay from history</text>
+  <text x="34" y="212" font-size="10" fill="#6b7280">Every step immutably logged; resume from any point</text>
+
+  <line x1="392" y1="198" x2="426" y2="198" stroke="#9ca3af" stroke-width="1.4" stroke-dasharray="3 3" marker-end="url(#arrEq)"/>
+
+  <rect x="430" y="174" width="370" height="48" rx="5" ry="5" fill="#ffffff" stroke="#e5e7eb" stroke-width="1.2" filter="url(#shadow)"/>
+  <text x="444" y="196" font-size="11.5" font-weight="600" fill="#374151">Audit log + event sourcing in BPMN engines</text>
+  <text x="444" y="212" font-size="10" fill="#6b7280">[Ruecker &amp; Strauch 2025]</text>
+
+  <!-- ─── Row 3: sagas ─── -->
+  <rect x="20" y="230" width="370" height="48" rx="5" ry="5" fill="#ffffff" stroke="#e5e7eb" stroke-width="1.2" filter="url(#shadow)"/>
+  <text x="34" y="252" font-size="11.5" font-weight="600" fill="#374151">Saga / compensating actions across services</text>
+  <text x="34" y="268" font-size="10" fill="#6b7280">Local actions with compensations; no distributed locks</text>
+
+  <line x1="392" y1="254" x2="426" y2="254" stroke="#9ca3af" stroke-width="1.4" stroke-dasharray="3 3" marker-end="url(#arrEq)"/>
+
+  <rect x="430" y="230" width="370" height="48" rx="5" ry="5" fill="#ffffff" stroke="#e5e7eb" stroke-width="1.2" filter="url(#shadow)"/>
+  <text x="444" y="252" font-size="11.5" font-weight="600" fill="#374151">BPMN compensation events, transactional sub-processes</text>
+  <text x="444" y="268" font-size="10" fill="#6b7280">[OMG 2011; Bernstein 2009]</text>
+
+  <!-- ─── Row 4: timeouts/retries ─── -->
+  <rect x="20" y="286" width="370" height="48" rx="5" ry="5" fill="#ffffff" stroke="#e5e7eb" stroke-width="1.2" filter="url(#shadow)"/>
+  <text x="34" y="308" font-size="11.5" font-weight="600" fill="#374151">Long-running orchestration: retries, timeouts, escalations</text>
+  <text x="34" y="324" font-size="10" fill="#6b7280">Survives hours, days, or weeks of process time</text>
+
+  <line x1="392" y1="310" x2="426" y2="310" stroke="#9ca3af" stroke-width="1.4" stroke-dasharray="3 3" marker-end="url(#arrEq)"/>
+
+  <rect x="430" y="286" width="370" height="48" rx="5" ry="5" fill="#ffffff" stroke="#e5e7eb" stroke-width="1.2" filter="url(#shadow)"/>
+  <text x="444" y="308" font-size="11.5" font-weight="600" fill="#374151">BPMN timer, escalation, and boundary events</text>
+  <text x="444" y="324" font-size="10" fill="#6b7280">[OMG 2011]</text>
+
+  <!-- ─── Row 5: governance ─── -->
+  <rect x="20" y="342" width="370" height="48" rx="5" ry="5" fill="#ffffff" stroke="#e5e7eb" stroke-width="1.2" filter="url(#shadow)"/>
+  <text x="34" y="364" font-size="11.5" font-weight="600" fill="#374151">Audit trails and approval gates</text>
+  <text x="34" y="380" font-size="10" fill="#6b7280">For agents touching real money and real risk</text>
+
+  <line x1="392" y1="366" x2="426" y2="366" stroke="#9ca3af" stroke-width="1.4" stroke-dasharray="3 3" marker-end="url(#arrEq)"/>
+
+  <rect x="430" y="342" width="370" height="48" rx="5" ry="5" fill="#ffffff" stroke="#e5e7eb" stroke-width="1.2" filter="url(#shadow)"/>
+  <text x="444" y="364" font-size="11.5" font-weight="600" fill="#374151">Process performance mgmt; user-task lifecycle</text>
+  <text x="444" y="380" font-size="10" fill="#6b7280">[van der Aalst 2016; Sinur, Misiak &amp; Biernatowski 2025]</text>
+
+  <!-- ─── Divider line ─── -->
+  <line x1="40" y1="412" x2="780" y2="412" stroke="#cbd5e1" stroke-width="1" stroke-dasharray="4 4"/>
+
+  <!-- ─── What IS new ─── -->
+  <text x="410" y="434" text-anchor="middle" font-size="11" font-weight="700" fill="#9ca3af" letter-spacing="0.6">WHAT IS GENUINELY NEW</text>
+
+  <rect x="100" y="444" width="620" height="50" rx="6" ry="6" fill="#eff6ff" stroke="#2563eb" stroke-width="1.5"/>
+  <text x="410" y="464" text-anchor="middle" font-size="11.5" font-weight="600" fill="#1d4ed8">A new style of decision-making INSIDE a step</text>
+  <text x="410" y="482" text-anchor="middle" font-size="10.5" fill="#374151">An LLM-based worker that selects sub-steps and tools at runtime — at the worker layer, not the process layer</text>
+
+  <!-- ─── Synthesis ─── -->
+  <rect x="40" y="506" width="740" height="56" rx="8" ry="8" fill="#1e293b"/>
+  <text x="410" y="528" text-anchor="middle" font-size="12.5" font-weight="700" fill="#ffffff">Agentic AI does not abolish BPM. It makes BPM indispensable.</text>
+  <text x="410" y="548" text-anchor="middle" font-size="10.5" fill="#cbd5e1">BPM as governance frame · Agents as workers inside it · Hybrid as the mature posture</text>
+
+</svg>

@@ -1,0 +1,156 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="420" viewBox="0 0 760 420">
+  <defs>
+    <filter id="sh" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="2" stdDeviation="2" flood-color="#000000" flood-opacity="0.3"/>
+    </filter>
+    <marker id="mS" viewBox="0 0 10 10" refX="10" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M 0 0 L 10 5 L 0 10 Z" fill="#475569"/>
+    </marker>
+    <marker id="mB" viewBox="0 0 10 10" refX="10" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M 0 0 L 10 5 L 0 10 Z" fill="#3b82f6"/>
+    </marker>
+    <marker id="mG" viewBox="0 0 10 10" refX="10" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M 0 0 L 10 5 L 0 10 Z" fill="#10b981"/>
+    </marker>
+  </defs>
+
+  <!-- Background -->
+  <rect width="760" height="420" fill="#0f172a" rx="12"/>
+  <!-- Divider -->
+  <line x1="380" y1="18" x2="380" y2="402" stroke="#1e293b" stroke-width="1"/>
+
+  <!-- ══════════════════════════════════════
+       LEFT PANEL — AGENT-AS-WORKER
+  ══════════════════════════════════════ -->
+  <rect x="10" y="10" width="358" height="400" rx="8" fill="#0d1929"/>
+
+  <text x="189" y="36" font-family="system-ui,sans-serif" font-size="11"
+        fill="#3b82f6" font-weight="700" text-anchor="middle" letter-spacing="1.5">AGENT-AS-WORKER</text>
+  <line x1="22" y1="44" x2="356" y2="44" stroke="#1e3a5f" stroke-width="1"/>
+
+  <!-- TASK -->
+  <rect x="114" y="52" width="150" height="36" rx="5" fill="#1e293b" filter="url(#sh)"/>
+  <text x="189" y="74" font-family="system-ui,sans-serif" font-size="10"
+        fill="#64748b" font-weight="700" text-anchor="middle" letter-spacing="0.5">TASK</text>
+
+  <line x1="189" y1="88" x2="189" y2="103" stroke="#334155" stroke-width="1.5" marker-end="url(#mS)"/>
+
+  <!-- Crossed-out form (left of AGENT box) -->
+  <rect x="18" y="105" width="62" height="50" rx="5" fill="#1e293b"/>
+  <rect x="24" y="113" width="50" height="4" rx="1" fill="#293548"/>
+  <rect x="24" y="122" width="36" height="4" rx="1" fill="#293548"/>
+  <rect x="24" y="131" width="50" height="4" rx="1" fill="#293548"/>
+  <rect x="24" y="140" width="28" height="4" rx="1" fill="#293548"/>
+  <line x1="18" y1="105" x2="80" y2="155" stroke="#dc2626" stroke-width="2.2" stroke-linecap="round"/>
+  <line x1="80" y1="105" x2="18" y2="155" stroke="#dc2626" stroke-width="2.2" stroke-linecap="round"/>
+  <line x1="80" y1="130" x2="104" y2="130" stroke="#475569" stroke-width="1" stroke-dasharray="3 2"/>
+  <text x="49" y="168" font-family="system-ui,sans-serif" font-size="8"
+        fill="#dc2626" font-weight="700" text-anchor="middle">FORM DISAPPEARS</text>
+
+  <!-- AGENT box -->
+  <rect x="104" y="105" width="170" height="50" rx="5" fill="#1d4ed8" filter="url(#sh)"/>
+  <text x="189" y="128" font-family="system-ui,sans-serif" font-size="11"
+        fill="#bfdbfe" font-weight="700" text-anchor="middle">AGENT</text>
+  <text x="189" y="146" font-family="system-ui,sans-serif" font-size="8.5"
+        fill="#93c5fd" text-anchor="middle">autonomous execution</text>
+
+  <line x1="189" y1="155" x2="189" y2="170" stroke="#334155" stroke-width="1.5" marker-end="url(#mS)"/>
+
+  <!-- OUTPUT -->
+  <rect x="139" y="172" width="100" height="28" rx="5" fill="#0f2a4a"/>
+  <text x="189" y="190" font-family="system-ui,sans-serif" font-size="9"
+        fill="#60a5fa" font-weight="600" text-anchor="middle">OUTPUT</text>
+
+  <!-- Volume note -->
+  <rect x="44" y="218" width="290" height="28" rx="5" fill="#0d1929" stroke="#1e3a5f" stroke-width="1"/>
+  <text x="189" y="236" font-family="system-ui,sans-serif" font-size="8.5"
+        fill="#475569" text-anchor="middle">design shifts to dashboards &amp; control towers</text>
+
+  <!-- HUMAN supervision box -->
+  <rect x="44" y="300" width="290" height="58" rx="6" fill="#1e293b" filter="url(#sh)"/>
+  <text x="189" y="322" font-family="system-ui,sans-serif" font-size="10"
+        fill="#94a3b8" font-weight="700" text-anchor="middle">HUMAN</text>
+  <text x="189" y="339" font-family="system-ui,sans-serif" font-size="9"
+        fill="#64748b" text-anchor="middle">supervises throughput</text>
+  <text x="189" y="353" font-family="system-ui,sans-serif" font-size="9"
+        fill="#64748b" text-anchor="middle">via control tower / dashboard</text>
+
+  <!-- Dashed oversight arc: from left-mid of HUMAN → left-mid of AGENT -->
+  <path d="M 44 329 C 18 329 18 130 104 130"
+        fill="none" stroke="#3b82f6" stroke-width="1.2"
+        stroke-dasharray="5 3" marker-end="url(#mB)"/>
+
+  <!-- ══════════════════════════════════════
+       RIGHT PANEL — AI-INSIDE
+  ══════════════════════════════════════ -->
+  <rect x="392" y="10" width="358" height="400" rx="8" fill="#0c2018"/>
+
+  <text x="571" y="36" font-family="system-ui,sans-serif" font-size="11"
+        fill="#10b981" font-weight="700" text-anchor="middle" letter-spacing="1.5">AI-INSIDE</text>
+  <line x1="404" y1="44" x2="738" y2="44" stroke="#052e16" stroke-width="1"/>
+
+  <!-- TASK -->
+  <rect x="496" y="52" width="150" height="36" rx="5" fill="#1e293b" filter="url(#sh)"/>
+  <text x="571" y="74" font-family="system-ui,sans-serif" font-size="10"
+        fill="#64748b" font-weight="700" text-anchor="middle" letter-spacing="0.5">TASK</text>
+
+  <line x1="571" y1="88" x2="571" y2="103" stroke="#334155" stroke-width="1.5" marker-end="url(#mS)"/>
+
+  <!-- Split WORKER box: HUMAN (60%) + AI (40%) -->
+  <rect x="414" y="105" width="183" height="50" rx="5" fill="#334155" filter="url(#sh)"/>
+  <text x="505" y="128" font-family="system-ui,sans-serif" font-size="11"
+        fill="#94a3b8" font-weight="700" text-anchor="middle">HUMAN</text>
+  <text x="505" y="146" font-family="system-ui,sans-serif" font-size="8.5"
+        fill="#64748b" text-anchor="middle">in the seat</text>
+
+  <rect x="597" y="105" width="123" height="50" rx="5" fill="#1d4ed8" filter="url(#sh)"/>
+  <text x="658" y="126" font-family="system-ui,sans-serif" font-size="10"
+        fill="#bfdbfe" font-weight="700" text-anchor="middle">AI</text>
+  <text x="658" y="142" font-family="system-ui,sans-serif" font-size="8.5"
+        fill="#93c5fd" text-anchor="middle">embedded</text>
+  <text x="658" y="153" font-family="system-ui,sans-serif" font-size="8"
+        fill="#93c5fd" text-anchor="middle">assist</text>
+
+  <!-- Role annotation leaders -->
+  <line x1="505" y1="155" x2="462" y2="170" stroke="#10b981" stroke-width="1" stroke-dasharray="3 2"/>
+  <text x="462" y="182" font-family="system-ui,sans-serif" font-size="8.5"
+        fill="#6ee7b7" font-weight="700" text-anchor="middle">AUTHORS</text>
+  <text x="462" y="193" font-family="system-ui,sans-serif" font-size="8.5"
+        fill="#6ee7b7" font-weight="700" text-anchor="middle">JUDGMENT</text>
+
+  <line x1="658" y1="155" x2="664" y2="170" stroke="#3b82f6" stroke-width="1" stroke-dasharray="3 2"/>
+  <text x="664" y="182" font-family="system-ui,sans-serif" font-size="8.5"
+        fill="#93c5fd" font-weight="700" text-anchor="middle">ABSORBS</text>
+  <text x="664" y="193" font-family="system-ui,sans-serif" font-size="8.5"
+        fill="#93c5fd" font-weight="700" text-anchor="middle">CORRELATION</text>
+
+  <!-- Main flow arrow (at x=571, between annotation clusters) -->
+  <line x1="571" y1="155" x2="571" y2="212" stroke="#334155" stroke-width="1.5" marker-end="url(#mG)"/>
+
+  <!-- FORM PERSISTS box -->
+  <rect x="461" y="214" width="220" height="38" rx="5" fill="#1e293b"
+        stroke="#10b981" stroke-width="1.2"/>
+  <rect x="472" y="223" width="85" height="4" rx="1" fill="#334155"/>
+  <rect x="472" y="232" width="60" height="4" rx="1" fill="#334155"/>
+  <rect x="567" y="223" width="100" height="4" rx="1" fill="#334155"/>
+  <rect x="567" y="232" width="72" height="4" rx="1" fill="#334155"/>
+  <text x="571" y="247" font-family="system-ui,sans-serif" font-size="8.5"
+        fill="#10b981" font-weight="700" text-anchor="middle">&#x2713;  FORM PERSISTS</text>
+
+  <line x1="571" y1="252" x2="571" y2="267" stroke="#334155" stroke-width="1.5" marker-end="url(#mS)"/>
+
+  <!-- OUTPUT -->
+  <rect x="521" y="269" width="100" height="28" rx="5" fill="#052e16"/>
+  <text x="571" y="287" font-family="system-ui,sans-serif" font-size="9"
+        fill="#34d399" font-weight="600" text-anchor="middle">OUTPUT</text>
+
+  <!-- HUMAN role note -->
+  <rect x="412" y="312" width="318" height="56" rx="6" fill="#1e293b"/>
+  <text x="571" y="332" font-family="system-ui,sans-serif" font-size="9.5"
+        fill="#94a3b8" font-weight="700" text-anchor="middle">HUMAN IS IRREPLACEABLE</text>
+  <text x="571" y="349" font-family="system-ui,sans-serif" font-size="9"
+        fill="#64748b" text-anchor="middle">as the author of the decision</text>
+  <text x="571" y="363" font-family="system-ui,sans-serif" font-size="9"
+        fill="#64748b" text-anchor="middle">AI is an inline collaborator, not a replacement</text>
+
+</svg>
