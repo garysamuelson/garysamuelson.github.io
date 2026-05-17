@@ -17,14 +17,14 @@ Jones named the gap: agents float above the work, unbound from it, producing out
 <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap:1.5rem; margin-bottom:2rem;">
 
 <div markdown style="border:1px solid var(--md-default-fg-color--lightest); border-radius:8px; overflow:hidden;">
-<a href="blog/2026/05/16/ai-agents-need-a-work-record-bpm-has-had-one-for-25-years/">
+<a href="agentic/work-record-is-bpm-task/">
   <img src="assets/images/work_record_banner_v1.png" alt="AI Agents Need a Work Record. BPM Has Had One for 25 Years." style="width:100%; display:block;" />
 </a>
 <div style="padding:1rem;">
 <small><strong>New · May 16, 2026</strong> · BPM · Agentic AI · Process Orchestration · Camunda</small><br/>
-<strong><a href="blog/2026/05/16/ai-agents-need-a-work-record-bpm-has-had-one-for-25-years/">AI Agents Need a Work Record. BPM Has Had One for 25 Years.</a></strong>
+<strong><a href="agentic/work-record-is-bpm-task/">AI Agents Need a Work Record. BPM Has Had One for 25 Years.</a></strong>
 <p>Nate Jones named the trillion-dollar gap. BPM filled it two decades ago. Survey of six AI platforms confirms: all solve coordination, none solve the work object problem. Camunda 8.9 + MCP Gateway does — today, in production.</p>
-<a href="blog/2026/05/16/ai-agents-need-a-work-record-bpm-has-had-one-for-25-years/">Read →</a>
+<a href="agentic/work-record-is-bpm-task/">Read →</a>
 </div>
 </div>
 

@@ -1,8 +1,7 @@
-﻿---
+---
 title: "AI Agents Need a Work Record. BPM Has Had One for 25 Years."
-date: 2026-05-16
-authors:
-  - gary
+description: "Nate B. Jones' Trillion-Dollar Agentic Workflow framework maps exactly to BPM's twenty-five-year body of practice — and the integration substrate just shipped."
+social_image: https://garysamuelson.github.io/assets/images/work_record_banner_v1.png
 tags:
   - BPM
   - Agentic AI
@@ -10,7 +9,16 @@ tags:
   - BPMN
   - Camunda
   - AI Strategy
-social_image: https://garysamuelson.github.io/assets/images/work_record_banner_v1.png
+---
+
+![AI Agents Need a Work Record. BPM Has Had One for 25 Years.](../assets/images/work_record_banner_v1.png)
+
+# AI Agents Need a Work Record. BPM Has Had One for 25 Years.
+
+**Author:** Gary Samuelson  
+**Date:** May 16, 2026  
+**Status:** Published — May 16, 2026
+
 ---
 
 Business Process Management (BPM) and the emerging discipline of agentic AI workflow design are converging on the same architectural truth from different directions. Nate B. Jones' 2026 "Trillion-Dollar Agentic Workflow" framework identifies four infrastructure requirements for realizing value from AI agents in enterprise settings — Work Record, Actions, Policies, and Owners. BPM's twenty-five-year body of practice has already formalized each of these primitives, and the field is actively evolving — through agentic BPM, object-centric process mining (OCEL 2.0), and protocol-native process orchestration (MCP Gateway, Camunda 8.x) — to place exactly the infrastructure Jones describes beneath the agentic capability layer. The argument is not that BPM anticipated the AI moment and deserves credit; it is that practitioners who wish to capture the agentic workflow opportunity do not need to build from scratch. The foundation exists. What the field now offers is a clear map from that foundation to the trillion-dollar outcome: the Work Record is the BPM task object [7, 8], Actions are task-palette and service-task semantics, Policies are semantic rule and compliance layers, and Owners are the role-assignment and escalation governance already embedded in every mature process engine. The accelerating path from Jones' framing to measurable agentic value runs directly through modern BPM practice — and that path is already open.
@@ -30,7 +38,7 @@ and the people relationships that govern who handles it and who it goes to when
 something can't be resolved. When an agent is bound to that object, it can close
 real work. When it's not, it produces output nobody owns.
 
-![Floating vs. Anchored — the core contrast](/assets/images/floating_vs_anchored_v1.svg)
+![Floating vs. Anchored — the core contrast](../assets/images/floating_vs_anchored_v1.svg)
 
 He calls this the trillion-dollar opportunity: the value sitting in enterprise
 workflows that agents could capture — *if* they were properly anchored.
@@ -102,7 +110,7 @@ these are outputs. They are not closed work. The difference between the two is
 exactly what Jones is pointing at, and it is exactly what a properly structured
 Work Record enforces.
 
-![Floating above vs. anchored to the Work Record — the contrast Jones names](/assets/images/sit_closer_v1.svg)
+![Floating above vs. anchored to the Work Record — the contrast Jones names](../assets/images/sit_closer_v1.svg)
 
 ---
 
@@ -211,7 +219,7 @@ The cost of attaching an AI agent to a BPM-managed work record is now very low.
 The infrastructure question isn't "how do we build this?" It's "what processes do
 we start with?"
 
-![MCP Gateway — any AI agent, one protocol, every work record](/assets/images/mcp_gateway_v1.svg)
+![MCP Gateway — any AI agent, one protocol, every work record](../assets/images/mcp_gateway_v1.svg)
 
 ---
 
@@ -266,7 +274,7 @@ Neither of them needs to win the framing war. They need to be in the same room.
 The work record is the task object. The agent is the worker. The process engine is
 the integration substrate. The trillion dollars is in figuring out what to run first.
 
-![The Foundation Already Exists — BPM practitioner and AI product designer converging on the same problem](/assets/images/foundation_convergence_v1.svg)
+![The Foundation Already Exists — BPM practitioner and AI product designer converging on the same problem](../assets/images/foundation_convergence_v1.svg)
 
 ---
 
@@ -360,7 +368,7 @@ https://learning.oreilly.com/library/view/enterprise-process-orchestration/97813
 
 ---
 
-*This post is a companion to [The Working AI: Put to Task with Measured Output](https://garysamuelson.github.io/agentic/working-ai-put-to-task/),
+*This article is a companion to [The Working AI: Put to Task with Measured Output](https://garysamuelson.github.io/agentic/working-ai-put-to-task/),
 which develops the agent-as-worker and AI-Inside patterns in full detail.*
 
 *References for the academic version of this piece — including arXiv preprints for
