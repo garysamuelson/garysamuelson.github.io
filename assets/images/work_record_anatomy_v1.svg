@@ -21,7 +21,7 @@
   <!-- Left strip tint (narrow — rotated trigger event) -->
   <rect x="0" y="0" width="80" height="630" fill="#060e18" opacity="0.70"/>
   <!-- Right panel tint -->
-  <rect x="1042" y="0" width="158" height="630" fill="#060f0c" opacity="0.60"/>
+  <rect x="922" y="0" width="278" height="630" fill="#060f0c" opacity="0.60"/>
 
   <!-- ── Main Title ── -->
   <text x="600" y="38"
@@ -30,7 +30,7 @@
   <text x="600" y="58"
     text-anchor="middle" font-family="'Segoe UI',Arial,sans-serif"
     font-size="10" letter-spacing="2" fill="#3a5a78">
-    LOAN APPLICATION #48291 — A CONCRETE EXAMPLE
+    PRIOR AUTHORIZATION #PA-76421 — A CONCRETE EXAMPLE
   </text>
 
   <!-- ═══════════════════════════════════════════════════════ -->
@@ -47,10 +47,10 @@
   <rect x="3" y="68" width="74" height="524" rx="6"
     fill="none" stroke="#2a4a6a" stroke-width="1.5"/>
 
-  <!-- Rotated: "Application submitted." at screen y=155 -->
+  <!-- Rotated: "Authorization requested." at screen y=155 -->
   <text x="40" y="155"
     text-anchor="middle" transform="rotate(-90, 40, 155)"
-    font-family="'Segoe UI',Arial,sans-serif" font-size="11" fill="#6a9ab0">Application submitted.</text>
+    font-family="'Segoe UI',Arial,sans-serif" font-size="11" fill="#6a9ab0">Authorization requested.</text>
 
   <!-- Rotated: "TRIGGER EVENT" label at screen y=330 (center) -->
   <text x="40" y="330"
@@ -84,26 +84,26 @@
   <!-- ═══════════════════════════════════════════════════════ -->
 
   <!-- Card border -->
-  <rect x="90" y="68" width="950" height="524" rx="10"
+  <rect x="90" y="68" width="830" height="524" rx="10"
     fill="#060f1a" stroke="#2980b9" stroke-width="2.5" filter="url(#softglow)"/>
 
   <!-- Header bar -->
-  <rect x="90" y="68" width="950" height="48" rx="10" fill="#1a5090"/>
-  <rect x="90" y="96" width="950" height="20" fill="#1a5090"/>
-  <text x="565" y="95"
+  <rect x="90" y="68" width="830" height="48" rx="10" fill="#1a5090"/>
+  <rect x="90" y="96" width="830" height="20" fill="#1a5090"/>
+  <text x="505" y="95"
     text-anchor="middle" font-family="'Segoe UI',Arial,sans-serif"
     font-size="16" font-weight="800" letter-spacing="3" fill="#ffffff">WORK RECORD</text>
-  <text x="565" y="110"
+  <text x="505" y="110"
     text-anchor="middle" font-family="'Segoe UI',Arial,sans-serif"
     font-size="9" fill="#90bce0" letter-spacing="1">
     The structured container for one unit of enterprise work — identity · state · actions · policies · owner
   </text>
 
   <!-- Row separator lines -->
-  <line x1="100" y1="211" x2="1030" y2="211" stroke="#0d2040" stroke-width="1"/>
-  <line x1="100" y1="306" x2="1030" y2="306" stroke="#0d2040" stroke-width="1"/>
-  <line x1="100" y1="401" x2="1030" y2="401" stroke="#0d2040" stroke-width="1"/>
-  <line x1="100" y1="496" x2="1030" y2="496" stroke="#0d2040" stroke-width="1"/>
+  <line x1="100" y1="211" x2="910" y2="211" stroke="#0d2040" stroke-width="1"/>
+  <line x1="100" y1="306" x2="910" y2="306" stroke="#0d2040" stroke-width="1"/>
+  <line x1="100" y1="401" x2="910" y2="401" stroke="#0d2040" stroke-width="1"/>
+  <line x1="100" y1="496" x2="910" y2="496" stroke="#0d2040" stroke-width="1"/>
   <!-- Label / value divider -->
   <line x1="264" y1="116" x2="264" y2="592" stroke="#0d2040" stroke-width="1"/>
 
@@ -118,19 +118,19 @@
 
   <text x="280" y="142"
     font-family="'Segoe UI',Arial,sans-serif" font-size="14" font-weight="600" fill="#e0eaf4">
-    Loan Application #48291
+    Prior Authorization #PA-76421
   </text>
   <text x="280" y="162"
     font-family="'Segoe UI',Arial,sans-serif" font-size="12" fill="#c0d4e4">
-    Applicant: J. Hartley  ·  Product: 30yr Fixed Mortgage  ·  Amount: $218,000
+    Patient: S. Rodriguez  ·  Procedure: Cardiac MRI (CPT 75561)  ·  Requesting MD: Dr. K. Patel
   </text>
   <text x="280" y="180"
     font-family="'Segoe UI',Arial,sans-serif" font-size="12" fill="#c0d4e4">
-    Opened: May 12, 2026  ·  Branch: Austin Central  ·  Channel: Digital
+    Submitted: May 12, 2026  ·  Insurer: BlueCross/Shield  ·  Channel: EHR Portal
   </text>
   <text x="280" y="200"
     font-family="'Segoe UI',Arial,sans-serif" font-size="10" font-style="italic" fill="#2e5a78">
-    This record is unambiguous. No confusion about which application an agent is acting on.
+    This record is unambiguous. No confusion about which request an agent is acting on.
   </text>
 
 
@@ -201,15 +201,15 @@
   <!-- Action chips -->
   <rect x="278" y="313" width="148" height="28" rx="5" fill="#041008" stroke="#27ae60" stroke-width="1.5"/>
   <text x="352" y="332" text-anchor="middle"
-    font-family="'Segoe UI',Arial,sans-serif" font-size="11" fill="#27ae60">Approve Application</text>
+    font-family="'Segoe UI',Arial,sans-serif" font-size="11" fill="#27ae60">Approve Authorization</text>
 
   <rect x="434" y="313" width="134" height="28" rx="5" fill="#100608" stroke="#c0392b" stroke-width="1.5"/>
   <text x="501" y="332" text-anchor="middle"
-    font-family="'Segoe UI',Arial,sans-serif" font-size="11" fill="#c0392b">Reject Application</text>
+    font-family="'Segoe UI',Arial,sans-serif" font-size="11" fill="#c0392b">Deny Authorization</text>
 
   <rect x="576" y="313" width="140" height="28" rx="5" fill="#0e0a00" stroke="#c9a227" stroke-width="1.5"/>
   <text x="646" y="332" text-anchor="middle"
-    font-family="'Segoe UI',Arial,sans-serif" font-size="11" fill="#c9a227">Request More Info</text>
+    font-family="'Segoe UI',Arial,sans-serif" font-size="11" fill="#c9a227">Request Clinical Docs</text>
 
   <rect x="724" y="313" width="96" height="28" rx="5" fill="#0c0c18" stroke="#7070b0" stroke-width="1.5"/>
   <text x="772" y="332" text-anchor="middle"
@@ -235,15 +235,15 @@
 
   <text x="278" y="423"
     font-family="'Segoe UI',Arial,sans-serif" font-size="10" fill="#c0d4e4">
-    Authority: Branch Officer approval ≤ $200K  ·  Above $200K: VP Credit Risk required
+    Authority: Clinical Reviewer (standard)  ·  Medical Director required (experimental / high-cost)
   </text>
   <text x="278" y="441"
     font-family="'Segoe UI',Arial,sans-serif" font-size="10" fill="#c0d4e4">
-    Regulatory: Reg B (12 CFR §1002)  ·  HMDA (12 U.S.C. §2801)  ·  ECOA (15 U.S.C. §1691)
+    Regulatory: HIPAA (45 CFR §164)  ·  CMS LCD L38240  ·  No Surprises Act (42 U.S.C. §300gg-111)
   </text>
   <text x="278" y="459"
     font-family="'Segoe UI',Arial,sans-serif" font-size="10" fill="#c0d4e4">
-    SLA: Decision required by Jun 11, 2026  ·  Day 4 of 30  ·  Status: On track
+    SLA: Decision within 72 hours (urgent)  ·  Submitted May 12 @ 9:14 AM  ·  Hour 52 of 72
   </text>
   <text x="278" y="484"
     font-family="'Segoe UI',Arial,sans-serif" font-size="9" font-style="italic" fill="#2e5a78">
@@ -261,15 +261,15 @@
 
   <text x="278" y="518"
     font-family="'Segoe UI',Arial,sans-serif" font-size="10" fill="#c0d4e4">
-    Assigned: M. Chen, Credit Officer  ·  Accepted: May 12 @ 2:14 PM
+    Assigned: K. Williams, RN, Clinical Reviewer  ·  Accepted: May 12 @ 10:07 AM
   </text>
   <text x="278" y="537"
     font-family="'Segoe UI',Arial,sans-serif" font-size="10" fill="#c0d4e4">
-    Escalation path: VP Credit Risk (amount &gt; $200K or SLA breach detected)
+    Escalation path: Medical Director (experimental procedure or SLA breach detected)
   </text>
   <text x="278" y="556"
     font-family="'Segoe UI',Arial,sans-serif" font-size="10" fill="#c0d4e4">
-    Backup: Regional Credit Manager (M. Chen unavailable &gt; 4 hours)
+    Backup: Associate Medical Director (K. Williams unavailable &gt; 2 hours)
   </text>
   <text x="278" y="580"
     font-family="'Segoe UI',Arial,sans-serif" font-size="9" font-style="italic" fill="#2e5a78">
@@ -281,8 +281,8 @@
   <!--  RIGHT ARROW                                          -->
   <!-- ═══════════════════════════════════════════════════════ -->
 
-  <line x1="1040" y1="330" x2="1050" y2="330" stroke="#27ae60" stroke-width="2.5"/>
-  <polygon points="1058,330 1048,324 1048,336" fill="#27ae60"/>
+  <line x1="920" y1="330" x2="931" y2="330" stroke="#27ae60" stroke-width="2.5"/>
+  <polygon points="939,330 929,324 929,336" fill="#27ae60"/>
 
 
   <!-- ═══════════════════════════════════════════════════════ -->
@@ -290,46 +290,46 @@
   <!--  x:1058 to x:1196 (width 138, center 1127)           -->
   <!-- ═══════════════════════════════════════════════════════ -->
 
-  <text x="1127" y="84"
+  <text x="1007" y="84"
     text-anchor="middle" font-family="'Segoe UI',Arial,sans-serif"
     font-size="10" font-weight="700" letter-spacing="3" fill="#27ae60">VALUE REALIZED</text>
 
-  <rect x="1058" y="94" width="134" height="32" rx="7" fill="#040f06" stroke="#27ae60" stroke-width="1.5"/>
-  <text x="1125" y="115" text-anchor="middle"
-    font-family="'Segoe UI',Arial,sans-serif" font-size="10" fill="#4cb870">Decision rendered.</text>
+  <rect x="938" y="94" width="134" height="32" rx="7" fill="#040f06" stroke="#27ae60" stroke-width="1.5"/>
+  <text x="1005" y="115" text-anchor="middle"
+    font-family="'Segoe UI',Arial,sans-serif" font-size="10" fill="#4cb870">Authorization granted.</text>
 
-  <rect x="1058" y="134" width="134" height="32" rx="7" fill="#040f06" stroke="#27ae60" stroke-width="1.5"/>
-  <text x="1125" y="155" text-anchor="middle"
-    font-family="'Segoe UI',Arial,sans-serif" font-size="10" fill="#4cb870">Customer funded.</text>
+  <rect x="938" y="134" width="134" height="32" rx="7" fill="#040f06" stroke="#27ae60" stroke-width="1.5"/>
+  <text x="1005" y="155" text-anchor="middle"
+    font-family="'Segoe UI',Arial,sans-serif" font-size="10" fill="#4cb870">Patient receives care.</text>
 
-  <rect x="1058" y="174" width="134" height="32" rx="7" fill="#040f06" stroke="#27ae60" stroke-width="1.5"/>
-  <text x="1125" y="195" text-anchor="middle"
+  <rect x="938" y="174" width="134" height="32" rx="7" fill="#040f06" stroke="#27ae60" stroke-width="1.5"/>
+  <text x="1005" y="195" text-anchor="middle"
     font-family="'Segoe UI',Arial,sans-serif" font-size="10" fill="#4cb870">SLA met.</text>
 
-  <rect x="1058" y="214" width="134" height="32" rx="7" fill="#040f06" stroke="#27ae60" stroke-width="1.5"/>
-  <text x="1125" y="235" text-anchor="middle"
-    font-family="'Segoe UI',Arial,sans-serif" font-size="10" fill="#4cb870">Reg B documented.</text>
+  <rect x="938" y="214" width="134" height="32" rx="7" fill="#040f06" stroke="#27ae60" stroke-width="1.5"/>
+  <text x="1005" y="235" text-anchor="middle"
+    font-family="'Segoe UI',Arial,sans-serif" font-size="10" fill="#4cb870">HIPAA compliant.</text>
 
-  <rect x="1058" y="254" width="134" height="32" rx="7" fill="#040f06" stroke="#27ae60" stroke-width="1.5"/>
-  <text x="1125" y="275" text-anchor="middle"
+  <rect x="938" y="254" width="134" height="32" rx="7" fill="#040f06" stroke="#27ae60" stroke-width="1.5"/>
+  <text x="1005" y="275" text-anchor="middle"
     font-family="'Segoe UI',Arial,sans-serif" font-size="10" fill="#4cb870">Audit trail intact.</text>
 
-  <rect x="1058" y="294" width="134" height="32" rx="7" fill="#040f06" stroke="#27ae60" stroke-width="1.5"/>
-  <text x="1125" y="315" text-anchor="middle"
-    font-family="'Segoe UI',Arial,sans-serif" font-size="10" fill="#4cb870">Revenue posted.</text>
+  <rect x="938" y="294" width="134" height="32" rx="7" fill="#040f06" stroke="#27ae60" stroke-width="1.5"/>
+  <text x="1005" y="315" text-anchor="middle"
+    font-family="'Segoe UI',Arial,sans-serif" font-size="10" fill="#4cb870">Claim processed.</text>
 
   <!-- Closed work callout -->
-  <line x1="1068" y1="343" x2="1182" y2="343" stroke="#1a4a28" stroke-width="1"/>
-  <text x="1125" y="362"
+  <line x1="948" y1="343" x2="1062" y2="343" stroke="#1a4a28" stroke-width="1"/>
+  <text x="1005" y="362"
     text-anchor="middle" font-family="'Segoe UI',Arial,sans-serif"
     font-size="13" font-weight="800" fill="#27ae60">Closed work.</text>
-  <text x="1125" y="380"
+  <text x="1005" y="380"
     text-anchor="middle" font-family="'Segoe UI',Arial,sans-serif"
     font-size="10" fill="#1a5a28">Not output.</text>
-  <text x="1125" y="396"
+  <text x="1005" y="396"
     text-anchor="middle" font-family="'Segoe UI',Arial,sans-serif"
     font-size="10" fill="#1a5a28">Not a response.</text>
-  <text x="1125" y="414"
+  <text x="1005" y="414"
     text-anchor="middle" font-family="'Segoe UI',Arial,sans-serif"
     font-size="11" font-weight="700" fill="#27ae60">Work.</text>
 
