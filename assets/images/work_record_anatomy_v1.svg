@@ -1,0 +1,342 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
+  <defs>
+    <filter id="softglow" x="-15%" y="-15%" width="130%" height="130%">
+      <feGaussianBlur stdDeviation="5" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <filter id="subtleglow" x="-10%" y="-10%" width="120%" height="120%">
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- ── Background ── -->
+  <rect width="1200" height="630" fill="#0d1320"/>
+  <!-- Left strip tint (narrow — rotated trigger event) -->
+  <rect x="0" y="0" width="80" height="630" fill="#060e18" opacity="0.70"/>
+  <!-- Right panel tint -->
+  <rect x="1042" y="0" width="158" height="630" fill="#060f0c" opacity="0.60"/>
+
+  <!-- ── Main Title ── -->
+  <text x="600" y="38"
+    text-anchor="middle" font-family="'Segoe UI',Arial,sans-serif"
+    font-size="20" font-weight="700" fill="#d0d8e0">What a Work Record Carries</text>
+  <text x="600" y="58"
+    text-anchor="middle" font-family="'Segoe UI',Arial,sans-serif"
+    font-size="10" letter-spacing="2" fill="#3a5a78">
+    LOAN APPLICATION #48291 — A CONCRETE EXAMPLE
+  </text>
+
+  <!-- ═══════════════════════════════════════════════════════ -->
+  <!--  LEFT STRIP — TRIGGER EVENT (rotated 90°)             -->
+  <!--  Strip width 80px, center x=40                        -->
+  <!--  Text rotated -90° around each text's own center      -->
+  <!--  Reads bottom-to-top                                  -->
+  <!-- ═══════════════════════════════════════════════════════ -->
+
+  <!-- Thin separator between strip and card -->
+  <line x1="80" y1="68" x2="80" y2="592" stroke="#1a2a40" stroke-width="1"/>
+
+  <!-- Border around trigger event strip (matches card height) -->
+  <rect x="3" y="68" width="74" height="524" rx="6"
+    fill="none" stroke="#2a4a6a" stroke-width="1.5"/>
+
+  <!-- Rotated: "Application submitted." at screen y=155 -->
+  <text x="40" y="155"
+    text-anchor="middle" transform="rotate(-90, 40, 155)"
+    font-family="'Segoe UI',Arial,sans-serif" font-size="11" fill="#6a9ab0">Application submitted.</text>
+
+  <!-- Rotated: "TRIGGER EVENT" label at screen y=330 (center) -->
+  <text x="40" y="330"
+    text-anchor="middle" transform="rotate(-90, 40, 330)"
+    font-family="'Segoe UI',Arial,sans-serif"
+    font-size="12" font-weight="700" letter-spacing="3" fill="#4a9fd4">TRIGGER EVENT</text>
+
+  <!-- Rotated: "Work Record created." at screen y=495 -->
+  <text x="40" y="495"
+    text-anchor="middle" transform="rotate(-90, 40, 495)"
+    font-family="'Segoe UI',Arial,sans-serif"
+    font-size="10" font-style="italic" fill="#2a5a78">Work Record created.</text>
+
+  <!-- Arrow → into center card (enlarged) -->
+  <line x1="73" y1="330" x2="83" y2="330" stroke="#2980b9" stroke-width="3"/>
+  <polygon points="93,330 80,321 80,339" fill="#2980b9"/>
+
+
+  <!-- ═══════════════════════════════════════════════════════ -->
+  <!--  CENTER — WORK RECORD ANATOMY CARD                    -->
+  <!--  x:90  y:68  width:950  height:524  (bottom y:592)   -->
+  <!--  Header:  y 68–116 (48px)                            -->
+  <!--  5 rows:  y 116–592, each ≈ 95px                     -->
+  <!--    IDENTITY  116–211                                  -->
+  <!--    STATE     211–306                                  -->
+  <!--    ACTIONS   306–401                                  -->
+  <!--    POLICIES  401–496                                  -->
+  <!--    OWNER     496–592                                  -->
+  <!--  Label col: x 90–264  (center x=177)                 -->
+  <!--  Value col: x 272–1032                               -->
+  <!-- ═══════════════════════════════════════════════════════ -->
+
+  <!-- Card border -->
+  <rect x="90" y="68" width="950" height="524" rx="10"
+    fill="#060f1a" stroke="#2980b9" stroke-width="2.5" filter="url(#softglow)"/>
+
+  <!-- Header bar -->
+  <rect x="90" y="68" width="950" height="48" rx="10" fill="#1a5090"/>
+  <rect x="90" y="96" width="950" height="20" fill="#1a5090"/>
+  <text x="565" y="95"
+    text-anchor="middle" font-family="'Segoe UI',Arial,sans-serif"
+    font-size="16" font-weight="800" letter-spacing="3" fill="#ffffff">WORK RECORD</text>
+  <text x="565" y="110"
+    text-anchor="middle" font-family="'Segoe UI',Arial,sans-serif"
+    font-size="9" fill="#90bce0" letter-spacing="1">
+    The structured container for one unit of enterprise work — identity · state · actions · policies · owner
+  </text>
+
+  <!-- Row separator lines -->
+  <line x1="100" y1="211" x2="1030" y2="211" stroke="#0d2040" stroke-width="1"/>
+  <line x1="100" y1="306" x2="1030" y2="306" stroke="#0d2040" stroke-width="1"/>
+  <line x1="100" y1="401" x2="1030" y2="401" stroke="#0d2040" stroke-width="1"/>
+  <line x1="100" y1="496" x2="1030" y2="496" stroke="#0d2040" stroke-width="1"/>
+  <!-- Label / value divider -->
+  <line x1="264" y1="116" x2="264" y2="592" stroke="#0d2040" stroke-width="1"/>
+
+
+  <!-- ── ROW 1: IDENTITY (y 116–211) ── -->
+  <text x="177" y="155"
+    text-anchor="middle" font-family="'Segoe UI',Arial,sans-serif"
+    font-size="11" font-weight="800" letter-spacing="2" fill="#4a9fd4">IDENTITY</text>
+  <text x="177" y="173"
+    text-anchor="middle" font-family="'Segoe UI',Arial,sans-serif"
+    font-size="11" fill="#2a5a78">who · what · when</text>
+
+  <text x="280" y="142"
+    font-family="'Segoe UI',Arial,sans-serif" font-size="14" font-weight="600" fill="#e0eaf4">
+    Loan Application #48291
+  </text>
+  <text x="280" y="162"
+    font-family="'Segoe UI',Arial,sans-serif" font-size="12" fill="#c0d4e4">
+    Applicant: J. Hartley  ·  Product: 30yr Fixed Mortgage  ·  Amount: $218,000
+  </text>
+  <text x="280" y="180"
+    font-family="'Segoe UI',Arial,sans-serif" font-size="12" fill="#c0d4e4">
+    Opened: May 12, 2026  ·  Branch: Austin Central  ·  Channel: Digital
+  </text>
+  <text x="280" y="200"
+    font-family="'Segoe UI',Arial,sans-serif" font-size="10" font-style="italic" fill="#2e5a78">
+    This record is unambiguous. No confusion about which application an agent is acting on.
+  </text>
+
+
+  <!-- ── ROW 2: STATE (y 211–306) ── -->
+  <text x="177" y="248"
+    text-anchor="middle" font-family="'Segoe UI',Arial,sans-serif"
+    font-size="11" font-weight="800" letter-spacing="2" fill="#4a9fd4">STATE</text>
+  <text x="177" y="266"
+    text-anchor="middle" font-family="'Segoe UI',Arial,sans-serif"
+    font-size="11" fill="#2a5a78">where it stands now</text>
+
+  <!-- State trail -->
+  <rect x="278" y="222" width="78" height="26" rx="5" fill="#0a1828" stroke="#2a4a6a" stroke-width="1"/>
+  <text x="317" y="240" text-anchor="middle"
+    font-family="'Segoe UI',Arial,sans-serif" font-size="9" fill="#3a6888">Created</text>
+
+  <text x="361" y="239"
+    font-family="'Segoe UI',Arial,sans-serif" font-size="11" fill="#2a4a68">→</text>
+
+  <rect x="370" y="222" width="86" height="26" rx="5" fill="#0a1828" stroke="#2a4a6a" stroke-width="1"/>
+  <text x="413" y="240" text-anchor="middle"
+    font-family="'Segoe UI',Arial,sans-serif" font-size="9" fill="#3a6888">Submitted</text>
+
+  <text x="461" y="239"
+    font-family="'Segoe UI',Arial,sans-serif" font-size="11" fill="#2a4a68">→</text>
+
+  <rect x="470" y="220" width="112" height="30" rx="5" fill="#0c2240" stroke="#2980b9" stroke-width="2"/>
+  <text x="526" y="240" text-anchor="middle"
+    font-family="'Segoe UI',Arial,sans-serif" font-size="11" font-weight="700" fill="#4a9fd4">Under Review</text>
+
+  <text x="590" y="239"
+    font-family="'Segoe UI',Arial,sans-serif" font-size="11" fill="#27ae60">◀ now</text>
+
+  <!-- Valid next states -->
+  <text x="278" y="271"
+    font-family="'Segoe UI',Arial,sans-serif" font-size="11" fill="#3a7058">Next valid states:</text>
+
+  <rect x="372" y="259" width="68" height="20" rx="4" fill="#041008" stroke="#27ae60" stroke-width="1"/>
+  <text x="406" y="273" text-anchor="middle"
+    font-family="'Segoe UI',Arial,sans-serif" font-size="10" fill="#27ae60">Approved</text>
+
+  <rect x="446" y="259" width="68" height="20" rx="4" fill="#100608" stroke="#c0392b" stroke-width="1"/>
+  <text x="480" y="273" text-anchor="middle"
+    font-family="'Segoe UI',Arial,sans-serif" font-size="10" fill="#c0392b">Rejected</text>
+
+  <rect x="520" y="259" width="82" height="20" rx="4" fill="#0c0c18" stroke="#7070b0" stroke-width="1"/>
+  <text x="561" y="273" text-anchor="middle"
+    font-family="'Segoe UI',Arial,sans-serif" font-size="10" fill="#7070b0">Returned</text>
+
+  <rect x="608" y="259" width="82" height="20" rx="4" fill="#0c0c18" stroke="#7070b0" stroke-width="1"/>
+  <text x="649" y="273" text-anchor="middle"
+    font-family="'Segoe UI',Arial,sans-serif" font-size="10" fill="#7070b0">Escalated</text>
+
+  <text x="278" y="297"
+    font-family="'Segoe UI',Arial,sans-serif" font-size="10" font-style="italic" fill="#2e5a78">
+    The record enforces which transitions are legal. An agent cannot invent a step that doesn't exist.
+  </text>
+
+
+  <!-- ── ROW 3: VALID ACTIONS (y 306–401) ── -->
+  <text x="177" y="342"
+    text-anchor="middle" font-family="'Segoe UI',Arial,sans-serif"
+    font-size="11" font-weight="800" letter-spacing="2" fill="#4a9fd4">ACTIONS</text>
+  <text x="177" y="360"
+    text-anchor="middle" font-family="'Segoe UI',Arial,sans-serif"
+    font-size="11" fill="#2a5a78">allowed moves, right now</text>
+
+  <!-- Action chips -->
+  <rect x="278" y="313" width="148" height="28" rx="5" fill="#041008" stroke="#27ae60" stroke-width="1.5"/>
+  <text x="352" y="332" text-anchor="middle"
+    font-family="'Segoe UI',Arial,sans-serif" font-size="11" fill="#27ae60">Approve Application</text>
+
+  <rect x="434" y="313" width="134" height="28" rx="5" fill="#100608" stroke="#c0392b" stroke-width="1.5"/>
+  <text x="501" y="332" text-anchor="middle"
+    font-family="'Segoe UI',Arial,sans-serif" font-size="11" fill="#c0392b">Reject Application</text>
+
+  <rect x="576" y="313" width="140" height="28" rx="5" fill="#0e0a00" stroke="#c9a227" stroke-width="1.5"/>
+  <text x="646" y="332" text-anchor="middle"
+    font-family="'Segoe UI',Arial,sans-serif" font-size="11" fill="#c9a227">Request More Info</text>
+
+  <rect x="724" y="313" width="96" height="28" rx="5" fill="#0c0c18" stroke="#7070b0" stroke-width="1.5"/>
+  <text x="772" y="332" text-anchor="middle"
+    font-family="'Segoe UI',Arial,sans-serif" font-size="11" fill="#7070b0">Escalate</text>
+
+  <text x="278" y="368"
+    font-family="'Segoe UI',Arial,sans-serif" font-size="11" fill="#c0d4e4">
+    Not "everything the agent can do." Only what this state, this record, this policy permits.
+  </text>
+  <text x="278" y="391"
+    font-family="'Segoe UI',Arial,sans-serif" font-size="10" font-style="italic" fill="#2e5a78">
+    The agent operates within a bounded action space — not an open-ended capability set.
+  </text>
+
+
+  <!-- ── ROW 4: POLICIES (y 401–496) ── -->
+  <text x="177" y="437"
+    text-anchor="middle" font-family="'Segoe UI',Arial,sans-serif"
+    font-size="11" font-weight="800" letter-spacing="2" fill="#4a9fd4">POLICIES</text>
+  <text x="177" y="455"
+    text-anchor="middle" font-family="'Segoe UI',Arial,sans-serif"
+    font-size="11" fill="#2a5a78">constraints at this stage</text>
+
+  <text x="278" y="423"
+    font-family="'Segoe UI',Arial,sans-serif" font-size="10" fill="#c0d4e4">
+    Authority: Branch Officer approval ≤ $200K  ·  Above $200K: VP Credit Risk required
+  </text>
+  <text x="278" y="441"
+    font-family="'Segoe UI',Arial,sans-serif" font-size="10" fill="#c0d4e4">
+    Regulatory: Reg B (12 CFR §1002)  ·  HMDA (12 U.S.C. §2801)  ·  ECOA (15 U.S.C. §1691)
+  </text>
+  <text x="278" y="459"
+    font-family="'Segoe UI',Arial,sans-serif" font-size="10" fill="#c0d4e4">
+    SLA: Decision required by Jun 11, 2026  ·  Day 4 of 30  ·  Status: On track
+  </text>
+  <text x="278" y="484"
+    font-family="'Segoe UI',Arial,sans-serif" font-size="9" font-style="italic" fill="#2e5a78">
+    Versioned, auditable, applied at runtime — not buried in a prompt no one can inspect.
+  </text>
+
+
+  <!-- ── ROW 5: OWNER (y 496–592) ── -->
+  <text x="177" y="530"
+    text-anchor="middle" font-family="'Segoe UI',Arial,sans-serif"
+    font-size="11" font-weight="800" letter-spacing="2" fill="#4a9fd4">OWNER</text>
+  <text x="177" y="548"
+    text-anchor="middle" font-family="'Segoe UI',Arial,sans-serif"
+    font-size="11" fill="#2a5a78">accountability, always</text>
+
+  <text x="278" y="518"
+    font-family="'Segoe UI',Arial,sans-serif" font-size="10" fill="#c0d4e4">
+    Assigned: M. Chen, Credit Officer  ·  Accepted: May 12 @ 2:14 PM
+  </text>
+  <text x="278" y="537"
+    font-family="'Segoe UI',Arial,sans-serif" font-size="10" fill="#c0d4e4">
+    Escalation path: VP Credit Risk (amount &gt; $200K or SLA breach detected)
+  </text>
+  <text x="278" y="556"
+    font-family="'Segoe UI',Arial,sans-serif" font-size="10" fill="#c0d4e4">
+    Backup: Regional Credit Manager (M. Chen unavailable &gt; 4 hours)
+  </text>
+  <text x="278" y="580"
+    font-family="'Segoe UI',Arial,sans-serif" font-size="9" font-style="italic" fill="#2e5a78">
+    At every moment, someone — or something — owns this. Nothing is orphaned.
+  </text>
+
+
+  <!-- ═══════════════════════════════════════════════════════ -->
+  <!--  RIGHT ARROW                                          -->
+  <!-- ═══════════════════════════════════════════════════════ -->
+
+  <line x1="1040" y1="330" x2="1050" y2="330" stroke="#27ae60" stroke-width="2.5"/>
+  <polygon points="1058,330 1048,324 1048,336" fill="#27ae60"/>
+
+
+  <!-- ═══════════════════════════════════════════════════════ -->
+  <!--  RIGHT PANEL — VALUE REALIZED                         -->
+  <!--  x:1058 to x:1196 (width 138, center 1127)           -->
+  <!-- ═══════════════════════════════════════════════════════ -->
+
+  <text x="1127" y="84"
+    text-anchor="middle" font-family="'Segoe UI',Arial,sans-serif"
+    font-size="10" font-weight="700" letter-spacing="3" fill="#27ae60">VALUE REALIZED</text>
+
+  <rect x="1058" y="94" width="134" height="32" rx="7" fill="#040f06" stroke="#27ae60" stroke-width="1.5"/>
+  <text x="1125" y="115" text-anchor="middle"
+    font-family="'Segoe UI',Arial,sans-serif" font-size="10" fill="#4cb870">Decision rendered.</text>
+
+  <rect x="1058" y="134" width="134" height="32" rx="7" fill="#040f06" stroke="#27ae60" stroke-width="1.5"/>
+  <text x="1125" y="155" text-anchor="middle"
+    font-family="'Segoe UI',Arial,sans-serif" font-size="10" fill="#4cb870">Customer funded.</text>
+
+  <rect x="1058" y="174" width="134" height="32" rx="7" fill="#040f06" stroke="#27ae60" stroke-width="1.5"/>
+  <text x="1125" y="195" text-anchor="middle"
+    font-family="'Segoe UI',Arial,sans-serif" font-size="10" fill="#4cb870">SLA met.</text>
+
+  <rect x="1058" y="214" width="134" height="32" rx="7" fill="#040f06" stroke="#27ae60" stroke-width="1.5"/>
+  <text x="1125" y="235" text-anchor="middle"
+    font-family="'Segoe UI',Arial,sans-serif" font-size="10" fill="#4cb870">Reg B documented.</text>
+
+  <rect x="1058" y="254" width="134" height="32" rx="7" fill="#040f06" stroke="#27ae60" stroke-width="1.5"/>
+  <text x="1125" y="275" text-anchor="middle"
+    font-family="'Segoe UI',Arial,sans-serif" font-size="10" fill="#4cb870">Audit trail intact.</text>
+
+  <rect x="1058" y="294" width="134" height="32" rx="7" fill="#040f06" stroke="#27ae60" stroke-width="1.5"/>
+  <text x="1125" y="315" text-anchor="middle"
+    font-family="'Segoe UI',Arial,sans-serif" font-size="10" fill="#4cb870">Revenue posted.</text>
+
+  <!-- Closed work callout -->
+  <line x1="1068" y1="343" x2="1182" y2="343" stroke="#1a4a28" stroke-width="1"/>
+  <text x="1125" y="362"
+    text-anchor="middle" font-family="'Segoe UI',Arial,sans-serif"
+    font-size="13" font-weight="800" fill="#27ae60">Closed work.</text>
+  <text x="1125" y="380"
+    text-anchor="middle" font-family="'Segoe UI',Arial,sans-serif"
+    font-size="10" fill="#1a5a28">Not output.</text>
+  <text x="1125" y="396"
+    text-anchor="middle" font-family="'Segoe UI',Arial,sans-serif"
+    font-size="10" fill="#1a5a28">Not a response.</text>
+  <text x="1125" y="414"
+    text-anchor="middle" font-family="'Segoe UI',Arial,sans-serif"
+    font-size="11" font-weight="700" fill="#27ae60">Work.</text>
+
+  <!-- Illustrative disclaimer -->
+  <text x="600" y="621" text-anchor="middle" font-family="'Segoe UI',Arial,sans-serif"
+    font-size="9" font-style="italic" fill="#3a4a58">
+    Illustrative abstraction only — not representative of any specific institution.
+  </text>
+
+</svg>
