@@ -1,9 +1,10 @@
 ---
-title: "AI Agents Need a Work Record. BPM Has Had One for 25 Years."
-description: "Nate B. Jones' Trillion-Dollar Agentic Workflow framework maps exactly to BPM's twenty-five-year body of practice — and the integration substrate just shipped."
-social_image: https://garysamuelson.github.io/assets/images/work_record_banner_v1.png
+title: "Work Record"
+description: "Anchor the Agent — Close the Work."
+social_image: https://garysamuelson.github.io/assets/images/work_record_banner_v2.png
 tags:
   - BPM
+  - MCP
   - Agentic AI
   - Process Orchestration
   - BPMN
@@ -11,13 +12,13 @@ tags:
   - AI Strategy
 ---
 
-![AI Agents Need a Work Record. BPM Has Had One for 25 Years.](../assets/images/work_record_banner_v1.png)
+![Work Record — Anchor the Agent. Close the Work.](../assets/images/work_record_banner_v2.png)
 
-# AI Agents Need a Work Record. BPM Has Had One for 25 Years.
+# Work Record
 
 **Author:** Gary Samuelson  
 **Date:** May 16, 2026  
-**Status:** Published — May 16, 2026
+**Status:** Updated — May 17, 2026
 
 ---
 
