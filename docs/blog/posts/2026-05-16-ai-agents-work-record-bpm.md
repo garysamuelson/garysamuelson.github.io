@@ -10,7 +10,7 @@ tags:
   - BPMN
   - Camunda
   - AI Strategy
-social_image: https://garyrsamuelson.github.io/assets/images/work_record_banner_v1.png
+social_image: https://garysamuelson.github.io/assets/images/work_record_banner_v1.png
 ---
 
 Business Process Management (BPM) and the emerging discipline of agentic AI workflow design are converging on the same architectural truth from different directions. Nate B. Jones' 2026 "Trillion-Dollar Agentic Workflow" framework identifies four infrastructure requirements for realizing value from AI agents in enterprise settings — Work Record, Actions, Policies, and Owners. BPM's twenty-five-year body of practice has already formalized each of these primitives, and the field is actively evolving — through agentic BPM, object-centric process mining (OCEL 2.0), and protocol-native process orchestration (MCP Gateway, Camunda 8.x) — to place exactly the infrastructure Jones describes beneath the agentic capability layer. The argument is not that BPM anticipated the AI moment and deserves credit; it is that practitioners who wish to capture the agentic workflow opportunity do not need to build from scratch. The foundation exists. What the field now offers is a clear map from that foundation to the trillion-dollar outcome: the Work Record is the BPM task object [7, 8], Actions are task-palette and service-task semantics, Policies are semantic rule and compliance layers, and Owners are the role-assignment and escalation governance already embedded in every mature process engine. The accelerating path from Jones' framing to measurable agentic value runs directly through modern BPM practice — and that path is already open.
@@ -85,7 +85,7 @@ closes work — not just generates output — is no longer a research project. I
 is configuration work on a runtime that thousands of organizations are already
 operating. For the full pattern — agent as worker, task schema, measured output
 — see the companion piece
-[*The Working AI: Put to Task with Measured Output*](https://garyrsamuelson.github.io/agentic/working-ai-put-to-task/).
+[*The Working AI: Put to Task with Measured Output*](https://garysamuelson.github.io/agentic/working-ai-put-to-task/).
 
 Anchored to that record, the agent also knows *what it is allowed to do next* —
 not everything it is capable of, but the specific moves that are valid given where
@@ -360,7 +360,7 @@ https://learning.oreilly.com/library/view/enterprise-process-orchestration/97813
 
 ---
 
-*This post is a companion to [The Working AI: Put to Task with Measured Output](https://garyrsamuelson.github.io/agentic/working-ai-put-to-task/),
+*This post is a companion to [The Working AI: Put to Task with Measured Output](https://garysamuelson.github.io/agentic/working-ai-put-to-task/),
 which develops the agent-as-worker and AI-Inside patterns in full detail.*
 
 *References for the academic version of this piece — including arXiv preprints for
