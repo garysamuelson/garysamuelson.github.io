@@ -84,7 +84,7 @@ extra:
 
 nav:
   - Home: index.md
-  - "AI Agents Need a Work Record — BPM Has Had One for 25 Years": agentic/work-record-is-bpm-task.md
+  - "Work Record": agentic/work-record-is-bpm-task.md
   - "The Working AI: Put to Task with Measured Output": agentic/working-ai-put-to-task.md
   - Agentic Agency & Workflows: agentic/agentic-agency-and-workflows.md
   - AI Governance in Healthcare:
