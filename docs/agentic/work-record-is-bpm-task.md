@@ -1,7 +1,7 @@
 ---
 title: "Work Record"
 description: "Anchor the Agent — Close the Work."
-social_image: https://garysamuelson.github.io/assets/images/work_record_banner_v2.png
+social_image: https://garysamuelson.github.io/assets/images/work_record_banner_v3.png
 tags:
   - BPM
   - MCP
@@ -12,7 +12,7 @@ tags:
   - AI Strategy
 ---
 
-![Work Record — Anchor the Agent. Close the Work.](../assets/images/work_record_banner_v2.png)
+![Work Record — Anchor the Agent. Close the Work.](../assets/images/work_record_banner_v3.png)
 
 # Work Record
 
