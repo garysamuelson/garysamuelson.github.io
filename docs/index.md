@@ -10,7 +10,29 @@ I've built production AI systems in emergency medicine, real-time ML platforms a
 
 ---
 
-## Latest: The Working AI — Put to Task with Measured Output
+## Latest: AI Agents Need a Work Record. BPM Has Had One for 25 Years.
+
+Jones named the gap: agents float above the work, unbound from it, producing output that nobody owns. BPM named the anchor 25 years ago. Six AI platforms surveyed — every one solves coordination. None solve the work object problem. Camunda 8.9's MCP Gateway does — today, in production.
+
+<div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap:1.5rem; margin-bottom:2rem;">
+
+<div markdown style="border:1px solid var(--md-default-fg-color--lightest); border-radius:8px; overflow:hidden;">
+<a href="blog/2026/05/16/ai-agents-need-a-work-record-bpm-has-had-one-for-25-years/">
+  <img src="assets/images/work_record_banner_v1.png" alt="AI Agents Need a Work Record. BPM Has Had One for 25 Years." style="width:100%; display:block;" />
+</a>
+<div style="padding:1rem;">
+<small><strong>New · May 16, 2026</strong> · BPM · Agentic AI · Process Orchestration · Camunda</small><br/>
+<strong><a href="blog/2026/05/16/ai-agents-need-a-work-record-bpm-has-had-one-for-25-years/">AI Agents Need a Work Record. BPM Has Had One for 25 Years.</a></strong>
+<p>Nate Jones named the trillion-dollar gap. BPM filled it two decades ago. Survey of six AI platforms confirms: all solve coordination, none solve the work object problem. Camunda 8.9 + MCP Gateway does — today, in production.</p>
+<a href="blog/2026/05/16/ai-agents-need-a-work-record-bpm-has-had-one-for-25-years/">Read →</a>
+</div>
+</div>
+
+</div>
+
+---
+
+## Previously: The Working AI — Put to Task with Measured Output
 
 Most enterprises talk about AI as if it were a strategy. It is not. AI is a class of worker — and like any worker, it needs a job description, a place in the workflow, and a clear measure of what good output looks like. BPM already wrote that job description. This paper maps exactly where AI plugs in.
 
@@ -25,28 +47,6 @@ Most enterprises talk about AI as if it were a strategy. It is not. AI is a clas
 <strong><a href="agentic/working-ai-put-to-task/">The Working AI: Put to Task with Measured Output — A Practitioner's Guide to Placing AI in Business Process</a></strong>
 <p>AI without BPM is a worker without a job description; BPM without AI is a job description with the wrong workforce. Six recommendations, five anti-patterns, eight figures, and a complete architectural placement — from business model down to the worker slot where AI actually lives.</p>
 <a href="agentic/working-ai-put-to-task/">Read →</a>
-</div>
-</div>
-
-</div>
-
----
-
-## Previously: Aspect-Oriented Process Management
-
-For twenty years, BPMN service tasks have been black boxes — they know only what they're given. Camunda 8.9's MCP Gateway is the process weaver that finally changes that. Treat instance history, audit lineage, goal context, and peer-task state as runtime aspects advised into tasks — without wiring them through the diagram.
-
-<div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap:1.5rem; margin-bottom:2rem;">
-
-<div markdown style="border:1px solid var(--md-default-fg-color--lightest); border-radius:8px; overflow:hidden;">
-<a href="semantic-ai/aspect-oriented-process-management/">
-  <img src="assets/aopm_social_s8_v2.png" alt="Aspect-Oriented Process Management" style="width:100%; display:block;" />
-</a>
-<div style="padding:1rem;">
-<small><strong>April 25, 2026</strong> · Semantic AI · Camunda 8.9 · MCP · Agentic Systems</small><br/>
-<strong><a href="semantic-ai/aspect-oriented-process-management/">Aspect-Oriented Process Management: Beyond the Serial Controller to MCP-Enabled Swarms</a></strong>
-<p>The same move AOP made for object-oriented code, applied at the process layer. Instance history, goal context, peer-task state, preference weights, and policy versions as aspects — advised into running tasks through the MCP Gateway, without modeler-authored wiring.</p>
-<a href="semantic-ai/aspect-oriented-process-management/">Read →</a>
 </div>
 </div>
 
@@ -125,6 +125,18 @@ A two-part examination of autonomous AI in healthcare — from the patient exper
 <small>March 22, 2026 · Agentic AI · BPMN</small>
 <p>Two forms of "agentic" mapped onto a real EMS STEMI detection workflow — a three-layer architecture, an AI triage agent inside a constrained agentic zone, and a physician-in-the-loop when confidence drops below threshold.</p>
 <a href="agentic/agentic-agency-and-workflows/">Read →</a>
+</div>
+</div>
+
+<div markdown style="border:1px solid var(--md-default-fg-color--lightest); border-radius:8px; overflow:hidden;">
+<a href="semantic-ai/aspect-oriented-process-management/">
+  <img src="assets/aopm_social_s8_v2.png" alt="Aspect-Oriented Process Management" style="width:100%; display:block;" />
+</a>
+<div style="padding:1rem;">
+<strong><a href="semantic-ai/aspect-oriented-process-management/">Aspect-Oriented Process Management: Beyond the Serial Controller to MCP-Enabled Swarms</a></strong><br/>
+<small>April 25, 2026 · Semantic AI · Camunda 8.9 · MCP · Agentic Systems</small>
+<p>The same move AOP made for object-oriented code, applied at the process layer. Instance history, goal context, peer-task state, preference weights, and policy versions as aspects — advised into running tasks through the MCP Gateway, without modeler-authored wiring.</p>
+<a href="semantic-ai/aspect-oriented-process-management/">Read →</a>
 </div>
 </div>
 
