@@ -1,0 +1,224 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
+  <defs>
+    <filter id="softglow" x="-15%" y="-15%" width="130%" height="130%">
+      <feGaussianBlur stdDeviation="5" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <filter id="subtleglow" x="-10%" y="-10%" width="120%" height="120%">
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- ── Background ── -->
+  <rect width="1200" height="630" fill="#0d1320"/>
+  <!-- Left panel warm tint -->
+  <rect x="0" y="0" width="595" height="630" fill="#1a0d18" opacity="0.30"/>
+
+
+  <!-- ═══════════════════════════════════════════════ -->
+  <!--  LEFT PANEL — THE PROBLEM                      -->
+  <!-- ═══════════════════════════════════════════════ -->
+
+  <!-- Label -->
+  <text x="290" y="36"
+    text-anchor="middle" font-family="'Segoe UI',Arial,sans-serif"
+    font-size="11" font-weight="700" letter-spacing="4" fill="#c0392b">THE PROBLEM</text>
+
+  <!-- Title -->
+  <text x="290" y="63"
+    text-anchor="middle" font-family="'Segoe UI',Arial,sans-serif"
+    font-size="19" font-weight="700" fill="#d0d0d0">Agents Floating Above the Work</text>
+
+  <!-- Agent circle -->
+  <circle cx="290" cy="148" r="44" fill="#1e0a14" stroke="#c0392b" stroke-width="2.5"/>
+  <text x="290" y="141" text-anchor="middle"
+    font-family="'Segoe UI',Arial,sans-serif" font-size="12" font-weight="700" fill="#c0392b">AI</text>
+  <text x="290" y="159" text-anchor="middle"
+    font-family="'Segoe UI',Arial,sans-serif" font-size="12" font-weight="700" fill="#c0392b">AGENT</text>
+
+  <!-- Output floating away (top-right of agent) -->
+  <rect x="345" y="100" width="205" height="54" rx="8"
+    fill="#180a14" stroke="#4a2030" stroke-width="1" stroke-dasharray="5,3"/>
+  <text x="447" y="121" text-anchor="middle"
+    font-family="'Segoe UI',Arial,sans-serif" font-size="10" fill="#555">output generated...</text>
+  <text x="447" y="140" text-anchor="middle"
+    font-family="'Segoe UI',Arial,sans-serif" font-size="11" font-weight="600" fill="#c0392b">nobody owns this ↗</text>
+  <!-- Faint arrow from agent to output box -->
+  <line x1="333" y1="130" x2="348" y2="126" stroke="#4a2030" stroke-width="1.5" stroke-dasharray="3,2"/>
+
+  <!-- Three dashed lines: agent → enterprise systems (broken) -->
+  <!-- Left → CRM -->
+  <line x1="260" y1="190" x2="157" y2="448"
+    stroke="#6a3a58" stroke-width="2" stroke-dasharray="9,5"/>
+  <!-- Center → ERP -->
+  <line x1="290" y1="192" x2="290" y2="448"
+    stroke="#6a3a58" stroke-width="2" stroke-dasharray="9,5"/>
+  <!-- Right → Workflow -->
+  <line x1="320" y1="190" x2="423" y2="448"
+    stroke="#6a3a58" stroke-width="2" stroke-dasharray="9,5"/>
+
+  <!-- Disconnect markers (at y ≈ 312, midpoint of each line) -->
+  <circle cx="210" cy="314" r="15" fill="#1a0810" stroke="#c0392b" stroke-width="1.5"/>
+  <text x="210" y="320" text-anchor="middle"
+    font-family="'Segoe UI',Arial,sans-serif" font-size="15" fill="#c0392b">✕</text>
+
+  <circle cx="290" cy="312" r="15" fill="#1a0810" stroke="#c0392b" stroke-width="1.5"/>
+  <text x="290" y="318" text-anchor="middle"
+    font-family="'Segoe UI',Arial,sans-serif" font-size="15" fill="#c0392b">✕</text>
+
+  <circle cx="370" cy="314" r="15" fill="#1a0810" stroke="#c0392b" stroke-width="1.5"/>
+  <text x="370" y="320" text-anchor="middle"
+    font-family="'Segoe UI',Arial,sans-serif" font-size="15" fill="#c0392b">✕</text>
+
+  <!-- Enterprise boxes (left — dim, disconnected) -->
+  <rect x="97" y="451" width="120" height="54" rx="7" fill="#1e1228" stroke="#503060" stroke-width="1.5"/>
+  <text x="157" y="474" text-anchor="middle"
+    font-family="'Segoe UI',Arial,sans-serif" font-size="12" font-weight="600" fill="#7a5888">CRM</text>
+  <text x="157" y="491" text-anchor="middle"
+    font-family="'Segoe UI',Arial,sans-serif" font-size="9" fill="#5a4268">Ticket / Case</text>
+
+  <rect x="230" y="451" width="120" height="54" rx="7" fill="#1e1228" stroke="#503060" stroke-width="1.5"/>
+  <text x="290" y="474" text-anchor="middle"
+    font-family="'Segoe UI',Arial,sans-serif" font-size="12" font-weight="600" fill="#7a5888">ERP</text>
+  <text x="290" y="491" text-anchor="middle"
+    font-family="'Segoe UI',Arial,sans-serif" font-size="9" fill="#5a4268">Invoice / Order</text>
+
+  <rect x="363" y="451" width="120" height="54" rx="7" fill="#1e1228" stroke="#503060" stroke-width="1.5"/>
+  <text x="423" y="474" text-anchor="middle"
+    font-family="'Segoe UI',Arial,sans-serif" font-size="12" font-weight="600" fill="#7a5888">Workflow</text>
+  <text x="423" y="491" text-anchor="middle"
+    font-family="'Segoe UI',Arial,sans-serif" font-size="9" fill="#5a4268">Case / Task</text>
+
+  <!-- Problem outcome label -->
+  <text x="290" y="538"
+    text-anchor="middle" font-family="'Segoe UI',Arial,sans-serif"
+    font-size="13" font-weight="700" fill="#c0392b">No anchor. No closed outcomes.</text>
+  <text x="290" y="559"
+    text-anchor="middle" font-family="'Segoe UI',Arial,sans-serif"
+    font-size="13" fill="#5a4050">The trillion-dollar opportunity, left on the table.</text>
+
+
+  <!-- ═══════════════════════════════════════════════ -->
+  <!--  CENTER DIVIDER                                -->
+  <!-- ═══════════════════════════════════════════════ -->
+  <line x1="600" y1="24" x2="600" y2="606" stroke="#1e2e48" stroke-width="1.5"/>
+  <rect x="580" y="284" width="40" height="26" rx="13" fill="#0d1828"/>
+  <text x="600" y="302" text-anchor="middle"
+    font-family="'Segoe UI',Arial,sans-serif" font-size="13" font-weight="900" fill="#243550">vs</text>
+
+
+  <!-- ═══════════════════════════════════════════════ -->
+  <!--  RIGHT PANEL — THE SOLUTION                    -->
+  <!-- ═══════════════════════════════════════════════ -->
+
+  <!-- Label -->
+  <text x="910" y="36"
+    text-anchor="middle" font-family="'Segoe UI',Arial,sans-serif"
+    font-size="11" font-weight="700" letter-spacing="4" fill="#27ae60">THE SOLUTION</text>
+
+  <!-- Title -->
+  <text x="910" y="63"
+    text-anchor="middle" font-family="'Segoe UI',Arial,sans-serif"
+    font-size="19" font-weight="700" fill="#d0d0d0">Agent Anchored to the Work Record</text>
+
+  <!-- Agent circle -->
+  <circle cx="910" cy="148" r="44" fill="#071812" stroke="#27ae60" stroke-width="2.5" filter="url(#subtleglow)"/>
+  <text x="910" y="141" text-anchor="middle"
+    font-family="'Segoe UI',Arial,sans-serif" font-size="12" font-weight="700" fill="#27ae60">AI</text>
+  <text x="910" y="159" text-anchor="middle"
+    font-family="'Segoe UI',Arial,sans-serif" font-size="12" font-weight="700" fill="#27ae60">AGENT</text>
+
+  <!-- Solid connection: agent → Work Record -->
+  <line x1="910" y1="192" x2="910" y2="266" stroke="#27ae60" stroke-width="3"/>
+  <polygon points="910,280 901,263 919,263" fill="#27ae60"/>
+
+  <!-- ── WORK RECORD BOX ── -->
+  <rect x="715" y="280" width="390" height="160" rx="10"
+    fill="#060f1a" stroke="#2980b9" stroke-width="2.5" filter="url(#softglow)"/>
+
+  <!-- Header bar -->
+  <rect x="715" y="280" width="390" height="44" rx="10" fill="#1a5090"/>
+  <rect x="715" y="304"  width="390" height="20" fill="#1a5090"/>
+
+  <text x="910" y="305" text-anchor="middle"
+    font-family="'Segoe UI',Arial,sans-serif" font-size="15" font-weight="800"
+    letter-spacing="2" fill="#ffffff">WORK RECORD</text>
+  <text x="910" y="320" text-anchor="middle"
+    font-family="'Segoe UI',Arial,sans-serif" font-size="9" fill="#90bce0" letter-spacing="1">ticket · invoice · case · application — source of truth</text>
+
+  <!-- Four cells (2 × 2 grid) -->
+  <!-- STATE -->
+  <rect x="725" y="334" width="182" height="46" rx="5" fill="#060d18" stroke="#1a3a6a" stroke-width="1.5"/>
+  <text x="816" y="353" text-anchor="middle"
+    font-family="'Segoe UI',Arial,sans-serif" font-size="10" font-weight="800" fill="#4a9fd4">STATE</text>
+  <text x="816" y="369" text-anchor="middle"
+    font-family="'Segoe UI',Arial,sans-serif" font-size="9" fill="#5a88a0">What phase · what's next</text>
+
+  <!-- ACTIONS -->
+  <rect x="913" y="334" width="182" height="46" rx="5" fill="#060d18" stroke="#1a3a6a" stroke-width="1.5"/>
+  <text x="1004" y="353" text-anchor="middle"
+    font-family="'Segoe UI',Arial,sans-serif" font-size="10" font-weight="800" fill="#4a9fd4">ACTIONS</text>
+  <text x="1004" y="369" text-anchor="middle"
+    font-family="'Segoe UI',Arial,sans-serif" font-size="9" fill="#5a88a0">Allowed moves</text>
+
+  <!-- POLICIES -->
+  <rect x="725" y="386" width="182" height="44" rx="5" fill="#060d18" stroke="#1a3a6a" stroke-width="1.5"/>
+  <text x="816" y="405" text-anchor="middle"
+    font-family="'Segoe UI',Arial,sans-serif" font-size="10" font-weight="800" fill="#4a9fd4">POLICIES</text>
+  <text x="816" y="421" text-anchor="middle"
+    font-family="'Segoe UI',Arial,sans-serif" font-size="9" fill="#5a88a0">Context constraints</text>
+
+  <!-- OWNERS -->
+  <rect x="913" y="386" width="182" height="44" rx="5" fill="#060d18" stroke="#1a3a6a" stroke-width="1.5"/>
+  <text x="1004" y="405" text-anchor="middle"
+    font-family="'Segoe UI',Arial,sans-serif" font-size="10" font-weight="800" fill="#4a9fd4">OWNERS</text>
+  <text x="1004" y="421" text-anchor="middle"
+    font-family="'Segoe UI',Arial,sans-serif" font-size="9" fill="#5a88a0">Roles · handoffs · escalation</text>
+
+  <!-- Lines: Work Record → enterprise systems -->
+  <line x1="802" y1="440" x2="730" y2="451" stroke="#27ae60" stroke-width="2"/>
+  <line x1="910" y1="440" x2="910" y2="451" stroke="#27ae60" stroke-width="2"/>
+  <line x1="1018" y1="440" x2="1090" y2="451" stroke="#27ae60" stroke-width="2"/>
+
+  <!-- Enterprise boxes (right — lit, connected) -->
+  <rect x="660" y="451" width="130" height="54" rx="7" fill="#061410" stroke="#27ae60" stroke-width="1.5"/>
+  <text x="725" y="474" text-anchor="middle"
+    font-family="'Segoe UI',Arial,sans-serif" font-size="12" font-weight="600" fill="#4cb870">CRM</text>
+  <text x="725" y="491" text-anchor="middle"
+    font-family="'Segoe UI',Arial,sans-serif" font-size="9" fill="#2a6a38">Ticket / Case</text>
+
+  <rect x="845" y="451" width="130" height="54" rx="7" fill="#061410" stroke="#27ae60" stroke-width="1.5"/>
+  <text x="910" y="474" text-anchor="middle"
+    font-family="'Segoe UI',Arial,sans-serif" font-size="12" font-weight="600" fill="#4cb870">ERP</text>
+  <text x="910" y="491" text-anchor="middle"
+    font-family="'Segoe UI',Arial,sans-serif" font-size="9" fill="#2a6a38">Invoice / Order</text>
+
+  <rect x="1028" y="451" width="134" height="54" rx="7" fill="#061410" stroke="#27ae60" stroke-width="1.5"/>
+  <text x="1095" y="474" text-anchor="middle"
+    font-family="'Segoe UI',Arial,sans-serif" font-size="12" font-weight="600" fill="#4cb870">BPM Engine</text>
+  <text x="1095" y="491" text-anchor="middle"
+    font-family="'Segoe UI',Arial,sans-serif" font-size="9" fill="#2a6a38">Process / Task</text>
+
+  <!-- Solution outcome label -->
+  <text x="910" y="538"
+    text-anchor="middle" font-family="'Segoe UI',Arial,sans-serif"
+    font-size="13" font-weight="700" fill="#27ae60">Anchored. Closed. Measured.</text>
+  <text x="910" y="559"
+    text-anchor="middle" font-family="'Segoe UI',Arial,sans-serif"
+    font-size="13" fill="#3a6048">BPM has had the Work Record for 25 years.</text>
+
+
+  <!-- ── Footer ── -->
+  <rect x="0" y="608" width="1200" height="22" fill="#080e1c"/>
+  <text x="600" y="622" text-anchor="middle"
+    font-family="'Segoe UI',Arial,sans-serif" font-size="10" fill="#263850">
+    © 2026 Gary Samuelson · garysamuelson.github.io · Semantic Process Intelligence Series
+  </text>
+</svg>

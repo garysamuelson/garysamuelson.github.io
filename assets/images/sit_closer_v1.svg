@@ -1,0 +1,96 @@
+<svg width="920" height="420" viewBox="0 0 920 420" xmlns="http://www.w3.org/2000/svg" font-family="'Segoe UI', system-ui, sans-serif">
+
+  <!-- Background -->
+  <rect width="920" height="420" fill="#0d1320"/>
+
+  <!-- Column separator -->
+  <line x1="460" y1="16" x2="460" y2="404" stroke="#1e293b" stroke-width="1.5" stroke-dasharray="6,4"/>
+
+  <!-- ══════════════════════════════════════════════ -->
+  <!-- LEFT PANEL — FLOATING ABOVE THE WORK          -->
+  <!-- ══════════════════════════════════════════════ -->
+
+  <!-- Header band -->
+  <rect x="20" y="20" width="420" height="36" fill="#151f30" rx="6"/>
+  <text x="230" y="43" text-anchor="middle" font-size="12" font-weight="700" fill="#a8bbd0" letter-spacing="1.2">FLOATING ABOVE THE WORK</text>
+
+  <!-- AI Agent (greyed, disconnected) -->
+  <rect x="100" y="72" width="260" height="52" fill="#1a2540" rx="8" stroke="#2d3f5a" stroke-width="1.5"/>
+  <text x="230" y="96" text-anchor="middle" font-size="13" font-weight="600" fill="#b0c4de">AI Agent</text>
+  <text x="230" y="113" text-anchor="middle" font-size="11" fill="#8b9db5">LLM · reasoning · tools</text>
+
+  <!-- "generates..." label -->
+  <text x="230" y="148" text-anchor="middle" font-size="11" fill="#8b9db5">generates...</text>
+
+  <!-- Output tags floating sideways -->
+  <rect x="48"  y="158" width="90" height="28" fill="#1c1400" rx="5" stroke="#854d0e" stroke-width="1"/>
+  <text x="93"  y="177" text-anchor="middle" font-size="11" fill="#f59e0b">Analysis</text>
+
+  <rect x="153" y="158" width="90" height="28" fill="#1c1400" rx="5" stroke="#854d0e" stroke-width="1"/>
+  <text x="198" y="177" text-anchor="middle" font-size="11" fill="#f59e0b">Summary</text>
+
+  <rect x="258" y="158" width="90" height="28" fill="#1c1400" rx="5" stroke="#854d0e" stroke-width="1"/>
+  <text x="303" y="177" text-anchor="middle" font-size="11" fill="#f59e0b">Draft</text>
+
+  <!-- "output nobody owns" -->
+  <text x="230" y="210" text-anchor="middle" font-size="11" fill="#f87171" font-style="italic">output nobody owns</text>
+
+  <!-- No-connection dashed gap -->
+  <line x1="110" y1="226" x2="350" y2="226" stroke="#2d3f5a" stroke-width="1" stroke-dasharray="5,4"/>
+  <text x="230" y="243" text-anchor="middle" font-size="10" fill="#8b9db5">no governed connection</text>
+
+  <!-- Work Record — dimmed, unattached -->
+  <rect x="90" y="254" width="280" height="80" fill="#0f172a" rx="8" stroke="#1e293b" stroke-width="1.5" stroke-dasharray="5,4"/>
+  <text x="230" y="280" text-anchor="middle" font-size="12" font-weight="600" fill="#8b9db5">Work Record</text>
+  <text x="230" y="298" text-anchor="middle" font-size="10" fill="#64748b">State · Actions · Policies · Owner</text>
+  <text x="230" y="316" text-anchor="middle" font-size="10" fill="#64748b" font-style="italic">unattached · unadvanced</text>
+
+  <!-- Result -->
+  <text x="230" y="358" text-anchor="middle" font-size="12" font-weight="600" fill="#ef4444">Ticket open. Invoice unposted.</text>
+  <text x="230" y="378" text-anchor="middle" font-size="11" fill="#f87171">No work closed.</text>
+
+  <!-- ══════════════════════════════════════════════ -->
+  <!-- RIGHT PANEL — ANCHORED TO THE WORK RECORD     -->
+  <!-- ══════════════════════════════════════════════ -->
+
+  <!-- Header band -->
+  <rect x="480" y="20" width="420" height="36" fill="#0a1f2e" rx="6"/>
+  <text x="690" y="43" text-anchor="middle" font-size="12" font-weight="700" fill="#38bdf8" letter-spacing="1.2">ANCHORED TO THE WORK RECORD</text>
+
+  <!-- AI Agent (active, teal) -->
+  <rect x="560" y="72" width="260" height="52" fill="#0a1f2e" rx="8" stroke="#0ea5e9" stroke-width="1.5"/>
+  <text x="690" y="96" text-anchor="middle" font-size="13" font-weight="600" fill="#7dd3fc">AI Agent</text>
+  <text x="690" y="113" text-anchor="middle" font-size="11" fill="#0ea5e9">LLM · reasoning · tools</text>
+
+  <!-- MCP Gateway connector -->
+  <line x1="690" y1="124" x2="690" y2="162" stroke="#38bdf8" stroke-width="2"/>
+  <polygon points="690,166 683,154 697,154" fill="#38bdf8"/>
+  <!-- MCP label chip -->
+  <rect x="706" y="134" width="98" height="20" fill="#0f172a" rx="4" stroke="#1e4a6e" stroke-width="1"/>
+  <text x="755" y="148" text-anchor="middle" font-size="10" fill="#38bdf8" font-weight="600">MCP Gateway</text>
+
+  <!-- Work Record — solid, active -->
+  <rect x="540" y="166" width="300" height="96" fill="#0f172a" rx="8" stroke="#1e3a5f" stroke-width="1"/>
+  <text x="690" y="192" text-anchor="middle" font-size="13" font-weight="700" fill="white">Work Record</text>
+  <line x1="558" y1="200" x2="822" y2="200" stroke="#1e293b" stroke-width="1"/>
+  <!-- 2+2 attribute grid -->
+  <text x="640" y="220" text-anchor="middle" font-size="10" fill="#7dd3fc">State</text>
+  <text x="740" y="220" text-anchor="middle" font-size="10" fill="#7dd3fc">Actions</text>
+  <text x="640" y="240" text-anchor="middle" font-size="10" fill="#7dd3fc">Policies</text>
+  <text x="740" y="240" text-anchor="middle" font-size="10" fill="#7dd3fc">Owner</text>
+  <text x="690" y="256" text-anchor="middle" font-size="9" fill="#475569" font-style="italic">enforced at the engine — not the prompt</text>
+
+  <!-- Arrow down to closed work -->
+  <line x1="690" y1="262" x2="690" y2="298" stroke="#4ade80" stroke-width="2"/>
+  <polygon points="690,302 683,290 697,290" fill="#4ade80"/>
+
+  <!-- Work Closed box -->
+  <rect x="575" y="302" width="230" height="46" fill="#052e16" rx="8" stroke="#4ade80" stroke-width="1.5"/>
+  <text x="690" y="323" text-anchor="middle" font-size="13" font-weight="700" fill="#4ade80">Work Closed ✓</text>
+  <text x="690" y="340" text-anchor="middle" font-size="10" fill="#22c55e">value received at the unit of work</text>
+
+  <!-- Result -->
+  <text x="690" y="372" text-anchor="middle" font-size="12" font-weight="600" fill="#4ade80">The agent closes work.</text>
+  <text x="690" y="392" text-anchor="middle" font-size="11" fill="#86efac">Not just output.</text>
+
+</svg>
