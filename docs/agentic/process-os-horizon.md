@@ -22,7 +22,7 @@ social_image: https://garysamuelson.github.io/assets/images/process_os_horizon_b
 
 **Author:** Gary Samuelson
 **Date:** May 27, 2026
-**Supplementary paper** — This piece builds on the research trajectory established in [*Work Record*](/agentic/work-record-is-bpm-task/), which developed the three-forms framework for how AI participates in governed process execution. This paper traces the research and product convergence that points past Form Three to a qualitatively different architectural layer — one where AI operates on process models rather than within process instances. The series will develop that layer formally in its next paper.
+**Supplementary paper** — This piece builds on the research trajectory established in [*Work Record*](work-record-is-bpm-task.md), which developed the three-forms framework for how AI participates in governed process execution. This paper traces the research and product convergence that points past Form Three to a qualitatively different architectural layer — one where AI operates on process models rather than within process instances. The series will develop that layer formally in its next paper.
 
 ---
 
