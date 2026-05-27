@@ -2,50 +2,54 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>https://garysamuelson.github.io/</loc>
-         <lastmod>2026-05-17</lastmod>
+         <lastmod>2026-05-27</lastmod>
     </url>
     <url>
          <loc>https://garysamuelson.github.io/tags/</loc>
-         <lastmod>2026-05-17</lastmod>
+         <lastmod>2026-05-27</lastmod>
     </url>
     <url>
          <loc>https://garysamuelson.github.io/agentic/agentic-agency-and-workflows/</loc>
-         <lastmod>2026-05-17</lastmod>
+         <lastmod>2026-05-27</lastmod>
     </url>
     <url>
          <loc>https://garysamuelson.github.io/agentic/architecture-patterns/</loc>
-         <lastmod>2026-05-17</lastmod>
+         <lastmod>2026-05-27</lastmod>
     </url>
     <url>
          <loc>https://garysamuelson.github.io/agentic/governance-gap/</loc>
-         <lastmod>2026-05-17</lastmod>
+         <lastmod>2026-05-27</lastmod>
+    </url>
+    <url>
+         <loc>https://garysamuelson.github.io/agentic/process-os-horizon/</loc>
+         <lastmod>2026-05-27</lastmod>
     </url>
     <url>
          <loc>https://garysamuelson.github.io/agentic/work-record-is-bpm-task/</loc>
-         <lastmod>2026-05-17</lastmod>
+         <lastmod>2026-05-27</lastmod>
     </url>
     <url>
          <loc>https://garysamuelson.github.io/agentic/working-ai-put-to-task/</loc>
-         <lastmod>2026-05-17</lastmod>
+         <lastmod>2026-05-27</lastmod>
     </url>
     <url>
          <loc>https://garysamuelson.github.io/blog/</loc>
-         <lastmod>2026-05-17</lastmod>
+         <lastmod>2026-05-27</lastmod>
     </url>
     <url>
          <loc>https://garysamuelson.github.io/healthcare/healthcare-accountability/</loc>
-         <lastmod>2026-05-17</lastmod>
+         <lastmod>2026-05-27</lastmod>
     </url>
     <url>
          <loc>https://garysamuelson.github.io/semantic-ai/aspect-oriented-process-management/</loc>
-         <lastmod>2026-05-17</lastmod>
+         <lastmod>2026-05-27</lastmod>
     </url>
     <url>
          <loc>https://garysamuelson.github.io/semantic-ai/cpg-campaign-simplified-workflow/</loc>
-         <lastmod>2026-05-17</lastmod>
+         <lastmod>2026-05-27</lastmod>
     </url>
     <url>
          <loc>https://garysamuelson.github.io/semantic-ai/inter-process-semantic-collaboration/</loc>
-         <lastmod>2026-05-17</lastmod>
+         <lastmod>2026-05-27</lastmod>
     </url>
 </urlset>

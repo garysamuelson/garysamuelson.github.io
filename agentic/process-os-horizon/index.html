@@ -1,0 +1,1278 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="The three-forms framework maps AI participation in governed process execution across three BPMN task types. ProcessOS names the fourth form: AI that governs process models rather than executing within them. The frontier moved on May 19, 2026.">
+      
+      
+        <meta name="author" content="Gary Samuelson">
+      
+      
+        <link rel="canonical" href="https://garysamuelson.github.io/agentic/process-os-horizon/">
+      
+      
+        <link rel="prev" href="../work-record-is-bpm-task/">
+      
+      
+        <link rel="next" href="../working-ai-put-to-task/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>The ProcessOS Horizon: When AI Stops Running Processes and Starts Redesigning Them - Gary Samuelson — AI & Architecture Research</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  
+
+  
+  
+  
+  
+
+  <meta property="og:type" content="article" />
+  <meta property="og:site_name" content="Gary Samuelson — AI & Architecture Research" />
+  <meta property="og:title" content="The ProcessOS Horizon" />
+  <meta property="og:description" content="The three-forms framework maps AI participation in governed process execution across three BPMN task types. ProcessOS names the fourth form: AI that governs process models rather than executing within them. The frontier moved on May 19, 2026." />
+  <meta property="og:url" content="https://garysamuelson.github.io/agentic/process-os-horizon/" />
+  <meta property="og:image" content="https://garysamuelson.github.io/assets/images/process_os_horizon_banner_v1.png" />
+  <meta property="og:image:secure_url" content="https://garysamuelson.github.io/assets/images/process_os_horizon_banner_v1.png" />
+  <meta property="og:image:type" content="image/png" />
+  <meta property="og:image:width" content="2400" />
+  <meta property="og:image:height" content="1260" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="The ProcessOS Horizon" />
+  <meta name="twitter:description" content="The three-forms framework maps AI participation in governed process execution across three BPMN task types. ProcessOS names the fourth form: AI that governs process models rather than executing within them. The frontier moved on May 19, 2026." />
+  <meta name="twitter:url" content="https://garysamuelson.github.io/agentic/process-os-horizon/" />
+  <meta name="twitter:image" content="https://garysamuelson.github.io/assets/images/process_os_horizon_banner_v1.png" />
+
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#the-processos-horizon" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Gary Samuelson — AI &amp; Architecture Research" class="md-header__button md-logo" aria-label="Gary Samuelson — AI & Architecture Research" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Gary Samuelson — AI & Architecture Research
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              The ProcessOS Horizon: When AI Stops Running Processes and Starts Redesigning Them
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/garysamuelson/garysamuelson.github.io" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    garysamuelson/garysamuelson.github.io
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Gary Samuelson — AI &amp; Architecture Research" class="md-nav__button md-logo" aria-label="Gary Samuelson — AI & Architecture Research" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Gary Samuelson — AI & Architecture Research
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/garysamuelson/garysamuelson.github.io" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    garysamuelson/garysamuelson.github.io
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../work-record-is-bpm-task/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Work Record
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    The ProcessOS Horizon
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    The ProcessOS Horizon
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#the-three-forms-and-the-autonomy-spectrum" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Three Forms and the Autonomy Spectrum
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-agentic-bpm-manifesto" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Agentic BPM Manifesto
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="The Agentic BPM Manifesto">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#apm-agents-four-capabilities" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        APM Agent's Four Capabilities
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#camundas-response-agentic-orchestration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Camunda's Response: Agentic Orchestration
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-agentic-value-trap" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Agentic Value Trap
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-honest-gap" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Honest Gap
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#form-four-the-process-model-frontier" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Form Four: The Process Model Frontier
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-this-means-for-the-series" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What This Means for the Series
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#key-citations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Key Citations
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../working-ai-put-to-task/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    The Working AI: Put to Task with Measured Output
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../agentic-agency-and-workflows/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Agentic Agency & Workflows
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AI Governance in Healthcare
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    AI Governance in Healthcare
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../healthcare/healthcare-accountability/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Who Is Accountable?
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../governance-gap/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    The Governance Gap
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Semantic AI
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Semantic AI
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../semantic-ai/cpg-campaign-simplified-workflow/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    The Ontology Process
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../semantic-ai/inter-process-semantic-collaboration/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    When Processes Finally Talk to Each Other
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../semantic-ai/aspect-oriented-process-management/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Aspect-Oriented Process Management
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tags/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tags
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#the-three-forms-and-the-autonomy-spectrum" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Three Forms and the Autonomy Spectrum
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-agentic-bpm-manifesto" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Agentic BPM Manifesto
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="The Agentic BPM Manifesto">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#apm-agents-four-capabilities" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        APM Agent's Four Capabilities
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#camundas-response-agentic-orchestration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Camunda's Response: Agentic Orchestration
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-agentic-value-trap" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Agentic Value Trap
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-honest-gap" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Honest Gap
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#form-four-the-process-model-frontier" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Form Four: The Process Model Frontier
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-this-means-for-the-series" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What This Means for the Series
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#key-citations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Key Citations
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  <nav class="md-tags" >
+    
+      
+      
+      
+      
+        <a href="../../tags/#tag:ai-governance" class="md-tag">AI Governance</a>
+      
+    
+      
+      
+      
+      
+        <a href="../../tags/#tag:agentic-ai" class="md-tag">Agentic AI</a>
+      
+    
+      
+      
+      
+      
+        <a href="../../tags/#tag:bpm" class="md-tag">BPM</a>
+      
+    
+      
+      
+      
+      
+        <a href="../../tags/#tag:bpmn" class="md-tag">BPMN</a>
+      
+    
+      
+      
+      
+      
+        <a href="../../tags/#tag:camunda" class="md-tag">Camunda</a>
+      
+    
+      
+      
+      
+      
+        <a href="../../tags/#tag:enterprise-architecture" class="md-tag">Enterprise Architecture</a>
+      
+    
+      
+      
+      
+      
+        <a href="../../tags/#tag:process-orchestration" class="md-tag">Process Orchestration</a>
+      
+    
+      
+      
+      
+      
+        <a href="../../tags/#tag:processos" class="md-tag">ProcessOS</a>
+      
+    
+  </nav>
+
+
+  
+  
+
+
+<p><img alt="The ProcessOS Horizon — When AI Stops Running Processes and Starts Redesigning Them" src="../../assets/images/process_os_horizon_banner_v1.png" /></p>
+<h1 id="the-processos-horizon">The ProcessOS Horizon<a class="headerlink" href="#the-processos-horizon" title="Permanent link">&para;</a></h1>
+<p><strong>Author:</strong> Gary Samuelson
+<strong>Date:</strong> May 27, 2026
+<strong>Supplementary paper</strong> — This piece builds on the research trajectory established in <a href="/agentic/work-record-is-bpm-task/"><em>Work Record</em></a>, which developed the three-forms framework for how AI participates in governed process execution. This paper traces the research and product convergence that points past Form Three to a qualitatively different architectural layer — one where AI operates on process models rather than within process instances. The series will develop that layer formally in its next paper.</p>
+<hr />
+<p>On May 19, 2026, at CamundaCon in Amsterdam, Camunda announced ProcessOS. They described it as "an agentic operating system for AI-first enterprise transformation" [17]. That framing understates what the announcement means architecturally.</p>
+<p>The three-forms framework — a taxonomy developed in this series for how AI enters governed process execution — describes three modes of participation: AI as User Task resource, AI as Service Task worker, and AI as bounded orchestrator within a subprocess boundary. ProcessOS now takes us to a whole new level of AI engagement - by operating directly on the proces models themselves - as a first class participant in the BPM ecosystem. Call it Form Four — not another task type within the execution layer, but a fourth relationship between AI and the BPM artifact stack: AI that governs the models themselves. Not within.</p>
+<p>The research trajectory that leads there starts two months earlier, in a 69-page manifesto from the BPM research establishment.</p>
+<hr />
+<h2 id="the-three-forms-and-the-autonomy-spectrum">The Three Forms and the Autonomy Spectrum<a class="headerlink" href="#the-three-forms-and-the-autonomy-spectrum" title="Permanent link">&para;</a></h2>
+<p>Three forms of AI participation in governed process execution — each with a distinct BPMN task type, accountability structure, and position on the autonomy spectrum.</p>
+<p>Each participant in a governed process instance enters through a task. The task being a modeling element defining what gets done and its output on completion, with the worker deliberately left unspecified at the modeling stage and resolved at runtime. The process model assigns a role or a service type to the slot; when the instance runs, the engine resolves that assignment to a specific worker for this specific piece of work. Adding AI as a worker type means assigning it to the slot — not rebuilding the process around AI.</p>
+<p>That assignment takes three forms, each expressed in a distinct BPMN task type. Form One uses an <strong>AI inference call</strong> — a single hosted model invocation with no state or loop. Form Two uses an <strong>AI service</strong> — a deterministic, structured invocation with no reasoning loop. Form Three uses an <strong>AI agent</strong> — a system with a goal, a toolset, and autonomous iterative reasoning. Form Four, addressed at the end of this paper, uses an <strong>AI system</strong> — a coordinated pipeline of mixed AI components operating on a different target artifact class entirely. The distinction matters: the term follows from what the AI does and what it operates on, not from how sophisticated it feels.</p>
+<p><strong>Form One</strong> models work as a User Task. The engine assigns it to a human participant's worklist. The AI enters as an inference call invoked mid-task — summarizing a document the underwriter is reading, surfacing a regulatory citation, generating a draft the adjuster will refine. The human closes the task. The AI's contribution is part of the task's resource consumption, not its accountability structure. That inference call goes to a hosted AI platform — AWS Bedrock, Azure OpenAI, or equivalent — carrying a context window the application assembled: the relevant document or data, the specific question, and the expected output format.</p>
+<p><img alt="Form One — User Task with AI inference call" src="../../assets/images/form1_abstract.svg" /></p>
+<p><strong>Form Two</strong> models work as a Service Task. During execution, the process engine calls the AI service directly, passes the work object's structured input, receives structured output, and records the completion in the event log. No human interaction. The AI service occupies the task slot. Accountability transfers to the AI service's output — structured, logged, and enforceable by the engine's completion criteria. In practice, a job worker service receives the task from the engine, assembles a context payload from the work object's variables, calls the hosted AI platform, and returns structured output back to the engine. There is no goal-directed reasoning here, no tool selection, no iterative loop — Form Two is a deterministic invocation of an AI capability, not an AI agent in the technical sense.</p>
+<p><img alt="Form Two — Service Task with AI service call" src="../../assets/images/form2_abstract.svg" /></p>
+<p><strong>Form Three</strong> models work as an Ad-Hoc Subprocess assigned to an AI agent. During execution, the engine activates the subprocess, passes the AI agent a goal and a defined toolset, and then governs every tool invocation from that point forward. The AI agent selects which tool to call next — that selection is genuine AI judgment. But the orchestration layer intercepts each call, applies the configured guardrail, and controls whether and how it executes. The LLM proposes. The execution engine decides. The AI agent reasons toward the goal without a pre-specified step order; the engine validates goal completion on exit. The AI agent is not the process — it acts within a bounded scope the process model defines. Form Three uses "AI agent" in its technical sense: a system that pursues a goal through iterative reasoning and autonomous tool selection. A goal is assigned, the agent decides which tool to invoke next, interprets each result, adjusts its approach, and determines when the goal is satisfied. That is what distinguishes an agent from a service call.</p>
+<p>Form Three is also where engagement scope splits into two simultaneous levels — a structural distinction Ruecker and Johnston name and analyze in <em>Agentic Orchestration</em> [16]. <strong>Outer orchestration</strong> governs the end-to-end business journey: the sequence of steps, governance gates, timers, and approvals encoded by human designers before any instance runs. The AI agent cannot skip gates or act outside its subprocess boundary — the engine enforces those rules unconditionally. <strong>Inner orchestration</strong> governs what happens inside the subprocess boundary: the AI agent sequences its own tool calls, reasons about intermediate results, and decides when the goal is satisfied. The engine governs whether and how each tool call executes; the agent governs which tool to call and why. Human-defined rules set the boundary. The reasoning inside it is the agent's own.</p>
+<p><img alt="Form Three — Ad-Hoc Subprocess with AI agent inner orchestration" src="../../assets/images/form3_abstract_v2.svg" /></p>
+<p>Form One lives in a User Task. Form Two lives in a Service Task with an AI service call. Form Three lives in an Ad-Hoc Subprocess assigned to an AI agent. The modeler draws the shape; the engine runs the instance.</p>
+<p>Autonomy increases across the three forms — from inference resource, to task worker, to bounded orchestrator — but the spectrum is not a fixed architecture. Patterns that agents handle reliably migrate over time toward the deterministic end: once an agent proves consistent on a specific decision type, that decision gets hardened into rules. New complexity gets handed back to agents. The boundary between forms moves.</p>
+<hr />
+<h2 id="the-agentic-bpm-manifesto">The Agentic BPM Manifesto<a class="headerlink" href="#the-agentic-bpm-manifesto" title="Permanent link">&para;</a></h2>
+<p>The <em>Agentic Business Process Management: A Research Manifesto</em> appeared in March 2026 as arXiv:2603.18916 [12]. Marlon Dumas leads the author list — he co-authored <em>Fundamentals of Business Process Management</em> [2], the field's standard textbook. Eighteen researchers from SAP, the University of Vienna, the University of Tartu, and seven European research institutions co-authored it. This is not a fringe position paper. It is the BPM research establishment's formal declaration that the field's foundational assumptions require extension.</p>
+<p>The Manifesto introduces <strong>Agentic BPM (APM)</strong> as a paradigm shift, not a feature addition. It reframes autonomous AI agents as first-class actors in business processes — not resources assigned to task slots, but entities that perceive organizational context, reason over it, and act within explicit process frames. The distinction it draws is precise: APM agents pursue goals proactively within organizational constraints. They do not wait for task assignments. They pursue outcomes, bounded by what the process frame permits.</p>
+<p>The Manifesto's predecessor <em>AI-Augmented Business Process Management Systems Research Manifesto</em> (2023) addressed AI assistance within BPM systems — what the three-forms framework calls Form One: AI as task resource, coordinated by the process engine. The 2026 Agentic BPM Manifesto explicitly builds beyond it. Agents as orchestrators, not assistants. The two papers together trace the same progression as my Work Record Series.</p>
+<h3 id="apm-agents-four-capabilities">APM Agent's Four Capabilities<a class="headerlink" href="#apm-agents-four-capabilities" title="Permanent link">&para;</a></h3>
+<p>The Manifesto defines four capabilities that distinguish APM agents from conventional automation:</p>
+<ol>
+<li><strong>Framed autonomy</strong> — agents pursue goals proactively but within explicit organizational constraints ("frames"), not open-endedly. The process definition is the frame. The agent acts within it without requiring a task assignment for every move.</li>
+<li><strong>Explainability</strong> — agents account for their decisions within the process context. This is not general AI explainability — it is explainability tied to the specific process instance and the governance obligations it carries.</li>
+<li><strong>Conversational actionability</strong> — agents interact with humans and systems through natural-language-capable interfaces tied to process actions. The conversation is not separate from the process. It is the process interaction.</li>
+<li><strong>Self-modification</strong> — agents adapt their own behavior based on experience, within governed limits. The governance is the BPM layer. The adaptation is the AI layer. Neither operates without the other.</li>
+</ol>
+<p>All four are Form Three capabilities. None of them map cleanly to Form One (User Task resource) or Form Two (Service Task). They describe an agent that is part of the process architecture, not an external service the process calls.</p>
+<p>The Manifesto's central finding: today's BPMN execution layer and today's agent frameworks are both insufficient on their own. The open problem is the integration layer between them.</p>
+<hr />
+<h2 id="camundas-response-agentic-orchestration">Camunda's Response: Agentic Orchestration<a class="headerlink" href="#camundas-response-agentic-orchestration" title="Permanent link">&para;</a></h2>
+<p>Camunda has rebranded its entire platform around agentic orchestration: "the open platform for agentic orchestration — orchestrating AI agents, people, and systems across end-to-end business processes with trust, governance, and control." That framing maps precisely to what the Manifesto asks for. Ruecker and Johnston make the case directly in <em>Agentic Orchestration: From Agent Pilots to Enterprise Production</em> [16]: agent deployments need process orchestration not as optional scaffolding but as the accountability layer that makes agent work enterprise-legible.</p>
+<p>In April 2025, Camunda 8.7 shipped general availability of agentic process orchestration capabilities:</p>
+<ul>
+<li><strong>AI agents modeled in BPMN using ad-hoc subprocesses</strong> — the native BPMN construct that gives an agent a goal, a bounded toolset, and the freedom to act dynamically within those bounds without pre-specifying every step in the sequence. The agent decides its own path to completion within the subprocess boundary. The engine governs entry, exit, and compliance.</li>
+<li><strong>AI Connectors</strong> — Service Task-level integrations that invoke LLM-backed services within a BPMN flow. The engine calls the service, receives structured output, and advances the process.</li>
+<li><strong>DMN integration for guardrails</strong> — agent decisions that violate defined business rules are caught by the DMN layer before downstream actions execute, creating enforceable, auditable compliance the agent's own reasoning cannot override.</li>
+<li><strong>MCP and A2A protocol support</strong> — enabling interoperability between agents from different vendors within a single Camunda-orchestrated process.</li>
+</ul>
+<hr />
+<h2 id="the-agentic-value-trap">The Agentic Value Trap<a class="headerlink" href="#the-agentic-value-trap" title="Permanent link">&para;</a></h2>
+<p>Ruecker and Johnston name and analyze the failure mode that validates the Manifesto's call for new governance foundations: the <strong>Agentic Value Trap</strong>.</p>
+<p>Early agent deployments deliver real, measurable value. Organizational confidence grows. More agents get deployed, without coordination infrastructure. Agents begin conflicting with each other and duplicating work across process boundaries. The efficiency gains that motivated the original deployments get consumed by the manual reconciliation costs needed to resolve what the agents created independently.</p>
+<p>The Agentic Value Trap is not a technology problem. It is an architectural problem: agent deployment without process governance generates coordination debt. The Manifesto identifies the same gap from the research side — the need for new architectural foundations to govern autonomous agents at scale. Ruecker and Johnston document what happens in production when those foundations are absent.</p>
+<p>The answer, in both the book and the Manifesto, is the same: the process orchestration layer is not optional infrastructure. It is the accountability system that makes agent work enterprise-legible. Without it, agents generate results. With it, agents generate outcomes the organization can trace, govern, and rely on.</p>
+<hr />
+<h2 id="the-honest-gap">The Honest Gap<a class="headerlink" href="#the-honest-gap" title="Permanent link">&para;</a></h2>
+<p>Process orchestration is the answer to the Agentic Value Trap — and Camunda's platform is the most advanced version of that answer currently available at enterprise scale. But the answer has a defined edge.</p>
+<p>Camunda's own framing is precise about what Form Three currently is: <em>"the agent isn't the process — it lives inside a process."</em> The ad-hoc subprocess gives the agent goal-directed autonomy within a bounded scope. The BPMN engine governs the outer process instance. The process token is managed by Zeebe, not by the agent.</p>
+<p>The execution-layer architecture where the AI reads the BPMN token, evaluates gateway conditions, and manages the instance itself — the open frontier the three-forms framework identifies — is not what Camunda has shipped. Ait et al. [15] document the modeling gap directly: standard BPMN cannot adequately specify AI agents in orchestrating roles, and propose a formal metamodel extension and graphical notation to address it. What Camunda has built is the most advanced governed container for agentic behavior within BPMN currently available at enterprise scale. It is Form Three's closest production approximation. The gap between what the Manifesto asks for and what the platform currently delivers is real and acknowledged.</p>
+<p>The Manifesto's research agenda and Camunda's product roadmap are converging on the same problem from opposite directions: the researchers from the governance and formal model side, Camunda from the execution and tooling side. Ruecker and Johnston's book [16] occupies the bridge — practitioner translation of what the research agenda requires into what the current platform can actually deliver.</p>
+<p>On May 19, 2026, the convergence point moved.</p>
+<hr />
+<h2 id="form-four-the-process-model-frontier">Form Four: The Process Model Frontier<a class="headerlink" href="#form-four-the-process-model-frontier" title="Permanent link">&para;</a></h2>
+<p>Forms One, Two, and Three share a common structural property: the process model is a fixed artifact, authored by human designers before any instance runs. AI enters as a participant in what the model specifies. The modeler draws the shape. The engine enforces it. The AI is assigned to a slot within it.</p>
+<p>Form Four breaks that property. In Form Four, the process model itself is the artifact that the AI system manages — not the execution of instances within the model, but the model's discovery, redesign, deployment, and continuous improvement. The process model is no longer a fixed input to the system. It is a governed artifact the system produces and continuously improves.</p>
+<p>This is also why neither "AI service" nor "AI agent" is the right term for Form Four. Forms One through Three are classified by the AI component's behavior — how it operates. Form Four is classified by the target artifact — what the AI system operates <em>on</em>. That shift in classification axis is the point. Forms One, Two, and Three all target work items inside a fixed model. Form Four targets the model itself. The internal AI components span the full spectrum — from process mining algorithms to LLM reasoning to code generation — which is exactly why no single-component term fits. <strong>AI system</strong> captures the coordinated, multi-component nature and keeps the focus on the artifact relationship, not the internal technique.</p>
+<p>On May 19, 2026, at CamundaCon in Amsterdam, Camunda gave Form Four a name: <strong>ProcessOS</strong> — described as "an agentic operating system for AI-first enterprise transformation" [17]. ProcessOS is not another agent inside a BPMN flow. It is an AI system that operates <em>on</em> process models as governed artifacts, managing the full lifecycle from discovery through automated production improvement. Camunda's framing is direct: "every business process in your enterprise was designed for a world where AI did not exist." ProcessOS is the layer that re-engineers them for an AI-native world.</p>
+<p>Four specialized components own each phase of that lifecycle (Camunda calls them "agents"):</p>
+<ul>
+<li><strong>Discover</strong> — mines how processes actually run in production today, not how they were documented or modeled</li>
+<li><strong>Re-engineer</strong> — redesigns them for AI-native outcomes</li>
+<li><strong>Build &amp; Deploy</strong> — generates and deploys the updated process models</li>
+<li><strong>Continuously Improve</strong> — monitors production and iterates automatically</li>
+</ul>
+<p>Camunda demonstrated their own Quote-to-Cash process re-engineering on stage in Amsterdam: four weeks from discovery to deployed redesign. The same cycle typically takes nine to twelve months.</p>
+<p>Camunda calls these four components "agents," though the internal AI composition is mixed. Discover relies primarily on process mining algorithms — statistical graph analysis of event logs — with an LLM layer for interpretation. Re-engineer is genuinely agentic: multi-step reasoning, evaluating redesign tradeoffs, generating BPMN artifacts. Build &amp; Deploy is closer to structured code generation followed by a deterministic deployment pipeline. Continuously Improve is analytics and monitoring, with an LLM layer for anomaly interpretation and iteration triggers. What makes ProcessOS Form Four is not which AI technique any component uses. It is that all four operate on the process model as the managed artifact — not within running instances of one.</p>
+<p><img alt="Form Four — ProcessOS: four AI components govern the process model lifecycle above the execution layer" src="../../assets/images/form4_processos.svg" /></p>
+<p>This is a qualitatively different architectural layer from anything in the three-forms framework. The three forms describe how AI participates <em>within</em> process execution. ProcessOS operates <em>above</em> the execution layer entirely, treating the process model itself as the artifact the AI system manages.</p>
+<table>
+<thead>
+<tr>
+<th>Layer</th>
+<th>What It Does</th>
+<th>Form</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Execution engine</strong> (Camunda 8.x)</td>
+<td>Runs process instances, routes tokens</td>
+<td>Forms One–Three participate within it</td>
+</tr>
+<tr>
+<td><strong>Agentic orchestration</strong> (Camunda 8.7+)</td>
+<td>Embeds AI services and agents inside BPMN flows</td>
+<td>Enables Forms Two and Three</td>
+</tr>
+<tr>
+<td><strong>ProcessOS</strong></td>
+<td>Discovers, redesigns, deploys, and improves the process models themselves</td>
+<td><strong>Form Four</strong> — AI system governs the model, not a slot within it</td>
+</tr>
+</tbody>
+</table>
+<p>This is what the research trajectory from the Manifesto [12] through the Kampik Large Process Model vision [14] — fusing LLM statistical power with BPM analytical precision into a unified intelligence layer — through Ruecker and Johnston's practitioner bridge [16] has been pointing toward. The Manifesto asked for AI as a first-class process actor. The LPM vision asked for a unified intelligence layer that fuses LLM statistical power with BPM analytical precision. The practitioner bridge asked for process orchestration as the accountability layer that makes agent work enterprise-legible. ProcessOS answers all three questions simultaneously — and adds one the research literature had not fully articulated: the process model itself is a system artifact that AI can govern.</p>
+<p>ProcessOS is currently in closed beta via Camunda's "Process Zero" pilot program.</p>
+<hr />
+<h2 id="what-this-means-for-the-series">What This Means for the Series<a class="headerlink" href="#what-this-means-for-the-series" title="Permanent link">&para;</a></h2>
+<p>The Work Record Series has been building a specific argument: that enterprise AI delivers value by closing work — by producing state transitions in running process instances, not by generating output that orbits above them. The three-forms framework shows how AI enters the Work Record as a participant. The insurance policy and value chain sections in the companion paper show what this looks like inside a real commercial operation.</p>
+<p>Form Four does not invalidate that argument. It extends it to a level the series had not yet addressed.</p>
+<p>The Work Record — the running process instance with identity, state, history, and pending obligations — is the object that enterprise AI deployments close work against. Forms One, Two, and Three describe how AI participates in that object during execution. Form Four governs what that object looks like in the first place. It is the layer that answers the question the series' framework assumes but does not address: how does the process model that runs all of this get designed, deployed, and improved?</p>
+<p>The answer, after May 19, 2026, is: by AI — governed by a process model for process model governance, managed by the same execution infrastructure it produces.</p>
+<p>The next paper now has a concrete product shape to build from. The research agenda the Manifesto named in March. The execution reality Camunda shipped in May. The architectural question that connects them is what the next paper will address.</p>
+<hr />
+<h2 id="key-citations">Key Citations<a class="headerlink" href="#key-citations" title="Permanent link">&para;</a></h2>
+<p>[2] Dumas, M., La Rosa, M., Mendling, J., &amp; Reijers, H. A. (2023). <em>Fundamentals of Business Process Management</em> (3rd ed.). Springer. §1.2 — Case and process instance definitions.</p>
+<p>[12] Dumas, M., Calvanese, D., De Giacomo, G., Montali, M., Rinderle-Ma, S., et al. (2026, March). <em>Agentic Business Process Management: A Research Manifesto</em>. arXiv:2603.18916. — Introduces Agentic BPM (APM) as a formal paradigm shift: reframes autonomous AI agents as first-class process actors with four required capabilities (framed autonomy, explainability, conversational actionability, self-modification); identifies the gap between current BPM execution layers and current agent frameworks as the open research and engineering frontier.</p>
+<p>[14] Kampik, T., et al. (2023/2025). <em>Large Process Models: A Vision for Business Process Management in the Age of Generative AI</em>. arXiv:2309.00900 [cs.SE]. — Proposes fusing LLM statistical power with BPM analytical precision into a "Large Process Model" intelligence layer capable of context-specific process orchestration and organizational guidance.</p>
+<p>[15] Ait, A., Cánovas Izquierdo, J. L., &amp; Cabot, J. (2024/2025). <em>Towards Modeling Human-Agentic Collaborative Workflows: A BPMN Extension</em>. arXiv:2412.05958 [cs.SE]. — Finds that current BPMN cannot adequately specify AI agents in orchestrating roles; proposes a formal metamodel extension and graphical notation for human-agentic collaborative workflows.</p>
+<p>[16] Ruecker, Bernd, with Amy Johnston. <em>Agentic Orchestration: From Agent Pilots to Enterprise Production</em>. O'Reilly Media, Early Release, May 15, 2026. — Introduces the autonomy spectrum as the organizing frame for enterprise AI deployment decisions; names inner and outer orchestration as the Form Three architectural pattern; describes the Agentic Value Trap; frames process orchestration as the accountability layer that makes agent work enterprise-legible. Available at O'Reilly Learning: https://learning.oreilly.com/ (Early release; not yet fully indexed in the O'Reilly catalog as of May 27, 2026.)</p>
+<p>[17] Camunda. (2026, May 19). <em>ProcessOS: An Agentic Operating System for AI-First Enterprise Transformation</em>. CamundaCon 2026 Amsterdam. https://camunda.com/platform/process-os/ — Introduces ProcessOS as an AI system that operates on business process artifacts rather than within process instances; four specialized components govern the full process lifecycle from discovery through automated production improvement; collapses the 9–12-month process re-engineering cycle to weeks; currently in closed beta via the "Process Zero" pilot program.</p>
+<p>[Samuelson 2026a] Samuelson, G. (2026, May). <em>Work Record</em>. garysamuelson.github.io/agentic/work-record-is-bpm-task/ — Establishes the Work Record as the coupling between AI capability and enterprise value delivery.</p>
+<p>[Samuelson 2026b] Samuelson, G. (2026, May). <em>The Work Record Runs: From Abstract Design to Living Enterprise Object</em>. Forthcoming — Work Record Series, Part 2. — Develops the three-forms framework and three dimensions of the running Work Record; companion paper to this piece.</p>
+<hr />
+<p><em>© 2026 Gary Samuelson | CC BY-NC-ND 4.0 — Share freely with attribution. No commercial use. No derivatives without permission.</em></p>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://github.com/garysamuelson" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    </a>
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://linkedin.com/in/garysamuelson" target="_blank" rel="noopener" title="linkedin.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3M135.4 416H69V202.2h66.5V416zM102.2 96a38.5 38.5 0 1 1 0 77 38.5 38.5 0 1 1 0-77m282.1 320h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9z"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.top", "search.highlight", "search.suggest", "content.code.copy", "content.code.annotate"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+        <script src="https://unpkg.com/mermaid@11/dist/mermaid.min.js"></script>
+      
+        <script src="../../assets/javascripts/mermaid-init.js"></script>
+      
+    
+  </body>
+</html>
