@@ -10,7 +10,29 @@ I've built production AI systems in emergency medicine, real-time ML platforms a
 
 ---
 
-## Latest: AI Agents Need a Work Record. BPM Has Had One for 25 Years.
+## Latest: The ProcessOS Horizon — When AI Stops Running Processes and Starts Redesigning Them
+
+On May 19, 2026, Camunda announced ProcessOS. The three-forms framework describes how AI executes within process instances. ProcessOS doesn't fit any of those forms — it operates on process models as the artifact it manages. Call it Form Four.
+
+<div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap:1.5rem; margin-bottom:2rem;">
+
+<div markdown style="border:1px solid var(--md-default-fg-color--lightest); border-radius:8px; overflow:hidden;">
+<a href="agentic/process-os-horizon/">
+  <img src="assets/images/process_os_horizon_banner_v1.png" alt="The ProcessOS Horizon — When AI Stops Running Processes and Starts Redesigning Them" style="width:100%; display:block;" />
+</a>
+<div style="padding:1rem;">
+<small><strong>New · May 27, 2026</strong> · BPM · Agentic AI · ProcessOS · Camunda · Enterprise Architecture</small><br/>
+<strong><a href="agentic/process-os-horizon/">The ProcessOS Horizon: When AI Stops Running Processes and Starts Redesigning Them</a></strong>
+<p>Four forms of AI participation in BPM — Form Four is the one where AI governs the process model rather than executing within it. The research trajectory from the Agentic BPM Manifesto to Ruecker & Johnston to ProcessOS, and what it means for governed enterprise AI.</p>
+<a href="agentic/process-os-horizon/">Read →</a>
+</div>
+</div>
+
+</div>
+
+---
+
+## Previously: AI Agents Need a Work Record. BPM Has Had One for 25 Years.
 
 Jones named the gap: agents float above the work, unbound from it, producing output that nobody owns. BPM named the anchor 25 years ago. Six AI platforms surveyed — every one solves coordination. None solve the work object problem. Camunda 8.9's MCP Gateway does — today, in production.
 
