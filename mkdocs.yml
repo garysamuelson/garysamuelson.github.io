@@ -85,6 +85,7 @@ extra:
 nav:
   - Home: index.md
   - "Work Record": agentic/work-record-is-bpm-task.md
+  - "The ProcessOS Horizon": agentic/process-os-horizon.md
   - "The Working AI: Put to Task with Measured Output": agentic/working-ai-put-to-task.md
   - Agentic Agency & Workflows: agentic/agentic-agency-and-workflows.md
   - AI Governance in Healthcare:
