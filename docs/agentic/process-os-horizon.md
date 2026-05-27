@@ -13,10 +13,10 @@ tags:
   - Camunda
   - ProcessOS
   - AI Governance
-social_image: https://garysamuelson.github.io/assets/images/process_os_horizon_banner_v1.png
+social_image: https://garysamuelson.github.io/assets/images/process_os_horizon_banner_v2.png
 ---
 
-![The ProcessOS Horizon — When AI Stops Running Processes and Starts Redesigning Them](../assets/images/process_os_horizon_banner_v1.png)
+![The ProcessOS Horizon — When AI Stops Running Processes and Starts Redesigning Them](../assets/images/process_os_horizon_banner_v2.png)
 
 # The ProcessOS Horizon
 

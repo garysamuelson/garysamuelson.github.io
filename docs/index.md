@@ -18,7 +18,7 @@ On May 19, 2026, Camunda announced ProcessOS. The three-forms framework describe
 
 <div markdown style="border:1px solid var(--md-default-fg-color--lightest); border-radius:8px; overflow:hidden;">
 <a href="agentic/process-os-horizon/">
-  <img src="assets/images/process_os_horizon_banner_v1.png" alt="The ProcessOS Horizon — When AI Stops Running Processes and Starts Redesigning Them" style="width:100%; display:block;" />
+  <img src="assets/images/process_os_horizon_banner_v2.png" alt="The ProcessOS Horizon — When AI Stops Running Processes and Starts Redesigning Them" style="width:100%; display:block;" />
 </a>
 <div style="padding:1rem;">
 <small><strong>New · May 27, 2026</strong> · BPM · Agentic AI · ProcessOS · Camunda · Enterprise Architecture</small><br/>
