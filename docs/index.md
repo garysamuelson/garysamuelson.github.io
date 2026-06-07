@@ -10,7 +10,29 @@ I've built production AI systems in emergency medicine, real-time ML platforms a
 
 ---
 
-## Latest: The ProcessOS Horizon — When AI Stops Running Processes and Starts Redesigning Them
+## Latest: Process‑First AI — Dimensions of the Running Work Record
+
+Four forms. Three dimensions. AI enters the Work Record through a task — User Task, Service Task, Ad-Hoc Subprocess, or Process Model Governance. What it gains by entering is the same across all three instance-level forms: computational presence, organizational gravity, and temporal persistence.
+
+<div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap:1.5rem; margin-bottom:2rem;">
+
+<div markdown style="border:1px solid var(--md-default-fg-color--lightest); border-radius:8px; overflow:hidden;">
+<a href="agentic/process-first-ai-dimensions/">
+  <img src="assets/images/dimensions_banner_v2.png" alt="Process‑First AI: Dimensions of the Running Work Record" style="width:100%; display:block;" />
+</a>
+<div style="padding:1rem;">
+<small><strong>New · June 7, 2026</strong> · BPM · Agentic AI · Process Orchestration · Enterprise Architecture · ProcessOS</small><br/>
+<strong><a href="agentic/process-first-ai-dimensions/">Process‑First AI: Dimensions of the Running Work Record</a></strong>
+<p>The Work Record is not a document — it is a running object with weight, state, and structural authority. Four forms map how AI enters it. Three dimensions define what AI gains: live state, obligation generation, and temporal continuity past any context window. Work Record Series — Part 2.</p>
+<a href="agentic/process-first-ai-dimensions/">Read →</a>
+</div>
+</div>
+
+</div>
+
+---
+
+## Previously: The ProcessOS Horizon — When AI Stops Running Processes and Starts Redesigning Them
 
 On May 19, 2026, Camunda announced ProcessOS. The three-forms framework describes how AI executes within process instances. ProcessOS doesn't fit any of those forms — it operates on process models as the artifact it manages. Call it Form Four.
 
@@ -21,7 +43,7 @@ On May 19, 2026, Camunda announced ProcessOS. The three-forms framework describe
   <img src="assets/images/process_os_horizon_banner_v2.png" alt="The ProcessOS Horizon — When AI Stops Running Processes and Starts Redesigning Them" style="width:100%; display:block;" />
 </a>
 <div style="padding:1rem;">
-<small><strong>New · May 27, 2026</strong> · BPM · Agentic AI · ProcessOS · Camunda · Enterprise Architecture</small><br/>
+<small><strong>May 27, 2026</strong> · BPM · Agentic AI · ProcessOS · Camunda · Enterprise Architecture</small><br/>
 <strong><a href="agentic/process-os-horizon/">The ProcessOS Horizon: When AI Stops Running Processes and Starts Redesigning Them</a></strong>
 <p>Four forms of AI participation in BPM — Form Four is the one where AI governs the process model rather than executing within it. The research trajectory from the Agentic BPM Manifesto to Ruecker & Johnston to ProcessOS, and what it means for governed enterprise AI.</p>
 <a href="agentic/process-os-horizon/">Read →</a>
