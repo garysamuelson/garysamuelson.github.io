@@ -1,0 +1,1555 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="The 89% pilot-to-production failure rate is a domain understanding failure, not an infrastructure failure. Agents were deployed before anyone modeled the work. State is not a technical property — it is proof that someone understood the domain. Build the Work Record first. The orchestration emerges.">
+      
+      
+        <meta name="author" content="Gary Samuelson">
+      
+      
+        <link rel="canonical" href="https://garysamuelson.github.io/agentic/you-cant-orchestrate-what-has-no-state/">
+      
+      
+        <link rel="prev" href="../process-first-ai-dimensions/">
+      
+      
+        <link rel="next" href="../working-ai-put-to-task/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>You Can't Orchestrate What Has No State - Gary Samuelson — AI & Architecture Research</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  
+
+  
+  
+  
+  
+
+  <meta property="og:type" content="article" />
+  <meta property="og:site_name" content="Gary Samuelson — AI & Architecture Research" />
+  <meta property="og:title" content="You Can't Orchestrate What Has No State" />
+  <meta property="og:description" content="The 89% pilot-to-production failure rate is a domain understanding failure, not an infrastructure failure. Agents were deployed before anyone modeled the work. State is not a technical property — it is proof that someone understood the domain. Build the Work Record first. The orchestration emerges." />
+  <meta property="og:url" content="https://garysamuelson.github.io/agentic/you-cant-orchestrate-what-has-no-state/" />
+  <meta property="og:image" content="https://garysamuelson.github.io/assets/images/work_record_orchestrate_state_banner_v1.png" />
+  <meta property="og:image:secure_url" content="https://garysamuelson.github.io/assets/images/work_record_orchestrate_state_banner_v1.png" />
+  <meta property="og:image:type" content="image/png" />
+  <meta property="og:image:width" content="2400" />
+  <meta property="og:image:height" content="1260" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="You Can't Orchestrate What Has No State" />
+  <meta name="twitter:description" content="The 89% pilot-to-production failure rate is a domain understanding failure, not an infrastructure failure. Agents were deployed before anyone modeled the work. State is not a technical property — it is proof that someone understood the domain. Build the Work Record first. The orchestration emerges." />
+  <meta name="twitter:url" content="https://garysamuelson.github.io/agentic/you-cant-orchestrate-what-has-no-state/" />
+  <meta name="twitter:image" content="https://garysamuelson.github.io/assets/images/work_record_orchestrate_state_banner_v1.png" />
+
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#you-cant-orchestrate-what-has-no-state" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Gary Samuelson — AI &amp; Architecture Research" class="md-header__button md-logo" aria-label="Gary Samuelson — AI & Architecture Research" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Gary Samuelson — AI & Architecture Research
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              You Can't Orchestrate What Has No State
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/garysamuelson/garysamuelson.github.io" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    garysamuelson/garysamuelson.github.io
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Gary Samuelson — AI &amp; Architecture Research" class="md-nav__button md-logo" aria-label="Gary Samuelson — AI & Architecture Research" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Gary Samuelson — AI & Architecture Research
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/garysamuelson/garysamuelson.github.io" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    garysamuelson/garysamuelson.github.io
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../work-record-is-bpm-task/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Work Record
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../process-os-horizon/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    The ProcessOS Horizon
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../process-first-ai-dimensions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Process-First AI: Dimensions of the Running Work Record
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    You Can't Orchestrate What Has No State
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    You Can't Orchestrate What Has No State
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#stateless-deployment-the-anti-pattern-in-two-carriers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Stateless Deployment — The Anti-Pattern in Two Carriers
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Stateless Deployment — The Anti-Pattern in Two Carriers">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-build-never-reveals-the-gap" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Build Never Reveals the Gap
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-the-working-version-looks-like" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What the Working Version Looks Like
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-state-actually-is" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What State Actually Is
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-progression-freund-describes-named-structurally" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Progression Freund Describes — Named Structurally
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="The Progression Freund Describes — Named Structurally">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#form-one-the-data-collection-phase" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Form One — The Data Collection Phase
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#form-two-the-promotion-is-a-signal-not-a-decision" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Form Two — The Promotion Is a Signal, Not a Decision
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#form-four-the-patterns-become-the-model" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Form Four — The Patterns Become the Model
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#reading-the-diagram" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Reading the Diagram
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#why-form-three-does-not-get-hardened" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Why Form Three Does Not Get Hardened
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-dependency-that-makes-all-of-this-possible" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Dependency That Makes All of This Possible
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-sequence-cannot-run-backwards" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Sequence Cannot Run Backwards
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bibliography" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Bibliography
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#acronyms" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Acronyms
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../working-ai-put-to-task/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    The Working AI: Put to Task with Measured Output
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../agentic-agency-and-workflows/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Agentic Agency & Workflows
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AI Governance in Healthcare
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    AI Governance in Healthcare
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../healthcare/healthcare-accountability/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Who Is Accountable?
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../governance-gap/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    The Governance Gap
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" >
+        
+          
+          <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Semantic AI
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Semantic AI
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../semantic-ai/cpg-campaign-simplified-workflow/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    The Ontology Process
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../semantic-ai/inter-process-semantic-collaboration/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    When Processes Finally Talk to Each Other
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../semantic-ai/aspect-oriented-process-management/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Aspect-Oriented Process Management
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tags/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tags
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#stateless-deployment-the-anti-pattern-in-two-carriers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Stateless Deployment — The Anti-Pattern in Two Carriers
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Stateless Deployment — The Anti-Pattern in Two Carriers">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-build-never-reveals-the-gap" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Build Never Reveals the Gap
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-the-working-version-looks-like" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What the Working Version Looks Like
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-state-actually-is" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What State Actually Is
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-progression-freund-describes-named-structurally" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Progression Freund Describes — Named Structurally
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="The Progression Freund Describes — Named Structurally">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#form-one-the-data-collection-phase" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Form One — The Data Collection Phase
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#form-two-the-promotion-is-a-signal-not-a-decision" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Form Two — The Promotion Is a Signal, Not a Decision
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#form-four-the-patterns-become-the-model" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Form Four — The Patterns Become the Model
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#reading-the-diagram" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Reading the Diagram
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#why-form-three-does-not-get-hardened" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Why Form Three Does Not Get Hardened
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-dependency-that-makes-all-of-this-possible" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Dependency That Makes All of This Possible
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-sequence-cannot-run-backwards" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Sequence Cannot Run Backwards
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bibliography" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Bibliography
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#acronyms" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Acronyms
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  <nav class="md-tags" >
+    
+      
+      
+      
+      
+        <a href="../../tags/#tag:ai-strategy" class="md-tag">AI Strategy</a>
+      
+    
+      
+      
+      
+      
+        <a href="../../tags/#tag:agentic-ai" class="md-tag">Agentic AI</a>
+      
+    
+      
+      
+      
+      
+        <a href="../../tags/#tag:bpm" class="md-tag">BPM</a>
+      
+    
+      
+      
+      
+      
+        <a href="../../tags/#tag:bpmn" class="md-tag">BPMN</a>
+      
+    
+      
+      
+      
+      
+        <a href="../../tags/#tag:enterprise-architecture" class="md-tag">Enterprise Architecture</a>
+      
+    
+      
+      
+      
+      
+        <a href="../../tags/#tag:process-orchestration" class="md-tag">Process Orchestration</a>
+      
+    
+      
+      
+      
+      
+        <a href="../../tags/#tag:processos" class="md-tag">ProcessOS</a>
+      
+    
+      
+      
+      
+      
+        <a href="../../tags/#tag:work-record" class="md-tag">Work Record</a>
+      
+    
+  </nav>
+
+
+  
+  
+
+
+<p><img alt="You Can't Orchestrate What Has No State" src="../../assets/images/work_record_orchestrate_state_banner_v1.png" /></p>
+<h1 id="you-cant-orchestrate-what-has-no-state">You Can't Orchestrate What Has No State<a class="headerlink" href="#you-cant-orchestrate-what-has-no-state" title="Permanent link">&para;</a></h1>
+<p><strong>Author:</strong> Gary Samuelson<br />
+<strong>Date:</strong> June 2026<br />
+<strong>Companion to:</strong> <a href="../process-first-ai-dimensions/"><em>Process-First AI: The Work Record, Four Forms, Three Dimensions</em></a> [Samuelson 2026b]</p>
+<hr />
+<p>The agents reason. That was never the problem.</p>
+<p><strong>Stateless deployment</strong> is a failure of context. An agent is set in motion and asked to reason about a domain that has been in motion long before it arrived. You can never step into the same river twice — what was there is already downstream, on its way to somewhere else. Business reality is that river. The document the agent receives is water in a bucket: a sample taken at one moment from something that has been flowing for weeks, months, or years. The agent analyzes the bucket. It never sees the current.</p>
+<p>So it reasons without knowing where the artifact sits in the process, what happened before it arrived, or what the output must satisfy before work can advance. It has no process instance to query. Its recommendation has nowhere to land.</p>
+<p>Eighty-nine percent of enterprises hit this wall [Freund 2026]. The pilot performs. Production breaks on the first submission that carries context the agent couldn't see.</p>
+<p>Form Four is the fix. ProcessOS connects the agent to the current: the running process model with its history, its lifecycle position, its valid next actions. The agent stops analyzing the bucket. It flows with the work.</p>
+<p>The full architecture is in the sections that follow. The story below shows what breaks without it.</p>
+<p><img alt="Stateless Deployment — the agent reasons on the artifact while the process instance it needs is unreachable below" src="../../assets/images/work_record_stateless_deploy_v1.svg" /></p>
+<hr />
+<h2 id="stateless-deployment-the-anti-pattern-in-two-carriers">Stateless Deployment — The Anti-Pattern in Two Carriers<a class="headerlink" href="#stateless-deployment-the-anti-pattern-in-two-carriers" title="Permanent link">&para;</a></h2>
+<p><strong>Stateless Deployment</strong> is the pattern of connecting an AI agent to an artifact — a document, a record, a data payload — without connecting it to the running work object that artifact belongs to. The agent sees the artifact. It does not see the process instance: the lifecycle stage, the prior transitions, the owner, the valid next actions. It answers the question it was given. It cannot ask about what it wasn't given.</p>
+<blockquote>
+<p><strong>A note on terminology.</strong> In software operations, <em>deployment</em> means shipping a versioned artifact to production infrastructure — a technical act of making software available in a running system. That is not the sense here. <em>Stateless Deployment</em>, as used in this series, refers to a business integration failure: the agent is wired into a production environment but operates without the business-context state that gives its inputs meaning.</p>
+</blockquote>
+<p><strong>The software shipped correctly. The understanding of the domain did not.</strong></p>
+<p>This is the most common failure mode in enterprise AI — and the most expensive one to discover late. The API endpoint works. The model infers. The risk score returns in milliseconds. Every technical specification has been met. The system is in production.</p>
+<p>And it is useless, because the domain was never modeled.</p>
+<p>The AI team's model of the domain was: <em>document arrives → agent reasons → score returns.</em> That model is technically coherent. It is also wrong. The actual domain is: <em>submission with a history arrives at a specific lifecycle stage, carrying prior decisions and relationship context, requiring a response that will itself become part of the history of this account.</em> These are not the same model. One of them describes a sterile transaction. The other describes how commercial underwriting actually works.</p>
+<p>The technical solution has no domain fit. Not because the engineers were incompetent — but because domain fit requires domain understanding, and domain understanding requires modeling the work before writing a line of code. The Work Record is that model. Without it, a technically correct system delivers outputs that are correct in a world that does not exist.</p>
+<p>The deeper problem is what an AI engineering specialist would call a <em>closed-world assumption</em> — and what I call the <em>sterile world fallacy</em>. The agent was designed and connected as if the artifact it receives is a self-contained, context-free object. A document arrives. The agent reasons about the document. An output returns.</p>
+<p>That model works in a clean world — business does not.</p>
+<p>Every artifact is embedded in a reality that extends far beyond its contents. The submission is not just a collection of PDFs — it is the third attempt by this broker on an account that was declined twice for undisclosed losses. The loan application is not just financial data — it belongs to a customer relationship with a specific history and a specific stage in the lending lifecycle. The claim is not just a damage report — it is the third claim on this policy in eighteen months, filed by the same adjuster who filed the previous two. None of that context lives in the document. All of it is material. An agent that cannot see it is not missing a few fields — it is reasoning about a different reality than the one the business is actually in.</p>
+<p>The Work Record is the bridge between the artifact world and the real world. It carries what the document cannot: the history, the lifecycle position, the prior decisions, the binding of this specific piece of work to the business reality it exists in. An agent connected to a Work Record is connected to that reality. An agent connected only to a document is reasoning about a surface.</p>
+<p><img alt="The Document Is Not the Work — sterile world assumption vs. business reality" src="../../assets/images/work_record_two_worlds_v1.svg" /></p>
+<p><strong>The harder problem.</strong> Recognizing the gap is straightforward. Closing it is not.</p>
+<p>The traditional approach is a workshop: domain experts and engineers in the same room, documenting lifecycle stages, mapping valid transitions, reviewing with compliance, iterating the specification. This works when business and IT share vocabulary, accountability, and a working relationship built over years of domain-driven delivery. That is not where most enterprises currently stand.</p>
+<p>The previous two decades moved IT in a direction that made sense at the time: cost efficiency, outsourcing, separation of technical and business concerns. Over time, the engineers who once understood underwriting lifecycles, claims adjudication, and policy management became harder to find inside the organization. Business experts learned to live with the gap. Now AI arrives into that inherited dynamic and demands the one thing neither side kept sharp: domain understanding precise enough to guide an agent's behavior.</p>
+<p>The workshop model produces what domain experts <em>believe</em> they do — not what they <em>actually</em> do. Engineers build what is <em>specified</em> — not what is <em>meant</em>. The distance between designed process and actual process is the conformance delta, and it is always wider than anyone in the room acknowledged. Articulation fails. Iteration stalls. The gap remains.</p>
+<p>This is analysis paralysis wearing the costume of methodology.</p>
+<p><strong>Form Four routes around the workshop.</strong> ProcessOS does not ask anyone to articulate what they know. It reads what already happened. Large language models operating against existing event logs and process documentation do something workshops cannot: they find patterns in execution evidence without requiring someone to explain those patterns first. The technical capability at work is pattern recognition across temporal sequences, semantic disambiguation across document collections, and lifecycle inference from state transition data. The Discover phase mines the event log, extracts the actual execution graph, surfaces the conformance delta, and generates a draft Work Record class from evidence rather than from committee. The domain model emerges from what already ran.</p>
+<p>Form Four hands that emergent model back to the organization as a structured Work Record class — reviewed, corrected, and deployed. The workshop is still useful for governance. It is no longer the bottleneck.</p>
+<p><img alt="Form Four Routes Around the Workshop — evidence-based discovery vs. traditional specification path" src="../../assets/images/work_record_form4_vs_workshop_v1.svg" /></p>
+<p><strong>ProcessOS as domain fit mitigation.</strong> Forms One, Two, and Three operate <em>within</em> running process instances — they require the Work Record to exist before they can work meaningfully. <strong>Form Four</strong> occupies a structurally different position: it operates <em>on</em> the process models those instances execute. It governs the model, not a slot within it.</p>
+<p><strong>The Form Four Discover agent</strong> does not wait to be handed a domain model. It mines the event log population of an organization's existing processes, reconstructs the actual domain from execution evidence, and surfaces the conformance delta — the gap between what was designed and what actually ran. This is domain modeling done retroactively, from evidence, at the scale of the full process portfolio.</p>
+<p>The implication for Stateless Deployment: the domain that was never modeled before agents were wired up can be modeled now. ProcessOS reads what actually happened and builds the domain model from execution reality — discovers what the work actually is, re-engineers the process to represent it correctly, deploys the Work Record class, and continuously improves it as the domain evolves.</p>
+<p><strong>Form Four</strong> is the meta-solution to Stateless Deployment. Two stories show the failure it was built to fix. <strong>Carrier A</strong> built the capability and lost the production case. <strong>Carrier B</strong> built the domain model in three weeks and kept it.</p>
+<p><strong>Carrier A</strong> spent eight months building an AI underwriting assistant. The agent was genuinely capable — it could read broker submissions, assess property risk, suggest pricing, and flag policy exceptions. In the pilot, underwriters loved it. Response time on new submissions dropped from three days to four hours.</p>
+<p>Then they tried to move it to production. It stalled immediately.</p>
+<p>The problem: no one could tell the agent what <em>stage</em> a submission was in. Was this a first-touch review or a referral back from a broker who had already revised the application twice? Had the loss runs been received or were they still outstanding? Was the account currently in force with a competitor, and if so, when did that policy expire? The agent had no way to know. Every submission looked the same to it — a pile of documents with a risk question attached. It could not tell the difference between a brand-new prospect and a renewal that had been declined twice in the previous twenty-four months.</p>
+<p>Underwriters started routing around it. The pilot numbers were real. The production case was not.</p>
+<hr />
+<h3 id="the-build-never-reveals-the-gap">The Build Never Reveals the Gap<a class="headerlink" href="#the-build-never-reveals-the-gap" title="Permanent link">&para;</a></h3>
+<p>The agent did not fail. It answered the question it was given.</p>
+<p>Nobody gave it the rest.</p>
+<p>The AI team's mandate was "make the underwriting recommendation smarter." Their MVP was: receive a document bundle, return a risk score. That is the scope they were measured on. They built an API endpoint. It takes a PDF submission. It returns JSON.</p>
+<p>The workflow state — what stage this submission is in, whether loss runs were requested, whether the broker already revised it twice, what the prior declination history shows — lives in the Policy Administration System (PAS). Guidewire. Duck Creek. Applied Epic. Whatever legacy PAS the carrier had been running for fifteen years. That system held the state. Nobody connected it to the agent's input context, because connecting to the PAS required a different team, a different budget conversation, and a PAS API that was either undocumented, rate-limited, or behind a six-month vendor engagement.</p>
+<p>So the agent was called from a button labeled "Review Submission." The button fired a document payload at the AI service. No workflow context attached. The agent answered the question it was given. The PAS had the rest. Nothing connected them.</p>
+<p>That is the structural definition of Stateless Deployment: artifact-layer integration, no instance-layer access. The agent was wired to the documents. Nobody wired it to the work.</p>
+<p>The project manager's position was clear: "Adding PAS context is scope creep." And from a project management perspective, that position was defensible. The pilot had been scoped around the AI capability, not the integration. The integration was a separate workstream, a separate timeline, a separate sponsor conversation.</p>
+<p>Camunda CEO Jakob Freund surveyed 1,150 senior IT and business decision-makers. Seventy-one percent of organizations use AI agents. Eleven percent of use cases reached production [Freund 2026]. This is the structural reason behind that gap. Not agent capability. Scoping decisions that leave workflow state disconnected.</p>
+<p><img alt="The Submission the Agent Couldn't Read — anti-pattern: AI agent without workflow state" src="../../assets/images/work_record_antipattern_v1.svg" /></p>
+<hr />
+<p><strong>Carrier B</strong> approached the same problem differently. Before they touched an agent framework, they spent three weeks on a modeling exercise: What is the discrete unit of work in our underwriting operation? — <em>this submission, for this account, at this point in its commercial lifecycle.</em> What stages does it move through? — <em>new submission, broker referral, loss runs received, underwriting review, pricing approved, bound, declined, renewal eligible.</em> When is it done, and what does done prove? — <em>when the policy binds and the premium is booked, or when the account is formally declined with a documented reason.</em></p>
+<p>Those three answers produced a BPMN process model. The model produced running process instances — one per submission, one per account. Each instance carried live state: what stage the submission occupied right now, what had happened before it arrived at this stage, what the underwriter needed to resolve before it could advance.</p>
+<p>The agent connected to that state through a governed interface. It no longer read a pile of documents. It read <em>this submission, at stage: Pricing Review, with loss runs received on June 12, broker revised on June 18, prior carrier: Chubb, expiry: August 31.</em> It recommended a price. The underwriter accepted or adjusted. Either way, the decision was logged against that specific instance.</p>
+<p>Ninety days later, process mining read the log. In 91% of commercial property submissions under $2M where the loss ratio over five years was below 45%, the underwriter had accepted the agent's recommendation unchanged. The pricing decision was hardened into a rule. The agent stopped making routine pricing calls for that segment entirely. It moved to the genuinely ambiguous accounts — the ones with complex exposures, prior losses, or mid-term endorsement histories that required real judgment.</p>
+<p>The pilot reached production. Not because the agent got smarter. Because the work was defined first.</p>
+<p>That three-week modeling exercise cost nothing. The eight months Carrier A spent — and the rework costs when they eventually rebuilt the process correctly — cost considerably more.</p>
+<hr />
+<h3 id="what-the-working-version-looks-like">What the Working Version Looks Like<a class="headerlink" href="#what-the-working-version-looks-like" title="Permanent link">&para;</a></h3>
+<p>The diagram below shows what Carrier B built — not as a system diagram, but as a flow of work in motion.</p>
+<p><img alt="Work in Motion — Sankey diagram showing the flow of business activity through function stations to customer value" src="../../assets/images/work_record_sankey_v1.svg" /></p>
+<p>Every claim, application, and submission enters the left side as undifferentiated activity — raw work with potential but no realized value. At each station, effort closes the gap. The intake agent validates the inputs. The underwriter assesses the risk with the AI agent reading the live Work Record. The authority gate commits the organization. With each transition, the work object accumulates state: what happened here, who acted, what was decided, what comes next.</p>
+<p>The flow narrows. Not because work was wasted — because different work closes at different stages. The submission returned for more information at Stage 1 was correctly returned. The escalation at Stage 2 reached the right specialist. The decline at Stage 3 was formally issued against a complete record. Every exit is a completion.</p>
+<p>The 55% that reaches the right side has been transformed by every station it passed through. The customer receives the outcome. The organization receives the payment. The exchange proves the value was real.</p>
+<p>This is what Carrier A's agent could not see. The document arrived at Stage 3 with no history. The agent had no process instance to query — no event log, no prior decisions, no stage. Every submission it reviewed was a fresh slate. The river kept moving. The agent was never shown where it flows.</p>
+<p>Form Four operationalizes what Carrier B did manually — mines the event log, reconstructs the Work Record class, and runs the discovery-to-deployment loop continuously.</p>
+<p><img alt="From Stateless to Context-Aware — the Form Four recovery pipeline" src="../../assets/images/work_record_form4_pipeline_v1.svg" /></p>
+<hr />
+<h2 id="what-state-actually-is">What State Actually Is<a class="headerlink" href="#what-state-actually-is" title="Permanent link">&para;</a></h2>
+<p>The Carrier B story makes a precise claim: state is not a technical property. It is proof that someone understood the domain.</p>
+<p>A Work Record is a discrete, trackable unit of business activity: this invoice, this loan application, this claim, this policy. It carries four structural properties that make it actionable [Jones 2026]:</p>
+<ul>
+<li><strong>Identity</strong> — not a type, but this specific instance. This policy. This claim. This application.</li>
+<li><strong>State</strong> — current lifecycle position and the full history of every prior transition, encoded in an event log.</li>
+<li><strong>Actions</strong> — the set of valid next moves at this stage: what can be done here, what the output must satisfy before the work advances.</li>
+<li><strong>Owner</strong> — the person, role, or agent accountable for advancing this piece of work right now. Accountability transfers on completion.</li>
+</ul>
+<p>These are not metadata fields on a record. They are structural properties of a running object — an entity that a BPM engine has instantiated from a process model and is actively maintaining in memory. The class defines what any work record of this type requires. The instance is the class brought to life: present in memory, exerting gravitational pull on every participant the process model assigns to it, persisting across days or months or years until the work closes.</p>
+<p>Connect an agent to that record and it connects to the value chain. The agent knows what work it is acting on, what has happened before it arrived, what its output must satisfy before the work can advance. An agent operating above a Work Record can generate indefinitely. An agent anchored to one closes work.</p>
+<p>The commercial insurance operation in <a href="../process-first-ai-dimensions/"><em>Process-First AI</em></a> shows this end-to-end. <code>CPP-TX-2026-004821</code> — a six-building commercial property portfolio in Austin — runs from broker submission through underwriting, binding, an eighteen-month claims arc, and renewal, all inside a single running process instance. Every agent decision, every human handoff, every service call is recorded as a permanent event against that instance. The policy is not a document. It is a running object with three runtime properties: computational presence, organizational gravity, and temporal persistence. See [Samuelson 2026b] for the full architectural treatment, including the Forms × Dimensions structural matrix and the Form Four recommendation dashboard.</p>
+<hr />
+<h2 id="the-progression-freund-describes-named-structurally">The Progression Freund Describes — Named Structurally<a class="headerlink" href="#the-progression-freund-describes-named-structurally" title="Permanent link">&para;</a></h2>
+<p>Jakob Freund states what he calls the highest form of AI ROI in three moves [Freund 2026]:</p>
+<p>First: <em>"An agent can start by making recommendations, then earn more authority as it proves itself."</em> Authority is earned — not granted on a schedule, not assumed from capability. Proven through demonstrated reliability on real work.</p>
+<p>Second: <em>"Once its decisions become clear and predictable, you harden them into deterministic rules."</em> The agent's decisions — the patterns it has been making consistently — become the system's rules. What was judgment becomes logic.</p>
+<p>Third: <em>"That isn't the agent failing. It's the highest form of success — and a very different way to measure AI ROI."</em> The agent's job was never to keep making decisions forever. The agent's job was to teach the organization what good decisions look like. Once it has done that completely, the teaching is over. The learning is encoded. The agent is freed.</p>
+<p>That arc is real. It is not a management practice. It is an architectural lifecycle. Each of Freund's three moves has a structural name, a defined mechanism, and a hard dependency on what came before it. None of it operates without the Work Record. Carrier A proved that.</p>
+<hr />
+<h3 id="form-one-the-data-collection-phase">Form One — The Data Collection Phase<a class="headerlink" href="#form-one-the-data-collection-phase" title="Permanent link">&para;</a></h3>
+<p>Freund's "agent makes recommendations" phase is Form One in the Work Record architecture: the User Task.</p>
+<p>The process engine assigns a task to a human's worklist. When the task activates, an AI service call fires against the Work Record's live variable store — the accumulated state of this specific process instance: what has happened, what inputs are present, what the completion criteria require. The agent returns a structured recommendation: a coverage position, a discount approval, a routing decision. The human reviews it and closes the task.</p>
+<p>The human closes the task. Not the agent. The engine advances the token only on human action. The agent's recommendation enters the record as structured data — available to every subsequent step, every future participant, every audit inquiry. The engine logs the task completion as a permanent event in the process instance's event log.</p>
+<p>One human decision. One event log entry. One data point toward a pattern the process mining system does not yet have enough instances to read.</p>
+<p><strong>Form One is not the primitive version of the architecture.</strong> It is the data collection phase. The event log that Form Two and Form Four depend on does not exist before Form One runs. Every instance of Form One — every recommendation made, every human decision recorded — is raw material being laid down for the phases that follow. The agent generating recommendations is also, simultaneously, generating the evidence that will eventually make those recommendations unnecessary.</p>
+<p>This is the first reason Form One cannot be skipped or abbreviated. The architecture does not mature without the data Form One produces. Skipping directly to "auto-approve" without a Form One event log base is not an accelerated path — it is a deployment without evidence, which is the failure mode the entire architecture was designed to prevent.</p>
+<hr />
+<h3 id="form-two-the-promotion-is-a-signal-not-a-decision">Form Two — The Promotion Is a Signal, Not a Decision<a class="headerlink" href="#form-two-the-promotion-is-a-signal-not-a-decision" title="Permanent link">&para;</a></h3>
+<p>Freund's "earn more authority" move is not a management decision. The promotion from Form One to Form Two is triggered by a process mining signal.</p>
+<p>The signal: across the population of completed Form One instances — hundreds of pricing decisions, claim approvals, discount authorizations — a pattern has emerged. In 94% of cases where the discount fell below 10% and the customer tier was Tier 1, the human accepted the agent's recommendation unchanged. The human added no information. The human changed nothing. The human's role in those 940 cases out of 1,000 was to click Approve on something the agent had already gotten right.</p>
+<p>That pattern is not visible to anyone managing the process day to day. It lives in the aggregate event log, across hundreds of completed instances, accumulated over months. Process mining reads it. A BPMN gateway encodes the boundary. A DMN decision table encodes the rule: if discount &lt; 10% AND customer tier = Tier 1, auto-approve. The engine enforces.</p>
+<p>The agent now occupies a Service Task node for those cases. No human interaction. The engine passes the Work Record's structured input, receives the agent's structured output, checks it against the task completion criteria, and advances the token. The 940 routine cases run deterministically inside the boundary. The 60 edge cases — the ones outside the boundary — still route to human review.</p>
+<p><strong>The agent did not earn authority because management decided to trust it more.</strong> The agent earned authority because the event log proved it had already been right, consistently, for long enough to constitute evidence. The promotion is a data-driven architectural change, not a cultural one. And it is only possible because Form One was logging per-instance decisions against a Work Record. Without that log, the promotion has no basis. The organization would be guessing rather than governing.</p>
+<hr />
+<h3 id="form-four-the-patterns-become-the-model">Form Four — The Patterns Become the Model<a class="headerlink" href="#form-four-the-patterns-become-the-model" title="Permanent link">&para;</a></h3>
+<p>Freund's third move — "harden into deterministic rules" — is where the architecture's most powerful element activates. This is not Form Two running longer. This is Form Four: ProcessOS, operating above the execution layer, treating the process model itself as the governed artifact.</p>
+<p>Form Four does not operate inside running process instances. It operates on the models those instances execute. Its raw material is the full event log population — not just the approved cases but the exception routing, the escalations, the edge-case resolutions, the deviation paths. Process mining extracts the actual execution graph: how the process actually ran, not how it was designed to run.</p>
+<p>What Form Four's Discover phase finds is characteristic. Some approved cases consistently generate downstream exceptions — the boundary is drawn in the wrong place. Some escalations cluster around a specific coverage type, not because those cases are genuinely ambiguous but because the model routes them to human review before context that would resolve the ambiguity has been collected. Some patterns that started as edge cases have become predictable enough to warrant their own DMN rule. The Re-engineer phase redesigns the model. The Deploy phase pushes updated BPMN and DMN to production through a human governance gate.</p>
+<p><strong>The transition from Form Two to Form Four is not "hardening patterns into rules."</strong> It is the process model itself becoming the governed artifact — redesigned, versioned, backtested, and deployed by an AI system that operates above the execution layer. The patterns the agent once navigated are now encoded in the model the agent runs inside. The agent is freed to handle only the genuinely novel cases. Everything the agent has successfully taught the system now runs at near-zero cost, with full auditability, without agent involvement.</p>
+<p>This is Freund's "highest form of success" stated structurally. The agent's ROI is not measured in decisions made. It is measured in decisions permanently removed from the agent's scope — encoded into the process model, running forever, at zero marginal cost, because the agent demonstrated they were worth encoding.</p>
+<hr />
+<h3 id="reading-the-diagram">Reading the Diagram<a class="headerlink" href="#reading-the-diagram" title="Permanent link">&para;</a></h3>
+<p><img alt="The Agent Freed Upward — Form One → Two → Four · Deterministic rules grow from below, Form Three expands above, agent rises" src="../../assets/images/agent_freed_upward_v1.svg" /></p>
+<p>The diagram shows three phases as side-by-side columns. Read them left to right: Phase 1 to Phase 2 to Phase 3. Each column represents the same total volume of work — same process, same organization — but the distribution of how that work is handled changes with each phase.</p>
+<p><strong>Each column is divided into three stacked zones:</strong></p>
+<p>The <strong>blue zone at the bottom</strong> is deterministic rules — work the process engine handles without agent involvement. Instant, near-zero cost, full audit trail. In Phase 1, the blue zone is thin (12%) — a few pre-existing rules. By Phase 3, it is the largest zone (52%), because ProcessOS has been converting mature patterns into BPMN/DMN throughout the progression.</p>
+<p>The <strong>middle zone</strong> (purple in Phase 1, amber in Phase 2) is where the agent works with human involvement or within a decision boundary. In Phase 1 it is Form One — the entire large purple block represents agent recommendations waiting for human decisions. This is the heaviest zone in Phase 1, at 68% of all work. In Phase 2 it has transformed: Form Two has replaced Form One — the human-decides portion has been absorbed into the blue zone, and what remains is the agent auto-approving within a DMN boundary (28%). By Phase 3 this zone is a thin amber strip at 10%.</p>
+<p>The <strong>green zone at the top</strong> is Form Three — genuine complexity that requires real reasoning. Multi-party claims, novel coverage disputes, underwriting exceptions with ambiguous inputs. This zone grows with each phase: 18% in Phase 1, 31% in Phase 2, 38% in Phase 3. Not because more complex work appears, but because the routine has been encoded away and Form Three is proportionally larger.</p>
+<p><strong>The gold dashed box</strong> is the critical element. It marks where the agent's primary work happens at each phase — and it rises.</p>
+<p>In Phase 1, the gold box wraps the large purple Form One zone. The agent spends most of its time making routine recommendations. The green Form Three zone is above the gold box — the agent gets there, but most of its energy is in the purple.</p>
+<p>In Phase 2, the gold box has climbed. It now covers the amber Form Two zone and the green Form Three zone together. The agent is doing less routine recommendation and more of two things: enforcing the DMN boundary and handling genuine complexity. The gold box is smaller in absolute area — less total work — but positioned higher.</p>
+<p>In Phase 3, the gold box sits at the top of the column, tight around the green Form Three zone only. Labelled <em>APEX</em>. The agent's work is entirely in the domain of genuine complexity. Everything below it runs without the agent.</p>
+<p><strong>The agent has not done less work. It has done better work.</strong> The gold box moved from the large routine zone in Phase 1 to the small high-value zone in Phase 3. The agent's scope narrowed in volume and deepened in difficulty. This is Freund's "highest form of success" — not as a management observation, but as a visible structural transition across three columns.</p>
+<p>The footer caption names what drives the blue zone upward: Form Four (ProcessOS) mining the event logs from Forms One and Two, re-engineering the model, and deploying updated rules. Without ProcessOS, there is no systematic transition between phases. The phases do not happen naturally over time. They happen because the architecture is built to learn.</p>
+<hr />
+<h3 id="why-form-three-does-not-get-hardened">Why Form Three Does Not Get Hardened<a class="headerlink" href="#why-form-three-does-not-get-hardened" title="Permanent link">&para;</a></h3>
+<p>The progression is One → Two → Four. Form Three — the Ad-Hoc Subprocess — is not a step in this sequence. It is its permanent home.</p>
+<p>Form Three handles the multi-party commercial claim running for months, the coverage dispute requiring contextual judgment across novel inputs, the underwriting exception that requires integrating information that does not appear in the structured variable store. It is where the agent operates as a bounded orchestrator, selecting its own tool sequence within guardrails the process model defines. Form Three does not get hardened to deterministic — because it was always handling the cases that cannot be standardized. That is its definition.</p>
+<p>As Forms One and Two are absorbed into deterministic rules, Form Three expands. The agent is progressively freed upward: toward the novel, the ambiguous, the genuinely complex. More capable, not less, precisely because the routine has been removed from its scope. The gold box in the diagram rises not because the agent gets fewer tasks but because the tasks it retains are the ones worth keeping.</p>
+<hr />
+<h3 id="the-dependency-that-makes-all-of-this-possible">The Dependency That Makes All of This Possible<a class="headerlink" href="#the-dependency-that-makes-all-of-this-possible" title="Permanent link">&para;</a></h3>
+<p>None of this is possible without the Work Record.</p>
+<p>Form One depends on it for live state — the agent cannot read current lifecycle position, prior transitions, or the structured variable store without a running process instance to query. Form Two's process mining depends on Form One's per-instance event log — the DMN promotion triggers on aggregate evidence that only exists because every Form One decision was logged against a specific process instance. Form Four's re-engineering depends on the population of logs those instances accumulated over months and years — without a BPM runtime maintaining per-instance event history, the Discover phase has no raw material.</p>
+<p><strong>Each phase produces the evidence the next phase requires. The sequence is not reversible. The Work Record is the substrate that makes the sequence run.</strong></p>
+<p>This is also why Carrier A failed and Carrier B succeeded. Carrier A's agent had no process instance to query. No live state. No event log accumulating per-instance decisions. The agent generated output. The output had nowhere to go. Nothing downstream could learn from it. The progression could never begin.</p>
+<hr />
+<h2 id="the-sequence-cannot-run-backwards">The Sequence Cannot Run Backwards<a class="headerlink" href="#the-sequence-cannot-run-backwards" title="Permanent link">&para;</a></h2>
+<p>Freund says: build an orchestration layer. That instruction points at the middle of this diagram.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>Domain Understanding
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>        ↓
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>Work Record Class Definition (BPMN model)
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>        ↓
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>Process Instance — Running Object
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>   Presence · Gravity · Persistence
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>        ↓
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>Form One: Agent recommends, human decides
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>   Event log accumulates per-instance
+<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>        ↓
+<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>Form Two: Process mining → DMN rule → engine enforces
+<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a>   Center runs deterministically · Boundary routes to human
+<a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a>        ↓
+<a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a>Form Four (ProcessOS): Discover → Re-engineer → Deploy → Improve
+<a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a>   Process model governed as artifact · Form Three expands
+</code></pre></div>
+<p>ProcessOS — the most powerful thing in this architecture — cannot begin without event logs. Event logs do not exist without running process instances. Running instances do not exist without the Work Record class definition. That class definition requires domain understanding: someone had to model what the unit of work IS for this domain before the first instance could instantiate.</p>
+<p>The orchestration layer Freund describes is not a separate construction. It is what the BPM engine already provides — state management, obligation generation, event history, audit trail — the moment a process model is instantiated. It does not need to be built independently. It needs to be surfaced. The surface is the Work Record. The interface is MCP. Camunda 8.9's MCP Gateway is exactly that: the adapter that exposes live process instance state and valid actions to an AI agent through a governed interface [Samuelson 2026b, Camunda 2026].</p>
+<p>Build the Work Record first. Define the class — the lifecycle states, the valid transitions, the moment the work closes. Instantiate it. Let Form One accumulate the event log. The orchestration Freund is asking for emerges from that act. It cannot be built another way.</p>
+<p>Before Camunda. Before MCP. Before any agent framework.</p>
+<p>The first step is a modeling exercise: What is the discrete unit of work this process produces? What lifecycle does it move through? What are the valid transitions, and what are the conditions on each? When does the work close, and what does "closed" prove — what value has been delivered to whom?</p>
+<p>An enterprise that can answer those questions has done the domain work. It has modeled the Work Record. Everything Freund describes — the authority progression, the governance, the auditability, the path from pilot to production — follows from those answers. Not as aspirational practices. As structural consequences of having an instantiated work object with state.</p>
+<p>An enterprise that cannot answer those questions has not done the domain work. It can still deploy agents. They will generate output. The output will not close work. The pilot will not reach production. Not because the agents failed — because the work was never defined.</p>
+<p>The state definition always comes first. The sequence is not reversible.</p>
+<hr />
+<p><strong>Reference the full architecture:</strong> <a href="../process-first-ai-dimensions/"><em>Process-First AI: The Work Record, Four Forms, Three Dimensions</em></a> establishes what a Work Record is, what it means for the record to run, what the organization becomes around it, and what Form Four (ProcessOS) looks like in a commercial insurance operation running end-to-end. This piece makes the argument. That piece is the evidence.</p>
+<hr />
+<h2 id="bibliography">Bibliography<a class="headerlink" href="#bibliography" title="Permanent link">&para;</a></h2>
+<p><strong>[Camunda 2026]</strong> Camunda. (2026). <em>MCP Gateway — Camunda 8.9 release notes.</em> docs.camunda.io.</p>
+<p><strong>[Freund 2026]</strong> Freund, J. (2026, June 18). <em>Your AI Agents Need Rules to Be Truly Autonomous.</em> Forbes Tech Council. https://www.forbes.com/councils/forbestechcouncil/2026/06/18/your-ai-agents-need-rules-to-be-truly-autonomous/ — Includes reference to Camunda survey of N=1,150 senior IT and business decision-makers: 71% of organizations use AI agents; 11% of use cases reached production in the prior year.</p>
+<p><strong>[Jones 2026]</strong> Jones, C. (2026). <em>The Work Record: Identity, State, Actions, Owner as structural properties of a running business object.</em> Internal research note, cited in Samuelson 2026b.</p>
+<p><strong>[Samuelson 2026b]</strong> Samuelson, G. (2026). <em>Process-First AI: The Work Record, Four Forms, Three Dimensions.</em> garysamuelson.github.io.</p>
+<p><strong>[Samuelson 2026c]</strong> Samuelson, G. (2026). <em>Dimensions of the Running Work Record: Presence, Gravity, Persistence.</em> Research workspace.</p>
+<hr />
+<h2 id="acronyms">Acronyms<a class="headerlink" href="#acronyms" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Acronym</th>
+<th>Full Term</th>
+<th>First used</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>API</strong></td>
+<td>Application Programming Interface</td>
+<td>Anti-pattern section</td>
+</tr>
+<tr>
+<td><strong>BPM</strong></td>
+<td>Business Process Management</td>
+<td>Throughout</td>
+</tr>
+<tr>
+<td><strong>BPMN</strong></td>
+<td>Business Process Model and Notation</td>
+<td>Form One section</td>
+</tr>
+<tr>
+<td><strong>DMN</strong></td>
+<td>Decision Model and Notation</td>
+<td>Form Two section</td>
+</tr>
+<tr>
+<td><strong>MCP</strong></td>
+<td>Model Context Protocol</td>
+<td>Sequence section</td>
+</tr>
+<tr>
+<td><strong>MVP</strong></td>
+<td>Minimum Viable Product</td>
+<td>Anti-pattern section</td>
+</tr>
+<tr>
+<td><strong>PAS</strong></td>
+<td>Policy Administration System</td>
+<td>Anti-pattern section</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<p><em>© 2026 Gary Samuelson | CC BY-NC-ND 4.0 — Share freely with attribution. No commercial use. No derivatives without permission.</em></p>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://github.com/garysamuelson" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    </a>
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://linkedin.com/in/garysamuelson" target="_blank" rel="noopener" title="linkedin.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3M135.4 416H69V202.2h66.5V416zM102.2 96a38.5 38.5 0 1 1 0 77 38.5 38.5 0 1 1 0-77m282.1 320h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9z"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.top", "search.highlight", "search.suggest", "content.code.copy", "content.code.annotate"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+        <script src="https://unpkg.com/mermaid@11/dist/mermaid.min.js"></script>
+      
+        <script src="../../assets/javascripts/mermaid-init.js"></script>
+      
+    
+  </body>
+</html>
