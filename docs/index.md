@@ -18,7 +18,7 @@ The application request ends. The business commitment does not. This paper trace
 
 <div markdown style="border:1px solid var(--md-default-fg-color--lightest); border-radius:8px; overflow:hidden;">
 <a href="agentic/from-request-to-record/">
-  <img src="assets/images/from_request_to_record_banner_v1.png" alt="From Request to Record: A Process Management Architecture" style="width:100%; display:block;" />
+  <img src="assets/images/from_request_to_record_banner_v2.png" alt="From Request to Record: A Process Management Architecture" style="width:100%; display:block;" />
 </a>
 <div style="padding:1rem;">
 <small><strong>New · July 26, 2026</strong> · BPM · Process Architecture · Camunda · Enterprise Architecture · Agentic AI</small><br/>

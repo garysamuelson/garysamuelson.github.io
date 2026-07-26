@@ -13,10 +13,10 @@ tags:
   - Camunda
   - Work Record
   - Agentic AI
-social_image: https://garysamuelson.github.io/assets/images/from_request_to_record_banner_v1.png
+social_image: https://garysamuelson.github.io/assets/images/from_request_to_record_banner_v2.png
 ---
 
-![From Request to Record: A Process Management Architecture](resources/from_request_to_record_banner_v1.png)
+![From Request to Record: A Process Management Architecture](resources/from_request_to_record_banner_v2.png)
 
 # From Request to Record: A Process Management Architecture
 ## Methods, Features, and Runtime Responsibilities
