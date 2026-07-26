@@ -10,7 +10,29 @@ I've built production AI systems in emergency medicine, real-time ML platforms a
 
 ---
 
-## Latest: Process‑First AI — Dimensions of the Running Work Record
+## Latest: From Request to Record — A Process Management Architecture
+
+The application request ends. The business commitment does not. This paper traces the architecture that carries work beyond the original interaction: a running Camunda process instance with identity, state, obligations, constraints, and history.
+
+<div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap:1.5rem; margin-bottom:2rem;">
+
+<div markdown style="border:1px solid var(--md-default-fg-color--lightest); border-radius:8px; overflow:hidden;">
+<a href="agentic/from-request-to-record/">
+  <img src="assets/images/from_request_to_record_banner_v1.png" alt="From Request to Record: A Process Management Architecture" style="width:100%; display:block;" />
+</a>
+<div style="padding:1rem;">
+<small><strong>New · July 26, 2026</strong> · BPM · Process Architecture · Camunda · Enterprise Architecture · Agentic AI</small><br/>
+<strong><a href="agentic/from-request-to-record/">From Request to Record: A Process Management Architecture</a></strong>
+<p>Applications complete requests. Process architecture carries commitments. Follow the transition from immediate service orchestration to a running Work Record that coordinates people, systems, events, transactions, and AI until the business outcome is complete.</p>
+<a href="agentic/from-request-to-record/">Read →</a>
+</div>
+</div>
+
+</div>
+
+---
+
+## Previously: Process‑First AI — Dimensions of the Running Work Record
 
 Four forms. Three dimensions. AI enters the Work Record through a task — User Task, Service Task, Ad-Hoc Subprocess, or Process Model Governance. What it gains by entering is the same across all three instance-level forms: computational presence, organizational gravity, and temporal persistence.
 

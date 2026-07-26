@@ -4,7 +4,7 @@
   {{ super() }}
 
   {% set canonical_url = page.canonical_url or (config.site_url ~ page.url) %}
-  {% set page_title = page.title | striptags %}
+  {% set page_title = (page.meta.title if page.meta and page.meta.title else page.title) | striptags %}
   {% set page_description = page.meta.description if page.meta and page.meta.description else config.site_description %}
   {% set page_image = page.meta.social_image if page.meta and page.meta.social_image else (config.site_url ~ '/assets/images/inter_process_semantic_collaboration_MCI_audience_header_li.png?v=3') %}
 
@@ -16,8 +16,8 @@
   <meta property="og:image" content="{{ page_image }}" />
   <meta property="og:image:secure_url" content="{{ page_image }}" />
   <meta property="og:image:type" content="image/png" />
-  <meta property="og:image:width" content="2400" />
-  <meta property="og:image:height" content="1260" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
 
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="{{ page_title }}" />

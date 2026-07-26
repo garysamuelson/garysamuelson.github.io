@@ -84,9 +84,11 @@ extra:
 
 nav:
   - Home: index.md
+  - "From Request to Record": agentic/from-request-to-record.md
   - "Work Record": agentic/work-record-is-bpm-task.md
   - "The ProcessOS Horizon": agentic/process-os-horizon.md
   - "Process-First AI: Dimensions of the Running Work Record": agentic/process-first-ai-dimensions.md
+  - "You Can't Orchestrate What Has No State": agentic/you-cant-orchestrate-what-has-no-state.md
   - "The Working AI: Put to Task with Measured Output": agentic/working-ai-put-to-task.md
   - Agentic Agency & Workflows: agentic/agentic-agency-and-workflows.md
   - AI Governance in Healthcare:
