@@ -1,6 +1,6 @@
 ---
-title: "From Request to Record: A Process Management Architecture"
-description: "Process management begins when work must outlive the application request that started it. This paper defines the Camunda process instance as a running Work Record that carries identity, state, obligations, constraints, and history across people, systems, events, and time."
+title: "From Request to Record: Process Management Architecture with ProcessOS Acceleration"
+description: "Process management begins when work must outlive the application request that started it. This paper defines the Camunda process instance as a running Work Record and shows how ProcessOS accelerates promotion from application-embedded coordination to an explicit Process Application."
 date: 2026-07-26
 authors:
   - gary
@@ -13,12 +13,12 @@ tags:
   - Camunda
   - Work Record
   - Agentic AI
-social_image: https://garysamuelson.github.io/assets/images/from_request_to_record_banner_v2.png
+social_image: https://garysamuelson.github.io/assets/images/from_request_to_record_banner_v3.png
 ---
 
-![From Request to Record: A Process Management Architecture](resources/from_request_to_record_banner_v2.png)
+![From Request to Record: Process Management Architecture with ProcessOS Acceleration](resources/from_request_to_record_banner_v3.png)
 
-# From Request to Record: A Process Management Architecture
+# From Request to Record: Process Management Architecture with ProcessOS Acceleration
 ## Methods, Features, and Runtime Responsibilities
 
 **Author:** Gary Samuelson  
@@ -27,6 +27,8 @@ social_image: https://garysamuelson.github.io/assets/images/from_request_to_reco
 ---
 
 Process-management architecture begins when work must outlive the application request that started it. Camunda carries that work until the business outcome is complete.
+
+ProcessOS extends this architecture by using operational evidence to discover implied orchestration and accelerate an existing application's promotion into a Process Application.
 
 A conventional application can validate a request, call services, update a database, and return a result. Process management adds the ability to maintain a specific unit of work after the original interaction has ended. Camunda provides the running process instance that carries the work's identity, state, current obligations, and execution history.
 
@@ -187,15 +189,15 @@ A dashboard identifying a bottleneck provides information. A governed process ch
 
 ---
 
-## ProcessOS Can Recover the Process Hidden Inside the Application
+## ProcessOS Accelerates Promotion from Application to Process Application
 
-A pre-existing application may already contain an implicit process distributed across status fields, scheduled jobs, callback handlers, assignment tables, audit records, message consumers, and service calls. Those mechanisms tell the application how to continue work after the original request ends. Together they form an implementation of the lifecycle even when no explicit process model exists.
+Many pre-existing applications already contain the raw structure of a Process Application. Status fields, scheduled jobs, callback handlers, assignment tables, audit records, message consumers, and service calls implement an implied orchestration that carries work beyond the original request. The application runs a lifecycle even though the organization has never modeled that lifecycle explicitly.
 
-ProcessOS applies Form Four to this migration problem. Forms One through Three place AI inside running process instances as a task resource, task worker, or bounded agent. Form Four operates on the process models those instances will execute. It discovers how work runs, re-engineers the lifecycle, builds the required process artifacts, deploys the approved model, and measures what happens next.
+ProcessOS applies Form Four to accelerate the application's promotion into a Process Application. Forms One through Three place AI inside running process instances as a task resource, task worker, or bounded agent. Form Four operates on the process models those instances will execute. It discovers the implied orchestration, re-engineers the lifecycle, builds the required process artifacts, deploys the approved model, and measures what happens next. These capabilities compress a largely manual modernization effort into a governed, evidence-driven progression.
 
-The discovery must begin with operational evidence rather than source code alone. Code shows the paths an application can take. Runtime records show which paths the organization actually takes, where work waits, which exceptions recur, and which informal routes became part of normal operations. Application logs, audit tables, job histories, message records, and tracing data can provide that evidence when each event carries a business identifier, activity, and timestamp. Process owners then validate the discovered behavior and distinguish required work from accidental complexity.
+ProcessOS begins with operational evidence rather than source code alone. Code shows the paths an application can take. Runtime records show which paths the organization actually takes, where work waits, which exceptions recur, and which informal routes became part of normal operations. Application logs, audit tables, job histories, message records, and tracing data provide that evidence when each event carries a business identifier, activity, and timestamp. Process owners then validate the discovered behavior and distinguish required work from accidental complexity.
 
-The migration follows a practical sequence:
+ProcessOS accelerates promotion through a practical sequence:
 
 1. Identify the business object that should become the Work Record.
 2. Correlate existing operational events to individual instances of that object.
@@ -207,7 +209,7 @@ The migration follows a practical sequence:
 8. Route new work through Camunda while existing application-managed work completes on its original path.
 9. Compare subsequent execution against the expected outcome and improve the model from production evidence.
 
-This is not an application rewrite. The application remains responsible for customer interaction, domain behavior, and authoritative data. Camunda assumes responsibility for the running Work Record and its lifecycle. ProcessOS helps discover and construct that boundary, then uses the resulting execution history to improve it.
+ProcessOS promotes the application by modernizing its coordination layer while preserving its domain capabilities. The application continues to own customer interaction, domain behavior, and authoritative data. Camunda takes responsibility for the running Work Record and its lifecycle. ProcessOS discovers and constructs that boundary, accelerates deployment of the new Process Application, and uses the resulting execution history to improve it.
 
 ---
 

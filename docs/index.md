@@ -10,20 +10,20 @@ I've built production AI systems in emergency medicine, real-time ML platforms a
 
 ---
 
-## Latest: From Request to Record — A Process Management Architecture
+## Latest: From Request to Record — Process Management Architecture with ProcessOS Acceleration
 
-The application request ends. The business commitment does not. This paper traces the architecture that carries work beyond the original interaction: a running Camunda process instance with identity, state, obligations, constraints, and history.
+The application request ends. The business commitment does not. This paper traces the Camunda architecture that carries work beyond the original interaction and shows how ProcessOS accelerates promotion from application-embedded coordination to an explicit Process Application.
 
 <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap:1.5rem; margin-bottom:2rem;">
 
 <div markdown style="border:1px solid var(--md-default-fg-color--lightest); border-radius:8px; overflow:hidden;">
 <a href="agentic/from-request-to-record/">
-  <img src="assets/images/from_request_to_record_banner_v2.png" alt="From Request to Record: A Process Management Architecture" style="width:100%; display:block;" />
+  <img src="assets/images/from_request_to_record_banner_v3.png" alt="From Request to Record: Process Management Architecture with ProcessOS Acceleration" style="width:100%; display:block;" />
 </a>
 <div style="padding:1rem;">
-<small><strong>New · July 26, 2026</strong> · BPM · Process Architecture · Camunda · Enterprise Architecture · Agentic AI</small><br/>
-<strong><a href="agentic/from-request-to-record/">From Request to Record: A Process Management Architecture</a></strong>
-<p>Applications complete requests. Process architecture carries commitments. Follow the transition from immediate service orchestration to a running Work Record that coordinates people, systems, events, transactions, and AI until the business outcome is complete.</p>
+<small><strong>New · July 26, 2026</strong> · BPM · Process Architecture · Camunda · ProcessOS · Enterprise Architecture · Agentic AI</small><br/>
+<strong><a href="agentic/from-request-to-record/">From Request to Record: Process Management Architecture with ProcessOS Acceleration</a></strong>
+<p>Applications complete requests. Process architecture carries commitments. Follow the transition to a running Work Record and see how ProcessOS uses operational evidence to accelerate promotion from application to Process Application.</p>
 <a href="agentic/from-request-to-record/">Read →</a>
 </div>
 </div>
