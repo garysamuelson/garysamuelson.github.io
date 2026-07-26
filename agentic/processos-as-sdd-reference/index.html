@@ -1,0 +1,1615 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Camunda's ProcessOS and GitHub's Spec-Driven Development independently arrived at the same structural solution. The Brief is the Specify phase. The fitness function is the acceptance criteria. Organizational Memory is the versioned spec store. This paper makes the alignment explicit and applies it to legacy BPM modernization.">
+      
+      
+        <meta name="author" content="Gary Samuelson">
+      
+      
+        <link rel="canonical" href="https://garysamuelson.github.io/agentic/processos-as-sdd-reference/">
+      
+      
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>ProcessOS Is the BPM-Native SDD Reference Architecture - Gary Samuelson — AI & Architecture Research</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  
+
+  
+  
+  
+  
+
+  <meta property="og:type" content="article" />
+  <meta property="og:site_name" content="Gary Samuelson — AI & Architecture Research" />
+  <meta property="og:title" content="ProcessOS Is the BPM-Native SDD Reference Architecture" />
+  <meta property="og:description" content="Camunda's ProcessOS and GitHub's Spec-Driven Development independently arrived at the same structural solution. The Brief is the Specify phase. The fitness function is the acceptance criteria. Organizational Memory is the versioned spec store. This paper makes the alignment explicit and applies it to legacy BPM modernization." />
+  <meta property="og:url" content="https://garysamuelson.github.io/agentic/processos-as-sdd-reference/" />
+  <meta property="og:image" content="https://garysamuelson.github.io//assets/images/inter_process_semantic_collaboration_MCI_audience_header_li.png?v=3" />
+  <meta property="og:image:secure_url" content="https://garysamuelson.github.io//assets/images/inter_process_semantic_collaboration_MCI_audience_header_li.png?v=3" />
+  <meta property="og:image:type" content="image/png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="ProcessOS Is the BPM-Native SDD Reference Architecture" />
+  <meta name="twitter:description" content="Camunda's ProcessOS and GitHub's Spec-Driven Development independently arrived at the same structural solution. The Brief is the Specify phase. The fitness function is the acceptance criteria. Organizational Memory is the versioned spec store. This paper makes the alignment explicit and applies it to legacy BPM modernization." />
+  <meta name="twitter:url" content="https://garysamuelson.github.io/agentic/processos-as-sdd-reference/" />
+  <meta name="twitter:image" content="https://garysamuelson.github.io//assets/images/inter_process_semantic_collaboration_MCI_audience_header_li.png?v=3" />
+
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#processos-is-the-bpm-native-sdd-reference-architecture" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Gary Samuelson — AI &amp; Architecture Research" class="md-header__button md-logo" aria-label="Gary Samuelson — AI & Architecture Research" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Gary Samuelson — AI & Architecture Research
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              ProcessOS Is the BPM-Native SDD Reference Architecture
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/garysamuelson/garysamuelson.github.io" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    garysamuelson/garysamuelson.github.io
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Gary Samuelson — AI &amp; Architecture Research" class="md-nav__button md-logo" aria-label="Gary Samuelson — AI & Architecture Research" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Gary Samuelson — AI & Architecture Research
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/garysamuelson/garysamuelson.github.io" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    garysamuelson/garysamuelson.github.io
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../from-request-to-record/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    From Request to Record
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../work-record-is-bpm-task/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Work Record
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../process-os-horizon/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    The ProcessOS Horizon
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../process-first-ai-dimensions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Process-First AI: Dimensions of the Running Work Record
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../you-cant-orchestrate-what-has-no-state/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    You Can't Orchestrate What Has No State
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../working-ai-put-to-task/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    The Working AI: Put to Task with Measured Output
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../agentic-agency-and-workflows/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Agentic Agency & Workflows
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" >
+        
+          
+          <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AI Governance in Healthcare
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    AI Governance in Healthcare
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../healthcare/healthcare-accountability/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Who Is Accountable?
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../governance-gap/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    The Governance Gap
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10" >
+        
+          
+          <label class="md-nav__link" for="__nav_10" id="__nav_10_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Semantic AI
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_10_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_10">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Semantic AI
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../semantic-ai/cpg-campaign-simplified-workflow/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    The Ontology Process
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../semantic-ai/inter-process-semantic-collaboration/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    When Processes Finally Talk to Each Other
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../semantic-ai/aspect-oriented-process-management/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Aspect-Oriented Process Management
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tags/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tags
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#part-i-what-i-saw-in-the-demo-the-recognition" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Part I — What I Saw in the Demo: The Recognition
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#part-ii-the-architecture-mapping-processos-components-as-sdd-constructs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Part II — The Architecture Mapping: ProcessOS Components as SDD Constructs
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#part-iii-why-this-makes-sense-form-four-as-the-sdd-operating-layer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Part III — Why This Makes Sense: Form Four as the SDD Operating Layer
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#part-iv-processos-applied-to-the-obsolescence-plan" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Part IV — ProcessOS Applied to the Obsolescence Plan
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Part IV — ProcessOS Applied to the Obsolescence Plan">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#track-a-modernize-full-four-agent-engagement" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Track A (Modernize): Full Four-Agent Engagement
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#track-b-archive-discover-agent-organizational-memory" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Track B (Archive): Discover Agent + Organizational Memory
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#track-c-retire-catalog-entry-only" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Track C (Retire): Catalog Entry Only
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-compounding-effect" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Compounding Effect
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#part-v-the-sdd-value-promise-measured-in-processos-results" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Part V — The SDD Value Promise: Measured in ProcessOS Results
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Part V — The SDD Value Promise: Measured in ProcessOS Results">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-sdd-cost-of-failure-stack-applied-to-bpm" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The SDD Cost-of-Failure Stack, Applied to BPM
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#part-vi-the-sdd-brief-template-processoss-missing-front-end" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Part VI — The SDD Brief Template: ProcessOS's Missing Front-End
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#part-vii-putting-it-together-the-processos-enabled-bpm-sdd-organization" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Part VII — Putting It Together: The ProcessOS-Enabled BPM + SDD Organization
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Part VII — Putting It Together: The ProcessOS-Enabled BPM + SDD Organization">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-obsolescence-plan-within-this-architecture" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Obsolescence Plan Within This Architecture
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#part-viii-what-camunda-didnt-call-sdd-and-why-it-doesnt-matter" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Part VIII — What Camunda Didn't Call SDD (And Why It Doesn't Matter)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Summary
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  <nav class="md-tags" >
+    
+      
+      
+      
+      
+        <a href="../../tags/#tag:agentic-ai" class="md-tag">Agentic AI</a>
+      
+    
+      
+      
+      
+      
+        <a href="../../tags/#tag:bpm" class="md-tag">BPM</a>
+      
+    
+      
+      
+      
+      
+        <a href="../../tags/#tag:camunda" class="md-tag">Camunda</a>
+      
+    
+      
+      
+      
+      
+        <a href="../../tags/#tag:enterprise-architecture" class="md-tag">Enterprise Architecture</a>
+      
+    
+      
+      
+      
+      
+        <a href="../../tags/#tag:legacy-modernization" class="md-tag">Legacy Modernization</a>
+      
+    
+      
+      
+      
+      
+        <a href="../../tags/#tag:process-orchestration" class="md-tag">Process Orchestration</a>
+      
+    
+      
+      
+      
+      
+        <a href="../../tags/#tag:processos" class="md-tag">ProcessOS</a>
+      
+    
+      
+      
+      
+      
+        <a href="../../tags/#tag:spec-driven-development" class="md-tag">Spec-Driven Development</a>
+      
+    
+  </nav>
+
+
+  
+  
+
+
+<h1 id="processos-is-the-bpm-native-sdd-reference-architecture">ProcessOS Is the BPM-Native SDD Reference Architecture<a class="headerlink" href="#processos-is-the-bpm-native-sdd-reference-architecture" title="Permanent link">&para;</a></h1>
+<p><strong>Author:</strong> Gary Samuelson<br />
+<strong>Date:</strong> June 2026<br />
+<strong>Series context:</strong> This paper builds on the Form Four framework established in <a href="../process-os-horizon/"><em>The ProcessOS Horizon</em></a> and <a href="../process-first-ai-dimensions/"><em>Process-First AI: Dimensions of the Running Work Record</em></a>. It is a working paper shared for peer review.</p>
+<hr />
+<p><strong>The core claim:</strong> What Camunda announced on May 19, 2026 as ProcessOS — "an agentic operating system for AI-first enterprise transformation" — is, structurally, an SDD framework applied to business process re-engineering. It implements the same disciplines, in the same sequence, with the same governance logic. Camunda didn't use the SDD vocabulary because Camunda is a BPM company, not an engineering methodology company. The structural alignment is exact regardless of the naming.</p>
+<p>This paper shows the alignment, applies it to legacy BPM obsolescence planning, and makes the acceleration case.</p>
+<p><strong>External sources:</strong></p>
+<ul>
+<li>Camunda, <em>ProcessOS: platform architecture</em>, camunda.com/platform/process-os/ (May 2026)</li>
+<li>Dumas et al., <em>Fundamentals of Business Process Management</em>, 2nd Ed. Springer, 2018</li>
+<li>GitHub Spec Kit, github.com/github/spec-kit (MIT) | arXiv:2602.00180</li>
+</ul>
+<hr />
+<h2 id="part-i-what-i-saw-in-the-demo-the-recognition">Part I — What I Saw in the Demo: The Recognition<a class="headerlink" href="#part-i-what-i-saw-in-the-demo-the-recognition" title="Permanent link">&para;</a></h2>
+<p>During the ProcessOS demo, I observed that the system appeared to be "built from layers of markdown-defined skills" — and noted the similarity to Spec-Driven Development (SDD) without being able to name exactly why.</p>
+<p>That observation is architecturally correct. Here is what the Camunda platform architecture page confirms:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>CAMUNDA HUB — ProcessOS Intelligence Layer
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>┌────────────────────────────────────────────────────────────────┐
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>│  Discover agent │ Design agent │ Build agent │ Optimize agent  │
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>├────────────────────────────────────────────────────────────────┤
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>│       Agent Skills — tools shared across all agents            │
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>├────────────────────────────────────────────────────────────────┤
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>│       Organizational Memory — cross-process knowledge          │
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>│       private to org · stored in Git repo                      │
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>├────────────────────────────────────────────────────────────────┤
+<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>│       Plugins — third-party integrations via MCP               │
+<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>│       Catalog — connectors and building blocks, org-wide       │
+<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a>└────────────────────────────────────────────────────────────────┘
+<a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a>         ↓ deploys · monitors
+<a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a>ORCHESTRATION CLUSTER (Zeebe engine · Operate · Tasklist)
+<a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a>         ↓ orchestrates
+<a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a>Enterprise: Core systems · AI agents · People · APIs
+</code></pre></div>
+<p>The <strong>Agent Skills layer</strong> is the markdown-defined skill architecture I noticed. These are structured capability definitions — what each agent can do, what tools it can call, what constraints govern its behavior — shared across all four specialized agents. This is identical in structure to the AGENTS.md / Constitution concept in SDD: the standing constraints that every agent in the system must respect.</p>
+<p>The <strong>Organizational Memory</strong> is a Git-backed knowledge store that persists cross-process knowledge across every engagement. Every process the system has discovered, re-engineered, and deployed gets its decisions recorded here. This is the SDD versioned spec store: the living, auditable artifact that the next implementation builds on.</p>
+<p>The <strong>Brief</strong> — the plain-English process description and KPI selection that starts every ProcessOS engagement — is the SDD spec's Specify phase. Camunda's own description:</p>
+<blockquote>
+<p>"Describe the process in natural language. Define what success looks like: the outcome you're optimizing for and the KPIs that matter. ProcessOS reads both as ground truth, then reconstructs the as-is, designs the to-be, and generates everything needed to run it."</p>
+</blockquote>
+<p>Replace "ProcessOS" with "GitHub Spec Kit" and this sentence describes <code>/speckit.specify</code>. The pattern is the same.</p>
+<hr />
+<h2 id="part-ii-the-architecture-mapping-processos-components-as-sdd-constructs">Part II — The Architecture Mapping: ProcessOS Components as SDD Constructs<a class="headerlink" href="#part-ii-the-architecture-mapping-processos-components-as-sdd-constructs" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>ProcessOS Component</th>
+<th>SDD Equivalent</th>
+<th>What It Does</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>The Brief</strong> (plain-English process description + KPI selection)</td>
+<td><strong>Specify phase</strong> — business outcomes, success criteria, scope</td>
+<td>Entry artifact that constrains everything downstream</td>
+</tr>
+<tr>
+<td><strong>Fitness function</strong> (KPIs the re-engineered process must achieve)</td>
+<td><strong>Acceptance criteria</strong> — non-functional requirements</td>
+<td>The measurable contract the implementation must satisfy</td>
+</tr>
+<tr>
+<td><strong>Agent Skills</strong> (shared across all four agents)</td>
+<td><strong>The Constitution</strong> — standing constraints governing agent behavior</td>
+<td>What the agents can and cannot do; capability bounds</td>
+</tr>
+<tr>
+<td><strong>Organizational Memory</strong> (Git repo, cross-process, private)</td>
+<td><strong>Versioned spec store</strong> — living spec that persists and compounds</td>
+<td>Audit trail + institutional knowledge across every engagement</td>
+</tr>
+<tr>
+<td><strong>Discover agent</strong></td>
+<td><strong>Reverse Specify</strong> — extract behavioral spec from legacy system</td>
+<td>Mines event logs; produces as-is behavioral model</td>
+</tr>
+<tr>
+<td><strong>Design agent</strong> (Re-engineer)</td>
+<td><strong>Specify (Target)</strong> + <strong>Plan</strong> — to-be model + architecture</td>
+<td>Redesigns process for AI-native outcomes; generates BPMN</td>
+</tr>
+<tr>
+<td><strong>Build agent</strong></td>
+<td><strong>Tasks + Implement</strong> — bounded units, AI-generated</td>
+<td>Generates and deploys the updated process model and workers</td>
+</tr>
+<tr>
+<td><strong>Optimize agent</strong> (Continuously Improve)</td>
+<td><strong>Spec Evolution</strong> + monitoring feedback</td>
+<td>Monitors KPI performance; triggers new Discover cycle on drift</td>
+</tr>
+<tr>
+<td><strong>Plugins</strong> (MCP extensibility)</td>
+<td><strong>Integration constraints</strong> — approved external services</td>
+<td>Governed list of what the system may call</td>
+</tr>
+<tr>
+<td><strong>Catalog</strong> (connectors, reusable building blocks)</td>
+<td><strong>Shared component library</strong> — Constitution-approved implementations</td>
+<td>Building blocks that compound across processes</td>
+</tr>
+</tbody>
+</table>
+<p>Every structural element of the SDD framework has a named counterpart in the ProcessOS architecture. Camunda did not use SDD terminology — but they independently implemented the same solution to the same problem.</p>
+<hr />
+<h2 id="part-iii-why-this-makes-sense-form-four-as-the-sdd-operating-layer">Part III — Why This Makes Sense: Form Four as the SDD Operating Layer<a class="headerlink" href="#part-iii-why-this-makes-sense-form-four-as-the-sdd-operating-layer" title="Permanent link">&para;</a></h2>
+<p>The Form Four research established that ProcessOS operates <em>on</em> process models as governed artifacts — not within running process instances. This positions it at a structurally different layer from Forms One, Two, and Three (which operate within instances).</p>
+<p>SDD operates at an analogous structural layer relative to code: it governs the specification that constrains what AI agents generate — not the generated artifacts themselves. SDD is the discipline that sits above implementation, just as Form Four sits above execution.</p>
+<p><strong>The structural parallel:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Level</th>
+<th>BPM</th>
+<th>SDD</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Runtime</strong></td>
+<td>Running process instances (Forms 1–3 participate here)</td>
+<td>Deployed code (unit tests, integration tests validate here)</td>
+</tr>
+<tr>
+<td><strong>Governance layer</strong></td>
+<td>ProcessOS — governs the process model artifacts</td>
+<td>SDD spec — governs the implementation artifacts</td>
+</tr>
+<tr>
+<td><strong>What the governance layer manages</strong></td>
+<td>BPMN process models: discovery, redesign, deployment, improvement</td>
+<td>Specs: authorship, validation, versioning, evolution</td>
+</tr>
+<tr>
+<td><strong>How governance propagates</strong></td>
+<td>Every instance that runs against the deployed model is governed by it</td>
+<td>Every AI agent that builds against the spec is constrained by it</td>
+</tr>
+</tbody>
+</table>
+<p>ProcessOS is Form Four applied to process models. SDD is Form Four logic applied to implementation specs. They are the same architectural pattern at two different levels of the stack.</p>
+<p><strong>The insight this produces:</strong> A fully Form Four-governed organization is one where:</p>
+<ul>
+<li>ProcessOS governs what process models exist and how they perform (Form Four BPM layer)</li>
+<li>SDD governs what the implementation of those processes looks like (Form Four implementation layer)</li>
+<li>The Brief + fitness function (ProcessOS) feeds directly into the SDD spec template (engineering)</li>
+<li>The Organizational Memory (ProcessOS) and the versioned spec store (SDD) are synchronized — one is the process model record, the other is the implementation record</li>
+</ul>
+<p>These two Form Four layers are the architectural backbone of the AI-native organization. Neither is sufficient without the other. ProcessOS without SDD produces well-governed process models implemented inconsistently. SDD without ProcessOS produces well-implemented components governed by hand-authored models that drift from production reality.</p>
+<hr />
+<h2 id="part-iv-processos-applied-to-the-obsolescence-plan">Part IV — ProcessOS Applied to the Obsolescence Plan<a class="headerlink" href="#part-iv-processos-applied-to-the-obsolescence-plan" title="Permanent link">&para;</a></h2>
+<p>ProcessOS maps cleanly to a three-track legacy BPM obsolescence framework: Track A (Modernize), Track B (Archive), Track C (Retire). ProcessOS automates the parts of each track that previously required manual analytical work.</p>
+<h3 id="track-a-modernize-full-four-agent-engagement">Track A (Modernize): Full Four-Agent Engagement<a class="headerlink" href="#track-a-modernize-full-four-agent-engagement" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>Legacy Event Logs + System Inventory
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>        ↓
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>[Discover Agent] — mines ACT_HI_ACTINST or equivalent
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>        ↓ produces as-is behavioral model + conformance delta
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>[Design Agent] — re-engineers for AI-native outcomes
+<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>        ↓ produces to-be BPMN + fitness function KPIs
+<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>[Brief + SDD Spec] — business team reviews and approves (the hand-off point)
+<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>        ↓ spec moves to SDD implementation lifecycle
+<a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a>[Build Agent] — generates process model, workers, connectors
+<a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a>        ↓
+<a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a>[Optimize Agent] — monitors production KPIs continuously
+<a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a>        ↓ triggers new cycle when KPI drift detected
+</code></pre></div>
+<p>The <strong>Discover agent</strong> does what a manual "Reverse Specify" step requires — mines the event log, reconstructs the actual executed process (not the documented one), and surfaces the conformance delta (the gap between what was designed and what actually ran). This is Dumas Step 3 ("Complete the process model") done automatically.</p>
+<p>The <strong>fitness function</strong> the Design agent optimizes against is the SDD spec's acceptance criteria. When the business team states "cycle time must reduce by 30%" and "exception rate must fall below 8%," those are the fitness function targets. The Design agent optimizes the to-be model against them and confirms whether the redesign meets them before implementation begins. This is flow analysis (Dumas §7.2) automated.</p>
+<p>The <strong>Organizational Memory</strong> entry from a Track A engagement captures: the discovered as-is model, the conformance delta, the design decisions made, the fitness function targets, and the deployed to-be model. This is the institutional knowledge record of that modernization project — available to every subsequent engagement.</p>
+<h3 id="track-b-archive-discover-agent-organizational-memory">Track B (Archive): Discover Agent + Organizational Memory<a class="headerlink" href="#track-b-archive-discover-agent-organizational-memory" title="Permanent link">&para;</a></h3>
+<p>Track B workflows — dormant or decommissioning — do not need the full four-agent engagement. They need two things: the behavioral record (what the legacy system actually did) and the decommission spec (what it integrated with and what it provided to downstream systems).</p>
+<p>ProcessOS's Discover agent produces the behavioral record automatically from the event log. The Organizational Memory entry becomes the shelf artifact — stored in Git, versioned, available for future reconstruction.</p>
+<p>Track B previously required:</p>
+<ul>
+<li>Manual process mining or SME interviews → now: Discover agent from event logs</li>
+<li>Manual documentation of exception paths → now: conformance delta from Discover</li>
+<li>Manual integration contract documentation → now: connector catalog entry + Organizational Memory</li>
+</ul>
+<p>Track B in a ProcessOS-enabled organization reduces to: run Discover, review output, confirm Organizational Memory entry is accurate, close the record. What previously took 1–3 days per workflow becomes hours.</p>
+<p><strong>The key insight for Track B:</strong> ProcessOS's Organizational Memory is not just an archive. Because it stores everything in Git with version history, the decommissioned workflow's behavioral record is recoverable, diffable, and auditable. If a downstream system later reports an unexpected behavior, the organization traces it to the decommissioned workflow's Organizational Memory entry. The shelf artifact is automatically structured, versioned, and searchable.</p>
+<h3 id="track-c-retire-catalog-entry-only">Track C (Retire): Catalog Entry Only<a class="headerlink" href="#track-c-retire-catalog-entry-only" title="Permanent link">&para;</a></h3>
+<p>Track C workflows — unambiguously obsolete — require only a Catalog entry confirming they have been decommissioned and what connectors or building blocks they used. Those connectors remain in the Catalog for reuse in future processes. The workflow closes with a single Organizational Memory note.</p>
+<h3 id="the-compounding-effect">The Compounding Effect<a class="headerlink" href="#the-compounding-effect" title="Permanent link">&para;</a></h3>
+<p>The Camunda platform page is explicit about a property that manual obsolescence planning cannot match:</p>
+<blockquote>
+<p>"The tenth process is dramatically faster than the first."</p>
+</blockquote>
+<p>This compounding effect comes from the Organizational Memory and Catalog accumulating institutional knowledge across every engagement. By the time an organization has run ProcessOS on ten legacy workflows:</p>
+<ul>
+<li>The Organizational Memory contains every design decision made across all ten engagements</li>
+<li>The Catalog contains every connector built for any of those ten processes, reusable on the eleventh</li>
+<li>The Discover agent has built pattern recognition from ten conformance analyses</li>
+</ul>
+<p>Manual obsolescence planning does not compound. Each engagement starts from near-zero. ProcessOS changes the economics of the obsolescence program from a linear cost curve to a declining marginal cost curve.</p>
+<hr />
+<h2 id="part-v-the-sdd-value-promise-measured-in-processos-results">Part V — The SDD Value Promise: Measured in ProcessOS Results<a class="headerlink" href="#part-v-the-sdd-value-promise-measured-in-processos-results" title="Permanent link">&para;</a></h2>
+<p>The foundational value question for any new methodology is: what is the measurable return?</p>
+<p>ProcessOS answers with production numbers. These are not theoretical — they are from named customers in Camunda's published case studies:</p>
+<table>
+<thead>
+<tr>
+<th>Metric</th>
+<th>Traditional BPM Re-engineering</th>
+<th>ProcessOS-enabled</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Discovery phase</strong></td>
+<td>2–3 months (workshops, consultants)</td>
+<td>1–2 weeks (event log mining)</td>
+</tr>
+<tr>
+<td><strong>Re-engineering phase</strong></td>
+<td>1–2 months</td>
+<td>1 week</td>
+</tr>
+<tr>
+<td><strong>Build &amp; deploy phase</strong></td>
+<td>3–6 months</td>
+<td>2–4 weeks</td>
+</tr>
+<tr>
+<td><strong>Optimization</strong></td>
+<td>Quarterly or never</td>
+<td>Continuous, backtested</td>
+</tr>
+<tr>
+<td><strong>Finnova case</strong></td>
+<td>15–30 minute onboarding form</td>
+<td>Same task: minutes</td>
+</tr>
+<tr>
+<td><strong>R-KOM case</strong></td>
+<td>8 hours average ticket response</td>
+<td>Near real-time</td>
+</tr>
+<tr>
+<td><strong>Danica case</strong></td>
+<td>Customer onboarding: months</td>
+<td>Customer onboarding: days</td>
+</tr>
+</tbody>
+</table>
+<p>The velocity comes precisely because ProcessOS implements SDD disciplines (brief → agents → build → validate) as an automated, governed pipeline. The brief is the spec. The fitness function is the acceptance criteria. The Organizational Memory is the versioned spec store. The four agents implement the four SDD phases. Remove any of those elements and the cycle time reverts to manual.</p>
+<p>A legitimate concern about spec-first methods is that they accelerate toward a failure-revealing milestone rather than avoid failure. ProcessOS's answer: yes, but the milestone moves to the Brief. If the brief is incoherent — KPIs contradictory, scope undefined, business logic unresolved — the Discover and Design agents surface it in week 1–2, not in week 24 when the system is live in production. The brief is the cheap failure layer. Every failure that surfaces in the brief costs hours. The same failure in production costs months.</p>
+<h3 id="the-sdd-cost-of-failure-stack-applied-to-bpm">The SDD Cost-of-Failure Stack, Applied to BPM<a class="headerlink" href="#the-sdd-cost-of-failure-stack-applied-to-bpm" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Where the gap is discovered</th>
+<th>Cost in a ProcessOS engagement</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>In the Brief</strong> (scope, KPI, contradictions)</td>
+<td>Hours — business conversation, spec revision</td>
+</tr>
+<tr>
+<td><strong>In the Discover phase</strong> (conformance delta reveals missed complexity)</td>
+<td>Days — design adjustment before any implementation</td>
+</tr>
+<tr>
+<td><strong>In the Design phase</strong> (fitness function analysis shows redesign won't meet KPI)</td>
+<td>Days — redesign iteration</td>
+</tr>
+<tr>
+<td><strong>In the Build phase</strong> (worker or connector spec is incomplete)</td>
+<td>Days — spec update before code is generated</td>
+</tr>
+<tr>
+<td><strong>In production</strong> (KPI monitoring reveals regression)</td>
+<td>Weeks — Optimize agent triggers new Discover cycle</td>
+</tr>
+</tbody>
+</table>
+<p>ProcessOS pushes every discovery upward toward the cheaper layers. That is the SDD value proposition, implemented.</p>
+<hr />
+<h2 id="part-vi-the-sdd-brief-template-processoss-missing-front-end">Part VI — The SDD Brief Template: ProcessOS's Missing Front-End<a class="headerlink" href="#part-vi-the-sdd-brief-template-processoss-missing-front-end" title="Permanent link">&para;</a></h2>
+<p>ProcessOS's brief input — "describe the process in natural language, define what success looks like" — is powerful but under-specified for complex enterprise processes. The brief Camunda shows in their demo is deliberately simple: plain English + KPI checkboxes.</p>
+<p>For complex legacy workflows, that simplicity is a gap. A brief that says "re-engineer the commercial underwriting process to be faster" does not give the Design agent enough to work from. It will make assumptions. Those assumptions will be plausible. Some will be wrong.</p>
+<p>An SDD executable spec template provides the structured Brief that ProcessOS's Design agent actually needs:</p>
+<table>
+<thead>
+<tr>
+<th>SDD Spec Section</th>
+<th>What ProcessOS Needs</th>
+<th>Why</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Business Outcomes + Success Criteria</strong></td>
+<td>Fitness function KPIs with thresholds</td>
+<td>Without thresholds, the Design agent cannot evaluate whether a redesign meets the goal</td>
+</tr>
+<tr>
+<td><strong>Scope Boundaries</strong></td>
+<td>Explicit in-scope / out-of-scope</td>
+<td>Without this, the Design agent expands scope to adjacent processes</td>
+</tr>
+<tr>
+<td><strong>Business Logic &amp; Rules</strong></td>
+<td>Gateway conditions, decision rules</td>
+<td>Without these, the Design agent infers rules from event log frequencies — which reflects what happened, not what should happen</td>
+</tr>
+<tr>
+<td><strong>Verification Criteria</strong></td>
+<td>Acceptance criteria for each logical path</td>
+<td>Without these, the Build agent has no validation contract</td>
+</tr>
+<tr>
+<td><strong>Open Questions</strong></td>
+<td>Deferred decisions that must not be implemented</td>
+<td>Without these, the Build agent implements its own answer to unresolved questions</td>
+</tr>
+</tbody>
+</table>
+<p><strong>The recommendation:</strong> Use the SDD spec template as the ProcessOS Brief for any complex engagement. The structured Brief replaces the natural-language description and gives the Discover and Design agents explicit constraints to work within — rather than having them infer constraints from the event log alone.</p>
+<p>This is also the organizational fix for the problem of business teams delivering unstructured requirements. With ProcessOS, the brief goes to the Discover agent, not to engineers. But an unstructured brief to the Discover agent produces the same problem as an unstructured prompt to a coding agent: it makes assumptions to fill every gap. The SDD spec template structures the brief so the agent gets explicit constraints, not guessed ones.</p>
+<hr />
+<h2 id="part-vii-putting-it-together-the-processos-enabled-bpm-sdd-organization">Part VII — Putting It Together: The ProcessOS-Enabled BPM + SDD Organization<a class="headerlink" href="#part-vii-putting-it-together-the-processos-enabled-bpm-sdd-organization" title="Permanent link">&para;</a></h2>
+<p>The full architecture, integrating Form Four, BPM, SDD, and ProcessOS:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>FORM FOUR LAYER (ProcessOS — governs process models)
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>┌─────────────────────────────────────────────────────────────────┐
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>│  1. Business team + Discover agent: produce as-is behavioral    │
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>│     model from event logs (Reverse Spec automated)              │
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>│                                                                 │
+<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>│  2. Business team + Design agent: produce to-be model +         │
+<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a>│     fitness function (Target Spec + Plan automated)             │
+<a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a>│                                                                 │
+<a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a>│  3. SDD BRIEF (structured) → Brief reviewed at hand-off point   │
+<a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a>│     Business approves Sections 1–3; Engineering adds Section 4  │
+<a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a>│                                                                 │
+<a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a>│  4. Build agent → Implement (spec-anchored, CI-validated)       │
+<a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a>│                                                                 │
+<a id="__codelineno-2-14" name="__codelineno-2-14" href="#__codelineno-2-14"></a>│  5. Optimize agent → monitors KPIs continuously                 │
+<a id="__codelineno-2-15" name="__codelineno-2-15" href="#__codelineno-2-15"></a>│     → triggers new Discover cycle on drift                      │
+<a id="__codelineno-2-16" name="__codelineno-2-16" href="#__codelineno-2-16"></a>└─────────────────────────────────────────────────────────────────┘
+<a id="__codelineno-2-17" name="__codelineno-2-17" href="#__codelineno-2-17"></a>         ↓ deploys governed BPMN models
+<a id="__codelineno-2-18" name="__codelineno-2-18" href="#__codelineno-2-18"></a>FORM 1–3 EXECUTION LAYER (Camunda 8 / Zeebe — runs process instances)
+<a id="__codelineno-2-19" name="__codelineno-2-19" href="#__codelineno-2-19"></a>┌─────────────────────────────────────────────────────────────────┐
+<a id="__codelineno-2-20" name="__codelineno-2-20" href="#__codelineno-2-20"></a>│  Form One: User tasks with AI inference support                 │
+<a id="__codelineno-2-21" name="__codelineno-2-21" href="#__codelineno-2-21"></a>│  Form Two: Service tasks with AI worker execution               │
+<a id="__codelineno-2-22" name="__codelineno-2-22" href="#__codelineno-2-22"></a>│  Form Three: Bounded agentic subprocesses                       │
+<a id="__codelineno-2-23" name="__codelineno-2-23" href="#__codelineno-2-23"></a>│  All three governed by the BPMN model ProcessOS produced        │
+<a id="__codelineno-2-24" name="__codelineno-2-24" href="#__codelineno-2-24"></a>└─────────────────────────────────────────────────────────────────┘
+<a id="__codelineno-2-25" name="__codelineno-2-25" href="#__codelineno-2-25"></a>         ↓ produces event logs
+<a id="__codelineno-2-26" name="__codelineno-2-26" href="#__codelineno-2-26"></a>HISTORY LAYER (ACT_HI_ACTINST equivalent / Zeebe event store)
+<a id="__codelineno-2-27" name="__codelineno-2-27" href="#__codelineno-2-27"></a>┌─────────────────────────────────────────────────────────────────┐
+<a id="__codelineno-2-28" name="__codelineno-2-28" href="#__codelineno-2-28"></a>│  Every task execution logged · timestamped · typed              │
+<a id="__codelineno-2-29" name="__codelineno-2-29" href="#__codelineno-2-29"></a>│  → Feeds back to ProcessOS Discover on next cycle               │
+<a id="__codelineno-2-30" name="__codelineno-2-30" href="#__codelineno-2-30"></a>│  → Organizational Memory updated continuously                   │
+<a id="__codelineno-2-31" name="__codelineno-2-31" href="#__codelineno-2-31"></a>└─────────────────────────────────────────────────────────────────┘
+</code></pre></div>
+<p><strong>The governance loop that closes everything:</strong></p>
+<ol>
+<li>Event logs accumulate from production execution (Persistence — one of the three runtime dimensions)</li>
+<li>Optimize agent monitors KPIs against fitness function (spec-derived acceptance criteria)</li>
+<li>When KPI drift exceeds threshold, Optimize triggers a new Discover cycle</li>
+<li>Discover mines updated event logs, produces revised as-is model</li>
+<li>Design proposes redesign options, tests against fitness function</li>
+<li>Structured Brief reviewed at human governance gate</li>
+<li>Build deploys revised BPMN model</li>
+<li>New instances run against revised model → event logs accumulate → repeat</li>
+</ol>
+<p>This is the BPM lifecycle from Dumas §1.4 (Process Identification → Discovery → Analysis → Redesign → Implementation → Monitoring → back to Identification), executed with Form Four governance at the process model level and SDD discipline at the implementation level. What previously required six phases of manual professional work now runs as a governed, AI-accelerated continuous loop.</p>
+<h3 id="the-obsolescence-plan-within-this-architecture">The Obsolescence Plan Within This Architecture<a class="headerlink" href="#the-obsolescence-plan-within-this-architecture" title="Permanent link">&para;</a></h3>
+<p>Legacy workflows under review are inputs to ProcessOS's Discover agent — not inputs to a manual analysis project. The Discover agent:</p>
+<ul>
+<li>Mines the legacy event log (or BPMN model if logs are unavailable)</li>
+<li>Produces the conformance delta (Reverse Spec)</li>
+<li>Generates an Organizational Memory entry (shelf artifact for Track B)</li>
+<li>Surfaces the modernization scope (Track A vs. Track B vs. Track C determination)</li>
+</ul>
+<p>The human governance gate becomes the decision point: review the Discover output, confirm the Track assignment, approve the structured Brief if Track A. Engineering does not begin until that gate passes.</p>
+<p><strong>The measure of success for the obsolescence program, in ProcessOS terms:</strong></p>
+<ul>
+<li>Track A completions: time from legacy event log extraction to deployed re-engineered process in production</li>
+<li>Track B completions: Discover output + Organizational Memory entry confirmed by process owner</li>
+<li>Track C completions: Catalog decommission entry logged</li>
+<li>Portfolio-level: conformance delta improvement across all Track A modernizations (KPI improvement vs. as-is baseline)</li>
+</ul>
+<hr />
+<h2 id="part-viii-what-camunda-didnt-call-sdd-and-why-it-doesnt-matter">Part VIII — What Camunda Didn't Call SDD (And Why It Doesn't Matter)<a class="headerlink" href="#part-viii-what-camunda-didnt-call-sdd-and-why-it-doesnt-matter" title="Permanent link">&para;</a></h2>
+<p>My own question when reviewing the ProcessOS architecture: why didn't Camunda bring in the SDD terminology?</p>
+<p>The answer: Camunda's audience is BPM practitioners, process architects, and enterprise IT leaders — not software engineers adopting AI coding practices. The SDD vocabulary comes from the AI-assisted software engineering world. Camunda is addressing the process management world. They use the vocabulary their audience knows: fitness functions, process mining, conformance checking, BPMN.</p>
+<p>The structural alignment exists regardless of vocabulary. What matters for practice is recognizing that:</p>
+<ol>
+<li>
+<p>The Brief = the Specify phase. Structuring the Brief using the SDD spec template makes the Design agent's work more precise.</p>
+</li>
+<li>
+<p>The fitness function = acceptance criteria. Framing KPIs as acceptance criteria (with explicit thresholds, time horizons, and measurement methods) gives the Design agent a testable contract, not a vague goal.</p>
+</li>
+<li>
+<p>The Organizational Memory = the versioned spec store. Treating it as the authoritative record of every design decision — and linking each decision to the fitness function targets that justified it — creates the audit trail that compliance requires.</p>
+</li>
+<li>
+<p>The Agent Skills layer = the Constitution. Extending the Agent Skills definitions with explicit constraints from the SDD Constitution (data classification rules, approved external services, AI worker confidence thresholds) governs what the Build agent can produce.</p>
+</li>
+</ol>
+<p><strong>The practical implication:</strong> When configuring ProcessOS for an organization's first engagement, the setup work is:</p>
+<ol>
+<li>Define the Organizational Memory seed — the standing constraints, architecture decisions, and data governance rules that apply to all process re-engineering in this organization</li>
+<li>Define the Agent Skills layer — what the Discover, Design, Build, and Optimize agents are allowed to do, and what they must not</li>
+<li>Structure the Brief template — the SDD spec template, pre-populated with the organization's standard KPI dimensions and scope constraints</li>
+</ol>
+<p>That setup work IS the SDD Constitution for the organization's ProcessOS deployment. It governs every engagement that follows. Done once, it compounds across every process the system touches — which is exactly the "tenth process is dramatically faster than the first" effect Camunda describes.</p>
+<hr />
+<h2 id="summary">Summary<a class="headerlink" href="#summary" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Claim</th>
+<th>Evidence</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ProcessOS is structurally an SDD framework</td>
+<td>The Brief (Specify), fitness function (acceptance criteria), Organizational Memory (versioned spec store), Agent Skills (Constitution), and four-agent cycle (four SDD phases) map exactly</td>
+</tr>
+<tr>
+<td>ProcessOS is Form Four applied to BPM</td>
+<td>It operates on process models as governed artifacts, not within running instances — the defining characteristic of Form Four</td>
+</tr>
+<tr>
+<td>ProcessOS automates the Reverse Spec</td>
+<td>Discover agent mines event logs and produces as-is behavioral model without manual SME interviews</td>
+</tr>
+<tr>
+<td>ProcessOS automates Track B archival</td>
+<td>Organizational Memory entry is the shelf artifact; Discover output is the behavioral record</td>
+</tr>
+<tr>
+<td>The SDD spec template is the structured Brief</td>
+<td>The six-section template gives ProcessOS's Design agent explicit constraints vs. inferred ones</td>
+</tr>
+<tr>
+<td>The acceleration is real</td>
+<td>Finnova 70–80% faster onboarding; R-KOM near-instant ticket response; discovery 1–2 weeks vs. 2–3 months</td>
+</tr>
+<tr>
+<td>The compounding effect changes the economics</td>
+<td>Organizational Memory and Catalog reduce marginal cost per engagement; tenth process dramatically faster than first</td>
+</tr>
+</tbody>
+</table>
+<p>ProcessOS is the BPM-native implementation of the SDD parallel-tracks model. My instinct in the demo was correct. The architecture confirms it.</p>
+<hr />
+<p><em>Form Four research: Samuelson 2026b (<a href="../process-os-horizon/">The ProcessOS Horizon</a>) | Samuelson 2026c (<a href="../process-first-ai-dimensions/">Process-First AI: Dimensions of the Running Work Record</a>)</em><br />
+<em>ProcessOS architecture: camunda.com/platform/process-os/ (May 2026)</em><br />
+<em>SDD reference: GitHub Spec Kit (github.com/github/spec-kit) | arXiv:2602.00180</em><br />
+<em>BPM reference: Dumas et al. 2018, §1.4 (BPM Lifecycle), §9.4 (Executable Transformation)</em></p>
+<hr />
+<p><em>© 2026 Gary Samuelson | CC BY-NC-ND 4.0 — Share freely with attribution. No commercial use. No derivatives without permission.</em></p>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://github.com/garysamuelson" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    </a>
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://linkedin.com/in/garysamuelson" target="_blank" rel="noopener" title="linkedin.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3M135.4 416H69V202.2h66.5V416zM102.2 96a38.5 38.5 0 1 1 0 77 38.5 38.5 0 1 1 0-77m282.1 320h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9z"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.top", "search.highlight", "search.suggest", "content.code.copy", "content.code.annotate"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+        <script src="https://unpkg.com/mermaid@11/dist/mermaid.min.js"></script>
+      
+        <script src="../../assets/javascripts/mermaid-init.js"></script>
+      
+    
+  </body>
+</html>

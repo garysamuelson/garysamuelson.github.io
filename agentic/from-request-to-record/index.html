@@ -6,7 +6,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="Process management begins when work must outlive the application request that started it. This paper defines the Camunda process instance as a running Work Record that carries identity, state, obligations, constraints, and history across people, systems, events, and time.">
+        <meta name="description" content="Process management begins when work must outlive the application request that started it. This paper defines the Camunda process instance as a running Work Record and shows how ProcessOS accelerates promotion from application-embedded coordination to an explicit Process Application.">
       
       
         <meta name="author" content="Gary Samuelson">
@@ -25,15 +25,15 @@
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
     
     
       
-        <title>From Request to Record: A Process Management Architecture - Gary Samuelson — AI & Architecture Research</title>
+        <title>From Request to Record: Process Management Architecture with ProcessOS Acceleration - Gary Samuelson — AI & Architecture Research</title>
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.ec1eaa64.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
       
         
         <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
@@ -70,20 +70,20 @@
 
   <meta property="og:type" content="article" />
   <meta property="og:site_name" content="Gary Samuelson — AI & Architecture Research" />
-  <meta property="og:title" content="From Request to Record: A Process Management Architecture" />
-  <meta property="og:description" content="Process management begins when work must outlive the application request that started it. This paper defines the Camunda process instance as a running Work Record that carries identity, state, obligations, constraints, and history across people, systems, events, and time." />
+  <meta property="og:title" content="From Request to Record: Process Management Architecture with ProcessOS Acceleration" />
+  <meta property="og:description" content="Process management begins when work must outlive the application request that started it. This paper defines the Camunda process instance as a running Work Record and shows how ProcessOS accelerates promotion from application-embedded coordination to an explicit Process Application." />
   <meta property="og:url" content="https://garysamuelson.github.io/agentic/from-request-to-record/" />
-  <meta property="og:image" content="https://garysamuelson.github.io/assets/images/from_request_to_record_banner_v2.png" />
-  <meta property="og:image:secure_url" content="https://garysamuelson.github.io/assets/images/from_request_to_record_banner_v2.png" />
+  <meta property="og:image" content="https://garysamuelson.github.io/assets/images/from_request_to_record_banner_v3.png" />
+  <meta property="og:image:secure_url" content="https://garysamuelson.github.io/assets/images/from_request_to_record_banner_v3.png" />
   <meta property="og:image:type" content="image/png" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
 
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="From Request to Record: A Process Management Architecture" />
-  <meta name="twitter:description" content="Process management begins when work must outlive the application request that started it. This paper defines the Camunda process instance as a running Work Record that carries identity, state, obligations, constraints, and history across people, systems, events, and time." />
+  <meta name="twitter:title" content="From Request to Record: Process Management Architecture with ProcessOS Acceleration" />
+  <meta name="twitter:description" content="Process management begins when work must outlive the application request that started it. This paper defines the Camunda process instance as a running Work Record and shows how ProcessOS accelerates promotion from application-embedded coordination to an explicit Process Application." />
   <meta name="twitter:url" content="https://garysamuelson.github.io/agentic/from-request-to-record/" />
-  <meta name="twitter:image" content="https://garysamuelson.github.io/assets/images/from_request_to_record_banner_v2.png" />
+  <meta name="twitter:image" content="https://garysamuelson.github.io/assets/images/from_request_to_record_banner_v3.png" />
 
   </head>
   
@@ -104,7 +104,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#from-request-to-record-a-process-management-architecture" class="md-skip">
+        <a href="#from-request-to-record-process-management-architecture-with-processos-acceleration" class="md-skip">
           Skip to content
         </a>
       
@@ -140,7 +140,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              From Request to Record: A Process Management Architecture
+              From Request to Record: Process Management Architecture with ProcessOS Acceleration
             
           </span>
         </div>
@@ -496,10 +496,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#processos-can-recover-the-process-hidden-inside-the-application" class="md-nav__link">
+  <a href="#processos-accelerates-promotion-from-application-to-process-application" class="md-nav__link">
     <span class="md-ellipsis">
       
-        ProcessOS Can Recover the Process Hidden Inside the Application
+        ProcessOS Accelerates Promotion from Application to Process Application
       
     </span>
   </a>
@@ -635,7 +635,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../you-cant-orchestrate-what-has-no-state.md" class="md-nav__link">
+      <a href="../you-cant-orchestrate-what-has-no-state/" class="md-nav__link">
         
   
   
@@ -1132,10 +1132,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#processos-can-recover-the-process-hidden-inside-the-application" class="md-nav__link">
+  <a href="#processos-accelerates-promotion-from-application-to-process-application" class="md-nav__link">
     <span class="md-ellipsis">
       
-        ProcessOS Can Recover the Process Hidden Inside the Application
+        ProcessOS Accelerates Promotion from Application to Process Application
       
     </span>
   </a>
@@ -1255,13 +1255,14 @@
   
 
 
-<p><img alt="From Request to Record: A Process Management Architecture" src="../resources/from_request_to_record_banner_v2.png" /></p>
-<h1 id="from-request-to-record-a-process-management-architecture">From Request to Record: A Process Management Architecture<a class="headerlink" href="#from-request-to-record-a-process-management-architecture" title="Permanent link">&para;</a></h1>
+<p><img alt="From Request to Record: Process Management Architecture with ProcessOS Acceleration" src="../resources/from_request_to_record_banner_v3.png" /></p>
+<h1 id="from-request-to-record-process-management-architecture-with-processos-acceleration">From Request to Record: Process Management Architecture with ProcessOS Acceleration<a class="headerlink" href="#from-request-to-record-process-management-architecture-with-processos-acceleration" title="Permanent link">&para;</a></h1>
 <h2 id="methods-features-and-runtime-responsibilities">Methods, Features, and Runtime Responsibilities<a class="headerlink" href="#methods-features-and-runtime-responsibilities" title="Permanent link">&para;</a></h2>
 <p><strong>Author:</strong> Gary Samuelson<br />
 <strong>Date:</strong> July 26, 2026  </p>
 <hr />
 <p>Process-management architecture begins when work must outlive the application request that started it. Camunda carries that work until the business outcome is complete.</p>
+<p>ProcessOS extends this architecture by using operational evidence to discover implied orchestration and accelerate an existing application's promotion into a Process Application.</p>
 <p>A conventional application can validate a request, call services, update a database, and return a result. Process management adds the ability to maintain a specific unit of work after the original interaction has ended. Camunda provides the running process instance that carries the work's identity, state, current obligations, and execution history.</p>
 <p>The application services continue to perform their specialized functions. The process instance determines when those functions are required, which participant is responsible, and what must occur before the business outcome is complete. This keeps domain behavior inside the applications that own it while Camunda manages the end-to-end work.</p>
 <hr />
@@ -1353,11 +1354,11 @@
 <p>Camunda users already sit on this evidence. Operate exposes the running and failed work needed for operational intervention. Tasklist exposes human obligations. Optimize and process-intelligence tooling can examine flow across instance populations. The model provides the expected path; the runtime history records the path taken.</p>
 <p>A dashboard identifying a bottleneck provides information. A governed process change that addresses the bottleneck and can be measured against subsequent instances provides a path to action. Process improvement becomes continuous when execution evidence changes the model and the revised model produces new evidence.</p>
 <hr />
-<h2 id="processos-can-recover-the-process-hidden-inside-the-application">ProcessOS Can Recover the Process Hidden Inside the Application<a class="headerlink" href="#processos-can-recover-the-process-hidden-inside-the-application" title="Permanent link">&para;</a></h2>
-<p>A pre-existing application may already contain an implicit process distributed across status fields, scheduled jobs, callback handlers, assignment tables, audit records, message consumers, and service calls. Those mechanisms tell the application how to continue work after the original request ends. Together they form an implementation of the lifecycle even when no explicit process model exists.</p>
-<p>ProcessOS applies Form Four to this migration problem. Forms One through Three place AI inside running process instances as a task resource, task worker, or bounded agent. Form Four operates on the process models those instances will execute. It discovers how work runs, re-engineers the lifecycle, builds the required process artifacts, deploys the approved model, and measures what happens next.</p>
-<p>The discovery must begin with operational evidence rather than source code alone. Code shows the paths an application can take. Runtime records show which paths the organization actually takes, where work waits, which exceptions recur, and which informal routes became part of normal operations. Application logs, audit tables, job histories, message records, and tracing data can provide that evidence when each event carries a business identifier, activity, and timestamp. Process owners then validate the discovered behavior and distinguish required work from accidental complexity.</p>
-<p>The migration follows a practical sequence:</p>
+<h2 id="processos-accelerates-promotion-from-application-to-process-application">ProcessOS Accelerates Promotion from Application to Process Application<a class="headerlink" href="#processos-accelerates-promotion-from-application-to-process-application" title="Permanent link">&para;</a></h2>
+<p>Many pre-existing applications already contain the raw structure of a Process Application. Status fields, scheduled jobs, callback handlers, assignment tables, audit records, message consumers, and service calls implement an implied orchestration that carries work beyond the original request. The application runs a lifecycle even though the organization has never modeled that lifecycle explicitly.</p>
+<p>ProcessOS applies Form Four to accelerate the application's promotion into a Process Application. Forms One through Three place AI inside running process instances as a task resource, task worker, or bounded agent. Form Four operates on the process models those instances will execute. It discovers the implied orchestration, re-engineers the lifecycle, builds the required process artifacts, deploys the approved model, and measures what happens next. These capabilities compress a largely manual modernization effort into a governed, evidence-driven progression.</p>
+<p>ProcessOS begins with operational evidence rather than source code alone. Code shows the paths an application can take. Runtime records show which paths the organization actually takes, where work waits, which exceptions recur, and which informal routes became part of normal operations. Application logs, audit tables, job histories, message records, and tracing data provide that evidence when each event carries a business identifier, activity, and timestamp. Process owners then validate the discovered behavior and distinguish required work from accidental complexity.</p>
+<p>ProcessOS accelerates promotion through a practical sequence:</p>
 <ol>
 <li>Identify the business object that should become the Work Record.</li>
 <li>Correlate existing operational events to individual instances of that object.</li>
@@ -1369,7 +1370,7 @@
 <li>Route new work through Camunda while existing application-managed work completes on its original path.</li>
 <li>Compare subsequent execution against the expected outcome and improve the model from production evidence.</li>
 </ol>
-<p>This is not an application rewrite. The application remains responsible for customer interaction, domain behavior, and authoritative data. Camunda assumes responsibility for the running Work Record and its lifecycle. ProcessOS helps discover and construct that boundary, then uses the resulting execution history to improve it.</p>
+<p>ProcessOS promotes the application by modernizing its coordination layer while preserving its domain capabilities. The application continues to own customer interaction, domain behavior, and authoritative data. Camunda takes responsibility for the running Work Record and its lifecycle. ProcessOS discovers and constructs that boundary, accelerates deployment of the new Process Application, and uses the resulting execution history to improve it.</p>
 <hr />
 <h2 id="what-belongs-where">What Belongs Where<a class="headerlink" href="#what-belongs-where" title="Permanent link">&para;</a></h2>
 <p>Camunda should own the running process state, not every capability used by the process. The following boundaries keep domain behavior in its applications while giving the process layer enough responsibility to manage the work:</p>
@@ -1536,7 +1537,7 @@
       <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.top", "search.highlight", "search.suggest", "content.code.copy", "content.code.annotate"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
       
         <script src="https://unpkg.com/mermaid@11/dist/mermaid.min.js"></script>
       
