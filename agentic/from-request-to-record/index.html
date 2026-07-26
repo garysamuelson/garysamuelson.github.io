@@ -496,6 +496,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#processos-can-recover-the-process-hidden-inside-the-application" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ProcessOS Can Recover the Process Hidden Inside the Application
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#what-belongs-where" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -1121,6 +1132,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#processos-can-recover-the-process-hidden-inside-the-application" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ProcessOS Can Recover the Process Hidden Inside the Application
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#what-belongs-where" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -1331,6 +1353,24 @@
 <p>Camunda users already sit on this evidence. Operate exposes the running and failed work needed for operational intervention. Tasklist exposes human obligations. Optimize and process-intelligence tooling can examine flow across instance populations. The model provides the expected path; the runtime history records the path taken.</p>
 <p>A dashboard identifying a bottleneck provides information. A governed process change that addresses the bottleneck and can be measured against subsequent instances provides a path to action. Process improvement becomes continuous when execution evidence changes the model and the revised model produces new evidence.</p>
 <hr />
+<h2 id="processos-can-recover-the-process-hidden-inside-the-application">ProcessOS Can Recover the Process Hidden Inside the Application<a class="headerlink" href="#processos-can-recover-the-process-hidden-inside-the-application" title="Permanent link">&para;</a></h2>
+<p>A pre-existing application may already contain an implicit process distributed across status fields, scheduled jobs, callback handlers, assignment tables, audit records, message consumers, and service calls. Those mechanisms tell the application how to continue work after the original request ends. Together they form an implementation of the lifecycle even when no explicit process model exists.</p>
+<p>ProcessOS applies Form Four to this migration problem. Forms One through Three place AI inside running process instances as a task resource, task worker, or bounded agent. Form Four operates on the process models those instances will execute. It discovers how work runs, re-engineers the lifecycle, builds the required process artifacts, deploys the approved model, and measures what happens next.</p>
+<p>The discovery must begin with operational evidence rather than source code alone. Code shows the paths an application can take. Runtime records show which paths the organization actually takes, where work waits, which exceptions recur, and which informal routes became part of normal operations. Application logs, audit tables, job histories, message records, and tracing data can provide that evidence when each event carries a business identifier, activity, and timestamp. Process owners then validate the discovered behavior and distinguish required work from accidental complexity.</p>
+<p>The migration follows a practical sequence:</p>
+<ol>
+<li>Identify the business object that should become the Work Record.</li>
+<li>Correlate existing operational events to individual instances of that object.</li>
+<li>Discover the current lifecycle, including waits, retries, handoffs, and exception routes.</li>
+<li>Separate domain behavior from the coordination logic embedded in the application.</li>
+<li>Re-engineer the lifecycle as BPMN tasks, events, decisions, and completion conditions.</li>
+<li>Connect each task to the application or domain service that retains responsibility for the underlying behavior and data.</li>
+<li>Review and approve the generated model before deployment.</li>
+<li>Route new work through Camunda while existing application-managed work completes on its original path.</li>
+<li>Compare subsequent execution against the expected outcome and improve the model from production evidence.</li>
+</ol>
+<p>This is not an application rewrite. The application remains responsible for customer interaction, domain behavior, and authoritative data. Camunda assumes responsibility for the running Work Record and its lifecycle. ProcessOS helps discover and construct that boundary, then uses the resulting execution history to improve it.</p>
+<hr />
 <h2 id="what-belongs-where">What Belongs Where<a class="headerlink" href="#what-belongs-where" title="Permanent link">&para;</a></h2>
 <p>Camunda should own the running process state, not every capability used by the process. The following boundaries keep domain behavior in its applications while giving the process layer enough responsibility to manage the work:</p>
 <table>
@@ -1386,6 +1426,11 @@
 <td>Process improvement</td>
 <td>Runtime history and analysis</td>
 <td>Compare designed flow with actual execution</td>
+</tr>
+<tr>
+<td>Process discovery and re-engineering</td>
+<td>ProcessOS with human approval</td>
+<td>Discover, redesign, build, deploy, and improve process models</td>
 </tr>
 </tbody>
 </table>
