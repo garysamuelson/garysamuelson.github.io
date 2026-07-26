@@ -1,0 +1,76 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675" role="img" aria-labelledby="title desc">
+  <title id="title">Camunda process instance carrying a business obligation</title>
+  <desc id="desc">A customer request becomes a durable process instance that moves through validation, worker review, an external wait state, and fulfillment.</desc>
+  <defs>
+    <pattern id="grid" width="32" height="32" patternUnits="userSpaceOnUse">
+      <path d="M32 0H0V32" fill="none" stroke="#D9E2E7" stroke-width="1" opacity="0.5"/>
+    </pattern>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M0 0L10 5L0 10Z" fill="#26343B"/>
+    </marker>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="7" stdDeviation="9" flood-color="#17313B" flood-opacity="0.12"/>
+    </filter>
+  </defs>
+  <rect width="1200" height="675" fill="#F7FAF9"/>
+  <rect width="1200" height="675" fill="url(#grid)"/>
+  <text x="72" y="76" font-family="Segoe UI, sans-serif" font-size="18" font-weight="700" fill="#E64A19">PROCESS ARCHITECTURE</text>
+  <text x="72" y="122" font-family="Segoe UI, sans-serif" font-size="34" font-weight="700" fill="#17242A">The process instance carries the obligation</text>
+  <text x="72" y="157" font-family="Segoe UI, sans-serif" font-size="18" fill="#52636B">The work can wait, resume, cross boundaries, and still retain its identity.</text>
+
+  <rect x="62" y="204" width="1076" height="350" rx="8" fill="#FFFFFF" stroke="#AEBCC2" stroke-width="2"/>
+  <rect x="62" y="204" width="1076" height="48" rx="8" fill="#17242A"/>
+  <rect x="62" y="244" width="1076" height="8" fill="#17242A"/>
+  <circle cx="92" cy="228" r="8" fill="#FC5D0D"/>
+  <text x="112" y="235" font-family="Segoe UI, sans-serif" font-size="17" font-weight="600" fill="#FFFFFF">CAMUNDA PROCESS INSTANCE</text>
+  <text x="1064" y="235" text-anchor="end" font-family="Segoe UI, sans-serif" font-size="14" fill="#C9D4D8">identity · state · obligations · history</text>
+
+  <g filter="url(#shadow)" font-family="Segoe UI, sans-serif">
+    <circle cx="130" cy="365" r="28" fill="#0B7A75"/>
+    <circle cx="130" cy="365" r="18" fill="#FFFFFF"/>
+    <text x="130" y="430" text-anchor="middle" font-size="15" font-weight="600" fill="#17242A">Request</text>
+
+    <rect x="214" y="323" width="164" height="84" rx="8" fill="#EAF6F4" stroke="#0B7A75" stroke-width="2"/>
+    <text x="296" y="357" text-anchor="middle" font-size="15" font-weight="700" fill="#0B5F5B">SERVICE TASK</text>
+    <text x="296" y="384" text-anchor="middle" font-size="18" font-weight="600" fill="#17242A">Validate</text>
+
+    <rect x="438" y="323" width="164" height="84" rx="8" fill="#FFF1E9" stroke="#FC5D0D" stroke-width="2"/>
+    <text x="520" y="357" text-anchor="middle" font-size="15" font-weight="700" fill="#A73A12">USER TASK</text>
+    <text x="520" y="384" text-anchor="middle" font-size="18" font-weight="600" fill="#17242A">Worker review</text>
+
+    <circle cx="697" cy="365" r="42" fill="#FFFFFF" stroke="#687982" stroke-width="3"/>
+    <circle cx="697" cy="365" r="34" fill="none" stroke="#687982" stroke-width="2"/>
+    <path d="M697 345V365L712 375" fill="none" stroke="#687982" stroke-width="4" stroke-linecap="round"/>
+    <text x="697" y="430" text-anchor="middle" font-size="15" font-weight="600" fill="#17242A">Wait for event</text>
+
+    <rect x="790" y="323" width="164" height="84" rx="8" fill="#EAF6F4" stroke="#0B7A75" stroke-width="2"/>
+    <text x="872" y="357" text-anchor="middle" font-size="15" font-weight="700" fill="#0B5F5B">SERVICE TASK</text>
+    <text x="872" y="384" text-anchor="middle" font-size="18" font-weight="600" fill="#17242A">Fulfill</text>
+
+    <circle cx="1064" cy="365" r="29" fill="#17242A"/>
+    <circle cx="1064" cy="365" r="18" fill="#FC5D0D"/>
+    <text x="1064" y="430" text-anchor="middle" font-size="15" font-weight="600" fill="#17242A">Outcome</text>
+  </g>
+
+  <g fill="none" stroke="#26343B" stroke-width="3" marker-end="url(#arrow)">
+    <path d="M158 365H214"/>
+    <path d="M378 365H438"/>
+    <path d="M602 365H655"/>
+    <path d="M739 365H790"/>
+    <path d="M954 365H1035"/>
+  </g>
+  <path d="M697 323C697 277 520 277 520 321" fill="none" stroke="#E64A19" stroke-width="3" stroke-dasharray="8 7" marker-end="url(#arrow)"/>
+  <text x="610" y="278" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="14" font-weight="600" fill="#A73A12">missing information returns to review</text>
+
+  <g font-family="Segoe UI, sans-serif">
+    <rect x="158" y="492" width="884" height="36" rx="8" fill="#EEF2F3"/>
+    <text x="182" y="516" font-size="14" font-weight="700" fill="#52636B">DURABLE HISTORY</text>
+    <circle cx="354" cy="510" r="5" fill="#0B7A75"/>
+    <circle cx="518" cy="510" r="5" fill="#FC5D0D"/>
+    <circle cx="697" cy="510" r="5" fill="#687982"/>
+    <circle cx="872" cy="510" r="5" fill="#0B7A75"/>
+    <path d="M354 510H872" stroke="#93A4AB" stroke-width="2"/>
+    <text x="72" y="608" font-size="16" font-weight="700" fill="#17242A">The thread can close. The business commitment remains.</text>
+    <text x="72" y="636" font-size="15" fill="#52636B">Camunda persists position and resumes when the next obligation comes due.</text>
+  </g>
+</svg>

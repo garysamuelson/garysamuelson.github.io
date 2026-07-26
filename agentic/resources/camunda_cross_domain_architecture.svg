@@ -1,0 +1,76 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675" role="img" aria-labelledby="title desc">
+  <title id="title">Camunda cross-domain process architecture</title>
+  <desc id="desc">Camunda coordinates a customer portal and worker Tasklist across identity, risk, partner, and billing domain services without absorbing their responsibilities.</desc>
+  <defs>
+    <pattern id="grid" width="32" height="32" patternUnits="userSpaceOnUse">
+      <path d="M32 0H0V32" fill="none" stroke="#D9E2E7" stroke-width="1" opacity="0.5"/>
+    </pattern>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M0 0L10 5L0 10Z" fill="#26343B"/>
+    </marker>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="7" stdDeviation="9" flood-color="#17313B" flood-opacity="0.12"/>
+    </filter>
+  </defs>
+  <rect width="1200" height="675" fill="#F7FAF9"/>
+  <rect width="1200" height="675" fill="url(#grid)"/>
+  <text x="72" y="76" font-family="Segoe UI, sans-serif" font-size="18" font-weight="700" fill="#E64A19">CROSS-DOMAIN ARCHITECTURE</text>
+  <text x="72" y="122" font-family="Segoe UI, sans-serif" font-size="34" font-weight="700" fill="#17242A">The outcome crosses every application boundary</text>
+  <text x="72" y="157" font-family="Segoe UI, sans-serif" font-size="18" fill="#52636B">Camunda carries the work. Domain systems retain their authority.</text>
+
+  <g font-family="Segoe UI, sans-serif">
+    <rect x="60" y="204" width="250" height="390" rx="8" fill="#EAF6F4" stroke="#8ABDB8" stroke-width="2"/>
+    <text x="86" y="242" font-size="15" font-weight="700" fill="#0B5F5B">EXPERIENCE CHANNELS</text>
+    <g filter="url(#shadow)">
+      <rect x="88" y="286" width="194" height="94" rx="8" fill="#FFFFFF" stroke="#0B7A75" stroke-width="2"/>
+      <text x="185" y="326" text-anchor="middle" font-size="18" font-weight="700" fill="#17242A">Customer portal</text>
+      <text x="185" y="352" text-anchor="middle" font-size="14" fill="#52636B">request · response</text>
+      <rect x="88" y="420" width="194" height="94" rx="8" fill="#FFFFFF" stroke="#FC5D0D" stroke-width="2"/>
+      <text x="185" y="460" text-anchor="middle" font-size="18" font-weight="700" fill="#17242A">Worker Tasklist</text>
+      <text x="185" y="486" text-anchor="middle" font-size="14" fill="#52636B">claim · decide · complete</text>
+    </g>
+
+    <rect x="367" y="204" width="360" height="390" rx="8" fill="#17242A"/>
+    <rect x="367" y="204" width="12" height="390" rx="6" fill="#FC5D0D"/>
+    <text x="407" y="246" font-size="15" font-weight="700" fill="#FFB28C">PROCESS LAYER</text>
+    <text x="407" y="296" font-size="27" font-weight="700" fill="#FFFFFF">Camunda process instance</text>
+    <text x="407" y="330" font-size="16" fill="#C9D4D8">One cross-domain business obligation</text>
+    <g>
+      <rect x="407" y="376" width="126" height="50" rx="8" fill="#26343B" stroke="#5C7079"/>
+      <text x="470" y="407" text-anchor="middle" font-size="15" font-weight="600" fill="#FFFFFF">Identity</text>
+      <rect x="553" y="376" width="126" height="50" rx="8" fill="#26343B" stroke="#5C7079"/>
+      <text x="616" y="407" text-anchor="middle" font-size="15" font-weight="600" fill="#FFFFFF">State</text>
+      <rect x="407" y="446" width="126" height="50" rx="8" fill="#26343B" stroke="#5C7079"/>
+      <text x="470" y="477" text-anchor="middle" font-size="15" font-weight="600" fill="#FFFFFF">Obligations</text>
+      <rect x="553" y="446" width="126" height="50" rx="8" fill="#26343B" stroke="#5C7079"/>
+      <text x="616" y="477" text-anchor="middle" font-size="15" font-weight="600" fill="#FFFFFF">History</text>
+    </g>
+    <text x="407" y="550" font-size="14" fill="#FFB28C">COORDINATES; DOES NOT ABSORB</text>
+
+    <rect x="784" y="204" width="356" height="390" rx="8" fill="#FFF4EE" stroke="#E9A07C" stroke-width="2"/>
+    <text x="812" y="242" font-size="15" font-weight="700" fill="#A73A12">DOMAIN AUTHORITY</text>
+    <g filter="url(#shadow)">
+      <rect x="812" y="278" width="132" height="88" rx="8" fill="#FFFFFF" stroke="#F07B43"/>
+      <text x="878" y="316" text-anchor="middle" font-size="17" font-weight="700" fill="#17242A">Identity</text>
+      <text x="878" y="342" text-anchor="middle" font-size="13" fill="#52636B">access policy</text>
+      <rect x="964" y="278" width="148" height="88" rx="8" fill="#FFFFFF" stroke="#F07B43"/>
+      <text x="1038" y="316" text-anchor="middle" font-size="17" font-weight="700" fill="#17242A">Risk</text>
+      <text x="1038" y="342" text-anchor="middle" font-size="13" fill="#52636B">domain decision</text>
+      <rect x="812" y="400" width="132" height="88" rx="8" fill="#FFFFFF" stroke="#F07B43"/>
+      <text x="878" y="438" text-anchor="middle" font-size="17" font-weight="700" fill="#17242A">Partner</text>
+      <text x="878" y="464" text-anchor="middle" font-size="13" fill="#52636B">external event</text>
+      <rect x="964" y="400" width="148" height="88" rx="8" fill="#FFFFFF" stroke="#F07B43"/>
+      <text x="1038" y="438" text-anchor="middle" font-size="17" font-weight="700" fill="#17242A">Billing</text>
+      <text x="1038" y="464" text-anchor="middle" font-size="13" fill="#52636B">financial posting</text>
+    </g>
+  </g>
+
+  <g fill="none" stroke="#26343B" stroke-width="3" marker-end="url(#arrow)">
+    <path d="M282 333H367"/>
+    <path d="M367 467H282"/>
+    <path d="M727 322H812"/>
+    <path d="M727 444H812"/>
+  </g>
+  <path d="M944 322H964M944 444H964" stroke="#E64A19" stroke-width="2" stroke-dasharray="6 6"/>
+  <text x="600" y="640" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="16" font-weight="600" fill="#17242A">One customer journey · multiple domain owners · one durable thread of work</text>
+</svg>

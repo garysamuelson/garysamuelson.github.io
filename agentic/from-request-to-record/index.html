@@ -1,0 +1,1502 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Process management begins when work must outlive the application request that started it. This paper defines the Camunda process instance as a running Work Record that carries identity, state, obligations, constraints, and history across people, systems, events, and time.">
+      
+      
+        <meta name="author" content="Gary Samuelson">
+      
+      
+        <link rel="canonical" href="https://garysamuelson.github.io/agentic/from-request-to-record/">
+      
+      
+        <link rel="prev" href="../..">
+      
+      
+        <link rel="next" href="../work-record-is-bpm-task/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>From Request to Record: A Process Management Architecture - Gary Samuelson — AI & Architecture Research</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  
+
+  
+  
+  
+  
+
+  <meta property="og:type" content="article" />
+  <meta property="og:site_name" content="Gary Samuelson — AI & Architecture Research" />
+  <meta property="og:title" content="From Request to Record: A Process Management Architecture" />
+  <meta property="og:description" content="Process management begins when work must outlive the application request that started it. This paper defines the Camunda process instance as a running Work Record that carries identity, state, obligations, constraints, and history across people, systems, events, and time." />
+  <meta property="og:url" content="https://garysamuelson.github.io/agentic/from-request-to-record/" />
+  <meta property="og:image" content="https://garysamuelson.github.io/assets/images/from_request_to_record_banner_v1.png" />
+  <meta property="og:image:secure_url" content="https://garysamuelson.github.io/assets/images/from_request_to_record_banner_v1.png" />
+  <meta property="og:image:type" content="image/png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="From Request to Record: A Process Management Architecture" />
+  <meta name="twitter:description" content="Process management begins when work must outlive the application request that started it. This paper defines the Camunda process instance as a running Work Record that carries identity, state, obligations, constraints, and history across people, systems, events, and time." />
+  <meta name="twitter:url" content="https://garysamuelson.github.io/agentic/from-request-to-record/" />
+  <meta name="twitter:image" content="https://garysamuelson.github.io/assets/images/from_request_to_record_banner_v1.png" />
+
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#from-request-to-record-a-process-management-architecture" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Gary Samuelson — AI &amp; Architecture Research" class="md-header__button md-logo" aria-label="Gary Samuelson — AI & Architecture Research" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Gary Samuelson — AI & Architecture Research
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              From Request to Record: A Process Management Architecture
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/garysamuelson/garysamuelson.github.io" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    garysamuelson/garysamuelson.github.io
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Gary Samuelson — AI &amp; Architecture Research" class="md-nav__button md-logo" aria-label="Gary Samuelson — AI & Architecture Research" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Gary Samuelson — AI & Architecture Research
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/garysamuelson/garysamuelson.github.io" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    garysamuelson/garysamuelson.github.io
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    From Request to Record
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    From Request to Record
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#methods-features-and-runtime-responsibilities" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Methods, Features, and Runtime Responsibilities
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#begin-with-the-ordinary-application" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Begin With the Ordinary Application
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#service-orchestration-is-not-process-management" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Service Orchestration Is Not Process Management
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-running-process-instance" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Running Process Instance
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-bpmn-task-as-a-unit-of-work" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The BPMN Task as a Unit of Work
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#process-architecture-crosses-the-silos-the-applications-created" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Process Architecture Crosses the Silos the Applications Created
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#business-events-and-the-running-process" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Business Events and the Running Process
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#long-running-work-is-not-an-oltp-transaction" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Long-Running Work Is Not an OLTP Transaction
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#process-context-for-authorization" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Process Context for Authorization
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#business-domain-data-in-the-process-instance" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Business Domain Data in the Process Instance
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#actionable-knowledge-begins-with-an-event-history" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Actionable Knowledge Begins With an Event History
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-belongs-where" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What Belongs Where
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ai-makes-the-process-boundary-more-important" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        AI Makes the Process Boundary More Important
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#process-awareness-requires-running-work" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Process Awareness Requires Running Work
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../work-record-is-bpm-task/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Work Record
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../process-os-horizon/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    The ProcessOS Horizon
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../process-first-ai-dimensions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Process-First AI: Dimensions of the Running Work Record
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../you-cant-orchestrate-what-has-no-state.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    You Can't Orchestrate What Has No State
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../working-ai-put-to-task/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    The Working AI: Put to Task with Measured Output
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../agentic-agency-and-workflows/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Agentic Agency & Workflows
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" >
+        
+          
+          <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AI Governance in Healthcare
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    AI Governance in Healthcare
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../healthcare/healthcare-accountability/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Who Is Accountable?
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../governance-gap/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    The Governance Gap
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10" >
+        
+          
+          <label class="md-nav__link" for="__nav_10" id="__nav_10_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Semantic AI
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_10_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_10">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Semantic AI
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../semantic-ai/cpg-campaign-simplified-workflow/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    The Ontology Process
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../semantic-ai/inter-process-semantic-collaboration/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    When Processes Finally Talk to Each Other
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../semantic-ai/aspect-oriented-process-management/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Aspect-Oriented Process Management
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tags/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tags
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#methods-features-and-runtime-responsibilities" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Methods, Features, and Runtime Responsibilities
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#begin-with-the-ordinary-application" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Begin With the Ordinary Application
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#service-orchestration-is-not-process-management" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Service Orchestration Is Not Process Management
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-running-process-instance" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Running Process Instance
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-bpmn-task-as-a-unit-of-work" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The BPMN Task as a Unit of Work
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#process-architecture-crosses-the-silos-the-applications-created" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Process Architecture Crosses the Silos the Applications Created
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#business-events-and-the-running-process" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Business Events and the Running Process
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#long-running-work-is-not-an-oltp-transaction" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Long-Running Work Is Not an OLTP Transaction
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#process-context-for-authorization" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Process Context for Authorization
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#business-domain-data-in-the-process-instance" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Business Domain Data in the Process Instance
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#actionable-knowledge-begins-with-an-event-history" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Actionable Knowledge Begins With an Event History
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-belongs-where" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What Belongs Where
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ai-makes-the-process-boundary-more-important" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        AI Makes the Process Boundary More Important
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#process-awareness-requires-running-work" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Process Awareness Requires Running Work
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  <nav class="md-tags" >
+    
+      
+      
+      
+      
+        <a href="../../tags/#tag:agentic-ai" class="md-tag">Agentic AI</a>
+      
+    
+      
+      
+      
+      
+        <a href="../../tags/#tag:bpm" class="md-tag">BPM</a>
+      
+    
+      
+      
+      
+      
+        <a href="../../tags/#tag:bpmn" class="md-tag">BPMN</a>
+      
+    
+      
+      
+      
+      
+        <a href="../../tags/#tag:camunda" class="md-tag">Camunda</a>
+      
+    
+      
+      
+      
+      
+        <a href="../../tags/#tag:enterprise-architecture" class="md-tag">Enterprise Architecture</a>
+      
+    
+      
+      
+      
+      
+        <a href="../../tags/#tag:process-architecture" class="md-tag">Process Architecture</a>
+      
+    
+      
+      
+      
+      
+        <a href="../../tags/#tag:process-orchestration" class="md-tag">Process Orchestration</a>
+      
+    
+      
+      
+      
+      
+        <a href="../../tags/#tag:work-record" class="md-tag">Work Record</a>
+      
+    
+  </nav>
+
+
+  
+  
+
+
+<p><img alt="From Request to Record: A Process Management Architecture" src="../resources/from_request_to_record_banner_v1.png" /></p>
+<h1 id="from-request-to-record-a-process-management-architecture">From Request to Record: A Process Management Architecture<a class="headerlink" href="#from-request-to-record-a-process-management-architecture" title="Permanent link">&para;</a></h1>
+<h2 id="methods-features-and-runtime-responsibilities">Methods, Features, and Runtime Responsibilities<a class="headerlink" href="#methods-features-and-runtime-responsibilities" title="Permanent link">&para;</a></h2>
+<p><strong>Author:</strong> Gary Samuelson<br />
+<strong>Date:</strong> July 26, 2026  </p>
+<hr />
+<p>Process-management architecture begins when work must outlive the application request that started it. Camunda carries that work until the business outcome is complete.</p>
+<p>A conventional application can validate a request, call services, update a database, and return a result. Process management adds the ability to maintain a specific unit of work after the original interaction has ended. Camunda provides the running process instance that carries the work's identity, state, current obligations, and execution history.</p>
+<p>The application services continue to perform their specialized functions. The process instance determines when those functions are required, which participant is responsible, and what must occur before the business outcome is complete. This keeps domain behavior inside the applications that own it while Camunda manages the end-to-end work.</p>
+<hr />
+<h2 id="begin-with-the-ordinary-application">Begin With the Ordinary Application<a class="headerlink" href="#begin-with-the-ordinary-application" title="Permanent link">&para;</a></h2>
+<p>A reasonably mature customer-facing application typically authenticates the customer, validates a submitted request, applies business rules, invokes domain services, persists data, and returns a response. This architecture is appropriate when the business transaction begins and ends within the interaction.</p>
+<p>The requirements change when the response does not represent the completed outcome. A back-office worker may need to review the request. Missing information may return the work to the customer. A timer may start while the organization waits for a response. A risk threshold may require another approval, or a partner system may return an event several hours later. The complete unit of work may remain active for days, months, or years.</p>
+<p>An application team can implement each of these requirements by adding status columns, scheduled jobs, callback handlers, assignment tables, retry logic, and audit records. These additions solve immediate requirements, but together they reproduce the state management and coordination responsibilities of a process engine inside the application.</p>
+<p>The application can call every required service and still lack a component responsible for the work after the request ends. Camunda supplies that component and carries the work through the final business outcome.</p>
+<hr />
+<h2 id="service-orchestration-is-not-process-management">Service Orchestration Is Not Process Management<a class="headerlink" href="#service-orchestration-is-not-process-management" title="Permanent link">&para;</a></h2>
+<p>Service orchestration connects APIs and coordinates an immediate set of technical operations. An application may call a rules service, invoke a transaction, request an identity check, and combine the results before returning control to the client. This is useful orchestration, but it does not by itself provide process management.</p>
+<p>A service invocation operates on the current request. A process instance maintains the position of a specific unit of work across completed tasks, active assignments, wait states, events, and failures. The difference becomes visible when execution must pause and later resume without losing business context.</p>
+<p><img alt="An ordinary application coordinates services to complete an immediate customer interaction" src="../resources/ordinary_application_interaction.svg" /></p>
+<p><em>Figure 1. An ordinary application invokes rules, domain services, and business data before returning an immediate response. The interaction coordinates services but does not create a durable unit of work.</em></p>
+<p>The process-aware architecture adds a running instance responsible for carrying the business obligation after the interaction ends.</p>
+<p><img alt="A Camunda process instance carries customer work through validation, worker review, waiting, and fulfillment" src="../resources/process_instance_obligation.svg" /></p>
+<p><em>Figure 2. The process instance carries one business obligation through human work, a wait state, an external event, and final fulfillment. The services remain responsible for their functions while the process manages the lifecycle.</em></p>
+<p>The process instance does not replace the application or its services. It coordinates their participation in the running work. Camunda can persist the instance while no technical thread is active and resume execution when a message arrives or a timer becomes due. The instance retains the active task, the route already taken, the accumulated process variables, and the conditions required for completion.</p>
+<hr />
+<h2 id="the-running-process-instance">The Running Process Instance<a class="headerlink" href="#the-running-process-instance" title="Permanent link">&para;</a></h2>
+<p>When Camunda starts a BPMN model, the engine creates a specific unit of work. A claims model defines the lifecycle for claims in general; a process instance represents this claim, including its current state, events, assignments, and history. The model functions as the definition, while the process instance represents the running object created from that definition.</p>
+<p>The instance carries:</p>
+<ul>
+<li><strong>Identity</strong>: which request, case, order, claim, or application this is.</li>
+<li><strong>State</strong>: where the token sits and which variables describe the work now.</li>
+<li><strong>Obligations</strong>: which human or system task must act next.</li>
+<li><strong>Constraints</strong>: which rules, gateways, deadlines, and completion conditions govern advancement.</li>
+<li><strong>History</strong>: what happened, in what order, and through which participant.</li>
+</ul>
+<p>An application record describes the state of a business object. The process instance describes the organization's active commitment to move that object toward an outcome. It connects tasks, business context, security decisions, events, transactions, domain information, and execution history to the same unit of work.</p>
+<p>That active commitment is the <strong>Work Record</strong>: the process instance viewed as the organization's running record of one business outcome. Once instantiated, it acquires three runtime properties. <strong>Presence</strong> gives the work identity, state, and history. <strong>Gravity</strong> generates obligations for people and systems. <strong>Persistence</strong> carries the commitment across wait states, failures, deployments, and time. Camunda executes the commitment represented by the record.</p>
+<hr />
+<h2 id="the-bpmn-task-as-a-unit-of-work">The BPMN Task as a Unit of Work<a class="headerlink" href="#the-bpmn-task-as-a-unit-of-work" title="Permanent link">&para;</a></h2>
+<p>A BPMN task represents a unit of work and provides a container for the human or technical services required to complete it. Its architectural value comes from its placement inside the process model.</p>
+<p>For example, a document check performed before approval prevents incomplete work from advancing. The same technical service invoked after approval identifies a control failure. The implementation may be identical, but the task's position establishes different business context and value.</p>
+<p>The process model defines why the task runs, which process state it receives, which role or worker is responsible, and what completion allows to happen next. The task therefore connects technical behavior to business intent.</p>
+<p>For a Camunda implementation, that container can resolve to several kinds of workers:</p>
+<ul>
+<li>A user task placed in a person's Tasklist.</li>
+<li>A service task activated for a job worker.</li>
+<li>A connector invoking an external system.</li>
+<li>A business rule task evaluating a decision.</li>
+<li>An AI-enabled worker producing a structured result for the engine to validate.</li>
+</ul>
+<p>The task defines the required work independently of the worker type. At runtime, the task may resolve to a person, conventional service, connector, rules engine, or AI-enabled worker. This separation allows different workers to participate in the same process while the model continues to define the expected result and accountability boundary.</p>
+<hr />
+<h2 id="process-architecture-crosses-the-silos-the-applications-created">Process Architecture Crosses the Silos the Applications Created<a class="headerlink" href="#process-architecture-crosses-the-silos-the-applications-created" title="Permanent link">&para;</a></h2>
+<p>Applications commonly align to products, systems, or organizational domains, while a customer request crosses several of those boundaries before reaching completion. A request may begin in a portal, move through identity verification, enter a back-office queue, call a risk platform, wait for a partner, return to a worker, and close in a billing system.</p>
+<p>Each participating system performs a specialized function, but the customer experiences one service journey. The process model crosses the application boundaries because the business outcome crosses them. From an aspect-oriented perspective, the process represents a concern that cuts across functional modules and coordinates their participation without absorbing their domain responsibilities.</p>
+<p><img alt="Camunda carries a cross-domain obligation between customer and worker channels and specialized domain services" src="../resources/camunda_cross_domain_architecture.svg" /></p>
+<p><em>Figure 3. Camunda manages movement of the work across channels and domain boundaries. Each application retains the behavior and data appropriate to its domain.</em></p>
+<p>Camunda provides visibility and control for the cross-domain obligation. The portal owns the customer interaction, the risk service owns risk behavior, and the billing system owns financial posting. Camunda coordinates the order, state, and completion of their participation.</p>
+<p>This boundary prevents domain logic from accumulating inside BPMN simply because the engine can invoke it. It also prevents process state from becoming scattered across the applications that happen to participate. The process coordinates the outcome while each domain service retains responsibility for its own decisions and actions.</p>
+<hr />
+<h2 id="business-events-and-the-running-process">Business Events and the Running Process<a class="headerlink" href="#business-events-and-the-running-process" title="Permanent link">&para;</a></h2>
+<p>A business event represents an observation taken from the state of something at a point in time. A payment posts, a document arrives, a shipment crosses a threshold, a policy expires, a customer withdraws consent, or a sensor reports a condition. Each event may require a running process to react.</p>
+<p>Camunda's message, signal, and timer semantics connect those changes to the running work. Messages correlate an event to the intended process instance. Signals broadcast a condition to every matching subscription. Timers resume work when a modeled commitment comes due. Each event must reach the appropriate subscription in the process lifecycle.</p>
+<p>An event broker transports and distributes the message. Camunda places the message into the context of a specific unit of work and applies the modeled response. The responsibilities divide as follows:</p>
+<ul>
+<li>Event infrastructure transports and distributes observations.</li>
+<li>The process engine correlates an observation to running work.</li>
+<li>The BPMN model defines how that work reacts.</li>
+<li>Domain services determine the business effect inside their boundary.</li>
+</ul>
+<p>Complex event processing belongs in infrastructure designed to combine observations across time windows and detect patterns, causality, or correlation. Camunda does not need to replace that infrastructure. It receives the resulting business event, correlates it where appropriate, and applies it within the process context.</p>
+<hr />
+<h2 id="long-running-work-is-not-an-oltp-transaction">Long-Running Work Is Not an OLTP Transaction<a class="headerlink" href="#long-running-work-is-not-an-oltp-transaction" title="Permanent link">&para;</a></h2>
+<p>A database transaction protects a short-lived technical change. Business work can outlive the transaction, the service deployment, and the people who initiated it. Holding database locks across that duration would damage transaction-processing capacity and would incorrectly treat the complete business activity as one atomic technical operation.</p>
+<p>Process architecture uses a different transaction model. Each technical step commits within its local boundary, and the process instance records progress between those commits. If a later step fails, the model can retry the work, route it to a person, wait for correction, escalate the condition, or invoke compensation. BPMN error, escalation, timer, transaction, and compensation semantics describe business recovery rather than a database rollback.</p>
+<p>An order shipped yesterday cannot be rolled back like an uncommitted row. It can be recalled, replaced, credited, or escalated. Each response is new work with its own accountability.</p>
+<p>Camunda persists the position of the work between technical transactions. The process survives because the engine records its state and resumes from the appropriate position, not because one database transaction remains open until the business is satisfied.</p>
+<hr />
+<h2 id="process-context-for-authorization">Process Context for Authorization<a class="headerlink" href="#process-context-for-authorization" title="Permanent link">&para;</a></h2>
+<p>Security discussions often begin with applications and endpoints. A process model adds the business position at which authorization must apply.</p>
+<p>Who may see this task? Who may claim it? Which worker group may complete it? Which service identity may activate a job type? Who may send the message that advances the instance? Which variables should a participant receive?</p>
+<p>These questions have business meaning because the process identifies the work, its current stage, and the obligation now due. A person may have access to the claims application but lack authority to approve this claim at its current stage. A service identity may be allowed to read customer data but lack authority to complete a settlement task.</p>
+<p>Camunda adds process context to application security, identity management, and domain authorization; it does not replace them. The process model makes the handoff and decision point visible, while the appropriate identity or policy service determines whether the action is allowed. Authorization policy should remain in the system equipped to govern it, with the process invoking and recording the decision where it affects the work.</p>
+<hr />
+<h2 id="business-domain-data-in-the-process-instance">Business Domain Data in the Process Instance<a class="headerlink" href="#business-domain-data-in-the-process-instance" title="Permanent link">&para;</a></h2>
+<p>The process model should not become a second enterprise data model. It needs enough domain structure to carry meaning between participants, including identifiers, relevant state, decision results, and references to authoritative records. These process variables form the contract of the running work.</p>
+<p>The domain systems remain authoritative for the full objects and behaviors they own. Camunda carries the process state required to coordinate them.</p>
+<p>Carrying too little process data forces each task to reconstruct context from source systems, leaving no coherent record of the work. Carrying complete domain objects turns process variables into another system of record, increases payload size, blurs ownership, and creates stale copies.</p>
+<p>The process should carry the identity, state, decisions, and references required to advance the work. A task can retrieve additional domain detail from the authoritative system when needed and return the result that changes the process state. The process instance is not the business domain; it is the running context that connects domain behavior to an outcome.</p>
+<hr />
+<h2 id="actionable-knowledge-begins-with-an-event-history">Actionable Knowledge Begins With an Event History<a class="headerlink" href="#actionable-knowledge-begins-with-an-event-history" title="Permanent link">&para;</a></h2>
+<p>Actionable knowledge presents information with an immediate path toward thoughtful action. Process execution data provides the evidence needed to create it.</p>
+<p>Every completed task, timer, message, route, retry, and exception leaves evidence. Across one instance, that history explains what happened. Across thousands of instances, it reveals how the organization actually works.</p>
+<p>Execution history shows where work waits and which routes generate rework. It also shows whether a partner regularly misses a service level and whether a human task requires judgment or has become a routine confirmation. The same evidence can measure whether an AI recommendation improves the outcome or creates another review cycle.</p>
+<p>Camunda users already sit on this evidence. Operate exposes the running and failed work needed for operational intervention. Tasklist exposes human obligations. Optimize and process-intelligence tooling can examine flow across instance populations. The model provides the expected path; the runtime history records the path taken.</p>
+<p>A dashboard identifying a bottleneck provides information. A governed process change that addresses the bottleneck and can be measured against subsequent instances provides a path to action. Process improvement becomes continuous when execution evidence changes the model and the revised model produces new evidence.</p>
+<hr />
+<h2 id="what-belongs-where">What Belongs Where<a class="headerlink" href="#what-belongs-where" title="Permanent link">&para;</a></h2>
+<p>Camunda should own the running process state, not every capability used by the process. The following boundaries keep domain behavior in its applications while giving the process layer enough responsibility to manage the work:</p>
+<table>
+<thead>
+<tr>
+<th>Concern</th>
+<th>Primary home</th>
+<th>Camunda's role</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Domain behavior</td>
+<td>Domain service or application</td>
+<td>Invoke it at the correct point in the work</td>
+</tr>
+<tr>
+<td>Process state</td>
+<td>Camunda process instance</td>
+<td>Persist position, variables, incidents, and history</td>
+</tr>
+<tr>
+<td>Human obligation</td>
+<td>BPMN user task and Tasklist</td>
+<td>Assign, wait, escalate, and record completion</td>
+</tr>
+<tr>
+<td>Business decision</td>
+<td>DMN or governed rules service</td>
+<td>Evaluate the decision and route on its result</td>
+</tr>
+<tr>
+<td>Event transport</td>
+<td>Event broker or integration platform</td>
+<td>Receive meaningful events; correlate messages to running instances</td>
+</tr>
+<tr>
+<td>Short technical transaction</td>
+<td>Database or service boundary</td>
+<td>Record completion and continue from durable state</td>
+</tr>
+<tr>
+<td>Long-running business transaction</td>
+<td>BPMN model</td>
+<td>Coordinate retries, compensation, correction, and escalation</td>
+</tr>
+<tr>
+<td>Operational intervention</td>
+<td>Operate and support tooling</td>
+<td>Expose incidents and allow governed recovery</td>
+</tr>
+<tr>
+<td>Process improvement</td>
+<td>Runtime history and analysis</td>
+<td>Compare designed flow with actual execution</td>
+</tr>
+</tbody>
+</table>
+<p>Camunda manages the lifecycle of the work without becoming the owner of every capability that participates in it.</p>
+<hr />
+<h2 id="ai-makes-the-process-boundary-more-important">AI Makes the Process Boundary More Important<a class="headerlink" href="#ai-makes-the-process-boundary-more-important" title="Permanent link">&para;</a></h2>
+<p>An AI agent can call tools, interpret documents, draft a decision, and select a next action. These capabilities do not provide a durable business object, a valid lifecycle, a timer that survives the agent session, a named owner, or an organizational definition of completion. Technical capability does not supply business context.</p>
+<p>Placing the agent inside a Camunda task makes the agent a participant in the running process. The process instance identifies the work, the task defines the expected result, and the model defines the valid continuation. The engine records the attempt, manages failure, and preserves process state after the model context has ended.</p>
+<p>AI inherits the runtime properties of the Work Record by entering through a modeled task. The task supplies the assignment boundary. The process instance supplies presence, gravity, and persistence. Together they keep AI activity connected to live business state, an enforceable obligation, and a history that survives the agent session.</p>
+<p>This structure gives the agent sufficient context and authority to complete its assigned work while allowing the organization to govern when it acts, which tools it may use, what output it must return, and which decisions require human review. Agentic AI extends the set of available process workers; it does not remove the need for process architecture.</p>
+<hr />
+<h2 id="process-awareness-requires-running-work">Process Awareness Requires Running Work<a class="headerlink" href="#process-awareness-requires-running-work" title="Permanent link">&para;</a></h2>
+<p>Process awareness requires more than a BPMN diagram. It requires a running object that carries business work across applications, people, events, failures, and time.</p>
+<p>Camunda executes the BPMN lifecycle and preserves the process state between each participant. Human tasks, service calls, messages, signals, and timers all operate against the same running instance. The resulting execution history explains how the outcome developed and provides the process data needed for operational improvement.</p>
+<p>The surrounding applications, domain services, event platform, identity system, rules, data, and user experience remain necessary. Each performs a specific function. The Work Record connects those functions to an organizational commitment and maintains that commitment until the business outcome is complete.</p>
+<hr />
+<p><em>© 2026 Gary Samuelson | CC BY-NC-ND 4.0 — Share freely with attribution. No commercial use. No derivatives without permission.</em></p>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://github.com/garysamuelson" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    </a>
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://linkedin.com/in/garysamuelson" target="_blank" rel="noopener" title="linkedin.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3M135.4 416H69V202.2h66.5V416zM102.2 96a38.5 38.5 0 1 1 0 77 38.5 38.5 0 1 1 0-77m282.1 320h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9z"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.top", "search.highlight", "search.suggest", "content.code.copy", "content.code.annotate"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+        <script src="https://unpkg.com/mermaid@11/dist/mermaid.min.js"></script>
+      
+        <script src="../../assets/javascripts/mermaid-init.js"></script>
+      
+    
+  </body>
+</html>
