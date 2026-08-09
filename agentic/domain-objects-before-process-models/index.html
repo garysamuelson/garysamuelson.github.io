@@ -1,0 +1,2306 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="A process model tells you how work moves, not what the work is about. This paper places the data-centric view inside a holistic BPM methodology, separates the authoritative domain object from the Work Record, and shows how AI-assisted discovery — the ProcessOS form of AI — finds the object boundaries that agentic execution depends on.">
+      
+      
+        <meta name="author" content="Gary Samuelson">
+      
+      
+        <link rel="canonical" href="https://garysamuelson.github.io/agentic/domain-objects-before-process-models/">
+      
+      
+        <link rel="prev" href="../..">
+      
+      
+        <link rel="next" href="../from-request-to-record/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>Domain Objects Before Process Models - Gary Samuelson — AI & Architecture Research</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  
+
+  
+  
+  
+  
+
+  <meta property="og:type" content="article" />
+  <meta property="og:site_name" content="Gary Samuelson — AI & Architecture Research" />
+  <meta property="og:title" content="Domain Objects Before Process Models" />
+  <meta property="og:description" content="A process model tells you how work moves, not what the work is about. This paper places the data-centric view inside a holistic BPM methodology, separates the authoritative domain object from the Work Record, and shows how AI-assisted discovery — the ProcessOS form of AI — finds the object boundaries that agentic execution depends on." />
+  <meta property="og:url" content="https://garysamuelson.github.io/agentic/domain-objects-before-process-models/" />
+  <meta property="og:image" content="https://garysamuelson.github.io/assets/images/domain_objects_banner_v1.png" />
+  <meta property="og:image:secure_url" content="https://garysamuelson.github.io/assets/images/domain_objects_banner_v1.png" />
+  <meta property="og:image:type" content="image/png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Domain Objects Before Process Models" />
+  <meta name="twitter:description" content="A process model tells you how work moves, not what the work is about. This paper places the data-centric view inside a holistic BPM methodology, separates the authoritative domain object from the Work Record, and shows how AI-assisted discovery — the ProcessOS form of AI — finds the object boundaries that agentic execution depends on." />
+  <meta name="twitter:url" content="https://garysamuelson.github.io/agentic/domain-objects-before-process-models/" />
+  <meta name="twitter:image" content="https://garysamuelson.github.io/assets/images/domain_objects_banner_v1.png" />
+
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#domain-objects-before-process-models" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Gary Samuelson — AI &amp; Architecture Research" class="md-header__button md-logo" aria-label="Gary Samuelson — AI & Architecture Research" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Gary Samuelson — AI & Architecture Research
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Domain Objects Before Process Models
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/garysamuelson/garysamuelson.github.io" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    garysamuelson/garysamuelson.github.io
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Gary Samuelson — AI &amp; Architecture Research" class="md-nav__button md-logo" aria-label="Gary Samuelson — AI & Architecture Research" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Gary Samuelson — AI & Architecture Research
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/garysamuelson/garysamuelson.github.io" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    garysamuelson/garysamuelson.github.io
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Domain Objects Before Process Models
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Domain Objects Before Process Models
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#a-contemporary-data-centric-bpm-architecture-for-agentic-ai-in-insurance" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        A Contemporary Data-Centric BPM Architecture for Agentic AI in Insurance
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#abstract" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Abstract
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1-introduction" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Introduction
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-where-the-data-centric-view-fits-within-bpm" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Where the Data-Centric View Fits Within BPM
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-a-domain-object-is-not-a-payload" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. A Domain Object Is Not a Payload
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. A Domain Object Is Not a Payload">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31-two-kinds-of-persistence" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.1 Two kinds of persistence
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32-the-state-landing-test" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.2 The state-landing test
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-insurance-is-a-network-of-objects-not-one-case-file" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Insurance Is a Network of Objects, Not One Case File
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-how-to-segment-a-domain-object" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. How to Segment a Domain Object
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-ai-assisted-domain-discovery-from-operational-evidence" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. AI-Assisted Domain Discovery from Operational Evidence
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6. AI-Assisted Domain Discovery from Operational Evidence">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#61-the-evidence-already-exists" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.1 The evidence already exists
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#62-one-comparison-three-behaviors" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.2 One comparison, three behaviors
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#63-the-output-is-a-falsifiable-hypothesis" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.3 The output is a falsifiable hypothesis
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#64-what-the-same-comparison-finds-beyond-the-inventory" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.4 What the same comparison finds beyond the inventory
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#65-validation-closes-the-loop" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.5 Validation closes the loop
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-insurance-case-from-submission-to-claim-settlement" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. Insurance Case: From Submission to Claim Settlement
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="7. Insurance Case: From Submission to Claim Settlement">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#71-submission-and-underwriting" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.1 Submission and underwriting
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#72-first-notice-of-loss" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.2 First notice of loss
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#73-reserving-payment-and-recovery" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.3 Reserving, payment, and recovery
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#74-renewal-closes-the-information-loop" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.4 Renewal closes the information loop
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-from-candidate-objects-to-a-process-architecture" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8. From Candidate Objects to a Process Architecture
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9-where-agentic-ai-belongs-in-insurance" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9. Where Agentic AI Belongs in Insurance
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#10-a-governed-discovery-and-design-method" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10. A Governed Discovery and Design Method
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#11-governance-and-failure-boundaries" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        11. Governance and Failure Boundaries
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#12-what-the-architecture-changes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        12. What the Architecture Changes
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#13-limits-and-research-agenda" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        13. Limits and Research Agenda
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#14-conclusion-the-modern-data-centric-view" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        14. Conclusion: The Modern Data-Centric View
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#references" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        References
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../from-request-to-record/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    From Request to Record
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../work-record-is-bpm-task/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Work Record
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../process-os-horizon/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    The ProcessOS Horizon
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../process-first-ai-dimensions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Process-First AI: Dimensions of the Running Work Record
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../you-cant-orchestrate-what-has-no-state/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    You Can't Orchestrate What Has No State
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../working-ai-put-to-task/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    The Working AI: Put to Task with Measured Output
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../agentic-agency-and-workflows/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Agentic Agency & Workflows
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10" >
+        
+          
+          <label class="md-nav__link" for="__nav_10" id="__nav_10_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AI Governance in Healthcare
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_10_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_10">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    AI Governance in Healthcare
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../healthcare/healthcare-accountability/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Who Is Accountable?
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../governance-gap/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    The Governance Gap
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_11" >
+        
+          
+          <label class="md-nav__link" for="__nav_11" id="__nav_11_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Semantic AI
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_11_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_11">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Semantic AI
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../semantic-ai/cpg-campaign-simplified-workflow/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    The Ontology Process
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../semantic-ai/inter-process-semantic-collaboration/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    When Processes Finally Talk to Each Other
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../semantic-ai/aspect-oriented-process-management/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Aspect-Oriented Process Management
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tags/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tags
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#a-contemporary-data-centric-bpm-architecture-for-agentic-ai-in-insurance" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        A Contemporary Data-Centric BPM Architecture for Agentic AI in Insurance
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#abstract" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Abstract
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1-introduction" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Introduction
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-where-the-data-centric-view-fits-within-bpm" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Where the Data-Centric View Fits Within BPM
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-a-domain-object-is-not-a-payload" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. A Domain Object Is Not a Payload
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. A Domain Object Is Not a Payload">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31-two-kinds-of-persistence" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.1 Two kinds of persistence
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32-the-state-landing-test" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.2 The state-landing test
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-insurance-is-a-network-of-objects-not-one-case-file" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Insurance Is a Network of Objects, Not One Case File
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-how-to-segment-a-domain-object" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. How to Segment a Domain Object
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-ai-assisted-domain-discovery-from-operational-evidence" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. AI-Assisted Domain Discovery from Operational Evidence
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6. AI-Assisted Domain Discovery from Operational Evidence">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#61-the-evidence-already-exists" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.1 The evidence already exists
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#62-one-comparison-three-behaviors" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.2 One comparison, three behaviors
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#63-the-output-is-a-falsifiable-hypothesis" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.3 The output is a falsifiable hypothesis
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#64-what-the-same-comparison-finds-beyond-the-inventory" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.4 What the same comparison finds beyond the inventory
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#65-validation-closes-the-loop" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.5 Validation closes the loop
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-insurance-case-from-submission-to-claim-settlement" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. Insurance Case: From Submission to Claim Settlement
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="7. Insurance Case: From Submission to Claim Settlement">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#71-submission-and-underwriting" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.1 Submission and underwriting
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#72-first-notice-of-loss" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.2 First notice of loss
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#73-reserving-payment-and-recovery" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.3 Reserving, payment, and recovery
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#74-renewal-closes-the-information-loop" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.4 Renewal closes the information loop
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-from-candidate-objects-to-a-process-architecture" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8. From Candidate Objects to a Process Architecture
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9-where-agentic-ai-belongs-in-insurance" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9. Where Agentic AI Belongs in Insurance
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#10-a-governed-discovery-and-design-method" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10. A Governed Discovery and Design Method
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#11-governance-and-failure-boundaries" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        11. Governance and Failure Boundaries
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#12-what-the-architecture-changes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        12. What the Architecture Changes
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#13-limits-and-research-agenda" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        13. Limits and Research Agenda
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#14-conclusion-the-modern-data-centric-view" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        14. Conclusion: The Modern Data-Centric View
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#references" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        References
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  <nav class="md-tags" >
+    
+      
+      
+      
+      
+        <a href="../../tags/#tag:agentic-ai" class="md-tag">Agentic AI</a>
+      
+    
+      
+      
+      
+      
+        <a href="../../tags/#tag:bpm" class="md-tag">BPM</a>
+      
+    
+      
+      
+      
+      
+        <a href="../../tags/#tag:bpmn" class="md-tag">BPMN</a>
+      
+    
+      
+      
+      
+      
+        <a href="../../tags/#tag:data-centric-bpm" class="md-tag">Data-Centric BPM</a>
+      
+    
+      
+      
+      
+      
+        <a href="../../tags/#tag:domain-driven-design" class="md-tag">Domain-Driven Design</a>
+      
+    
+      
+      
+      
+      
+        <a href="../../tags/#tag:insurance" class="md-tag">Insurance</a>
+      
+    
+      
+      
+      
+      
+        <a href="../../tags/#tag:process-orchestration" class="md-tag">Process Orchestration</a>
+      
+    
+      
+      
+      
+      
+        <a href="../../tags/#tag:processos" class="md-tag">ProcessOS</a>
+      
+    
+      
+      
+      
+      
+        <a href="../../tags/#tag:work-record" class="md-tag">Work Record</a>
+      
+    
+  </nav>
+
+
+  
+  
+
+
+<p><img alt="Domain Objects Before Process Models" src="../resources/domain_objects_banner_v1.png" /></p>
+<h1 id="domain-objects-before-process-models">Domain Objects Before Process Models<a class="headerlink" href="#domain-objects-before-process-models" title="Permanent link">&para;</a></h1>
+<h2 id="a-contemporary-data-centric-bpm-architecture-for-agentic-ai-in-insurance">A Contemporary Data-Centric BPM Architecture for Agentic AI in Insurance<a class="headerlink" href="#a-contemporary-data-centric-bpm-architecture-for-agentic-ai-in-insurance" title="Permanent link">&para;</a></h2>
+<p><strong>Author:</strong> Gary Samuelson<br />
+<strong>Date:</strong> August 9, 2026<br />
+<strong>Original article:</strong> <em>A Data-centric View on Traditional BPM</em> — April 29, 2014  </p>
+<hr />
+<h2 id="abstract">Abstract<a class="headerlink" href="#abstract" title="Permanent link">&para;</a></h2>
+<p>The data-centric view belongs inside a holistic BPM methodology, not beside it as a competing modeling technique. The process-centric view establishes obligations, sequence, and outcome. The application view identifies the people, systems, and services that perform the work. The data-centric view identifies what the work acts upon and which business change would make the work consequential. Object identity ties each contribution to a specific policy, claim, exposure, reserve, or payment. Object state and lifecycle determine which changes are valid. Relationships explain how a change in one object creates obligations involving another. The three views iterate toward one architecture: process exposes the need for an object, application reveals its authority boundary, and object state reshapes the process.</p>
+<p><img alt="Three iterative views inside a holistic BPM methodology" src="../resources/holistic-bpm-three-views.svg" /></p>
+<p><em>Figure 1. The process-centric view defines the Work Record, the data-centric view defines authoritative domain objects, and the application view reveals the capabilities and ownership boundaries that connect them. The three views advance one evolving business architecture.</em></p>
+<p>Agentic AI shifts this relationship from a design-time modeling concern to a runtime execution concern. Deterministic automation binds each action to a specific object, transition, and record in code before any instance runs. An agent instead resolves its next action while the work runs, so a task description can tell it what to attempt but cannot establish which durable business object the action may change, who owns that object, which transitions are valid, or what evidence must survive the decision. Those answers depend on the domain model, and the architecture must supply and enforce them during execution rather than assume them from code.</p>
+<p>The architecture contains two durable records with different authority. Domain objects retain committed business truth and enforce invariants through local OLTP transactions. The Work Record retains the organization's long-running commitment: what must happen, which contribution each task returned, what was accepted or rejected, which domain transition resulted, and what remains unresolved. AI fits around that boundary in three ways. Before execution, it discovers candidate objects and process obligations from fragmented evidence. During execution, it performs bounded cognitive work and returns proposed contributions. After execution, it compares Work Record histories with committed domain events to find patterns and redesign opportunities. AI does not become either record's authority.</p>
+<p>Commercial property insurance makes the architecture concrete. One business journey crosses a submission, application, quote, underwriting decision, policy term, claim, exposure, reserve, payment, document, investigation, recovery, and renewal offer. Each object carries a distinct identity, lifecycle, authority, and timescale. Treating that network as one <code>ClaimData</code> payload does more than obscure the domain; it leaves process coordination brittle and gives AI an unstable representation of the work. Organizations cannot govern agentic work until they identify the objects that the work changes.</p>
+<p><strong>Keywords:</strong> data-centric BPM, domain objects, agentic AI, insurance, process orchestration, Work Record, process mining, object-centric event data, BPMN, ProcessOS</p>
+<hr />
+<h2 id="1-introduction">1. Introduction<a class="headerlink" href="#1-introduction" title="Permanent link">&para;</a></h2>
+<p>A process model tells us how work moves. It does not, by itself, tell us what the work is about.</p>
+<p>The claim is precise, and it holds. A BPMN model formally specifies control flow: the order of tasks, the branches a gateway takes, the parallelism it allows, the events it waits for, and the condition that marks work complete. Its labels — "Review claim," "Approve loan" — carry meaning, but only to a human who already knows the domain. The notation does not formally encode what a claim is: its identity, its valid states, the rules that must hold when its state changes, who owns it, or how it relates to a policy, an exposure, or a payment. That knowledge is not in the diagram. It lives in the domain model.</p>
+<p>The demonstration is simple. Strip the labels from a flow — receive, review, decide, record, close — and the same shape fits a claim, a loan application, or a support ticket. One control-flow skeleton serves many subjects. The reverse also holds: one business object participates in many processes. A claim appears in first notice of loss, in litigation, in subrogation, and in a reopen months later. The object exceeds any single flow. Because the mapping runs many-to-many in both directions, neither side determines the other, and the subject cannot be read off the shape.</p>
+<p><img alt="How work moves is not what the work is about" src="../resources/how-vs-what.svg" /></p>
+<p><em>Figure 2. The same control-flow skeleton reads as an insurance claim or a lending application; the subject is not encoded in the shape. What the work is about — identity, states, invariants, ownership, and relationships — lives in the domain model, and the flow cannot answer questions about it.</em></p>
+<p>This is why the statement matters rather than merely sounding clever. Ask the process model what must always be true of a claim, who owns the reserve amount, whether "Reported → Bound" is a valid transition, or what evidence must survive the decision. Control flow has no answer, because every one of those questions is about the object, not its movement. The data-centric view exists to answer them — and an agent handed a task with no object model behind it falls straight into that gap.</p>
+<p>That distinction drove the original question: where does the data-centric view fit within BPM? It fits after neither process nor application as a finished phase. It develops with them. Process modeling identifies work and obligation. Application modeling identifies actors and capabilities. Data-centric modeling identifies the objects that persist across both, the states that matter, and the events that cause work to continue, branch, wait, or end.</p>
+<p>The distinction matters more now than it did in 2014. An AI agent can read documents, call services, classify requests, and propose a next action. None of those capabilities establishes the durable business object whose state the organization intends to change. Before AI can improve a process, the architecture must determine whether the work concerns a customer request, an application, a claim, a policy, a shipment, a payment, or some combination of these objects.</p>
+<p>This is what it means to call the relationship an execution concern. Traditional automation settles it before any instance runs: a developer decides at design time which object each task reads and writes, which state transition it triggers, and which record it leaves behind, and those bindings compile into code that holds for every execution. An agent resolves its next action differently. It interprets the current inputs and proposes an action at runtime, so the binding from attempted action to affected object, owning authority, valid transition, and required evidence is no longer fixed in advance. The agent reconstructs it, case by case, while the work runs. The relationship the modeler once settled on a diagram now has to hold at the moment of action. The domain model, object ownership, valid transitions, and evidence obligations must therefore be present and enforced during execution as governance the agent acts within, not as documentation it may or may not consult.</p>
+<p><img alt="Where the action-to-object binding is resolved: design time versus runtime" src="../resources/binding-design-vs-runtime.svg" /></p>
+<p><em>Figure 3. Deterministic automation fixes the action-to-object binding in code at design time, and each instance replays it unchanged. An agent leaves the binding open until runtime and resolves it per case, which forces the domain model to be present and enforced during execution.</em></p>
+<p>The hardest part of AI-enabled process design may not be generating BPMN. It may be finding and segmenting the domain objects that give the process meaning.</p>
+<p>The original data-centric view argued that process analysis should move beyond control flow and make business data visible to every necessary participant [1]. That argument still holds. The modern version goes further: data becomes useful when architecture organizes it into objects with identity, state, behavior, ownership, relationships, and lifecycle. AI can accelerate the discovery of those objects. BPM can coordinate the work performed against them. Domain systems must remain authoritative for the objects themselves.</p>
+<p>This paper begins where the earlier Work Record papers stop. <em>Work Record</em> established the process instance as the anchor that connects AI capability to a discrete unit of enterprise work. <em>Process-First AI: Dimensions of the Running Work Record</em> then explained the record's presence, gravity, and persistence and placed AI into four forms of participation [16]. Neither paper resolved the next architectural question: when one running process contributes to several independently persistent business objects, which state belongs to the Work Record and which state belongs to the authoritative domain? This paper addresses that boundary and adds AI-assisted domain discovery as the method for finding it.</p>
+<p>The argument proceeds in three movements. Sections 2 and 3 place the data-centric view inside BPM and separate the two durable records — the authoritative domain object and the Work Record — with a practical test for landing each state element. Sections 4 and 5 map commercial insurance as a network of objects and give the tests for segmenting them. Sections 6 and 7 supply the method: AI-assisted discovery of the object boundaries, then a full insurance journey run against them. Sections 8 through 12 convert validated objects into a process architecture, place AI within and above it, and define the governance that keeps discovery and execution accountable.</p>
+<hr />
+<h2 id="2-where-the-data-centric-view-fits-within-bpm">2. Where the Data-Centric View Fits Within BPM<a class="headerlink" href="#2-where-the-data-centric-view-fits-within-bpm" title="Permanent link">&para;</a></h2>
+<p>The 2014 article places three perspectives inside one iterative BPM methodology [1]:</p>
+<ol>
+<li><strong>Process-centric view:</strong> identify the work, sequence, decisions, handoffs, and outcomes.</li>
+<li><strong>Application view:</strong> identify the people, systems, services, and integrations that participate in the work.</li>
+<li><strong>Data-centric view:</strong> identify the business objects, state changes, events, and information required across those participants.</li>
+</ol>
+<p>This framing consolidates a long BPM tradition rather than inventing one. Curtis, Kellner, and Over distinguished the functional, behavioral, organizational, and informational perspectives of a process model [17], and process-mining practice separates the control-flow, organizational, data, and time perspectives of an event log [9]. The three views used here map onto that tradition and adapt it for an object-centric, agentic setting: the process-centric view carries the functional and behavioral perspectives; the application view carries the organizational; and the data-centric view carries the informational, or data, perspective — extended from passive information into full object identity, lifecycle, invariants, and ownership. The contribution is the extension and its consequence for agentic execution, not the triad itself.</p>
+<p>No view completes the architecture alone. A process model without application boundaries becomes an abstract flow. An application model without process context becomes an integration diagram. A data model without behavior becomes a static inventory of nouns. Contemporary BPM still treats models, execution, information, resources, and organizational context as interdependent concerns [2, 3].</p>
+<p>The views develop together. A process task exposes a required business object. An application boundary reveals who owns it. A state transition exposes a missing event. A newly discovered object may force the process model to split one activity into several lifecycles.</p>
+<p>The article's concerns map to five properties that data-intensive work requires:</p>
+<ul>
+<li><strong>Data access:</strong> participants need the appropriate business context without tunneling complete object copies through every task.</li>
+<li><strong>State reaction:</strong> processes and applications must react when relevant object state changes.</li>
+<li><strong>Object-instance coordination:</strong> related object instances must synchronize without becoming one tightly coupled transaction.</li>
+<li><strong>Data-oriented granularity:</strong> work should decompose and compose around meaningful business boundaries.</li>
+<li><strong>Data integrity:</strong> process execution must not weaken the authority or invariants of domain systems.</li>
+</ul>
+<p>Those properties align with object-centered, case-handling, and object-aware process research that treated data and object lifecycle as active participants in execution rather than passive task payloads [4–7]. They now provide a strong foundation for agentic AI. Agents need context, events, coordination, bounded tasks, and trusted state. Data-centric BPM already asked the architectural questions that agentic systems must answer.</p>
+<hr />
+<h2 id="3-a-domain-object-is-not-a-payload">3. A Domain Object Is Not a Payload<a class="headerlink" href="#3-a-domain-object-is-not-a-payload" title="Permanent link">&para;</a></h2>
+<p>Traditional workflow implementations often treat data as variables attached to a process instance. The engine receives a request payload, copies values into process context, passes those values between tasks, and eventually writes a result back to a system of record.</p>
+<p>That approach works for small, stable data. It becomes dangerous when long-running work carries a copied representation of volatile domain state. A claim may remain active for months while reserves, coverage decisions, documents, payments, and legal conditions change in their authoritative systems. The process cannot safely treat the object snapshot captured at startup as current truth.</p>
+<p>The opposite mistake places complete domain objects inside the process engine. That turns process variables into a second system of record, blurs ownership, increases payload size, and creates competing versions of business truth.</p>
+<p>A domain-centered process carries only what it needs to coordinate the work:</p>
+<ul>
+<li>stable object identifiers and correlation keys;</li>
+<li>the process state needed to determine what happens next;</li>
+<li>decision results and confidence values that affect routing;</li>
+<li>references to authoritative records;</li>
+<li>relevant event facts and timestamps;</li>
+<li>task input and output contracts.</li>
+</ul>
+<p>The domain system owns the complete object and enforces its invariants. The process instance owns the position and obligations of the running work. An AI worker receives the bounded context required for its task, retrieves additional authorized detail when necessary, and returns structured results rather than an ungoverned narrative.</p>
+<p>This boundary turns the object from passive payload into an active source of business meaning without making the process engine its database.</p>
+<p><img alt="A domain object is not a payload: anti-pattern versus best practice" src="../resources/domain-object-not-payload.svg" /></p>
+<p><em>Figure 4. The anti-pattern copies the full domain object into the process instance, producing a stale snapshot, a second system of record, and blurred ownership. The best practice keeps the claims system authoritative and carries only a thin coordination slice — a reference and correlation key, process state, decision result, event fact, and task contract — while the task reads authorized detail on demand and the domain validates, commits, and emits the event.</em></p>
+<h3 id="31-two-kinds-of-persistence">3.1 Two kinds of persistence<a class="headerlink" href="#31-two-kinds-of-persistence" title="Permanent link">&para;</a></h3>
+<p>Both sides persist, but they persist different truths.</p>
+<p><strong>Domain persistence is transactional persistence.</strong> An OLTP transaction changes one authoritative model while protecting atomicity, consistency, isolation, and durability. A reserve adjustment either commits under the reserving domain's rules or it does not. A payment either reaches a recognized transaction state or it does not. The domain object answers: <em>what is true now about this policy, exposure, reserve, or payment?</em> OLTP systems optimize large volumes of short, concurrent transactions and protect data integrity; their individual transactions cannot remain half-committed while a business process waits for days [13].</p>
+<p><strong>Work Record persistence is commitment persistence.</strong> Underwriting, claim settlement, and recovery cross people, systems, waits, and many local transactions. The process engine cannot hold one database transaction open across that span. It persists token position, pending obligations, accepted task results, decisions, authorization evidence, correlation references, exceptions, and completion history between local commits. If a later step fails, the process retries, escalates, waits, or invokes a compensating action rather than rolling back weeks of business reality. This matches the saga principle: long-running work coordinates a sequence of local transactions and explicitly handles failure across their boundaries [14].</p>
+<p>The Work Record is therefore more than a route through tasks, but less than a surrogate domain database. It is the durable account of <strong>value-producing contribution</strong>. Each task receives a contract, expends human, system, or AI effort, and returns a result. The Work Record records the obligation, the contribution, its provenance, its acceptance or rejection, and the domain event that confirms any resulting business change. A recommendation can persist in the Work Record even when the domain rejects the requested transition. Conversely, <code>PaymentSettled</code> belongs to the payment domain as authoritative truth while the Work Record records why settlement was required, how it contributed to the claim outcome, and which obligation that event discharged.</p>
+<h3 id="32-the-state-landing-test">3.2 The state-landing test<a class="headerlink" href="#32-the-state-landing-test" title="Permanent link">&para;</a></h3>
+<p>The design problem is not choosing one container for the whole case. It is landing each state element in the record whose authority matches its meaning.</p>
+<table>
+<thead>
+<tr>
+<th>Test</th>
+<th>State lands in</th>
+<th>Insurance example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Must this fact remain authoritative after the process ends, and must every update satisfy business invariants atomically?</td>
+<td>Domain object and its owning OLTP capability</td>
+<td><code>Reserve.amount</code>, <code>Payment.status</code>, policy-term dates</td>
+</tr>
+<tr>
+<td>Does this fact describe an obligation, position, handoff, deadline, contribution, decision path, or evidence for one business outcome?</td>
+<td>Work Record</td>
+<td>coverage review due, AI recommendation returned, examiner approval, payment correction pending</td>
+</tr>
+<tr>
+<td>Is this state needed only while a worker reasons or calls tools?</td>
+<td>Human or AI task runtime</td>
+<td>current plan, retrieved passages, intermediate calculation, retry context</td>
+</tr>
+<tr>
+<td>Is this an inferred boundary, lifecycle, or redesign opportunity awaiting validation?</td>
+<td>Governed discovery artifact</td>
+<td>candidate <code>Exposure</code> lifecycle with links to supporting schemas and events</td>
+</tr>
+</tbody>
+</table>
+<p>Some facts appear in more than one record by reference, but only one boundary owns their truth. The Work Record may retain the payment ID and the immutable fact that <code>PaymentSettled</code> discharged an obligation. The payment system retains the transaction, settlement state, ledger references, and rules that made that event valid. Correlation is required; duplicated authority is not.</p>
+<hr />
+<h2 id="4-insurance-is-a-network-of-objects-not-one-case-file">4. Insurance Is a Network of Objects, Not One Case File<a class="headerlink" href="#4-insurance-is-a-network-of-objects-not-one-case-file" title="Permanent link">&para;</a></h2>
+<p>Many process programs begin with verbs: receive, review, approve, notify, and close. The verbs produce a plausible flow, but they can conceal several independent lifecycles.</p>
+<p>Consider the instruction "process the insurance claim." The apparent process contains at least these candidate objects:</p>
+<ul>
+<li><strong>Claim:</strong> the administrative record of a reported demand for an insurance response, potentially involving insureds or third-party claimants.</li>
+<li><strong>Policy:</strong> the contract that determines coverage.</li>
+<li><strong>Exposure:</strong> one alleged loss involving a person, property, or coverage.</li>
+<li><strong>Reserve:</strong> the financial estimate attached to an exposure or claim.</li>
+<li><strong>Payment:</strong> a financial transaction with its own authorization and settlement state.</li>
+<li><strong>Document:</strong> evidence with provenance, classification, and retention obligations.</li>
+<li><strong>Investigation:</strong> a bounded body of work created when facts require additional review.</li>
+</ul>
+<p>These objects do not share one lifecycle. A claim may close while a recovery action remains open. A payment may fail after the claim decision becomes final. One claim may contain several exposures, each with a separate reserve and disposition. A document may support several decisions but remain governed by a distinct retention policy.</p>
+<p>If the model treats all of this as one <code>ClaimData</code> payload, process logic accumulates conditions that belong to the domain. If the architecture identifies the objects first, each task can state precisely which object it reads, which transition it requests, which event it emits, and which system owns the result.</p>
+<p>Object discovery therefore precedes detailed process design. The first question is not "What tasks should the AI perform?" It is "Which business object changes because this work exists?"</p>
+<p>The object map below presents an illustrative conceptual model for commercial property insurance. A carrier must validate its identities, states, authority boundaries, and terminology against its products, jurisdictions, and operating model:</p>
+<p><img alt="Commercial property insurance object network" src="../resources/insurance-object-network.svg" /></p>
+<p><em>Figure 5. One insurance outcome crosses multiple authoritative objects. Events and references coordinate their independent lifecycles without turning them into one case payload.</em></p>
+<table>
+<thead>
+<tr>
+<th>Object</th>
+<th>Identity</th>
+<th>Illustrative lifecycle</th>
+<th>Authoritative capability</th>
+<th>Independently significant event</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Submission</td>
+<td>submission ID</td>
+<td>received → triaged → withdrawn, declined, or advanced</td>
+<td>submission intake</td>
+<td><code>SubmissionReceived</code>, <code>SubmissionAdvanced</code></td>
+</tr>
+<tr>
+<td>Application</td>
+<td>application ID and version</td>
+<td>initiated → incomplete or complete → attested → superseded</td>
+<td>underwriting intake</td>
+<td><code>ApplicationCompleted</code>, <code>ApplicationAttested</code></td>
+</tr>
+<tr>
+<td>Quote</td>
+<td>quote ID and version</td>
+<td>requested → rated → offered → accepted, declined, revised, or expired</td>
+<td>rating and underwriting</td>
+<td><code>QuoteOffered</code>, <code>QuoteAccepted</code></td>
+</tr>
+<tr>
+<td>Underwriting Decision</td>
+<td>decision ID</td>
+<td>pending → referred → approved, declined, or superseded</td>
+<td>underwriting authority</td>
+<td><code>RiskApproved</code>, <code>RiskDeclined</code></td>
+</tr>
+<tr>
+<td>Policy Term</td>
+<td>policy number and term</td>
+<td>bound → pending effective → in force → cancelled, expired, or rescinded</td>
+<td>policy administration</td>
+<td><code>PolicyBound</code>, <code>PolicyIncepted</code>, <code>EndorsementIssued</code></td>
+</tr>
+<tr>
+<td>Renewal Offer</td>
+<td>renewal offer ID</td>
+<td>prepared → offered → accepted, declined, revised, or expired</td>
+<td>renewal underwriting</td>
+<td><code>RenewalOffered</code>, <code>RenewalAccepted</code></td>
+</tr>
+<tr>
+<td>Claim</td>
+<td>claim number</td>
+<td>reported → open → closed or reopened</td>
+<td>claims administration</td>
+<td><code>ClaimReported</code>, <code>ClaimClosed</code>, <code>ClaimReopened</code></td>
+</tr>
+<tr>
+<td>Exposure</td>
+<td>exposure ID within a claim</td>
+<td>identified → investigated → accepted or denied → resolved</td>
+<td>claims administration</td>
+<td><code>ExposureCreated</code>, <code>ExposureDispositioned</code></td>
+</tr>
+<tr>
+<td>Reserve</td>
+<td>reserve ID and financial category</td>
+<td>proposed → approved → adjusted → released</td>
+<td>reserving and financial control</td>
+<td><code>ReserveEstablished</code>, <code>ReserveChanged</code></td>
+</tr>
+<tr>
+<td>Payment</td>
+<td>payment ID</td>
+<td>requested → authorized → issued → settled, voided, or failed</td>
+<td>payment platform</td>
+<td><code>PaymentAuthorized</code>, <code>PaymentSettled</code>, <code>PaymentFailed</code></td>
+</tr>
+<tr>
+<td>Document</td>
+<td>document ID and version</td>
+<td>captured and versioned → classified → declared or managed as a record → retained → disposition eligible → disposed; legal hold suspends disposition until release</td>
+<td>content and records management</td>
+<td><code>DocumentReceived</code>, <code>RecordDeclared</code>, <code>LegalHoldApplied</code>, <code>LegalHoldReleased</code></td>
+</tr>
+<tr>
+<td>Investigation</td>
+<td>investigation ID</td>
+<td>opened → evidence gathering → finding issued → closed</td>
+<td>special investigation or claims</td>
+<td><code>InvestigationOpened</code>, <code>FindingIssued</code></td>
+</tr>
+<tr>
+<td>Recovery</td>
+<td>recovery ID</td>
+<td>identified → pursued → collected or abandoned</td>
+<td>subrogation, salvage, or collections</td>
+<td><code>RecoveryOpportunityIdentified</code>, <code>RecoveryCollected</code></td>
+</tr>
+</tbody>
+</table>
+<p>The map does not prescribe thirteen microservices. It exposes thirteen semantic boundaries. A carrier may implement several boundaries inside one platform or database. The architectural requirement is more modest and more important: preserve each object's identity, lifecycle, invariants, and ownership even when one application stores several of them.</p>
+<hr />
+<h2 id="5-how-to-segment-a-domain-object">5. How to Segment a Domain Object<a class="headerlink" href="#5-how-to-segment-a-domain-object" title="Permanent link">&para;</a></h2>
+<p>A candidate noun does not automatically deserve its own object boundary. Architecture should test each candidate against a consistent set of questions.</p>
+<table>
+<thead>
+<tr>
+<th>Test</th>
+<th>Architectural question</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Identity</td>
+<td>Can the business distinguish one instance from another over time?</td>
+</tr>
+<tr>
+<td>Lifecycle</td>
+<td>Does it move through named states with valid and invalid transitions?</td>
+</tr>
+<tr>
+<td>Invariants</td>
+<td>Which rules must remain true whenever its state changes?</td>
+</tr>
+<tr>
+<td>Authority</td>
+<td>Which system or domain owns the definitive representation?</td>
+</tr>
+<tr>
+<td>Behavior</td>
+<td>Which operations belong with the object rather than with process coordination?</td>
+</tr>
+<tr>
+<td>Events</td>
+<td>Which state changes matter outside the owning boundary?</td>
+</tr>
+<tr>
+<td>Relationships</td>
+<td>Does it aggregate, reference, or depend on other objects?</td>
+</tr>
+<tr>
+<td>Timescale</td>
+<td>Can it begin, change, or end independently of the surrounding process?</td>
+</tr>
+<tr>
+<td>Accountability</td>
+<td>Which role or service may authorize each transition?</td>
+</tr>
+<tr>
+<td>Evidence</td>
+<td>What records prove that a transition occurred correctly?</td>
+</tr>
+</tbody>
+</table>
+<p>The tests prevent two common failures. Under-segmentation creates a giant object whose fields, rules, and lifecycle vary by scenario. Over-segmentation turns every noun or database table into a domain object and replaces useful boundaries with distributed chatter.</p>
+<p>A strong object boundary encloses behavior and rules that change together, consistent with the domain-driven emphasis on explicit bounded models and a shared domain language [8]. It exposes events when other domains need to react. It does not leak internal fields merely because a process task can consume them.</p>
+<hr />
+<h2 id="6-ai-assisted-domain-discovery-from-operational-evidence">6. AI-Assisted Domain Discovery from Operational Evidence<a class="headerlink" href="#6-ai-assisted-domain-discovery-from-operational-evidence" title="Permanent link">&para;</a></h2>
+<p>The introduction named the hardest problem: finding and segmenting the domain objects that give the process meaning. This section gives that problem a method. Discovery is not a brainstorm and not a document-summarization exercise. It is a comparison across evidence the organization already owns, producing falsifiable hypotheses that domain experts confirm, split, merge, or reject.</p>
+<h3 id="61-the-evidence-already-exists">6.1 The evidence already exists<a class="headerlink" href="#61-the-evidence-already-exists" title="Permanent link">&para;</a></h3>
+<p>No one has to invent the domain model. The organization has been writing it down for years — in fragments, in different languages, for different purposes. Four classes of evidence matter:</p>
+<table>
+<thead>
+<tr>
+<th>Evidence class</th>
+<th>Sources</th>
+<th>What it testifies to</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Structural</strong></td>
+<td>database schemas, API specifications, message contracts, source code</td>
+<td>what the systems <em>permit</em></td>
+</tr>
+<tr>
+<td><strong>Behavioral</strong></td>
+<td>event streams, audit records, status histories, process-mining logs</td>
+<td>what operations <em>actually did</em></td>
+</tr>
+<tr>
+<td><strong>Normative</strong></td>
+<td>policy documents, procedures, decision tables, regulatory text</td>
+<td>what the business <em>requires</em></td>
+</tr>
+<tr>
+<td><strong>Vernacular</strong></td>
+<td>screens, forms, field labels, tickets, exception queues, workarounds</td>
+<td>what people <em>actually call things</em> — and where the current model already fails them</td>
+</tr>
+</tbody>
+</table>
+<p>The fourth class deserves emphasis. A recurring manual workaround is a fossil of a missing object or a misplaced boundary. An exception queue that never empties marks a lifecycle the model does not represent.</p>
+<h3 id="62-one-comparison-three-behaviors">6.2 One comparison, three behaviors<a class="headerlink" href="#62-one-comparison-three-behaviors" title="Permanent link">&para;</a></h3>
+<p>The discovery move is a single disciplined comparison. Structural evidence shows <strong>possible</strong> behavior. Behavioral evidence shows <strong>observed</strong> behavior. Normative evidence shows <strong>required</strong> behavior. Where the three agree, the model is probably right. Where they diverge, the divergence is the finding — not noise to smooth over. If source code permits twelve status values and production history uses seven, the discovery system reports the discrepancy rather than silently choosing one version. Domain experts decide which combination should govern the future model.</p>
+<p><img alt="AI-assisted domain discovery from operational evidence" src="../resources/ai-domain-discovery.svg" /></p>
+<p><em>Figure 6. AI compares possible, observed, and required behavior, then produces evidence-linked object hypotheses. Domain owners validate the boundaries and return corrections to the evidence set.</em></p>
+<p>AI earns its place here because the comparison is exactly the work large models do well: reading across heterogeneous artifacts, proposing aliases, flagging overloaded terms, inferring candidate identifiers and state vocabularies, and connecting events to the objects they describe. What once required months of workshops — asking experts to articulate what they believe they do — becomes a review of what the evidence says they actually did.</p>
+<h3 id="63-the-output-is-a-falsifiable-hypothesis">6.3 The output is a falsifiable hypothesis<a class="headerlink" href="#63-the-output-is-a-falsifiable-hypothesis" title="Permanent link">&para;</a></h3>
+<p>The useful output is not a paragraph that summarizes the business. It is a structured hypothesis an expert can test, with every assertion citing its evidence and every uncertainty stated as an open question:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="nt">candidate_object</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Claim</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="nt">identity</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">claim_number</span><span class="p p-Indicator">]</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="nt">authoritative_system</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">claims_platform</span><span class="p p-Indicator">]</span>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="nt">states</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">reported</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">open</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">closed</span><span class="p p-Indicator">]</span>
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="nt">commands</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">register_claim</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">close_claim</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">reopen_claim</span><span class="p p-Indicator">]</span>
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="nt">events</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">ClaimReported</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">ClaimClosed</span><span class="p p-Indicator">]</span>
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="nt">related_objects</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">Policy</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">Exposure</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">Payment</span><span class="p p-Indicator">]</span>
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="nt">evidence</span><span class="p">:</span>
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">api/claims.yaml</span>
+<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">claim_status_history</span>
+<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">adjuster_work_instructions.pdf</span>
+<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a><span class="nt">open_questions</span><span class="p">:</span>
+<a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Does each exposure own its reserve lifecycle?</span>
+<a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Can recovery continue after ClaimClosed?</span>
+</code></pre></div>
+<p>The format is the governance. Evidence links make each claim checkable. Open questions route ambiguity to the people with authority to resolve it. Conflicting sources remain visible in the artifact instead of disappearing into a confident summary.</p>
+<h3 id="64-what-the-same-comparison-finds-beyond-the-inventory">6.4 What the same comparison finds beyond the inventory<a class="headerlink" href="#64-what-the-same-comparison-finds-beyond-the-inventory" title="Permanent link">&para;</a></h3>
+<p>The object catalog is the primary deliverable, but the same evidence comparison surfaces four further findings:</p>
+<ul>
+<li><strong>Hidden lifecycles.</strong> Where records carry reliable identifiers, correlated logs and status histories reveal the observed lifecycle — common paths, rare variants, loops, waits, and dead ends [9]. The documented process may describe one lifecycle while production runs several.</li>
+<li><strong>Misplaced behavior.</strong> Validation logic repeated across user interfaces, process scripts, and integration services signals a missing domain capability. The finding proposes one governed operation in the owning domain.</li>
+<li><strong>Semantic collisions.</strong> "Case" may mean a service request in one system, a legal matter in another, and a process instance in a third. Similarity search finds the related language; the architecture must preserve the distinctions where identity, lifecycle, or ownership differs.</li>
+<li><strong>Event and task candidates.</strong> State histories reveal which changes already trigger downstream behavior — candidates for explicit event contracts. And the object model itself separates work suited to AI (interpretation, comparison, classification, bounded investigation) from work that belongs in rules, domain services, or human approval (deterministic invariants, financial postings, irreversible authority).</li>
+</ul>
+<h3 id="65-validation-closes-the-loop">6.5 Validation closes the loop<a class="headerlink" href="#65-validation-closes-the-loop" title="Permanent link">&para;</a></h3>
+<p>AI accelerates the comparison. It does not acquire authority to define the business merely because it can read every artifact. Underwriting, claims, actuarial, finance, and records specialists confirm, split, merge, or reject each hypothesis, and their corrections return to the evidence set for the next pass. Section 10 sequences this into a governed method; Section 11 names the failure modes the governance must catch.</p>
+<p>The payoff is Section 7: the insurance journey below runs against object boundaries a carrier could have discovered this way.</p>
+<hr />
+<h2 id="7-insurance-case-from-submission-to-claim-settlement">7. Insurance Case: From Submission to Claim Settlement<a class="headerlink" href="#7-insurance-case-from-submission-to-claim-settlement" title="Permanent link">&para;</a></h2>
+<p>This section deliberately returns to the commercial-property scenario used in the earlier Work Record research [16]. The repeated setting creates continuity, not a second claims-processing walkthrough. The earlier analysis followed one running record to show how process state persists and how AI enters task slots. The analysis below changes the unit of examination. It decomposes the same journey into underwriting, policy, claim, exposure, reserve, payment, document, investigation, and recovery objects, then asks where each identity, state transition, contribution, and invariant belongs.</p>
+<p>A commercial real estate investor submits an application to insure a six-building mixed-use portfolio in Austin. The submission creates an underwriting Work Record, <code>UW-TX-2026-004821</code>. It does not create the policy yet. The work exists before the contract does.</p>
+<h3 id="71-submission-and-underwriting">7.1 Submission and underwriting<a class="headerlink" href="#71-submission-and-underwriting" title="Permanent link">&para;</a></h3>
+<p>The intake task references an <code>Application</code>, applicant parties, scheduled locations, requested coverages, prior loss documents, and inspection reports. An AI extraction worker classifies the documents, extracts candidate property facts, and returns each value with source provenance. The task does not authorize the AI to create coverage, set a premium, or bind a policy. Its output contract contains extracted values, confidence scores, unresolved conflicts, and document references.</p>
+<p>The rating service calculates a premium from validated risk characteristics and exposure measures. A rules service evaluates mandatory filing and eligibility constraints. An AI underwriting assistant compares the submission, loss runs, inspection findings, and appetite guidance, then drafts a recommendation. The commercial underwriter accepts, modifies, or rejects that recommendation. The process records both the AI result and the human decision.</p>
+<p>When every bind precondition succeeds, the policy administration system creates the bound term for <code>Policy CPP-TX-2026-004821</code>. The term becomes <code>InForce</code> on its effective date. The underwriting Work Record records completion at the modeled business outcome. The policy term now follows its own lifecycle. The process did not become the policy, and the policy record did not become the process history. At renewal, the carrier prepares and binds a successor term rather than changing the expiring term to <code>Renewed</code>.</p>
+<h3 id="72-first-notice-of-loss">7.2 First notice of loss<a class="headerlink" href="#72-first-notice-of-loss" title="Permanent link">&para;</a></h3>
+<p>Eighteen months later, a water loss occurs at the Eastside property. First notice of loss creates <code>Claim CLM-TX-2027-01984</code> and a claims Work Record correlated to the policy, reported location, claimant, and loss event. Coverage does not follow from the presence of a policy number alone. The claims process must identify the applicable policy term, forms, endorsements, limits, deductibles, exclusions, and insured interests at the time of loss.</p>
+<p>The initial report also creates candidate exposures. Building damage, business interruption, and third-party property damage may each require separate investigation, reserve, and disposition. The architecture should not hide these differences inside one claim status. The claim coordinates the reported loss; each exposure represents a distinct alleged obligation.</p>
+<p>An AI triage worker can classify the loss description, detect missing information, propose exposure types, and flag possible subrogation. It returns hypotheses. The claims domain validates creation of each exposure. A deterministic coverage rule may resolve a straightforward condition. Ambiguous endorsement language routes to an examiner or a bounded coverage-analysis agent with approved retrieval tools and a mandatory human decision.</p>
+<h3 id="73-reserving-payment-and-recovery">7.3 Reserving, payment, and recovery<a class="headerlink" href="#73-reserving-payment-and-recovery" title="Permanent link">&para;</a></h3>
+<p>The carrier establishes reserves by exposure and financial category. A reserve records an estimate, not a payment and not the claim's final value. Reserve changes require authority thresholds and reasons. An AI severity model may recommend an amount or range, but the reserving service enforces approval limits and commits the change. The process records who or what supplied the recommendation, which evidence supported it, who approved it, and which reserve event resulted.</p>
+<p>Settlement creates another separation. The claims domain authorizes the obligation and amount under applicable authority limits. The payment capability validates the payee and disbursement controls, performs sanctions screening where required, issues the transaction, and records settlement, failure, void, and reconciliation. <code>PaymentFailed</code> does not reverse the coverage decision. It creates a new obligation in the Work Record to correct or reissue the transaction.</p>
+<p>A separately governed recovery matter may continue after indemnity payment and, where carrier practice permits, after administrative claim closure or reopening. A contractor's negligence may create a subrogation opportunity; damaged equipment may produce salvage. Recovery therefore has its own identity and lifecycle. Closing the claim must not silently destroy the carrier's continuing right to pursue another party.</p>
+<h3 id="74-renewal-closes-the-information-loop">7.4 Renewal closes the information loop<a class="headerlink" href="#74-renewal-closes-the-information-loop" title="Permanent link">&para;</a></h3>
+<p>At renewal, underwriting needs selected claim outcomes, not a copied claims database. The renewal Work Record references the expiring policy term, verified loss history, open material claim exposures, paid and reserved amounts, and relevant risk-control findings. Domain events connect those facts to the renewal decision while access policies limit unnecessary claims detail.</p>
+<p>The portfolio now demonstrates why object segmentation matters. One customer journey crossed underwriting, policy administration, claims, reserving, payments, recovery, content management, and renewal. BPM coordinated the obligations. No single process variable bundle became authoritative for every object. AI participated at several task boundaries without owning the contract, claim, reserve, or payment.</p>
+<hr />
+<h2 id="8-from-candidate-objects-to-a-process-architecture">8. From Candidate Objects to a Process Architecture<a class="headerlink" href="#8-from-candidate-objects-to-a-process-architecture" title="Permanent link">&para;</a></h2>
+<p>Once the team validates the object boundaries, process design becomes more precise. Each BPMN element can declare a relationship to the domain while retaining its defined execution semantics [11]:</p>
+<table>
+<thead>
+<tr>
+<th>Process element</th>
+<th>Domain meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Start event</td>
+<td>A business event creates an obligation to act on an object</td>
+</tr>
+<tr>
+<td>Task</td>
+<td>A human, service, or AI worker performs bounded work against an object</td>
+</tr>
+<tr>
+<td>Gateway</td>
+<td>Controls divergence or convergence through conditions, events, or synchronization semantics</td>
+</tr>
+<tr>
+<td>Message event</td>
+<td>Another participant or domain reports a fact relevant to the running work</td>
+</tr>
+<tr>
+<td>Timer</td>
+<td>A modeled commitment becomes due</td>
+</tr>
+<tr>
+<td>End event</td>
+<td>Marks the modeled completion or termination of a path or process scope</td>
+</tr>
+</tbody>
+</table>
+<p>This mapping separates domain state from process state. <code>Policy.status = InForce</code> describes the contract. <code>UnderwritingProcess.waitingForCompliance = true</code> describes unfinished work. <code>Payment.status = Settled</code> describes the transaction. <code>ClaimProcess.currentTask = ReconcilePayment</code> describes the organization's current obligation.</p>
+<p>Conflating these states creates brittle systems. A status column becomes a hidden workflow engine. A BPMN token becomes a surrogate domain object. A queue name becomes the only record of accountability. Clear object boundaries allow each state machine to do its own job while events and process correlation coordinate their interaction.</p>
+<p>Three kinds of state coexist in the insurance case:</p>
+<table>
+<thead>
+<tr>
+<th>State type</th>
+<th>Insurance example</th>
+<th>Owner</th>
+<th>Governing question</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Domain-object state</td>
+<td><code>Policy = InForce</code>, <code>Exposure = Accepted</code>, <code>Payment = Settled</code></td>
+<td>authoritative domain system</td>
+<td>What committed business fact is true, and which invariants govern its next local transaction?</td>
+</tr>
+<tr>
+<td>Work Record state</td>
+<td>assigned obligation, task contribution, acceptance or rejection, decision, provenance references, resulting domain event, escalation, and completion history</td>
+<td>process engine</td>
+<td>Which obligation comes next, what value-producing effort occurred, and what durable evidence did it produce?</td>
+</tr>
+<tr>
+<td>Agent runtime state</td>
+<td>current plan, in-flight tool calls, transient working context, retries, and checkpoints</td>
+<td>bounded agent runtime under process control</td>
+<td>How is the assigned worker progressing toward its task contract?</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="Three state boundaries in agentic process architecture" src="../resources/three-state-boundaries.svg" /></p>
+<p><em>Figure 7. Domain systems commit business truth, the process engine retains the durable Work Record, and the agent runtime holds only the transient state required to complete its bounded task.</em></p>
+<p>The boundaries permit correlation without collapse. The process may wait for a payment event, but it should not infer settlement by setting its own <code>paymentStatus</code>. An agent may conclude that an endorsement appears applicable, but it should not mutate policy or coverage state directly. The relevant domain service validates and commits the transition, emits the event, and allows the process to continue. The Work Record then closes the corresponding obligation and preserves the causal chain from requested work through contribution to committed result.</p>
+<hr />
+<h2 id="9-where-agentic-ai-belongs-in-insurance">9. Where Agentic AI Belongs in Insurance<a class="headerlink" href="#9-where-agentic-ai-belongs-in-insurance" title="Permanent link">&para;</a></h2>
+<p>AI belongs at three distinct moments: <strong>before the work, within the work, and across the history of work</strong>.</p>
+<p><strong>Before execution, AI discovers candidate boundaries.</strong> It compares schemas, code, APIs, screens, documents, status histories, event logs, and policy language. It can infer candidate identities, lifecycles, invariants, owners, and process obligations, then attach every hypothesis to evidence for expert validation. This may be AI's most consequential contribution because a badly placed boundary corrupts every task, integration, and agent built above it. AI accelerates the search; domain and process owners decide what becomes authoritative.</p>
+<p><strong>During execution, AI contributes bounded effort.</strong> The domain map creates precise places for AI to act.</p>
+<p>An AI worker can classify an incoming document against the <code>Document</code> taxonomy, extract candidate facts, and return provenance with every value. Another can compare a <code>Claim</code> against <code>Policy</code> coverage terms and draft a coverage recommendation. A bounded agent can investigate an <code>Exposure</code> by selecting approved tools until it satisfies defined completion criteria. A human can review low-confidence or high-consequence results before the engine requests a domain transition.</p>
+<p>The process supplies what the agent cannot establish for itself:</p>
+<ul>
+<li>the identity of the current work;</li>
+<li>the object references relevant to the task;</li>
+<li>the valid operation and expected output schema;</li>
+<li>the task's delegated scope and the authorization decision supplied by the governing identity, policy, or domain service;</li>
+<li>the deadline, escalation, and retry policy;</li>
+<li>the conditions that require human review;</li>
+<li>the durable history of what happened before and after the agent acted.</li>
+</ul>
+<p>The domain service supplies what the process should not invent:</p>
+<ul>
+<li>authoritative object state;</li>
+<li>invariants and transition rules;</li>
+<li>access controls tied to the object;</li>
+<li>transactional integrity inside the domain boundary;</li>
+<li>business events produced by completed transitions.</li>
+</ul>
+<p>The agent interprets, proposes, extracts, compares, and plans inside those boundaries. The process engine coordinates the obligation and records the returned contribution. The domain service decides whether the requested state transition is valid and commits it. Camunda's current agentic execution model follows this separation: the LLM selects tools, while the process runtime executes ordinary tasks and retains variables, retries, incident handling, and audit history [15]. This division gives AI useful agency without allowing inference to become the system of record.</p>
+<p>Contemporary process architecture supports four distinct placements:</p>
+<table>
+<thead>
+<tr>
+<th>Placement</th>
+<th>Insurance example</th>
+<th>Runtime boundary</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Form One: AI assists a human task</td>
+<td>draft underwriting or coverage recommendation for human review</td>
+<td>human closes the task and owns the decision</td>
+</tr>
+<tr>
+<td>Form Two: AI performs a service task</td>
+<td>classify an incoming loss document and return structured provenance</td>
+<td>engine validates the output contract before advancing</td>
+</tr>
+<tr>
+<td>Form Three: AI operates as a bounded agent</td>
+<td>investigate an ambiguous exposure using approved policy, document, and loss-history tools</td>
+<td>process defines the goal, tool boundary, escalation, and completion criteria</td>
+</tr>
+<tr>
+<td>Form Four: AI operates on process models</td>
+<td>discover recurring late endorsement review and propose moving it to first-notice triage</td>
+<td>human governance approves the redesigned model before deployment</td>
+</tr>
+</tbody>
+</table>
+<p>Forms One through Three participate inside a running Work Record. Form Four operates on populations of completed and active histories to improve the model those records execute. The ProcessOS architecture described in [12] motivates this fourth placement; in this paper, a ProcessOS-style governed lifecycle connects discovery evidence, approved process artifacts, deployment versions, and production measurements. Object identities make that lifecycle more informative than anonymous task-completion records alone.</p>
+<p><strong>Across execution history, AI learns where the architecture should change.</strong> Joined Work Record and domain-event histories reveal more than either record alone. The Work Record shows the intended obligation, worker contribution, decision path, wait, retry, and exception. Domain events show which business transitions actually committed. AI can detect recommendations that humans routinely reject, accepted contributions that fail to produce the intended domain event, duplicate work across object lifecycles, and process steps whose outputs add no measurable value. It can propose a revised task contract, object boundary, decision rule, or process model. A governance gate still determines what changes production.</p>
+<p>The fit is therefore precise: AI discovers the map, works inside the map, and learns from the traces the map produces. The Work Record supplies purpose, context, and accountability. Domain objects supply truth and transaction integrity. AI supplies interpretation and adaptive search. None can substitute for the others.</p>
+<hr />
+<h2 id="10-a-governed-discovery-and-design-method">10. A Governed Discovery and Design Method<a class="headerlink" href="#10-a-governed-discovery-and-design-method" title="Permanent link">&para;</a></h2>
+<p>A team can combine domain analysis, process mining, and AI-assisted extraction through a governed sequence:</p>
+<ol>
+<li><strong>Choose an outcome.</strong> Define the business result and the population of work to study.</li>
+<li><strong>Collect evidence.</strong> Gather models, schemas, APIs, code, events, procedures, screens, and representative cases.</li>
+<li><strong>Extract candidate objects.</strong> Ask AI to identify identities, states, commands, events, rules, owners, and relationships with source citations.</li>
+<li><strong>Compare evidence types.</strong> Separate what systems permit, what operations actually do, and what policy requires.</li>
+<li><strong>Segment lifecycles.</strong> Apply the identity, lifecycle, invariant, authority, timescale, and accountability tests.</li>
+<li><strong>Validate with domain experts.</strong> Resolve ambiguous terms, false aggregates, missing objects, and contested ownership.</li>
+<li><strong>Define contracts.</strong> Specify object references, commands, events, task inputs, task outputs, and confidence thresholds.</li>
+<li><strong>Model the running work.</strong> Build BPMN around obligations and outcomes rather than around screen navigation or application calls.</li>
+<li><strong>Assign workers.</strong> Place humans, deterministic services, rules, AI workers, and bounded agents into appropriate task slots.</li>
+<li><strong>Measure production.</strong> Compare the designed model with execution and object-event history, then refine both.</li>
+</ol>
+<p>A ProcessOS-style governed lifecycle, extending the architecture in [12], can support this sequence by connecting discovered operational behavior, approved process artifacts, deployment versions, and measurements of the deployed result. An event log that says <code>task_17 completed</code> supports flow analysis. An event that says <code>CoverageDetermined</code> for <code>Exposure EXP-3</code> within <code>Claim CLM-20481</code> connects execution to domain meaning.</p>
+<p>The method should produce an evidence package rather than one diagram. For the insurance case, that package contains:</p>
+<ul>
+<li>a candidate object catalog with identities, owners, invariants, and lifecycle states;</li>
+<li>an object relationship map showing policy, claim, exposure, reserve, payment, recovery, and document links;</li>
+<li>a terminology conflict register with source-specific meanings;</li>
+<li>command and event contracts with correlation keys and provenance;</li>
+<li>current-state process models grounded in event history;</li>
+<li>BPMN and decision models for the approved future state;</li>
+<li>task contracts for human, service, AI-worker, and bounded-agent assignments;</li>
+<li>conformance, outcome, exception, confidence, and human-override measures.</li>
+</ul>
+<p>An object-centric event log strengthens the method because one event can relate to several objects without forcing one case identifier to represent the entire business situation [10]. <code>PaymentSettled</code> may relate to a payment, claim, exposure, policy, and payee. The event preserves those relationships while each object retains its own history. Object-centric process mining can then analyze coordination across the network rather than flattening every event into one claim trace.</p>
+<hr />
+<h2 id="11-governance-and-failure-boundaries">11. Governance and Failure Boundaries<a class="headerlink" href="#11-governance-and-failure-boundaries" title="Permanent link">&para;</a></h2>
+<p>Domain discovery introduces risks alongside its value. AI can merge distinct insurance concepts because their labels resemble one another. It can treat database normalization as domain design, mistake an implementation status for a business state, infer causality from event sequence, or elevate a common workaround into a required future behavior. Sparse logs can erase manual work. Historical records can preserve discriminatory or obsolete practices.</p>
+<p>The architecture therefore requires explicit controls:</p>
+<ul>
+<li><strong>Evidence traceability:</strong> every proposed object, state, relationship, and rule cites its source artifacts.</li>
+<li><strong>Contradiction retention:</strong> the discovery system reports disagreements instead of resolving them silently.</li>
+<li><strong>Domain-owner approval:</strong> underwriting, claims, actuarial, finance, legal, compliance, and records specialists validate the boundaries they own.</li>
+<li><strong>Least-privilege retrieval:</strong> an agent receives only the object data required for its assigned task.</li>
+<li><strong>Transition enforcement:</strong> authoritative services validate commands and invariants before committing domain state.</li>
+<li><strong>Confidence and consequence routing:</strong> uncertainty and material impact determine when a human must decide.</li>
+<li><strong>Model versioning:</strong> prompts, models, decisions, task contracts, BPMN, and event schemas remain versioned and auditable.</li>
+<li><strong>Outcome monitoring:</strong> the organization measures leakage, cycle time, rework, override rate, exception frequency, recovery yield, and compliance deviation after deployment.</li>
+</ul>
+<p>Insurance accountability cannot end at model accuracy. A coverage recommendation can be statistically plausible and contractually wrong. A severity estimate can be well calibrated and outside a user's reserve authority. A document extraction can be accurate and lack admissible provenance. Process and domain controls convert those failure modes into visible exceptions rather than silent state changes.</p>
+<hr />
+<h2 id="12-what-the-architecture-changes">12. What the Architecture Changes<a class="headerlink" href="#12-what-the-architecture-changes" title="Permanent link">&para;</a></h2>
+<p><strong>First, the unit of work is not automatically the domain object.</strong> An underwriting Work Record coordinates the creation of a policy. A claims Work Record coordinates obligations involving a claim and its related objects. The process instance and domain object may share a business identifier, but they carry different responsibilities.</p>
+<p><strong>Second, object segmentation determines agent scope.</strong> "Analyze the claim" grants no useful boundary. "Classify this document," "propose exposure types," "compare this loss fact with these policy provisions," and "recommend a reserve range" identify separate objects, evidence, permissions, outputs, and escalation rules.</p>
+<p><strong>Third, events provide the contract between lifecycles.</strong> A claim does not own payment settlement, and a policy does not own document classification. Events allow each domain to announce a committed fact while BPM correlates that fact to running work.</p>
+<p><strong>Fourth, process data gains value when it carries domain semantics.</strong> Activity timestamps support bottleneck analysis. Object identities, state transitions, decisions, provenance, and relationships support explanation, conformance, process redesign, and AI evaluation in business terms.</p>
+<p><strong>Fifth, AI discovery and AI execution require different governance.</strong> Discovery proposes the map from populations of evidence. Execution acts inside one Work Record. The former requires comparison, lineage, and expert validation; the latter requires task contracts, authorization, runtime controls, and durable history.</p>
+<p><strong>Sixth, process architecture makes AI measurable.</strong> The event history connects an AI recommendation or action to the human decision, committed domain transition, downstream exception, and final business outcome. The carrier can determine whether AI reduced first-notice-to-reserve time, increased rework, changed leakage, improved recovery identification, or shifted work into later exceptions.</p>
+<hr />
+<h2 id="13-limits-and-research-agenda">13. Limits and Research Agenda<a class="headerlink" href="#13-limits-and-research-agenda" title="Permanent link">&para;</a></h2>
+<p>The architecture remains a synthesis and illustrative insurance case, not an empirical evaluation. Carriers differ in product structure, jurisdiction, distribution model, platform boundaries, terminology, reserving practice, and claims authority. Each carrier must validate the proposed object map within its own operating context.</p>
+<p>Further work should test the method against real insurance artifacts and measure four questions: how accurately AI proposes object boundaries; how much expert effort validation saves; whether object-centric evidence improves discovered process quality; and whether domain-bounded agent tasks reduce exceptions compared with payload-centered automation. A useful evaluation should include incomplete logs, contradictory schemas, policy changes, legacy status codes, human work outside the platform, and objects that span multiple systems of record.</p>
+<hr />
+<h2 id="14-conclusion-the-modern-data-centric-view">14. Conclusion: The Modern Data-Centric View<a class="headerlink" href="#14-conclusion-the-modern-data-centric-view" title="Permanent link">&para;</a></h2>
+<p>The data-centric view no longer means moving more data into the process. It means giving process execution a precise relationship to the business objects it coordinates.</p>
+<p>The process model defines the Work Record; the running process instance carries it. That record preserves the identity, position, obligations, returned contributions, decisions, resulting domain events, and history of one business outcome [12]. Domain systems carry the authoritative objects whose state gives that outcome meaning. Events connect committed object changes to running work. Humans, services, and AI agents enter through bounded tasks and act with explicit authority.</p>
+<p>AI adds a new capability above this architecture. It can help discover the domain itself. It can compare evidence of how the organization names, changes, and coordinates its business objects. It can propose boundaries that application silos and inherited schemas have obscured. It can expose contradictions between documented policy, possible code paths, and actual operations.</p>
+<p>AI-assisted comparison of code, operational records, policies, and schemas may reduce the effort required to identify candidate domain boundaries, provided every proposal remains traceable and expert-validated. Generating a process diagram is useful. Finding the right objects, separating their lifecycles, and giving every task a trustworthy business context changes the architecture.</p>
+<p>The process tells the organization when work must happen. The domain object tells it what the work changes. Deterministic code once fixed that relationship before any instance ran; agentic AI resolves it while the work runs, which is exactly why the domain model must now be discovered, validated, and enforced rather than assumed. AI becomes dependable when it can participate in both records without confusing them.</p>
+<hr />
+<h2 id="references">References<a class="headerlink" href="#references" title="Permanent link">&para;</a></h2>
+<ol>
+<li>Gary Samuelson. "A Data-centric View on Traditional BPM." April 29, 2014. https://garysamuelson.com/blog/?p=1169</li>
+<li>Marlon Dumas, Marcello La Rosa, Jan Mendling, and Hajo A. Reijers. <em>Fundamentals of Business Process Management</em>. 2nd ed. Springer (2018).</li>
+<li>Mathias Weske. <em>Business Process Management: Concepts, Languages, Architectures</em>. 3rd ed. Springer (2019).</li>
+<li>Rui Henriques and Antonio Silva. "Object-Centered Process Modeling: Principles to Model Data-Intensive Systems." <em>Business Process Management Workshops</em> (2010).</li>
+<li>Wil van der Aalst, Mathias Weske, and Dolf Grünbauer. "Case Handling: A New Paradigm for Business Process Support." <em>Data &amp; Knowledge Engineering</em> 53 (2005).</li>
+<li>Vera Künzle and Manfred Reichert. "Towards Object-Aware Process Management Systems: Issues, Challenges, Benefits." <em>Enterprise, Business-Process and Information Systems Modeling</em>, LNBIP 29 (2009).</li>
+<li>Vera Künzle and Manfred Reichert. "PHILharmonicFlows: Towards a Framework for Object-Aware Process Management." <em>Journal of Software Maintenance and Evolution: Research and Practice</em> 23 (2011).</li>
+<li>Eric Evans. <em>Domain-Driven Design: Tackling Complexity in the Heart of Software</em>. Addison-Wesley (2003).</li>
+<li>Wil M. P. van der Aalst. <em>Process Mining: Data Science in Action</em>. 2nd ed. Springer (2016).</li>
+<li>Alessandro Berti, István Koren, Jan Niklas Adams, Gyunam Park, Benedikt Knopp, Nina Graves, Majid Rafiei, Lukas Liß, Leah Tacke genannt Unterberg, Yisong Zhang, Christopher Schwanen, Marco Pegoraro, and Wil M. P. van der Aalst. "OCEL 2.0 Specification." (2023). https://www.ocel-standard.org/2.0/</li>
+<li>Object Management Group. <em>Business Process Model and Notation (BPMN), Version 2.0.2</em>. OMG (2014).</li>
+<li>Gary Samuelson. "From Request to Record: Process Management Architecture with ProcessOS Acceleration." July 26, 2026. https://garysamuelson.github.io/agentic/from-request-to-record/</li>
+<li>IBM. "What Is Online Transactional Processing (OLTP)?" https://www.ibm.com/think/topics/oltp</li>
+<li>Chris Richardson. "Pattern: Saga." <em>Microservices.io</em>. https://microservices.io/patterns/data/saga.html</li>
+<li>Camunda. "Processes: Process Execution and Agent-Driven Steps." <em>Camunda 8.9 Documentation</em>. https://docs.camunda.io/docs/components/concepts/processes/</li>
+<li>Gary Samuelson. "Process-First AI: Dimensions of the Running Work Record." June 7, 2026. https://garysamuelson.github.io/agentic/process-first-ai-dimensions/</li>
+<li>Bill Curtis, Marc I. Kellner, and Jim Over. "Process Modeling." <em>Communications of the ACM</em> 35, no. 9 (1992): 75–90.</li>
+</ol>
+<hr />
+<p><em>© 2026 Gary Samuelson | CC BY-NC-ND 4.0 — Share freely with attribution. No commercial use. No derivatives without permission.</em></p>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://github.com/garysamuelson" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    </a>
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://linkedin.com/in/garysamuelson" target="_blank" rel="noopener" title="linkedin.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3M135.4 416H69V202.2h66.5V416zM102.2 96a38.5 38.5 0 1 1 0 77 38.5 38.5 0 1 1 0-77m282.1 320h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9z"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.top", "search.highlight", "search.suggest", "content.code.copy", "content.code.annotate"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+        <script src="https://unpkg.com/mermaid@11/dist/mermaid.min.js"></script>
+      
+        <script src="../../assets/javascripts/mermaid-init.js"></script>
+      
+    
+  </body>
+</html>

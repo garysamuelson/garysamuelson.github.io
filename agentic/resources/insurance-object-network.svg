@@ -1,0 +1,148 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 760" role="img" aria-labelledby="title desc">
+  <title id="title">Commercial property insurance as a network of domain objects</title>
+  <desc id="desc">An underwriting lifecycle flows from submission through policy term and renewal. The policy term connects to a claim network whose exposure, reserve, payment, document, investigation, and recovery objects retain separate identities, authorities, lifecycles, and events.</desc>
+  <defs>
+    <marker id="arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto">
+      <path d="M0,0 L8,4 L0,8 Z" fill="#52606d"/>
+    </marker>
+    <marker id="event-arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto">
+      <path d="M0,0 L8,4 L0,8 Z" fill="#0f766e"/>
+    </marker>
+    <style>
+      text { font-family: "Segoe UI", Arial, sans-serif; fill: #17212b; letter-spacing: 0; }
+      .title { font-size: 30px; font-weight: 700; }
+      .subtitle { font-size: 17px; fill: #52606d; }
+      .lane { font-size: 15px; font-weight: 700; letter-spacing: 1.5px; }
+      .node-title { font-size: 18px; font-weight: 700; }
+      .node-id { font-size: 14px; fill: #52606d; }
+      .node-owner { font-size: 13px; font-weight: 600; }
+      .event { font-size: 13px; fill: #0f766e; }
+      .flow { fill: none; stroke: #52606d; stroke-width: 2.5; marker-end: url(#arrow); }
+      .relation { fill: none; stroke: #0f766e; stroke-width: 2; stroke-dasharray: 7 6; marker-end: url(#event-arrow); }
+    </style>
+  </defs>
+
+  <rect width="1200" height="760" fill="#f7f8f5"/>
+  <path d="M0 0 H1200 V10 H0 Z" fill="#d97706"/>
+  <text class="title" x="60" y="62">One outcome, many authoritative objects</text>
+  <text class="subtitle" x="60" y="92">BPM coordinates the journey. Each object keeps its own identity, lifecycle, authority, and events.</text>
+
+  <text class="lane" x="60" y="142" fill="#9a3412">UNDERWRITING AND POLICY</text>
+  <line x1="60" y1="153" x2="1140" y2="153" stroke="#fed7aa" stroke-width="2"/>
+
+  <path class="flow" d="M212 218 H240"/>
+  <path class="flow" d="M392 218 H420"/>
+  <path class="flow" d="M572 218 H600"/>
+  <path class="flow" d="M752 218 H780"/>
+  <path class="flow" d="M932 218 H960"/>
+
+  <g transform="translate(60 172)">
+    <rect width="152" height="92" rx="6" fill="#fff7ed" stroke="#c2410c" stroke-width="2"/>
+    <text class="node-title" x="16" y="28">Submission</text>
+    <text class="node-id" x="16" y="50">submission ID</text>
+    <text class="node-owner" x="16" y="74" fill="#9a3412">intake</text>
+  </g>
+  <g transform="translate(240 172)">
+    <rect width="152" height="92" rx="6" fill="#fff7ed" stroke="#c2410c" stroke-width="2"/>
+    <text class="node-title" x="16" y="28">Application</text>
+    <text class="node-id" x="16" y="50">ID + version</text>
+    <text class="node-owner" x="16" y="74" fill="#9a3412">underwriting intake</text>
+  </g>
+  <g transform="translate(420 172)">
+    <rect width="152" height="92" rx="6" fill="#fff7ed" stroke="#c2410c" stroke-width="2"/>
+    <text class="node-title" x="16" y="28">Quote</text>
+    <text class="node-id" x="16" y="50">ID + version</text>
+    <text class="node-owner" x="16" y="74" fill="#9a3412">rating</text>
+  </g>
+  <g transform="translate(600 172)">
+    <rect width="152" height="92" rx="6" fill="#fff7ed" stroke="#c2410c" stroke-width="2"/>
+    <text class="node-title" x="16" y="28">Decision</text>
+    <text class="node-id" x="16" y="50">decision ID</text>
+    <text class="node-owner" x="16" y="74" fill="#9a3412">underwriting authority</text>
+  </g>
+  <g transform="translate(780 172)">
+    <rect width="152" height="92" rx="6" fill="#ecfdf5" stroke="#047857" stroke-width="3"/>
+    <text class="node-title" x="16" y="28">Policy Term</text>
+    <text class="node-id" x="16" y="50">policy no. + term</text>
+    <text class="node-owner" x="16" y="74" fill="#047857">policy administration</text>
+  </g>
+  <g transform="translate(960 172)">
+    <rect width="180" height="92" rx="6" fill="#fff7ed" stroke="#c2410c" stroke-width="2"/>
+    <text class="node-title" x="16" y="28">Renewal Offer</text>
+    <text class="node-id" x="16" y="50">offer ID</text>
+    <text class="node-owner" x="16" y="74" fill="#9a3412">renewal underwriting</text>
+  </g>
+
+  <text class="event" x="60" y="286">SubmissionReceived</text>
+  <text class="event" x="420" y="286">QuoteOffered</text>
+  <text class="event" x="780" y="286">PolicyIncepted</text>
+  <text class="event" x="1008" y="286">RenewalAccepted</text>
+
+  <text class="lane" x="60" y="342" fill="#0f4c5c">CLAIM AND RELATED LIFECYCLES</text>
+  <line x1="60" y1="353" x2="1140" y2="353" stroke="#bae6fd" stroke-width="2"/>
+  <path class="relation" d="M856 264 V326 H600 V382"/>
+  <text class="event" x="686" y="317">loss reported against applicable term</text>
+
+  <g transform="translate(495 382)">
+    <circle cx="105" cy="88" r="88" fill="#e0f2fe" stroke="#0369a1" stroke-width="3"/>
+    <text class="node-title" x="105" y="62" text-anchor="middle">Claim</text>
+    <text class="node-id" x="105" y="86" text-anchor="middle">claim number</text>
+    <text class="node-owner" x="105" y="112" text-anchor="middle" fill="#0369a1">claims administration</text>
+    <text class="event" x="105" y="138" text-anchor="middle">ClaimReported</text>
+  </g>
+
+  <path class="relation" d="M520 423 C440 370 360 375 300 414"/>
+  <path class="relation" d="M503 475 C405 475 330 500 280 548"/>
+  <path class="relation" d="M530 535 C440 595 390 620 310 626"/>
+  <path class="relation" d="M680 423 C760 370 840 375 900 414"/>
+  <path class="relation" d="M697 475 C795 475 870 500 920 548"/>
+  <path class="relation" d="M670 535 C760 595 810 620 890 626"/>
+
+  <g transform="translate(90 382)">
+    <rect width="210" height="94" rx="6" fill="#fef2f2" stroke="#b91c1c" stroke-width="2"/>
+    <text class="node-title" x="16" y="28">Exposure</text>
+    <text class="node-id" x="16" y="50">ID within claim</text>
+    <text class="node-owner" x="16" y="72" fill="#b91c1c">coverage disposition</text>
+    <text class="event" x="16" y="88">ExposureDispositioned</text>
+  </g>
+  <g transform="translate(70 518)">
+    <rect width="210" height="94" rx="6" fill="#fefce8" stroke="#a16207" stroke-width="2"/>
+    <text class="node-title" x="16" y="28">Reserve</text>
+    <text class="node-id" x="16" y="50">ID + category</text>
+    <text class="node-owner" x="16" y="72" fill="#a16207">financial control</text>
+    <text class="event" x="16" y="88">ReserveChanged</text>
+  </g>
+  <g transform="translate(100 642)">
+    <rect width="210" height="94" rx="6" fill="#f0fdf4" stroke="#15803d" stroke-width="2"/>
+    <text class="node-title" x="16" y="28">Payment</text>
+    <text class="node-id" x="16" y="50">payment ID</text>
+    <text class="node-owner" x="16" y="72" fill="#15803d">disbursement platform</text>
+    <text class="event" x="16" y="88">PaymentSettled</text>
+  </g>
+
+  <g transform="translate(900 382)">
+    <rect width="210" height="94" rx="6" fill="#f5f3ff" stroke="#6d28d9" stroke-width="2"/>
+    <text class="node-title" x="16" y="28">Document</text>
+    <text class="node-id" x="16" y="50">ID + version</text>
+    <text class="node-owner" x="16" y="72" fill="#6d28d9">records management</text>
+    <text class="event" x="16" y="88">RecordDeclared</text>
+  </g>
+  <g transform="translate(920 518)">
+    <rect width="210" height="94" rx="6" fill="#fdf2f8" stroke="#be185d" stroke-width="2"/>
+    <text class="node-title" x="16" y="28">Investigation</text>
+    <text class="node-id" x="16" y="50">investigation ID</text>
+    <text class="node-owner" x="16" y="72" fill="#be185d">special investigation</text>
+    <text class="event" x="16" y="88">FindingIssued</text>
+  </g>
+  <g transform="translate(890 642)">
+    <rect width="210" height="94" rx="6" fill="#f1f5f9" stroke="#475569" stroke-width="2"/>
+    <text class="node-title" x="16" y="28">Recovery</text>
+    <text class="node-id" x="16" y="50">recovery ID</text>
+    <text class="node-owner" x="16" y="72" fill="#475569">subrogation / salvage</text>
+    <text class="event" x="16" y="88">RecoveryCollected</text>
+  </g>
+
+  <rect x="430" y="624" width="340" height="84" rx="6" fill="#ffffff" stroke="#94a3b8" stroke-width="1.5"/>
+  <text class="node-title" x="600" y="654" text-anchor="middle">The relationships coordinate.</text>
+  <text class="subtitle" x="600" y="680" text-anchor="middle">They do not collapse the objects into one case payload.</text>
+</svg>
