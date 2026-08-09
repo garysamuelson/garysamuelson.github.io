@@ -1,0 +1,99 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 700" role="img" aria-labelledby="title desc">
+  <title id="title">Three iterative views inside a holistic BPM methodology</title>
+  <desc id="desc">Process-centric, application, and data-centric views surround one evolving architecture. Process exposes the need for objects, application reveals authority boundaries, and object state reshapes process.</desc>
+  <defs>
+    <marker id="blue-arrow" markerWidth="9" markerHeight="9" refX="8" refY="4.5" orient="auto">
+      <path d="M0,0 L9,4.5 L0,9 Z" fill="#1d4ed8"/>
+    </marker>
+    <marker id="orange-arrow" markerWidth="9" markerHeight="9" refX="8" refY="4.5" orient="auto">
+      <path d="M0,0 L9,4.5 L0,9 Z" fill="#c2410c"/>
+    </marker>
+    <marker id="teal-arrow" markerWidth="9" markerHeight="9" refX="8" refY="4.5" orient="auto">
+      <path d="M0,0 L9,4.5 L0,9 Z" fill="#0f766e"/>
+    </marker>
+    <style>
+      text { font-family: "Segoe UI", Arial, sans-serif; fill: #17212b; letter-spacing: 0; }
+      .title { font-size: 30px; font-weight: 700; }
+      .subtitle { font-size: 17px; fill: #52606d; }
+      .method { font-size: 14px; font-weight: 700; letter-spacing: 1.6px; }
+      .view { font-size: 22px; font-weight: 700; }
+      .body { font-size: 16px; }
+      .small { font-size: 14px; fill: #52606d; }
+      .center { font-size: 24px; font-weight: 700; }
+      .relation { font-size: 14px; font-weight: 650; }
+    </style>
+  </defs>
+
+  <rect width="1200" height="700" fill="#f8fafc"/>
+  <path d="M0 0 H1200 V10 H0 Z" fill="#0f766e"/>
+  <text class="title" x="60" y="62">Three views, one evolving architecture</text>
+  <text class="subtitle" x="60" y="92">The data-centric view completes and reshapes the process and application perspectives from within BPM.</text>
+
+  <rect x="42" y="124" width="1116" height="520" rx="34" fill="#ffffff" stroke="#94a3b8" stroke-width="2.5"/>
+  <text class="method" x="600" y="158" text-anchor="middle" fill="#475569">HOLISTIC BPM METHODOLOGY</text>
+
+  <path d="M600 348 C490 250 375 238 285 286" fill="none" stroke="#1d4ed8" stroke-width="3" marker-end="url(#blue-arrow)"/>
+  <path d="M600 348 C710 250 825 238 915 286" fill="none" stroke="#c2410c" stroke-width="3" marker-end="url(#orange-arrow)"/>
+  <path d="M600 372 C600 442 600 470 600 508" fill="none" stroke="#0f766e" stroke-width="3" marker-end="url(#teal-arrow)"/>
+
+  <g transform="translate(90 210)">
+    <path d="M42 0 H278 C301 0 320 19 320 42 V188 C320 211 301 230 278 230 H42 C19 230 0 211 0 188 V42 C0 19 19 0 42 0 Z" fill="#eff6ff" stroke="#1d4ed8" stroke-width="3"/>
+    <circle cx="42" cy="42" r="18" fill="#1d4ed8"/>
+    <path d="M34 42 H50 M42 34 V50" stroke="#ffffff" stroke-width="3" stroke-linecap="round"/>
+    <text class="view" x="72" y="49">Process-centric view</text>
+    <line x1="24" y1="74" x2="296" y2="74" stroke="#bfdbfe" stroke-width="2"/>
+    <text class="body" x="24" y="108">Work Record identity + position</text>
+    <text class="body" x="24" y="139">Obligations + contributions</text>
+    <text class="body" x="24" y="170">Decisions + outcome evidence</text>
+    <text class="small" x="24" y="207" fill="#1d4ed8">What effort produces value?</text>
+  </g>
+
+  <g transform="translate(790 210)">
+    <path d="M42 0 H278 C301 0 320 19 320 42 V188 C320 211 301 230 278 230 H42 C19 230 0 211 0 188 V42 C0 19 19 0 42 0 Z" fill="#fff7ed" stroke="#c2410c" stroke-width="3"/>
+    <circle cx="42" cy="42" r="18" fill="#c2410c"/>
+    <circle cx="37" cy="38" r="5" fill="#ffffff"/>
+    <circle cx="49" cy="47" r="5" fill="#ffffff"/>
+    <path d="M34 52 C36 46 45 44 51 50" fill="none" stroke="#ffffff" stroke-width="2"/>
+    <text class="view" x="72" y="49">Application view</text>
+    <line x1="24" y1="74" x2="296" y2="74" stroke="#fed7aa" stroke-width="2"/>
+    <text class="body" x="24" y="108">People and roles</text>
+    <text class="body" x="24" y="139">Systems and services</text>
+    <text class="body" x="24" y="170">Capabilities and integration</text>
+    <text class="small" x="24" y="207" fill="#c2410c">Who performs and owns it?</text>
+  </g>
+
+  <g transform="translate(440 456)">
+    <path d="M42 0 H278 C301 0 320 19 320 42 V132 C320 155 301 174 278 174 H42 C19 174 0 155 0 132 V42 C0 19 19 0 42 0 Z" fill="#ecfdf5" stroke="#0f766e" stroke-width="3"/>
+    <circle cx="42" cy="42" r="18" fill="#0f766e"/>
+    <circle cx="36" cy="38" r="4" fill="#ffffff"/>
+    <circle cx="49" cy="35" r="4" fill="#ffffff"/>
+    <circle cx="46" cy="50" r="4" fill="#ffffff"/>
+    <path d="M39 39 L45 36 M38 42 L44 48 M48 39 L47 46" stroke="#ffffff" stroke-width="2"/>
+    <text class="view" x="72" y="49">Data-centric view</text>
+    <line x1="24" y1="74" x2="296" y2="74" stroke="#99f6e4" stroke-width="2"/>
+    <text class="body" x="24" y="106">Domain-object identity + state</text>
+    <text class="body" x="24" y="135">Lifecycle + invariants + events</text>
+    <text class="small" x="24" y="159" fill="#0f766e">What business truth persists?</text>
+  </g>
+
+  <g transform="translate(465 248)">
+    <circle cx="135" cy="110" r="108" fill="#ffffff" stroke="#334155" stroke-width="3"/>
+    <circle cx="135" cy="110" r="91" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="1.5"/>
+    <text class="center" x="135" y="87" text-anchor="middle">One evolving</text>
+    <text class="center" x="135" y="117" text-anchor="middle">business</text>
+    <text class="center" x="135" y="147" text-anchor="middle">architecture</text>
+  </g>
+
+  <path d="M305 442 C330 520 366 553 428 558" fill="none" stroke="#1d4ed8" stroke-width="2.5" marker-end="url(#blue-arrow)"/>
+  <text class="relation" x="235" y="506" fill="#1d4ed8">process exposes the</text>
+  <text class="relation" x="235" y="526" fill="#1d4ed8">need for an object</text>
+
+  <path d="M895 442 C870 520 834 553 772 558" fill="none" stroke="#c2410c" stroke-width="2.5" marker-end="url(#orange-arrow)"/>
+  <text class="relation" x="965" y="506" text-anchor="end" fill="#c2410c">application reveals</text>
+  <text class="relation" x="965" y="526" text-anchor="end" fill="#c2410c">the authority boundary</text>
+
+  <path d="M440 586 C335 628 188 606 168 458" fill="none" stroke="#0f766e" stroke-width="2.5" stroke-dasharray="8 6" marker-end="url(#teal-arrow)"/>
+  <text class="relation" x="272" y="617" text-anchor="middle" fill="#0f766e">object state reshapes the process</text>
+
+  <text class="subtitle" x="600" y="676" text-anchor="middle">No view finishes first. Each view makes the others more complete.</text>
+</svg>

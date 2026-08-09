@@ -10,7 +10,29 @@ I've built production AI systems in emergency medicine, real-time ML platforms a
 
 ---
 
-## Latest: From Request to Record — Process Management Architecture with ProcessOS Acceleration
+## Latest: Domain Objects Before Process Models
+
+A process model tells you *how* work moves. It cannot tell you *what* the work is about. This paper places the data-centric view inside a holistic BPM methodology, separates the authoritative domain object from the Work Record, and shows why AI-assisted discovery — the ProcessOS form of AI — is the necessary ingredient going forward: it finds and segments the domain objects that agentic execution depends on.
+
+<div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap:1.5rem; margin-bottom:2rem;">
+
+<div markdown style="border:1px solid var(--md-default-fg-color--lightest); border-radius:8px; overflow:hidden;">
+<a href="agentic/domain-objects-before-process-models/">
+  <img src="assets/images/domain_objects_banner_v1.png" alt="Domain Objects Before Process Models" style="width:100%; display:block;" />
+</a>
+<div style="padding:1rem;">
+<small><strong>New · August 9, 2026</strong> · Data-Centric BPM · Domain-Driven Design · Agentic AI · ProcessOS · Insurance</small><br/>
+<strong><a href="agentic/domain-objects-before-process-models/">Domain Objects Before Process Models</a></strong>
+<p>Deterministic code fixed the action-to-object binding before any instance ran; an agent resolves it live. So the domain model must be discovered, validated, and enforced — not assumed. A full commercial-insurance journey shows where the Work Record ends and the authoritative domain begins, and where ProcessOS-style discovery finds the objects first.</p>
+<a href="agentic/domain-objects-before-process-models/">Read →</a>
+</div>
+</div>
+
+</div>
+
+---
+
+## Previously: From Request to Record — Process Management Architecture with ProcessOS Acceleration
 
 The application request ends. The business commitment does not. This paper traces the Camunda architecture that carries work beyond the original interaction and shows how ProcessOS accelerates promotion from application-embedded coordination to an explicit Process Application.
 

@@ -1,0 +1,112 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" role="img" aria-labelledby="title desc">
+  <title id="title">A domain object is not a payload</title>
+  <desc id="desc">Left, the anti-pattern: the full domain object is copied into the process instance as variables, producing a stale snapshot, a second system of record, competing versions of truth, bloated payload, and blurred ownership. Right, the best practice: the Work Record holds only a thin coordination slice — a reference and correlation key, process state, decision result, event fact, and task contract — while the claims system remains authoritative, enforces invariants, commits transitions, and emits events. The task reads authorized detail on demand and commands a transition; the domain validates, commits, and emits the event.</desc>
+  <defs>
+    <marker id="red-arrow" markerWidth="9" markerHeight="9" refX="8" refY="4.5" orient="auto">
+      <path d="M0,0 L9,4.5 L0,9 Z" fill="#b91c1c"/>
+    </marker>
+    <marker id="blue-arrow" markerWidth="9" markerHeight="9" refX="8" refY="4.5" orient="auto">
+      <path d="M0,0 L9,4.5 L0,9 Z" fill="#1d4ed8"/>
+    </marker>
+    <marker id="teal-arrow" markerWidth="9" markerHeight="9" refX="8" refY="4.5" orient="auto">
+      <path d="M0,0 L9,4.5 L0,9 Z" fill="#047857"/>
+    </marker>
+    <style>
+      text { font-family: "Segoe UI", Arial, sans-serif; fill: #17212b; letter-spacing: 0; }
+      .title { font-size: 30px; font-weight: 700; }
+      .subtitle { font-size: 17px; fill: #52606d; }
+      .phead { font-size: 19px; font-weight: 700; }
+      .psub { font-size: 14px; }
+      .card { font-size: 15px; font-weight: 700; }
+      .field { font-size: 13px; fill: #334155; }
+      .chip { font-size: 14px; font-weight: 600; }
+      .slice { font-size: 14px; fill: #1e3a8a; }
+      .lbl { font-size: 13px; }
+      .note { font-size: 14px; font-style: italic; fill: #475569; }
+      .caption { font-size: 16px; font-weight: 700; fill: #334155; }
+      .small { font-size: 13px; fill: #52606d; }
+    </style>
+  </defs>
+
+  <rect width="1200" height="800" fill="#f8fafc"/>
+  <rect x="0" y="0" width="600" height="10" fill="#b91c1c"/>
+  <rect x="600" y="0" width="600" height="10" fill="#047857"/>
+  <text class="title" x="60" y="60">A domain object is not a payload</text>
+  <text class="subtitle" x="60" y="90">Carry a reference and a thin coordination slice — not a copy of the business truth.</text>
+
+  <!-- LEFT: anti-pattern -->
+  <rect x="40" y="112" width="544" height="632" rx="16" fill="#fef2f2" stroke="#b91c1c" stroke-width="2.5"/>
+  <text class="phead" x="64" y="150" fill="#b91c1c">✗  ANTI-PATTERN</text>
+  <text class="psub" x="64" y="174" fill="#991b1b">The domain object is copied into the process as payload.</text>
+
+  <rect x="316" y="196" width="232" height="80" rx="8" fill="#ffffff" stroke="#94a3b8" stroke-width="2"/>
+  <text class="card" x="332" y="224">Claims system</text>
+  <text class="small" x="332" y="246">authoritative · full Claim</text>
+  <rect x="500" y="212" width="30" height="38" rx="3" fill="#eef2f7" stroke="#94a3b8"/>
+  <rect x="494" y="206" width="30" height="38" rx="3" fill="#ffffff" stroke="#94a3b8"/>
+
+  <path d="M432 276 L372 314" fill="none" stroke="#b91c1c" stroke-width="3" marker-end="url(#red-arrow)"/>
+  <text class="small" x="470" y="300" fill="#b91c1c">copies the full object</text>
+
+  <rect x="64" y="316" width="480" height="266" rx="8" fill="#ffffff" stroke="#b91c1c" stroke-width="2.5"/>
+  <text class="card" x="88" y="344">Process instance — variables</text>
+  <line x1="88" y1="356" x2="520" y2="356" stroke="#fecaca" stroke-width="2"/>
+  <text class="field" x="88" y="384">claimNumber</text>
+  <text class="field" x="88" y="410">policyRef</text>
+  <text class="field" x="88" y="436">coverages[]</text>
+  <text class="field" x="88" y="462">deductibles[]</text>
+  <text class="field" x="88" y="488">payments[]</text>
+  <text class="field" x="88" y="514">parties[]</text>
+  <text class="field" x="312" y="384">insuredName</text>
+  <text class="field" x="312" y="410">status</text>
+  <text class="field" x="312" y="436">limits[]</text>
+  <text class="field" x="312" y="462">reserves[]</text>
+  <text class="field" x="312" y="488">documents[]</text>
+  <text class="field" x="312" y="514">history[]</text>
+  <text class="small" x="88" y="544">… and more — the whole Claim, held as process variables.</text>
+
+  <g>
+    <rect x="64" y="598" width="480" height="30" rx="15" fill="#fee2e2" stroke="#ef4444" stroke-width="1.5"/>
+    <text class="chip" x="80" y="618" fill="#991b1b">Stale snapshot — the domain has already moved on</text>
+    <rect x="64" y="634" width="480" height="30" rx="15" fill="#fee2e2" stroke="#ef4444" stroke-width="1.5"/>
+    <text class="chip" x="80" y="654" fill="#991b1b">A second system of record · competing versions of truth</text>
+    <rect x="64" y="670" width="480" height="30" rx="15" fill="#fee2e2" stroke="#ef4444" stroke-width="1.5"/>
+    <text class="chip" x="80" y="690" fill="#991b1b">Bloated payload · blurred ownership · brittle coordination</text>
+  </g>
+
+  <!-- RIGHT: best practice -->
+  <rect x="616" y="112" width="544" height="632" rx="16" fill="#f0fdf4" stroke="#047857" stroke-width="2.5"/>
+  <text class="phead" x="640" y="150" fill="#047857">✓  BEST PRACTICE</text>
+  <text class="psub" x="640" y="174" fill="#065f46">Reference plus a thin coordination slice; the domain stays authoritative.</text>
+
+  <rect x="656" y="200" width="464" height="176" rx="8" fill="#eff6ff" stroke="#1d4ed8" stroke-width="2.5"/>
+  <text class="card" x="676" y="230" fill="#1e3a8a">Work Record — process instance</text>
+  <line x1="676" y1="242" x2="1100" y2="242" stroke="#bfdbfe" stroke-width="2"/>
+  <text class="slice" x="676" y="270">•  claimRef · correlation key</text>
+  <text class="slice" x="676" y="294">•  process state — currentTask, waitingFor</text>
+  <text class="slice" x="676" y="318">•  decision result + confidence</text>
+  <text class="slice" x="676" y="342">•  event fact + timestamp</text>
+  <text class="slice" x="676" y="366">•  task input / output contract</text>
+
+  <path d="M812 376 V466" fill="none" stroke="#1d4ed8" stroke-width="2.5" marker-end="url(#blue-arrow)"/>
+  <text class="lbl" x="798" y="410" text-anchor="end" fill="#1e3a8a">Task reads on demand</text>
+  <text class="lbl" x="798" y="428" text-anchor="end" fill="#1e3a8a">and commands a transition</text>
+
+  <path d="M948 466 V376" fill="none" stroke="#047857" stroke-width="2.5" marker-end="url(#teal-arrow)"/>
+  <text class="lbl" x="964" y="410" fill="#065f46">Domain validates, commits,</text>
+  <text class="lbl" x="964" y="428" fill="#065f46">and emits the event</text>
+
+  <rect x="656" y="470" width="464" height="150" rx="8" fill="#ecfdf5" stroke="#047857" stroke-width="3"/>
+  <text class="card" x="676" y="500" fill="#065f46">Claims system — authoritative</text>
+  <line x1="676" y1="512" x2="1100" y2="512" stroke="#99f6e4" stroke-width="2"/>
+  <text class="slice" x="676" y="540" fill="#065f46">Owns the full Claim · enforces invariants</text>
+  <text class="slice" x="676" y="564" fill="#065f46">Commits transitions · emits business events</text>
+  <text class="slice" x="676" y="588" fill="#065f46">The only system of record for the object</text>
+  <rect x="1066" y="524" width="30" height="38" rx="3" fill="#d1fae5" stroke="#047857"/>
+  <rect x="1060" y="518" width="30" height="38" rx="3" fill="#ffffff" stroke="#047857"/>
+
+  <text class="note" x="888" y="656" text-anchor="middle">An AI worker gets bounded context for its task and returns a structured result —</text>
+  <text class="note" x="888" y="676" text-anchor="middle">never a copy of the object, never the system of record.</text>
+
+  <text class="caption" x="600" y="778" text-anchor="middle">The domain system owns the object and its invariants. The Work Record owns the obligation and the references. Neither becomes the other's database.</text>
+</svg>

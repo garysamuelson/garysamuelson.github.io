@@ -1,0 +1,100 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 640" role="img" aria-labelledby="title desc">
+  <title id="title">Three state boundaries in agentic process architecture</title>
+  <desc id="desc">Authoritative domain objects preserve committed business truth, the durable BPM Work Record preserves obligations and value-producing contributions, and transient agent runtime state remains bounded. Commands flow to domain services, committed events return to the Work Record, and task contracts exchange inputs and results with an AI agent.</desc>
+  <defs>
+    <marker id="arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto">
+      <path d="M0,0 L8,4 L0,8 Z" fill="#52606d"/>
+    </marker>
+    <marker id="teal-arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto">
+      <path d="M0,0 L8,4 L0,8 Z" fill="#0f766e"/>
+    </marker>
+    <style>
+      text { font-family: "Segoe UI", Arial, sans-serif; fill: #17212b; letter-spacing: 0; }
+      .title { font-size: 30px; font-weight: 700; }
+      .subtitle { font-size: 17px; fill: #52606d; }
+      .layer { font-size: 22px; font-weight: 700; }
+      .owner { font-size: 14px; font-weight: 700; letter-spacing: 1.1px; }
+      .body { font-size: 16px; }
+      .small { font-size: 14px; fill: #52606d; }
+      .flow { fill: none; stroke: #52606d; stroke-width: 2.5; marker-end: url(#arrow); }
+      .event { fill: none; stroke: #0f766e; stroke-width: 2.5; stroke-dasharray: 8 6; marker-end: url(#teal-arrow); }
+    </style>
+  </defs>
+
+  <rect width="1200" height="640" fill="#f8fafc"/>
+  <path d="M0 0 H1200 V10 H0 Z" fill="#1d4ed8"/>
+  <text class="title" x="60" y="62">Correlation without collapse</text>
+  <text class="subtitle" x="60" y="92">Domains commit business truth. The Work Record preserves obligations and contributions. AI supplies bounded cognition.</text>
+
+  <g transform="translate(60 152)">
+    <rect width="315" height="378" rx="6" fill="#ecfdf5" stroke="#047857" stroke-width="3"/>
+    <text class="owner" x="24" y="34" fill="#047857">AUTHORITATIVE DOMAIN SYSTEMS</text>
+    <text class="layer" x="24" y="72">Domain-object state</text>
+    <g transform="translate(24 104)">
+      <rect width="267" height="62" rx="6" fill="#ffffff" stroke="#34d399" stroke-width="1.5"/>
+      <text class="body" x="18" y="26">Policy Term</text>
+      <text class="small" x="18" y="48">InForce</text>
+    </g>
+    <g transform="translate(24 181)">
+      <rect width="267" height="62" rx="6" fill="#ffffff" stroke="#34d399" stroke-width="1.5"/>
+      <text class="body" x="18" y="26">Exposure</text>
+      <text class="small" x="18" y="48">Accepted</text>
+    </g>
+    <g transform="translate(24 258)">
+      <rect width="267" height="62" rx="6" fill="#ffffff" stroke="#34d399" stroke-width="1.5"/>
+      <text class="body" x="18" y="26">Payment</text>
+      <text class="small" x="18" y="48">Settled</text>
+    </g>
+    <text class="small" x="24" y="338">Owns OLTP transactions</text>
+    <text class="small" x="24" y="360">Enforces invariants and authority</text>
+  </g>
+
+  <g transform="translate(443 128)">
+    <rect width="315" height="426" rx="6" fill="#eff6ff" stroke="#1d4ed8" stroke-width="3"/>
+    <text class="owner" x="24" y="34" fill="#1d4ed8">PROCESS ENGINE</text>
+    <text class="layer" x="24" y="72">Durable Work Record</text>
+    <line x1="54" y1="118" x2="54" y2="332" stroke="#93c5fd" stroke-width="6"/>
+    <circle cx="54" cy="134" r="12" fill="#1d4ed8"/>
+    <circle cx="54" cy="205" r="12" fill="#1d4ed8"/>
+    <circle cx="54" cy="276" r="12" fill="#1d4ed8"/>
+    <circle cx="54" cy="332" r="12" fill="#1d4ed8"/>
+    <text class="body" x="84" y="140">Assigned obligation</text>
+    <text class="body" x="84" y="211">Contribution accepted or rejected</text>
+    <text class="body" x="84" y="282">Decision + authorization</text>
+    <text class="body" x="84" y="338">Domain event + completion history</text>
+    <text class="small" x="24" y="386">Carries the commitment between</text>
+    <text class="small" x="24" y="408">local transactions and wait states</text>
+  </g>
+
+  <g transform="translate(826 152)">
+    <rect width="315" height="378" rx="6" fill="#fff7ed" stroke="#c2410c" stroke-width="3" stroke-dasharray="10 7"/>
+    <text class="owner" x="24" y="34" fill="#c2410c">BOUNDED AI RUNTIME</text>
+    <text class="layer" x="24" y="72">Transient agent state</text>
+    <g transform="translate(24 110)">
+      <circle cx="28" cy="24" r="22" fill="#ffedd5" stroke="#ea580c" stroke-width="2"/>
+      <text class="body" x="64" y="30">Current plan</text>
+    </g>
+    <g transform="translate(24 174)">
+      <circle cx="28" cy="24" r="22" fill="#ffedd5" stroke="#ea580c" stroke-width="2"/>
+      <text class="body" x="64" y="30">In-flight tool calls</text>
+    </g>
+    <g transform="translate(24 238)">
+      <circle cx="28" cy="24" r="22" fill="#ffedd5" stroke="#ea580c" stroke-width="2"/>
+      <text class="body" x="64" y="30">Working context + retries</text>
+    </g>
+    <text class="small" x="24" y="338">Ends when the bounded task ends</text>
+    <text class="small" x="24" y="360">or reaches an escalation boundary</text>
+  </g>
+
+  <path class="flow" d="M443 252 H386"/>
+  <text class="small" x="414" y="235" text-anchor="middle">command</text>
+  <path class="event" d="M375 382 H432"/>
+  <text class="small" x="404" y="407" text-anchor="middle" fill="#0f766e">committed event</text>
+
+  <path class="flow" d="M758 252 H815"/>
+  <text class="small" x="786" y="235" text-anchor="middle">task contract</text>
+  <path class="event" d="M826 382 H769"/>
+  <text class="small" x="798" y="407" text-anchor="middle" fill="#0f766e">result + provenance</text>
+
+  <text class="subtitle" x="600" y="602" text-anchor="middle">Correlate the records. Keep one authority for every fact.</text>
+</svg>

@@ -1,0 +1,113 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 820" role="img" aria-labelledby="title desc">
+  <title id="title">How work moves is not what the work is about</title>
+  <desc id="desc">A process model formally specifies control flow: sequence, routing, synchronization, waiting, and completion. The same flow relabels as an insurance claim or a lending application, proving the subject is not encoded in the shape. What the work is about — identity, states, invariants, ownership, and relationships — lives in the domain model, and control flow cannot answer questions about it.</desc>
+  <defs>
+    <marker id="slate-arrow" markerWidth="9" markerHeight="9" refX="8" refY="4.5" orient="auto">
+      <path d="M0,0 L9,4.5 L0,9 Z" fill="#475569"/>
+    </marker>
+    <marker id="teal-arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto">
+      <path d="M0,0 L8,4 L0,8 Z" fill="#34d399"/>
+    </marker>
+    <marker id="blue-arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto">
+      <path d="M0,0 L8,4 L0,8 Z" fill="#93c5fd"/>
+    </marker>
+    <style>
+      text { font-family: "Segoe UI", Arial, sans-serif; fill: #17212b; letter-spacing: 0; }
+      .title { font-size: 30px; font-weight: 700; }
+      .subtitle { font-size: 17px; fill: #52606d; }
+      .section { font-size: 15px; font-weight: 700; letter-spacing: 1.3px; fill: #475569; }
+      .node { font-size: 15px; font-weight: 600; }
+      .body { font-size: 15px; }
+      .small { font-size: 14px; fill: #52606d; }
+      .lane { font-size: 13px; font-weight: 700; letter-spacing: 1px; fill: #475569; }
+      .facet { font-size: 15px; }
+      .q { font-size: 15px; }
+      .caption { font-size: 16px; font-weight: 700; fill: #334155; }
+      .seq { fill: none; stroke: #475569; stroke-width: 2.5; marker-end: url(#slate-arrow); }
+    </style>
+  </defs>
+
+  <rect width="1200" height="820" fill="#f8fafc"/>
+  <path d="M0 0 H1200 V10 H0 Z" fill="#334155"/>
+  <text class="title" x="60" y="60">How work moves is not what the work is about</text>
+  <text class="subtitle" x="60" y="90">The flow formally specifies the verbs. The nouns it acts on live in the domain model.</text>
+
+  <!-- Section A: the process flow -->
+  <text class="section" x="60" y="140">PROCESS MODEL — FORMALLY SPECIFIES HOW WORK MOVES</text>
+
+  <circle cx="100" cy="212" r="22" fill="#e2e8f0" stroke="#475569" stroke-width="2.5"/>
+  <path class="seq" d="M122 212 H148"/>
+  <rect x="150" y="188" width="140" height="48" rx="8" fill="#f1f5f9" stroke="#475569" stroke-width="2"/>
+  <text class="node" x="220" y="217" text-anchor="middle">Receive</text>
+  <path class="seq" d="M290 212 H328"/>
+  <rect x="330" y="188" width="140" height="48" rx="8" fill="#f1f5f9" stroke="#475569" stroke-width="2"/>
+  <text class="node" x="400" y="217" text-anchor="middle">Review</text>
+  <path class="seq" d="M470 212 H532"/>
+  <polygon points="534,212 560,186 586,212 560,238" fill="#f8fafc" stroke="#475569" stroke-width="2"/>
+  <path class="seq" d="M586 212 H626"/>
+  <rect x="628" y="188" width="140" height="48" rx="8" fill="#f1f5f9" stroke="#475569" stroke-width="2"/>
+  <text class="node" x="698" y="217" text-anchor="middle">Record</text>
+  <path class="seq" d="M768 212 H806"/>
+  <rect x="808" y="188" width="140" height="48" rx="8" fill="#f1f5f9" stroke="#475569" stroke-width="2"/>
+  <text class="node" x="878" y="217" text-anchor="middle">Close</text>
+  <path class="seq" d="M948 212 H1006"/>
+  <circle cx="1030" cy="212" r="22" fill="#e2e8f0" stroke="#475569" stroke-width="3"/>
+  <circle cx="1030" cy="212" r="15" fill="none" stroke="#475569" stroke-width="2"/>
+  <path d="M560 238 V254" fill="none" stroke="#94a3b8" stroke-width="2" marker-end="url(#slate-arrow)"/>
+  <text class="small" x="560" y="272" text-anchor="middle">routes on condition</text>
+
+  <text class="small" x="60" y="296">Formally specified: sequence · routing · synchronization · waiting · completion.</text>
+
+  <line x1="40" y1="314" x2="1160" y2="314" stroke="#e2e8f0" stroke-width="2"/>
+
+  <!-- Section B: same shape, two businesses -->
+  <text class="section" x="60" y="344">THE SAME SHAPE, TWO DIFFERENT BUSINESSES</text>
+
+  <text class="lane" x="60" y="368" fill="#047857">INSURANCE READING</text>
+  <rect x="60" y="376" width="1080" height="54" rx="8" fill="#ecfdf5" stroke="#047857" stroke-width="2"/>
+  <line x1="116" y1="416" x2="1012" y2="416" stroke="#34d399" stroke-width="1.5" marker-end="url(#teal-arrow)"/>
+  <circle cx="100" cy="403" r="9" fill="#047857"/>
+  <text class="body" x="220" y="400" text-anchor="middle">Loss reported</text>
+  <text class="body" x="400" y="400" text-anchor="middle">Assess coverage</text>
+  <text class="body" x="560" y="400" text-anchor="middle">Coverage?</text>
+  <text class="body" x="698" y="400" text-anchor="middle">Post reserve</text>
+  <text class="body" x="878" y="400" text-anchor="middle">Close claim</text>
+  <circle cx="1030" cy="403" r="9" fill="#ecfdf5" stroke="#047857" stroke-width="2.5"/>
+
+  <text class="lane" x="60" y="454" fill="#1d4ed8">LENDING READING</text>
+  <rect x="60" y="462" width="1080" height="54" rx="8" fill="#eff6ff" stroke="#1d4ed8" stroke-width="2"/>
+  <line x1="116" y1="502" x2="1012" y2="502" stroke="#93c5fd" stroke-width="1.5" marker-end="url(#blue-arrow)"/>
+  <circle cx="100" cy="489" r="9" fill="#1d4ed8"/>
+  <text class="body" x="220" y="486" text-anchor="middle">Application in</text>
+  <text class="body" x="400" y="486" text-anchor="middle">Underwrite</text>
+  <text class="body" x="560" y="486" text-anchor="middle">Approve?</text>
+  <text class="body" x="698" y="486" text-anchor="middle">Book loan</text>
+  <text class="body" x="878" y="486" text-anchor="middle">Close file</text>
+  <circle cx="1030" cy="489" r="9" fill="#eff6ff" stroke="#1d4ed8" stroke-width="2.5"/>
+
+  <text class="small" x="60" y="544">Strip out the labels and the diagram is identical. The subject is not in the shape.</text>
+
+  <line x1="40" y1="562" x2="1160" y2="562" stroke="#e2e8f0" stroke-width="2"/>
+
+  <!-- Section C: what the work is about -->
+  <text class="section" x="60" y="592">WHAT THE WORK IS ABOUT — THE DOMAIN MODEL, NOT THE FLOW</text>
+
+  <rect x="60" y="608" width="380" height="176" rx="8" fill="#ffffff" stroke="#047857" stroke-width="3"/>
+  <text class="node" x="80" y="638" font-size="17">Domain object: Claim</text>
+  <line x1="80" y1="650" x2="420" y2="650" stroke="#99f6e4" stroke-width="2"/>
+  <text class="facet" x="80" y="678">Identity — this specific claim</text>
+  <text class="facet" x="80" y="704">States — Reported → Open → Closed</text>
+  <text class="facet" x="80" y="730">Invariants — no payment after denial</text>
+  <text class="facet" x="80" y="756">Ownership — the claims domain</text>
+  <text class="facet" x="80" y="782">Relationships — Policy · Exposure · Payment</text>
+
+  <rect x="470" y="608" width="670" height="176" rx="8" fill="#f8fafc" stroke="#94a3b8" stroke-width="2"/>
+  <text class="node" x="492" y="638" font-size="17" fill="#334155">Ask the flow — it cannot answer:</text>
+  <line x1="492" y1="650" x2="1118" y2="650" stroke="#e2e8f0" stroke-width="2"/>
+  <text class="q" x="492" y="680">• What must always be true of a claim?</text>
+  <text class="q" x="492" y="708">• Who owns the reserve amount?</text>
+  <text class="q" x="492" y="736">• Is “Reported → Bound” a valid move?</text>
+  <text class="q" x="492" y="764">• What evidence must survive the decision?</text>
+
+  <text class="caption" x="600" y="810" text-anchor="middle">A process model owns the verbs. The domain model owns the nouns. Understanding the work needs both.</text>
+</svg>
