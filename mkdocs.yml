@@ -84,6 +84,7 @@ extra:
 
 nav:
   - Home: index.md
+  - "The Provenance Divide": agentic/provenance_devide.md
   - "Domain Objects Before Process Models": agentic/domain-objects-before-process-models.md
   - "From Request to Record": agentic/from-request-to-record.md
   - "Work Record": agentic/work-record-is-bpm-task.md
