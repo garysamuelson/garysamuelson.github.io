@@ -1,0 +1,524 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   width="1200"
+   height="630"
+   viewBox="0 0 1200 630"
+   font-family="Calibri, Segoe UI, Arial, sans-serif"
+   version="1.1"
+   id="svg34"
+   sodipodi:docname="archaeology_vs_judgment.svg"
+   inkscape:version="1.4.4 (dcaf3e7, 2026-05-05)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview34"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:zoom="1.3188103"
+     inkscape:cx="523.57797"
+     inkscape:cy="213.44996"
+     inkscape:window-width="1922"
+     inkscape:window-height="1351"
+     inkscape:window-x="140"
+     inkscape:window-y="-9"
+     inkscape:window-maximized="0"
+     inkscape:current-layer="svg34" />
+  <defs
+     id="defs3">
+    <linearGradient
+       id="gaugeBody2"
+       x1="0"
+       y1="0"
+       x2="0"
+       y2="1">
+      <stop
+         offset="0"
+         stop-color="#f2b134"
+         id="stop1" />
+      <stop
+         offset="1"
+         stop-color="#c9862b"
+         id="stop2" />
+    </linearGradient>
+    <marker
+       id="arrowGold2"
+       viewBox="0 0 10 10"
+       refX="8"
+       refY="5"
+       markerWidth="7"
+       markerHeight="7"
+       orient="auto-start-reverse">
+      <path
+         d="M0,0 L10,5 L0,10 z"
+         fill="#ffd98a"
+         id="path2" />
+    </marker>
+    <marker
+       id="arrowMuted2"
+       viewBox="0 0 10 10"
+       refX="8"
+       refY="5"
+       markerWidth="6"
+       markerHeight="6"
+       orient="auto-start-reverse">
+      <path
+         d="M0,0 L10,5 L0,10 z"
+         fill="#8fa6b8"
+         id="path3" />
+    </marker>
+    <style
+       id="style3">
+      .title { font-size: 36px; font-weight: 700; fill: #ffffff; letter-spacing: 0.4px; }
+      .subtitle { font-size: 18px; fill: #b9d4e6; }
+      .panel-label { font-size: 19px; font-weight: 700; fill: #ffffff; }
+      .panel-label-warm { font-size: 19px; font-weight: 700; fill: #ffd98a; }
+      .panel-sub { font-size: 14.5px; fill: #8fa6b8; font-style: italic; }
+      .panel-sub-warm { font-size: 14.5px; fill: #cfdce8; font-style: italic; }
+      .small { font-size: 14.5px; fill: #aebfce; }
+      .small-warm { font-size: 14.5px; fill: #dceefc; }
+      .tiny { font-size: 11.5px; fill: #b9c6d4; }
+      .tiny-warm { font-size: 11.5px; font-weight: 700; fill: #0b1d2b; }
+      .badge-label { font-size: 14px; font-weight: 700; fill: #0b1d2b; }
+      .callout { font-size: 19px; font-weight: 700; fill: #ffd98a; }
+    </style>
+  </defs>
+  <!-- Background -->
+  <rect
+     width="1200"
+     height="630"
+     fill="#0b1d2b"
+     id="rect3" />
+  <!-- Titles -->
+  <text
+     x="600"
+     y="48"
+     text-anchor="middle"
+     class="title"
+     id="text3">Process Archeology</text>
+  <text
+     x="600"
+     y="76"
+     text-anchor="middle"
+     class="subtitle"
+     id="text4">AI relieves the archaeology. Judgment stays human.</text>
+  <!-- ============ LEFT PANEL — BEFORE FORM FOUR ============ -->
+  <rect
+     x="70"
+     y="108"
+     width="490"
+     height="452"
+     rx="14"
+     fill="#10202e"
+     opacity="0.55"
+     stroke="#24384a"
+     stroke-width="1.5"
+     id="rect4" />
+  <text
+     x="315"
+     y="146"
+     text-anchor="middle"
+     class="panel-label"
+     id="text5">BEFORE FORM FOUR</text>
+  <text
+     x="315"
+     y="168"
+     text-anchor="middle"
+     class="panel-sub"
+     id="text6">Archaeology</text>
+  <!-- scattered fragment / case-file icons -->
+  <g
+     fill="#3a4550"
+     stroke="#5c6871"
+     stroke-width="1.3"
+     id="g11">
+    <rect
+       x="360"
+       y="195"
+       width="36"
+       height="25"
+       rx="3"
+       transform="rotate(-16 378 207)"
+       id="rect6" />
+    <rect
+       x="440"
+       y="220"
+       width="36"
+       height="25"
+       rx="3"
+       transform="rotate(11 458 232)"
+       id="rect7" />
+    <rect
+       x="380"
+       y="270"
+       width="36"
+       height="25"
+       rx="3"
+       transform="rotate(-24 398 282)"
+       id="rect8" />
+    <rect
+       x="465"
+       y="300"
+       width="36"
+       height="25"
+       rx="3"
+       transform="rotate(8 483 312)"
+       id="rect9" />
+    <rect
+       x="335"
+       y="330"
+       width="36"
+       height="25"
+       rx="3"
+       transform="rotate(-9 353 342)"
+       id="rect10" />
+    <rect
+       x="450"
+       y="380"
+       width="36"
+       height="25"
+       rx="3"
+       transform="rotate(17 468 392)"
+       id="rect11" />
+  </g>
+  <!-- clock icon -->
+  <g
+     transform="translate(478,205)"
+     id="g12">
+    <circle
+       r="24"
+       fill="#1a2b38"
+       stroke="#6b7785"
+       stroke-width="2"
+       id="circle11" />
+    <line
+       x1="0"
+       y1="0"
+       x2="0"
+       y2="-14"
+       stroke="#aebfce"
+       stroke-width="2"
+       id="line11" />
+    <line
+       x1="0"
+       y1="0"
+       x2="10"
+       y2="4"
+       stroke="#aebfce"
+       stroke-width="2"
+       id="line12" />
+    <text
+       x="0"
+       y="42"
+       text-anchor="middle"
+       class="tiny"
+       id="text12">3 weeks</text>
+  </g>
+  <!-- magnifying glass over the person's hand -->
+  <g
+     transform="translate(252,338)"
+     id="g13">
+    <circle
+       r="13"
+       fill="none"
+       stroke="#cfd8de"
+       stroke-width="3"
+       id="circle12" />
+    <line
+       x1="9"
+       y1="9"
+       x2="24"
+       y2="24"
+       stroke="#cfd8de"
+       stroke-width="3.5"
+       stroke-linecap="round"
+       id="line13" />
+  </g>
+  <!-- person silhouette (muted) -->
+  <g
+     fill="#8a97a3"
+     id="g14">
+    <circle
+       cx="198"
+       cy="308"
+       r="17"
+       id="circle13" />
+    <path
+       d="M168,412 C168,362 182,336 198,336 C214,336 228,362 228,412 Z"
+       id="path13" />
+  </g>
+  <text
+     x="315"
+     y="462"
+     text-anchor="middle"
+     class="small"
+     id="text14">tribal knowledge — carried in one person's head,</text>
+  <text
+     x="315"
+     y="482"
+     text-anchor="middle"
+     class="small"
+     id="text15">reconstructed under pressure, lost at every departure</text>
+  <!-- ============ RIGHT PANEL — WITH FORM FOUR ============ -->
+  <rect
+     x="640"
+     y="108"
+     width="490"
+     height="452"
+     rx="14"
+     fill="#10202e"
+     opacity="0.55"
+     stroke="#3a3220"
+     stroke-width="1.5"
+     id="rect15" />
+  <text
+     x="885"
+     y="146"
+     text-anchor="middle"
+     class="panel-label-warm"
+     id="text16">WITH FORM FOUR</text>
+  <text
+     x="885"
+     y="168"
+     text-anchor="middle"
+     class="panel-sub-warm"
+     id="text17">Judgment, instrumented</text>
+  <!-- neat stack of case files, feeding the agent continuously -->
+  <g
+     fill="#22394a"
+     stroke="#3d5a70"
+     stroke-width="1.3"
+     id="g19">
+    <rect
+       x="672"
+       y="392"
+       width="34"
+       height="24"
+       rx="3"
+       id="rect17" />
+    <rect
+       x="678"
+       y="384"
+       width="34"
+       height="24"
+       rx="3"
+       id="rect18" />
+    <rect
+       x="684"
+       y="376"
+       width="34"
+       height="24"
+       rx="3"
+       id="rect19" />
+  </g>
+  <path
+     d="M700,372 C700,340 712,318 730,308"
+     fill="none"
+     stroke="#7fb8d9"
+     stroke-width="2"
+     stroke-dasharray="5 5"
+     marker-end="url(#arrowMuted2)"
+     id="path19" />
+  <text
+     x="700"
+     y="432"
+     text-anchor="middle"
+     class="tiny"
+     id="text19">every case, continuously</text>
+  <!-- gear icon: the Form Four agent, reading lineage -->
+  <g
+     transform="translate(732,298)"
+     id="g28">
+    <g
+       fill="#1a2b38"
+       stroke="#f2b134"
+       stroke-width="2.5"
+       id="g27">
+      <circle
+         r="26"
+         id="circle19" />
+      <rect
+         x="-4"
+         y="-34"
+         width="8"
+         height="10"
+         rx="2"
+         id="rect20" />
+      <rect
+         x="-4"
+         y="24"
+         width="8"
+         height="10"
+         rx="2"
+         id="rect21" />
+      <rect
+         x="-34"
+         y="-4"
+         width="10"
+         height="8"
+         rx="2"
+         id="rect22" />
+      <rect
+         x="24"
+         y="-4"
+         width="10"
+         height="8"
+         rx="2"
+         id="rect23" />
+      <rect
+         x="-27"
+         y="-27"
+         width="9"
+         height="9"
+         rx="2"
+         transform="rotate(45 -22.5 -22.5)"
+         id="rect24" />
+      <rect
+         x="18"
+         y="-27"
+         width="9"
+         height="9"
+         rx="2"
+         transform="rotate(45 22.5 -22.5)"
+         id="rect25" />
+      <rect
+         x="-27"
+         y="18"
+         width="9"
+         height="9"
+         rx="2"
+         transform="rotate(45 -22.5 22.5)"
+         id="rect26" />
+      <rect
+         x="18"
+         y="18"
+         width="9"
+         height="9"
+         rx="2"
+         transform="rotate(45 22.5 22.5)"
+         id="rect27" />
+    </g>
+    <circle
+       r="10"
+       fill="#f2b134"
+       id="circle27" />
+  </g>
+  <text
+     x="732"
+     y="352"
+     text-anchor="middle"
+     class="tiny"
+     id="text28">Form Four agent</text>
+  <!-- arrow: agent surfaces a finding -->
+  <path
+     d="M758,290 C800,270 840,275 862,300"
+     fill="none"
+     stroke="#ffd98a"
+     stroke-width="2.2"
+     marker-end="url(#arrowGold2)"
+     id="path28" />
+  <g
+     transform="translate(880,305)"
+     id="g29">
+    <rect
+       x="-38"
+       y="-16"
+       width="76"
+       height="32"
+       rx="6"
+       fill="url(#gaugeBody2)"
+       id="rect28" />
+    <text
+       x="0"
+       y="5"
+       text-anchor="middle"
+       class="badge-label"
+       id="text29">FINDING</text>
+  </g>
+  <!-- arrow: finding reaches the Lockkeeper -->
+  <path
+     d="M918,305 C945,310 965,320 978,332"
+     fill="none"
+     stroke="#ffd98a"
+     stroke-width="2.2"
+     marker-end="url(#arrowGold2)"
+     id="path29" />
+  <!-- person silhouette (calm, receiving the finding, deciding) -->
+  <g
+     fill="#dceefc"
+     id="g30">
+    <circle
+       cx="1000"
+       cy="308"
+       r="17"
+       id="circle29" />
+    <path
+       d="M970,412 C970,362 984,336 1000,336 C1016,336 1030,362 1030,412 Z"
+       id="path30" />
+  </g>
+  <text
+     x="885"
+     y="462"
+     text-anchor="middle"
+     class="small-warm"
+     id="text30">the agent keeps lineage current and surfaces findings —</text>
+  <text
+     x="885"
+     y="482"
+     text-anchor="middle"
+     class="small-warm"
+     id="text31">the Lockkeeper decides what changes</text>
+  <!-- ============ CENTER TRANSITION BADGE ============ -->
+  <line
+     x1="600"
+     y1="118"
+     x2="600"
+     y2="550"
+     stroke="#3a4a58"
+     stroke-width="1.5"
+     stroke-dasharray="3 6"
+     id="line31" />
+  <g
+     transform="translate(600,334)"
+     id="g33">
+    <circle
+       r="40"
+       fill="url(#gaugeBody2)"
+       stroke="#ffd98a"
+       stroke-width="2"
+       id="circle31" />
+    <text
+       x="0"
+       y="-3"
+       text-anchor="middle"
+       class="badge-label"
+       id="text32">FORM</text>
+    <text
+       x="0"
+       y="15"
+       text-anchor="middle"
+       class="badge-label"
+       id="text33">FOUR</text>
+  </g>
+  <!-- ============ BOTTOM CALLOUT ============ -->
+  <line
+     x1="70"
+     y1="576"
+     x2="1130"
+     y2="576"
+     stroke="#24384a"
+     stroke-width="1.5"
+     id="line33" />
+  <text
+     x="600"
+     y="606"
+     text-anchor="middle"
+     class="callout"
+     id="text34">The agent keeps lineage current and surfaces findings. The Lockkeeper keeps the judgment.</text>
+</svg>

@@ -315,6 +315,33 @@
   
   
     <li class="md-nav__item">
+      <a href="../provenance_devide/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    The Provenance Divide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../domain-objects-before-process-models/" class="md-nav__link">
         
   
@@ -541,10 +568,10 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_11" checked>
         
           
-          <label class="md-nav__link" for="__nav_10" id="__nav_10_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_11" id="__nav_11_label" tabindex="0">
             
   
   
@@ -562,8 +589,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_10_label" aria-expanded="true">
-          <label class="md-nav__title" for="__nav_10">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_11_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_11">
             <span class="md-nav__icon md-icon"></span>
             
   
@@ -969,10 +996,10 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_11" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_12" >
         
           
-          <label class="md-nav__link" for="__nav_11" id="__nav_11_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_12" id="__nav_12_label" tabindex="0">
             
   
   
@@ -990,8 +1017,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_11_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_11">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_12_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_12">
             <span class="md-nav__icon md-icon"></span>
             
   
@@ -1579,16 +1606,16 @@
 <p><strong>Step 1 — Orchestrator posts the job</strong></p>
 <p>Camunda Zeebe creates a job <code>"network-navigation-agent"</code> and attaches the referral context:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="p">{</span>
-<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="w">  </span><span class="nt">&quot;referral_type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;cardiology_consult&quot;</span><span class="p">,</span>
-<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="w">  </span><span class="nt">&quot;diagnosis&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;R07.9&quot;</span><span class="p">,</span>
-<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="w">  </span><span class="nt">&quot;payer&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;UHC_Choice_Plus_PPO&quot;</span><span class="p">,</span>
-<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="w">  </span><span class="nt">&quot;network_tier&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;tier_1&quot;</span><span class="p">,</span>
-<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="w">  </span><span class="nt">&quot;patient_zip&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;78745&quot;</span><span class="p">,</span>
-<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="w">  </span><span class="nt">&quot;urgency&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;routine&quot;</span><span class="p">,</span>
-<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="w">  </span><span class="nt">&quot;deductible_met&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
-<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="w">  </span><span class="nt">&quot;deductible_remaining&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1200</span><span class="p">,</span>
-<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="w">  </span><span class="nt">&quot;oop_ytd&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">3100</span><span class="p">,</span>
-<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="w">  </span><span class="nt">&quot;oop_max&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">5000</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="w">  </span><span class="nt">"referral_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"cardiology_consult"</span><span class="p">,</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="w">  </span><span class="nt">"diagnosis"</span><span class="p">:</span><span class="w"> </span><span class="s2">"R07.9"</span><span class="p">,</span>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="w">  </span><span class="nt">"payer"</span><span class="p">:</span><span class="w"> </span><span class="s2">"UHC_Choice_Plus_PPO"</span><span class="p">,</span>
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="w">  </span><span class="nt">"network_tier"</span><span class="p">:</span><span class="w"> </span><span class="s2">"tier_1"</span><span class="p">,</span>
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="w">  </span><span class="nt">"patient_zip"</span><span class="p">:</span><span class="w"> </span><span class="s2">"78745"</span><span class="p">,</span>
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="w">  </span><span class="nt">"urgency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"routine"</span><span class="p">,</span>
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="w">  </span><span class="nt">"deductible_met"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="w">  </span><span class="nt">"deductible_remaining"</span><span class="p">:</span><span class="w"> </span><span class="mi">1200</span><span class="p">,</span>
+<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="w">  </span><span class="nt">"oop_ytd"</span><span class="p">:</span><span class="w"> </span><span class="mi">3100</span><span class="p">,</span>
+<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="w">  </span><span class="nt">"oop_max"</span><span class="p">:</span><span class="w"> </span><span class="mi">5000</span>
 <a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a><span class="p">}</span>
 </code></pre></div>
 <p><strong>Step 2 — Navigation Agent reasons autonomously</strong></p>
@@ -1601,15 +1628,15 @@
 </ul>
 <p><strong>Step 3 — Three-part response returned to Camunda</strong></p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="p">{</span>
-<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="w">  </span><span class="nt">&quot;results&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="w">    </span><span class="nt">&quot;recommended_provider&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Dr. Mehta — Austin Heart South&quot;</span><span class="p">,</span>
-<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="w">    </span><span class="nt">&quot;network_status&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;tier_1_in_network&quot;</span><span class="p">,</span>
-<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="w">    </span><span class="nt">&quot;patient_cost&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;$45_copay&quot;</span><span class="p">,</span>
-<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="w">    </span><span class="nt">&quot;auth_status&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;approved_auto&quot;</span><span class="p">,</span>
-<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="w">    </span><span class="nt">&quot;appointment&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2026-04-02T09:30&quot;</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="w">  </span><span class="nt">"results"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="w">    </span><span class="nt">"recommended_provider"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Dr. Mehta — Austin Heart South"</span><span class="p">,</span>
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="w">    </span><span class="nt">"network_status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"tier_1_in_network"</span><span class="p">,</span>
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="w">    </span><span class="nt">"patient_cost"</span><span class="p">:</span><span class="w"> </span><span class="s2">"$45_copay"</span><span class="p">,</span>
+<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="w">    </span><span class="nt">"auth_status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"approved_auto"</span><span class="p">,</span>
+<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="w">    </span><span class="nt">"appointment"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2026-04-02T09:30"</span>
 <a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="w">  </span><span class="p">},</span>
-<a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a><span class="w">  </span><span class="nt">&quot;next_task&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;confirm_with_patient&quot;</span><span class="p">,</span>
-<a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a><span class="w">  </span><span class="nt">&quot;reasoning&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Patient&#39;s UHC Choice Plus PPO plan covers cardiology consult at Tier 1 in-network rate. Dr. Mehta is 4.2 miles from patient, quality score 94th percentile, 8-day wait vs 22-day average. Prior auth auto-approved per UHC criteria v2 — diagnosis R07.9 with PCP referral meets all documentation requirements. Patient cost: $45 specialist copay (deductible waived for in-network specialist visits per plan design). No out-of-pocket surprise risk.&quot;</span>
+<a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a><span class="w">  </span><span class="nt">"next_task"</span><span class="p">:</span><span class="w"> </span><span class="s2">"confirm_with_patient"</span><span class="p">,</span>
+<a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a><span class="w">  </span><span class="nt">"reasoning"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Patient's UHC Choice Plus PPO plan covers cardiology consult at Tier 1 in-network rate. Dr. Mehta is 4.2 miles from patient, quality score 94th percentile, 8-day wait vs 22-day average. Prior auth auto-approved per UHC criteria v2 — diagnosis R07.9 with PCP referral meets all documentation requirements. Patient cost: $45 specialist copay (deductible waived for in-network specialist visits per plan design). No out-of-pocket surprise risk."</span>
 <a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a><span class="p">}</span>
 </code></pre></div>
 <h3 id="where-the-governance-gap-hits">Where the Governance Gap Hits<a class="headerlink" href="#where-the-governance-gap-hits" title="Permanent link">&para;</a></h3>

@@ -1,0 +1,1776 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Data platforms have standing lineage of records — Unity Catalog closed that gap years ago. Nobody has standing lineage of work. This paper names that gap, grounds it in a realistic, composite insurance-claims scenario, and argues what closing it requires: not a faster discovery sprint, but a standing, continuously reconciled specification.">
+      
+      
+        <meta name="author" content="Gary Samuelson">
+      
+      
+        <link rel="canonical" href="https://garysamuelson.github.io/agentic/provenance_devide/">
+      
+      
+        <link rel="prev" href="../..">
+      
+      
+        <link rel="next" href="../domain-objects-before-process-models/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>The Provenance Divide - Gary Samuelson — AI & Architecture Research</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  
+
+  
+  
+  
+  
+
+  <meta property="og:type" content="article" />
+  <meta property="og:site_name" content="Gary Samuelson — AI & Architecture Research" />
+  <meta property="og:title" content="The Provenance Divide" />
+  <meta property="og:description" content="Data platforms have standing lineage of records — Unity Catalog closed that gap years ago. Nobody has standing lineage of work. This paper names that gap, grounds it in a realistic, composite insurance-claims scenario, and argues what closing it requires: not a faster discovery sprint, but a standing, continuously reconciled specification." />
+  <meta property="og:url" content="https://garysamuelson.github.io/agentic/provenance_devide/" />
+  <meta property="og:image" content="https://garysamuelson.github.io/assets/images/provenance_divide_banner.png" />
+  <meta property="og:image:secure_url" content="https://garysamuelson.github.io/assets/images/provenance_divide_banner.png" />
+  <meta property="og:image:type" content="image/png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="The Provenance Divide" />
+  <meta name="twitter:description" content="Data platforms have standing lineage of records — Unity Catalog closed that gap years ago. Nobody has standing lineage of work. This paper names that gap, grounds it in a realistic, composite insurance-claims scenario, and argues what closing it requires: not a faster discovery sprint, but a standing, continuously reconciled specification." />
+  <meta name="twitter:url" content="https://garysamuelson.github.io/agentic/provenance_devide/" />
+  <meta name="twitter:image" content="https://garysamuelson.github.io/assets/images/provenance_divide_banner.png" />
+
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#the-provenance-divide" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Gary Samuelson — AI &amp; Architecture Research" class="md-header__button md-logo" aria-label="Gary Samuelson — AI & Architecture Research" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Gary Samuelson — AI & Architecture Research
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              The Provenance Divide
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/garysamuelson/garysamuelson.github.io" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    garysamuelson/garysamuelson.github.io
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Gary Samuelson — AI &amp; Architecture Research" class="md-nav__button md-logo" aria-label="Gary Samuelson — AI & Architecture Research" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Gary Samuelson — AI & Architecture Research
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/garysamuelson/garysamuelson.github.io" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    garysamuelson/garysamuelson.github.io
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    The Provenance Divide
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    The Provenance Divide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#why-operations-needs-a-standing-spec-not-a-faster-snapshot" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Why Operations Needs a Standing Spec, Not a Faster Snapshot
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Why Operations Needs a Standing Spec, Not a Faster Snapshot">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#a-quick-map-of-the-terms" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        A Quick Map of the Terms
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-answer-up-front" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Answer, Up Front
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#naming-the-failure-mode" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Naming the Failure Mode
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-permanence-bottleneck-named" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The permanence bottleneck, named
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#two-value-chains-not-one" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Two value chains, not one
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-the-analyst-was-actually-doing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What the analyst was actually doing
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-provenance-divide-step-by-step" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Provenance Divide, step by step
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-reconciliation-loop-and-who-runs-it" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The reconciliation loop, and who runs it
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#why-this-was-out-of-reach-until-now-and-why-it-isnt-anymore" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Why this was out of reach until now — and why it isn't anymore
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#where-this-connects-to-the-open-research-problem" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Where this connects to the open research problem
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#why-insurance-keeps-this-grounded" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Why insurance keeps this grounded
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#appendix-a-prior-art-positioning" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Appendix A — Prior Art &amp; Positioning
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Appendix A — Prior Art &amp; Positioning">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#what-is-already-written-and-who-owns-it" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What is already written (and who owns it)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-is-not-written-anywhere" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What is not written anywhere
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#appendix-a1-effort-lineage-vs-object-lineage-the-closer-but-still-short-prior-art" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Appendix A.1 — Effort-Lineage vs. Object-Lineage: the closer, but still short, prior art
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#drafting-risk" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Drafting risk
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#appendix-b-what-databricks-solved-and-what-it-proves-is-missing-here" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Appendix B — What Databricks Solved, and What It Proves Is Missing Here
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#references" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        References
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../domain-objects-before-process-models/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Domain Objects Before Process Models
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../from-request-to-record/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    From Request to Record
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../work-record-is-bpm-task/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Work Record
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../process-os-horizon/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    The ProcessOS Horizon
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../process-first-ai-dimensions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Process-First AI: Dimensions of the Running Work Record
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../you-cant-orchestrate-what-has-no-state/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    You Can't Orchestrate What Has No State
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../working-ai-put-to-task/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    The Working AI: Put to Task with Measured Output
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../agentic-agency-and-workflows/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Agentic Agency & Workflows
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_11" >
+        
+          
+          <label class="md-nav__link" for="__nav_11" id="__nav_11_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AI Governance in Healthcare
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_11_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_11">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    AI Governance in Healthcare
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../healthcare/healthcare-accountability/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Who Is Accountable?
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../governance-gap/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    The Governance Gap
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_12" >
+        
+          
+          <label class="md-nav__link" for="__nav_12" id="__nav_12_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Semantic AI
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_12_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_12">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Semantic AI
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../semantic-ai/cpg-campaign-simplified-workflow/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    The Ontology Process
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../semantic-ai/inter-process-semantic-collaboration/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    When Processes Finally Talk to Each Other
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../semantic-ai/aspect-oriented-process-management/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Aspect-Oriented Process Management
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tags/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tags
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#why-operations-needs-a-standing-spec-not-a-faster-snapshot" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Why Operations Needs a Standing Spec, Not a Faster Snapshot
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Why Operations Needs a Standing Spec, Not a Faster Snapshot">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#a-quick-map-of-the-terms" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        A Quick Map of the Terms
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-answer-up-front" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Answer, Up Front
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#naming-the-failure-mode" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Naming the Failure Mode
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-permanence-bottleneck-named" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The permanence bottleneck, named
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#two-value-chains-not-one" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Two value chains, not one
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-the-analyst-was-actually-doing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What the analyst was actually doing
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-provenance-divide-step-by-step" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Provenance Divide, step by step
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-reconciliation-loop-and-who-runs-it" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The reconciliation loop, and who runs it
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#why-this-was-out-of-reach-until-now-and-why-it-isnt-anymore" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Why this was out of reach until now — and why it isn't anymore
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#where-this-connects-to-the-open-research-problem" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Where this connects to the open research problem
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#why-insurance-keeps-this-grounded" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Why insurance keeps this grounded
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#appendix-a-prior-art-positioning" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Appendix A — Prior Art &amp; Positioning
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Appendix A — Prior Art &amp; Positioning">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#what-is-already-written-and-who-owns-it" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What is already written (and who owns it)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-is-not-written-anywhere" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What is not written anywhere
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#appendix-a1-effort-lineage-vs-object-lineage-the-closer-but-still-short-prior-art" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Appendix A.1 — Effort-Lineage vs. Object-Lineage: the closer, but still short, prior art
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#drafting-risk" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Drafting risk
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#appendix-b-what-databricks-solved-and-what-it-proves-is-missing-here" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Appendix B — What Databricks Solved, and What It Proves Is Missing Here
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#references" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        References
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  <nav class="md-tags" >
+    
+      
+      
+      
+      
+        <a href="../../tags/#tag:agentic-ai" class="md-tag">Agentic AI</a>
+      
+    
+      
+      
+      
+      
+        <a href="../../tags/#tag:bpm" class="md-tag">BPM</a>
+      
+    
+      
+      
+      
+      
+        <a href="../../tags/#tag:bpmn" class="md-tag">BPMN</a>
+      
+    
+      
+      
+      
+      
+        <a href="../../tags/#tag:data-lineage" class="md-tag">Data Lineage</a>
+      
+    
+      
+      
+      
+      
+        <a href="../../tags/#tag:insurance" class="md-tag">Insurance</a>
+      
+    
+      
+      
+      
+      
+        <a href="../../tags/#tag:process-governance" class="md-tag">Process Governance</a>
+      
+    
+      
+      
+      
+      
+        <a href="../../tags/#tag:processos" class="md-tag">ProcessOS</a>
+      
+    
+      
+      
+      
+      
+        <a href="../../tags/#tag:provenance" class="md-tag">Provenance</a>
+      
+    
+  </nav>
+
+
+  
+  
+
+
+<p><img alt="The Provenance Divide" src="../resources/provenance_divide_banner.png" /></p>
+<h1 id="the-provenance-divide">The Provenance Divide<a class="headerlink" href="#the-provenance-divide" title="Permanent link">&para;</a></h1>
+<h2 id="why-operations-needs-a-standing-spec-not-a-faster-snapshot">Why Operations Needs a Standing Spec, Not a Faster Snapshot<a class="headerlink" href="#why-operations-needs-a-standing-spec-not-a-faster-snapshot" title="Permanent link">&para;</a></h2>
+<p><strong>Author:</strong> Gary Samuelson<br />
+<strong>Date:</strong> September 2026<br />
+<strong>DOI:</strong> <a href="https://doi.org/10.13140/RG.2.2.19290.91843">10.13140/RG.2.2.19290.91843</a></p>
+<hr />
+<p>Data platforms have standing lineage of records — Databricks' Unity Catalog closed that gap years ago. Nobody has standing lineage of work: who committed the business to what, on what evidence, under which policy version, as a governed, continuous artifact. This paper names that gap the Provenance Divide, grounds it in a realistic, composite insurance-claims scenario, and argues what closing it actually requires — not a faster discovery sprint, but a standing, continuously reconciled specification, reconciled against by an accountable analyst.</p>
+<hr />
+<h3 id="a-quick-map-of-the-terms">A Quick Map of the Terms<a class="headerlink" href="#a-quick-map-of-the-terms" title="Permanent link">&para;</a></h3>
+<p>This paper coins five terms in quick succession, starting in the very next section. Each gets its full treatment built up from the scenario that follows — this is just enough to hold onto until then.</p>
+<ul>
+<li><strong>The Reflexive Value Chain</strong> — the value chain operations runs in support of the primary one: not producing a settlement, but keeping the chain that produces settlements diagnosable and correct.</li>
+<li><strong>Form Four</strong> — the AI agent that watches every running case continuously, reconciles it against a standing spec, and hands the accountable analyst a question, not a verdict.</li>
+<li><strong>The Provenance Divide</strong> — the gap this paper names: data platforms have standing lineage of records (Unity Catalog closed this). Nobody has standing lineage of work — who committed the business to what, on what evidence — as a governed, continuous artifact. What that looks like inside an actual process gets its own walkthrough below.</li>
+<li><strong>The reconciliation loop</strong> — the mechanism itself: evidence rising from the running process into the standing spec, deviation surfacing as a finding, the analyst deciding what changes.</li>
+<li><strong>The four evidence classes</strong> — structural, normative, behavioral, and vernacular: the categories evidence rises in as it reconciles against the spec.</li>
+</ul>
+<h3 id="the-answer-up-front">The Answer, Up Front<a class="headerlink" href="#the-answer-up-front" title="Permanent link">&para;</a></h3>
+<p>Give operations a standing, continuously reconciling specification — reconciled against by an accountable analyst, and fed by an AI agent (Form Four) that watches every case for effects with no traceable cause. That closes the Provenance Divide for work the same way Unity Catalog closed it for data: a governed, queryable record of what produced what, so nobody reconstructs three weeks of drift by hand again.</p>
+<p>That continuous reconciliation turns the operations dashboard from a report card into an instrument. The report card grades what someone already thought to define. The instrument surfaces what nobody wrote a query for yet — a pattern with no cause on record. The agent hands that pattern to a human as a question, not a verdict.</p>
+<p>The rest of this paper builds toward that answer through one grounded scenario, then generalizes the pattern: how to find the same unscalable, informal Reflexive Value Chain quietly running in your own organization, and what closing its Provenance Divide requires.</p>
+<p><strong>Figure 0 — Closing the Provenance Divide.</strong> <em>Left: the lineage Unity Catalog already closed for data — every table, job, and dashboard traced automatically, a closed graph. Right: the lineage nobody has closed for work — BPMN tasks connected by judgment, not queries, with real gaps a report card was never built to notice. Form Four sits at the divide, watching every case, surfacing gaps as it finds them, and handing what it can't explain to the analyst as a question, not a verdict.</em></p>
+<p><img alt="Closing the Provenance Divide" src="../resources/provenance_divide.svg" /></p>
+<h3 id="naming-the-failure-mode">Naming the Failure Mode<a class="headerlink" href="#naming-the-failure-mode" title="Permanent link">&para;</a></h3>
+<p><em>A composite scenario</em></p>
+<p>Three weeks after a mid-size auto insurer migrates its claims process onto a modern orchestration platform, the reopened-claims report starts carrying a pattern — present in the numbers, invisible to anything watching them. Not yet a discovery — just lurking. A vehicle-valuation feed used during settlement started returning stale prices when a regional used-car market spiked. The process ran exactly as designed — confidently, mechanically, running delusional — faithful to its build spec while blind to the world outside it. It hummed along on its own for weeks, sacrificing accuracy for the illusion of correctness. </p>
+<p>A senior claims-operations analyst finds it first, recognizing the shape of a familiar problem before the data proves it. The team's dashboard misses it entirely. That dashboard tracks volume and cycle time — the metrics a weekly ops review expects to see — but it never asks whether the numbers feeding a settlement decision are trustworthy. Tracking activity is not the same as surfacing a finding, and a dashboard built only for the former was never going to catch this. It was built to look backward, not to notice.</p>
+<p>A report card grades performance against categories decided in advance — it can only measure what someone already thought to define. What the analyst supplied instead, by hand, was discovery: the intellect and queue-honed judgment to notice a pattern nobody had written a metric for yet. A report card confirms. It does not discover. Closing that gap — turning the dashboard from a report card into an instrument capable of surfacing the unanticipated — is the deeper problem the rest of this paper is built to close. </p>
+<p>That gap names a job for a tool, not a better dashboard. Notice what the analyst actually did: not reasoning about the feed's meaning first, but catching a pattern before the data proved anything. That is the cognitive move an AI system does well — not thinking, but finding pattern and anomaly across more cases and more history than one analyst can hold in their head, and putting what it finds in front of a person. The output is not a decision. It is actionable information: a candidate finding, handed to a person whose judgment still decides what it means. A tool built for this does not replace the analyst's discovery — it gives that discovery reach no single queue-honed instinct could sustain across every case, every week. That tool is Form Four, and what it has to be built to notice is exactly this scenario's failure mode: an effect with no cause on record. </p>
+<p><strong>Figure 1 — The Report Card's Blind Spot.</strong> <em>Every tile on the ops dashboard reads green — volume on target, cycle time within SLA, compliance at 98%. None of them asks the question that mattered: is the vehicle-valuation feed still trustworthy? The feed drifted for three weeks, untracked, because no tile was ever built to see it. The analyst caught it by instinct — queue-honed judgment, not a metric — not because the board surfaced it.</em></p>
+<p><img alt="The Report Card's Blind Spot" src="../resources/report_card_blind_spot.svg" /></p>
+<p>The analyst spends the better part of a day reconstructing which claims called which feed, when the prices started drifting, and which settlement offers need a second look. The migration worked. What failed is everything that was supposed to happen <em>after</em> it — and that is the failure this paper is about.</p>
+<h3 id="the-permanence-bottleneck-named">The permanence bottleneck, named<a class="headerlink" href="#the-permanence-bottleneck-named" title="Permanent link">&para;</a></h3>
+<p>That claims scenario is not a one-off. It is the shape of a bottleneck every AI-driven modernization runs into once the ladder ends. The AI agent demos beautifully. The modernized process ships on schedule. And then operations inherits a system that has to keep living inside a business ecosystem that never stood still during the build. A regulation gets reinterpreted. A vendor feed drifts. A work-queue nickname stops matching the diagram's vocabulary. Without a supportable way to catch that drift as it happens — not three weeks later, not at the next audit — there is no solution, only a working system quietly becoming an unsupportable one.</p>
+<p>The industry's current playbook for modernization is a ladder: Discover, Build, Deploy. Camunda's own September 2026 account of a live European bank migration is a strong example of that ladder, executed well and fast — discovery 40% faster, first iteration 97% faster than a traditional build. That's a genuine, well-earned achievement. The ladder simply isn't built to answer a different question — what happens after the top rung — and that's the question this paper picks up.</p>
+<h3 id="two-value-chains-not-one">Two value chains, not one<a class="headerlink" href="#two-value-chains-not-one" title="Permanent link">&para;</a></h3>
+<p>Operations was already the answer — it just didn't have a name yet, or a value chain of its own to belong to. Every insurer runs a primary value chain. A loss is reported, resources and judgment act on it, and a settled, paid claim exits the far end — the value the policyholder paid premiums in advance to receive. That chain is well understood, well modeled, and squarely what the migration ladder optimizes. </p>
+<p>Operations runs a second value chain, quietly, in support of the first: applying its own capability, tooling, and judgment not to produce a customer-facing settlement, but to keep the chain that produces settlements diagnosable and correct. Call this the <strong>Reflexive Value Chain</strong> — a value chain whose deliverable is not a product a customer buys, but the continued fitness of another value chain. Its customer is the primary chain itself, and the executives who fund it. Its payment is not premium revenue; it is avoided reopened claims, avoided compliance complaints, and preserved trust in the settlement number.</p>
+<p>Porter named the category — support activities alongside primary activities — decades ago. He did not resolve what the support chain's own output looks like when the primary chain is a long-running saga instead of a factory line. The stale-valuation-feed scenario is that output, made concrete: the Reflexive Value Chain's product, that week, was the finding that settlement offers had quietly gone wrong, and the decision about what to do next.</p>
+<p><strong>Figure 2 — Two Value Chains, One Insurer.</strong> <em>The primary chain (top) settles the claim — loss reported, resources and judgment act, settlement reached, claim paid — paid for in premium revenue the policyholder already trusted the insurer with. The Reflexive Value Chain (bottom) runs in parallel, watching every stage of every case, diagnosing drift, and surfacing findings — paid for in avoided reopened claims, avoided complaints, and preserved trust. The gold connector is the stale-valuation-feed scenario itself: a finding, surfacing from the reflexive chain, feeding directly back into the primary chain's settlement decision.</em></p>
+<p><img alt="Two Value Chains, One Insurer" src="../resources/two_value_chains.svg" /></p>
+<h3 id="what-the-analyst-was-actually-doing">What the analyst was actually doing<a class="headerlink" href="#what-the-analyst-was-actually-doing" title="Permanent link">&para;</a></h3>
+<p>Strip the drama out of the scene and the analyst was doing process lineage by hand — tracing which integration point fed which decision, on which case, and why. That is close to what Databricks' Unity Catalog does for data: a standing, queryable record of what produced what, so a stale number never has to be reconstructed from memory. Camunda's own copy reaches for the same instinct — "Continuously Improve," "a capability the business can call on again." The verbs are the honest tell: monitors, proposes, can call on. Episodic. Advisory. A faster snapshot, not a live feed.</p>
+<p>That specific work is worth naming, because it points straight at what fits it. Tracing which integration point fed which decision, across every case, continuously, is close to intrinsic work for an LLM-driven agent — reading a graph of connections and tracing a path through it is the same cognitive move it already makes reading a document and tracing a thread of meaning through it. Form Four is that capability, aimed at judgment instead of tables — continuous instead of episodic, standing instead of on request.</p>
+<p>The difference between what Databricks solved and what this claims process needed is the unit of work. A delta table changes and notifies services against records. A claims saga carries a human's pending decision, an adjuster's judgment, an obligation accruing against a deadline. No data-mesh primitive carries that kind of state. This is the <strong>Provenance Divide</strong>: data platforms have shipped standing lineage of records. Nobody has shipped standing lineage of work — who committed the business to what, on what evidence, under which policy version — as a governed, continuous artifact. The analyst reconstructing three weeks of claims by hand is the Provenance Divide, uncrossed, on a Tuesday.</p>
+<p><strong>Figure 3 — Two Units of Work, One Divide.</strong> <em>Left: the unit Databricks already solved — a delta table changes, services are notified against the record, lineage is automatic and standing. Right: the unit a claims saga carries — a pending decision, an adjuster's judgment, an obligation accruing against a deadline — that no data-mesh primitive was built to hold. Form Four sits in the gap between them: the same graph-tracing move an LLM already makes reading a document, aimed at judgment instead of tables.</em></p>
+<p><img alt="Two Units of Work, One Divide" src="../resources/record_vs_saga.svg" /></p>
+<p>A naming note, since the vocabulary is adjacent: "Provenance Divide" isn't this paper borrowing the familiar data-governance distinction between lineage (what produced what) and provenance (the fuller chain of custody and context behind it). Both of those terms already describe records — the world Unity Catalog closed. The divide named here sits one level up: once the unit of work stops being a record and starts being a saga, the line is between platforms that have standing lineage at all and platforms that don't.</p>
+<h3 id="the-provenance-divide-step-by-step">The Provenance Divide, step by step<a class="headerlink" href="#the-provenance-divide-step-by-step" title="Permanent link">&para;</a></h3>
+<p>The definition above is accurate and moves too fast. Here is what it looks like inside an actual BPMN model, one step at a time.</p>
+<p>A service task in a claims process doesn't just "call an integration." It calls into a domain object that another system owns and governs on its own terms — a customer database, an employee registry, an ERP module like PeopleSoft or Salesforce's customer and communications management. That call returns a value, and the value doesn't stop there. It gets used: a rule evaluates it, a calculation derives a new number from it, a person or a downstream service decides something on the strength of it. The result of that decision often gets written back somewhere, or shared into a collaborating process — a different orchestrated instance, run by a different team, waiting on exactly this value to proceed.</p>
+<p>This is why "tributary" is the wrong picture, even though it's the natural one to reach for. A tributary flows one direction into a river and stays there. What actually happens is a graph. The same domain object gets read by more than one process. A derived value from one decision becomes an input to a different integration point three steps later, in a different process instance. Nothing marks these connections on the BPMN diagram — the diagram shows a service task calling an endpoint, not the lineage of every value that endpoint has ever fed or consumed.</p>
+<p>Now put a problem somewhere in that graph — a stale value, a bad derivation, a decision made on data that has since been corrected upstream. Finding it is only the first problem. The second, harder problem is everything downstream of it: every decision, every record, every collaborating process instance that already consumed the tainted value has to be found, evaluated, and either corrected, compensated, or knowingly left alone because too much has already happened to unwind it cleanly. That is not a lookup. It is a walk, node by node, through a graph nobody drew.</p>
+<p>This is also where Databricks' own answer runs out, on its own terms. Unity Catalog's lineage graph is real and fully automatic, but its nodes are tables and columns — a job or a query shows up only as an edge, an attribution of which run touched which asset. There is no judgment in that graph to trace, because a query doesn't exercise any. A BPMN task does. The node this paper needs isn't the domain object a task called into — it's the task itself: the judgment applied, the evidence weighed, the decision reached. That is the harder graph, and it is the one nobody has shipped.</p>
+<p><em>Composite, illustrative example — not describing a specific team, incident, or organization.</em> Picture the ops expert pulled into exactly this: tracing one bad value back through every system it touched, and forward through every decision it fed, for the better part of a day — while the rest of the queue keeps arriving, unattended, the whole time. The manager watching this happen has one honest question and no good answer for it: <em>how do I manage this?</em> One expert, one incident, one day gone, and nothing written down anywhere that makes the next one faster.</p>
+<p>That walk — done from memory, under pressure, one incident at a time — is the Provenance Divide, made concrete. A standing, continuously reconciled specification doesn't remove the graph. It means the graph is already traced, node by node, before anyone needs to reconstruct it by hand. This is the graph Form Four exists to trace — not the data-asset graph Databricks already shipped, but the graph of effort: which task, exercising what judgment, on what evidence, produced this.</p>
+<p><strong>Figure 4 — The Graph, Not the Tributary.</strong> <em>Left: Unity Catalog's graph — tables and columns, every edge traced automatically, closed. Right: the graph nobody drew — one domain object read by three different processes, a bad read at the point marked "?" that has to be walked forward and back through every consumer it touched, including a value reused three steps later in a different process instance entirely. Bottom: what that walk costs today — one expert, tracing by memory, a day gone — against what Form Four exists to make routine: the same walk, already traced, continuously, before anyone has to reconstruct it.</em></p>
+<p><img alt="The Graph, Not the Tributary" src="../resources/graph_not_tributary.svg" /></p>
+<h3 id="the-reconciliation-loop-and-who-runs-it">The reconciliation loop, and who runs it<a class="headerlink" href="#the-reconciliation-loop-and-who-runs-it" title="Permanent link">&para;</a></h3>
+<p>Crossing that divide needs two things: a mechanism, and someone accountable for running it. It needs a mechanism — a standing specification that stays current, continuously reconciled against what the running process actually does. Work happens; evidence of that work rises back into the spec, and it comes in four classes. <strong>Structural</strong> evidence is what the systems allow — the vehicle-valuation feed's own API contract, unchanged even as the answers it returned went stale. <strong>Normative</strong> evidence is what policy and regulation require — the settlement rules that assume that feed is trustworthy. <strong>Behavioral</strong> evidence is what operations actually did — the reopened-claims spike itself, sitting in the data three weeks before anyone looked. <strong>Vernacular</strong> evidence is what the people doing the work call it, and where they route around what the diagram doesn't show — the queue-honed judgment that caught a pattern no metric was built to see. </p>
+<p>A reconciliation loop without someone accountable for it is just telemetry. The claims analyst is that person: the one who reads what the loop surfaces, decides whether a deviation is tolerable variance or an escalating finding, and authors the change to the standing spec. The claims scenario had that accountability the whole time. What it didn't have was the loop — no standing spec to reconcile against, no continuous surfacing of drift, only a hunch and a day of manual reconstruction standing between the business and a quarter of bad settlement offers. </p>
+<p><strong>Figure 5 — The Reconciliation Loop.</strong> <em>Work happens; evidence of that work rises into a standing specification in four classes — structural (what the systems allow), normative (what policy and regulation require), behavioral (what operations actually did), and vernacular (what the people doing the work actually call it, and where they route around the diagram). Deviation between the spec and what the process actually does surfaces as a finding, routed to the claims analyst — the one accountable for deciding whether it's tolerable variance or an escalating finding, and for authoring the change back into the spec when it is. That authored change is what closes the loop, continuously, not once at go-live.</em></p>
+<p><img alt="The Reconciliation Loop" src="../resources/evidence_reconciliation_loop.svg" /></p>
+<h3 id="why-this-was-out-of-reach-until-now-and-why-it-isnt-anymore">Why this was out of reach until now — and why it isn't anymore<a class="headerlink" href="#why-this-was-out-of-reach-until-now-and-why-it-isnt-anymore" title="Permanent link">&para;</a></h3>
+<p>Running that reconciliation by hand, continuously, across every claim, every feed, every case, is more cognitive load than any analyst team can sustain. That is the honest reason the <strong>Reflexive Value Chain</strong> has stayed informal in most organizations: real, valuable, and unscalable, carried in one or two people's heads until they move on and take most of it with them.</p>
+<p>Form Four changes that math — not by replacing the analyst's judgment, but by giving her a standing spec to reconcile against. This is not Unity Catalog reskinned for BPMN: Databricks already solved lineage for data at rest and in motion, natively and automatically. What Form Four has to solve is <em>lineage of effort</em> — not which table a task touched, but what judgment the task applied, on what evidence, and why. That is the genuine, defensible value this system has to deliver; anything less is a data-lineage product wearing a BPMN diagram. This is what "Continuously Improve" — already one of ProcessOS's own four pillars — needs to reach in practice: no model-level view can notice a stale valuation feed drifting on case 8825, because noticing that requires Form Four's reach to extend down into the running instances themselves, not stop at the models governing them. 
+Systematic AI-agent application, applied continuously against the running process, can read lineage across every case, reconcile it against a standing spec, and surface findings at a volume no analyst team could sustain manually. The agent does not need to own the claims process to do this — Form Three's ceiling (the agent works inside the process, governed; it does not decide what the process becomes) stays exactly where it was, and it should. It needs to keep the lineage current and keep the findings surfacing. The analyst keeps the authority to decide what a finding means and what changes.</p>
+<p>What makes this an instrument and not a report card is what the agent is built to notice. A report card only flags what someone already defined as out of range. The agent watches for something narrower and harder: cases where an observed effect — a settlement, a reopened claim, a compliance complaint — has no cause inside what the system can see. That break between effect and cause is the finding. It does not mean the agent has an answer; it means the process behaved consistently with its own logic while the world moved anyway, and the system's model of the world did not move with it. The stale valuation feed is exactly this shape: nothing in the claims system caused the drift, because the cause lived upstream of every system the claims process could see. An LLM-driven agent, reading lineage and statistics continuously, is built to notice precisely that shape of anomaly — a pattern with no cause on record — and hand it to the analyst as a question, not a verdict: <em>this doesn't reduce to any cause I have access to; worth a look.</em> That question, not a decision, is what reaches her.</p>
+<p>This is the grounded version of "AI transforms operations": not an agent replacing judgment, but systematic agent application making a role that already existed — and was already producing value, informally — finally reachable at the scale the business actually runs at.</p>
+<p><strong>Figure 6 — Judgment, Instrumented.</strong> <em>Before Form Four, the analyst's role runs on archaeology: scattered case files, a magnifying glass, a clock counting the weeks lost reconstructing what already happened — tribal knowledge carried in one person's head, and lost at every departure. With Form Four, the agent reads lineage across every case continuously and surfaces findings — the neat stack of files feeding the gear, the gear handing off a finding — but the arrow still ends at the analyst. The agent does not decide. It relieves the archaeology so judgment can do what only judgment can do.</em></p>
+<p><img alt="Judgment, Instrumented" src="../resources/archaeology_vs_judgment.svg" /></p>
+<p>The confirmatory metrics stay once this is built — ops still needs volume and cycle time — but they're honestly labeled as confirmatory now, not mistaken for coverage. Underneath them, the instrument runs: Form Four surfacing the stale-valuation-feed finding the moment it has enough evidence, the four evidence classes reconciled in place, and a ready dispatch waiting on the analyst's decision, not making it for her.</p>
+<p><strong>Figure 7 — The Instrument, in Practice.</strong> <em>A logical mockup, not a screenshot: the report card (confirmatory KPIs, honestly labeled) sits above the instrument (Form Four's findings, evidence classes reconciled, a pattern flagged with no cause on record). The advisor panel drafts a dispatch; the analyst still decides.</em></p>
+<p><img alt="The Instrument, in Practice" src="../resources/the_lock_instrument_dashboard.svg" /></p>
+<h3 id="where-this-connects-to-the-open-research-problem">Where this connects to the open research problem<a class="headerlink" href="#where-this-connects-to-the-open-research-problem" title="Permanent link">&para;</a></h3>
+<p>That dispatch-not-verdict distinction is not incidental — it is the exact shape of capability the wider research conversation is still missing. The Agentic BPM Manifesto (arXiv:2603.18916) names four capabilities agents need to be first-class process actors, and singles out <strong>self-modification within governed limits</strong> as one of them. Governed limits require something to be governed <em>against</em>. A standing, evidence-linked spec — kept current by the reconciliation loop, reconciled against by an accountable process owner — is exactly that surface. This is the paper's connecting claim: the integration layer the Manifesto asks for and cannot yet build is not a new protocol. It is the standing spec plus the reconciliation loop, with a human process owner as its first decision-maker and a governed agent as its eventual second.</p>
+<h3 id="why-insurance-keeps-this-grounded">Why insurance keeps this grounded<a class="headerlink" href="#why-insurance-keeps-this-grounded" title="Permanent link">&para;</a></h3>
+<p>The claims example is deliberately unglamorous: a stale price feed, a spike in reopened claims, a day of manual reconstruction. It needs no imagined future agent architecture — it is empirical proof that the Reflexive Value Chain is already running, informally, in ops teams today. The gap this paper names is not a hypothetical integration-layer problem invented for a research manifesto. It is a Tuesday.</p>
+<hr />
+<h2 id="appendix-a-prior-art-positioning">Appendix A — Prior Art &amp; Positioning<a class="headerlink" href="#appendix-a-prior-art-positioning" title="Permanent link">&para;</a></h2>
+<p><em>The section a skeptical reviewer reads first. The claim — "the deployed thing reporting back into the spec continuously, the spec governing what the deployed thing may become" — has real intellectual lineage. The pieces exist in print; the assembled claim does not. That is what makes it paper-worthy rather than a restatement.</em></p>
+<h3 id="what-is-already-written-and-who-owns-it">What is already written (and who owns it)<a class="headerlink" href="#what-is-already-written-and-who-owns-it" title="Permanent link">&para;</a></h3>
+<p><strong>1. "The deployed thing reporting back continuously" — this half exists and is citable.</strong></p>
+<ul>
+<li><strong>Van der Aalst's process-mining canon</strong> defines <em>conformance checking</em>: replaying event logs against a normative model to detect deviation. That is the deployed thing reporting into the spec, academically formalized — but framed as <em>analysis</em>, run episodically by analysts, not as a standing governance surface. And it is behavioral evidence only — one tributary of the four.</li>
+<li><strong>Camunda's own ProcessOS copy</strong>: "Continuously Improve — monitors KPIs using a fitness function; proposes refinements," and the Aug 18 post's "discovery as a capability the business can call on again." The vendor is <em>gesturing</em> at the loop. Note the verbs: monitors, proposes, can call on. Episodic, advisory — bucket logic with a faster refill cycle.</li>
+<li><strong>Control theory / systems thinking</strong> (Morecroft, <em>Strategic Modelling and Business Dynamics</em>; the Deming PDCA lineage): closed feedback loops as management doctrine. Old, respectable, and not operationalized for process <em>specifications</em>.</li>
+<li><strong>"Report card vs. instrument" has a name, borrowed from statistics.</strong> John Tukey's distinction between <em>confirmatory</em> and <em>exploratory</em> data analysis (<em>Exploratory Data Analysis</em>, 1977) is the closest formal ancestor of the report-card/instrument split this paper uses. Confirmatory analysis grades data against categories and hypotheses decided in advance — a report card. Exploratory analysis is built to surface patterns nobody thought to define a metric for. Operations dashboards, almost without exception, are built confirmatory: KPIs fixed at design time, graded against forever after. Nobody has carried Tukey's distinction into what a <em>continuously reconciling</em> process specification would need to be — exploratory-capable, surfacing the finding nobody wrote a query for.</li>
+</ul>
+<p><strong>2. "The spec governing what the deployed thing may become" — this half is the open frontier.</strong></p>
+<ul>
+<li>This is exactly the Manifesto's <strong>self-modification within governed limits</strong> — and the Manifesto explicitly says it <em>cannot yet be realized</em>, naming the integration layer as the open problem. Nobody has published the mechanism.</li>
+<li>The closest shipped analog is <strong>fitness functions</strong> (Ford/Parsons, <em>Building Evolutionary Architectures</em> — an O'Reilly staple): automated checks that govern what a deployed system may become as it evolves. But that is software architecture, not business-process governance, and nobody has ported it to lineage-of-work.</li>
+</ul>
+<h3 id="what-is-not-written-anywhere">What is not written anywhere<a class="headerlink" href="#what-is-not-written-anywhere" title="Permanent link">&para;</a></h3>
+<p>Nobody has assembled: <strong>continuous reconciliation as the mechanism + the standing evidence-linked spec as the surface + self-modification as the customer.</strong></p>
+<table>
+<thead>
+<tr>
+<th>Community</th>
+<th>What they own</th>
+<th>What they lack</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Process mining (van der Aalst lineage)</td>
+<td>The mechanism: conformance checking, deviation detection</td>
+<td>The governance surface — analysis, not standing authority</td>
+</tr>
+<tr>
+<td>The APM Manifesto (Calvanese et al.)</td>
+<td>The requirement: self-modification within governed limits</td>
+<td>The mechanism — named as the open problem</td>
+</tr>
+<tr>
+<td>The vendor (Camunda / ProcessOS)</td>
+<td>The tooling: discovery speed, fitness functions, MCP wiring</td>
+<td>The discipline — episodic gestures, not the loop</td>
+</tr>
+<tr>
+<td>Evolutionary architecture (Ford/Parsons)</td>
+<td>The governing-may-become pattern: fitness functions</td>
+<td>Business-process provenance — software, not sagas</td>
+</tr>
+<tr>
+<td>Confirmatory/exploratory statistics (Tukey)</td>
+<td>The distinction itself: grading the anticipated vs. discovering the unanticipated</td>
+<td>Never mapped onto operational dashboards or standing process specs — a statistical framing, not an operations one</td>
+</tr>
+</tbody>
+</table>
+<p>The sentence that lands it:</p>
+<blockquote>
+<p><em>Conformance checking asked whether the deployed thing matched the spec at a point in time. The continuous Reverse Spec asks the harder question the Manifesto made unavoidable: what the deployed thing may become next — and who decides.</em></p>
+</blockquote>
+<h3 id="appendix-a1-effort-lineage-vs-object-lineage-the-closer-but-still-short-prior-art">Appendix A.1 — Effort-Lineage vs. Object-Lineage: the closer, but still short, prior art<a class="headerlink" href="#appendix-a1-effort-lineage-vs-object-lineage-the-closer-but-still-short-prior-art" title="Permanent link">&para;</a></h3>
+<p><em>This is the prior art specific to the Provenance Divide itself (Figure 0) — the "lineage of effort vs. lineage of data" distinction — as opposed to the continuous-reconciliation claim above. Two threads get closer than anything already cited, and one correction matters for citing them accurately.</em></p>
+<p><strong>Process mining's event log is an occurrence record, not a judgment record.</strong></p>
+<ul>
+<li>Van der Aalst's event log (<em>Process Mining</em>, Ch. 4) records case ID, activity, timestamp, resource, cost, data — process mining's existing best answer to "an effort happened, attributed to someone." That is an occurrence record, not a judgment record.</li>
+<li><strong>Organizational perspective</strong> (Ch. 8): handover-of-work, working-together, and subcontracting metrics derive a "social network of work relationships" from the log. This is process mining's own closest attempt at effort-lineage — and it is telling that it is statistical and after-the-fact, not a standing artifact.</li>
+<li><strong>Decision perspective</strong> (Ch. 8): decision-tree mining infers the rule applied at an XOR split from the data present at that moment. It works for clean, structured decisions, but it cannot recover the reasoning behind a genuinely qualitative call — exactly this paper's <strong>vernacular evidence</strong> category.</li>
+</ul>
+<p><strong>The "graph, not tributary" instinct is real, decade-old, and still unshipped — correctly cited across two sections of one document, not one.</strong></p>
+<ul>
+<li>The 2012 <em>Process Mining Manifesto</em> names the object-centric/process-centric problem generally in <strong>Challenge C1</strong> ("Finding, Merging, and Cleaning Event Data"): "Event data are often 'object centric' rather than 'process centric.' For example, individual products, pallets, and containers may have RFID tags and recorded events refer to these tags. However, to monitor a particular customer order such object-centric events need to be merged and preprocessed."</li>
+<li>The near-exact orders/order-lines/deliveries example — "One customer order may result in multiple deliveries. One delivery may refer to order lines of multiple orders. Hence, there is a many-to-many relationship between orders and deliveries and a one-to-many relationship between orders and order lines." — lives in <strong>Section 3.2, Guiding Principle GP2</strong> ("Log Extraction Should Be Driven by Questions"), not C1. Cite them separately: C1 names the object-centric/process-centric problem generally; GP2 supplies the near-identical orders/order-lines/deliveries example, in service of a related but distinct point about case-type selection being a non-trivial, question-driven choice.</li>
+<li>Either way, the correction doesn't weaken the claim — it sharpens it: the field admitted, over a decade ago and across two sections of the same manifesto, that a single linear case trace breaks down once multiple correlated objects are involved, and never shipped a governed, continuous answer.</li>
+</ul>
+<p><strong>W3C PROV-O already owns the formal graph grammar — but not the domain semantics.</strong></p>
+<ul>
+<li>Entity, Activity, and Agent are PROV-O's three core classes; <em>used</em>, <em>wasGeneratedBy</em>, <em>wasDerivedFrom</em>, and <em>wasAssociatedWith</em> are real, correctly-named PROV-O properties. An activity <em>uses</em> and <em>generates</em> entities, entities chain together via derivation, and agents carry responsibility via association — a genuine, formal, graph-structured provenance ontology, a W3C Recommendation since 2013, over a decade before this paper's argument.</li>
+<li>The gap is real and citable: PROV was built for general data/document provenance, not saga-scale business-process work. It has no native concept of a pending obligation, an approver's deadline, or a policy version governing a decision. PROV gives the graph grammar; it doesn't give the domain semantics — Work Record commitment, evidence classes, governed self-modification — this paper argues nobody has assembled yet.</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>Community</th>
+<th>What they own</th>
+<th>What they lack</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Process mining (organizational + decision perspectives)</td>
+<td>Statistical effort attribution (handover-of-work networks) and structured-decision-rule mining at XOR splits</td>
+<td>After-the-fact and statistical, not a standing artifact; cannot recover the reasoning behind a qualitative call</td>
+</tr>
+<tr>
+<td>Process Mining Manifesto (Challenge C1 + Guiding Principle GP2)</td>
+<td>Naming of the object-centric/multi-object correlation problem, with a concrete orders/order-lines/deliveries example</td>
+<td>No mechanism — flagged as an open framing problem in 2012, still unsolved</td>
+</tr>
+<tr>
+<td>W3C PROV-O</td>
+<td>A formal graph grammar: Entity/Activity/Agent nodes, <em>used</em>/<em>wasGeneratedBy</em>/<em>wasDerivedFrom</em>/<em>wasAssociatedWith</em> edges</td>
+<td>No domain semantics — no obligations, deadlines, policy versions, or captured judgment</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Where this paper pushes past all three:</strong> even a fully-built object-centric graph — process mining's organizational network, GP2's multi-object correlation, or a complete PROV-O instance — only proves what an activity <em>touched</em>. None of it captures <em>why</em> — the judgment inside the task. That is the harder, unshipped layer, and it is exactly what Form Four has to surface to close the Provenance Divide as effort-lineage rather than object-lineage.</p>
+<h3 id="drafting-risk">Drafting risk<a class="headerlink" href="#drafting-risk" title="Permanent link">&para;</a></h3>
+<p>The risk is the opposite of "someone already said this." Five communities each own a piece, and each will read the paper as incomplete in their direction. The citations are the defense: every seam must be credited before the join is claimed. The originality is in the assembly, not the parts.</p>
+<hr />
+<h2 id="appendix-b-what-databricks-solved-and-what-it-proves-is-missing-here">Appendix B — What Databricks Solved, and What It Proves Is Missing Here<a class="headerlink" href="#appendix-b-what-databricks-solved-and-what-it-proves-is-missing-here" title="Permanent link">&para;</a></h2>
+<p><em>The comparison that names the gap precisely. Note: this section predates the paper's shift away from canal/river imagery elsewhere in the body (see "A faster snapshot, not a live feed") and still runs on the original bucket/river metaphor — preserved here as working-notes material rather than retrofitted.</em></p>
+<p>The operations-continuity problem under discussion is not new. The data platform world spent a decade on the same failure pattern — pipelines built by hand, schemas drifting, nobody able to say where a number in a dashboard actually came from — and Databricks answered it with a specific architectural move: <strong>Unity Catalog</strong> stitching lineage, pipeline management, and provenance into one governance fabric. The lineage is not a document produced at build time. It is a standing, queryable, continuously-updated record of what produced what. That is what "solved" looks like: reconciliation is native to the platform, not a phase someone schedules.</p>
+<p>But the Databricks answer solves the problem for a different unit of work, and the difference is the whole point:</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Databricks / lakehouse</th>
+<th>BPMN / Camunda</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Unit of work</td>
+<td>Record, record set, table version</td>
+<td>Long-running saga — one case, alive for days or months</td>
+</tr>
+<tr>
+<td>What services engage</td>
+<td>Delta tables: data at set, collection, and record level</td>
+<td>The work: obligations, handoffs, decisions, deadlines</td>
+</tr>
+<tr>
+<td>Trigger model</td>
+<td>Data-event: a change in the delta table notifies and triggers downstream services</td>
+<td>Token-event: the process token advances through modeled states, engaging people and services as the work demands</td>
+</tr>
+<tr>
+<td>Architecture pattern</td>
+<td>Data mesh — domains own data products, the catalog stitches them</td>
+<td>Process orchestration — the Work Record carries commitment state across the business systems layer</td>
+</tr>
+<tr>
+<td>Reconciliation surface</td>
+<td>Lineage of data: what produced this record</td>
+<td>Lineage of work: what produced this decision, this state, this obligation</td>
+</tr>
+</tbody>
+</table>
+<p>The delta table is the right mental model for what the Reverse Spec must become: a living surface that services engage <em>continuously</em>, at multiple granularities, with change propagation built in. Databricks did not solve lineage by running discovery once at pipeline build time. The catalog watches the pipelines run.</p>
+<p><strong>Verified detail worth being precise about.</strong> Unity Catalog's lineage graph is built from data assets as nodes — tables, columns, ML models, dashboards — captured automatically by observing query and pipeline execution. A job or notebook appears only as an edge: an attribution of which run produced or consumed a given asset, not a modeled unit of effort carrying its own evidence and judgment. Per Databricks' own documentation: <em>"Unity Catalog captures lineage automatically for queries run on Databricks, down to the column level."</em> That is the precise shape of the gap the Reverse Spec targets differently: the node isn't the data a task happened to touch, it's the task's own act of judgment.</p>
+<p>But the analogy also exposes why the BPM problem is harder, not just different. A delta-table change triggers services against records. A business process is a saga aligned to <strong>people and services engaging work</strong> — the state that matters includes a human's obligation, an approver's pending decision, a deadline accruing penalties while it waits. Provenance in this world is not "which job wrote which table." It is "who committed the business to what, on what evidence, under which version of which policy." No data-mesh primitive carries that.</p>
+<p><strong>What this proves about the vendor story.</strong> Camunda's September 3 migration post is discovery and build speed — the bucket, filled faster. The tell is in what the story stops at: the process is <em>built</em>, deployed, running on the new platform — and then the article pivots to "migration is the first step, not the end state" and future re-engineering conversations. The bridge from the built thing into the deployed thing — from the reconstructed model into a living interaction with the business ecosystem and its systems layer — is where the story goes quiet. If the vendor's discovery actually drew from the dynamic business ecosystem rather than dipping a sample from it, the natural structure of the story would be the loop, not the ladder: the deployed thing reporting back into the spec continuously, the spec governing what the deployed thing may become. A ladder ends at deployment. A river keeps moving after you dip the bucket.</p>
+<p><strong>The synthesis the paper can own.</strong> The industry now has two halves of one architecture:</p>
+<ol>
+<li>Databricks-style continuous lineage — proven that standing, queryable, native reconciliation is buildable and sellable — but only for data-event pipelines over record sets.</li>
+<li>Camunda-style governed execution — the Work Record, the token, the auditable saga — but with reconciliation still treated as an episodic phase (discover → build → someday redesign).</li>
+</ol>
+<p>The Reverse Spec, run continuously, is the missing third thing: <strong>lineage of work</strong> — the Unity Catalog move applied to sagas instead of record sets. The standing evidence-linked spec is its catalog. The reconciliation loop is its watcher. The process owner is its steward. And the Manifesto's self-modification capability is its first real customer: the agent that adapts within governed limits is exactly the agent whose every adaptation must reconcile against the standing spec. That is the sentence the paper builds toward.</p>
+<hr />
+<h2 id="references">References<a class="headerlink" href="#references" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Van der Aalst, W.M.P. <em>Process Mining: Discovery, Conformance and Enhancement of Business Processes</em>. Springer, 2011, Ch. 4 (event logs), Ch. 8 (organizational and decision-mining perspectives). — Source of conformance checking, the organizational handover-of-work network, and decision-tree mining at XOR splits.</li>
+<li>IEEE Task Force on Process Mining. "Process Mining Manifesto." 2012, Challenge C1 ("Finding, Merging, and Cleaning Event Data") and Guiding Principle GP2 ("Log Extraction Should Be Driven by Questions"). — Names the object-centric-vs-process-centric correlation problem and supplies the orders/order-lines/deliveries example this paper's Provenance Divide figures build on.</li>
+<li>Tukey, J.W. <em>Exploratory Data Analysis</em>. Addison-Wesley, 1977. — Source of the confirmatory-vs-exploratory distinction behind this paper's "report card vs. instrument" argument.</li>
+<li>Ford, N., Parsons, R., &amp; Kua, P. <em>Building Evolutionary Architectures</em>. O'Reilly, 2017. — Source of the fitness-function pattern cited as the closest shipped analog to governed self-modification.</li>
+<li>W3C. "PROV-O: The PROV Ontology." W3C Recommendation, 2013. — Formal graph grammar (Entity, Activity, Agent; <em>used</em>, <em>wasGeneratedBy</em>, <em>wasDerivedFrom</em>, <em>wasAssociatedWith</em>) cited as prior art for effort-lineage's graph structure, lacking business-process domain semantics.</li>
+<li>Porter, M.E. <em>Competitive Advantage: Creating and Sustaining Superior Performance</em>. Free Press, 1985. — Source of the primary-activities/support-activities value-chain distinction this paper extends into the Reflexive Value Chain.</li>
+<li>Databricks. "Data Lineage with Unity Catalog." Databricks documentation, accessed 2026. — Source of the verified detail that Unity Catalog's lineage graph is built from data assets as nodes, captured automatically down to the column level.</li>
+<li>Dumas, M., La Rosa, M., Mendling, J., &amp; Reijers, H.A. <em>Fundamentals of Business Process Management</em>, 3rd Ed. Springer, 2023. — BPM lifecycle and process redesign methodology referenced throughout.</li>
+<li>Calvanese, D., et al. "Agentic Business Process Management: A Research Manifesto." arXiv:2603.18916, March 2026. — Names framed autonomy, explainability, conversational actionability, and self-modification within governed limits as the four capabilities agents need to be first-class process actors; names the integration layer as the open engineering problem this paper's Reverse Spec argues answers.</li>
+<li>Koerber, B. "Three Ways Camunda Speaks MCP (And Why the Direction Matters)." Camunda blog, Aug 18, 2026. — Source of the three MCP integration patterns (client, server, process-as-tool) cited as closing invocation and observability but not governed self-modification.</li>
+<li>Stawowski, L-S. "From Legacy BPM Migration to a Foundation for Continuous Re-engineering." Camunda blog, Sept 3, 2026. — Source of the live European bank migration figures (discovery 40% faster, first iteration 97% faster) cited as the vendor's ladder story this paper argues stops short of a loop.</li>
+<li>Samuelson, G. "Process-First AI: The Work Record, Four Forms, Three Dimensions." garysamuelson.github.io, 2026. — Defines Form Four as the model-governance layer above running process instances, and the Form Three ceiling this paper holds fixed.</li>
+<li>Samuelson, G. "Domain Objects Before Process Models." garysamuelson.github.io, 2026. — Defines the four evidence classes (structural, normative, behavioral, vernacular) and the state-landing test used throughout this paper.</li>
+<li>Samuelson, G. "From Request to Record." garysamuelson.github.io, 2026. — Explains the Process Application and Work Record architecture that the continuous Reverse Spec promotes.</li>
+</ul>
+<hr />
+<p><em>© 2026 Gary Samuelson | CC BY-NC-ND 4.0 — Share freely with attribution. No commercial use. No derivatives without permission.</em></p>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://github.com/garysamuelson" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    </a>
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://linkedin.com/in/garysamuelson" target="_blank" rel="noopener" title="linkedin.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3M135.4 416H69V202.2h66.5V416zM102.2 96a38.5 38.5 0 1 1 0 77 38.5 38.5 0 1 1 0-77m282.1 320h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9z"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.top", "search.highlight", "search.suggest", "content.code.copy", "content.code.annotate"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+        <script src="https://unpkg.com/mermaid@11/dist/mermaid.min.js"></script>
+      
+        <script src="../../assets/javascripts/mermaid-init.js"></script>
+      
+    
+  </body>
+</html>
